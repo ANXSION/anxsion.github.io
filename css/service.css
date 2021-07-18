@@ -1,0 +1,30 @@
+.policybtn {
+    cursor: pointer;
+    background: white;
+    border: none;
+    outline: none;
+    width: 40%;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.policybtn:hover {
+    color: black;
+    background: red;
+}
+
+.servicefull {
+    background: black;
+    color: white;
+    width: 100%;
+    font-size: 20px;
+}
+
+.servicefull p {
+    font-size: 18px;
+}
+
+.servicebanner {
+    width: 100%;
+    height: auto;
+}
