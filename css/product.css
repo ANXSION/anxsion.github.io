@@ -1,0 +1,95 @@
+.itempanel {
+    position: relative;
+    display: block;
+    animation: phase 1s ease;
+}
+
+.storename {
+    height: auto;
+    font-size: 20px;
+    width: 100%;
+    background: black;
+    color: white;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+
+.buyimage {
+    width: 100%;
+    height: auto;
+}
+
+.buytab {
+    position: relative;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+    width: 45%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.orderbtn {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background: black;
+    border: none;
+    outline-color: white;
+    width: 40%;
+    height: 40px;
+}
+
+.extrapanel {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.extraimg {
+    display: inline-block;
+    width: 40%;
+    height: auto
+}
+
+@media screen and (max-width: 480px) {
+    .buytab {
+        width:95%;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .buytab {
+        width:45%;
+    }
+}
+
+.storeback {
+    padding: 5px;
+    height: auto;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.storeback a {
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+}
+
+.thankpanel {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+    display: none;
+    animation: phase 1s ease;
+}
+
+@keyframes phase {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
