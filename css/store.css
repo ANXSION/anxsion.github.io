@@ -1,0 +1,61 @@
+.contain{
+margin: 2px;
+width: 23%;
+height: auto;
+display: inline-block;
+position: relative;
+vertical-align: top;
+}
+.loadingLayer{
+background-color: white;
+height: 100%;
+width: 100%;
+position: absolute;
+top:0;
+animation: loading 1s ease;
+opacity: 0;
+visibility: hidden;
+}
+.progressBack{
+top:50%;
+left: 11%;
+position: absolute;
+background-color: black;
+height: 7px;
+width: 80%;
+}
+.progressFront{
+top:50%;
+left: 11%;
+position: absolute;
+background-color: red;
+height: 7px;
+width: 80%;
+animation: profill 1s ease;
+}
+.product{
+width: 100%;
+height: auto;
+cursor: pointer;
+}
+.overlay{
+position: absolute;
+top:45%;
+left: 0;
+width:100%;
+}
+@media screen and (max-width: 480px) {
+.contain{
+width: 45%;
+}
+}
+@media (min-width: 481px) and (max-width: 768px) {
+.contain{
+width: 40%;
+}
+}
+@media screen and (min-width: 769px) {
+.contain{
+width: 22%;
+}
+}
