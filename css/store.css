@@ -1,3 +1,11 @@
+.storename{
+height: auto;
+font-size: 20px;
+width: 100%;
+background: black;
+color: white;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
 .contain{
 margin: 2px;
 width: 23%;
