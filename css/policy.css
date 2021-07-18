@@ -1,0 +1,13 @@
+.policybtn{
+cursor: pointer;
+background: white;
+border:none;
+outline: none;
+width: 40%;
+height: 40px;
+transition: 0.3s;
+}
+.policybtn:hover{
+color: black;
+background: red;
+}
