@@ -28,13 +28,12 @@ border-radius:22px;
   transition: max-height 0.2s ease-out;
 }
 .icons{
-z-index:1;
-width:100%;
-padding-bottom:50%;
+width:50%;
+display:block;
 }
 .lawtitle{
-z-index:1;
 color:white;
+display:block;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
