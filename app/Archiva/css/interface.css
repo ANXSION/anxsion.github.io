@@ -28,21 +28,15 @@ border-radius:22px;
   overflow:hidden;
   transition: max-height 0.2s ease-out;
 }
-.icons{
-width:50%;
-position:absolute;
-top:3%;
-left:50%;
-transform: translate(-50%);
-}
+
 .lawtitle{
-font-size:0.6em;
+font-size:0.7em;
 position:absolute;
-bottom:2%;
+top:50%;
 left:50%;
 color:white;
 display:block;
-transform: translate(-50%);
+transform: translate(-50%,-50%);
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
