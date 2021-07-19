@@ -6,6 +6,11 @@
  width:22%;
  height:auto;
 }
+.lawboxStructure{
+width:100%;
+height:100%;
+background-color:black;
+}
 .lawbox{
 width:512px;
 height:512px;
