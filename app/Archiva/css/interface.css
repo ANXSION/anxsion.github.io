@@ -26,7 +26,6 @@ border-radius:22px;
 
 .content {
   max-height: 0;
-  overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 /* Extra small devices (phones, 600px and down) */
