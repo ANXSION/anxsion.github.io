@@ -30,7 +30,7 @@ transition:0.4s ease-out;
   transition: max-height 0.2s ease-out;
 }
 .lawtitle{
-font-size:14px;
+font-size:1vm;
 position:absolute;
 top:40%;
 left:50%;
@@ -56,19 +56,14 @@ margin:5px;
 width:25%;
 Padding-bottom:25%;
 }
-.lawtitle{
-  font-size:8px;
-  }
 }
+
 @media only screen and (min-width: 300px) {
 .lawbox{
 margin:5px;
 width:25%;
 Padding-bottom:25%;
 }
-.lawtitle{
-  font-size:14em;
-  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -78,9 +73,6 @@ margin:5px;
 width:25%;
 Padding-bottom:25%;
 }
-  .lawtitle{
-  font-size:16px;
-  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -89,9 +81,6 @@ margin:5px;
 width:22%;
 Padding-bottom:22%;
 }
-  .lawtitle{
-  font-size:22px;
-  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -101,9 +90,6 @@ margin:5px;
 width:22%;
 Padding-bottom:22%;
 }
-  .lawtitle{
-  font-size:24px;
-  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -113,7 +99,4 @@ margin:5px;
 width:22%;
 Padding-bottom:22%;
 }
-  .lawtitle{
-  font-size:26px;
-  }
 }
