@@ -3,7 +3,7 @@
  height:auto;
 }
 .lawboxContainer{
- width:12%;
+ width:22%;
  height:auto;
 }
 .lawboxStructure{
@@ -12,8 +12,8 @@ height:100%;
 background-color:black;
 }
 .lawbox{
-width:512px;
-height:512px;
+width:192px;
+height:192px;
 background-color:black;
 border-radius:1.2rem;
 }
