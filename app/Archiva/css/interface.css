@@ -29,9 +29,14 @@ border-radius:22px;
 }
 .icons{
 width:50%;
-display:block;
+position:absolute;
+top:25%;
+left:50%;
 }
 .lawtitle{
+position:absolute;
+bottom:25%;
+left:50%;
 color:white;
 display:block;
 }
