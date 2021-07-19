@@ -28,7 +28,7 @@
       }
     ],
     "start_url": "https://anxsion.github.io/app/Archiva/index.html",
-    "background_color": "white",
+    "background_color": "darkorange",
     "display": "standalone",
     "scope": "/app/Archiva",
     "theme_color": "darkorange",
