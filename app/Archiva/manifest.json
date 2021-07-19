@@ -1,6 +1,6 @@
 {
-    "short_name": "AnxSion",
-    "name": "AnxSion",
+    "short_name": "Archiva",
+    "name": "AnxSion:Archiva",
     "icons": [
       {
         "src": "/img/pwa/icon-192.png",
@@ -27,30 +27,14 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "https://anxsion.github.io",
+    "start_url": "https://anxsion.github.io/app/Archiva/index.html",
     "background_color": "white",
     "display": "standalone",
-    "scope": "/",
-    "theme_color": "red",
-    "shortcuts": [
-      {
-        "name": "Visit Store",
-        "short_name": "Store",
-        "description": "Visit the AnxSion Store",
-        "url": "/page/store.html",
-        "icons": [{ "src": "/img/pwa/store.png", "sizes": "192x192" }]
-      },
-      {
-        "name": "View Services",
-        "short_name": "Services",
-        "description": "View available services",
-        "url": "/page/services.html",
-        "icons": [{ "src": "/img/pwa/services.png", "sizes": "192x192" }]
-      }
-    ],
-    "description": "Progressive Web Application of AnxSion",
-    "url": "https://anxsion.github.io/index.html",
-    "manifestUrl": "https://anxsion.github.io/manifest.json",
+    "scope": "/app/Archiva",
+    "theme_color": "darkorange",
+    "description": "Progressive Web Application of Archiva. Powered by AnxSion",
+    "url": "https://anxsion.github.io/app/Archiva/index.html",
+    "manifestUrl": "https://anxsion.github.io/app/Archiva/manifest.json",
     "lang": "en",
     "orientation": "portrait",
     "categories": ["art", "music", "store"]
