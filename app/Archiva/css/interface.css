@@ -31,12 +31,13 @@ border-radius:22px;
 .icons{
 width:50%;
 position:absolute;
-top:25%;
+top:2%;
 left:50%;
+transform: translate(-50%);
 }
 .lawtitle{
 position:absolute;
-bottom:25%;
+bottom:2%;
 left:50%;
 color:white;
 display:block;
