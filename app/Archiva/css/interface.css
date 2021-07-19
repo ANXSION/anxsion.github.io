@@ -3,8 +3,10 @@
  height:auto;
 }
 .lawboxContainer{
+ margin:2%;
  width:22%;
  height:auto;
+ display:inline-block;
 }
 .lawboxStructure{
 width:100%;
