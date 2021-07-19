@@ -50,14 +50,24 @@ left:0;
 background-color:orangered;
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
 .lawbox{
 margin:5px;
 width:25%;
 Padding-bottom:25%;
 }
 .lawtitle{
-  font-size:0.6em;
+  font-size:8px;
+  }
+}
+@media only screen and (min-width: 300px) {
+.lawbox{
+margin:5px;
+width:25%;
+Padding-bottom:25%;
+}
+.lawtitle{
+  font-size:14em;
   }
 }
 
