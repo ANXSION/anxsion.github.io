@@ -1,4 +1,5 @@
 .lawbox{
+position:relative;
 margin:5px;
 display:inline-flex;
 width:25%;
