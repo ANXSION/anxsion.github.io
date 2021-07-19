@@ -18,7 +18,7 @@ transition:0.4s ease-out;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 2vw;
+  font-size: 1.5vw;
   transition:0.5s ease;
 }
 .active {
