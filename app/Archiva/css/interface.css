@@ -22,7 +22,7 @@ transition:0.4s ease-out;
   transition:0.5s ease;
 }
 .active {
-  background-color: darkorange;
+  background-color: orangered;
 }
 .content {
   max-height: 0;
@@ -50,7 +50,7 @@ left:0;
 }
 .overlay:hover{
 opacity:0.5;
-background-color:darkorange;
+background-color:orangered;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 300px) {
