@@ -28,10 +28,10 @@
       }
     ],
     "start_url": "https://anxsion.github.io/app/Archiva/index.html",
-    "background_color": "darkorange",
+    "background_color": "orangered",
     "display": "standalone",
     "scope": "/app/Archiva",
-    "theme_color": "darkorange",
+    "theme_color": "orangered",
     "description": "Progressive Web Application of Archiva. Powered by AnxSion",
     "url": "https://anxsion.github.io/app/Archiva/index.html",
     "manifestUrl": "https://anxsion.github.io/app/Archiva/manifest.json",
