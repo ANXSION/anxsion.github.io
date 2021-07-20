@@ -1,1 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Archiva | Offline</title>
+	<link rel="icon" type="images/png" href="/favicon.png">
+	<link rel="canonical" href="https://anxsion.github.io">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Description" content="The official website of the AnxSion. Work in progress.">
+	<meta name="theme-color" content="orangered">
+	<meta name="msapplication-navbutton-color" content="orangered">
+	<meta name="apple-mobile-web-app-status-bar-style" content="orangered">
+<style>
+.body {
+width:100%;
+margin: 0;
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+font-display:swap;
+position: relative;
+-webkit-tap-highlight-color:transparent;
+overflow: visible;
+transition: 0.7s ease;
+scroll-behavior: smooth;
+min-height: 100%;
+}
+footer{
+width: 100%;
+}
+.banner{
+margin-top:3px;
+height: auto;
+width: 12%;
+}
+@media screen and (max-width: 480px) {
+.banner{
+width: 25%;
+}
+}
+@media (min-width: 481px) and (max-width: 768px) {
+.banner{
+width: 15%;
+}
+}
+@media screen and (min-width: 769px) {
+.banner{
+width: 12%;
+}
+}
+.Nav{
+background: white;
+font-size: 34px;
+}
+.sidenav {
+height: 100%;
+width: 100%;
+z-index: 2;
+background-color: #000000;
+overflow: hidden;
+position: fixed;
+top: 0;
+left:0;
+transition: 0.5s ease;
+visibility:hidden;
+opacity: 0;
+}
+.sidenav p{
+font-size: 40px;
+}
+.sidenav a {
+font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+margin-top: 40px;
+padding: 8px;
+text-decoration: none;
+color: white;
+display: block;
+font-size: 32px;
+transition: 0.3s ease;
+}
+.sidenav a:hover {
+color: red;
+}
+.closebtn {
+cursor: pointer;
+top: 0px;
+color: white;
+font-size: 36px;
+transition: 0.5s;
+}
+.closebth:hover{
+color:red;
+}
+@media screen and (max-width: 450px) {
+.sidenav a {
+font-size: 30px;
+}
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: red;
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+</style>
+</head>
 
+<body id="body" class="body">
+
+	<div id="mySidenav" class="sidenav">
+		<div align="center">
+			<p href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</p>
+			<a href="index.html">HOME</a>
+			<a href="page/services.html">SERVICES</a>
+			<a href="page/store.html">STORE</a>	
+			<a href="page/contact.html">CONTACT</a>
+			<a href="app/Archiva/index.html">ARCHIVA</a>
+			
+		</div>
+	</div>
+
+<nav Class ="Nav" align="center">
+	<br>
+		<span class="openBtn" onclick="openNav()">&Xi;</span>
+</nav>
+
+	<div align="center">
+		<br><br>
+		<h1>//OFFLINE</h1>
+		<h2>Check your router and other network cables</h2>
+	</div>
+	
+	<br>
+
+	<footer align="center">
+		<p><strong>AnxSion &copy; Archiva</strong></p>
+		<p>All Rights Reserved.</p>
+	</footer>
+	
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.visibility = "visible";
+			document.getElementById("mySidenav").style.opacity = "1";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.visibility = "hidden";
+			document.getElementById("mySidenav").style.opacity = "0";
+		}
+	</script>
+</body>
+</html>
