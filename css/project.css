@@ -15,6 +15,9 @@
     position: relative;
     display: inline-block;
 }
+.projectlayercontainer h2{
+    curor:pointer;
+}
 
 .projectlayer {
     width: 100%;
