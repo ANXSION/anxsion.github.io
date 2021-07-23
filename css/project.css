@@ -16,7 +16,7 @@
     display: inline-block;
 }
 .projectlayercontainer h2{
-    curor:pointer;
+    cursor:pointer;
 }
 
 .projectlayer {
@@ -25,7 +25,7 @@
 }
 
 .projectlayerdata {
-    font-size: 14px;
+    font-size: 1.5vw;
     color: white;
     position: absolute;
     top: 50%;
