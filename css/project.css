@@ -1,12 +1,13 @@
+
 .projectpageTitle {
     background-color:white;
     color: black;
 }
 
 .projectcontainer {
-    width: 94%;
+    width: 100%;
     height: auto;
-    margin: 3%;
+    padding: 3%;
     background-color:black;
 }
 
