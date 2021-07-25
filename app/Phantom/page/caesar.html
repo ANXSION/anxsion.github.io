@@ -55,8 +55,8 @@
   			<h3>Input</h3>
   			<textarea class="" type="text" id="input" name="input" value="input" row="8" col="60" required></textarea><br><br>
 			
-			<h3>Key (0-26):</h3>
-  			<input type="number" id="key" name="key" value="0" min="0" max="26" required><br><br>
+			<h3>Key (0-25):</h3>
+  			<input type="number" id="key" name="key" value="0" min="0" max="25" required><br><br>
 			
 			<h3>Execution Type:</h3>
 			<input type="radio" id="encrypt" name="execution" value="encrypt" checked>
@@ -89,6 +89,12 @@
 		function cipher(){
 			var executecheck = document.getElementById("encrypt").checked;
 			var key=document.getElementById("key").value;
+			if (key>25){
+				key=25;
+			}
+			else if (key<0 || key==null){
+				key=0;
+			}
 			var output="";
 			var input = document.getElementById("input").value;
 			if (executecheck==true){
@@ -98,17 +104,14 @@
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
 						modifier= + code + + key;
-						console.log(modifier);
 						if(modifier > 90){
 							var temp=modifier-90;
 							extract = String.fromCharCode(temp+65);
 							output+=extract;
-							console.log(modifier);
 						}
 						else{
 							extract = String.fromCharCode(modifier);
 							output+=extract;
-							console.log(output);
 						}
 					}	
 					else if (code >= 97 && code <= 122) {
@@ -135,7 +138,7 @@
 					var code = input.charCodeAt(i);
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
-						modifier=+ code + + key;
+						modifier=+ code - + key;
 						if(modifier < 65){
 							temp=65-modifier;
 							extract = String.fromCharCode(90-temp);
@@ -148,7 +151,7 @@
 					}
 					else if (code >= 97 && code <= 122) {
 						var modifier=0;
-						modifier=+ code + + key;
+						modifier=+ code - + key;
 						if(modifier < 97){
 							temp=97-modifier;
 							extract = String.fromCharCode(122-temp);
@@ -166,7 +169,6 @@
 			}
 
 		document.getElementById("output").innerHTML = output;
-			console.log(output);
 		}
 		
 		
