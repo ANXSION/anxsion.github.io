@@ -14,8 +14,8 @@ scroll-behavior: smooth;
 min-height: 100%;
 }
 ::selection {
-  background: aqua;
-  color:black;
+  background: turquoise;
+  color:white;
 }
 footer{
 width: 100%;
@@ -71,24 +71,24 @@ font-size: 32px;
 transition: 0.3s ease;
 }
 .sidenav a:hover {
-color: aqua ;
+color: turquoise ;
 }
 .openBtn{
 cursor: pointer;
 transition: 0.5s;
 }
 .openBtn:hover{
-color: aqua ;
+color: turquoise ;
 }
 .closebtn {
 cursor: pointer;
 top: 0px;
-color: white;
+color: turquoise;
 font-size: 36px;
 transition: 0.5s;
 }
 .closebth:hover{
-color: aqua;
+color: turquoise;
 }
 @media screen and (max-width: 450px) {
 .sidenav a {
@@ -102,5 +102,5 @@ width: 8px;
 background: black;
 }
 ::-webkit-scrollbar-thumb {
-background: aqua;
+background: turquoise;
 }
