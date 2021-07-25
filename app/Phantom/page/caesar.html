@@ -89,12 +89,6 @@
 		function cipher(){
 			var executecheck = document.getElementById("encrypt").checked;
 			var key=document.getElementById("key").value;
-			if (key>26){
-				key=26;
-			}
-			else if (key<0){
-				key=0;
-			}
 			var output="";
 			var input = document.getElementById("input").value;
 			if (executecheck==true){
@@ -112,6 +106,7 @@
 						}
 						else{
 							output+=extract;
+							console.log(modifier);
 						}
 					}	
 					else if (code >= 97 && code <= 122) {
