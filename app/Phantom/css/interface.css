@@ -15,7 +15,6 @@ position:absolute;
 top:25%;
 left:50%;
 color:white;
-vertical-align:middle;
 display:block;
 transform: translate(-50%);
 }
