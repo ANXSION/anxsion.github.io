@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Caesar Cipher</title>
+	<link href="../css/PhantomCore.css" rel="stylesheet" type="text/css">
+	<link href="../css/cipher.css" rel="stylesheet" type="text/css">
+	<link rel="preload" href="../css/PhantomCore.css" as="style">
+	<link rel="prefetch" href="/index.html">
+	<link rel="icon" type="images/png" href="/favicon.png">
+	<link rel="apple-touch-icon" href="/img/pwa/icon-192.png">
+	<link rel="manifest" href="../manifest.json">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Description" content="Phantom. Powered by AnxSion">
+	<meta name="theme-color" content="LightSeaGreen">
+	<meta name="msapplication-navbutton-color" content="LightSeaGreen">
+	<meta name="apple-mobile-web-app-status-bar-style" content="LightSeaGreen">
+	<script defer src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-53Y0LGEE69');
+	</script>
+</head>
+
+<body id="body" class="body">
+	<div id="mySidenav" class="sidenav">
+		<div align="center">
+			<p href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</p>
+			<a href="../index.html">HOME</a>
+			<a href="#">ABOUT</a>
+			<a href="/index.html">ANXSION</a>
+		</div>
+	</div>
+<nav Class ="Nav" align="center">
+		<div align="center">
+			<img class="banner" src="/img/banner.webp" width="3000" height="750" alt="Brand">
+		</div>
+		<span class="openBtn" onclick="openNav()">&Xi;</span>
+	</nav>
+ 	<div class="ciphercontainer">
+		<div align="center">
+		  <h1>PHANTOM</h1>
+      <h2>Caesar Cipher</h2>
+		  <br>
+			<p>The Caesar cipher is one of the earliest known and simplest ciphers. It is a type of substitution cipher in which each letter in the plaintext is 'shifted' a certain number of places down the alphabet. For example, with a shift of 1, A would be replaced by B, B would become C, and so on. </p>
+	  </div>
+		
+  	<div align="center">
+			<form action="/action_page.php">
+  		<label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+  	</div>	
+
+</div>
+	
+<br>
+
+	
+	<footer align="center">
+		<p><strong>AnxSion &copy; PHANTOM</strong></p>
+		<p>All Rights Reserved.</p>
+	</footer>
+	
+	<script>
+		
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/app/Phantom/phantom.js');
+		}
+		
+		function openNav() {
+			document.getElementById("mySidenav").style.visibility = "visible";
+			document.getElementById("mySidenav").style.opacity = "1";
+			
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.visibility = "hidden";
+			document.getElementById("mySidenav").style.opacity = "0";
+		}
+	</script>
+</body>
+</html>
