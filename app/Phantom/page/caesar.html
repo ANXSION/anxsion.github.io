@@ -89,6 +89,7 @@
 		function cipher(){
 			var modifier=0
 			var executecheck = document.getElementById("encrypt").checked;
+			console.log(executecheck);
 			var key=document.getElementById("key").value;
 			var output="";
 			var input = document.getElementById("input").value;
@@ -96,11 +97,12 @@
 				for (var i = 0; i < input.length; i++) {
 					var extract = input[i];
 					var code = input.charCodeAt(i);
+					console.log(extract);
 					console.log(code);
 					if (code >= 65 && code <= 90) {
 						modifier=code+key;
 						if(modifier > 90){
-							modifier=(65+(modifier-90));
+							modifier=((modifier-90)+65);
 							extract = String.fromCharCode(modifier);
 							console.log(modifier);
 							output+=extract;
