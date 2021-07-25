@@ -136,7 +136,8 @@
 					var code = input.charCodeAt(i);
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
-						modifier=Number(code) + Number(key);
+						modifier=+ code + + key;
+						console.log(modifier);
 						if(modifier < 65){
 							temp=65-modifier;
 							extract = String.fromCharCode((90-temp));
