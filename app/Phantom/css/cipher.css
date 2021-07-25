@@ -2,9 +2,4 @@
   margin:10px;
   width=100%
   height=auto;
--webkit-user-select: text;
--moz-user-select:text;
-}
-::selection {
-  background: LightSeaGreen;
 }
