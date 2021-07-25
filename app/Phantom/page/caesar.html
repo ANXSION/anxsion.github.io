@@ -87,63 +87,65 @@
 			navigator.serviceWorker.register('/app/Phantom/phantom.js');
 		}
 		function cipher(){
-			let appendcheck=0;
-			let executecheck = document.getElementById("encrypt").checked;
-			let key=document.getElementById("key").value;
-			let output="";
-			let input = document.getElementById("input").value;
+			var modifier=0
+			var executecheck = document.getElementById("encrypt").checked;
+			var key=document.getElementById("key").value;
+			var output="";
+			var input = document.getElementById("input").value;
 			if (executecheck==true){
-				for (let k in input){
-					let kcode=k.charCodeAt();
-					if ((kcode>=65)&&(kcode<=90)){
-						appendcheck=kcode+key;
-						if (appendcheck>90){
-							let temp=appendcheck-90;
-							kcode=65;
-							output+=String.fromCharCode(kcode+temp);
+				for (var i = 0; i < input.length; i++) {
+					var extract = input[i];
+					var code = input.charCodeAt(i);
+					if (code >= 65 && code <= 90) {
+						modifier=code+key;
+						if(modifier>90){
+							modifier=65+(modifier-90);
+							extract = String.fromCharCode(modifier);
+							output+=extract
 						}
-						
+							
 					}
-					else if ((kcode>=97)&&(kcode<=122)){
-						appendcheck=kcode+key;
-						if (appendcheck>122){
-							let temp=appendcheck-122;
-							kcode=97;
-							output+=String.fromCharCode(kcode+temp);
+					else if (code >= 97 && code <= 122) {
+						modifier=code+key;
+						if(modifier>122){
+							modifier=97+(modifier-122);
+							extract = String.fromCharCode(modifier);
+							output+=extract
 						}
 					}
-					else{
-						output+=k;
+					else {
+						output += extract;
 					}
 				}
 			}
-				
 			else{
-				for (let k in input){
-					let kcode=k.charCodeAt();
-					if ((kcode>=65)&&(kcode<=90)){
-						appendcheck=kcode+key;
-						if (appendcheck<65){
-							let temp=65-appendcheck;
-							kcode=90;
-							output+=String.fromCharCode(kcode-temp);
+				for (var i = 0; i < input.length; i++) {
+					var extract = input[i];
+					var code = input.charCodeAt(i);
+					if (code >= 65 && code <= 90) {
+						modifier=code+key;
+						if(modifier<65){
+							modifier=90-(65-modifier);
+							extract = String.fromCharCode(modifier);
+							output+=extract
 						}
-						
+							
 					}
-					else if ((kcode>=97)&&(kcode<=122)){
-						appendcheck=kcode+key;
-						if (appendcheck<97){
-							let temp=97-appendcheck;
-							kcode=122;
-							output+=String.fromCharCode(kcode-key);
+					else if (code >= 97 && code <= 122) {
+						modifier=code+key;
+						if(modifier<97){
+							modifier=122-(97-modifier);
+							extract = String.fromCharCode(modifier);
+							output+=extract
 						}
 					}
-					else{
-						output+=k;
+					else {
+						output += extract;
 					}
 				}
 			}
-			document.getElementById("output").innerHTML = output;
+
+		document.getElementById("output").innerHTML = output;
 		}
 		
 		
