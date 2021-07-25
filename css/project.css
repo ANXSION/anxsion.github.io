@@ -7,6 +7,8 @@
     width: 100%;
     height: auto;
     background-color:black;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 .projectoverlay{
 position: absolute;
