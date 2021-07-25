@@ -87,7 +87,6 @@
 			navigator.serviceWorker.register('/app/Phantom/phantom.js');
 		}
 		function cipher(){
-			var modifier=0;
 			var executecheck = document.getElementById("encrypt").checked;
 			var key=document.getElementById("key").value;
 			var output="";
@@ -102,6 +101,7 @@
 					console.log(extract);
 					console.log(code);
 					if (code >= 65 && code <= 90) {
+						var modifier=0;
 						modifier=code+key;
 						if(modifier > 90){
 							var temp=(modifier-90)+65;
@@ -117,6 +117,7 @@
 						}
 					}	
 					else if (code >= 97 && code <= 122) {
+						var modifier=0;
 						modifier=code+key;
 						if(modifier > 122){
 							var temp=(modifier-122)+97;
@@ -142,6 +143,7 @@
 					var extract = input[i];
 					var code = input.charCodeAt(i);
 					if (code >= 65 && code <= 90) {
+						var modifier=0;
 						modifier=code+key;
 						if(modifier < 65){
 							temp=90-(65-modifier);
@@ -157,6 +159,7 @@
 						}	
 					}
 					else if (code >= 97 && code <= 122) {
+						var modifier=0;
 						modifier=code+key;
 						if(modifier < 97){
 							temp=122-(97-modifier);
