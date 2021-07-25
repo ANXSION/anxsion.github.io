@@ -67,14 +67,14 @@ font-size: 32px;
 transition: 0.3s ease;
 }
 .sidenav a:hover {
-color: orangered;
+color: LightSeaGreen ;
 }
 .openBtn{
 cursor: pointer;
 transition: 0.5s;
 }
 .openBtn:hover{
-color: orangered;
+color: LightSeaGreen ;
 }
 .closebtn {
 cursor: pointer;
@@ -84,7 +84,7 @@ font-size: 36px;
 transition: 0.5s;
 }
 .closebth:hover{
-color: orangered;
+color: LightSeaGreen;
 }
 @media screen and (max-width: 450px) {
 .sidenav a {
@@ -98,5 +98,5 @@ width: 8px;
 background: black;
 }
 ::-webkit-scrollbar-thumb {
-background: orangered;
+background: LightSeaGreen;
 }
