@@ -1,6 +1,6 @@
 {
-    "short_name": "Archiva",
-    "name": "Archiva by AnxSion  ",
+    "short_name": "Phantom",
+    "name": "Phantom by AnxSion  ",
     "icons": [
       {
         "src": "/img/pwa/icon-192.png",
@@ -27,15 +27,15 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "https://anxsion.github.io/app/Archiva/index.html",
-    "background_color": "orangered",
+    "start_url": "https://anxsion.github.io/app/Phantom/index.html",
+    "background_color": "LightSeaGreen",
     "display": "standalone",
-    "scope": "/app/Archiva",
-    "theme_color": "orangered",
-    "description": "Progressive Web Application of Archiva. Powered by AnxSion",
+    "scope": "/app/Phantom",
+    "theme_color": "LightSeaGreen",
+    "description": "Progressive Web Application of Phantom. Powered by AnxSion",
     "url": "https://anxsion.github.io/app/Archiva/index.html",
-    "manifestUrl": "https://anxsion.github.io/app/Archiva/manifest.json",
+    "manifestUrl": "https://anxsion.github.io/app/Phantom/manifest.json",
     "lang": "en",
     "orientation": "portrait",
-    "categories": ["art", "music", "store"]
+    "categories": ["cryptography", "education", "utility"]
   }
