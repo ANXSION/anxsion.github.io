@@ -107,13 +107,22 @@
 							console.log(modifier);
 							output+=extract;
 						}
-							
-					}
+						else{
+							extract = String.fromCharCode(modifier);
+							console.log(modifier);
+							output+=extract;
+						}
+					}	
 					else if (code >= 97 && code <= 122) {
 						modifier=code+key;
 						if(modifier > 122){
 							modifier=(97+(modifier-122));
 							extract = String.fromCharCode(modifier);
+							output+=extract;
+						}
+						else{
+							extract = String.fromCharCode(modifier);
+							console.log(modifier);
 							output+=extract;
 						}
 					}
@@ -133,13 +142,22 @@
 							extract = String.fromCharCode(modifier);
 							output+=extract;
 						}
-							
+						else{
+							extract = String.fromCharCode(modifier);
+							console.log(modifier);
+							output+=extract;
+						}	
 					}
 					else if (code >= 97 && code <= 122) {
 						modifier=code+key;
 						if(modifier < 97){
 							modifier=(122-(97-modifier));
 							extract = String.fromCharCode(modifier);
+							output+=extract;
+						}
+						else{
+							extract = String.fromCharCode(modifier);
+							console.log(modifier);
 							output+=extract;
 						}
 					}
