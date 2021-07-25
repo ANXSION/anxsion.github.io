@@ -6,12 +6,15 @@ font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
 font-display:swap;
 position: relative;
 -webkit-tap-highlight-color:transparent;
--webkit-user-select: none;
--moz-user-select: none;
+-webkit-user-select: text;
+-moz-user-select: text;
 overflow: visible;
 transition: 0.7s ease;
 scroll-behavior: smooth;
 min-height: 100%;
+}
+::selection {
+  background: red;
 }
 footer{
 width: 100%;
