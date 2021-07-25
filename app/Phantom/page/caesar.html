@@ -64,7 +64,7 @@
   			<input type="radio" id="decrypt" name="execution" value="decrypt">
   			<label for="decrypt">Decrypt</label><br><br>
 			
-			<button onclick="execute()" class="cipherbutton">Execute</button><br><br>
+			<button onclick="cipher()" class="cipherbutton">Execute</button><br><br>
 			
 			<h3>Output:</h3>
 			<output class="output" name="output" value=" "></output><br><br>
@@ -86,7 +86,7 @@
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('/app/Phantom/phantom.js');
 		}
-		function execute(){
+		function cipher(){
 			let appendcheck=0;
 			let executecheck = document.getElementById("encrypt").checked;
 			let key=document.getElementById("key").value;
