@@ -91,54 +91,36 @@
 			var key=document.getElementById("key").value;
 			var output="";
 			var input = document.getElementById("input").value;
-			console.log(executecheck);
-			console.log(key);
-			console.log(input);
 			if (executecheck==true){
 				for (var i = 0; i < input.length; i++) {
 					var extract = input[i];
 					var code = input.charCodeAt(i);
-					console.log(extract);
-					console.log(code);
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
-						console.log(code);
-						console.log(key);
-						modifier=code+key;
-						console.log(modifier);
+						modifier=(+code) + (+key);
 						if(modifier > 90){
-							var temp=modifier-90;
-							extract = String.fromCharCode((temp+65));
-							console.log(temp);
+							var temp=((+modifier)-90)+65;
+							extract = String.fromCharCode(temp);
 							output+=extract;
-							console.log(output);
 						}
 						else{
-							console.log(extract);
 							output+=extract;
-							console.log(output);
 						}
 					}	
 					else if (code >= 97 && code <= 122) {
 						var modifier=0;
-						modifier=code+key;
-						console.log(modifier);
+						modifier=(+code) + (+key);
 						if(modifier > 122){
-							var temp=modifier-122;
-							extract = String.fromCharCode((temp+95));
-							console.log(temp);
+							var temp=((+modifier)-122)+95);
+							extract = String.fromCharCode(temp);
 							output+=extract;
-							console.log(output);
 						}
 						else{
-							console.log(extract);
 							output+=extract;
-							console.log(output);
 						}
 					}
 					else {
 						output += extract;
-						console.log(output);
 					}
 				}
 			}
@@ -148,40 +130,30 @@
 					var code = input.charCodeAt(i);
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
-						modifier=code+key;
-						console.log(modifier);
+						modifier=(+code) + (+key);
 						if(modifier < 65){
-							temp=65-modifier;
-							extract = String.fromCharCode((90-temp));
-							console.log(temp);
+							temp=90-(65-(+modifier));
+							extract = String.fromCharCode(temp);
 							output+=extract;
-							console.log(output);
 						}
 						else{
-							console.log(extract);
 							output+=extract;
-							console.log(output);
 						}	
 					}
 					else if (code >= 97 && code <= 122) {
 						var modifier=0;
-						modifier=code+key;
-						console.log(modifier);
+						modifier=(+code) + (+key);
 						if(modifier < 97){
-							temp=97-modifier;
+							temp=122(97-(+modifier));
 							extract = String.fromCharCode((122-temp));
-							console.log(temp);
 							output+=extract;
-							console.log(output);
 						}
 						else{
-							console.log(extract);
 							output+=extract;
 						}
 					}
 					else {
 						output += extract;
-						console.log(output);
 					}
 				}
 			}
