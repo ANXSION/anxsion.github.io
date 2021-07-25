@@ -87,12 +87,6 @@
 		function cipher(){
 			var executecheck = document.getElementById("encrypt").checked;
 			var key=13;
-			if (key>25){
-				key=25;
-			}
-			else if (key<0 || key==null){
-				key=0;
-			}
 			var output="";
 			var input = document.getElementById("input").value;
 			if (executecheck==true){
@@ -117,7 +111,7 @@
 						modifier=+ code + + key;
 						if(modifier > 122){
 							var temp=modifier-122;
-							extract = String.fromCharCode(temp+95);
+							extract = String.fromCharCode(temp+97);
 							output+=extract;
 						}
 						else{
