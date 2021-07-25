@@ -112,10 +112,10 @@
 					}	
 					else if (code >= 97 && code <= 122) {
 						var modifier=0;
-						modifier=code + key;
+						modifier=+ code + + key;
 						if(modifier > 122){
 							var temp=modifier-122;
-							extract = String.fromCharCode((temp+95));
+							extract = String.fromCharCode(temp+95);
 							output+=extract;
 						}
 						else{
@@ -133,10 +133,10 @@
 					var code = input.charCodeAt(i);
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
-						modifier=code + key;
+						modifier=+ code + + key;
 						if(modifier < 65){
 							temp=65-modifier;
-							extract = String.fromCharCode((90-temp));
+							extract = String.fromCharCode(90-temp);
 							output+=extract;
 						}
 						else{
@@ -145,7 +145,7 @@
 					}
 					else if (code >= 97 && code <= 122) {
 						var modifier=0;
-						modifier=code + key;
+						modifier=+ code + + key;
 						if(modifier < 97){
 							temp=97-modifier;
 							extract = String.fromCharCode((122-temp));
