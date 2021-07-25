@@ -105,8 +105,8 @@
 						modifier=code+key;
 						console.log(modifier);
 						if(modifier > 90){
-							var temp=(modifier-90)+65;
-							extract = String.fromCharCode(temp);
+							var temp=modifier-90;
+							extract = String.fromCharCode((temp+65));
 							console.log(temp);
 							output+=extract;
 							console.log(output);
@@ -122,8 +122,8 @@
 						modifier=code+key;
 						console.log(modifier);
 						if(modifier > 122){
-							var temp=(modifier-122)+97;
-							extract = String.fromCharCode(temp);
+							var temp=modifier-122;
+							extract = String.fromCharCode((temp+95));
 							console.log(temp);
 							output+=extract;
 							console.log(output);
@@ -149,8 +149,8 @@
 						modifier=code+key;
 						console.log(modifier);
 						if(modifier < 65){
-							temp=90-(65-modifier);
-							extract = String.fromCharCode(temp);
+							temp=65-modifier;
+							extract = String.fromCharCode((90-temp));
 							console.log(temp);
 							output+=extract;
 							console.log(output);
@@ -166,8 +166,8 @@
 						modifier=code+key;
 						console.log(modifier);
 						if(modifier < 97){
-							temp=122-(97-modifier);
-							extract = String.fromCharCode(temp);
+							temp=97-modifier;
+							extract = String.fromCharCode((122-temp));
 							console.log(temp);
 							output+=extract;
 							console.log(output);
