@@ -99,7 +99,7 @@
 						var modifier=0;
 						modifier=(+code) + (+key);
 						if(modifier > 90){
-							var temp=((+modifier)-90)+65;
+							var temp=(modifier-90)+65;
 							extract = String.fromCharCode(temp);
 							output+=extract;
 						}
@@ -111,7 +111,7 @@
 						var modifier=0;
 						modifier=(+code) + (+key);
 						if(modifier > 122){
-							var temp=((+modifier)-122)+95);
+							var temp=(modifier-122)+95);
 							extract = String.fromCharCode(temp);
 							output+=extract;
 						}
@@ -132,7 +132,7 @@
 						var modifier=0;
 						modifier=(+code) + (+key);
 						if(modifier < 65){
-							temp=90-(65-(+modifier));
+							temp=90-(65-modifier);
 							extract = String.fromCharCode(temp);
 							output+=extract;
 						}
@@ -144,7 +144,7 @@
 						var modifier=0;
 						modifier=(+code) + (+key);
 						if(modifier < 97){
-							temp=122(97-(+modifier));
+							temp=122(97-modifier);
 							extract = String.fromCharCode((122-temp));
 							output+=extract;
 						}
