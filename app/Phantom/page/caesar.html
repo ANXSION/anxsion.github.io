@@ -43,21 +43,33 @@
 	</nav>
  	<div class="ciphercontainer">
 		<div align="center">
-		  <h1>PHANTOM</h1>
-      <h2>Caesar Cipher</h2>
-		  <br>
-			<p>The Caesar cipher is one of the earliest known and simplest ciphers. It is a type of substitution cipher in which each letter in the plaintext is 'shifted' a certain number of places down the alphabet. For example, with a shift of 1, A would be replaced by B, B would become C, and so on. </p>
-	  </div>
+		<h1>PHANTOM</h1>
+      		<h2>Caesar Cipher</h2>
+		<br>
+		<p>The Caesar cipher is one of the earliest known and simplest ciphers. It is a type of substitution cipher in which each letter in the plaintext is 'shifted' a certain number of places down the alphabet. For example, with a shift of 1, A would be replaced by B, B would become C, and so on. </p>
 		
-  	<div align="center">
-			<form action="/action_page.php">
-  		<label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" value="John"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" value="Doe"><br><br>
-  <input type="submit" value="Submit">
-</form> 
-  	</div>	
+		<p>More complex encryption schemes such as the Vigenère cipher employ the Caesar cipher as one element of the encryption process. The widely known ROT13 'encryption' is simply a Caesar cipher with an offset of 13. The Caesar cipher offers essentially no communication security, and it will be shown that it can be easily broken even by hand.</p>
+	 </div>
+	<br><br>
+		<form>
+  			<label for="input">Input:</label><br>
+  			<textarea class="" type="text" id="input" name="input" value="input" required="required"></textarea><br><br>
+			
+			<label for="key">Key: (0-26)</label><br>
+  			<input type="number" id="key" name="key" value="0" min="0" max="26" required="required"><br><br>
+			
+			<p>Execution type</p>
+			<input type="radio" id="encrypt" name="execution" value="encrypt" checked>
+  			<label for="encrypt">Encrypt</label><br>
+  			<input type="radio" id="decrypt" name="execution" value="decrypt">
+  			<label for="encrypt">Decrypt</label><br>
+			
+			<button onclick="" class="cipherbutton">Execute</button><br><br>
+  			
+			<label for="output">Output:</label><br>
+			<output class="output" name="output" value=""></output>
+			<button onclick="" class="cipherbutton">Copy Output</button><br><br>
+		</form> 
 
 </div>
 	
