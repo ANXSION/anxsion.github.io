@@ -101,8 +101,9 @@
 						console.log(modifier);
 						if(modifier > 90){
 							var temp=modifier-90;
-							extract = String.fromCharCode((temp+65));
+							extract = String.fromCharCode(temp+65);
 							output+=extract;
+							console.log(modifier);
 						}
 						else{
 							output+=extract;
