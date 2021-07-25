@@ -106,7 +106,7 @@
 							console.log(modifier);
 						}
 						else{
-							
+							extract = String.fromCharCode(modifier);
 							output+=extract;
 							console.log(output);
 						}
@@ -120,6 +120,7 @@
 							output+=extract;
 						}
 						else{
+							extract = String.fromCharCode(modifier);
 							output+=extract;
 						}
 					}
@@ -141,6 +142,7 @@
 							output+=extract;
 						}
 						else{
+							extract = String.fromCharCode(modifier);
 							output+=extract;
 						}	
 					}
@@ -149,10 +151,11 @@
 						modifier=+ code + + key;
 						if(modifier < 97){
 							temp=97-modifier;
-							extract = String.fromCharCode((122-temp));
+							extract = String.fromCharCode(122-tem));
 							output+=extract;
 						}
 						else{
+							extract = String.fromCharCode(modifier);
 							output+=extract;
 						}
 					}
