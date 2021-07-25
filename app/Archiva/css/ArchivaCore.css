@@ -15,6 +15,7 @@ min-height: 100%;
 }
 ::selection {
   background: orangered;
+  color:white;
 }
 footer{
 width: 100%;
