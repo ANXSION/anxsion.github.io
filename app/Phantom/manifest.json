@@ -28,10 +28,10 @@
       }
     ],
     "start_url": "https://anxsion.github.io/app/Phantom/index.html",
-    "background_color": "LightSeaGreen",
+    "background_color": "aqua",
     "display": "standalone",
     "scope": "/app/Phantom",
-    "theme_color": "LightSeaGreen",
+    "theme_color": "aqua",
     "description": "Progressive Web Application of Phantom. Powered by AnxSion",
     "url": "https://anxsion.github.io/app/Archiva/index.html",
     "manifestUrl": "https://anxsion.github.io/app/Phantom/manifest.json",
