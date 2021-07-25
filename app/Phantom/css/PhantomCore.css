@@ -67,14 +67,14 @@ font-size: 32px;
 transition: 0.3s ease;
 }
 .sidenav a:hover {
-color: LightSeaGreen ;
+color: aqua ;
 }
 .openBtn{
 cursor: pointer;
 transition: 0.5s;
 }
 .openBtn:hover{
-color: LightSeaGreen ;
+color: aqua ;
 }
 .closebtn {
 cursor: pointer;
@@ -84,7 +84,7 @@ font-size: 36px;
 transition: 0.5s;
 }
 .closebth:hover{
-color: LightSeaGreen;
+color: aqua;
 }
 @media screen and (max-width: 450px) {
 .sidenav a {
