@@ -96,13 +96,12 @@
 						var modifier=0;
 						modifier= + code + + key;
                                                 if(modifier == 90){
-							
 							extract = String.fromCharCode(65);
 							output+=extract;
 						}
 						else if(modifier > 90){
 							var temp=modifier-90;
-							extract = String.fromCharCode(temp+65);
+							extract = String.fromCharCode(temp+64);
 							output+=extract;
 						}
 						else{
@@ -114,13 +113,12 @@
 						var modifier=0;
 						modifier=+ code + + key;
                                                 if(modifier == 122){
-							
 							extract = String.fromCharCode(97);
 							output+=extract;
 						}
 						else if(modifier > 122){
 							var temp=modifier-122;
-							extract = String.fromCharCode(temp+97);
+							extract = String.fromCharCode(temp+96);
 							output+=extract;
 						}
 						else{
@@ -141,13 +139,12 @@
 						var modifier=0;
 						modifier=+ code - + key;
                                                 if(modifier == 65){
-							
 							extract = String.fromCharCode(90);
 							output+=extract;
 						}
 						else if(modifier < 65){
 							temp=65-modifier;
-							extract = String.fromCharCode(90-temp);
+							extract = String.fromCharCode(89-temp);
 							output+=extract;
 						}
 						else{
@@ -159,13 +156,12 @@
 						var modifier=0;
 						modifier=+ code - + key;
                                                 if(modifier == 97){
-							
 							extract = String.fromCharCode(122);
 							output+=extract;
 						}
 						if(modifier < 97){
 							temp=97-modifier;
-							extract = String.fromCharCode(122-temp);
+							extract = String.fromCharCode(121-temp);
 							output+=extract;
 						}
 						else{
