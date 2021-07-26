@@ -139,7 +139,7 @@
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
 						modifier=+ code - + key;
-						else if(modifier < 65){
+						if(modifier < 65){
 							temp=65-modifier;
 							extract = String.fromCharCode(91-temp);
 							output+=extract;
