@@ -66,7 +66,7 @@
 			
 			<h3>Output:</h3>
 			<output class="output" name="output" id="output" value=" "></output><br><br>
-			<button onclick="" class="cipherbutton">Copy Output</button><br><br>
+			<button onclick="copyoutput()" class="cipherbutton">Copy output</button><br><br>
 		</div>
 
 </div>
@@ -182,7 +182,14 @@
 		document.getElementById("output").innerHTML = output;
 		}
 		
-		
+		function copyoutput() {
+ 			var copyText = document.getElementById("output");
+	  		copyText.select();
+  			copyText.setSelectionRange(0, 99999);
+		 	document.execCommand("copy");
+  			alert("Data Copied.");
+		}
+	
 		function openNav() {
 			document.getElementById("mySidenav").style.visibility = "visible";
 			document.getElementById("mySidenav").style.opacity = "1";
