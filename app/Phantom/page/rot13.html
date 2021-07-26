@@ -41,9 +41,6 @@
 		</div>
 		<span class="openBtn" onclick="openNav()">&Xi;</span>
 	</nav>
-<div class="backbutton" align="left">
-	<h2 class="back"><a  href="../index.html">&lt; Back</a></h2>
-</div>
  	<div class="ciphercontainer">
 		<div align="center">
 		<h1>ROT-13</h1>
@@ -69,7 +66,7 @@
 			
 			<h3>Output:</h3>
 			<output class="output" name="output" id="output" value=" "></output><br><br>
-			<button onclick="" class="ciphercopy">Copy Output</button><br><br>
+			<button onclick="" class="cipherbutton">Copy Output</button><br><br>
 		</div>
 
 </div>
@@ -93,45 +90,6 @@
 			var output="";
 			var input = document.getElementById("input").value;
 			if (executecheck==true){
-				for (var i = 0; i < input.length; i++) {
-					var extract = input[i];
-					var code = input.charCodeAt(i);
-					if (code >= 65 && code <= 90) {
-						var modifier=0;
-						modifier= + code + + key;
-						if(modifier > 90){
-							var temp=modifier-90;
-							extract = String.fromCharCode(temp+65);
-							output+=extract;
-						}
-						else{
-							extract = String.fromCharCode(modifier);
-							output+=extract;
-						}
-					}	
-					else if (code >= 97 && code <= 122) {
-						var modifier=0;
-						modifier=+ code + + key;
-						if(modifier > 122){
-							var temp=modifier-122;
-							extract = String.fromCharCode(temp+97);
-							output+=extract;
-						}
-						else{
-							extract = String.fromCharCode(modifier);
-							output+=extract;
-						}
-					}
-					else {
-						output += extract;
-					}
-				}
-			}
-			else{
-				for (var i = 0; i < input.length; i++) {
-					var extract = input[i];
-					var code = input.charCodeAt(i);
-					if (executecheck==true){
 				for (var i = 0; i < input.length; i++) {
 					var extract = input[i];
 					var code = input.charCodeAt(i);
