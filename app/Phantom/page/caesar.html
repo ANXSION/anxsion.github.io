@@ -85,6 +85,7 @@
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register('/app/Phantom/phantom.js');
 		}
+		
 		function cipher(){
 			var executecheck = document.getElementById("encrypt").checked;
 			var key=document.getElementById("key").value;
@@ -189,6 +190,13 @@
 		document.getElementById("output").innerHTML = output;
 		}
 		
+		function copyoutput() {
+ 			var copyText = document.getElementById("output");
+	  		copyText.select();
+  			copyText.setSelectionRange(0, 99999);
+		 	document.execCommand("copy");
+  			alert("Data Copied.");
+		}
 		
 		function openNav() {
 			document.getElementById("mySidenav").style.visibility = "visible";
