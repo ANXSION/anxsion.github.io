@@ -3,3 +3,23 @@
   width=100%
   height=auto;
 }
+.back{
+    height: auto;
+    font-size: 20px;
+    width: 100%;
+    background: black;
+    color: white;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+}
+.backbutton{
+    padding: 5px;
+    height: auto;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.backbutton a{
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+}
