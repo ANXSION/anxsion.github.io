@@ -23,3 +23,13 @@
     color: white;
     text-decoration: none;
 }
+.cipherbutton {
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background: black;
+    border: none;
+    outline-color: white;
+    width: 30%;
+    height: 40px;
+}
