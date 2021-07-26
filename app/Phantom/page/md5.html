@@ -75,9 +75,7 @@
 		}
 		
 		function cipher(){
-			var string=document.getElementById("input").value;
-			var MD5 = function (string) {
-
+		var string=document.getElementById("input").value;
    function RotateLeft(lValue, iShiftBits) {
            return (lValue<<iShiftBits) | (lValue>>>(32-iShiftBits));
    }
@@ -274,9 +272,7 @@
 
    	var temp = WordToHex(a)+WordToHex(b)+WordToHex(c)+WordToHex(d);
 
-   	return temp.toLowerCase();
-}
-document.getElementById("output").innerHTML = MD5;
+   	document.getElementById("output").innerHTML = temp.toLowerCase();
 }
 		
 		function openNav() {
