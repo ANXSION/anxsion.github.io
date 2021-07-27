@@ -14,9 +14,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="Description" content="Phantom. Powered by AnxSion">
-	<meta name="theme-color" content="turquoise">
-	<meta name="msapplication-navbutton-color" content="turquoise">
-	<meta name="apple-mobile-web-app-status-bar-style" content="turquoise">
+	<meta name="theme-color" content="Black">
+	<meta name="msapplication-navbutton-color" content="Black">
+	<meta name="apple-mobile-web-app-status-bar-style" content="Black">
 	<script defer src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -149,6 +149,11 @@
 					if (code >= 65 && code <= 90) {
 						var modifier=0;
 						modifier=+ code - + key;
+						if (modifier==65){
+							temp=65-modifier;
+							extract = String.fromCharCode(90-temp);
+							output+=extract;
+						}
 						if(modifier < 65){
 							temp=65-modifier;
 							extract = String.fromCharCode(91-temp);
@@ -162,7 +167,12 @@
 					else if (code >= 97 && code <= 122) {
 						var modifier=0;
 						modifier=+ code - + key;
-						if(modifier < 97){
+						if (modifier==97){
+							temp=97-modifier;
+							extract = String.fromCharCode(122-temp);
+							output+=extract;
+						}
+						else if(modifier < 97){
 							temp=97-modifier;
 							extract = String.fromCharCode(123-temp);
 							output+=extract;
