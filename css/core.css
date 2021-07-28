@@ -48,8 +48,8 @@ font-size: 34px;
 height: 100%;
 width: 100%;
 z-index: 2;
-background-color: white;
-color:black;
+background-color: black;
+color:white;
 overflow: hidden;
 position: fixed;
 top: 0;
@@ -59,7 +59,7 @@ visibility:hidden;
 opacity: 0;
 }
 .sidenav p{
-color:black;
+color:white;
 font-size: 40px;
 }
 .sidenav a {
@@ -67,7 +67,7 @@ font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
 margin-top: 40px;
 padding: 8px;
 text-decoration: none;
-color: black;
+color: white;
 display: block;
 font-size: 32px;
 transition: 0.3s ease;
