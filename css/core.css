@@ -49,6 +49,7 @@ height: 100%;
 width: 100%;
 z-index: 2;
 background-color: white;
+color:black;
 overflow: hidden;
 position: fixed;
 top: 0;
