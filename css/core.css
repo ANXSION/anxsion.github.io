@@ -58,6 +58,7 @@ visibility:hidden;
 opacity: 0;
 }
 .sidenav p{
+color:black;
 font-size: 40px;
 }
 .sidenav a {
