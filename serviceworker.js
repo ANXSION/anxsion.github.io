@@ -1,12 +1,12 @@
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "AnxSion";
-const OFFLINE_URL = ["/offline.html","/favicon.png","/img/project/OParchiva.webm","/img/project/OPneptune.webm","/img/project/OPsao.webm"];
+const OFFLINE_URL = [];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-      await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+      await cache.addAll("/offline.html","/favicon.png","/img/project/OParchiva.webm","/img/project/OPneptune.webm","/img/project/OPsao.webm");
     })()
   );
   // Force the waiting service worker to become the active service worker.
