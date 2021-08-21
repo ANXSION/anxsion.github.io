@@ -27,14 +27,14 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "https://anxsion.github.io/app/Archiva/index.html",
+    "start_url": "index.html",
     "background_color": "orangered",
     "display": "standalone",
     "scope": "/app/Archiva",
     "theme_color": "orangered",
     "description": "Progressive Web Application of Archiva. Powered by AnxSion",
-    "url": "https://anxsion.github.io/app/Archiva/index.html",
-    "manifestUrl": "https://anxsion.github.io/app/Archiva/manifest.json",
+    "url": "index.html",
+    "manifestUrl": "manifest.json",
     "lang": "en",
     "orientation": "portrait",
     "categories": ["art", "music", "store"]
