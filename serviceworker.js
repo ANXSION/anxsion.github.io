@@ -1,6 +1,6 @@
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "AnxSion";
-const OFFLINE_URL = ['/offline.html','/css/core.css' ,'img/project/OParchiva.webm','img/project/OPneptune.webm','img/project/OPsao.webm',];
+const OFFLINE_URL = ['/offline.html','/favicon.png','/css/core.css','img/project/OParchiva.webm','img/project/OPneptune.webm','img/project/OPsao.webm',];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
