@@ -6,7 +6,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-      await cache.addAll("/offline.html","/favicon.png","/img/project/OParchiva.webm","/img/project/OPneptune.webm","/img/project/OPsao.webm");
+      await cache.addAll(["/offline.html","/favicon.png","/img/project/OParchiva.webm","/img/project/OPneptune.webm","/img/project/OPsao.webm"]);
     })()
   );
   // Force the waiting service worker to become the active service worker.
