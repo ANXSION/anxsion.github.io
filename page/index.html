@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>ANXSION</title>
+	<link href="../css/core.css" rel="stylesheet"  type="text/css">
+	<link rel="stylesheet" href="../css/index.css" type="text/css">
+	<link rel="preload" href="../css/core.css" as="style">
+	<link rel="prefetch" href="services.html">
+	<link rel="prefetch" href="store.html">
+	<link rel="prerender" href="../offline.html">
+	<link rel="prerender" href="store.html">
+	<link rel="icon" type="images/png" href="../favicon.png">
+	<link rel="apple-touch-icon" href="../img/pwa/icon-192.png">
+	<link rel="manifest" href="../manifest.json">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Description" content="The official website of the AnxSion. Work in progress.">
+	<meta name="theme-color" content="black">
+	<meta name="msapplication-navbutton-color" content="black">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<script defer src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-53Y0LGEE69');
+	</script>
+</head>
+
+<body id="body" class="body">
+	<div id="mySidenav" class="sidenav">
+		<div align="center">
+			<p href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</p>
+			<a href="index.html">HOME</a>
+			<a href="services.html">SERVICES</a>
+			<a href="store.html">STORE</a>	
+		</div>
+	</div>
+<nav Class ="Nav" align="center">
+		<div align="center">
+			<img class="banner" src="../img/banner.webp" width="3000" height="750" alt="Brand">
+		</div>
+		<span class="openBtn" onclick="openNav()">&Xi;</span>
+	</nav>
+	<div align="center">
+		<div class="servicebox">
+			<img class="service" loading="lazy" src="../img/service1.webp" width="1920" height="1080" alt="Technical Services">
+			<button aria-label="Learn More About Our Technical Services" class="servicebtn" onclick="location.href='services.html#technical'">Learn More</button>
+		</div>				
+
+		<div class="servicebox">
+			<img class="service" loading="lazy" src="../img/service2.webp" width="1920" height="1080"   alt="Audio Services">
+			<button aria-label="Learn More About Our Audio Services" class="servicebtn" onclick="location.href='services.html#audio'">Learn More</button>
+		</div>
+
+		<div class="servicebox">
+			<img class="service" loading="lazy" src="../img/service3.webp" width="1920" height="1080"  alt="Art Services">
+			<button aria-label="Learn More About Our Art Services" class="servicebtn" onclick="location.href='services.html#art'">Learn More</button>
+		</div>
+
+		<div class="servicebox">
+			<img class="service" loading="lazy" src="../img/store.webp" width="1920" height="1080"   alt="Store">
+			<button aria-label="Visite Our Online Store" class="servicebtn" onclick="location.href='store.html'">Visit</button>
+		</div>
+	</div>
+	
+	
+	<br>
+
+	
+	<footer align="center">
+		<p><strong>AnxSion &copy; 2021</strong></p>
+		<p>All Rights Reserved.</p>
+	</footer>
+	
+	<script>
+		
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/serviceworker.js');
+		}
+		
+		function openNav() {
+			document.getElementById("mySidenav").style.visibility = "visible";
+			document.getElementById("mySidenav").style.opacity = "1";
+			
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.visibility = "hidden";
+			document.getElementById("mySidenav").style.opacity = "0";
+		}
+	</script>
+</body>
+</html>

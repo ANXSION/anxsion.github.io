@@ -27,10 +27,10 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "https://anxsion.github.io",
+    "start_url": "https://anxsion.github.io/page/index.html",
     "background_color": "white",
     "display": "standalone",
-    "scope": "/",
+    "scope": "/page",
     "theme_color": "red",
     "shortcuts": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "description": "Progressive Web Application of AnxSion",
-    "url": "https://anxsion.github.io/index.html",
+    "url": "https://anxsion.github.io/page/index.html",
     "manifestUrl": "https://anxsion.github.io/manifest.json",
     "lang": "en",
     "orientation": "portrait",
