@@ -1,0 +1,11 @@
+.policy{
+width: 99%;
+margin: 1%;
+}
+.policyheader{
+    height: auto;
+    font-size: 20px;
+    width: 99%;
+    font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+    cursor: pointer;
+}

@@ -23,8 +23,8 @@
 }
 
 .servicebtn:hover {
-    color: black;
-    background: red;
+    color: white;
+    background: #86DC3D;
 }
 
 @media screen and (max-width: 480px) {
@@ -39,8 +39,8 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .servicebtn {
         font-size: 12px;
-        left: 8%;
-        width: 30%;
+        left: 5%;
+        width: 20%;
         height: 34px;
     }
 }
@@ -48,7 +48,7 @@
 @media screen and (min-width: 769px) {
     .servicebtn {
         font-size: 14px;
-        left: 10%;
+        left: 5%;
         width: 18%;
         height: 34px;
     }

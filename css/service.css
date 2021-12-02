@@ -1,6 +1,7 @@
 .policybtn {
     cursor: pointer;
-    background: white;
+    color: white;
+    background-color: black;
     border: none;
     outline: none;
     width: 40%;
@@ -9,14 +10,13 @@
 }
 
 .policybtn:hover {
-    color: black;
-    background: red;
+    color: white;
+    background: #86DC3D;
 }
 
 .servicefull {
-    background: black;
-    color: white;
-    width: 100%;
+    margin: 1%;
+    width: 99%;
     font-size: 20px;
 }
 
@@ -25,6 +25,20 @@
 }
 
 .servicebanner {
-    width: 100%;
+    width: 99%;
     height: auto;
+}
+
+.storename{
+    height: auto;
+    font-size: 20px;
+    width: 99%;
+    font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.storename:hover{
+background-color: #86DC3D;
+transition: 0.3s ease;
 }

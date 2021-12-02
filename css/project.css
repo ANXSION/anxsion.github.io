@@ -7,6 +7,7 @@
     width: 100%;
     height: auto;
     background-color:black;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
 }
@@ -50,7 +51,7 @@ cursor:pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
 }
-@media only screen and (max-width: 992px) {\
+@media only screen and (max-width: 992px) {
 projectlayercontainer {
     width: 100%;
 }

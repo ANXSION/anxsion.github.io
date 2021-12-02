@@ -30,8 +30,8 @@
     "start_url": "https://anxsion.github.io/page/index.html",
     "background_color": "white",
     "display": "standalone",
-    "scope": "/page",
-    "theme_color": "red",
+    "scope": "/",
+    "theme_color": "#86DC3D",
     "shortcuts": [
       {
         "name": "Visit Store",

@@ -6,51 +6,37 @@ font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
 font-display:swap;
 position: relative;
 -webkit-tap-highlight-color:transparent;
+user-select: text;
 -webkit-user-select: text;
 -moz-user-select: text;
 overflow: visible;
 transition: 0.7s ease;
 scroll-behavior: smooth;
 min-height: 100%;
+min-width: 360px;
+padding-bottom:70px;
 }
 ::selection {
-  background: red;
+  background:#86DC3D;
   color:white;
 }
-footer{
-width: 100%;
-}
 .banner{
+top:0;
 margin-top:3px;
 height: auto;
-width: 12%;
-}
-@media screen and (max-width: 480px) {
-.banner{
-width: 25%;
-}
-}
-@media (min-width: 481px) and (max-width: 768px) {
-.banner{
-width: 15%;
-}
-}
-@media screen and (min-width: 769px) {
-.banner{
-width: 12%;
-}
+width: 20%;
 }
 .Nav{
 background: white;
 font-size: 34px;
 }
 .sidenav {
-height: 100%;
+padding-top: 4.8%;
+height: 150%;
 width: 100%;
 z-index: 2;
 background-color: black;
 color:white;
-overflow: hidden;
 position: fixed;
 top: 0;
 left:0;
@@ -59,6 +45,7 @@ visibility:hidden;
 opacity: 0;
 }
 .sidenav p{
+margin-top: 0px;
 color:white;
 font-size: 40px;
 }
@@ -73,14 +60,17 @@ font-size: 32px;
 transition: 0.3s ease;
 }
 .sidenav a:hover {
-color: red;
+color: #86DC3D;
+}
+.sidenav p:hover {
+  color: #86DC3D;
 }
 .openBtn{
 cursor: pointer;
 transition: 0.5s;
 }
 .openBtn:hover{
-color: red;
+color: #86DC3D;
 }
 .closebtn {
 cursor: pointer;
@@ -90,12 +80,7 @@ font-size: 36px;
 transition: 0.5s;
 }
 .closebth:hover{
-color:red;
-}
-@media screen and (max-width: 450px) {
-.sidenav a {
-font-size: 30px;
-}
+color:#86DC3D;
 }
 ::-webkit-scrollbar {
 width: 8px;
@@ -104,5 +89,24 @@ width: 8px;
 background: black;
 }
 ::-webkit-scrollbar-thumb {
-background: red;
+background: #86DC3D;
+}
+footer{
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+@media screen and (max-width: 480px) {
+  .sidenav a {
+  font-size: 30px;
+  }
+  }
+@media screen and (min-width: 769px) {
+.banner{
+width: 18%;
+}
+.sidenav{
+padding-top: 4.5%;
+}
 }
