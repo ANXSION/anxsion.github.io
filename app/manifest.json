@@ -1,7 +1,6 @@
 {
     "short_name": "AnxSion",
     "name": "AnxSion",
-    "id":"/app/index.html",
     "icons": [
       {
         "src": "img/pwa/icon-192.png",
@@ -28,7 +27,7 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "/app/index.html",
+    "start_url": "https://anxsion.github.io/app/index.html",
     "background_color": "white",
     "display": "standalone",
     "scope": "/",
