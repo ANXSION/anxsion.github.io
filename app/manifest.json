@@ -31,7 +31,7 @@
     "start_url": "/app/index.html",
     "background_color": "white",
     "display": "standalone",
-    "scope": "/app",
+    "scope": "/",
     "theme_color": "#86DC3D",
     "shortcuts": [
       {
