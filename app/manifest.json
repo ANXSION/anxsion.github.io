@@ -28,7 +28,7 @@
         "purpose": "maskable"
       }
     ],
-    "start_url": "https://anxsion.github.io/app/page/index.html",
+    "start_url": "/app",
     "background_color": "white",
     "display": "standalone",
     "scope": "/app",
