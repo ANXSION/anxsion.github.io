@@ -1,0 +1,57 @@
+{
+    "short_name": "AnxSion",
+    "name": "AnxSion",
+    "icons": [
+      {
+        "src": "img/pwa/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any"
+      },
+      {
+        "src": "img/pwa/maskable_icon_192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
+        "src": "img/pwa/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any"
+      },
+      {
+        "src": "img/pwa/maskable_icon_512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      }
+    ],
+    "start_url": "https://anxsion.github.io/app/page/index.html",
+    "background_color": "white",
+    "display": "standalone",
+    "scope": "/app",
+    "theme_color": "#86DC3D",
+    "shortcuts": [
+      {
+        "name": "Visit Store",
+        "short_name": "Store",
+        "description": "Visit the AnxSion Store",
+        "url": "app/page/store.html",
+        "icons": [{ "src": "img/pwa/store.png", "sizes": "192x192" }]
+      },
+      {
+        "name": "View Services",
+        "short_name": "Services",
+        "description": "View available services",
+        "url": "app/page/services.html",
+        "icons": [{ "src": "img/pwa/services.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "Progressive Web Application of AnxSion",
+    "url": "https://anxsion.github.io/app/page/index.html",
+    "manifestUrl": "https://anxsion.github.io/app/manifest.json",
+    "lang": "en",
+    "orientation": "portrait",
+    "categories": ["art", "music", "store"]
+  }

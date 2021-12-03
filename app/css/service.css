@@ -1,7 +1,7 @@
 .policybtn {
     cursor: pointer;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     border: none;
     outline: none;
     width: 40%;
@@ -15,9 +15,11 @@
 }
 
 .servicefull {
-    margin: 1%;
-    width: 99%;
+    padding: 1%;
+    width: 98%;
     font-size: 20px;
+    background-color: black;
+    color: white;
 }
 
 .servicefull p {
@@ -35,10 +37,7 @@
     width: 99%;
     font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
     background-color: black;
-    color: white;
+    color: #86DC3D;
     cursor: pointer;
 }
-.storename:hover{
-background-color: #86DC3D;
-transition: 0.3s ease;
-}
+

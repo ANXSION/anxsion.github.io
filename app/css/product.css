@@ -1,4 +1,7 @@
 .itempanel {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     position: relative;
     display: block;
     animation: phase 2s ease;

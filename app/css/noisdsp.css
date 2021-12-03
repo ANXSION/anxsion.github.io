@@ -1,11 +1,19 @@
-.policy{
-width: 99%;
-margin: 1%;
+.noisdsp{
+width: 98%;
+padding: 1%;
+background-color: black;
+color: white;
 }
-.policyheader{
+
+.noisname{
     height: auto;
     font-size: 20px;
     width: 99%;
     font-family:Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
-    cursor: pointer;
+}
+
+.sdklink{
+    font-size: 18px;
+    text-decoration: underline;
+    color: white;
 }

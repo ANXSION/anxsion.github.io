@@ -4,18 +4,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>ANXSION</title>
-	<link rel="stylesheet" href="css/core.css" type="text/css">
-	<link rel="stylesheet" href="css/index.css" type="text/css">
-	<link rel="preload" href="css/core.css" as="style">
-	<link rel="prefetch" href="page/services.html">
-	<link rel="prefetch" href="page/store.html">
-	<link rel="prerender" href="offline.html">
-	<link rel="prerender" href="page/project.html">
-	<link rel="prerender" href="page/store.html">
-	<link rel="icon" type="images/png" href="favicon.png">
+	<link rel="stylesheet" href="app/css/core.css" type="text/css">
+	<link rel="stylesheet" href="app/css/index.css" type="text/css">
+	<link rel="preload" href="app/css/core.css" as="style">
+	<link rel="prefetch" href="app/page/services.html">
+	<link rel="prefetch" href="app/page/store.html">
+	<link rel="prerender" href="app/offline.html">
+	<link rel="prerender" href="app/page/noisdsp.html">
+	<link rel="prerender" href="app/page/store.html">
+	<link rel="icon" type="images/png" href="app/favicon.png">
 	<link rel="apple-touch-icon" href="img/pwa/icon-192.png">
 	<link rel="canonical" href="https://anxsion.github.io/">
-	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="app/manifest.json">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,16 +37,16 @@
 <body id="body" class="body">
 
 	<div align="center">
-		<img class="banner" src="img/banner.webp" width="3000" height="750" alt="Brand">
+		<img class="banner" src="app/img/banner.webp" width="3000" height="750" alt="Brand">
 	</div>
 
 	<div id="mySidenav" class="sidenav">
 		<div align="center">
 			<p href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</p>
-			<a href="page/index.html">.home</a>
-			<a href="page/services.html">.anxsion concepts</a>
-			<a href="page/noisdsp.html">.nois DSP</a>
-			<a href="page/store.html">.resupply</a>			
+			<a href="app/page/index.html">.Home</a>
+			<a href="app/page/services.html">.AnxSion Concepts</a>
+			<a href="app/page/noisdsp.html">.NoisDSP</a>
+			<a href="app/page/store.html">.Resupply</a>			
 		</div>
 	</div>
 	
@@ -56,17 +56,17 @@
 
 	<div align="center">
 		<div class="servicebox">
-			<img class="service" loading="lazy" src="img/anxsionconcept.jpg" width="1920" height="1080" alt="Technical Services">
+			<img class="service" loading="lazy" src="app/img/anxsionconcept.jpg" width="1920" height="1080" alt="Technical Services">
 			<button aria-label="Learn More About Our Technical Services" class="servicebtn" onclick="location.href='page/services.html'">Learn More</button>
 		</div>				
 
 		<div class="servicebox">
-			<img class="service" loading="lazy" src="img/noisdsp.jpg" width="1920" height="1080"   alt="Audio Services">
+			<img class="service" loading="lazy" src="app/img/noisdsp.jpg" width="1920" height="1080"   alt="Audio Services">
 			<button aria-label="Learn More About Our Audio Services" class="servicebtn" onclick="location.href='page/services.html'">Learn More</button>
 		</div>
 
 		<div class="servicebox">
-			<img class="service" loading="lazy" src="img/resupply.jpg" width="1920" height="1080"  alt="Art Services">
+			<img class="service" loading="lazy" src="app/img/resupply.jpg" width="1920" height="1080"  alt="Art Services">
 			<button aria-label="Learn More About Our Art Services" class="servicebtn" onclick="location.href='page/store.html'">Learn More</button>
 		</div>
 	</div>
@@ -79,7 +79,7 @@
 	
 	<script>
 		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('serviceworker.js');
+			navigator.serviceWorker.register('app/serviceworker.js');
 		}
 		function openNav() {
 			document.getElementById("mySidenav").style.visibility = "visible";
