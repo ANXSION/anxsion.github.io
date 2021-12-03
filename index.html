@@ -22,7 +22,6 @@
 	<link rel="icon" type="images/png" href="app/favicon.png">
 	<link rel="apple-touch-icon" href="app/img/pwa/icon-192.png">
 	<link rel="canonical" href="https://anxsion.github.io/">
-	<link rel="manifest" href="app/manifest.json">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,9 +84,6 @@
 	</footer>
 	
 	<script>
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('app/serviceworker.js');
-		}
 		function openNav() {
 			document.getElementById("mySidenav").style.visibility = "visible";
 			document.getElementById("mySidenav").style.opacity = "1";
