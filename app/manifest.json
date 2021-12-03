@@ -1,7 +1,7 @@
 {
     "short_name": "AnxSion",
     "name": "AnxSion",
-    "id":"/app/page/index.html",
+    "id":"/app/index.html",
     "icons": [
       {
         "src": "img/pwa/icon-192.png",
