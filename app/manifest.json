@@ -37,14 +37,14 @@
         "name": "Visit Store",
         "short_name": "Store",
         "description": "Visit the AnxSion Store",
-        "url": "app/page/store.html",
+        "url": "page/store.html",
         "icons": [{ "src": "img/pwa/store.png", "sizes": "192x192" }]
       },
       {
         "name": "View Services",
         "short_name": "Services",
         "description": "View available services",
-        "url": "app/page/services.html",
+        "url": "page/services.html",
         "icons": [{ "src": "img/pwa/services.png", "sizes": "192x192" }]
       }
     ],
