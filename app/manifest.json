@@ -1,6 +1,7 @@
 {
     "short_name": "AnxSion",
     "name": "AnxSion",
+    "id":"/app/page/index.html",
     "icons": [
       {
         "src": "img/pwa/icon-192.png",
@@ -34,18 +35,25 @@
     "theme_color": "#86DC3D",
     "shortcuts": [
       {
-        "name": "Visit Store",
-        "short_name": "Store",
-        "description": "Visit the AnxSion Store",
-        "url": "page/store.html",
-        "icons": [{ "src": "img/pwa/store.png", "sizes": "192x192" }]
+        "name": "AnxSion Concepts",
+        "short_name": "Studio",
+        "description": "Visit AnxSion Concepts",
+        "url": "page/concepts.html",
+        "icons": [{ "src": "img/pwa/icon-192.png", "sizes": "192x192" }]
       },
       {
-        "name": "View Services",
-        "short_name": "Services",
-        "description": "View available services",
-        "url": "page/services.html",
-        "icons": [{ "src": "img/pwa/services.png", "sizes": "192x192" }]
+        "name": "NoisDSP",
+        "short_name": "SDK",
+        "description": "Visit NoisDSP",
+        "url": "page/noisdsp.html",
+        "icons": [{ "src": "img/pwa/icon-192.png", "sizes": "192x192" }]
+      },
+      {
+        "name": "Resupply",
+        "short_name": "Store",
+        "description": "Visit Resupply Store",
+        "url": "page/resupply.html",
+        "icons": [{ "src": "img/pwa/icon-192.png", "sizes": "192x192" }]
       }
     ],
     "description": "Progressive Web Application of AnxSion",
