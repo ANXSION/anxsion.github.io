@@ -7,7 +7,7 @@
 	<link href="css/service.css" rel="stylesheet" type="text/css">
 	<link rel="preload" href="css/core.css" as="style">
 	<link rel="icon" type="images/png" href="favicon.png">
-	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="/manifest.json">
 	<link rel="prefetch" href="index.html">
 	<link rel="prefetch" href="noisdsp.html">
 	<link rel="prefetch" href="resupply.html">
@@ -188,7 +188,7 @@
 	<script>
 
 		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('serviceworker.js');
+			navigator.serviceWorker.register('/serviceworker.js');
 		}
 
 		function openNav() {
