@@ -22,15 +22,17 @@ body{
     height: 38px;
     text-align: center;
     position: fixed;
-    line-height: 50%;
     top:0;
     left: 0;
     z-index: 5;
     transition: all 0.5s ease;
     z-index: 5;
 }
+.network-status p{
+    font-size: 1.4rem;
+    line-height: 50%;
+}
 .logo img{
-    display: flex;
     width: 30%;
     height: auto;
 }
@@ -42,7 +44,7 @@ body{
 .navigation p{
     color: black;
     opacity: 40%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     transition: all 0.5s ease;
 }
 .home{
@@ -54,21 +56,21 @@ body{
     content: "";
     margin-top:16px;
 }
-.banner div h2{
+.banner div h1{
+    padding-top:5%;
     margin-left: 5%;
     color: white;
     font-weight: normal;
     font-size: 7vw;
 }
 .banner div p{
-    padding-bottom: 4vw;
+    padding-bottom: 5vw;
     margin-left: 5%;
     width: 50%;
     color: white;
     font-size: 3vw;
 }
 .banner{
-    display: flex;
     width: 100%;
     position: relative;
 }
@@ -77,6 +79,8 @@ body{
     border: 0;
     background-color: white;
     font-size: 2.5vw;
+    height: 5vw;
+    width: 25%;
 }
 .banner img{
     width: 100%;
@@ -93,11 +97,17 @@ body{
     transition: all 0.3s ease;
 }
 .concept p{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: justify;
 }
-.concept h2{
+.concept h1{
+    font-size: 3.2rem;
     text-align: center;
+    font-weight: normal;
+}
+.concept h2{
+    font-size: 2.4rem;
+    font-weight: normal;
 }
 .concept button{
     margin-left: 25%;
@@ -105,7 +115,7 @@ body{
     width: 50%;
     color: white;
     background-color:  black;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     height: 32px;
     justify-content: center;
     align-items: center;
@@ -113,6 +123,15 @@ body{
 .policy{
     display: block;
     transition: all 0.3s ease;
+}
+.policy h1{
+    font-size: 3.2rem;
+    text-align: center;
+    font-weight: normal;
+}
+.policy h2{
+    font-size: 2.4rem;
+    font-weight: normal;
 }
 .policy p{
     font-size: 1.6rem;
@@ -122,10 +141,16 @@ body{
     display: block;
     transition: all 0.3s ease;
 }
+.dsp h1{
+    font-size: 3.2rem;
+    text-align: center;
+    font-weight: normal;
+}
 .dsp p{
     font-size: 1.6rem;
 }
 .dsp a{
+    font-size: 1.6rem;
     text-decoration: none;
     color: black;
 }
@@ -136,7 +161,8 @@ body{
     display: block;
     transition: all 0.3s ease;
 }
-.store h2{
+.store h1{
+    font-size: 3.2rem;
     font-weight: normal;
     text-align: center;
 
@@ -170,7 +196,7 @@ body{
     top:50%;
     left: 25%;
     line-height: 24px;
-    font-size: 12px;
+    font-size: 1.4rem;
     font-weight: bold;
     z-index: 3;
 }
@@ -178,39 +204,48 @@ body{
     display: block;
     transition: all 0.3s ease;
 }
+.product h1{
+    font-size: 2.2rem;
+    font-weight: normal;
+}
+.product h2{
+    font-size: 2.2rem;
+    font-weight: normal;
+}
+.product p{
+    font-size: 1.6rem;
+}
 .product div img{
     width: 100%;
 }
 .product select{
     border: 0;
-    width: 25%;
+    width: 40%;
     color: white;
     background-color:  black;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 1.6rem;
     height: 32px;
     justify-content: center;
     align-items: center;
     border: 0;
 }
 .product option{
+    display: inline-block;
     border: 0;
     width: 25%;
     color: white;
     background-color:  black;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 1.2rem;
     height: 32px;
     justify-content: center;
     align-items: center;
 }
 .product button{
     border: 0;
-    width: 25%;
+    width: 40%;
     color: white;
     background-color:  black;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 1.6rem;
     height: 32px;
     justify-content: center;
     align-items: center;
@@ -229,7 +264,7 @@ footer p::before{
     display: block;
     font-weight: bold;
     content: "AnxSion \00a9 2022";
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 .unit-available:hover{
     background-color: #39FF14;
@@ -240,83 +275,4 @@ footer p::before{
     background-color: red;
     color: black;
     transition: all 0.2s;
-}
-@media screen and (min-width:600px){
-    body{
-        padding-left: 32px;
-        padding-right: 32px;
-        width: 100%;
-    }
-    .logo img{
-        width: 30%;
-    }
-    .navigation p{
-        font-size: 2rem;
-    }
-}
-@media screen and (min-width:905px){
-    body{
-        margin-left:auto;
-        margin-right: auto;
-        width: 840px;
-    }   
-    .logo img{
-        width: 25%;
-    }
-    .navigation p{
-        font-size: 2rem;
-    }
-    .banner div h2{
-        font-size: 56px;
-    }
-    .banner div p{
-        font-size: 26px;
-    }
-    .banner button{
-        font-size: 20px;
-    }
-}
-@media screen and (min-width:1240px){
-    body{
-        padding-left: 200px;
-        padding-right: 200px;
-        width: 100%;
-    }
-    .logo img{
-        width: 22%;
-    }
-    .navigation p{
-        font-size: 2rem;
-    }
-    .banner div h2{
-        font-size: 7vw;
-    }
-    .banner div p{
-        font-size: 3vw;
-    }
-    .banner button{
-        font-size: 2.5vw;
-    }
-}
-@media screen and (min-width:1440px){
-    body{
-        margin-left: auto;
-        margin-right: auto;
-        width: 1040px;
-    }
-    .logo img{
-        width: 20%;
-    }
-    .navigation p{
-        font-size: 2rem;
-    }
-    .banner div h2{
-        font-size: 72px;
-    }
-    .banner div p{
-        font-size: 36px;
-    }
-    .banner button{
-        font-size: 22px;
-    }
 }
