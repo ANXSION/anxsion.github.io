@@ -12,14 +12,13 @@ body{
     padding-right: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: all 0.3s ease;
-    
 }
 .network-status{
     width: 100%;
     opacity: 0%;
     background-color: red;
     color: white;
-    height: 38px;
+    height: 3.8rem;
     text-align: center;
     position: fixed;
     top:0;
@@ -29,6 +28,7 @@ body{
     z-index: 5;
 }
 .network-status p{
+    line-height: 3.8rem;
     font-size: 1.4rem;
     line-height: 50%;
 }
@@ -56,6 +56,10 @@ body{
     content: "";
     margin-top:16px;
 }
+.banner{
+    width: 100%;
+    position: relative;
+}
 .banner div h1{
     padding-top:5%;
     margin-left: 5%;
@@ -70,10 +74,6 @@ body{
     color: white;
     font-size: 3vw;
 }
-.banner{
-    width: 100%;
-    position: relative;
-}
 .banner button{
     margin-left: 5%;
     border: 0;
@@ -81,9 +81,11 @@ body{
     font-size: 2.5vw;
     height: 5vw;
     width: 25%;
+    border-radius: 4px;
 }
 .banner img{
     width: 100%;
+    border-radius: 4px;
 }
 .banner div{
     width: 100%;
@@ -119,6 +121,7 @@ body{
     height: 32px;
     justify-content: center;
     align-items: center;
+    border-radius: 4px;
 }
 .policy{
     display: block;
@@ -156,6 +159,7 @@ body{
 }
 .dsp img{
     width: 100%;
+    border-radius: 4px;
 }
 .store{
     display: block;
@@ -165,11 +169,10 @@ body{
     font-size: 3.2rem;
     font-weight: normal;
     text-align: center;
-
 }
 .store div{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -190,14 +193,15 @@ body{
     vertical-align: middle;
     margin: 0;
     width: 50%;
-    height: 24px;
+    height: 3.2rem;
     background-color: red;
     position: absolute;
     top:50%;
     left: 25%;
-    line-height: 24px;
-    font-size: 1.4rem;
+    line-height: 3.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
+    border-radius: 4px;
     z-index: 3;
 }
 .product{
@@ -205,11 +209,11 @@ body{
     transition: all 0.3s ease;
 }
 .product h1{
-    font-size: 2.2rem;
+    font-size: 3.2rem;
     font-weight: normal;
 }
 .product h2{
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     font-weight: normal;
 }
 .product p{
@@ -228,6 +232,8 @@ body{
     justify-content: center;
     align-items: center;
     border: 0;
+    border-radius: 4px;
+    text-align: center;
 }
 .product option{
     display: inline-block;
@@ -249,6 +255,7 @@ body{
     height: 32px;
     justify-content: center;
     align-items: center;
+    border-radius: 4px;
 }
 footer{
     background-color: white;
@@ -275,4 +282,151 @@ footer p::before{
     background-color: red;
     color: black;
     transition: all 0.2s;
+}
+
+@media screen and (min-width:375px){
+    .navigation p{
+        font-size: 1.23rem;
+    }
+    .logo img{
+        width: 29%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width:425px){
+    .navigation p{
+        font-size: 1.27rem;
+    }
+    .logo img{
+        width: 28%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width:768px){
+    body{
+        width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .banner div h1{
+        padding-top:5%;
+        font-size:5.4rem;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 2.2rem;
+    }
+    .banner button{
+        font-size: 2rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 27%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 2rem;
+    }
+    .store div{
+        grid-template-columns: auto auto;
+    }  
+}
+
+@media screen and (min-width:1024px){
+    body{
+        width: 840px;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .banner div h1{
+        padding-top:4%;
+        font-size:6.4rem;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 2.8rem;
+    }
+    .banner button{
+        font-size: 2.7rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 26%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 2.2rem;
+    }
+    .store div{
+        grid-template-columns: auto auto;
+    }  
+}
+
+@media screen and (min-width:1440px){
+    body{
+        width: 1040px;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .banner div h1{
+        padding-top:4%;
+        font-size:7.8rem;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 3.2rem;
+    }
+    .banner button{
+        font-size: 2.8rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 24%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 2.4rem;
+    }
+    .store div{
+        grid-template-columns: auto auto;
+    }  
+}
+
+@media screen and (min-width:2560px){
+    body{
+        width: 1440px;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .banner div h1{
+        padding-top:4%;
+        font-size: 10.2rem;
+    }
+    .banner div p{
+        padding-bottom: 5%;
+        font-size: 4.5rem;
+    }
+    .banner button{
+        font-size: 3.8rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 24%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 3.2rem;
+    }
+    .store div{
+        grid-template-columns: auto auto auto;
+    }  
 }
