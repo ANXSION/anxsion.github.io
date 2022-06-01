@@ -331,6 +331,7 @@
             </select>
             <button class="unit-available">order</button>
         </div>
+
         <div id="jughoodie">
             <img src="asset/image/store/anxsion_jug_hoodie.webp" alt="">
             <h1>AWD-3/120 [d4310]</h1>
@@ -344,6 +345,7 @@
             </select>
             <button class="unit-available">order</button>
         </div>
+
         <div id="boshirt">
             <img src="asset/image/store/anxsion_bo_shirt.webp" alt="">
             <h1>SS-3/120 [959d2]</h1>
@@ -357,6 +359,7 @@
             </select>
             <button class="unit-available">order</button>
         </div>
+
         <div id="bohoodie">
             <img src="asset/image/store/anxsion_bo_hoodie.webp" alt="">
             <h1>AWD-3/120 [959d2]</h1>
@@ -370,6 +373,7 @@
             </select>
             <button class="unit-available">order</button>
         </div>
+        
     </div>
 
     <br>
@@ -382,6 +386,7 @@
         var wasoffline=false;
         var productname="";
         var navname="";
+
         document.getElementById("main-content").style.marginTop="0";
         document.getElementById("disconnected").style.display="none";
         document.getElementById("disconnected").style.opacity="0";
@@ -389,15 +394,17 @@
         document.getElementById("connected").style.opacity="0";
 
         window.setInterval(function(){
+
             if (navigator.onLine!=true){
+
                 document.getElementById("disconnected").style.backgroundColor="red";
                 document.getElementById("main-content").style.marginTop="38px";
                 document.getElementById("disconnected").style.display="block";
                 setTimeout(() => { document.getElementById("disconnected").style.opacity="100%"; }, 500);
                 wasoffline=true;
             }
-            else{
 
+            else{
                 if (wasoffline==true){
                     document.getElementById("main-content").style.marginTop="38px";
                     document.getElementById("disconnected").style.display="none";
@@ -425,7 +432,6 @@
 
         document.getElementById("navconcept").style.opacity="40%";
         document.getElementById("navconcept").style.color="black";
-
 
         document.getElementById("navdsp").style.opacity="40%";
         document.getElementById("navdsp").style.color="black";
@@ -468,32 +474,32 @@
             document.getElementById("product").style.display="none";
             document.getElementById("product").style.opacity="0%";
 
-            if (navname=='home'){
+            if (navname=="home"){
                 document.getElementById("navhome").style.opacity="100%";
                 document.getElementById("home").style.display="block";
                 setTimeout(() => { document.getElementById("home").style.opacity="100%"; }, 100); 
             }
-            if (navname=="concept"){
+            else if (navname=="concept"){
                 document.getElementById("navconcept").style.opacity="100%";
                 document.getElementById("concept").style.display="block";
                 setTimeout(() => { document.getElementById("concept").style.opacity="100%"; }, 100); 
             }
-            if (navname=="dsp"){
+            else if (navname=="dsp"){
                 document.getElementById("navdsp").style.opacity="100%";
                 document.getElementById("dsp").style.display="block";
                 setTimeout(() => { document.getElementById("dsp").style.opacity="100%"; }, 100);
             }
-            if (navname=="store"){
+            else if (navname=="store"){
                 document.getElementById("navstore").style.opacity="100%";
                 document.getElementById("store").style.display="block";
                 setTimeout(() => { document.getElementById("store").style.opacity="100%"; }, 100);
             }
-            if (navname=="policy"){
+            else if (navname=="policy"){
                 document.getElementById("navconcept").style.opacity="100%";
                 document.getElementById("policy").style.display="block";
                 setTimeout(() => { document.getElementById("policy").style.opacity="100%"; }, 100);
             }
-            if (navname=="product"){
+            else if (navname=="product"){
                 document.getElementById("navstore").style.opacity="100%";
                 document.getElementById("product").style.display="block";
                 setTimeout(() => { document.getElementById("product").style.opacity="100%"; }, 100);
@@ -506,18 +512,22 @@
                 if (productname=="jugshirt"){
                     document.getElementById("jugshirt").style.display="block";
                 }
-                if (productname=="jughoodie"){
+                else if (productname=="jughoodie"){
                     document.getElementById("jughoodie").style.display="block";
                 }
-                if (productname=="boshirt"){
+                else if (productname=="boshirt"){
                     document.getElementById("boshirt").style.display="block";
                 }
-                if (productname=="bohoodie"){
+                else if (productname=="bohoodie"){
                     document.getElementById("bohoodie").style.display="block";
                 }
-                
+                else{
+                    console.log("Unknown Product Access Detected.");
+                }
             }
-
+            else{
+                console.log("Unknown Navigation Access Detected.");
+            }
         }
 
     </script>
