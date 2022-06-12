@@ -19,7 +19,7 @@ body{
     opacity: 0%;
     background-color: red;
     color: white;
-    height: 3.8rem;
+    height: 2.5rem;
     text-align: center;
     position: fixed;
     top:0;
@@ -29,8 +29,8 @@ body{
     z-index: 5;
 }
 .network-status p{
-    line-height: 3.8rem;
-    font-size: 1.6rem;
+    line-height: 2.5rem;
+    font-size: 1rem;
     line-height: 50%;
 }
 .logo img{
