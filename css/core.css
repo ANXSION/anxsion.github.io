@@ -41,7 +41,7 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.navigation a{
+.navigation p{
     color: black;
     text-decoration: none;
     opacity: 40%;
@@ -366,7 +366,7 @@ footer p::before{
         width: 27%;
         height: auto;
     }
-    .navigation a{
+    .navigation p{
         font-size: 1.125rem;
     }
     .store div{
@@ -451,7 +451,7 @@ footer p::before{
         width: 26%;
         height: auto;
     }
-    .navigation a{
+    .navigation p{
         font-size: 1.25rem;
     }
     .store div{
@@ -536,7 +536,7 @@ footer p::before{
         width: 22%;
         height: auto;
     }
-    .navigation a{
+    .navigation p{
         font-size: 1.5rem;
     }
     .store div{
@@ -621,7 +621,7 @@ footer p::before{
         width: 24%;
         height: auto;
     }
-    .navigation a{
+    .navigation p{
         font-size: 1.675rem;
     }
     .store div{
