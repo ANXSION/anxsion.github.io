@@ -202,6 +202,7 @@ body{
 }
 .dsp p{
     font-size: 1rem;
+    text-align: justify;
 }
 .dsp a{
     font-size: 1rem;
@@ -275,6 +276,7 @@ body{
 }
 .product p{
     font-size: 1rem;
+    text-align: justify;
 }
 .product div img{
     width: 100%;
