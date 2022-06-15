@@ -66,27 +66,27 @@ body{
 }
 
 .liveupdate ol li{
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: bold;
     padding: 12px;
 }
 .liveupdate ol li div h2{
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: bold;
     margin: 4px;
 }
 .liveupdate ol li div p{
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: normal;
     margin: 4px;
 }
 
 .liveupdate ol li div a{
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-decoration: underline;
     color: black;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 .home{
@@ -345,6 +345,7 @@ footer p::before{
     .navigation a{
         font-size: 0.75rem;
     }
+    
     .logo img{
         width: 29%;
         height: auto;
@@ -397,6 +398,21 @@ footer p::before{
         width: 84%;
         margin-left: auto;
         margin-right: auto;
+    }
+    .liveupdate h1{
+        font-size: 1.25rem;
+    }
+    .liveupdate ol li{
+        font-size: 1.125rem;
+    }
+    .liveupdate ol li div h2{
+        font-size: 1.125rem;
+    }
+    .liveupdate ol li div p{
+        font-size: 1rem;
+    }
+    .liveupdate ol li div a{
+        font-size: 1rem;
     }
     .banner div h1{
         padding-top:6%;
@@ -521,6 +537,21 @@ footer p::before{
         margin-left: auto;
         margin-right: auto;
     }
+    .liveupdate h1{
+        font-size: 1.5rem;
+    }
+    .liveupdate ol li{
+        font-size: 1.5rem;
+    }
+    .liveupdate ol li div h2{
+        font-size: 1.5rem;
+    }
+    .liveupdate ol li div p{
+        font-size: 1.25rem;
+    }
+    .liveupdate ol li div a{
+        font-size: 1.25rem;
+    }
     .concept P{
         font-size: 1.125rem;
     }
@@ -605,6 +636,21 @@ footer p::before{
         padding: 0px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .liveupdate h1{
+        font-size: 1.5rem;
+    }
+    .liveupdate ol li{
+        font-size: 1.5rem;
+    }
+    .liveupdate ol li div h2{
+        font-size: 1.5rem;
+    }
+    .liveupdate ol li div p{
+        font-size: 1.25rem;
+    }
+    .liveupdate ol li div a{
+        font-size: 1.25rem;
     }
     .concept P{
         font-size: 1.125rem;
