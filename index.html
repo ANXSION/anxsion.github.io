@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<title>ANXSION</title>
     <link rel="canonical" href="https://anxsion.github.io">
+    <link rel="manifest" href="/manifest.webmanifest">
 	<link rel="stylesheet" href="css/core.css" type="text/css">
 	<link rel="preload" href="css/core.css" as="style">
     <link rel="shortcut icon" href="asset/image/favicon.webp" type="image/x-icon">
@@ -397,6 +398,12 @@
     </footer>
 
     <script>
+        window.addEventListener("load", () => {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("script/anxsion-serviceworker.js");
+            }  
+        });
+
         var wasoffline=false;
         document.getElementById("main-content").style.marginTop="0";
         document.getElementById("disconnected").style.display="none";
