@@ -8,8 +8,7 @@
     <link rel="canonical" href="https://anxsion.github.io">
 	<link rel="stylesheet" href="css/core.css" type="text/css">
 	<link rel="preload" href="css/core.css" as="style">
-    <link rel="shortcut icon" href="asset/image/favicon.webp" type="image/x-icon"> 
-    <link rel="prefetch" href="asset/image/dsp/calamity.webp">
+    <link rel="shortcut icon" href="asset/image/favicon.webp" type="image/x-icon">
     <link rel="prefetch" href="asset/image/store/anxsion_bo_hoodie.webp">
     <link rel="prefetch" href="asset/image/store/anxsion_bo_shirt.webp">
     <link rel="prefetch" href="asset/image/store/anxsion_jug_hoodie.webp">
@@ -71,7 +70,7 @@
     <nav class="navigation">
         <p id="navhome" onclick="navclick('home')">Home</p>
         <p id="navconcept" onclick="navclick('concept')">AnxSion Concepts</p>
-        <p id="navdsp" onclick="navclick('dsp')">Chrysalis DSP</p>
+        <p id="navrnd" onclick="navclick('rnd')">Chrysalis R&D</p>
         <p id="navstore" onclick="navclick('store')">Curiosity</p>
     </nav>
 
@@ -116,8 +115,8 @@
         <div class="banner">
             <img src="asset/image/dsp.webp" height="1080" width="1920" alt="AnxSion Chrysalis DSP Banner">
             <div>
-                <h1>Chrysalis DSP</h1>
-                <p>Excellent audio solutions for musicians and devs.</p>
+                <h1>Chrysalis R&D</h1>
+                <p>Reliable and efficient SDK development for developers.</p>
                 <button class="unit-available" onclick="navclick('dsp')">Learn More</button>
             </div>
         </div>
@@ -309,31 +308,21 @@
 
     </div>
 
-    <div id="dsp" class="dsp">
-        <p>Chrysalis DSP is an experimental audio R&D wing of AnxSion. At Chrysalis DSP we belive in pushing the sonic boundaries by creating a range of new sounds and effects that have not been heard yet. Here focus on creating plugins with original acoustic signatures.</p>
+    <div id="rnd" class="rnd">
+        <p><b>Chrysalis R&D</b> is an experimental Research & Development wing of AnxSion. At Chrysalis R&D we belive in pushing the development boundaries by creating a range of reliable Software Development Kit for various emerging technologies. </p>
 
-        <p>We are working relentlessly at advancing and incorporating the latest developments in digital signal processing, user interface, user experience design and embedded systems into the music industry.</p>
+        <p>We are working relentlessly at advancing and incorporating the latest developments in digital signal processing, user interface, user experience design and embedded systems into the daily lives of people.</p>
 
-        <p>Our mission is to design the next generation of both audio software and hardware products in order to empower musicians creativity to expand alongside technology.</p>
+        <p>Our mission is to design the next generation of efficient and reliable tools in order to empower people's creativity to expand alongside technologies.</p>
 
         <br>
 
-        <h1>Chrysalis DSP SDK</h1>
+        <h1>Cluster Alpha: Digital Signal Processing SDK</h1>
 
         <p>We not only produce quality audio softwares, but also provide flexible snippets and C++ headers for exponentially speeding up the development process of the projects of other audio developers.</p>
 
         <a>Downloadable contents will be available soon.</a>
 
-        <br><br>
-
-        <h1>Calamity</h1>
-
-        <img loading="lazy" src="asset/image/dsp/calamity.webp" alt="">
-
-        <p>Calamity is an experimental distortion effect unit that seeks to achive the effect which had changed our perception of music forever. The DISTORTION. This experimental plugin is loaded with 5 distinct custom made funtions to achive the sounds which range from light boosts to complete chaos with just a change in knob.
-        </p>
-
-        <a href="asset/kit/Calamity.msi" download>Download Calamity (alpha)</a>
     </div>
 
     <div id="store" class="store">
@@ -473,8 +462,8 @@
         document.getElementById("concept").style.opacity="0%";
         document.getElementById("policy").style.display="none";
         document.getElementById("policy").style.opacity="0%";
-        document.getElementById("dsp").style.display="none";
-        document.getElementById("dsp").style.opacity="0%";
+        document.getElementById("rnd").style.display="none";
+        document.getElementById("rnd").style.opacity="0%";
         document.getElementById("store").style.display="none";
         document.getElementById("store").style.opacity="0%";
         document.getElementById("product").style.display="none";
@@ -487,7 +476,7 @@
             document.documentElement.scrollTop = 0;
             document.getElementById("navhome").style.color="black";
             document.getElementById("navconcept").style.color="black";
-            document.getElementById("navdsp").style.color="black";
+            document.getElementById("navrnd").style.color="black";
             document.getElementById("navstore").style.color="black";
 
             document.getElementById("home").style.display="none";
@@ -496,8 +485,8 @@
             document.getElementById("concept").style.opacity="0%";
             document.getElementById("policy").style.display="none";
             document.getElementById("policy").style.opacity="0%";
-            document.getElementById("dsp").style.display="none";
-            document.getElementById("dsp").style.opacity="0%";
+            document.getElementById("rnd").style.display="none";
+            document.getElementById("rnd").style.opacity="0%";
             document.getElementById("store").style.display="none";
             document.getElementById("store").style.opacity="0%";
             document.getElementById("product").style.display="none";
@@ -513,10 +502,10 @@
                 document.getElementById("concept").style.display="block";
                 setTimeout(() => { document.getElementById("concept").style.opacity="100%"; }, 100); 
             }
-            else if (navname=="dsp"){
-                document.getElementById("navdsp").style.color="#76b900";
-                document.getElementById("dsp").style.display="block";
-                setTimeout(() => { document.getElementById("dsp").style.opacity="100%"; }, 100);
+            else if (navname=="rnd"){
+                document.getElementById("navrnd").style.color="#76b900";
+                document.getElementById("rnd").style.display="block";
+                setTimeout(() => { document.getElementById("rnd").style.opacity="100%"; }, 100);
             }
             else if (navname=="store"){
                 document.getElementById("navstore").style.color="#76b900";

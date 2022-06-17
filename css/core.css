@@ -192,28 +192,25 @@ body{
     font-size: 1rem;
     text-align: justify;
 }
-.dsp{
+.rnd{
     display: block;
     transition: all 0.3s ease;
 }
-.dsp h1{
+.rnd h1{
     font-size: 2rem;
     font-weight: normal;
+    color: #76b900;
 }
-.dsp p{
+.rnd p{
     font-size: 1rem;
     text-align: justify;
 }
-.dsp a{
+.rnd a{
     font-size: 1rem;
     text-decoration: underline;
     color: #76b900;
     cursor: pointer;
     font-weight: normal;
-}
-.dsp img{
-    width: 100%;
-    border-radius: 4px;
 }
 .store{
     display: block;
