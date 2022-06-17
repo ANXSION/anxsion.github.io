@@ -8,6 +8,19 @@ self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
+  event.waitUntil(
+    caches
+      .keys()
+      .then(keys => keys.filter(key => key !== CACHE))
+      .then(keys =>
+        Promise.all(
+          keys.map(key => {
+            console.log(`Deleting cache ${key}`);
+            return caches.delete(key);
+          })
+        )
+      )
+  );
 });
 
 workbox.routing.registerRoute(
