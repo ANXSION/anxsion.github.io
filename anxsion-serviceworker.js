@@ -3,6 +3,7 @@ const CACHE = "ANXSION-dataCache";
 importScripts(
   'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js'
 );
+import {BackgroundSyncPlugin} from 'workbox-background-sync';
 
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
