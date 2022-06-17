@@ -15,7 +15,6 @@ self.addEventListener("message", (event) => {
       .then(keys =>
         Promise.all(
           keys.map(key => {
-            console.log(`Deleting cache ${key}`);
             return caches.delete(key);
           })
         )
