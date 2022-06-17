@@ -19,7 +19,7 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 10,
-        maxSecondsmaxAgeSeconds: 60,
+        maxSecondsmaxAgeSeconds: 30,
       }),
     ],
   })
@@ -31,8 +31,8 @@ workbox.routing.registerRoute(
     cacheName: JS_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-        maxSecondsmaxAgeSeconds: 60,
+        maxEntries: 10,
+        maxSecondsmaxAgeSeconds: 30,
       }),
     ],
   })
@@ -45,7 +45,7 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 15,
-        maxSecondsmaxAgeSeconds: 60,
+        maxSecondsmaxAgeSeconds: 30,
       }),
     ],
   })
@@ -57,8 +57,8 @@ workbox.routing.registerRoute(
     cacheName: IMAGE_CACHE,
     plugins: [
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-        maxSecondsmaxAgeSeconds: 60,
+        maxEntries: 25,
+        maxSecondsmaxAgeSeconds: 30,
       }),
     ],
   })
@@ -71,7 +71,7 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 15,
-        maxSecondsmaxAgeSeconds: 60,
+        maxSecondsmaxAgeSeconds: 30,
       }),
     ],
   })
