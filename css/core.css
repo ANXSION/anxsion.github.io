@@ -59,8 +59,9 @@ body{
 }
 
 .liveupdate h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: normal;
+    color: #76b900;
 }
 
 .liveupdate hr{
