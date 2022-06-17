@@ -13,12 +13,12 @@
     "prefer_related_applications": false,
     "icons": [
       {
-        "src": "images/192x192.png",
+        "src": "asset/image/pwa/192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "images/512x512.png",
+        "src": "asset/image/pwa/512x512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
