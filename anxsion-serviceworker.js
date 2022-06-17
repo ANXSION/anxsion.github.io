@@ -10,6 +10,10 @@ self.addEventListener("message", (event) => {
   }
 });
 
+const bgSyncPlugin = new BackgroundSyncPlugin('ANXSION-bgSync', {
+  maxRetentionTime: 24 * 60, // Retry for max of 24 Hours (specified in minutes)
+});
+
 workbox.routing.registerRoute(
   new RegExp('/*'),
   new workbox.strategies.CacheFirst({
