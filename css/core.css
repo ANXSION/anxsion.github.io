@@ -398,12 +398,6 @@ footer p::before{
     .store div{
         grid-template-columns: auto auto;
     }  
-    footer{
-        font-size: 1rem;
-    }
-    footer p::before{
-        font-size: 1.25rem;
-    }
 }
 
 @media screen and (min-width:1024px){
@@ -483,12 +477,6 @@ footer p::before{
     .store div{
         grid-template-columns: auto auto;
     }  
-    footer{
-        font-size: 1.25rem;
-    }
-    footer p::before{
-        font-size: 1.5rem;
-    }
 }
 
 @media screen and (min-width:1440px){
@@ -569,12 +557,7 @@ footer p::before{
     .store div{
         grid-template-columns: auto auto;
     }  
-    footer{
-        font-size: 1rem;
-    }
-    footer p::before{
-        font-size: 1.25rem;
-    }
+
 }
 
 @media screen and (min-width:2560px){
@@ -654,10 +637,5 @@ footer p::before{
     .store div{
         grid-template-columns: auto auto auto;
     }  
-    footer{
-        font-size: 1.75rem;
-    }
-    footer p::before{
-        font-size: 2rem;
-    }
+
 }
