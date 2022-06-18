@@ -1,5 +1,34 @@
 var productname="";
 var navname="";
+var source="";
+
+function init(){
+    source = window.location.hash;
+
+    if (source=="" || source=="#home" ){
+        navclick('home')
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    else if (source=="#concept"){
+        navclick('concept')
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    else if (source=="#rnd"){
+        navclick('rnd')
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    else if (source=="#store"){
+        navclick('store')
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    else {
+        navclick('store')
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+    
+}
 
 function navclick(navname, productname){
     document.documentElement.scrollTop = 0;
@@ -18,8 +47,6 @@ function navclick(navname, productname){
     document.getElementById("rnd").style.opacity="0%";
     document.getElementById("store").style.display="none";
     document.getElementById("store").style.opacity="0%";
-    document.getElementById("product").style.display="none";
-    document.getElementById("product").style.opacity="0%";
 
     if (navname=="home"){
         document.getElementById("navhome").style.color="#76b900";
@@ -46,32 +73,7 @@ function navclick(navname, productname){
         document.getElementById("policy").style.display="block";
         setTimeout(() => { document.getElementById("policy").style.opacity="100%"; }, 100);
     }
-    else if (navname=="product"){
-        document.getElementById("navstore").style.color="#76b900";
-        document.getElementById("product").style.display="block";
-        setTimeout(() => { document.getElementById("product").style.opacity="100%"; }, 100);
-
-        document.getElementById("jugshirt").style.display="none";
-        document.getElementById("jughoodie").style.display="none";
-        document.getElementById("boshirt").style.display="none";
-        document.getElementById("bohoodie").style.display="none";
-
-        if (productname=="jugshirt"){
-            document.getElementById("jugshirt").style.display="block";
-        }
-        else if (productname=="jughoodie"){
-            document.getElementById("jughoodie").style.display="block";
-        }
-        else if (productname=="boshirt"){
-            document.getElementById("boshirt").style.display="block";
-        }
-        else if (productname=="bohoodie"){
-            document.getElementById("bohoodie").style.display="block";
-        }
-        else{
-            console.log("Unknown Product Access Detected.");
-        }
-    }
+    
     else{
         console.log("Unknown Navigation Access Detected.");
     }
