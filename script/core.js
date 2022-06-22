@@ -1,32 +1,27 @@
 var productname="";
 var navname="";
-var source="";
+var params = "";
+var pageid = "";
 
 function init(){
-    source = window.location.hash;
+    params = (new URL(document.location)).searchParams;
+    pageid = params.get('page');
 
-    if (source=="" || source=="#home" ){
-        navclick('home')
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+    if (pageid=="" || pageid=="home" ){
+        navclick('home');
     }
-    else if (source=="#concept"){
-        navclick('concept')
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+    else if (pageid=="concept"){
+        navclick('concept');
     }
-    else if (source=="#rnd"){
-        navclick('rnd')
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+    else if (pageid=="rnd"){
+        navclick('rnd');
     }
-    else if (source=="#store"){
-        navclick('store')
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+    else if (pageid=="store"){
+        navclick('store');
     }
     else {
-        navclick('store')
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+        navclick('home');
     }
-
-    history.pushState("", document.title, window.location.pathname + window.location.search);
     
 }
 
@@ -51,27 +46,32 @@ function navclick(navname, productname){
     if (navname=="home"){
         document.getElementById("navhome").style.color="#76b900";
         document.getElementById("home").style.display="block";
-        setTimeout(() => { document.getElementById("home").style.opacity="100%";}, 100); 
+        setTimeout(() => { document.getElementById("home").style.opacity="100%";}, 100);
+        window.history.pushState("", document.title , "?page=home")
     }
     else if (navname=="concept"){
         document.getElementById("navconcept").style.color="#76b900";
         document.getElementById("concept").style.display="block";
         setTimeout(() => { document.getElementById("concept").style.opacity="100%"; }, 100); 
+        window.history.pushState("", document.title , "?page=concept")
     }
     else if (navname=="rnd"){
         document.getElementById("navrnd").style.color="#76b900";
         document.getElementById("rnd").style.display="block";
         setTimeout(() => { document.getElementById("rnd").style.opacity="100%"; }, 100);
+        window.history.pushState("", document.title , "?page=rnd")
     }
     else if (navname=="store"){
         document.getElementById("navstore").style.color="#76b900";
         document.getElementById("store").style.display="block";
         setTimeout(() => { document.getElementById("store").style.opacity="100%"; }, 100);
+        window.history.pushState("", document.title , "?page=store")
     }
     else if (navname=="policy"){
         document.getElementById("navconcept").style.color="#76b900";
         document.getElementById("policy").style.display="block";
         setTimeout(() => { document.getElementById("policy").style.opacity="100%"; }, 100);
+        window.history.pushState("", document.title , "?page=policy")
     }
     
     else{

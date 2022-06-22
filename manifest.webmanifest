@@ -1,28 +1,28 @@
 {
-    "dir": "ltr",
-    "lang": "en",
-    "name": "ANXSION",
-    "short_name": "ANXSION",
-    "scope": "/",
-    "display": "standalone",
-    "start_url": "https://anxsion.github.io/",
-    "background_color": "#FFFFFF",
-    "theme_color": "black",
-    "description": "The official website of the AnxSion. Legal solutions, studio services, software research and development.",
-    "orientation": "any",
-    "prefer_related_applications": false,
-    "icons": [
-      {
-        "src": "asset/image/pwa/192x192.png",
-        "type": "image/png",
-        "sizes": "192x192",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "asset/image/pwa/512x512.png",
-        "type": "image/png",
-        "sizes": "512x512",
-        "purpose": "any maskable"
-      }
-    ]
+  "dir": "ltr",
+  "lang": "en",
+  "name": "ANXSION",
+  "short_name": "ANXSION",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "https://anxsion.github.io/index.html?page=home",
+  "background_color": "#FFFFFF",
+  "theme_color": "black",
+  "description": "The official website of the AnxSion. Legal solutions, studio services, software research and development.",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "icons": [
+  {
+    "src": "asset/image/pwa/192x192.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "any maskable"
+  },
+  {
+    "src": "asset/image/pwa/512x512.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "any maskable"
   }
+  ]
+}
