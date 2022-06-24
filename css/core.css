@@ -281,25 +281,37 @@ body{
     font-weight: bold;
     border-radius: 4px;
     z-index: 3;
+    display: none;
 }
 .product{
     display: block;
     transition: all 0.3s ease;
 }
+.product a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
 .product h1{
     font-size: 1.5rem;
     font-weight: normal;
-    cursor: pointer;
 }
 .product h2{
     font-size: 1.125rem;
     font-weight: normal;
 }
+.product h3{
+    font-size: 1.25rem;
+    font-weight: normal;
+
+}
 .product p{
     font-size: 1rem;
-    text-align: justify;
 }
-.product div img{
+.product code{
+    font-size: 0.75rem;
+}
+.product img{
     width: 100%;
     height: 100%;
     border-radius: 4px;
