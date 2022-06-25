@@ -97,23 +97,32 @@
             <h3>ITEM ASSEMBLY:</h3>
 
             <code>
+                <b>section .data</b><br>
+                &emsp;&emsp;&emsp;_05d7020b: db <b>'ANXSION STANDARD ISSUE TSHIRT'</b>,0xa<br>
+                &emsp;&emsp;&emsp;_1F: db <b>'1 DTG PRINTED (FRONT)'</b>,0xa<br>
+                &emsp;&emsp;&emsp;_d4310: db <b>'JUGGERNAUT'</b>,0xa<br><br>
+                
+                &emsp;&emsp;&emsp;price: db 'INR 2700', 0xa<br>
+                &emsp;&emsp;&emsp;fit: db 'relaxed fit',0xa<br>
+                &emsp;&emsp;&emsp;fabric: db '100% combed ring-spun cotton',0xa<br><br>
+                
                 <b>section .text</b><br>
                 &emsp;&emsp;&emsp;global _start<br><br>
 
                 <b>_start:</b><br>
-                &emsp;&emsp;&emsp;mov edx, alpha<br>
+                &emsp;&emsp;&emsp;mov edx, 29<br>
                 &emsp;&emsp;&emsp;mov ecx, _05d7020b&emsp;&emsp;&emsp;&emsp;<br>
                 &emsp;&emsp;&emsp;mov ebx, 1<br>
                 &emsp;&emsp;&emsp;mov eax, 4<br>
                 &emsp;&emsp;&emsp;int 0x80<br><br>
 
-                &emsp;&emsp;&emsp;mov edx, beta<br> 
+                &emsp;&emsp;&emsp;mov edx, 21<br> 
                 &emsp;&emsp;&emsp;mov ecx, _1F&emsp;&emsp;&emsp;&emsp;<br>
                 &emsp;&emsp;&emsp;mov ebx, 1<br>
                 &emsp;&emsp;&emsp;mov eax, 4<br>
                 &emsp;&emsp;&emsp;int 0x80<br><br>
 
-                &emsp;&emsp;&emsp;mov edx, gamma<br>
+                &emsp;&emsp;&emsp;mov edx, 10<br>
                 &emsp;&emsp;&emsp;mov ecx, _d4310&emsp;&emsp;&emsp;<br> 
                 &emsp;&emsp;&emsp;mov ebx, 1<br>
                 &emsp;&emsp;&emsp;mov eax, 4<br>
@@ -121,19 +130,7 @@
 
                 &emsp;&emsp;&emsp;mov ebx, 0<br>
                 &emsp;&emsp;&emsp;mov eax, 1<br>	   
-                &emsp;&emsp;&emsp;int 0x80<br><br>
-
-                <b>section .data</b><br>
-                &emsp;&emsp;&emsp;_05d7020b: db <b>'ANXSION STANDARD ISSUE TSHIRT'</b>,0xa<br>
-                &emsp;&emsp;&emsp;alpha: equ $ - _05d7020b<br>
-                &emsp;&emsp;&emsp;_1F: db <b>'1 DTG PRINTED (FRONT)'</b>,0xa<br>
-                &emsp;&emsp;&emsp;beta: equ $ - _1F<br>
-                &emsp;&emsp;&emsp;_d4310: db <b>'JUGGERNAUT'</b>,0xa<br>
-                &emsp;&emsp;&emsp;gamma: equ $ - _d4310<br><br>
-                
-                &emsp;&emsp;&emsp;price: db 'INR 2700', 0xa<br>
-                &emsp;&emsp;&emsp;fit: db 'relaxed fit',0xa<br>
-                &emsp;&emsp;&emsp;fabric: db '100% combed ring-spun cotton',0xa<br>
+                &emsp;&emsp;&emsp;int 0x80<br>
             </code>   
 
         </div>
