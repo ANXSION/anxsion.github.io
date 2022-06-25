@@ -19,6 +19,9 @@ function init(){
     else if (pageid=="store"){
         navclick('store');
     }
+    else if (pageid=="policy"){
+        navclick('policy');
+    }
     else {
         navclick('home');
     }
@@ -73,7 +76,6 @@ function navclick(navname, productname){
         setTimeout(() => { document.getElementById("policy").style.opacity="100%"; }, 100);
         window.history.pushState("", document.title , "?page=policy")
     }
-    
     else{
         console.log("Unknown Navigation Access Detected.");
     }
