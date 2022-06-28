@@ -57,6 +57,7 @@ body{
 
 .liveupdate{
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .liveupdate h1{
@@ -73,28 +74,33 @@ body{
     width: 100%;
 }
 
-.liveupdate ol li{
-    font-size: 1.25rem;
-    font-weight: normal;
-    padding: 12px;
-}
-.liveupdate ol li div h2{
+.liveupdate div h2{
     font-size: 1.25rem;
     font-weight: normal;
     margin: 4px;
+    padding-left: 1rem;
 }
-.liveupdate ol li div p{
+.liveupdate div p{
     font-size: 0.75rem;
     font-weight: normal;
     margin: 4px;
+    padding-left: 1.5rem;
 }
 
-.liveupdate ol li div a{
+.liveupdate div a{
     font-size: 0.75rem;
     font-weight: normal;
     text-decoration: none;
     color: #76b900;
-    padding-left: 1rem;
+    padding-left: 2rem;
+}
+
+hr{
+    border:  0.5px solid black;
+    color: black;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
 }
 
 .home{
@@ -355,6 +361,28 @@ footer p::before{
     background-color: red;
     color: black;
     transition: all 0.2s;
+}
+.social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.social div{
+    height: 1.5rem;
+    width: 1.5rem;
+    position: relative;
+}
+.social div a{
+    width: 1.5rem;
+    height: 100%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.social div img{
+    height: 100%;
+    width: 1.5rem;
 }
 
 @media screen and (min-width:375px){

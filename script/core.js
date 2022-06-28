@@ -25,7 +25,6 @@ function init(){
     else {
         navclick('home');
     }
-    
 }
 
 function navclick(navname, productname){
