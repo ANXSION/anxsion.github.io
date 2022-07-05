@@ -18,6 +18,22 @@ body{
     font-family: 'Roboto', sans-serif;
     transition: all 0.3s ease;
 }
+.gotlost{
+    width: 100%;
+}
+.gotlost h1{
+    text-align: center;
+    font-size: 7rem;    
+    color: #76b900;
+}
+.gotlost p{
+    text-align: justify;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+}
+#timer{
+    font-size: 2.5rem;
+}
 .network-status{
     width: 100%;
     opacity: 0%;
