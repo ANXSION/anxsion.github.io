@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <!-- This Website if designed, developed and maintained by AnxSion. -->
+        <title>404 | ANXSION</title>
+        <meta charset="utf-8" />
+        <meta name="author" content="AnxSion" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="The page not found on the official website of the AnxSion. Are you in a correct place?" />
+        <meta name="theme-color" content="black" />
+        <meta name="msapplication-navbutton-color" content="black" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="google-site-verification" content="Td3WsaV9Dyy8h_rk4BunP0HVL-UsXLA7r6nRTak1-94" />
+        
+        <link rel="stylesheet" href="css/core.css" type="text/css" />
+        <link rel="preload" href="css/core.css" as="style" />
+        <link rel="shortcut icon" href="asset/image/favicon.webp" type="image/x-icon" />
+
+        <link rel="prefetch" href="asset/image/store/05d7020b1F959d2.webp" />
+        <link rel="prefetch" href="asset/image/store/05d7020b1Fd4310.webp" />
+        <link rel="apple-touch-icon" href="asset/image/pwa/192x192.png" />
+
+        <script src="script/core.js"></script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-53Y0LGEE69');
+        </script>
+
+        <script type="application/ld+json">
+            {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://anxsion.github.io",
+            "logo": "https://anxsion.github.io/asset/image/logo.webp"
+            }
+            </script>
+        
+    </head>
+
+
+    <body style="background-color: black;color: white;" id="main-content">
+
+        <div class="gotlost">
+            
+            <h1>404</h1>
+
+            <p>Your command <span style="color:#76b900">GET <span id="linklocation"></span></span> did not return any valid page object. The page you have been looking for is either not valid, or has been removed, but don't worry.</p>
+
+            <p>Redirecting you back home in: <span id="timer" style="background-color:#76b900;color: black;">00:00:<span id="countdown">00</span></span></p>
+            <br>
+
+            <p ><span style="color:#76b900" id="gotlostcode">system: locate.recovery</span></p>
+
+
+        </div>
+
+        <script>
+            var linkname= window.location.href;
+            if (linkname.length>32){
+                linkname=linkname.substring(0,32) + "...";
+            }
+
+            document.getElementById("linklocation").innerHTML =linkname;
+            document.getElementById("countdown").innerHTML ="10";
+
+            setTimeout(() => {document.getElementById("gotlostcode").innerHTML ="@system: redirect.authenticate"; }, 3000);
+
+
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="09"; document.getElementById("gotlostcode").innerHTML ="system: redirect.authenticate"; }, 3000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="08"; }, 4000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="07"; }, 5000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="06"; }, 6000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="05"; document.getElementById("gotlostcode").innerHTML ="system: redirect.validate"; }, 7000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="04"; }, 8000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="03"; document.getElementById("gotlostcode").innerHTML ="system: redirect.execute"; }, 9000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="02"; }, 10000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="01"; document.getElementById("gotlostcode").innerHTML ="system: done";}, 11000);
+            setTimeout(() => {document.getElementById("countdown").innerHTML ="00"; }, 12000);
+            setTimeout(() => {window.location = "http://anxsion.github.io"; }, 13000);
+
+            
+
+           
+        </script>
+    </body>
+</html>
