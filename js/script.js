@@ -57,13 +57,14 @@ function categoryExtend(categoryType){
             categoryAuthorExtended=1;
         }
         else{
-            document.getElementById("authorCategory").style.display="flex";
+            document.getElementById("authorCategory").style.display="none";
             document.getElementById("authorCategoryIcon2").style.transform="rotate(90deg)";
             document.getElementById("authorCategoryIcon1").style.backgroundColor="black";
             document.getElementById("authorCategoryIcon2").style.backgroundColor="black";
             categoryAuthorExtended=0;
         }
-    }if (categoryType=="about"){
+    }
+    if (categoryType=="about"){
         if (categoryAboutExtended==0){
             document.getElementById("aboutCategory").style.display="flex";
             document.getElementById("aboutCategoryIcon2").style.transform="rotate(0)";
@@ -72,7 +73,7 @@ function categoryExtend(categoryType){
             categoryAboutExtended=1;
         }
         else{
-            document.getElementById("aboutCategory").style.display="flex";
+            document.getElementById("aboutCategory").style.display="none";
             document.getElementById("aboutCategoryIcon2").style.transform="rotate(90deg)";
             document.getElementById("aboutCategoryIcon1").style.backgroundColor="black";
             document.getElementById("aboutCategoryIcon2").style.backgroundColor="black";
