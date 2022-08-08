@@ -1,7 +1,27 @@
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     display: none;
 }
-
+h1{
+    font-size: 1.5rem
+}
+h2{
+    font-size: 1.5rem
+}
+h3{
+    font-size: 1.375rem
+}
+h4{
+    font-size: 1.25rem
+}
+h5{
+    font-size: 1.125rem
+}
+h6{
+    font-size: 1rem
+}
+p{
+    font-size: 0.875rem;
+}
 body{
     height: 100%;
     width: 100%;
@@ -10,9 +30,11 @@ body{
     -webkit-tap-highlight-color: transparent;
     outline: none;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow:scroll;
+    overflow-x: hidden;
 }
 
-nav{
+#navigationMobile{
     position: fixed;
     top: 0;
     width: 100vw;
@@ -22,14 +44,39 @@ nav{
     display: flex;
     flex-direction: row;
     align-items: center;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    box-shadow:  0px 2px 2px rgba(0, 0, 0, 0.18);
 }
-.navigationContainer{
+#navigationMain{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 46px;
+    background-color:white;
+    z-index: 3;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow:  0px 2px 2px rgba(0, 0, 0, 0.18);
+}
+.navigationSection{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.navigationContainerMobile{
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.navigationContainerMain{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
 }
 
 #menu{
@@ -66,59 +113,51 @@ nav{
     opacity: 0%;
     z-index: 1;
     transition: all 0.3s;
+    overflow: hidden
 }
 
 #categories{
-    width: 0;
-    height: 100%;
+    width: 50%;
+    height: 100vh;
     background-color: white;
-    position: fixed;
+    position: absolute;
     top: 0;
+    left: -50%;
     margin-top: 46px;
     z-index: 2;
     display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: flex-start;
     transition: all 0.3s;
     overflow-x: hidden;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-}
-.categoriesContainer{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    overflow-y:auto;
 }
 .categoriesHeader{
+    white-space: nowrap;
+    min-width: 100%;
     display: flex;
     width: 100%;
-    justify-content:space-evenly;
+    justify-content:space-around;
     align-items: center;
     cursor: pointer;
     flex-direction: row;
+    user-select: none;
 }
 .categoriesSub{
-    display: flex;
-    justify-content: center;
+    display: none;
+    justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
     flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s;
 }
 
 .categoriesExtender{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.categoriesExtenderIcon{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    height: 46px;
+    width: 46px;
 }
 
 .categoriesExtenderBar1{
@@ -149,17 +188,33 @@ nav{
 main{
     z-index: 0;
     margin-top: 46px;
-    margin-bottom: 48px;
-    height: calc(100vh - 94px);
+    min-height: calc(100vh - 94px);
 }
 
 footer{
     z-index: 0;
     width: 100%;
     height: 48px;
-    position: absolute;
-    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media screen and (max-width: 425px){
+    #navigationMobile{
+        display: flex;
+    }
+    #navigationMain{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 426px){
+    #navigationMobile{
+        display: none;
+    }
+    #navigationMain{
+        display: flex;
+    }
 }

@@ -10,9 +10,9 @@
 	<meta name="description" content="The production website of the Bukant." />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:creator" content="@anxsion" />
-	<meta name="theme-color" content="black" />
-	<meta name="msapplication-navbutton-color" content="black" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="theme-color" content="darkturquoise" />
+	<meta name="msapplication-navbutton-color" content="darkturquoise" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="darkturquoise" />
 	<meta property="og:title" content="Bukant" />
 	<meta property="og:site_name" content="Bukant" />
 	<meta property="og:type" content="website" />
@@ -29,39 +29,86 @@
 	<script src="js/script.js"></script>
 </head>
 
-<body>
-	<nav id="navigation">
-		<div class="navigationContainer">
+<body id="body">
+	<nav id="navigationMobile">
+		<div class="navigationContainerMobile">
 			<div id="menu" onclick="navigationDraw()">
 				<div id="bar1"></div>
 				<div id="bar2"></div>
 				<div id="bar3"></div>
 			</div>
 		</div>
-		<div class="navigationContainer">
+		<div class="navigationContainerMobile">
 			<div class="logoOfficial"></div>
 		</div>
 	</nav>
-	<div id="layerHider"></div>
-	<div id="categories">
-		<div class="categoriesContainer">
-			<div class="categoriesHeader" onclick="categoryExtend('book')">
+
+	<nav id="navigationMain">
+		<div class="navigationSection">
+			<div class="navigationContainerMain">
+				<div class="logoOfficial"></div>
+			</div>
+		</div>
+		<div class="navigationSection">
+			<div class="navigationContainerMain">
 				<h1>Books</h1>
-				<div class="categoriesExtender">
-					<div id="bookCategoryIcon1" class="categoriesExtenderBar1"></div>
-					<div id="bookCategoryIcon2" class="categoriesExtenderBar2"></div>
-				</div>
 			</div>
-			<div id="bookCategory" class="categoriesSub">
-				<p>Fiction</p>
-				<p>Non-Fiction</p>
-				<p>Children</p>
-				<p>View All</p>
+			<div class="navigationContainerMain">
+				<h1>Author</h1>
 			</div>
+			<div class="navigationContainerMain">
+				<h1>About us</h1>
+			</div>
+		</div>
+	</nav>
+
+	<div id="layerHider"></div>
+
+	<div id="categories">
+		<div class="categoriesHeader" onclick="categoryExtend('book')">
+			<h1>Books</h1>
+			<div class="categoriesExtender">
+				<div id="bookCategoryIcon1" class="categoriesExtenderBar1"></div>
+				<div id="bookCategoryIcon2" class="categoriesExtenderBar2"></div>
+			</div>
+		</div>
+		<div id="bookCategory" class="categoriesSub">
+			<p>Fiction</p>
+			<p>Non-Fiction</p>
+			<p>Children</p>
+			<p>View All</p>
+		</div>
+		<div class="categoriesHeader" onclick="categoryExtend('author')">
+			<h1>Author</h1>
+			<div class="categoriesExtender">
+				<div id="authorCategoryIcon1" class="categoriesExtenderBar1"></div>
+				<div id="authorCategoryIcon2" class="categoriesExtenderBar2"></div>
+			</div>
+		</div>
+		<div id="authorCategory" class="categoriesSub">
+			<p>Fiction</p>
+			<p>Non-Fiction</p>
+			<p>Children</p>
+			<p>View All</p>
+		</div>
+		<div class="categoriesHeader" onclick="categoryExtend('about')">
+			<h1>About us</h1>
+			<div class="categoriesExtender">
+				<div id="aboutCategoryIcon1" class="categoriesExtenderBar1"></div>
+				<div id="aboutCategoryIcon2" class="categoriesExtenderBar2"></div>
+			</div>
+		</div>
+		<div id="aboutCategory" class="categoriesSub">
+			<p>Category 1</p>
+			<p>Catrgory 2</p>
+			<p>View All</p>
+			<p>Category 1</p>
+			<p>Catrgory 2</p>
+			<p>View All</p>
 		</div>
 	</div>
 
-	<main>
+	<main id="mainContent">
 
 	</main>
 	<footer>
