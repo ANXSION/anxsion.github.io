@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+	<title>login | BUKANT</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="AnxSion" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="The prototype website of the Bukant." />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:creator" content="@anxsion" />
+	<meta name="theme-color" content="white" />
+	<meta name="msapplication-navbutton-color" content="white" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+	<meta property="og:title" content="Bukant" />
+	<meta property="og:site_name" content="Bukant" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="image/" />
+	<meta property="og:url" content="BUKANT" />
+	<meta property="og:description" content="The prototype website of the Bukant." />
+	<link rel="canonical" href="https://www.bukant.com/" />
+	<link rel="manifest" href="manifest.webmanifest" />
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+	<link rel="preload" href="css/style.css" as="style" />
+	<link rel="shortcut icon" href="image/" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="image/" />
+	<script src="../js/script.js"></script>
+</head>
+
+<body id="body">
+	<nav>
+		<div class="menu" onclick="openDrawer()">
+			<div id="menubar1"></div>
+			<div id="menubar2"></div>
+		</div>
+		<p onclick="home(1)">BUKANT</p>
+		<div id="cartIconContainer" onclick="accessCart(2)">
+			<div id="cartCounter">
+				<p id="cartCounterDisplay"></p>
+			</div>
+			<img src ="../asset/icon/myCart.svg" alt="My Cart Svg"/>
+		</div>
+	</nav>
+
+	<div id="categoriesMobile">
+		<div class="categoriesTitle">
+			<p onclick="collapse('booksCategory')">Books&nbsp;</p>
+			<p id="booksAdd">+</p>
+		</div>
+		<div id="booksCategory">
+			<p>Fiction</p>
+			<p>Non-Fiction</p>
+			<p>Children</p>
+			<p>Language based</p>
+		</div>
+
+		<p class="categoriesTitle">Authors</p>
+
+		<div class="categoriesTitle">
+			<p onclick="collapse('aboutCategory')">About us&nbsp;</p>
+			<p id="aboutAdd">+</p>
+		</div>
+		<div id="aboutCategory">
+			<p>About us</p>
+			<p>Work with us</p>
+			<p>Publish with us</p>
+		</div>
+
+		<div class="categoriesTitle">
+			<p onclick="collapse('artCategory')">Arts and Craft&nbsp;</p>
+			<p id="artAdd">+</p>
+		</div>
+		<div id="artCategory">
+			<p>Arts</p>
+			<p>Craft</p>
+		</div>
+
+		<p class="categoriesTitle" onclick="window.open('account.html','_parent')">Account</p>
+	</div>
+
+	<main>
+		<section>
+		<div id="loginForm">
+			<h1>Welcome to BUKANT</h1>
+			<br>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username"><br>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password"><br>
+			<button class="accountButton" onclick="accessAccount()">Login</button>
+			<p onclick="switchAccount('register')"><u>New User? Register</u></p>
+			<p id="invalidUsername">* Your Username Does not exist.</p>
+			<p id="invalidPassword">* The password you entered is not correct.</p>
+		</div>
+
+			<div id="regForm">
+				<h1>Register New User</h1>
+				<br>
+				<label for="Regemail">Enter your email address:</label>
+				<input type="text" id="Regemail" name="Regemail" required><br>
+
+				<label for="Regusername">Enter new username:</label>
+				<input type="text" id="Regusername" name="Regusername" required><br>
+
+				<label for="Regpassword1">Enter a new password:</label>
+				<input type="password" id="Regpassword1" name="Regpassword1" required><br>
+
+				<label for="Regpassword2">Confirm password:</label>
+				<input type="password" id="Regpassword2" name="Regpassword2" required><br>
+
+				<button class="accountButton" onclick="registerAccount()">Register</button>
+				<p onclick="switchAccount('login')"><u>Already have an account? Login instead.</u></p>
+				<p id="invalidRegUsername">* The username is already taken</p>
+				<p id="invalidRegPassword">* The password you entered did not match.</p>
+			</div>
+
+		<div id="loggedIn">
+			<div class="useridContainer">
+				<div class="useridContainerL">
+					<div id="useridImage"></div>
+					<p id="insertUsername"></p>
+					<button class="accountButton" onclick="logout()">Logout</button>
+				</div>
+				
+				<div class="useridContainerR">
+					<p id="insertName"></p>
+					<p id="insertEmail"></p>
+					<div>
+						<div class="bookCount">
+							<p>Books Purchased</p>
+							<p id="booksOwned">9</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section>
+				<h1>Read Your Ebook</h1>
+				<div class="rails">
+					<div class="ebook">
+						<div class="bookCover"></div>
+					</div>
+
+					<div class="ebook">
+						<div class="bookCover"></div>
+					</div>
+
+					<div class="ebook">
+						<div class="bookCover"></div>
+					</div>
+				</div>
+			</section >
+		</div>
+	</section>
+	</main>
+
+	<footer></footer>
+	
+	<script>
+		var auth = localStorage.getItem("_loginStatus");
+		var accessCode=parseInt(localStorage.getItem("_loginAccess"));
+		var userData=JSON.parse(localStorage.getItem("_users"));
+		if(auth=="true"){
+			document.getElementById("loginForm").style.display="none";
+			document.getElementById("loggedIn").style.display="flex";
+			document.getElementById("insertUsername").textContent=userData[accessCode][2];
+			document.getElementById("insertName").textContent=userData[accessCode][3];
+			document.getElementById("insertEmail").textContent=userData[accessCode][4];
+			document.getElementById("useridImage").style.backgroundColor=userData[accessCode][5];
+			document.title=userData[accessCode][3]+ "| BUKANT";
+		}
+		else{
+			document.getElementById("loginForm").style.display="flex";
+			document.getElementById("regForm").style.display="none";
+			document.getElementById("loggedIn").style.display="none";
+			document.getElementById("insertUsername").textContent=""
+			document.getElementById("insertName").textContent="";
+			document.getElementById("insertEmail").textContent="";
+			document.title="Login | BUKANT";
+		}
+	</script>
+</body>
+
+</html>
