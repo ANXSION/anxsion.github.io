@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+html{
+    font-size: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+::selection {
+    color: white;
+    background: #76b900;
+  }
+body{
+    width: 92%;
+    height: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+.network-status{
+    width: 100%;
+    opacity: 0%;
+    background-color: red;
+    color: white;
+    height: 38px;
+    text-align: center;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 5;
+    transition: all 0.5s ease;
+    z-index: 5;
+}
+.network-status p{
+    line-height: 38px;
+    font-size:14px;
+    margin: 0px;
+}
+.logo img{
+    width: 30%;
+    height: auto;
+}
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navigation p{
+    color: black;
+    text-decoration: none;
+    opacity: 100%;
+    font-size: 0.75rem;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.liveupdate{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.liveupdate h1{
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #76b900;
+}
+
+.liveupdate hr{
+    border: 0;
+    background-color: black;
+    height: 1px;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.liveupdate div h2{
+    font-size: 1.25rem;
+    font-weight: normal;
+    margin: 4px;
+    padding-left: 1rem;
+}
+.liveupdate div p{
+    font-size: 0.75rem;
+    font-weight: normal;
+    padding-left: 1rem;
+    margin: 4px;
+}
+
+.liveupdate div a{
+    font-size: 0.75rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: #76b900;
+    padding-left: 2rem;
+}
+
+hr{
+    border:  0.5px solid black;
+    color: black;
+    margin: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.home{
+    opacity: 0%;
+    display: block;
+    transition: all 0.3s ease;
+}
+.home br{
+    display: block;
+    content: "";
+    margin-top:16px;
+}
+.banner{
+    width: 100%;
+    position: relative;
+}
+.banner div h1{
+    padding-top:2%;
+    margin-left: 5%;
+    color: white;
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+.banner div p{
+    margin-left: 5%;
+    width: 50%;
+    color: white;
+    font-size: 0.75rem;
+    padding-bottom: 4%;
+}
+.banner button{
+    margin-left: 5%;
+    border: 0;
+    background-color: white;
+    font-size: 0.75rem;
+    height: 1.5rem;
+    width: 25%;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: black;
+}
+.banner div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.concept {
+    display: block;
+    transition: all 0.3s ease;
+}
+.concept img{
+    width: 100%;
+    height: 100%;
+}
+.concept p{
+    font-size: 1rem;
+    text-align: justify;
+}
+.concept h1{
+    font-size: 2rem;
+    font-weight: normal;
+}
+.concept h2{
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #76b900;
+}
+.concept button{
+    margin-left: 25%;
+    border: 0;
+    width: 50%;
+    color: white;
+    background-color:  black;
+    font-size: 0.75rem;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.policy{
+    display: block;
+    transition: all 0.3s ease;
+}
+.policy h1{
+    font-size: 2rem;
+    font-weight: normal;
+}
+.policy h2{
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #76b900;
+}
+.policy p{
+    font-size: 1rem;
+    text-align: justify;
+}
+.rnd{
+    display: block;
+    transition: all 0.3s ease;
+}
+.rnd h1{
+    font-size: 2rem;
+    font-weight: normal;
+    color: #76b900;
+}
+.rnd p{
+    font-size: 1rem;
+    text-align: justify;
+}
+.rnd a{
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #76b900;
+    cursor: pointer;
+    font-weight: normal;
+}
+.store{
+    display: block;
+    transition: all 0.3s ease;
+}
+.store h1{
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.store div{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.store div div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.store div div a{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    opacity: 0%;
+    transition: all 0.3s;
+}
+.store div div a:hover{
+    background-color: #76b900;
+    opacity: 12%;
+}
+.store div div img{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    vertical-align: middle;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.soldout{
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    width: 50%;
+    height: 2rem;
+    background-color: red;
+    position: absolute;
+    top:50%;
+    left: 25%;
+    line-height: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 3;
+    display: none;
+}
+.product{
+    display: block;
+    transition: all 0.3s ease;
+}
+.product a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+.product h1{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+.product h2{
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+.product h3{
+    font-size: 1.25rem;
+    font-weight: normal;
+
+}
+.product p{
+    font-size: 1rem;
+}
+.product code{
+    font-size: 0.75rem;
+}
+.product img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.product button{
+    border: 0;
+    width: 40%;
+    color: white;
+    background-color:  black;
+    font-size: 1rem;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+footer{
+    background-color: white;
+    display: flex;
+    width: 100%;
+    height: 5%;
+    font-size: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+footer p::before{
+    display: block;
+    font-weight: bold;
+    content: "AnxSion \00a9 2022";
+    font-size: 1rem;
+}
+.unit-available:hover{
+    background-color: #76b900;
+    color: white;
+    transition: all 0.2s;
+}
+.unit-unavailable:hover{
+    background-color: red;
+    color: black;
+    transition: all 0.2s;
+}
+.social{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.social div{
+    height: 1.5rem;
+    width: 1.5rem;
+    position: relative;
+}
+.social div a{
+    width: 1.5rem;
+    height: 100%;
+    opacity: 25%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.social div img{
+    height: 100%;
+    width: 1.5rem;
+}
+
+@media screen and (min-width:375px){
+    .navigation a{
+        font-size: 0.75rem;
+    }
+    
+    .logo img{
+        width: 29%;
+        height: auto;
+    }
+    .banner div h1{
+        padding-top:5%;
+        font-size: 1.5rem;
+    }
+    .banner div p{
+        font-size: 0.75rem;
+        padding-bottom: 4%;
+    }
+    .banner button{
+        font-size: 0.75rem;
+        height: 1.5rem;
+    }
+}
+
+@media screen and (min-width:425px){
+    .navigation a{
+        font-size: 0.875rem;
+    }
+    .logo img{
+        width: 28%;
+        height: auto;
+    }
+    .banner div h1{
+        padding-top:7%;
+        font-size:7vw;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 2.5vw;
+    }
+    .banner button{
+        font-size: 2.5vw;
+        height: 10%;
+        width: 25%;
+    }
+}
+
+@media screen and (min-width:768px){
+    body{
+        width: 84%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .banner div h1{
+        padding-top:6%;
+        font-size:6.2vw;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 2.4vw;
+    }
+    .banner button{
+        font-size: 2.2vw;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 27%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 1.125rem;
+    }
+    .store div{
+        grid-template-columns: auto auto;
+    }  
+}
+
+@media screen and (min-width:1024px){
+    body{
+        width: 840px;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .concept P{
+        font-size: 1.125rem;
+    }
+    .concept h1{
+        font-size: 2.125rem;
+    }
+    .concept h2{
+        font-size: 1.5rem;
+    }
+    .concept button{
+        font-size: 0.75rem;
+    }
+    .dsp h1{
+        font-size: 2.125rem;
+    }
+    .dsp p{
+        font-size: 1.125rem;
+    }
+    .dsp a{
+        font-size: 1.125rem;
+    }
+    .policy p{
+        font-size: 1.125rem;
+    }
+    .policy h1{
+        font-size: 2.125rem;
+    }
+    .policy h2{
+        font-size: 1.5rem;
+    }
+    .product h1{
+        font-size: 1.5rem;
+    }
+    .product h2{
+        font-size: 1.125rem;
+    }
+    .product p{
+        font-size: 1.125rem;
+    }
+    .store h1{
+        font-size: 2.125rem;
+    }
+    .soldout {
+        line-height: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.125rem;
+    }
+    .banner div h1{
+        padding-top:4%;
+        font-size:4rem;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 1.5rem;
+    }
+    .banner button{
+        font-size: 1.5rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 26%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 1.25rem;
+    }
+    .store div{
+        grid-template-columns: auto auto;
+    }  
+}
+
+@media screen and (min-width:1440px){
+    body{
+        width: 1040px;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .concept P{
+        font-size: 1.125rem;
+    }
+    .concept h1{
+        font-size: 2.125rem;
+    }
+    .concept h2{
+        font-size: 2.25rem;
+    }
+    .concept button{
+        font-size: 0.875rem;
+    }
+    .dsp h1{
+        font-size: 2.125rem;
+    }
+    .dsp p{
+        font-size: 1.125rem;
+    }
+    .dsp a{
+        font-size: 1.125rem;
+    }
+    .policy p{
+        font-size: 1.125rem;
+    }
+    .policy h1{
+        font-size: 2.125rem;
+    }
+    .policy h2{
+        font-size: 2.25rem;
+    }
+    .product h1{
+        font-size: 2.25rem;
+    }
+    .product h2{
+        font-size: 1.125rem;
+    }
+    .product p{
+        font-size: 1.125rem;
+    }
+    .store h1{
+        font-size: 2.125rem;
+    }
+    .soldout {
+        line-height: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.125rem;
+    }
+    .banner div h1{
+        padding-top:4%;
+        font-size:4.875rem;
+    }
+    .banner div p{
+        padding-bottom: 4%;
+        font-size: 1.875rem;
+    }
+    .banner button{
+        font-size: 1.5rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 22%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 1.5rem;
+    }
+    .store div{
+        grid-template-columns: auto auto;
+    }  
+
+}
+
+@media screen and (min-width:2560px){
+    body{
+        width: 1440px;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .concept P{
+        font-size: 1.125rem;
+    }
+    .concept h1{
+        font-size: 2.125rem;
+    }
+    .concept h2{
+        font-size: 1.5rem;
+    }
+    .concept button{
+        font-size: 0.875rem;
+    }
+    .dsp h1{
+        font-size: 2.125rem;
+    }
+    .dsp p{
+        font-size: 1.125rem;
+    }
+    .dsp a{
+        font-size: 1.125rem;
+    }
+    .policy p{
+        font-size: 1.125rem;
+    }
+    .policy h1{
+        font-size: 2.125rem;
+    }
+    .policy h2{
+        font-size: 1.5rem;
+    }
+    .product h1{
+        font-size: 1.875rem;
+    }
+    .product h2{
+        font-size: 1.5rem;
+    }
+    .product p{
+        font-size: 1.25rem;
+    }
+    .store h1{
+        font-size: 2.125rem;
+    }
+    .soldout {
+        line-height: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.125rem;
+    }
+    .banner div h1{
+        padding-top:4%;
+        font-size: 6.375rem;
+    }
+    .banner div p{
+        padding-bottom: 5%;
+        font-size: 2.625rem;
+    }
+    .banner button{
+        font-size: 2.25rem;
+        height: 10%;
+        width: 25%;
+    }
+    .logo img{
+        width: 24%;
+        height: auto;
+    }
+    .navigation p{
+        font-size: 1.675rem;
+    }
+    .store div{
+        grid-template-columns: auto auto auto;
+    }  
+
+}

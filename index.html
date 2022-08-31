@@ -1,202 +1,490 @@
 <!doctype html>
 <html lang="en">
-  
-<head>
-	<title>Bukant</title>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="author" content="AnxSion" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="The prototype website of the Bukant." />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:creator" content="@anxsion" />
-	<meta name="theme-color" content="white" />
-	<meta name="msapplication-navbutton-color" content="white" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="white" />
-	<meta property="og:title" content="Bukant" />
-	<meta property="og:site_name" content="Bukant" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image" content="image/" />
-	<meta property="og:url" content="BUKANT" />
-	<meta property="og:description" content="The prototype website of the Bukant." />
-	<link rel="canonical" href="https://www.bukant.com/" />
-	<link rel="manifest" href="manifest.webmanifest" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="preload" href="css/style.css" as="style" />
-	<link rel="shortcut icon" href="" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="" />
-	<script src="js/script.js"></script>
-</head>
+    <head>
 
-<body id="body">
+        <!-- This Website if designed, developed and maintained by AnxSion. -->
+        <title>ANXSION</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="AnxSion" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="The official website of the AnxSion. Legal solutions, studio services, software research and development." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="theme-color" content="black" />
+        <meta name="msapplication-navbutton-color" content="black" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="google-site-verification" content="Td3WsaV9Dyy8h_rk4BunP0HVL-UsXLA7r6nRTak1-94" />
+        <meta property="og:title" content="ANXSION" />
+        <meta property="og:site_name" content="ANXSION" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="asset/image/logo.webp" />
+        <meta property="og:url" content="https://anxsion.github.io" />
+        <meta property="og:description" content="The official website of the AnxSion. Legal solutions, studio services, software research and development." />
+        <link rel="canonical" href="https://anxsion.github.io" />
+        <link rel="manifest" href="manifest.webmanifest" />
+        <link rel="stylesheet" href="css/core.css" type="text/css" />
+        <link rel="preload" href="css/core.css" as="style" />
+        <link rel="shortcut icon" href="asset/image/favicon.webp" type="image/x-icon" />
+        <link rel="prefetch" href="asset/image/store/05d7020b1F959d2.webp" />
+        <link rel="prefetch" href="asset/image/store/05d7020b1Fd4310.webp" />
+        <link rel="apple-touch-icon" href="asset/image/pwa/192x192.png" />
 
-	<nav>
-		<div class="menu" onclick="openDrawer()">
-			<div id="menubar1"></div>
-			<div id="menubar2"></div>
-		</div>
-		<p onclick="home(0)">BUKANT</p>
-		<div id="cartIconContainer" onclick="accessCart(1)">
-			<div id="cartCounter">
-				<p id="cartCounterDisplay"></p>
-			</div>
-			<img src ="asset/icon/myCart.svg" alt="My Cart Svg"/>
-		</div>
-	</nav>
+        <script src="script/core.js"></script>
 
-	<div id="categoriesMobile">
-		<div class="categoriesTitle">
-			<p onclick="collapse('booksCategory')">Books&nbsp;</p>
-			<p id="booksAdd">+</p>
-		</div>
-		<div id="booksCategory">
-			<p>Fiction</p>
-			<p>Non-Fiction</p>
-			<p>Children</p>
-			<p>Language based</p>
-		</div>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
 
-		<p class="categoriesTitle">Authors</p>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-		<div class="categoriesTitle">
-			<p onclick="collapse('aboutCategory')">About us&nbsp;</p>
-			<p id="aboutAdd">+</p>
-		</div>
-		<div id="aboutCategory">
-			<p>About us</p>
-			<p>Work with us</p>
-			<p>Publish with us</p>
-		</div>
+            gtag('config', 'G-53Y0LGEE69');
+        </script>
 
-		<div class="categoriesTitle">
-			<p onclick="collapse('artCategory')">Arts and Craft&nbsp;</p>
-			<p id="artAdd">+</p>
-		</div>
-		<div id="artCategory">
-			<p>Arts</p>
-			<p>Craft</p>
-		</div>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "url": "https://anxsion.github.io",
+                "logo": "https://anxsion.github.io/asset/image/logo.webp"
+            }
+            </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebApplication",
+                "browserRequirements": "Requires JavaScript",
+                "name": "ANXSION (PWA)",
+                "operatingSystem": "Android, IOS, Windows",
+                "applicationCategory": "BusinessApplication",
+                "installUrl": "https://anxsion.github.io/",
+                "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "ratingCount": "5"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "INR"
+                }
+            }
+        </script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": "Do you permit physical access to your studio?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No, we do not permit inhouse physical access due to the sensitive nature of our operation."
+                    }}, {
+                        "@type": "Question",
+                        "name": "What are the services that you provide?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We provide legal advice and consultations, software and hardware development that includes both frontend and backend website development and other creative services such as sound design and video editing."
+                    }}, {
+                    "@type": "Question",
+                    "name": "What are the accepted modes of payment?",
+                    "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "We accept both cash and other electronic transfer system such as UPI, Google pay, Paypal, etc."
+                    }}, {
+                    "@type": "Question",
+                    "name": "What is the price range of your service?",
+                    "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Our fee system is a dynamic one and depends heavily upon your requirements. Kindly let us know about your needs so that we can provide you an estimate."
+                    }}]
+            }
+            </script>
+        
+    </head>
 
-		<p class="categoriesTitle" onclick="window.open('page/account.html','_parent')">Account</p>
-	</div>
 
-	<main>
-		<section>
-			<h1>Featured Titles</h1>
-			<div class="rails">
+    <body id="main-content">
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <div id="disconnected" class="network-status">
+            <p>disconnected</p>
+        </div>
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <div id="connected" class="network-status">
+            <p>connected</p>
+        </div>
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <div class="logo">
+            <img src="asset/image/logo.webp" height="1080" width="1920" alt="AnxSion Logo">
+        </div>
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <br>
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <nav class="navigation">
+            <p id="navhome" onclick="navclick('home')">Home</p>
+            <p id="navconcept" onclick="navclick('concept')">_Section.render</p>
+            <p id="navrnd" onclick="navclick('rnd')">Chrysalis R&D</p>
+            <p id="navstore" onclick="navclick('store')">Curiosity</p>
+        </nav>
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <br><br>
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
+        <div id="home" class="home">
 
-				<div class="card">
-					<div class="bookCover"></div>
-					<div class="bookDetail">
-						<div class="bookDetailAlpha">
-							<p>Rs. 150</p>
-						</div>
-						<div class="bookDetailBeta">
-							<button class="bookButton">View</button>
-							<button class="bookButton" onclick="addToCart()">Add to Cart</button>
-						</div>
-					</div>
-				</div>
-			</div>
+            <div class="liveupdate">
+                <h1>Updates</h1>
+                <hr>
+                <br><br>
+                <div>
+                    <h2>Website Development Offer</h2>
+                    <p>Flat 50% off on all Website development services.</p>
+                    <a target="_blank" href="https://posts.gle/rngC7s">system.link.AccessCode</a>
+                </div>
+                <br><br>
+                <div>
+                    <h2>Latest Video Release</h2>
+                    <p>"Daag" music video is officially released.</p>
+                    <a target="_blank" href="https://youtu.be/ZpLZCy_WfM8">system.link.WatchVideo</a>
+                </div>
+            </div>
+            <br><br>
 
-		</section>
-	</main>
 
-	<footer></footer>
-	<script>
-		checkCart();
-	</script>
-</body>
+            <div class="banner">
+                <img src="asset/image/concept.webp" height="1080" width="1920" alt="_Section.render Banner">
+                <div>
+                    <h1>_Section.render</h1>
+                    <p>An experimental studio that creates everything.</p>
+                    <button href="#concept" class="unit-available" onclick="navclick('concept')">Learn More</button>
+                </div>
+            </div>
 
+            <br>
+            <div class="banner">
+                <img src="asset/image/dsp.webp" height="1080" width="1920" alt="AnxSion Chrysalis R&D Banner">
+                <div>
+                    <h1>Chrysalis R&D</h1>
+                    <p>Reliable SDK development for developers.</p>
+                    <button class="unit-available" onclick="navclick('rnd')">Learn More</button>
+                </div>
+            </div>
+
+            <br>
+            <div class="banner">
+                <img src="asset/image/store.webp" height="1080" width="1920" alt="AnxSion Curiosity Store Banner">
+                <div>
+                    <h1>Curiosity</h1>
+                    <p>Exclusive weareables and hardware supplies.</p>
+                    <button class="unit-available" onclick="navclick('store')">Learn more</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="concept" class="concept">
+
+            <p><b>_Section.render</b> specializes in Design and Asset Creation for brands who are in need of advanced design solutions. These brands range from entertainment, industrial, medical, consumer products and more.</p>
+
+            <p>Over the years we have been able to work with a lot of brands on amazing projects. From Sci-Fi Games and Industrial Designs to Consumer Products, Web Development, Live Performance aid and Sound Designing. We do it all.</p>
+
+            <p>Give us a sense of your current situation so we can decide how we can help you. If we can't help, We'll try to forward you to someone from our network who can.</p>
+            <br>
+
+            <button class="unit-available" onclick="navclick('policy')">Policy and Guidelines</button>
+            <br><br>
+
+            <h1>Services</h1>
+
+            <h2>Basic website</h2>
+            <p>For small scale brands with limited budgets. CMS? We do not use any CMS system (Wordpress, Hostlinger, etc). All the codes are written by hand and is made exclusively for your brand. Dare to tame the hard coded beast.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Application Development</h2>
+            <p>For small organisations who require installable applications.</p>
+            <p><b>Location:</b> Remote.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Paid every design delivery and major updates. Non-refundable & sent with requested material.</p>
+            <br>
+
+            <h2>Advanced Websites</h2>
+            <p>For large scale brands who require websites with advanced functionalities such as data handeling and e-Commerce. Progressive Web Application included.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Backend Technicals</h2>
+            <p>For industrial and large brands who requice advanced website to handle intricate data and other cutting edge web technologies. Full backend support included.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Music Composing</h2>
+            <p>Music composing service for music artists and flim makers.</p>
+            <p><b>Location:</b> Remote.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Cinematic Sound Design</h2>
+            <p>Exceptional cinematic sound design to provide your videos with unreal soundscapes.</p>
+            <p><b>Location:</b> Remote.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Mixing and Mastering</h2>
+            <p>Mixing and Mastering of musical tracks.</p>
+            <p><b>Location:</b> Remote.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Live Performance Aid</h2>
+            <p>Live performance aid for artists. Include band members and visual lights controls services.</p>
+            <p><b>Location:</b> Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable.</p>
+            <br>
+
+            <h2>Design & Consultation</h2>
+            <p>For small scale brands with short-term projects & limited budgets.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Concept Design for Entertainment</h2>
+            <p>For Movie, Game, Entertainment related productions.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Paid every design delivery. Non-refundable & sent with requested material.</p>
+            <br>
+
+            <h2>Concept Design & Execution</h2>
+            <p>For Conceptual Development & 3D Visualization for your small scale production, you may contact us to specify your exact situation and objectives. This is for Individuals and Small Firms who need help designing a product or asset. For Consumer Application you can reference Concept Design for Industries.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+
+            <h2>Concept Design for Industries</h2>
+            <p>For Industrial, Consumer and Private applications that require a complete treatment. If your brand needs help with Design, Visualization, 3D CAD Modelling & Presentation of your product for manufacturing, we are happy to help.</p>
+            <p><b>Location:</b> Remote and Onsite.</p>
+            <p><b>Duration:</b> Project Duration as discussed.</p>
+            <p><b>Deliverables:</b> Project Deliverables as discussed.</p>
+            <p><b>Payment Terms:</b> Prepaid & non-refundable, sent with requested material.</p>
+            <br>
+        </div>
+
+        <div id="policy" class="policy">
+
+            <h1>Service Policy Statement</h1>
+
+            <p>The customer service is a top priority of _Section.render. All customers will be treated promptly and respectfully without regard to age, gender, sexual orientation, race, ethnicity, disability, language proficiency, social or economic status. _Section.render, however, can terminate a project with its discreation if it assesses that the behaviour of the customer is consistently poor or the goal of the customer is diverging too greatly from what was planned originally.</p>
+
+            <h2>Explanation</h2>
+
+            <p>
+                a. If the project was initially planned to be a standard website and later it is to be an advanced website, or vice versa, they are free to choose so and the project WILL NOT BE terminated. However the prices shall change.<br><br>
+                
+                b. If the project was initially planned to be a standard website cloting store, and later it is to be turned into a automotive website, the project WILL BE terminated.<br><br>
+                
+                c. If the project involves minor changes, the project WILL NOT BE terminated.<br><br>
+            </p>
+
+            <h2>Technical Services: Rules and Regulations</h2>
+
+            <p>
+                1. The standard web development sercive is NOT a mere tempelate development on a CMS. The web is made exclusively with codes and will be tailored to meet your specific needs. You will require a web administrator or any other individual with the knowledge of HTML to use the website effectively. The Web is always designed to meet all the web standards.<br><br>
+
+                2. The standard web development is open to up to 5 change requests, every subsequent change request shall incure additional charges.<br><br>
+
+                3. The application development service is open only for Android OS. However, if the application is a Progressive Web Application, then it shall work on all operating system.<br><br>
+
+                4. The first major update and subsequent small updates for a year from the date of release shall be free of cost. The application shall be maintained actively for 3 additional years with a small updates to be done for free, while the major updates to be done with additional charges.<br><br>
+
+                Provided, if the application is a PWA, the applications shall be maintained as long as the lifecyle of the website persists. The update charges however, will apply accordingly.<br><br>
+
+                5. The advanced website service shall be regulated by both standard web service and the application service (relating to the PWA) rules mentioned beforehand (Rule 1 to Rule 4). This service shall be highly dependent upon the needs of the customer.<br><br>
+
+                6. The backend service shall be a software and hardware based service. The price of the service can be waived with the presence of pre-existing hardware or software solution of the customer, as may be applicable. The backend service, in itself, shall not consist of standard web service, application service nor advanced website service.<br><br>
+
+                However, these services can be added seperately with independent charges.<br><br>
+            </p>
+
+            <h2>Audio Services: Rules and Regulations</h2>
+
+            <p>
+                7. The composing service shall be bound with a non-disclosure agreement. The customer shall be granted a lineant access to the work in progress material. However, if the customer is disruptive or demands to access the material too frequently, the material and the work in progress materials shall be restricted to the point that the project can be completed smoothly without any disruption.<br><br>
+
+                However, the customer shall not lose access to the material absolutely and the restriction will be resonable.<br><br>
+
+                8. The Sampeling service shall be regulated by the Composing service rules (Rule 7).<br><br>
+
+                9. The mixing and mastering service too shall be regulated by Rule 7.<br><br>
+
+                10. The live performance service will be executed as planned and shall only be open to changes in case of unforeseen or other emergency situations.<br><br>
+
+                11. The payments made for the performers shall not be refundable, as long as there is no default on the performers.<br><br>
+
+                Provided, in case of unforseen events or emergency situation, the customers shall only be eligible for the refund of 80% of the total amount of fees charged.<br><br>
+            </p>
+
+            <h2>Design Services: Rules and Regulations</h2>
+
+            <p>
+                12. The design and consultaion service may include concept generation or proof of concept design assembly.<br><br>
+
+                13. The all the services in this category shall be regulated with a similar access regulations mentioned in the Rule 7.
+            </p>
+
+        </div>
+
+        <div id="rnd" class="rnd">
+            <p><b>Chrysalis R&D</b> is an experimental Research & Development wing of AnxSion. At Chrysalis R&D we belive in pushing the development boundaries by creating a range of reliable Software Development Kit for various emerging technologies. </p>
+
+            <p>We are working relentlessly at advancing and incorporating the latest developments in digital signal processing, user interface, user experience design and embedded systems into the daily lives of people.</p>
+
+            <p>Our mission is to design the next generation of efficient and reliable tools in order to empower people's creativity to expand alongside technologies.</p>
+
+            <br>
+
+            <h1>Cluster Alpha: Digital Signal Processing SDK</h1>
+
+            <p>We not only produce quality audio softwares, but also provide flexible snippets and C++ headers for exponentially speeding up the development process of the projects of other audio developers.</p>
+
+            <a>Downloadable contents will be available soon.</a>
+
+        </div>
+
+        <div id="store" class="store">
+
+            <h1>Weareables</h1>
+
+            <br>
+
+            <div>
+                <div>
+                    <a href="asset/page/tshirt-juggernaut-05d7020b1Fd4310.html" target="_self"></a>
+                    <p class="soldout">sold out</p>
+                    <img src="asset/image/store/05d7020b1Fd4310.webp" loading="lazy" height="1000" width="1000" alt="AnxSion Tshirt Juggernaut Series">
+                    </div>
+                <div>
+                    <a href="asset/page/tshirt-blackoperations-05d7020b1F959d2.html" target="_self"></a>
+                    <p class="soldout">sold out</p>
+                    <img src="asset/image/store/05d7020b1F959d2.webp" loading="lazy" height="1000" width="1000" alt="AnxSion Tshirt Black Operations Series">
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+
+        <div  class="social">
+            <div>
+                <a href="https://www.facebook.com/ANXSION" target="_blank"></a>
+                <img src="asset/image/icon/ic_facebook.svg" alt="AnxSion Facebook Link">
+            </div>
+            <div>
+                <a href="https://instagram.com/anxsion" target="_blank"></a>
+                <img src="asset/image/icon/ic_instagram.svg" alt="AnxSion Instagram Link">
+            </div>
+            <div>
+                <a href="https://twitter.com/anxsion" target="_blank"></a>
+                <img src="asset/image/icon/ic_twitter.svg" alt="AnxSion Twitter Link">
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/anxsion" target="_blank"></a>
+                <img src="asset/image/icon/ic_linkedin.svg" alt="AnxSion Linkedin Link">
+            </div>
+            <div>
+                <a href="https://open.spotify.com/artist/22yeYGWn2iMUfuMRuAPizK" target="_blank"></a>
+                <img src="asset/image/icon/ic_spotify.svg" alt="AnxSion Spotify Link">
+            </div>
+            <div>
+                <a href="https://www.youtube.com/c/AnxSion" target="_blank"></a>
+                <img src="asset/image/icon/ic_youtube.svg" alt="AnxSion Youtube Link">
+            </div>
+            <div>
+                <a href="https://www.artstation.com/anxsion" target="_blank"></a>
+                <img src="asset/image/icon/ic_artstation.svg" alt="AnxSion Artstation Link">
+            </div>
+        </div>
+        
+        <br>
+
+        <footer>
+            <p>All Rights Reserved</p>
+        </footer>
+
+        <script>
+            window.addEventListener("load", () => {
+                if ("serviceWorker" in navigator) {
+                    navigator.serviceWorker.register("anxsion-serviceworker.js");
+                }  
+            });
+
+            var wasoffline=false;
+            document.getElementById("main-content").style.marginTop="0";
+            document.getElementById("disconnected").style.display="none";
+            document.getElementById("disconnected").style.opacity="0";
+            document.getElementById("connected").style.display="none";
+            document.getElementById("connected").style.opacity="0";
+
+            window.setInterval(function(){
+
+                if (navigator.onLine!=true){
+
+                    document.getElementById("disconnected").style.backgroundColor="red";
+                    document.getElementById("main-content").style.marginTop="38px";
+                    document.getElementById("disconnected").style.display="block";
+                    setTimeout(() => { document.getElementById("disconnected").style.opacity="100%"; }, 500);
+                    wasoffline=true;
+                }
+
+                else{
+                    if (wasoffline==true){
+                        document.getElementById("main-content").style.marginTop="38px";
+                        document.getElementById("disconnected").style.display="none";
+                        document.getElementById("disconnected").style.opacity="0%";
+                        document.getElementById("connected").style.backgroundColor="#76b900";
+                        document.getElementById("connected").style.display="block";
+                        document.getElementById("connected").style.opacity="100%";
+                        setTimeout(() => {document.getElementById("connected").style.opacity="0%"; }, 500);
+                        setTimeout(() => { document.getElementById("main-content").style.marginTop="0";document.getElementById("connected").style.display="none"; }, 700);
+                        wasoffline=false;
+                    }
+                    else{
+                        document.getElementById("main-content").style.marginTop="0";
+                        document.getElementById("disconnected").style.display="none";
+                        document.getElementById("disconnected").style.opacity="0";
+                        document.getElementById("connected").style.display="none";
+                        document.getElementById("connected").style.opacity="0";
+                        wasoffline=false;
+                    }
+                }
+            }, 2000);
+
+            init();
+
+        </script>
+    </body>
 </html>
