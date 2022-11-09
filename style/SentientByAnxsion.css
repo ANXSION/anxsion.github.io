@@ -191,6 +191,13 @@ footer{
     height: auto;
 }
 
+.contact{
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    padding: 12px;
+}
+
 .intelSocial{
     width: 100%;
     height: auto;
