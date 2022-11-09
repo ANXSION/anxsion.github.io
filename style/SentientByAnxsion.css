@@ -181,7 +181,6 @@ footer{
     justify-content: center;
     align-items: center;
     text-align: justify;
-    margin:24px;
 }
 .intelDetails img{
     width: 100%;
@@ -199,6 +198,7 @@ footer{
     grid-template-columns: 30% 30% 30%;
     justify-content: space-evenly;
     align-items: center;
+    row-gap: 12px;
 }
 
 .intelSocial a{
@@ -209,8 +209,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    margin: 18px;
+    font-size: 1.2rem;
     text-decoration: none;
 }
 
