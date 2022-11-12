@@ -79,6 +79,7 @@ nav div a img{
     width: 50%;
     height: fit-content;
     filter: invert(100%);
+    pointer-events: none;
 }
 
 nav div div a{
@@ -142,6 +143,7 @@ section{
 .renderDisplay a img{
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 
 .renderShowcase{
@@ -156,6 +158,7 @@ section{
     width: 100%;
     height: 100%;
     user-select: none;
+    pointer-events: none;
 }
 
 footer{
@@ -185,6 +188,7 @@ footer{
 .intelDetails img{
     width: 100%;
     height: auto;
+    pointer-events: none;
 }
 .intelDetails p{
     width: 100%;
@@ -240,6 +244,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 }
 
 @media screen and (min-width:1024px) {
