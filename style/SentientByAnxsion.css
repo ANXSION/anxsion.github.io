@@ -68,7 +68,7 @@ nav div div {
 }
 
 nav div a{
-    width: 100%;
+    width: 50%;
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@ nav div a{
 }
 
 nav div a img{
-    width: 50%;
+    width: 100%;
     height: fit-content;
     filter: invert(100%);
     pointer-events: none;
@@ -247,16 +247,67 @@ footer{
     pointer-events: none;
 }
 
+.clientContainer{
+    width: 100%;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+}
+
+.clientContainer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    
+}
+.clientContainer img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    filter: blur(0);
+    opacity: 100%;
+    transition: 0.3s ease;
+}
+.clientContainer div div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0%;
+    transition: 0.3s ease;
+}
+
+.clientContainer div div p{
+    font-size: 1rem;
+}
+
+.clientContainer div:hover img{
+    filter: blur(4px);
+    opacity: 25%;
+}
+
+.clientContainer div:hover div{
+    opacity: 100%;
+}
+
 @media screen and (min-width:1024px) {
     nav div div a{
         font-size: 1.5rem;
     }
 
-    nav div a img{
+    nav div a{
         width: 25%;
     }
     .renderContainer{
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 33.3% 33.3% 33.3%;
     }
     .chrysalisContainer{
         grid-template-columns: 50% 50%;
@@ -264,6 +315,9 @@ footer{
     .intelDetails img{
         width: 50%;
         height: auto;
+    }
+    .clientContainer{
+        grid-template-columns: 20% 20% 20% 20% 20%;
     }
     
 }
