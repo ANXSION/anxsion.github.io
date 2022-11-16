@@ -319,13 +319,14 @@ footer{
     margin: 28px;
 }
 .exclusiveStore img{
-    width: 25%;
+    width: 50%;
 }
 
 .exclusiveStore a{
+    width: 80%;
     color: black;
     background-color: white;
-    padding: 14px;
+    padding: 8px;
     text-decoration: none;
     border-radius: 6px;
     font-size: 1rem;
@@ -361,6 +362,13 @@ footer{
     }
     .clientContainer{
         grid-template-columns: 20% 20% 20% 20% 20%;
+    }
+
+    .exclusiveStore img{
+        width: 25%;
+    }
+    .exclusiveStore a{
+        width: 25%;
     }
     
 }
