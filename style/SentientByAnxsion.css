@@ -310,6 +310,34 @@ footer{
     opacity: 100%;
 }
 
+.exclusiveStore{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 28px;
+}
+.exclusiveStore img{
+    width: 25%;
+}
+
+.exclusiveStore a{
+    color: black;
+    background-color: white;
+    padding: 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.exclusiveStore a:hover{
+    color: white;
+    background-color: red;
+}
+
+
 @media screen and (min-width:1024px) {
     nav div div a{
         font-size: 1.5rem;
