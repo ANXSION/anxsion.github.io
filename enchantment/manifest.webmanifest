@@ -16,25 +16,13 @@
     "src": "./asset/icon/192.png",
     "type": "image/png",
     "sizes": "192x192",
-    "purpose": "any"
+    "purpose": "any maskable"
   },
   {
     "src": "./asset/icon/512.png",
     "type": "image/png",
     "sizes": "512x512",
-    "purpose": "any"
-  },
-  {
-    "src": "./asset/icon/192-mask.png",
-    "type": "image/png",
-    "sizes": "192x192",
-    "purpose": "maskable"
-  },
-  {
-    "src": "./asset/icon/512-mask.png",
-    "type": "image/png",
-    "sizes": "512x512",
-    "purpose": "maskable"
+    "purpose": "any maskable"
   }
   ]
 }
