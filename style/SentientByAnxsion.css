@@ -203,12 +203,22 @@ footer{
 }
 
 .contact{
+    width: 50%;
+    text-align: center;
     color: black;
     background-color: white;
     text-decoration: none;
-    padding: 12px;
+    font-weight: bold;
+    padding: 6px;
     font-family: 'BlenderProBook';
-    font-size: 1.2rem;
+    font-size: 1rem;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.contact:hover{
+    color: black;
+    background-color:springgreen;
 }
 
 .intelSocial{
@@ -320,6 +330,7 @@ footer{
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-weight: bold;
 }
 .exclusiveStore img{
     width: 50%;
@@ -331,14 +342,13 @@ footer{
     background-color: white;
     padding: 6px;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 18px;
     font-size: 0.875rem;
     transition: 0.3s;
 }
 
 .exclusiveStore a:hover{
-    color: white;
-    background-color: red;
+    background-color: springgreen;
 }
 
 
@@ -366,7 +376,9 @@ footer{
     .clientContainer{
         grid-template-columns: 20% 20% 20% 20% 20%;
     }
-
+    .contact{
+        width: 25%;
+    }
     .exclusiveStore img{
         width: 25%;
     }
