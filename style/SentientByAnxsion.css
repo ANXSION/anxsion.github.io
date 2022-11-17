@@ -317,16 +317,19 @@ footer{
     justify-content: center;
     align-items: center;
     margin: 28px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .exclusiveStore img{
     width: 50%;
 }
 
 .exclusiveStore a{
-    width: 80%;
+    width: 50%;
     color: black;
     background-color: white;
-    padding: 8px;
+    padding: 6px;
     text-decoration: none;
     border-radius: 6px;
     font-size: 1rem;
