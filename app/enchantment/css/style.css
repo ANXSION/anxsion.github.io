@@ -95,7 +95,7 @@ main{
 .productDisplay img{
     width: 100%;
     height: 100%;
-    background-color: hsla(0, 0%, 50%, 0.25);
+    background-color: hsla(0, 0%, 50%, 0);
 }
 
 footer{
