@@ -4,7 +4,6 @@
   "name": "Enchantment of the Grace",
   "short_name": "Enchantment of the Grace",
   "scope": "./",
-  "id":"/app/enchantment/",
   "display": "standalone",
   "start_url": "./",
   "background_color": "black",
