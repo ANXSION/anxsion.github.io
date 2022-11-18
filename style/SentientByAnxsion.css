@@ -3,16 +3,19 @@
 @font-face {
     font-family: 'BlenderProBook'; /*a name to be used later*/
     src: url('../asset/fonts/BlenderProBook.ttf'); /*URL to font*/
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'AvitaThin'; /*a name to be used later*/
     src: url('../asset/fonts/AvitaThin.otf'); /*URL to font*/
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Barcode'; /*a name to be used later*/
     src: url('../asset/fonts/Barcode.ttf'); /*URL to font*/
+    font-display: swap;
 }
 
 :root{
