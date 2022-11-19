@@ -86,7 +86,7 @@ nav div a{
 }
 
 nav div a img{
-    width: 100%;
+    width: 50%;
     height: fit-content;
     filter: invert(100%);
     pointer-events: none;
@@ -361,6 +361,9 @@ footer{
     }
 
     nav div a{
+        width: 100%;
+    }
+    nav div a img{
         width: 25%;
     }
     .renderContainer{
