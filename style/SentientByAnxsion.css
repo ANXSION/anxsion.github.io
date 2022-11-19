@@ -78,15 +78,16 @@ nav div div {
 }
 
 nav div a{
-    width: 50%;
+    width: 100%;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 nav div a img{
-    width: 100%;
+    width: 50%;
     height: fit-content;
     filter: invert(100%);
     pointer-events: none;
