@@ -83,11 +83,10 @@ nav div a{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 nav div a img{
-    width: 50%;
+    width: 100%;
     height: fit-content;
     filter: invert(100%);
     pointer-events: none;
@@ -362,9 +361,6 @@ footer{
     }
 
     nav div a{
-        width: 100%;
-    }
-    nav div a img{
         width: 25%;
     }
     .renderContainer{
