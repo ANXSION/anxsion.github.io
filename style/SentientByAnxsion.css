@@ -42,11 +42,13 @@ h1{
     font-family: 'BlenderProBook';
     font-size: 3rem;
     font-weight: normal;
+    text-align: center;
 }
 h2{
     font-family: 'BlenderProBook';
     font-size: 2rem;
     font-weight: normal;
+    text-align: center;
 }
 img{
     pointer-events: none;
@@ -323,37 +325,24 @@ footer{
     opacity: 100%;
 }
 
-.exclusiveStore{
+.legal{
+    display: grid;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 30% 30% 30%;
     justify-content: space-evenly;
     align-items: center;
-    margin: 28px;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    font-weight: bold;
-}
-.exclusiveStore img{
-    width: 50%;
 }
 
-.exclusiveStore a{
-    width: 50%;
-    color: black;
-    background-color: white;
-    padding: 6px;
-    text-decoration: none;
-    border-radius: 18px;
-    font-size: 0.875rem;
-    transition: 0.3s;
+.legal a{
+    color: white;
 }
 
-.exclusiveStore a:hover{
-    background-color: springgreen;
-}
+.legalDetails{
+    text-align: left;
+    margin:24px;
 
+}
 
 @media screen and (min-width:1024px) {
     nav div div a{
