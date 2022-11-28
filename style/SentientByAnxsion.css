@@ -409,3 +409,20 @@ footer{
     }
     
 }
+
+@media print{
+    body{
+        color: black;
+        background-color: white;
+    }
+    img{
+        display: none;
+    }
+    nav{
+        display: none;
+    }
+    a{
+        display: none;
+    }
+
+}
