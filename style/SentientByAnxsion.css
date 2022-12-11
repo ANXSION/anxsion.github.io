@@ -212,6 +212,15 @@ footer{
     text-align: justify;
     margin:24px;
 }
+
+.chrysalisDetails{
+    width: 90%;
+    text-align: justify;
+    margin:24px;
+}
+.businessLogo{
+    width: 100%;
+}
 .guardianDetails{
     width: 90%;
     text-align: justify;
@@ -274,30 +283,6 @@ footer{
     align-items: center;
     font-size: 1.2rem;
     text-decoration: none;
-}
-
-.chrysalisContainer{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.chrysalisContainer a{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
-}
-.chrysalisContainer a img{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
 }
 
 .clientContainer{
@@ -375,10 +360,12 @@ footer{
 }
 
 @media screen and (min-width:1024px) {
+    .businessLogo{
+        width: 50%;
+    }
     nav div div a{
         font-size: 1.5rem;
     }
-
     nav div a{
         width: 100%;
     }
