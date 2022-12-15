@@ -1,97 +1,147 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://anxsion.github.io/</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/index.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/sectionrender.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/chrysalis.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/guardian.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/intel.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/calamity.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/thesecretgarden.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/darknebula.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/ntairongrip.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/blacknaidivision.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/earthalike.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/atg1compensator.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/modularpd.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/page/renders/ironhorse.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/app/enchantment/index.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://anxsion.github.io/app/enchantment/page/test.html</loc>
-  <lastmod>2022-11-19T04:20:25+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://anxsion.github.io</loc>
+    <changefreq>daily</changefreq>
+    <image:image>
+      <image:loc>https://anxsion.github.io/asset/renders/blacknai/blacknaiBanner.jpg</image:loc>
+      <!--ERROR - Object reference not set to an instance of an object.-->
+      <url>
+        <loc>https://anxsion.github.io/page/renders/ironhorse.html</loc>
+        <changefreq>daily</changefreq>
+        <image:image>
+          <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+          <!--ERROR - Object reference not set to an instance of an object.-->
+          <url>
+            <loc>https://anxsion.github.io/page/renders/modularpd.html</loc>
+            <changefreq>daily</changefreq>
+            <image:image>
+              <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+              <!--ERROR - Object reference not set to an instance of an object.-->
+              <url>
+                <loc>https://anxsion.github.io/page/renders/atg1compensator.html</loc>
+                <changefreq>daily</changefreq>
+                <image:image>
+                  <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                  <!--ERROR - Object reference not set to an instance of an object.-->
+                  <url>
+                    <loc>https://anxsion.github.io/page/renders/earthalike.html</loc>
+                    <changefreq>daily</changefreq>
+                    <image:image>
+                      <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                      <!--ERROR - Object reference not set to an instance of an object.-->
+                      <url>
+                        <loc>https://anxsion.github.io/page/renders/blacknaidivision.html</loc>
+                        <changefreq>daily</changefreq>
+                        <image:image>
+                          <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                          <!--ERROR - Object reference not set to an instance of an object.-->
+                          <url>
+                            <loc>https://anxsion.github.io/page/renders/ntairongrip.html</loc>
+                            <changefreq>daily</changefreq>
+                            <image:image>
+                              <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                              <!--ERROR - Object reference not set to an instance of an object.-->
+                              <url>
+                                <loc>https://anxsion.github.io/page/renders/darknebula.html</loc>
+                                <changefreq>daily</changefreq>
+                                <image:image>
+                                  <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                  <!--ERROR - Object reference not set to an instance of an object.-->
+                                  <url>
+                                    <loc>https://anxsion.github.io/page/renders/thesecretgarden.html</loc>
+                                    <changefreq>daily</changefreq>
+                                    <image:image>
+                                      <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                      <!--ERROR - Object reference not set to an instance of an object.-->
+                                      <url>
+                                        <loc>https://anxsion.github.io/page/renders/calamity.html</loc>
+                                        <changefreq>daily</changefreq>
+                                        <image:image>
+                                          <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                          <!--ERROR - Object reference not set to an instance of an object.-->
+                                          <url>
+                                            <loc>https://anxsion.github.io/intel.html</loc>
+                                            <changefreq>daily</changefreq>
+                                            <image:image>
+                                              <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                              <!--ERROR - Object reference not set to an instance of an object.-->
+                                              <url>
+                                                <loc>https://anxsion.github.io/guardian-angel.html</loc>
+                                                <changefreq>daily</changefreq>
+                                                <image:image>
+                                                  <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                  <!--ERROR - Object reference not set to an instance of an object.-->
+                                                  <url>
+                                                    <loc>https://anxsion.github.io/chrysalis-dsp.html</loc>
+                                                    <changefreq>daily</changefreq>
+                                                    <image:image>
+                                                      <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                      <!--ERROR - Object reference not set to an instance of an object.-->
+                                                      <url>
+                                                        <loc>https://anxsion.github.io/section-render.html</loc>
+                                                        <changefreq>daily</changefreq>
+                                                        <image:image>
+                                                          <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                          <!--ERROR - Object reference not set to an instance of an object.-->
+                                                          <url>
+                                                            <loc>https://anxsion.github.io/index.html</loc>
+                                                            <changefreq>daily</changefreq>
+                                                            <image:image>
+                                                              <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                              <!--ERROR - Object reference not set to an instance of an object.-->
+                                                              <url>
+                                                                <loc>https://anxsion.github.io/page/legal/refund-policy.html</loc>
+                                                                <changefreq>daily</changefreq>
+                                                                <image:image>
+                                                                  <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                                  <!--ERROR - Object reference not set to an instance of an object.-->
+                                                                  <url>
+                                                                    <loc>https://anxsion.github.io/page/legal/Terms-of-service.html</loc>
+                                                                    <changefreq>daily</changefreq>
+                                                                    <image:image>
+                                                                      <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                                      <!--ERROR - Object reference not set to an instance of an object.-->
+                                                                      <url>
+                                                                        <loc>https://anxsion.github.io/page/legal/privacy-policy.html</loc>
+                                                                        <changefreq>daily</changefreq>
+                                                                        <image:image>
+                                                                          <image:loc>https://anxsion.github.io/asset/icon/logo.png</image:loc>
+                                                                          <!--ERROR - Object reference not set to an instance of an object.-->
+                                                                        </image:image>
+                                                                      </url>
+                                                                    </image:image>
+                                                                  </url>
+                                                                </image:image>
+                                                              </url>
+                                                            </image:image>
+                                                          </url>
+                                                        </image:image>
+                                                      </url>
+                                                    </image:image>
+                                                  </url>
+                                                </image:image>
+                                              </url>
+                                            </image:image>
+                                          </url>
+                                        </image:image>
+                                      </url>
+                                    </image:image>
+                                  </url>
+                                </image:image>
+                              </url>
+                            </image:image>
+                          </url>
+                        </image:image>
+                      </url>
+                    </image:image>
+                  </url>
+                </image:image>
+              </url>
+            </image:image>
+          </url>
+        </image:image>
+      </url>
+    </image:image>
+  </url>
 </urlset>
