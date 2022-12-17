@@ -292,6 +292,16 @@ footer{
     text-decoration: none;
 }
 
+.diaryContent{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diaryContent p{
+    text-align: justify;
+}
+
 .contact{
     width: 50%;
     text-align: center;
