@@ -53,6 +53,13 @@ h2{
     text-align: center;
 }
 
+h3{
+    font-family: 'BlenderProBook';
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: center;
+}
+
 img{
     pointer-events: none;
 }
@@ -270,6 +277,19 @@ footer{
 .intelDetails p{
     width: 90%;
     height: auto;
+}
+
+.diaryDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.diaryDetails a{
+    color: white;
+    text-decoration: none;
 }
 
 .contact{
