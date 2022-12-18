@@ -314,12 +314,12 @@ footer{
 }
 
 .diaryContent{
-    width: 80%;
-    display: flex;
+    width: 90%;
     justify-content: center;
     align-items: center;
 }
 .diaryContent p{
+    width: 100%;
     text-align: justify;
 }
 
