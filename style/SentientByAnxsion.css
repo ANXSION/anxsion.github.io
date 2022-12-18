@@ -110,7 +110,7 @@ nav div div a{
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.875rem;
 }
 
 main{
@@ -422,7 +422,7 @@ footer{
         width: 50%;
     }
     nav div div a{
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     nav div a{
         width: 100%;
