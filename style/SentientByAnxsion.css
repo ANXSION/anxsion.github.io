@@ -60,6 +60,27 @@ h3{
     text-align: center;
 }
 
+h4{
+    font-family: 'BlenderProBook';
+    font-size: 1.25rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+h5{
+    font-family: 'BlenderProBook';
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+h6{
+    font-family: 'BlenderProBook';
+    font-size: 0.875rem;
+    font-weight: normal;
+    text-align: center;
+}
+
 img{
     pointer-events: none;
 }
