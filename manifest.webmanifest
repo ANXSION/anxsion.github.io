@@ -24,19 +24,6 @@
     "sizes": "512x512",
     "purpose": "any maskable"
   }
-  ],
-  
-  "shortcuts": [
-    {
-      "name": "Enchantment of the Grace",
-      "short_name": "Enchantment",
-      "description": "Exclusive store",
-      "url": "./app/enchantment/index.html",
-      "icons": [
-        { "src": "./app/enchantment/asset/icon/192.png", "sizes": "192x192" 
-        }
-      ]
-    }
   ]
 }
 
