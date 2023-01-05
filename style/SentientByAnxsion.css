@@ -444,6 +444,11 @@ footer{
     min-width: 250px!important;
 }
 
+.trademark{
+    font-size: 0.75rem;
+    margin: 0;
+}
+
 @media screen and (min-width:1024px) {
     .businessLogo{
         width: 50%;
