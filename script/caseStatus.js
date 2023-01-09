@@ -32,13 +32,13 @@ function getCaseStatus(){
         document.getElementById("class").innerHTML="Class: " + caseData[caseRegister.indexOf(inputData)][2];
 
         if(caseData[caseRegister.indexOf(inputData)][3] == 'Completed'){
-            document.getElementById("status").innerHTML="Status: <span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+            document.getElementById("status").innerHTML="Status:&nbsp;<span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else if(caseData[caseRegister.indexOf(inputData)][3] == 'Under Progress'){
-            document.getElementById("status").innerHTML="Status: <span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+            document.getElementById("status").innerHTML="Status:&nbsp;<span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else if(caseData[caseRegister.indexOf(inputData)][3] == 'Pending'){
-            document.getElementById("status").innerHTML="Status: <span style=\"color:red;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+            document.getElementById("status").innerHTML="Status:&nbsp;<span style=\"color:red;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else{
             document.getElementById("status").innerHTML="Status: " + caseData[caseRegister.indexOf(inputData)][3];
@@ -48,7 +48,7 @@ function getCaseStatus(){
         document.getElementById("payment").innerHTML="Payment: " + caseData[caseRegister.indexOf(inputData)][4];
 
         if (caseData[caseRegister.indexOf(inputData)][5] =='true'){
-            document.getElementById("invoice").innerHTML="Invoice: <a href=\""+ inputData +".pdf\" download> Download</a>";
+            document.getElementById("invoice").innerHTML="Invoice:&nbsp<a href=\""+ inputData +".pdf\" download> Download</a>";
         }
         else{
             document.getElementById("invoice").innerHTML="Invoice: N/A";
