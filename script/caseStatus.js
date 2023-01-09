@@ -1,7 +1,8 @@
-let caseRegister = ['2023.1.JAN.5', '2023.2.JAN.7'];
+let caseRegister = ['2022.1.DEC.7','2023.1.JAN.5', '2023.2.JAN.7'];
 
 let caseData = [
-    ['N/A', 'Bikram Mukhiya', 'Vehicle Tax', 'Completed', 'Paid', 'true'],
+    ['N/A', 'Prashant Khati', 'Loan Dispute', 'Under Progress', 'N/A', 'false'],
+    ['N/A', 'Bikram Mukhiya', 'Vehicle Tax', 'Completed', 'Paid', 'false'],
     ['N/A', 'Shamson Tamang', 'Company Registration', 'Pending', 'Due', 'false']
 ];
 
