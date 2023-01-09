@@ -19,6 +19,7 @@
         <meta property="og:description" content="Guardian Angel is a progressive Legal Firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters." />
         <link rel="manifest" href="manifest.webmanifest" />
         <link rel="stylesheet" href="./style/SentientByAnxsion.css">
+        <script src="./script/caseStatus.js"></script>
         <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.jpg">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
 
@@ -50,6 +51,29 @@
         </script>
     </head>
     <body>
+        <div id="caseStatusMain" style="z-index:5;display:flex; background-color:rgba(0, 0, 0, 0.75);opacity: 100%; position: fixed; height: 100%;width: 100%; justify-content: center;align-items: center;">
+
+            <div style="position:fixed;width: 100%;height: 100%;" onclick="displayClose()"></div>
+           
+            <div style="z-index:6;width:80%; min-height: 50%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column;" >
+                <input type="text" name="" id="caseIDinput">
+                <br>
+                <button class="contact" onclick="getCaseStatus()">Search</button>
+                <br>
+                <div class="caseData" style="width:80%;display:flex;flex-direction:column;justify-content: center;align-items: center;">
+                    <p id="error">ERROR</p>
+                    <p id="caseid"></p>
+                    <p id="caseref"></p>
+                    <p id="clientname"></p>
+                    <p id="class"></p>
+                    <p id="status"></p>
+                    <p id="payment"></p>
+                    <p id="invoice"></p>
+                </div>
+                
+            </div>
+
+        </div>
         
         <main>
             <nav>
@@ -70,6 +94,10 @@
             
             <img class="businessLogo" src="./asset/icon/guardian-angel.png" alt="Guardian Angel Logo">
             <a class ="contact" href="https://wa.me/+919832909233" target="_blank">Book Appointment</a>
+            <br>
+            <a class ="contact" href="https://goo.gl/maps/XdLNsu6p7TLhwtNd9" target="_blank">Locate Us</a>
+            <br>
+            <button class="contact" onclick="display()">Case Status</button>
 
             <section>
                 <div class="guardianDetails">
@@ -117,8 +145,16 @@
 
             <footer>COPYRIGHT &copy; ANXSION</footer>
         </main>
-
-        
-        
+        <script>
+            document.getElementById("caseStatusMain").style.display="none";
+            document.getElementById("error").style.display="none";
+            document.getElementById("caseid").style.display="none";
+            document.getElementById("caseref").style.display="none";
+            document.getElementById("clientname").style.display="none";
+            document.getElementById("class").style.display="none";
+            document.getElementById("status").style.display="none";
+            document.getElementById("payment").style.display="none";
+            document.getElementById("invoice").style.display="none";
+        </script>
     </body>
 </html>

@@ -29,13 +29,14 @@
 
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     font-family: 'Roboto Mono', monospace;
     background-color: black;
     color: white;
     font-size: 16px;
     margin: 0;
     padding: 0;
+    line-height: 1.5;
     
 }
 
@@ -334,7 +335,7 @@ footer{
     font-family: 'BlenderProBook';
     font-size: 1rem;
     border-radius: 18px;
-    transition: 0.3s;
+    margin: 0;
 }
 
 .contact:hover{
@@ -449,7 +450,38 @@ footer{
     margin: 0;
 }
 
+.caseData{
+    font-size: 12px;
+}
+
+.caseData p{
+    margin: 3px;
+    text-decoration: none;
+}
+
+.caseData a{
+    color: white;
+}
+
+#caseIDinput{
+    width: 50%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: center;
+}
+
+
 @media screen and (min-width:1024px) {
+    #caseIDinput{
+        width:30%
+    }
+    .contact{
+        width: 30%;
+    }
     .businessLogo{
         width: 50%;
     }
