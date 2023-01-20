@@ -188,6 +188,9 @@
                 nav img{
                     width: 50%;
                 }
+                nav section{
+                    grid-template-columns: 100%;
+                }
                 nav section p{
                     font-size: 12px;
                 }
@@ -699,7 +702,7 @@
                 }
                 else if (linkname=="intel"){
                     history.pushState({}, "intel", "?id=intel");
-                    document.title="intel"
+                    document.title="Intel"
                     document.getElementById('intel').style.display="block";
                     setTimeout(function() {document.getElementById('intel').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
