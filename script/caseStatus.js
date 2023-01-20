@@ -6,11 +6,15 @@ let caseData = [
     ['N/A', 'Shamson Tamang', 'Company Registration', 'Pending', 'Due', 'false']
 ];
 
-function display(){
-    document.getElementById("caseStatusMain").style.display="flex";
-}
-function displayClose(){
-    document.getElementById("caseStatusMain").style.display="none";
+function caseDisplay(casedisplaycondition){
+    if (casedisplaycondition == 'close'){
+        document.getElementById('caseStatus').style.opacity="0%";
+        setTimeout(function() {document.getElementById('caseStatus').style.display="none";}, 300);
+    }
+    if (casedisplaycondition == 'open'){
+        document.getElementById('caseStatus').style.display="flex";
+        setTimeout(function() {document.getElementById('caseStatus').style.opacity="100%";}, 100);
+    }
 }
 
 function getCaseStatus(){
