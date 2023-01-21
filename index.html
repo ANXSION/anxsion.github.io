@@ -298,7 +298,7 @@
                 </section>
             </nav>
 
-            <section class="content" id ="404">
+            <section class="content" id ="404" style="display: none;">
                 <br>
                 <h1 style="font-size: 48px; font-weight: normal; text-align: center;">Are you feeling lost?</h1>
                 <section style="display: flex; justify-content: center; align-items: center;">
@@ -704,10 +704,9 @@
                 }  
             });
 
-            const relatedApps = await navigator.getInstalledRelatedApps();
-            relatedApps.forEach((app) => {
-                console.log(app.id, app.platform, app.url);
-            });
+            const relatedApps = navigator.getInstalledRelatedApps();
+            console.log(relatedApps.url);
+            
 
 
             function ini() {
