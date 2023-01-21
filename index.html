@@ -187,33 +187,32 @@
                 display: grid;
                 justify-content: center; 
                 align-items: center; 
-                grid-template-columns: 50% 50%;
+                grid-template-columns: 1fr 1fr;
             }
 
             .minorAlt{
                 display: grid; 
-                grid-template-columns: 45% 45%; 
+                grid-template-columns: 1fr 1fr; 
                 justify-content: center; 
                 align-items: flex-start; 
                 column-gap: 5%;
             }
             .clients{
                 display: grid; 
-                grid-template-columns: 30% 30% 30%; 
+                grid-template-columns: 1fr 1fr 1fr; 
                 justify-content: center; 
                 align-items: flex-start; 
-                column-gap: 5%;
             }
             .idimage{
                 width: 50%;
             }
 
-            @media screen and (max-width:768px) {
+            @media screen and (max-width:639px) {
                 nav img{
                     width: 50%;
                 }
                 nav section{
-                    grid-template-columns: 100%;
+                    grid-template-columns: 1fr;
                 }
                 nav section p{
                     font-size: 12px;
@@ -222,21 +221,20 @@
                     margin-left: 25%;
                 }
                 .Major{
-                    font-size: 48px;
+                    font-size: 28px;
                 }
                 .minorDescription{
-                    grid-template-columns: 100%;
+                    grid-template-columns: 1fr;
                 }
                 .minorAlt{
-                    grid-template-columns: 100%;
+                    grid-template-columns: 1fr;
                 }
                 .clients{
-                    grid-template-columns: 45% 45%;
+                    grid-template-columns: 1fr 1fr;
                 }
                 .idimage{
                 width: 100%;
-            }
-                
+                }
             }
 
             @keyframes lineup {
@@ -268,15 +266,32 @@
                     transform: translateY(0%);
                 }
             }
+            @keyframes godown{
+                0%{
+                    opacity: 0;
+                    transform: translateY(0%);
+                }
+                50%{
+                    opacity: 100%;
+                }
+                75%{
+                    opacity: 100%;
+                }
+                100%{
+                    opacity: 0;
+                    transform: translateY(50%);
+                }
+            }
+
         </style>
 
-    <body>
+    <body style="">
 
         <div id="caseStatus" style="display: none; background-color: rgba(0, 0, 0, 0.75); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: center; transition: 0.3s all;">
 
             <div style="position:fixed;width: 100%;height: 100%;" onclick="caseDisplay('close')"></div>
            
-            <div style="z-index:2; padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: white; display: flex;justify-content: center;align-items: center; flex-direction: column;">
+            <div style="z-index:2; padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: white; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
                 <input type="text" style="border: none; border-bottom: 2px solid black; outline: none; width: 256px; font-size: 18px;" id="caseIDinput">
                 <br>
                 <button onclick="getCaseStatus()">Search</button>
@@ -298,13 +313,11 @@
                     <section style="text-align: right; margin-right: 4%;">Invoice:</section>
                     <section><p style="margin: 2px;" id="invoice" style="display: none;"></p></section>
                 </div>
-                
             </div>
-
         </div>
 
         <main>
-            <nav>
+            <nav style="background-color: white;">
                 <img onclick="accessProtocol('index')" src="./asset/icon/logo.png" alt="">
                 <section>
                    <p onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
@@ -329,16 +342,18 @@
             </section>
 
             <section class="content" id="index">
+                <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h1 class="major" style=" animation: lineup 4s normal; text-align: center; position: sticky; top: 25%;">We turn ideas into reality</h1>
+                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid black; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
+                </section>
                 <br><br>
-                <h1 class="major" style="animation: lineup 4s normal;">We turn ideas into reality</h1>
-                <br><br>
-
                 <section class="minorDescription">
                     <p style="font-size: 32px;">ANXSION<br>-<br>Scylla Unit</p>
                     <p style="text-align: justify;">The Scylla Unit is a diverse group of individuals who build and launch technologies that aim to improve the lives of  people. We focus on creating radical technologies via rapid research and development. We also explore threats to societies, and builds technology that inspires scalable solutions.</p>
                 </section>
 
                 <br><br>
+
                 
                 <section style="text-align:justify;">
                     <p style="font-weight: bold;">./Founding</p>
@@ -774,6 +789,8 @@
                 document.getElementById('404').style.display="none";
                 document.getElementById('404').style.opacity="0%";
                 if (linkname=="index"){
+                    document.getElementById('banner').style.display="flex";
+                    document.getElementById('banner').style.opacity="100%";
                     history.pushState({}, "ANXSION", "?id=index");
                     document.title="ANXSION"
                     document.getElementById('index').style.display="block";
