@@ -25,6 +25,22 @@
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
         <script src="./script/caseStatus.js"></script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
+
+            const firebaseConfig = {
+              apiKey: "AIzaSyDNBWctcblnX8DpWDacX0RHFA4-C8G_eYs",
+              authDomain: "anxsion-12c72.firebaseapp.com",
+              projectId: "anxsion-12c72",
+              storageBucket: "anxsion-12c72.appspot.com",
+              messagingSenderId: "878495626659",
+              appId: "1:878495626659:web:34d7dc2a11bc94334a1616",
+              measurementId: "G-Q06BLGK3NJ"
+            };
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+          </script>
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
