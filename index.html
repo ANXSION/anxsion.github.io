@@ -168,14 +168,25 @@
             }
 
             .minorDescription{
-                display: grid; justify-content: center; align-items: center; grid-template-columns: 50% 50%;
+                display: grid;
+                justify-content: center; 
+                align-items: center; 
+                grid-template-columns: 50% 50%;
             }
 
             .minorAlt{
-                display: grid; grid-template-columns: 45% 45%; justify-content: center; align-items: flex-start; column-gap: 5%;
+                display: grid; 
+                grid-template-columns: 45% 45%; 
+                justify-content: center; 
+                align-items: flex-start; 
+                column-gap: 5%;
             }
             .clients{
-                display: grid; grid-template-columns: 30% 30% 30%; justify-content: center; align-items: flex-start; column-gap: 5%;
+                display: grid; 
+                grid-template-columns: 30% 30% 30%; 
+                justify-content: center; 
+                align-items: flex-start; 
+                column-gap: 5%;
             }
             .idimage{
                 width: 50%;
@@ -253,16 +264,23 @@
                 <input type="text" style="border: none; border-bottom: 2px solid black; outline: none; width: 256px; font-size: 18px;" id="caseIDinput">
                 <br>
                 <button onclick="getCaseStatus()">Search</button>
-                <br><br>
-                <div style="width:80%;display:flex;flex-direction:column;justify-content: center;align-items: center;">
-                    <p style="margin: 2px;" id="error" style="display: none;"></p>
-                    <p style="margin: 2px;" id="caseid" style="display: none;"></p>
-                    <p style="margin: 2px;" id="caseref" style="display: none;"></p>
-                    <p style="margin: 2px;" id="clientname" style="display: none;"></p>
-                    <p style="margin: 2px;" id="class" style="display: none;"></p>
-                    <p style="margin: 2px;" id="status" style="display: none;"></p>
-                    <p style="margin: 2px;" id="payment" style="display: none;"></p>
-                    <p style="margin: 2px;" id="invoice" style="display: none;"></p>
+                <br>
+                <p style="margin: 2px;" id="error" style="display: none;"></p>
+                <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center;">
+                    <section style="text-align: right; margin-right: 4%;">Case ID:</section>
+                    <section><p style="margin: 2px;" id="caseid" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Citation:</section>
+                    <section><p style="margin: 2px;" id="caseref" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Client:</section>
+                    <section><p style="margin: 2px;" id="clientname" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Class:</section>
+                    <section><p style="margin: 2px;" id="class" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Status:</section>
+                    <section><p style="margin: 2px;" id="status" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Payment:</section>
+                    <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Invoice:</section>
+                    <section><p style="margin: 2px;" id="invoice" style="display: none;"></p></section>
                 </div>
                 
             </div>
@@ -721,6 +739,7 @@
                     setTimeout(function() {document.getElementById('privacy').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
+                //Touch this code and I will delete the repository.
                 else if (linkname=="404"){
                     history.pushState({}, "404", "?id=404");
                     document.title="404"

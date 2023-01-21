@@ -1,9 +1,13 @@
-let caseRegister = ['2022.1.DEC.7','2023.1.JAN.5', '2023.2.JAN.7'];
+let caseRegister = [
+    '2022.1.DEC.7',
+    '2023.1.JAN.5', 
+    '2023.2.JAN.7'
+];
 
 let caseData = [
-    ['N/A', 'Prashant Khati', 'Loan Dispute', 'Under Progress', 'N/A', 'false'],
-    ['N/A', 'Bikram Mukhiya', 'Vehicle Tax', 'Completed', 'Paid', 'false'],
-    ['N/A', 'Shamson Tamang', 'Company Registration', 'Pending', 'Due', 'false']
+    ['N/A',     'Prashant Khati',       'Loan Dispute',         'Under Progress',       'N/A',      'false'],
+    ['N/A',     'Bikram Mukhiya',       'Vehicle Tax',          'Completed',            'Paid',     'false'],
+    ['N/A',     'Shamson Tamang',       'Registration',         'Pending',              'Due',      'false']
 ];
 
 function caseDisplay(casedisplaycondition){
@@ -30,32 +34,33 @@ function getCaseStatus(){
     let inputData = document.getElementById("caseIDinput").value;
     
     if (caseRegister.includes(inputData)){
-        document.getElementById("caseid").innerHTML="Case ID: " + inputData;
-        document.getElementById("caseref").innerHTML="Case Reporting: " + caseData[caseRegister.indexOf(inputData)][0];
-        document.getElementById("clientname").innerHTML="Client: " + caseData[caseRegister.indexOf(inputData)][1];
-        document.getElementById("class").innerHTML="Class: " + caseData[caseRegister.indexOf(inputData)][2];
+        document.getElementById("casedata").style.display="grid";
+        document.getElementById("caseid").innerHTML= inputData;
+        document.getElementById("caseref").innerHTML= caseData[caseRegister.indexOf(inputData)][0];
+        document.getElementById("clientname").innerHTML= caseData[caseRegister.indexOf(inputData)][1];
+        document.getElementById("class").innerHTML= caseData[caseRegister.indexOf(inputData)][2];
 
         if(caseData[caseRegister.indexOf(inputData)][3] == 'Completed'){
-            document.getElementById("status").innerHTML="Status:&nbsp;<span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+            document.getElementById("status").innerHTML="<span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else if(caseData[caseRegister.indexOf(inputData)][3] == 'Under Progress'){
-            document.getElementById("status").innerHTML="Status:&nbsp;<span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+            document.getElementById("status").innerHTML="<span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else if(caseData[caseRegister.indexOf(inputData)][3] == 'Pending'){
-            document.getElementById("status").innerHTML="Status:&nbsp;<span style=\"color:red;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+            document.getElementById("status").innerHTML="<span style=\"color:red;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else{
-            document.getElementById("status").innerHTML="Status: " + caseData[caseRegister.indexOf(inputData)][3];
+            document.getElementById("status").innerHTML= caseData[caseRegister.indexOf(inputData)][3];
         }
         
 
-        document.getElementById("payment").innerHTML="Payment: " + caseData[caseRegister.indexOf(inputData)][4];
+        document.getElementById("payment").innerHTML= caseData[caseRegister.indexOf(inputData)][4];
 
         if (caseData[caseRegister.indexOf(inputData)][5] =='true'){
-            document.getElementById("invoice").innerHTML="Invoice:&nbsp<a href=\""+ inputData +".pdf\" download> Download</a>";
+            document.getElementById("invoice").innerHTML="<a href=\""+ inputData +".pdf\" download> Download</a>";
         }
         else{
-            document.getElementById("invoice").innerHTML="Invoice: N/A";
+            document.getElementById("invoice").innerHTML="N/A";
         }
         
 
