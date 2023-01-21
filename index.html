@@ -704,6 +704,12 @@
                 }  
             });
 
+            const relatedApps = await navigator.getInstalledRelatedApps();
+            relatedApps.forEach((app) => {
+                console.log(app.id, app.platform, app.url);
+            });
+
+
             function ini() {
                 let params = new URLSearchParams(document.location.search);
                 let id = params.get("id");
