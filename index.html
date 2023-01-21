@@ -720,24 +720,7 @@
                 }  
             });
 
-            async function getPWA(){
-                const listOfInstalledApps = await navigator.getInstalledRelatedApps();
-for (const app of listOfInstalledApps) {
-  // These fields are specified by the Web App Manifest spec.
-  console.log('platform:', app.platform);
-  console.log('url:', app.url);
-  console.log('id:', app.id);
-
-  // This field is provided by the UA.
-  console.log('version:', app.version);
-}
-            }
-
             function ini() {
-
-                if ('getInstalledRelatedApps' in navigator) {
-                    getPWA();
-                }
 
                 let params = new URLSearchParams(document.location.search);
                 let id = params.get("id");
