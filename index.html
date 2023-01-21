@@ -720,14 +720,21 @@
                 }  
             });
 
-            const relatedApps = navigator.getInstalledRelatedApps();
-            console.log(relatedApps.url);
+            async function getPWA(){
+                const relatedApps = await navigator.getInstalledRelatedApps();
+                relatedApps.forEach((app) => {
+                    console.log(app.id, app.platform, app.url);
+                });
+            }
+
             
 
-
             function ini() {
+                getPWA();
+                
                 let params = new URLSearchParams(document.location.search);
                 let id = params.get("id");
+                
 
                 if(id == 'index' || id == null){
                     accessProtocol("index");
@@ -836,6 +843,7 @@
             }
 
             ini();
+            
 
         </script>        
     </body>
