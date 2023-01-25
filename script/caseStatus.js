@@ -1,13 +1,15 @@
 let caseRegister = [
     '2022.1.DEC.7',
     '2023.1.JAN.5', 
-    '2023.2.JAN.7'
+    '2023.2.JAN.7',
+    '2023.4.JAN.25',
 ];
 
 let caseData = [
     ['N/A',     'Prashant Khati',       'Loan Dispute',         'Under Progress',       'N/A',      'false'],
     ['N/A',     'Bikram Mukhiya',       'Vehicle Tax',          'Completed',            'Paid',     'false'],
-    ['N/A',     'Shamson Tamang',       'Registration',         'Pending',              'Due',      'false']
+    ['N/A',     'Shamson Tamang',       'Registration',         'Pending',              'Due',      'false'],
+    ['N/A',     'Shamson Tamang',       'PIL Petition',         'Sent for approval',    'Due',      'false']
 ];
 
 function caseDisplay(casedisplaycondition){
