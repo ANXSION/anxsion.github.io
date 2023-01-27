@@ -64,7 +64,6 @@ function getCaseStatus(){
         else{
             document.getElementById("invoice").innerHTML="N/A";
         }
-        
 
         document.getElementById("caseid").style.display="flex";
         document.getElementById("caseref").style.display="flex";
