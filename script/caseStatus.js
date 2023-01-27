@@ -6,10 +6,10 @@ let caseRegister = [
 ];
 
 let caseData = [
-    ['N/A',     'Prashant Khati',       'Loan Dispute',         'Under Progress',       'N/A',      'false'],
-    ['N/A',     'Bikram Mukhiya',       'Vehicle Tax',          'Completed',            'Paid',     'false'],
-    ['N/A',     'Shamson Tamang',       'Registration',         'Pending',              'Due',      'false'],
-    ['N/A',     'Shamson Tamang',       'PIL Petition',         'Sent for approval',    'Due',      'false']
+    ['N/A',     'Prashant Khati',       'Loan Dispute',         'Ongoing',       'N/A',      'false'],
+    ['N/A',     'Bikram Mukhiya',       'Vehicle Tax',          'Completed',     'Paid',     'false'],
+    ['N/A',     'Shamson Tamang',       'Registration',         'Pending',       'Due',      'false'],
+    ['N/A',     'Shamson Tamang',       'PIL Petition',         'Pending',       'Due',      'false']
 ];
 
 function caseDisplay(casedisplaycondition){
@@ -45,7 +45,7 @@ function getCaseStatus(){
         if(caseData[caseRegister.indexOf(inputData)][3] == 'Completed'){
             document.getElementById("status").innerHTML="<span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
-        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Under Progress'){
+        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Ongoing'){
             document.getElementById("status").innerHTML="<span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else if(caseData[caseRegister.indexOf(inputData)][3] == 'Pending'){
