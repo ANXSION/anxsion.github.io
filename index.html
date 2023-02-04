@@ -196,13 +196,24 @@
 
             .archivaCluster{
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
                 justify-content: center;
                 align-items: flex-start;
                 text-align: center;
-                grid-column-gap: 9px;
+                grid-column-gap: 12px;
                 
             }
+
+            .archivaCluster p{
+                aspect-ratio: 1/1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 3px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+
+            
 
             .archivaCluster details{
                 cursor: pointer;
@@ -242,7 +253,7 @@
                 width: 100%;
                 }
                 .archivaCluster{
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr 1fr;
                 }
             }
 
@@ -594,7 +605,7 @@
                         <summary>Important</summary>
                         <section class="archivaCluster">
                             <p onclick="accessLegislation('righttoinformationact')">The Right to Information Act, 2005</p>
-                            <p onclick="accessLegislation('indiantrustact')">The Indian Trust Act, 1882</p>
+                            <p onclick="accessLegislation('indiantrustact')">The Indian Trust Act, 1882</p>   
                         </section>
                     </details>
 
