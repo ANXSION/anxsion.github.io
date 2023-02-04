@@ -25,6 +25,7 @@
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
         <script src="./script/caseStatus.js"></script>
+        <script src="./script/archiva.js"></script>
           
         <script type="application/ld+json">
         {
@@ -34,24 +35,25 @@
             "logo": "http://anxsion.github.io/asset/icon/logoBusiness.png"
         }
         </script>
+
         <style>
             @font-face {
-                font-family: 'BlenderProBook'; /*a name to be used later*/
+                font-family: BlenderProBook; /*a name to be used later*/
                 src: url('./asset/fonts/BlenderProBook.ttf'); /*URL to font*/
                 font-display: swap;
             }
             @font-face {
-                font-family: 'AvitaThin'; /*a name to be used later*/
+                font-family: AvitaThin; /*a name to be used later*/
                 src: url('./asset/fonts/AvitaThin.otf'); /*URL to font*/
                 font-display: swap;
             }
             @font-face {
-                font-family: 'Barcode'; /*a name to be used later*/
+                font-family: Barcode; /*a name to be used later*/
                 src: url('./asset/fonts/Barcode.ttf'); /*URL to font*/
                 font-display: swap;
             }
             @font-face {
-                font-family: 'RobotoMono'; /*a name to be used later*/
+                font-family: RobotoMono; /*a name to be used later*/
                 src: url('./asset/fonts/RobotoMono.ttf'); /*URL to font*/
                 font-display: swap;
             }
@@ -66,7 +68,7 @@
             body{
                 height: 100%;
                 width: 100%;
-                font-family: 'RobotoMono';
+                font-family: RobotoMono;
                 background-color: white;
                 color: black;
                 font-size: 16px;
@@ -192,6 +194,25 @@
                 width: 50%;
             }
 
+            .archivaCluster{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                justify-content: center;
+                align-items: flex-start;
+                text-align: center;
+                grid-column-gap: 9px;
+                
+            }
+
+            .archivaCluster details{
+                cursor: pointer;
+            }
+
+            .archivaCluster p{
+                width: 100%;
+                cursor: pointer;
+            }
+
             @media screen and (max-width:639px) {
                 nav img{
                     width: 50%;
@@ -219,6 +240,9 @@
                 }
                 .idimage{
                 width: 100%;
+                }
+                .archivaCluster{
+                    grid-template-columns: 1fr;
                 }
             }
 
@@ -307,7 +331,7 @@
                 <section>
                    <p onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                    <p onclick="accessProtocol('guardian')">Guardian Angel</p>
-                   <p onclick="accessProtocol('store')">Store</p>
+                   <p onclick="accessProtocol('archiva')">Archiva</p>
                    <p onclick="accessProtocol('intel')">Intel</p>
                 </section>
             </nav>
@@ -562,9 +586,28 @@
                 </section>
             </section>
 
-            <section class="content" id="store">
-                <br><br>
-                <h1 style="text-align: center;">Intercepting data...</h1>
+            <section class="content" id="archiva">
+                <section id="archivaMain">
+                    <h1 style="text-align: center; font-size: 64px; font-family: BlenderProBook; font-weight: normal;letter-spacing: 2px;">ARCHIVA</h1>
+
+                    <details>
+                        <summary>Important</summary>
+                        <section class="archivaCluster">
+                            <p onclick="accessLegislation('righttoinformationact')">The Right to Information Act, 2005</p>
+                            <p onclick="accessLegislation('indiantrustact')">The Indian Trust Act, 1882</p>
+                        </section>
+                    </details>
+
+                </section>
+
+                <section id="actDisplay">
+                    <br><br>
+                    <div style="width: 100%; cursor: pointer;" onclick="accessProtocol('archiva')">
+                        <svg width="48px" height="48px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:20px;}</style> </defs> <g data-name="Layer 2" id="Layer_2"> <g data-name="E421, Back, buttons, multimedia, play, stop" id="E421_Back_buttons_multimedia_play_stop"> <circle class="cls-1" cx="256" cy="256" r="246"></circle> <line class="cls-1" x1="352.26" x2="170.43" y1="256" y2="256"></line> <polyline class="cls-1" points="223.91 202.52 170.44 256 223.91 309.48"></polyline> </g> </g> </g></svg>
+                    </div>
+                    <iframe src="" frameborder="0" id="actData" style="width: 100%;height:100vh" seamless="seamless"></iframe>
+                </section>
+                
             </section>
 
             <section class="content" id="intel">
@@ -733,8 +776,8 @@
                 else if(id == 'guardian'){
                     accessProtocol("guardian");
                 }
-                else if(id == 'store'){
-                    accessProtocol("store");
+                else if(id == 'archiva'){
+                    accessProtocol("archiva");
                 }
                 else if(id == 'intel'){
                     accessProtocol("intel");
@@ -759,8 +802,8 @@
                 document.getElementById('chrysalis').style.opacity="0%";
                 document.getElementById('guardian').style.display="none";
                 document.getElementById('guardian').style.opacity="0%";
-                document.getElementById('store').style.display="none";
-                document.getElementById('store').style.opacity="0%";
+                document.getElementById('archiva').style.display="none";
+                document.getElementById('archiva').style.opacity="0%";
                 document.getElementById('intel').style.display="none";
                 document.getElementById('intel').style.opacity="0%";
                 document.getElementById('caseStatus').style.display="none";
@@ -771,53 +814,59 @@
                 document.getElementById('privacy').style.opacity="0%";
                 document.getElementById('404').style.display="none";
                 document.getElementById('404').style.opacity="0%";
+                document.getElementById('archivaMain').style.display="none";
+                document.getElementById('archivaMain').style.opacity="0%";
+                document.getElementById('actDisplay').style.display="none";
+                document.getElementById('actDisplay').style.opacity="0%";
                 if (linkname=="index"){
                     document.getElementById('banner').style.display="flex";
                     document.getElementById('banner').style.opacity="100%";
                     history.pushState({}, "ANXSION", "?id=index");
-                    document.title="ANXSION"
+                    document.title="ANXSION";
                     document.getElementById('index').style.display="block";
                     setTimeout(function() {document.getElementById('index').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="chrysalis"){
                     history.pushState({}, "Chrysalis R&D", "?id=chrysalis");
-                    document.title="Chrysalis R&D"
+                    document.title="Chrysalis R&D";
                     document.getElementById('chrysalis').style.display="block";
                     setTimeout(function() {document.getElementById('chrysalis').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="guardian"){
                     history.pushState({}, "Guardian Angel", "?id=guardian");
-                    document.title="Guardian Angel"
+                    document.title="Guardian Angel";
                     document.getElementById('guardian').style.display="block";
                     setTimeout(function() {document.getElementById('guardian').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
-                else if (linkname=="store"){
-                    history.pushState({}, "Store", "?id=store");
-                    document.title="Store"
-                    document.getElementById('store').style.display="block";
-                    setTimeout(function() {document.getElementById('store').style.opacity="100%";}, transitionSpeed);
+                else if (linkname=="archiva"){
+                    history.pushState({}, "archiva", "?id=archiva");
+                    document.title="ARCHIVA";
+                    document.getElementById('archiva').style.display="block";
+                    document.getElementById('archivaMain').style.display="block";
+                    setTimeout(function() {document.getElementById('archiva').style.opacity="100%";}, transitionSpeed);
+                    setTimeout(function() {document.getElementById('archivaMain').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="intel"){
                     history.pushState({}, "intel", "?id=intel");
-                    document.title="Intel"
+                    document.title="Intel";
                     document.getElementById('intel').style.display="block";
                     setTimeout(function() {document.getElementById('intel').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="terms"){
                     history.pushState({}, "Terms of Service", "?id=terms");
-                    document.title="Terms of Service"
+                    document.title="Terms of Service";
                     document.getElementById('terms').style.display="block";
                     setTimeout(function() {document.getElementById('terms').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="privacy"){
                     history.pushState({}, "Privacy Policy", "?id=privacy");
-                    document.title="Privacy Policy"
+                    document.title="Privacy Policy";
                     document.getElementById('privacy').style.display="block";
                     setTimeout(function() {document.getElementById('privacy').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
@@ -825,7 +874,7 @@
                 //Touch this code and I will delete the repository.
                 else if (linkname=="404"){
                     history.pushState({}, "404", "?id=404");
-                    document.title="404"
+                    document.title="404";
                     document.getElementById('404').style.display="block";
                     setTimeout(function() {document.getElementById('404').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
