@@ -27,6 +27,7 @@ function caseDisplay(casedisplaycondition){
 
 function getCaseStatus(){
     document.getElementById("error").style.display="none";
+    document.getElementById("casedata").style.display="none";
     document.getElementById("caseid").style.display="none";
     document.getElementById("caseref").style.display="none";
     document.getElementById("clientname").style.display="none";
@@ -78,13 +79,6 @@ function getCaseStatus(){
     else {
         document.getElementById("error").innerHTML="WARNING: Record not Found.";
         document.getElementById("error").style.display="flex";
-        document.getElementById("caseid").style.display="none";
-        document.getElementById("caseref").style.display="none";
-        document.getElementById("clientname").style.display="none";
-        document.getElementById("class").style.display="none";
-        document.getElementById("status").style.display="none";
-        document.getElementById("payment").style.display="none";
-        document.getElementById("invoice").style.display="none";
     }
 
 }
