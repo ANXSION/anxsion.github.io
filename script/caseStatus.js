@@ -2,14 +2,16 @@ let caseRegister = [
     '2022.1.DEC.7',
     '2023.1.JAN.5', 
     '2023.2.JAN.7',
-    '2023.4.JAN.25',
+    '2023.3.JAN.25',
+    '2023.4.FEB.5',
 ];
 
 let caseData = [
     ['N/A',     'Prashant Khati',       'Loan Dispute',         'Ongoing',       'N/A',      'false'],
     ['N/A',     'Bikram Mukhiya',       'Vehicle Tax',          'Completed',     'Paid',     'false'],
-    ['N/A',     'Shamson Tamang',       'Registration',         'Pending',       'Due',      'false'],
-    ['N/A',     'Shamson Tamang',       'PIL Petition',         'Pending',       'Due',      'false']
+    ['N/A',     'Shamson Tamang',       'Registration',         'Delayed',       'N/A',      'false'],
+    ['N/A',     'Shamson Tamang',       'Complaint',            'Delayed',       'N/A',      'false'],
+    ['N/A',     'Bikram Mukhiya',       'Vehicle Fitness',      'Delayed',       'Due',     'false'],
 ];
 
 function caseDisplay(casedisplaycondition){
@@ -42,13 +44,13 @@ function getCaseStatus(){
         document.getElementById("clientname").innerHTML= caseData[caseRegister.indexOf(inputData)][1];
         document.getElementById("class").innerHTML= caseData[caseRegister.indexOf(inputData)][2];
 
-        if(caseData[caseRegister.indexOf(inputData)][3] == 'Completed'){
+        if(caseData[caseRegister.indexOf(inputData)][3] == 'Completed' || caseData[caseRegister.indexOf(inputData)][3] == 'Settled' || caseData[caseRegister.indexOf(inputData)][3] == 'Delivered'){
             document.getElementById("status").innerHTML="<span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
-        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Ongoing'){
+        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Ongoing' || caseData[caseRegister.indexOf(inputData)][3] == 'Filed' || caseData[caseRegister.indexOf(inputData)][3] == 'Drafting'){
             document.getElementById("status").innerHTML="<span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
-        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Pending'){
+        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Pending' || caseData[caseRegister.indexOf(inputData)][3] == 'Delayed' || caseData[caseRegister.indexOf(inputData)][3] == 'Failed'){
             document.getElementById("status").innerHTML="<span style=\"color:red;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
         }
         else{
