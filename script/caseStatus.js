@@ -4,14 +4,16 @@ let caseRegister = [
     '2023.2.JAN.7',
     '2023.3.JAN.25',
     '2023.4.FEB.5',
+    '2023.5.FEB.17'
 ];
 
 let caseData = [
-    ['N/A',     'Prashant Khati',       'Loan Dispute',         'Ongoing',       'N/A',      'false'],
-    ['N/A',     'Bikram Mukhiya',       'Vehicle Tax',          'Completed',     'Paid',     'false'],
-    ['N/A',     'Shamson Tamang',       'Registration',         'Delayed',       'N/A',      'false'],
-    ['N/A',     'Shamson Tamang',       'Complaint',            'Delayed',       'N/A',      'false'],
-    ['N/A',     'Bikram Mukhiya',       'Vehicle Fitness',      'Delayed',       'Due',     'false'],
+    ['N/A', 'Prashant Khati', 'Loan Dispute', 'Ongoing', 'N/A'],
+    ['N/A', 'Bikram Mukhiya', 'Tax', 'Completed', 'Paid'],
+    ['N/A', 'Shamson Tamang', 'Incorporation', 'Delayed', 'N/A'],
+    ['N/A', 'Shamson Tamang', 'Complaint', 'Failed', 'N/A'],
+    ['N/A', 'Bikram Mukhiya', 'Vehicle Fitness', 'Completed', 'Paid'],
+    ['N/A', 'Unnamed LLP', 'Incorporation', 'N/A', 'N/A'],
 ];
 
 function caseDisplay(casedisplaycondition){
@@ -34,7 +36,6 @@ function getCaseStatus(){
     document.getElementById("class").style.display="none";
     document.getElementById("status").style.display="none";
     document.getElementById("payment").style.display="none";
-    document.getElementById("invoice").style.display="none";
 
     let inputData = document.getElementById("caseIDinput").value;
     
@@ -61,20 +62,12 @@ function getCaseStatus(){
 
         document.getElementById("payment").innerHTML= caseData[caseRegister.indexOf(inputData)][4];
 
-        if (caseData[caseRegister.indexOf(inputData)][5] =='true'){
-            document.getElementById("invoice").innerHTML="<a href=\""+ inputData +".pdf\" download> Download</a>";
-        }
-        else{
-            document.getElementById("invoice").innerHTML="N/A";
-        }
-
         document.getElementById("caseid").style.display="flex";
         document.getElementById("caseref").style.display="flex";
         document.getElementById("clientname").style.display="flex";
         document.getElementById("class").style.display="flex";
         document.getElementById("status").style.display="flex";
         document.getElementById("payment").style.display="flex";
-        document.getElementById("invoice").style.display="flex";
     }
     else {
         document.getElementById("error").innerHTML="WARNING: Record not Found.";
