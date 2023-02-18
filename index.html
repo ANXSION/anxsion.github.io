@@ -79,7 +79,6 @@
 
             main{
                 width: 100%;
-                height: fit-content;
                 min-height: 100vh;
                 display: flex;
                 flex-direction: column;
@@ -143,6 +142,7 @@
 
             .content{
                 width: 80%;
+                min-height: 75vh;
                 margin: 0;
                 padding: 0;
                 transition: 0.3s all;
@@ -308,51 +308,54 @@
                     opacity: 0;
                     transform: translateY(0%);
                 }
+                25%{
+                    opacity: 100%;
+                }
                 50%{
                     opacity: 100%;
                 }
                 75%{
-                    opacity: 100%;
+                    opacity: 100%; 
                 }
                 100%{
                     opacity: 0;
-                    transform: translateY(50%);
+                    transform: translateY(70%);
                 }
             }
 
         </style>
 
     <body>
+        <main>
 
-        <div id="caseStatus" style="z-index:2; display: none; background-color: rgba(0, 0, 0, 0.90); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: center; transition: 0.3s all;">
+            <div id="caseStatus" style="z-index:2; display: none; background-color: rgba(0, 0, 0, 0.90); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: center; transition: 0.3s all;">
            
-            <div style=" padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
-
-                <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none;">Close (X)</p>
-                <br><br>
-                <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: black;" id="caseIDinput">
-                <br>
-                <button onclick="getCaseStatus()">Search</button>
-                <br>
-                <p style="margin: 2px;" id="error" style="display: none;"></p>
-                <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
-                    <section style="text-align: right; margin-right: 4%;">Case ID:</section>
-                    <section><p style="margin: 2px;" id="caseid" style="display: none;"></p></section>
-                    <section style="text-align: right; margin-right: 4%;">Citation:</section>
-                    <section><p style="margin: 2px;" id="caseref" style="display: none;"></p></section>
-                    <section style="text-align: right; margin-right: 4%;">Client:</section>
-                    <section><p style="margin: 2px;" id="clientname" style="display: none;"></p></section>
-                    <section style="text-align: right; margin-right: 4%;">Class:</section>
-                    <section><p style="margin: 2px;" id="class" style="display: none;"></p></section>
-                    <section style="text-align: right; margin-right: 4%;">Status:</section>
-                    <section><p style="margin: 2px;" id="status" style="display: none;"></p></section>
-                    <section style="text-align: right; margin-right: 4%;">Payment:</section>
-                    <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
+                <div style=" padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
+    
+                    <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none;">Close (X)</p>
+                    <br><br>
+                    <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: black;" id="caseIDinput">
+                    <br>
+                    <button onclick="getCaseStatus()">Search</button>
+                    <br>
+                    <p style="margin: 2px;" id="error" style="display: none;"></p>
+                    <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
+                        <section style="text-align: right; margin-right: 4%;">Case ID:</section>
+                        <section><p style="margin: 2px;" id="caseid" style="display: none;"></p></section>
+                        <section style="text-align: right; margin-right: 4%;">Citation:</section>
+                        <section><p style="margin: 2px;" id="caseref" style="display: none;"></p></section>
+                        <section style="text-align: right; margin-right: 4%;">Client:</section>
+                        <section><p style="margin: 2px;" id="clientname" style="display: none;"></p></section>
+                        <section style="text-align: right; margin-right: 4%;">Class:</section>
+                        <section><p style="margin: 2px;" id="class" style="display: none;"></p></section>
+                        <section style="text-align: right; margin-right: 4%;">Status:</section>
+                        <section><p style="margin: 2px;" id="status" style="display: none;"></p></section>
+                        <section style="text-align: right; margin-right: 4%;">Payment:</section>
+                        <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <main>
             <nav>
                 <img onclick="accessProtocol('index')" src="./asset/icon/logo.png" alt="">
                 <section>
@@ -379,8 +382,8 @@
             <section class="content" id="index">
                 <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
                     <h1 class="major" style=" animation: lineup 4s normal; text-align: center;">Unwavering legal efficiency realised.</h1>
-                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid white; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
-                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid white; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
+                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
+                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                 </section>
                 <br><br>
                 <section class="minorDescription">
