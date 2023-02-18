@@ -328,11 +328,11 @@
     <body>
         <main>
 
-            <div id="caseStatus" style="z-index:2; display: none; background-color: rgba(0, 0, 0, 0.90); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: center; transition: 0.3s all;">
+            <div id="caseStatus" style="z-index:2; display: none; background-color: rgba(0, 0, 0, 0.90); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: flex-start; transition: 0.3s all; overflow-x: scroll;">
            
-                <div style=" padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
+                <div style=" padding: 2%; width:100%; height: 100%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
     
-                    <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none;">Close (X)</p>
+                    <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 24px;">+</p>
                     <br><br>
                     <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: black;" id="caseIDinput">
                     <br>
@@ -915,8 +915,6 @@
                     <p>We take all reasonable and appropriate security measures to protect the personal data we store and process from unauthorised access or unauthorised alteration, disclosure or destruction.</p>
                 </section>
             </section>
-
-            <br>
             
             <footer>
                 <section style="width:100%;display: grid; grid-template-columns: 50% 50%; justify-content: center; align-items: center; text-align: center;">
