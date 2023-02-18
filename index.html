@@ -153,6 +153,7 @@
                 min-width: 75%;
                 margin: 3px;
                 height:64px;
+                min-height: 64px;
                 color: white;
                 background-color: #111111;
                 cursor: pointer;
@@ -328,17 +329,16 @@
     <body>
         <main>
 
-            <div id="caseStatus" style="z-index:2; display: none; background-color: rgba(0, 0, 0, 0.90); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: flex-start; transition: 0.3s all; overflow-x: scroll;">
-           
-                <div style=" padding: 2%; width:100%; height: 100%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
+            <div id="caseStatus" style="z-index:2; display: flex; flex-direction: column; background-color: black; opacity: 100%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center; transition: 0.3s all;overflow-y: scroll; top: -100%;">
     
-                    <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 24px;">+</p>
+                    <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
                     <br><br>
                     <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: black;" id="caseIDinput">
                     <br>
                     <button onclick="getCaseStatus()">Search</button>
                     <br>
                     <p style="margin: 2px;" id="error" style="display: none;"></p>
+
                     <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
                         <section style="text-align: right; margin-right: 4%;">Case ID:</section>
                         <section><p style="margin: 2px;" id="caseid" style="display: none;"></p></section>
@@ -353,7 +353,6 @@
                         <section style="text-align: right; margin-right: 4%;">Payment:</section>
                         <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
                     </div>
-                </div>
             </div>
 
             <nav>
@@ -381,7 +380,7 @@
 
             <section class="content" id="index">
                 <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
-                    <h1 class="major" style=" animation: lineup 4s normal; text-align: center;">Unwavering legal efficiency realised.</h1>
+                    <h1 class="major" style=" animation: lineup 4s normal; text-align: center;"><span style="color: greenyellow;">NEVER</span>FALTER</h1>
                     <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                     <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                 </section>
@@ -416,7 +415,7 @@
                         </section>
                         <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
                             <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
-                            <p>Guardian Angel<sup style="font-size: 8px;">SM</sup> is a progressive Law Firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters.</p>
+                            <p>Guardian Angel<sup style="font-size: 8px;">SM</sup> is a progressive law firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters.</p>
 
                             <button onclick="accessProtocol('guardian')">Learn More</button>
                         </section>
@@ -644,14 +643,14 @@
 
             <section class="content" id="intel">
                 <br>
-                <h1>Intel</h1>
+                <h1 style="text-align: center;">Intel</h1>
 
                 <section style="width:100%;display:flex; justify-content: center;">
                     <img class="idimage" src="./asset/icon/intel.jpg" alt="">
                 </section>
                 <br>
 
-                <p style="text-align: justify;">I am Anurag Lama, and I am popularly recognised under the alias of "ANXSION". I am an advocate and a polymath hailing from the hills of Darjeeling. A life-long love of nature, science, and mechanics has helped me create a foundation for designs based on an application of functional real-world technical solutions. I incorporate my research work for creating exceptional concept arts and product renders.</p>
+                <p style="text-align: justify;">My name is Anurag Lama, and I am popularly recognised under the alias of "ANXSION". I am an advocate and a polymath hailing from the hills of Darjeeling. A life-long love of nature, science, and mechanics has helped me create a foundation for designs based on an application of functional real-world technical solutions. I incorporate my research work for creating exceptional concept arts and product renders.</p>
                     
                 <p style="text-align: justify;">As a multi-instrumentalist, I make mostly instrumental tracks, and my progressive, polyrhythmic compositions makes up for my lack of vocals. I also work as a video editor and have created the background score for other videos.</p>
 
@@ -974,8 +973,6 @@
                 document.getElementById('guardian').style.opacity="0%";
                 document.getElementById('intel').style.display="none";
                 document.getElementById('intel').style.opacity="0%";
-                document.getElementById('caseStatus').style.display="none";
-                document.getElementById('caseStatus').style.opacity="0%";
                 document.getElementById('terms').style.display="none";
                 document.getElementById('terms').style.opacity="0%";
                 document.getElementById('privacy').style.display="none";

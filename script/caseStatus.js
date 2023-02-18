@@ -18,12 +18,10 @@ let caseData = [
 
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
-        document.getElementById('caseStatus').style.opacity="0%";
-        setTimeout(function() {document.getElementById('caseStatus').style.display="none";}, 300);
+        document.getElementById('caseStatus').style.top="-100%";
     }
     if (casedisplaycondition == 'open'){
-        document.getElementById('caseStatus').style.display="flex";
-        setTimeout(function() {document.getElementById('caseStatus').style.opacity="100%";}, 100);
+        document.getElementById('caseStatus').style.top="0";
     }
 }
 
@@ -70,7 +68,7 @@ function getCaseStatus(){
         document.getElementById("payment").style.display="flex";
     }
     else {
-        document.getElementById("error").innerHTML="WARNING: Record not Found.";
+        document.getElementById("error").innerHTML="No record found.";
         document.getElementById("error").style.display="flex";
     }
 
