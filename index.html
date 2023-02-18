@@ -57,19 +57,19 @@
                 font-display: swap;
             }
             :root{
-                -webkit-tap-highlight-color:rgba(0,0,0,0);
+                -webkit-tap-highlight-color:rgba(255,255,255,0);
             }
             ::selection {
-                color: white;
-                background-color: black;
+                color: black;
+                background-color: greenyellow;
             }
 
             body{
                 height: 100%;
                 width: 100%;
-                font-family: 'Times New Roman';
-                background-color: white;
-                color: black;
+                font-family: 'Roboto';
+                background-color: black;
+                color: white;
                 font-size: 16px;
                 margin: 0;
                 padding: 0;
@@ -88,6 +88,7 @@
                 font-size: 1.125rem;
             }
             nav{
+                background-color: greenyellow;
                 width: 100%;
                 height: fit-content;
                 display: grid;
@@ -110,6 +111,7 @@
             }
 
             nav section p{
+                color: black;
                 cursor: pointer;
             }
 
@@ -148,14 +150,14 @@
             button{
                 font-weight: normal;
                 border: none;
-                border-radius: 32px;
-                min-width: 256px;
+                min-width: 75%;
                 margin: 3px;
-                height: 32px;
+                height:64px;
                 color: white;
-                background-color: black;
-                transition:0.3s all;
+                background-color: #111111;
                 cursor: pointer;
+                opacity: 100%;
+                font-size: 1rem;
             }
             button:hover{
                 color: black;
@@ -174,6 +176,9 @@
                 font-weight: normal;
             }
             h2{
+                font-weight: normal;
+            }
+            h3{
                 font-weight: normal;
             }
 
@@ -199,6 +204,41 @@
             }
             .idimage{
                 width: 50%;
+            }
+
+            .artGallery{
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+                align-items: center;
+            }
+            details{
+                width: 100%;
+                color: white;
+                transition: 0.3s all;
+            }
+
+            summary{
+                height: 128px;
+                font-size: 1.25rem;
+                list-style: none;
+                text-align: center;
+                color: white;
+                background-color: #111111;
+                user-select: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 10%;
+                padding-right: 10%;
+                cursor: pointer;
+            }
+
+            summary:hover{
+                background-color: greenyellow;
+                color: black;
             }
 
             @media screen and (max-width:639px) {
@@ -229,6 +269,9 @@
                 .idimage{
                     width: 100%;
                 }
+                .artGallery{
+                grid-template-columns: 1fr;
+            }
             }
 
             @keyframes lineup {
@@ -281,17 +324,18 @@
 
     <body>
 
-        <div id="caseStatus" style="display: none; background-color: rgba(0, 0, 0, 0.75); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: center; transition: 0.3s all;">
-
-            <div style="position:fixed;width: 100%;height: 100%;" onclick="caseDisplay('close')"></div>
+        <div id="caseStatus" style="z-index:2; display: none; background-color: rgba(0, 0, 0, 0.90); opacity: 1; position: fixed; height: 100%; width: 100%; justify-content: center; align-items: center; transition: 0.3s all;">
            
-            <div style="z-index:2; padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: white; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
-                <input type="text" style="border: none; border-bottom: 2px solid black; outline: none; width: 256px; font-size: 18px;" id="caseIDinput">
+            <div style=" padding: 2%;width:80%; min-height: 50%; height: fit-content; background-color: black; display: flex;justify-content: center;align-items: center; flex-direction: column; border-radius: 12px;">
+
+                <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none;">Close (X)</p>
+                <br><br>
+                <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: black;" id="caseIDinput">
                 <br>
                 <button onclick="getCaseStatus()">Search</button>
                 <br>
                 <p style="margin: 2px;" id="error" style="display: none;"></p>
-                <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center;">
+                <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
                     <section style="text-align: right; margin-right: 4%;">Case ID:</section>
                     <section><p style="margin: 2px;" id="caseid" style="display: none;"></p></section>
                     <section style="text-align: right; margin-right: 4%;">Citation:</section>
@@ -309,7 +353,7 @@
         </div>
 
         <main>
-            <nav style="background-color: white;">
+            <nav>
                 <img onclick="accessProtocol('index')" src="./asset/icon/logo.png" alt="">
                 <section>
                    <p onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
@@ -321,7 +365,7 @@
             <section class="content" id ="404" style="display: none;">
                 <br>
                 <h1 style="font-size: 48px; font-weight: normal; text-align: center;">Are you feeling lost?</h1>
-                <section style="display: flex; justify-content: center; align-items: center;">
+                <section style="display: flex; justify-content: center; align-items: center; fill: white;">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 15%; animation: ghostfloat 5s normal; animation-iteration-count: infinite;"><path d="M186.1 .1032c-105.1 3.126-186.1 94.75-186.1 199.9v264c0 14.25 17.3 21.38 27.3 11.25l24.95-18.5c6.625-5.001 16-4.001 21.5 2.25l43 48.31c6.25 6.251 16.37 6.251 22.62 0l40.62-45.81c6.375-7.251 17.62-7.251 24 0l40.63 45.81c6.25 6.251 16.38 6.251 22.62 0l43-48.31c5.5-6.251 14.88-7.251 21.5-2.25l24.95 18.5c10 10.13 27.3 3.002 27.3-11.25V192C384 83.98 294.9-3.147 186.1 .1032zM128 224c-17.62 0-31.1-14.38-31.1-32.01s14.38-32.01 31.1-32.01s32 14.38 32 32.01S145.6 224 128 224zM256 224c-17.62 0-32-14.38-32-32.01s14.38-32.01 32-32.01c17.62 0 32 14.38 32 32.01S273.6 224 256 224z"/></svg>
                 </section>
                 <br><br>
@@ -333,14 +377,15 @@
             </section>
 
             <section class="content" id="index">
-                <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
                     <h1 class="major" style=" animation: lineup 4s normal; text-align: center;">Unwavering legal efficiency realised.</h1>
-                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid black; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
+                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid white; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
+                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid white; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                 </section>
                 <br><br>
                 <section class="minorDescription">
-                    <p style="font-size: 32px;">ANXSION<br>-<br>Scylla Unit</p>
-                    <p style="text-align: justify;">The Scylla Unit is a diverse group of individuals who build and launch technologies that aim to improve the lives of  people. We focus on creating radical technologies via rapid research and development. We also explore threats to societies, and builds technology that inspires scalable solutions.</p>
+                    <p style="font-size: 32px;">ANXSION<br>-<br>Cerca Trova</p>
+                    <p style="text-align: justify;">ANXSION is the pseudonym under which we build and launch technologies that aim to improve the lives of  people. We focus on creating radical technologies via rapid research and development. We also explore threats to societies, and builds technology that inspires scalable solutions.</p>
                 </section>
 
                 <br><br>
@@ -350,24 +395,24 @@
                     <h1>Founding</h1>
                     <p>In 2018, a new division was formed by ANXSION to work on experiemental R&D, with sci-fi sounding technologies that could make the world a radically better place as well as a progressive and extremely efficient law firm to tackle the growing legal needs.</p>
 
-                    <p>The Scylla Unit has played a big role in the development of various infrastructures and worked round the clock combining cutting-edge research with experimental technology to identify emerging issues that threaten societies and human development, and act on it to create radical solutions.</p>
+                    <p>The divisions has played a big role in the development of various infrastructures and worked round the clock combining cutting-edge research with experimental technology to identify emerging issues that threaten societies and human development, and act on it to create radical solutions.</p>
                 </section>
 
                 <br><br>
 
                 <section style="text-align:justify;">
                     <h1>Divisions</h1>
-                    <p>All the Scylla Units currently work under the two towering divisions. One division focuses primarily on developing infrastructre while the other division deals with issues primarily of legal nature.</p>
+                    <p>The ANXSION project has two towering divisions. One division focuses on designing and developing technical infrastructre while the other division deals with tackling legal issues.</p>
 
                     <section class="minorAlt">
                         <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
-                            <img style="width: 100%;" src="./asset/icon/chrysalis.png" alt="">
+                            <img style="width: 100%;filter: invert(100%);" src="./asset/icon/chrysalis.png" alt="">
                             <p>Chrysalis R&D<sup style="font-size: 8px;">SM</sup> is a research and development platform which aims to create software and hardware solutions for businesses and industries. The prototypes and experiments are iterated and derisked to build the foundation for a strong business.</p>
 
                             <button onclick="accessProtocol('chrysalis')">Learn More</button>
                         </section>
                         <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
-                            <img style="width: 100%;" src="./asset/icon/guardian.png" alt="">
+                            <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
                             <p>Guardian Angel<sup style="font-size: 8px;">SM</sup> is a progressive Law Firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters.</p>
 
                             <button onclick="accessProtocol('guardian')">Learn More</button>
@@ -378,96 +423,111 @@
             </section>
 
             <section class="content" id="chrysalis">
-                <img style="width: 100%;" src="./asset/icon/chrysalis.png" alt="">
+                <img style="width: 100%; filter: invert(100%);" src="./asset/icon/chrysalis.png" alt="">
             
                 <p style="text-align: justify;">Chrysalis R&D<sup style="font-size: 8px;">SM</sup> is a research and development platform which aims to create software and hardware solutions for businesses and industries. The prototypes and experiments are iterated and derisked to build the foundation for a strong business. With a deep understanding for progress, reliability and funtion, we envision a future where function & efficiency seamlessly fuse together. Crafting new technologies and methods to shape new innovative design solutions.</p>
                 <br><br>
 
-                <h1>Services</h1>
+                <h1 style="text-align: center;">Services</h1>
                 <br><br>
-                
-                <section class="minorAlt">
-                    <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
-                        <section style="margin: 5%;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                              </svg>
-                        </section>
+
+                <details>
+                    <summary><h2>RESEARCH</h2><h2>+</h2></summary>
+
+                    <br>
+                    <p style="text-align: justify;">We understand the importance of conducting reseach before implementing any idea. Therefore we provide efficient R&D services of various tenures, from short term research for business development and analytics to long term data processing and data set generation.</p>
+
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li><p>Business Incubation</p></li>
+                        <li><p>Product Development</p></li>
+                        <li><p>Data Guided Results</p></li>
+                        <li><p>Derisking Process</p></li>
+                        <li><p>Life Science</p></li>
+                    </ol>
+                </details>
+
+                <br>
+
+                <details>
+                    <summary><h2>ENGINEER</h2><h2>+</h2></summary>
+
+                    <br>
+                    <p style="text-align: justify;">Crafting the physical manifestation from an idea is a daunting task, with some even considering it a task only meant for the Gods. We bring this power of the Gods to you and help engineer your ideas into a reality.</p>
+
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li><p>3D Printing</p></li>
+                        <li><p>Hardware Development</p></li>
+                        <li><p>Schematics Improvement</p></li>
+                        <li><p>Hardware Deployment</p></li>
                         
-                        <h2>Research</h2>
-                        <ol>
-                            <li>Business Incubation</li>
-                            <li>Data Analytics</li>
-                            <li>Product Improvement</li>
-                        </ol>
-                    </section>
-                    <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
-                        <section style="margin: 5%;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-motherboard" viewBox="0 0 16 16">
-                                <path d="M11.5 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Zm2 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5Zm-10 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6Zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6ZM5 3a1 1 0 0 0-1 1h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0V3Zm0 1h3v3H5V4Zm6.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2Z"/>
-                                <path d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2H1Zm1 11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v11Z"/>
-                              </svg>
-                        </section>
+                    </ol>
+                </details>
 
-                        <h2>Engineer</h2>
-                        <ol>
-                            <li>3D Printing</li>
-                            <li>Hardware Development</li>
-                            <li>Embeded Hardware</li>
-                        </ol>
-                    </section>
-                    <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
-                        <section style="margin: 5%;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
-                              </svg>
-                        </section>
+                <br>
 
-                        <h2>Software</h2>
-                        <ol>
-                            <li>Web Technologies</li>
-                            <li>Software Development</li>
-                            <li>Concept Art Rendering</li>
-                        </ol>
-                    </section>
-                    <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
-                        <section style="margin: 5%;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-up" viewBox="0 0 16 16">
-                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.354-5.854 1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
-                                <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
-                              </svg>
-                        </section>
+                <details>
+                    <summary><h2>SOFTWARE</h2><h2>+</h2></summary>
 
-                        <h2>Advance</h2>
-                        <ol>
-                            <li>Cybersecurity</li>
-                            <li>Life Science</li>
-                            <li>Experimental</li>
-                        </ol>
-                    </section>
-                </section>
+                    <br>
+                    <p style="text-align: justify;">Software is an integral part of any modern solution. We create solutions for all technological platforms. Wether it be for scalable web technologies, or high stake embeded hardwares.</p>
+
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li><p>Front End Web Technologies: HTML, CSS, JavaScript</p></li>
+                        <li><p>Backend Web Technologies: PHP, MySQL</p></li>
+                        <li><p>General Software Development: C, C++, C+, Python, Java</p></li>
+                        <li><p>Embeded Hardware: C, Assembly (x86)</p></li>
+                        <li><p>Algorithmn Authorship</p></li>
+                        <li><p>Cybersecurity Testing</p></li>
+                    </ol>
+                </details>
+
+                <br>
+
+                <details>
+                    <summary><h2>IDENTITY</h2><h2>+</h2></summary>
+
+                    <br>
+                    <p style="text-align: justify;">The unique identity of a brand is as important as the products and services it provides. We provide extremely efficient solutions for the all classes of businesses, from start ups to large scale corporations.</p>
+
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li><p>Logo Designing</p></li>
+                        <li><p>Brand Identity Guidelines</p></li>
+                        <li><p>Branding labels and stickers</p></li>
+                    </ol>
+                </details>
+    
                 <br><br>
 
-                <h1>Clients</h1>
+                <h1 style="text-align: center;">Clients</h1>
                 <section class="clients">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_1.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_2.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_3.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_4.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_5.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_6.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_7.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_8.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_9.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_10.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_11.png" alt="">
-                    <img style="width: 100%;filter: invert(100%);" src="./asset/clients/client_12.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_1.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_2.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_3.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_4.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_5.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_6.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_7.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_8.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_9.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_10.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_11.png" alt="">
+                    <img style="width: 100%;" src="./asset/clients/client_12.png" alt="">
                 </section>
             </section>
 
             <section class="content" id="guardian">
 
-                <img style="width: 100%;" src="./asset/icon/guardian.png" alt="">
+                
+
+                <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
 
                 <section style="display: flex; flex-direction: column; align-items: center;">
                     <button onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
@@ -478,96 +538,105 @@
             
                 <p style="text-align: justify;">Guardian Angel<sup style="font-size: 8px;">SM</sup> is a progressive Law Firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters. We offer highest quality legal advice coupled with extraordinary, tailored service to deliver exceptional results to our clients.</p>
                 <br>
+
                 <p style="text-align: justify;">Contact us using the button provided above and pick a time you will be comfortable having a session with us. Fret not, If we can't help, we'll try to forward you to someone from our network who can. Your legal troubles shall be dealt by a dynamic team advocates who will not only be your guardian angels, but will also respect your privacy and your time. We are aware of the importance of client convinience and satisfaction, and such factor is paramount for our quality service.</p>
                 <br><br>
 
-                <h1>Law Students</h1>
+                <h1 style="text-align: center;">Law Students</h1>
                 <p style="text-align: justify;">We acknowledge the drive of the law students for entering the real world of law, thus, we invite you to work at the firm if what you seek is achievement and growth. From your first day, you will work on intresting cases abd transactions involving challenging legal issues. Working directly with skilled advocates, you will get simulating and substantive experience early in your career.</p>
                 <br><br>
 
-                <h1>Services</h1>
+                <h1 style="text-align: center;">Services</h1>
 
-                <section class="minorAlt">
-                    <section style="display: flex;flex-direction: column; justify-content: flex-start; align-items: center; margin-bottom: 9px;">
-                        <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{fill:#000000;}  </style> <g> <path class="st0" d="M406.219,278.624c-0.172-0.906-0.406-2.109-0.688-3.625l0,0c-2.031-10.906-6.906-36.906-12.094-64.5v-0.031 c-3.406-18.109-6.953-36.938-9.938-52.625c-1.484-7.844-2.828-14.922-3.953-20.734c-1.125-5.797-2.016-10.344-2.578-13.203 c-1.219-6-3.734-11.516-7.156-16.313c-5.094-7.219-12.219-12.891-20.344-16.781c-8.109-3.891-17.297-6.031-26.813-6.031 c-5.797,0-11.719,0.797-17.563,2.5c-5.813,1.719-11.563,4.359-17,7.969c-6.875,4.594-13.219,6.969-18.688,8.25 c-2.719,0.641-5.25,1-7.484,1.219c-2.25,0.188-4.219,0.219-5.922,0.219c-1.625,0-3.047,0.063-4.406,0.063 c-1.438,0-2.781-0.063-4.344-0.25c-2.328-0.281-5.125-0.906-8.938-2.344c-3.828-1.453-8.656-3.75-14.813-7.406 c-11.063-6.563-23.094-9.531-34.563-9.531c-6.313,0-12.469,0.891-18.25,2.594c-8.688,2.563-16.594,6.938-22.875,13 c-3.156,3.031-5.875,6.5-8.063,10.313c-2.172,3.844-3.797,8.063-4.688,12.531c-0.594,2.859-1.484,7.406-2.594,13.203 c-3.375,17.422-8.813,46.172-13.906,73.359c-5.188,27.625-10.063,53.625-12.094,64.531l0,0c-0.281,1.516-0.516,2.719-0.688,3.625H0 l6.188,12.609c0.313,0.609,3.375,6.656,11,15.359c11.453,13.063,33.25,32.063,71.156,47.688 c10.813,4.469,22.953,8.625,36.516,12.344v4.641l41.547,48.047c0,0,48.031,9.078,51.938,7.781S256,392.03,256,392.03 s33.75,33.766,37.656,35.063c3.891,1.297,51.938-7.781,51.938-7.781l41.563-48.047v-4.641 c45.234-12.375,74.453-30.109,92.531-45.344c19-15.984,25.672-29.125,26.109-30.047L512,278.624H406.219z M135.75,213.718 c3.406-18.125,6.969-36.938,9.938-52.609c1.5-7.844,2.844-14.891,3.953-20.672c1.125-5.781,2-10.313,2.547-13.047v-0.016 c0.719-3.5,2.141-6.672,4.203-9.578c3.078-4.359,7.641-8.078,13.297-10.703c5.625-2.625,12.281-4.125,19.25-4.125 c8.469,0,17.359,2.188,25.641,7.094c9.078,5.375,16.234,8.531,22.266,10.313c3.031,0.891,5.75,1.438,8.219,1.75 s4.688,0.375,6.531,0.375c1.75,0,3.219-0.063,4.406-0.047c2,0,4.547-0.047,7.484-0.328c4.406-0.375,9.734-1.266,15.563-3.156 c5.859-1.891,12.234-4.781,18.781-9.156c3.922-2.625,8.031-4.5,12.203-5.719c4.188-1.234,8.438-1.813,12.625-1.813 c4.578,0,9.063,0.688,13.25,1.969c6.281,1.922,11.844,5.156,15.984,9.188c2.078,2.031,3.797,4.219,5.109,6.547 c1.328,2.328,2.281,4.797,2.813,7.391v0.016c0.547,2.734,1.438,7.266,2.547,13.047c3.344,17.344,8.766,46.094,13.891,73.281l0,0 c0.688,3.594,1.344,7.156,2,10.672h-244.5C134.406,220.874,135.078,217.312,135.75,213.718z M478.781,298.187 c-11.047,11.625-31.406,28.125-66.672,41.859c-35.266,13.703-85.469,24.609-156.109,24.609c-49.313,0-88.656-5.313-119.922-13.172 c-46.891-11.813-75.578-29.344-92.5-43.578c-5.109-4.313-9.125-8.313-12.266-11.781H256h224.688 C480.094,296.796,479.453,297.483,478.781,298.187z"></path> </g> </g></svg>
+                <details>
+                    <summary><h2>CRIMINAL</h2><h2>+</h2></summary>
 
-                        <h2>Criminal</h2>
-                        <ol>
-                            <li>Criminal Litigation</li>
-                            <li>Bail and Bonds</li>
-                            <li>Juvenile Justice</li>
-                            <li>Advisory</li>
-                        </ol>
-                    </section>
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li>Criminal Litigation</li>
+                        <li>Bail and Bonds</li>
+                        <li>Juvenile Justice</li>
+                        <li>Advisory</li>
+                    </ol>
+                </details>
+                <br>
 
-                    <section style="display: flex;flex-direction: column; justify-content: flex-start; align-items: center; margin-bottom: 9px;">
-                        <svg height="64px" width="64px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#000000;} </style> <g> <path class="st0" d="M78.641,118.933c22.88,0,41.416-18.551,41.416-41.414c0-22.887-18.536-41.423-41.416-41.423 c-22.887,0-41.422,18.536-41.422,41.423C37.218,100.382,55.754,118.933,78.641,118.933z"></path> <path class="st0" d="M255.706,228.73v0.062c0.101,0,0.194-0.031,0.294-0.031c0.101,0,0.194,0.031,0.294,0.031v-0.062 c15.562-0.317,28.082-12.976,28.082-28.601c0-15.648-12.52-28.299-28.082-28.616v-0.063c-0.101,0-0.194,0.031-0.294,0.031 c-0.1,0-0.193-0.031-0.294-0.031v0.063c-15.563,0.317-28.082,12.968-28.082,28.616C227.623,215.754,240.143,228.413,255.706,228.73 z"></path> <path class="st0" d="M433.359,118.933c22.887,0,41.423-18.551,41.423-41.414c0-22.887-18.536-41.423-41.423-41.423 c-22.88,0-41.416,18.536-41.416,41.423C391.944,100.382,410.48,118.933,433.359,118.933z"></path> <path class="st0" d="M470.097,138.553h-36.312h-18.404c-21.106,0-40.432,11.831-50.033,30.622l-33.494,97.967 c-1.154,2.246-3.298,3.84-5.792,4.282c-2.493,0.442-5.048-0.309-6.914-2.036l-20.836-18.04c-6.233-5.769-14.408-8.973-22.902-8.973 H256h-19.41c-8.494,0-16.669,3.204-22.902,8.973l-20.835,18.04c-1.866,1.727-4.421,2.478-6.914,2.036 c-2.492-0.442-4.637-2.036-5.791-4.282l-33.495-97.967c-9.6-18.791-28.926-30.622-50.032-30.622H78.215H41.902 C21.834,138.553,0,160.387,0,180.464v139.211c0,10.034,8.13,18.171,18.164,18.171c4.939,0,0,0,12.682,0l6.906,118.725 c0,10.676,8.664,19.332,19.34,19.332c4.506,0,12.814,0,21.122,0c8.308,0,16.616,0,21.122,0c10.676,0,19.34-8.656,19.34-19.332 l6.906-118.725l-0.085-84.766c0-1.339,0.914-2.493,2.222-2.818c1.309-0.31,2.648,0.309,3.26,1.502l26.572,65.401 c3.206,6.256,9.152,10.654,16.074,11.885c6.922,1.231,14.022-0.844,19.186-5.613l25.426-18.729 c0.852-0.782,2.083-0.984,3.136-0.542c1.061,0.473,1.743,1.518,1.743,2.663l0.093,73.508l4.777,82.187 c0,7.387,6.001,13.379,13.395,13.379c3.113,0,8.865,0,14.618,0c5.753,0,11.506,0,14.618,0c7.394,0,13.394-5.992,13.394-13.379 l4.778-82.187l0.093-73.508c0-1.146,0.681-2.19,1.742-2.663c1.053-0.442,2.284-0.24,3.136,0.542l25.427,18.729 c5.164,4.769,12.264,6.844,19.186,5.613c6.922-1.231,12.868-5.629,16.073-11.885l26.573-65.401 c0.611-1.192,1.951-1.812,3.259-1.502c1.309,0.325,2.222,1.478,2.222,2.818l-0.085,84.766l6.906,118.725 c0,10.676,8.664,19.332,19.341,19.332c4.507,0,12.814,0,21.122,0c8.308,0,16.616,0,21.121,0c10.677,0,19.342-8.656,19.342-19.332 l6.906-118.725c12.682,0,7.742,0,12.682,0c10.034,0,18.164-8.137,18.164-18.171V180.464 C512,160.387,490.166,138.553,470.097,138.553z"></path> </g> </g>
-                        </svg>
+                <details>
+                    <summary><h2>CIVIL</h2><h2>+</h2></summary>
 
-                        <h2>Civil</h2>
-                        <ol>
-                            <li>Civil Litigation</li>
-                            <li>Divorce</li>
-                            <li>Succession and Inheritance</li>
-                            <li>Child Custody</li>
-                            <li>Child Rights</li>
-                        </ol>
-                    </section>
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li>Civil Litigation</li>
+                        <li>Divorce</li>
+                        <li>Succession and Inheritance</li>
+                        <li>Child Custody</li>
+                        <li>Child Rights</li>
+                    </ol>
+                </details>
+                <br>
 
-                    <section style="display: flex;flex-direction: column; justify-content: flex-start; align-items: center; margin-bottom: 9px;">
-                        <svg fill="#000000" width="64px" height="64px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M8 2L8 6L4 6L4 48L46 48L46 14L30 14L30 6L26 6L26 2 Z M 10 4L24 4L24 8L28 8L28 46L19 46L19 39L15 39L15 46L6 46L6 8L10 8 Z M 10 10L10 12L12 12L12 10 Z M 14 10L14 12L16 12L16 10 Z M 18 10L18 12L20 12L20 10 Z M 22 10L22 12L24 12L24 10 Z M 10 15L10 19L12 19L12 15 Z M 14 15L14 19L16 19L16 15 Z M 18 15L18 19L20 19L20 15 Z M 22 15L22 19L24 19L24 15 Z M 30 16L44 16L44 46L30 46 Z M 32 18L32 20L34 20L34 18 Z M 36 18L36 20L38 20L38 18 Z M 40 18L40 20L42 20L42 18 Z M 10 21L10 25L12 25L12 21 Z M 14 21L14 25L16 25L16 21 Z M 18 21L18 25L20 25L20 21 Z M 22 21L22 25L24 25L24 21 Z M 32 22L32 24L34 24L34 22 Z M 36 22L36 24L38 24L38 22 Z M 40 22L40 24L42 24L42 22 Z M 32 26L32 28L34 28L34 26 Z M 36 26L36 28L38 28L38 26 Z M 40 26L40 28L42 28L42 26 Z M 10 27L10 31L12 31L12 27 Z M 14 27L14 31L16 31L16 27 Z M 18 27L18 31L20 31L20 27 Z M 22 27L22 31L24 31L24 27 Z M 32 30L32 32L34 32L34 30 Z M 36 30L36 32L38 32L38 30 Z M 40 30L40 32L42 32L42 30 Z M 10 33L10 37L12 37L12 33 Z M 14 33L14 37L16 37L16 33 Z M 18 33L18 37L20 37L20 33 Z M 22 33L22 37L24 37L24 33 Z M 32 34L32 36L34 36L34 34 Z M 36 34L36 36L38 36L38 34 Z M 40 34L40 36L42 36L42 34 Z M 32 38L32 40L34 40L34 38 Z M 36 38L36 40L38 40L38 38 Z M 40 38L40 40L42 40L42 38 Z M 10 39L10 44L12 44L12 39 Z M 22 39L22 44L24 44L24 39 Z M 32 42L32 44L34 44L34 42 Z M 36 42L36 44L38 44L38 42 Z M 40 42L40 44L42 44L42 42Z"></path></g></svg>
+                <details>
+                    <summary><h2>Corporate</h2><h2>+</h2></summary>
 
-                        <h2>Corporate</h2>
-                        <ol>
-                            <li>Antitrust and Competition</li>
-                            <li>Company Registration</li>
-                            <li>Corporate Governance</li>
-                            <li>Banking and Financial Institutions</li>
-                            <li>Emerging Company Advisory</li>
-                            <li>EULA and Other Agreements</li>
-                        </ol>
-                    </section>
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li>Antitrust and Competition</li>
+                        <li>Company Registration</li>
+                        <li>Corporate Governance</li>
+                        <li>Banking and Financial Institutions</li>
+                        <li>Emerging Company Advisory</li>
+                        <li>EULA and Other Agreements</li>
+                    </ol>
+                </details>
+                <br>
 
-                    <section style="display: flex;flex-direction: column; justify-content: flex-start; align-items: center; margin-bottom: 9px;">
-                        <svg width="64px" height="64px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="var(--ci-primary-color, #000000)" d="M459.26,96,328,225.7V96H293.475L168,223.267V16H16V496H496V96ZM464,464H48V48h88V264h36.778L296,139.018V264h38.764L464,136.3Z" class="ci-primary"></path> <polygon fill="var(--ci-primary-color, #000000)" points="136 328 136 336 168 336 168 328 168 304 136 304 136 328" class="ci-primary"></polygon> <rect width="32" height="32" x="136" y="376" fill="var(--ci-primary-color, #000000)" class="ci-primary"></rect> <polygon fill="var(--ci-primary-color, #000000)" points="216 328 216 336 248 336 248 328 248 304 216 304 216 328" class="ci-primary"></polygon> <rect width="32" height="32" x="216" y="376" fill="var(--ci-primary-color, #000000)" class="ci-primary"></rect> <polygon fill="var(--ci-primary-color, #000000)" points="296 328 296 336 328 336 328 328 328 304 296 304 296 328" class="ci-primary"></polygon> <rect width="32" height="32" x="296" y="376" fill="var(--ci-primary-color, #000000)" class="ci-primary"></rect> <rect width="32" height="32" x="376" y="304" fill="var(--ci-primary-color, #000000)" class="ci-primary"></rect> <rect width="32" height="32" x="376" y="376" fill="var(--ci-primary-color, #000000)" class="ci-primary"></rect> </g></svg>
+                <details>
+                    <summary><h2>Industry</h2><h2>+</h2></summary>
 
-                        <h2>Industry</h2>
-                        <ol>
-                            <li>Consumer Protection</li>
-                            <li>Cybersecurity and Data Privacy</li>
-                            <li>Intellectual Property</li>
-                            <li>Contracts and Agreements</li>
-                            <li>Real Estate and Trusts</li>
-                        </ol>
-                    </section>
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li>Consumer Protection</li>
+                        <li>Cybersecurity and Data Privacy</li>
+                        <li>Intellectual Property</li>
+                        <li>Contracts and Agreements</li>
+                        <li>Real Estate and Trusts</li>
+                    </ol>
+                </details>
+                <br>
 
-                    <section style="display: flex;flex-direction: column; justify-content: flex-start; align-items: center; margin-bottom: 9px;">
-                        <svg fill="#000000" height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M427.023,0H84.977C71.126,0,59.858,11.268,59.858,25.119v461.762c0,13.851,11.268,25.119,25.119,25.119h265.086 c2.126,0,4.166-0.844,5.668-2.348l94.063-94.063c1.504-1.503,2.348-3.542,2.348-5.668V25.119C452.142,11.268,440.874,0,427.023,0z M358.079,484.63v-57.607c0-5.01,4.076-9.086,9.086-9.086h57.607L358.079,484.63z M436.109,401.904h-68.944 c-13.851,0-25.119,11.268-25.119,25.119v68.944H84.977c-5.01,0-9.086-4.076-9.086-9.086V25.119c0-5.01,4.076-9.086,9.086-9.086 h342.046c5.01,0,9.086,4.076,9.086,9.086V401.904z"></path> </g> </g> <g> <g> <path d="M204.693,68.409h-68.409c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h26.188v77.495 c0,4.427,3.589,8.017,8.017,8.017s8.017-3.589,8.017-8.017V84.443h26.188c4.427,0,8.017-3.589,8.017-8.017 S209.12,68.409,204.693,68.409z"></path> </g> </g> <g> <g> <path d="M289.332,159.634l-23.826-79.418c-2.119-7.062-8.496-11.807-15.869-11.807h-4.378c-7.373,0-13.75,4.745-15.869,11.807 l-23.826,79.418c-1.272,4.241,1.134,8.71,5.375,9.982c4.241,1.275,8.71-1.134,9.982-5.374l3.416-11.39h46.219l3.417,11.389 c1.042,3.473,4.227,5.715,7.676,5.715c0.762,0,1.538-0.11,2.307-0.34C288.198,168.344,290.605,163.875,289.332,159.634z M229.149,136.818l15.598-51.995c0.067-0.224,0.278-0.381,0.512-0.381h4.378c0.234,0,0.445,0.156,0.512,0.381l15.598,51.995 H229.149z"></path> </g> </g> <g> <g> <path d="M373.732,157.34l-26.712-38.158l26.712-38.158c2.539-3.627,1.657-8.626-1.97-11.165c-3.627-2.539-8.626-1.658-11.165,1.97 l-23.362,33.374l-23.362-33.374c-2.539-3.628-7.539-4.51-11.165-1.97c-3.628,2.539-4.51,7.538-1.97,11.165l26.712,38.158 L300.74,157.34c-2.539,3.627-1.657,8.626,1.97,11.165c1.399,0.98,3.003,1.449,4.59,1.449c2.527,0,5.015-1.192,6.574-3.42 l23.362-33.374l23.362,33.374c1.56,2.228,4.047,3.42,6.574,3.42c1.587,0,3.192-0.47,4.59-1.449 C375.389,165.966,376.272,160.967,373.732,157.34z"></path> </g> </g> <g> <g> <path d="M136.284,213.779h-17.102c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017S140.711,213.779,136.284,213.779z"></path> </g> </g> <g> <g> <path d="M136.284,247.983h-17.102c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017S140.711,247.983,136.284,247.983z"></path> </g> </g> <g> <g> <path d="M136.284,282.188h-17.102c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017S140.711,282.188,136.284,282.188z"></path> </g> </g> <g> <g> <path d="M392.818,213.779h-17.102c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017S397.246,213.779,392.818,213.779z"></path> </g> </g> <g> <g> <path d="M392.818,247.983h-17.102c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017S397.246,247.983,392.818,247.983z"></path> </g> </g> <g> <g> <path d="M392.818,282.188h-17.102c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017S397.246,282.188,392.818,282.188z"></path> </g> </g> <g> <g> <path d="M273.102,213.779H170.489c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h102.614 c4.427,0,8.017-3.589,8.017-8.017S277.53,213.779,273.102,213.779z"></path> </g> </g> <g> <g> <path d="M238.898,247.983h-68.409c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h68.409 c4.427,0,8.017-3.589,8.017-8.017S243.325,247.983,238.898,247.983z"></path> </g> </g> <g> <g> <path d="M273.102,282.188H170.489c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h102.614 c4.427,0,8.017-3.589,8.017-8.017S277.53,282.188,273.102,282.188z"></path> </g> </g> <g> <g> <path d="M152.852,387.18v-27.859c5.907,1.936,9.62,5.833,9.62,9.447c0,4.427,3.589,8.017,8.017,8.017s8.017-3.589,8.017-8.017 c0-12.784-10.768-23.198-25.653-25.984v-1.273c0-4.427-3.589-8.017-8.017-8.017s-8.017,3.589-8.017,8.017v1.273 c-14.885,2.786-25.653,13.2-25.653,25.984c0,17.862,14.265,25.369,25.653,29.69v27.859c-5.907-1.936-9.62-5.834-9.62-9.447 c0-4.427-3.589-8.017-8.017-8.017s-8.017,3.589-8.017,8.017c0,12.784,10.768,23.198,25.653,25.984v1.273 c0,4.427,3.589,8.017,8.017,8.017s8.017-3.589,8.017-8.017v-1.273c14.885-2.786,25.653-13.2,25.653-25.984 C178.505,399.007,164.24,391.5,152.852,387.18z M136.818,380.966c-7.992-3.916-9.62-7.337-9.62-12.198 c0-3.614,3.713-7.511,9.62-9.447V380.966z M152.852,426.315V404.67c7.992,3.916,9.62,7.337,9.62,12.198 C162.472,420.482,158.758,424.38,152.852,426.315z"></path> </g> </g> <g> <g> <path d="M264.551,350.597h-59.858c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h59.858 c4.427,0,8.017-3.589,8.017-8.017S268.979,350.597,264.551,350.597z"></path> </g> </g> <g> <g> <path d="M238.898,419.006h-34.205c-4.427,0-8.017,3.589-8.017,8.017c0,4.427,3.589,8.017,8.017,8.017h34.205 c4.427,0,8.017-3.589,8.017-8.017C246.914,422.596,243.325,419.006,238.898,419.006z"></path> </g> </g> <g> <g> <path d="M290.205,419.006h-17.102c-4.427,0-8.017,3.589-8.017,8.017c0,4.427,3.589,8.017,8.017,8.017h17.102 c4.427,0,8.017-3.589,8.017-8.017C298.221,422.596,294.632,419.006,290.205,419.006z"></path> </g> </g> <g> <g> <path d="M315.858,384.802H204.693c-4.427,0-8.017,3.589-8.017,8.017c0,4.427,3.589,8.017,8.017,8.017h111.165 c4.427,0,8.017-3.589,8.017-8.017C323.875,388.391,320.285,384.802,315.858,384.802z"></path> </g> </g> <g> <g> <circle cx="273.102" cy="256" r="8.017"></circle> </g> </g> <g> <g> <circle cx="307.307" cy="256" r="8.017"></circle> </g> </g> <g> <g> <circle cx="341.511" cy="256" r="8.017"></circle> </g> </g> <g> <g> <circle cx="307.307" cy="221.795" r="8.017"></circle> </g> </g> <g> <g> <circle cx="341.511" cy="221.795" r="8.017"></circle> </g> </g> <g> <g> <circle cx="307.307" cy="290.205" r="8.017"></circle> </g> </g> <g> <g> <circle cx="341.511" cy="290.205" r="8.017"></circle> </g> </g> </g></svg>
+                <details>
+                    <summary><h2>Tax</h2><h2>+</h2></summary>
 
-                        <h2>Tax</h2>
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li>Tax Payments</li>
+                        <li>GST</li>
+                        <li>Tax Advisory</li>
+                    </ol>
+                </details>
+                <br>
 
-                        <ol>
-                            <li>Tax Payments</li>
-                            <li>GST</li>
-                            <li>Tax Advisory</li>
-                        </ol>
-                    </section>
+                <details>
+                    <summary><h2>Legal Service</h2><h2>+</h2></summary>
 
-                    <section style="display: flex;flex-direction: column; justify-content: flex-start; align-items: center; margin-bottom: 9px;">
-                        <svg fill="#000000" width="64px" height="64px" viewBox="-2 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M9.316 14.722a.477.477 0 0 1-.475.475H1.433a.477.477 0 0 1-.475-.475v-.863a.477.477 0 0 1 .475-.475h7.408a.476.476 0 0 1 .475.475zm-2.767-2.587a.552.552 0 0 1-.392-.163L2.96 8.776a.554.554 0 0 1 .784-.784L6.94 11.19a.554.554 0 0 1-.392.946zm7.33.992L9.435 8.682l1.085-1.084-3.173-3.173-2.97 2.97 3.173 3.172 1.102-1.101 4.445 4.445a.554.554 0 1 0 .784-.784zm-2.33-5.993a.552.552 0 0 1-.391-.162L7.96 3.775a.554.554 0 1 1 .784-.784l3.196 3.197a.554.554 0 0 1-.391.946z"></path></g></svg>
-
-                        <h2>Legal Service</h2>
-
-                        <ol>
-                            <li>Appeals</li>
-                            <li>Public Interest Litigation</li>
-                            <li>Pro-Bono Representation</li>
-                            <li>Legal Drafting</li>
-                            <li>Deed Making</li>
-                            <li>Consultation</li>
-                        </ol>
-                    </section>
-                </section>
+                    <br>
+                    <h3>Services includes:</h3>
+                    <ol>
+                        <li>Appeals</li>
+                        <li>Public Interest Litigation</li>
+                        <li>Pro-Bono Representation</li>
+                        <li>Legal Drafting</li>
+                        <li>Deed Making</li>
+                        <li>Consultation</li>
+                    </ol>
+                </details>
+                <br>
+                
             </section>
 
             <section class="content" id="intel">
@@ -584,6 +653,149 @@
                 <p style="text-align: justify;">As a multi-instrumentalist, I make mostly instrumental tracks, and my progressive, polyrhythmic compositions makes up for my lack of vocals. I also work as a video editor and have created the background score for other videos.</p>
 
                 <p style="text-align: justify;">With a particular love for programming, I utilise my skill in digital signal processing to create amazing audio softwares as well as other utility softwares. My skill set encompasses low level embedded system programming to advanced websites to software suites. I am an advocate by profession and have been providing unwavering legal service.</p>
+
+                <br><br>
+                <h1 style="text-align: center;">Featured Works</h1>
+                <br>
+
+                <details>
+                    <summary><h2>MUSIC</h2><p>2020</p></summary>
+                    <br><br>
+                    <h3 style="text-align: center;">Artist</h3>
+                    <br>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/22yeYGWn2iMUfuMRuAPizK?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <br><br>
+                    <h3 style="text-align: center;">Albums</h3>
+                    <br>
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1hQ6AGOP975jhfWGG0iXkT?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4D7yjFpJcLGq7ntY9RLZOp?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <br><br>
+                    <h3 style="text-align: center;">Playlists</h3>
+                    <br>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3IU7jiCsDqniZz8nTpqSfi?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/63FkP4jB9HQ0zJC4q4MSV6?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0wkksNupNDOCvDpoG8T7uI?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6C0l7JuoAf5Xyh7UtnJODV?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6BNFG55GAHSClJbpBQ7Le4?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7uAXnbzEdO7TPE7LYuEYNS?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                </details>
+                <br>
+
+                <details>
+                    <summary><h2>ART</h2><p>2021</p></summary>
+
+                    <br><br>
+                    <h3 style="text-align: center;">Concept Art</h3>
+                    <br>
+
+                    <section class="artGallery">
+                        <img style="width: 100%;" src="./asset/renders/spiritsBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/earthalikeBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/darknebulaBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/ntairongripBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/blacknaiBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/atgg1compensatorBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/modularpdBanner.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/ironhorserBanner.jpg" alt="">
+                    </section>
+                    <br><br>
+                </details>
+                <br>
+
+                <details>
+                    <summary><h2>VIDEO</h2><p>2022</p></summary>
+                    <br><br>
+                    <h3 style="text-align: center;">Music Video</h3>
+                    <br>
+
+                    <iframe width="100%" style="aspect-ratio: 19/9;" src="https://www.youtube.com/embed/ZpLZCy_WfM8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <iframe width="100%" style="aspect-ratio: 19/9;" src="https://www.youtube.com/embed/4ld6sSxjnIo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <iframe width="100%" style="aspect-ratio: 19/9;" src="https://www.youtube.com/embed/_vl_KukwmSw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                    <br><br>
+                    <h3 style="text-align: center;">Spinoff</h3>
+                    <br>
+
+                    <iframe width="100%" style="aspect-ratio: 19/9;" src="https://www.youtube.com/embed/TFO9it6lNK4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </details>
+
+                    <br><br>
+                <h1 style="text-align: center;">Skills</h1>
+
+                <h2 style="text-align: center;">AUDIO</h2>
+                <section style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Sound Design</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Audio Engineering</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Mixing</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Mastering</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Multi-Instrumentalist</p>
+                </section>
+                <br><br>
+
+                <h2 style="text-align: center;">ART AND DESIGN</h2>
+                <section style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Concept Art</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Concept Design</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">3D Modeling</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">3D Visualisation</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Particle Effects</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">VFX</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Video Editing</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Art Rendering</p>
+                </section>
+                <br><br>
+
+                <h2 style="text-align: center;">PROGRAMMING</h2>
+                <section style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">C</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">C++</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Java</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Python</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">JavaScript</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">CSS</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">HTML</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Assembly (x86)</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">C#</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">PHP</p>
+                </section>
+                <br><br>
+
+                <h2 style="text-align: center;">ENGINEERING</h2>
+                <section style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Embeded Hardware</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Electronics</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">DSP</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Soldering</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Repairing</p>
+                </section>
+                <br><br>
+
+                <h2 style="text-align: center;">LAW</h2>
+                <section style="display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;">
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Civil</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Criminal</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Corporate</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Intellectual Property</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Land Law</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Tax</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Contract</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Deed</p>
+                    <p style="margin: 3px; padding: 6px; border: 1px solid greenyellow; color: greenyellow;">Drafting</p>
+                </section>
+
             </section>
 
             <section class="content" id="terms">
