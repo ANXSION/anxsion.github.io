@@ -198,14 +198,6 @@
                 align-items: center; 
                 grid-template-columns: 1fr 1fr;
             }
-
-            .minorAlt{
-                display: grid; 
-                grid-template-columns: 1fr 1fr; 
-                justify-content: center; 
-                align-items: flex-start; 
-                column-gap: 5%;
-            }
             .clients{
                 display: grid; 
                 grid-template-columns: 1fr 1fr 1fr; 
@@ -227,6 +219,7 @@
             .artGallery img{
                 aspect-ratio: 1/1;
                 object-fit: cover;
+                user-select: none;
             }
 
             details{
@@ -274,9 +267,6 @@
                     font-size: 32px;
                 }
                 .minorDescription{
-                    grid-template-columns: 1fr;
-                }
-                .minorAlt{
                     grid-template-columns: 1fr;
                 }
                 .clients{
