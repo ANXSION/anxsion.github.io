@@ -4,7 +4,8 @@ let caseRegister = [
     '2023.2.JAN.7',
     '2023.3.JAN.25',
     '2023.4.FEB.5',
-    '2023.5.FEB.17'
+    '2023.5.FEB.17',
+    '2023.6.FEB.20',
 ];
 
 let caseData = [
@@ -14,6 +15,7 @@ let caseData = [
     ['N/A', 'Shamson Tamang', 'Complaint', 'Failed', 'N/A'],
     ['N/A', 'Bikram Mukhiya', 'Vehicle Fitness', 'Completed', 'Paid'],
     ['N/A', 'Unnamed LLP', 'Incorporation', 'N/A', 'N/A'],
+    ['N/A', 'Shamson Tamang', 'NGO', 'Pending', 'Due']
 ];
 
 function caseDisplay(casedisplaycondition){
