@@ -24,7 +24,8 @@
         <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.jpg">
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
-        <script src="./script/caseStatus.js"></script>
+        <script type="module" src="./script/caseStatus.js"></script>
+        <script type="text/javascript" src="./script/record.json"></script>
           
         <script type="application/ld+json">
         {
@@ -358,6 +359,8 @@
                         <section style="text-align: right; margin-right: 4%;">Payment:</section>
                         <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
                     </div>
+
+                    <p style="margin: 2px;" id="note" style="display: none;"></p>
             </div>
 
             <nav>
@@ -963,6 +966,9 @@
         </main>
 
         <script>
+
+
+
             window.addEventListener("load", () => {
                 if ("serviceWorker" in navigator) {
                     navigator.serviceWorker.register("./anxsion-serviceworker.js");

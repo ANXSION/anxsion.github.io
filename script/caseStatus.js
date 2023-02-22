@@ -18,6 +18,13 @@ let caseData = [
     ['N/A', 'Shamson Tamang', 'NGO', 'Pending', 'Due']
 ];
 
+let text = '{"2022.1.DEC.7":{"citation" :"n/A","client" : "Prashant Khati","class" : "Loan Dispute","status" : "Ongoing","Payment" : "N/A","Note" : "-"}}';
+
+let check = JSON.parse(text);
+
+console.log(check);
+console.log(check["2022.1.DEC.7"]["client"]);
+
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
         document.getElementById('caseStatus').style.top="-100%";
@@ -29,6 +36,7 @@ function caseDisplay(casedisplaycondition){
 
 function getCaseStatus(){
     document.getElementById("error").style.display="none";
+    document.getElementById("note").style.display="none";
     document.getElementById("casedata").style.display="none";
     document.getElementById("caseid").style.display="none";
     document.getElementById("caseref").style.display="none";
@@ -68,6 +76,9 @@ function getCaseStatus(){
         document.getElementById("class").style.display="flex";
         document.getElementById("status").style.display="flex";
         document.getElementById("payment").style.display="flex";
+
+        document.getElementById("note").innerHTML="No record found.";
+        document.getElementById("note").style.display="flex";
     }
     else {
         document.getElementById("error").innerHTML="No record found.";
