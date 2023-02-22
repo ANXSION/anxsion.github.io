@@ -1,9 +1,5 @@
 let text;
 
-let caseData = [
-    ['N/A', 'Unnamed LLP', 'Incorporation', 'N/A', 'N/A'],
-    ['N/A', '', 'NGO', 'Pending', 'Due']
-];
 
 fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
 
