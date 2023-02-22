@@ -1,4 +1,5 @@
-record=`
+let text;
+let temp=`
 {
     "2023.6.FEB.20" : {
         "citation" :"n/A",
@@ -58,6 +59,8 @@ record=`
     }
 }
 `
+;
+
 
 let caseData = [
     ['N/A', '', 'Tax', 'Completed', 'Paid'],
@@ -68,10 +71,9 @@ let caseData = [
     ['N/A', 'Shamson Tamang', 'NGO', 'Pending', 'Due']
 ];
 
-let record = fetch('https://anxsion.github.io/script/record.json');
-let text = JSON.parse(record);
+fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
 
-console.log(text)
+console.log(text);
 
 
 function caseDisplay(casedisplaycondition){
