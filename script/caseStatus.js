@@ -1,4 +1,4 @@
-let text;
+let text =0;
 fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
 
 function caseDisplay(casedisplaycondition){
