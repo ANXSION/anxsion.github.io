@@ -1,4 +1,5 @@
 let text;
+fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
 
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
@@ -8,7 +9,6 @@ function caseDisplay(casedisplaycondition){
         document.getElementById('caseStatus').style.top="0";
     }
 }
-
 
 function getCaseStatus(){
     fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
