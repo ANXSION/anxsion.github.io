@@ -1,74 +1,8 @@
 let text;
-let temp=`
-{
-    "2023.6.FEB.20" : {
-        "citation" :"n/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    },
-    "2023.5.FEB.17" : {
-        "citation" :"n/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    },
-    "2023.4.FEB.5" : {
-        "citation" :"n/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    },
-    "2023.3.JAN.25" : {
-        "citation" :"n/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    },
-    "2023.2.JAN.7" : {
-        "citation" :"n/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    },
-    "2023.1.JAN.5" : {
-        "citation" :"N/A",
-        "client" : "Bikram Mukhiya",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    },
-    "2022.1.DEC.7" : {
-        "citation" :"N/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : "-"
-    }
-}
-`
-;
-
 
 let caseData = [
-    ['N/A', '', 'Tax', 'Completed', 'Paid'],
-    ['N/A', 'Shamson Tamang', 'Incorporation', 'Delayed', 'N/A'],
-    ['N/A', 'Shamson Tamang', 'Complaint', 'Failed', 'N/A'],
-    ['N/A', 'Bikram Mukhiya', 'Vehicle Fitness', 'Completed', 'Paid'],
     ['N/A', 'Unnamed LLP', 'Incorporation', 'N/A', 'N/A'],
-    ['N/A', 'Shamson Tamang', 'NGO', 'Pending', 'Due']
+    ['N/A', '', 'NGO', 'Pending', 'Due']
 ];
 
 fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);

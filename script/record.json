@@ -1,10 +1,64 @@
 {
+    "2023.6.FEB.20" : {
+        "citation" :"N/A",
+        "client" : "Shamson Tamang",
+        "class" : "NGO Registration",
+        "status" : "Ongoing",
+        "Payment" : "Due",
+        "Note" : ""
+    },
+
+    "2023.5.FEB.17" : {
+        "citation" :"N/A",
+        "client" : "Neutroid LLP",
+        "class" : "LLP Services",
+        "status" : "Drafting",
+        "Payment" : "Due",
+        "Note" : ""
+    },
+
+    "2023.4.FEB.5" : {
+        "citation" :"N/A",
+        "client" : "Bikram Mukhiya",
+        "class" : "Vehicle Fitness",
+        "status" : "Completed",
+        "Payment" : "Paid",
+        "Note" : ""
+    },
+
+    "2023.3.JAN.25" : {
+        "citation" :"N/A",
+        "client" : "Shamson Tamang",
+        "class" : "Complaint",
+        "status" : "Failed",
+        "Payment" : "N/A",
+        "Note" : ""
+    },
+
+    "2023.2.JAN.7" : {
+        "citation" :"N/A",
+        "client" : "Shamson Tamang",
+        "class" : "Incorporation",
+        "status" : "Delayed",
+        "Payment" : "N/A",
+        "Note" : ""
+    },
+
+    "2023.1.JAN.5" : {
+        "citation" :"N/A",
+        "client" : "Bikram Mukhiya",
+        "class" : "Tax",
+        "status" : "Completed",
+        "Payment" : "Paid",
+        "Note" : ""
+    },
+
     "2022.1.DEC.7" : {
-        "citation" :"n/A",
+        "citation" :"N/A",
         "client" : "Prashant Khati",
         "class" : "Loan Dispute",
         "status" : "Ongoing",
         "Payment" : "N/A",
-        "Note" : "-"
+        "Note" : ""
     }
 }
