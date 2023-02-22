@@ -1,3 +1,24 @@
+record =`{
+    "2022.1.DEC.7" : {
+        "citation" :"N/A",
+        "client" : "Prashant Khati",
+        "class" : "Loan Dispute",
+        "status" : "Ongoing",
+        "payment" : "N/A",
+        "note" : "Testing the note system here"
+    },
+
+    "2022.1.DEC.7" : {
+        "citation" :"N/A",
+        "client" : "Prashant Khati",
+        "class" : "Loan Dispute",
+        "status" : "Ongoing",
+        "payment" : "N/A",
+        "note" : "Testing the note system here"
+    }
+}`
+
+
 let caseRegister = [
     '2022.1.DEC.7',
     '2023.1.JAN.5', 
@@ -18,12 +39,8 @@ let caseData = [
     ['N/A', 'Shamson Tamang', 'NGO', 'Pending', 'Due']
 ];
 
-let text = '{"2022.1.DEC.7":{"citation" :"n/A","client" : "Prashant Khati","class" : "Loan Dispute","status" : "Ongoing","Payment" : "N/A","Note" : "-"}}';
+let text = JSON.parse(fetch('/script/record.json'));
 
-let check = JSON.parse(text);
-
-console.log(check);
-console.log(check["2022.1.DEC.7"]["client"]);
 
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
@@ -34,11 +51,11 @@ function caseDisplay(casedisplaycondition){
     }
 }
 
+
 function getCaseStatus(){
     document.getElementById("error").style.display="none";
     document.getElementById("note").style.display="none";
     document.getElementById("casedata").style.display="none";
-    document.getElementById("caseid").style.display="none";
     document.getElementById("caseref").style.display="none";
     document.getElementById("clientname").style.display="none";
     document.getElementById("class").style.display="none";
@@ -46,43 +63,43 @@ function getCaseStatus(){
     document.getElementById("payment").style.display="none";
 
     let inputData = document.getElementById("caseIDinput").value;
-    
-    if (caseRegister.includes(inputData)){
-        document.getElementById("casedata").style.display="grid";
-        document.getElementById("caseid").innerHTML= inputData;
-        document.getElementById("caseref").innerHTML= caseData[caseRegister.indexOf(inputData)][0];
-        document.getElementById("clientname").innerHTML= caseData[caseRegister.indexOf(inputData)][1];
-        document.getElementById("class").innerHTML= caseData[caseRegister.indexOf(inputData)][2];
 
-        if(caseData[caseRegister.indexOf(inputData)][3] == 'Completed' || caseData[caseRegister.indexOf(inputData)][3] == 'Settled' || caseData[caseRegister.indexOf(inputData)][3] == 'Delivered'){
-            document.getElementById("status").innerHTML="<span style=\"color:greenyellow;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+    if (text[inputData]==undefined || inputData=="") {
+        document.getElementById("error").innerHTML="No record found.";
+        document.getElementById("error").style.display="flex";
+    }
+    
+    else {
+        document.getElementById("casedata").style.display="grid";
+        document.getElementById("caseref").innerHTML= text[inputData]["citation"];
+        document.getElementById("clientname").innerHTML= text[inputData]["client"];
+        document.getElementById("class").innerHTML= text[inputData]["class"];
+
+        if(text[inputData]["status"] == 'Completed' || text[inputData]["status"] == 'Settled' || text[inputData]["status"] == 'Delivered'){
+            document.getElementById("status").innerHTML="<span style=\"color:greenyellow;\">" + text[inputData]["status"] + "</span>";
         }
-        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Ongoing' || caseData[caseRegister.indexOf(inputData)][3] == 'Filed' || caseData[caseRegister.indexOf(inputData)][3] == 'Drafting'){
-            document.getElementById("status").innerHTML="<span style=\"color:orange;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+        else if(text[inputData]["status"] == 'Ongoing' || text[inputData]["status"] == 'Filed' || text[inputData]["status"] == 'Drafting'){
+            document.getElementById("status").innerHTML="<span style=\"color:orange;\">" + text[inputData]["status"] + "</span>";
         }
-        else if(caseData[caseRegister.indexOf(inputData)][3] == 'Pending' || caseData[caseRegister.indexOf(inputData)][3] == 'Delayed' || caseData[caseRegister.indexOf(inputData)][3] == 'Failed'){
-            document.getElementById("status").innerHTML="<span style=\"color:red;\">" + caseData[caseRegister.indexOf(inputData)][3] + "</span>";
+        else if(text[inputData]["status"] == 'Pending' || text[inputData]["status"] == 'Delayed' || text[inputData]["status"] == 'Failed'){
+            document.getElementById("status").innerHTML="<span style=\"color:red;\">" + text[inputData]["status"] + "</span>";
         }
         else{
-            document.getElementById("status").innerHTML= caseData[caseRegister.indexOf(inputData)][3];
+            document.getElementById("status").innerHTML= text[inputData]["status"];
         }
         
 
-        document.getElementById("payment").innerHTML= caseData[caseRegister.indexOf(inputData)][4];
+        document.getElementById("payment").innerHTML= text[inputData]["payment"];
 
-        document.getElementById("caseid").style.display="flex";
         document.getElementById("caseref").style.display="flex";
         document.getElementById("clientname").style.display="flex";
         document.getElementById("class").style.display="flex";
         document.getElementById("status").style.display="flex";
         document.getElementById("payment").style.display="flex";
 
-        document.getElementById("note").innerHTML="No record found.";
+        document.getElementById("note").innerHTML= text[inputData]["note"];
         document.getElementById("note").style.display="flex";
     }
-    else {
-        document.getElementById("error").innerHTML="No record found.";
-        document.getElementById("error").style.display="flex";
-    }
+    
 
 }
