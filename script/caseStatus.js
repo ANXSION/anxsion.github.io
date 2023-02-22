@@ -1,22 +1,4 @@
-record =`{
-    "2022.1.DEC.7" : {
-        "citation" :"N/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "payment" : "N/A",
-        "note" : "Testing the note system here"
-    },
 
-    "2022.1.DEC.7" : {
-        "citation" :"N/A",
-        "client" : "Prashant Khati",
-        "class" : "Loan Dispute",
-        "status" : "Ongoing",
-        "payment" : "N/A",
-        "note" : "Testing the note system here"
-    }
-}`
 
 
 let caseRegister = [
@@ -38,8 +20,10 @@ let caseData = [
     ['N/A', 'Unnamed LLP', 'Incorporation', 'N/A', 'N/A'],
     ['N/A', 'Shamson Tamang', 'NGO', 'Pending', 'Due']
 ];
+let record = fetch('/script/record.json');
+let text = JSON.parse(record);
 
-let text = JSON.parse(fetch('/script/record.json'));
+console.log(text)
 
 
 function caseDisplay(casedisplaycondition){
