@@ -4,8 +4,8 @@
         "client" : "Shamson Tamang",
         "class" : "NGO Registration",
         "status" : "Ongoing",
-        "Payment" : "Due",
-        "Note" : ""
+        "payment" : "Due",
+        "note" : ""
     },
 
     "2023.5.FEB.17" : {
@@ -13,8 +13,8 @@
         "client" : "Neutroid LLP",
         "class" : "LLP Services",
         "status" : "Drafting",
-        "Payment" : "Due",
-        "Note" : ""
+        "payment" : "Due",
+        "note" : ""
     },
 
     "2023.4.FEB.5" : {
@@ -22,8 +22,8 @@
         "client" : "Bikram Mukhiya",
         "class" : "Vehicle Fitness",
         "status" : "Completed",
-        "Payment" : "Paid",
-        "Note" : ""
+        "payment" : "Paid",
+        "note" : ""
     },
 
     "2023.3.JAN.25" : {
@@ -31,8 +31,8 @@
         "client" : "Shamson Tamang",
         "class" : "Complaint",
         "status" : "Failed",
-        "Payment" : "N/A",
-        "Note" : ""
+        "payment" : "N/A",
+        "note" : ""
     },
 
     "2023.2.JAN.7" : {
@@ -40,8 +40,8 @@
         "client" : "Shamson Tamang",
         "class" : "Incorporation",
         "status" : "Delayed",
-        "Payment" : "N/A",
-        "Note" : ""
+        "payment" : "N/A",
+        "note" : ""
     },
 
     "2023.1.JAN.5" : {
@@ -49,8 +49,8 @@
         "client" : "Bikram Mukhiya",
         "class" : "Tax",
         "status" : "Completed",
-        "Payment" : "Paid",
-        "Note" : ""
+        "payment" : "Paid",
+        "note" : ""
     },
 
     "2022.1.DEC.7" : {
@@ -58,7 +58,7 @@
         "client" : "Prashant Khati",
         "class" : "Loan Dispute",
         "status" : "Ongoing",
-        "Payment" : "N/A",
-        "Note" : ""
+        "payment" : "N/A",
+        "note" : ""
     }
 }
