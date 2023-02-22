@@ -26,7 +26,7 @@ function getCaseStatus(){
 
     let inputData = document.getElementById("caseIDinput").value;
 
-    if (text[inputData]==undefined || inputData=="") {
+    if (text[inputData]==undefined || inputData=="" || text==undefined) {
         document.getElementById("error").innerHTML="No record found.";
         document.getElementById("error").style.display="flex";
     }
