@@ -98,7 +98,11 @@
                 flex-direction: column;
                 align-items: center;
                 margin: 0;
-                font-size: 1.125rem;
+                font-size: 1rem;
+                
+            }
+            p{
+                font-size: 1rem;
             }
             nav{
                 background-color: greenyellow;
@@ -164,7 +168,7 @@
             button{
                 font-weight: normal;
                 border: none;
-                min-width: 75%;
+                width: 100%;
                 margin: 3px;
                 height:64px;
                 min-height: 64px;
@@ -259,7 +263,39 @@
                 color: black;
             }
 
+            .divisions{
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 3%;
+            }
+
+            .productShowcase{
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 3%;
+                margin-bottom: 3%;
+            }
+            
+            .productShowcase section{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                row-gap: 3%;
+            }
+            .productShowcase section img{
+                width: 100%;
+                user-select: none;
+            }
+
             @media screen and (max-width:639px) {
+                p{
+                    font-size: 0.75rem;
+                }
                 nav img{
                     width: 50%;
                 }
@@ -286,7 +322,13 @@
                 }
                 .artGallery{
                 grid-template-columns: 1fr;
-            }
+                }
+                .productShowcase{
+                    grid-template-columns: 1fr;
+                }
+                .divisions{
+                    grid-template-columns: 1fr;
+                }
             }
 
             @keyframes lineup {
@@ -374,6 +416,7 @@
                 <section>
                    <p onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                    <p onclick="accessProtocol('guardian')">Guardian Angel</p>
+                   <p onclick="accessProtocol('store')">Store</p>
                    <p onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
@@ -389,6 +432,18 @@
                     <button onclick="accessProtocol('index')">Go Home</button>
                 </section>
                 
+                
+            </section>
+
+            <section class="content" id ="thankyou" style="display: none;">
+
+                <br>
+                <h1 style="font-size: 48px; font-weight: normal; text-align: center;">Order Successful</h1>
+
+                <h2 style="text-align: center;">Thank you for your purchase!</h2>
+                <br>
+
+                <p style="text-align: center;">You will be redirected to the store page within 9 seconds.</p>
                 
             </section>
 
@@ -420,7 +475,7 @@
                     <h1>Divisions</h1>
                     <p>The ANXSION project has two towering divisions. One division focuses on designing and developing technical infrastructre while the other division deals with tackling legal issues.</p>
 
-                    <section class="minorAlt">
+                    <section class="divisions">
                         <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center;">
                             <img style="width: 100%;filter: invert(100%);" src="./asset/icon/chrysalis.png" alt="">
                             <p>Chrysalis R&D<sup style="font-size: 8px;">SM</sup> is a research and development platform which aims to create software and hardware solutions for businesses and industries. The prototypes and experiments are iterated and derisked to build the foundation for a strong business.</p>
@@ -541,14 +596,12 @@
 
             <section class="content" id="guardian">
 
-                
-
                 <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
 
                 <section style="display: flex; flex-direction: column; align-items: center;">
-                    <button onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
-                    <button onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate Us</button>
-                    <button onclick="caseDisplay('open')">Case Status</button>
+                    <button style="max-width: 75%;" onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
+                    <button style="max-width: 75%;" onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate Us</button>
+                    <button style="max-width: 75%;" onclick="caseDisplay('open')">Case Status</button>
                 </section>
                 <br><br>
             
@@ -668,6 +721,28 @@
                 </details>
                 <br>
                 
+            </section>
+
+            <section class="content" id="store">
+                    <h1 style="text-align: center;">Made for you.</h1>
+                    <br><br>
+
+                    <h2 style="text-align: center;">Fine Print Posters</h2>
+                    <p style="text-align: center; font-style: italic;">These beautifully designed art prints by ANXSION are printed on a museum-quality matte paper for excellent print longevity.</p>
+                    <br>
+
+                    <section class="productShowcase">
+                        <section>
+                            <img src="./asset/product/posters/Dark Nebula.jpg" alt="">
+                            <button onclick="location.href='https://rzp.io/l/r3gfYwurEB';">20" x 30"</button>
+                            <button onclick="location.href='https://rzp.io/l/dcG1xjmoN';">24" x 36"</button>
+                        </section>
+                        <section>
+                            <img src="./asset/product/posters/Glowing Dust.jpg" alt="">
+                            <button onclick="location.href='https://rzp.io/l/eHKMMTDRt';">20" x 30"</button>
+                            <button onclick="location.href='https://rzp.io/l/4bzzZciJS';">24" x 36"</button>
+                        </section>
+                    </section>
             </section>
 
             <section class="content" id="about">
@@ -998,6 +1073,9 @@
                 else if(id == 'guardian'){
                     accessProtocol("guardian");
                 }
+                else if(id == 'store'){
+                    accessProtocol("store");
+                }
                 else if(id == 'about'){
                     accessProtocol("about");
                 }
@@ -1006,6 +1084,9 @@
                 }
                 else if(id == 'privacy'){
                     accessProtocol("privacy");
+                }
+                else if(id == 'thankyou'){
+                    accessProtocol("thankyou");
                 }
                 else{
                     accessProtocol("404");
@@ -1021,6 +1102,8 @@
                 document.getElementById('chrysalis').style.opacity="0%";
                 document.getElementById('guardian').style.display="none";
                 document.getElementById('guardian').style.opacity="0%";
+                document.getElementById('store').style.display="none";
+                document.getElementById('store').style.opacity="0%";
                 document.getElementById('about').style.display="none";
                 document.getElementById('about').style.opacity="0%";
                 document.getElementById('terms').style.display="none";
@@ -1029,6 +1112,8 @@
                 document.getElementById('privacy').style.opacity="0%";
                 document.getElementById('404').style.display="none";
                 document.getElementById('404').style.opacity="0%";
+                document.getElementById('thankyou').style.display="none";
+                document.getElementById('thankyou').style.opacity="0%";
 
                 if (linkname=="index"){
                     document.getElementById('banner').style.display="flex";
@@ -1051,6 +1136,13 @@
                     document.title="Guardian Angel";
                     document.getElementById('guardian').style.display="block";
                     setTimeout(function() {document.getElementById('guardian').style.opacity="100%";}, transitionSpeed);
+                    window.scrollTo(0,0);
+                }
+                else if (linkname=="store"){
+                    history.pushState({}, "Store Store", "?id=store");
+                    document.title="Store";
+                    document.getElementById('store').style.display="block";
+                    setTimeout(function() {document.getElementById('store').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="about"){
@@ -1080,6 +1172,32 @@
                     document.title="404";
                     document.getElementById('404').style.display="block";
                     setTimeout(function() {document.getElementById('404').style.opacity="100%";}, transitionSpeed);
+                    window.scrollTo(0,0);
+                }
+                else if (linkname=="thankyou"){
+                    history.pushState({}, "Thank You", "?id=thankyou");
+                    document.title="Thank You";
+                    document.getElementById('index').style.display="none";
+                    document.getElementById('index').style.opacity="0%";
+                    document.getElementById('chrysalis').style.display="none";
+                    document.getElementById('chrysalis').style.opacity="0%";
+                    document.getElementById('guardian').style.display="none";
+                    document.getElementById('guardian').style.opacity="0%";
+                    document.getElementById('store').style.display="none";
+                    document.getElementById('store').style.opacity="0%";
+                    document.getElementById('about').style.display="none";
+                    document.getElementById('about').style.opacity="0%";
+                    document.getElementById('terms').style.display="none";
+                    document.getElementById('terms').style.opacity="0%";
+                    document.getElementById('privacy').style.display="none";
+                    document.getElementById('privacy').style.opacity="0%";
+                    document.getElementById('404').style.display="none";
+                    document.getElementById('404').style.opacity="0%";
+
+                    document.getElementById('thankyou').style.display="block";
+                    document.getElementById('thankyou').style.opacity="100%";
+
+                    setTimeout(function() {accessProtocol("store")}, 9000);
                     window.scrollTo(0,0);
                 }
             }
