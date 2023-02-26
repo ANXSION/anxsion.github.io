@@ -111,6 +111,7 @@
             }
             #mobileNavigation{
                 display: none;
+                transition:0.2s all;
             }
             #mobileControl{
                 display: none;
@@ -279,7 +280,14 @@
                 user-select: none;
             }
 
+            #banner{
+                height: 100vh;
+            }
+
             @media screen and (max-width:768px) {
+                #banner{
+                    height: 90vh;
+                }
                 #mobileNavigation{
                     display: none;
                 }
@@ -392,12 +400,12 @@
                     <p style="margin: 2px; text-align: justify;" id="note" style="display: none;"></p>
             </div>
 
-            <div style="display: none; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; background-color: black; z-index: 2; font-size: 1.125rem;" id="mobileNavigation">
+            <div style="display: none; opacity: 0%; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; background-color: black; z-index: 2;" id="mobileNavigation">
                 <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 27px;" onclick="menu('close')">+</p>
-                <p onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
-                <p onclick="accessProtocol('guardian')">Guardian Angel</p>
-                <p onclick="accessProtocol('store')">Store</p>
-                <p onclick="accessProtocol('about')">About</p>
+                <p style="font-size: 1.125rem;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
+                <p style="font-size: 1.125rem;" onclick="accessProtocol('guardian')">Guardian Angel</p>
+                <p style="font-size: 1.125rem;" onclick="accessProtocol('store')">Store</p>
+                <p style="font-size: 1.125rem;" onclick="accessProtocol('about')">About</p>
             </div>
 
             <nav style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -442,7 +450,7 @@
             </section>
 
             <section class="content" id="index">
-                <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+                <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <h1 class="major" style=" animation: lineup 4s normal; text-align: center; font-family: Jost;"><span style="color: greenyellow;">Stay</span>Curious</h1>
                     <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                     <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
@@ -1109,6 +1117,7 @@
                 document.getElementById('thankyou').style.display="none";
                 document.getElementById('thankyou').style.opacity="0%";
                 document.getElementById('mobileNavigation').style.display="none";
+                document.getElementById('mobileNavigation').style.opacity="0%";
 
                 if (linkname=="index"){
                     document.getElementById('banner').style.display="flex";
@@ -1190,7 +1199,6 @@
                     document.getElementById('404').style.opacity="0%";
 
                     document.getElementById('thankyou').style.display="block";
-                    document.getElementById('thankyou').style.opacity="100%";
 
                     setTimeout(function() {accessProtocol("store")}, 9000);
                     window.scrollTo(0,0);
@@ -1199,11 +1207,19 @@
 
             function menu(menustatus){
                 if (menustatus=='open'){
+                    
                     document.getElementById('mobileNavigation').style.display="flex";
+
+                    setTimeout(() => {
+                        document.getElementById('mobileNavigation').style.opacity="100%";
+                    }, 100);
                     window.scrollTo(0,0);
                 }
                 else if (menustatus=='close'){
-                    document.getElementById('mobileNavigation').style.display="none";
+                    document.getElementById('mobileNavigation').style.opacity="0%";
+                    setTimeout(() => {
+                        document.getElementById('mobileNavigation').style.display="none";
+                    }, 100);
                     window.scrollTo(0,0);
                 }
             }
