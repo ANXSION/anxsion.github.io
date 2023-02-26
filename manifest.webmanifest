@@ -7,7 +7,7 @@
   "display": "standalone",
   "start_url": "./",
   "background_color": "white",
-  "theme_color": "greenyellow",
+  "theme_color": "black",
   "description": "The official website of the AnxSion. Legal solutions, studio services, software research and development.",
   "orientation": "any",
   "related_applications": [{
