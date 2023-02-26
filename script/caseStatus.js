@@ -3,7 +3,7 @@ fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).
 
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
-        document.getElementById('caseStatus').style.top="-100%";
+        document.getElementById('caseStatus').style.top="200%";
     }
     if (casedisplaycondition == 'open'){
         document.getElementById('caseStatus').style.top="0";
