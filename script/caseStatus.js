@@ -6,13 +6,13 @@ function caseDisplay(casedisplaycondition){
         document.getElementById('caseStatus').style.opacity="0%";
         setTimeout(() => {
             document.getElementById('caseStatus').style.display="none";
-        }, 100);
+        }, 50);
     }
     if (casedisplaycondition == 'open'){
         document.getElementById('caseStatus').style.display="flex";
         setTimeout(() => {
             document.getElementById('caseStatus').style.opacity="100%";
-        }, 100);
+        }, 50);
     }
 }
 
