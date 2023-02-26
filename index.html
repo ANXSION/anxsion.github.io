@@ -99,19 +99,28 @@
                 align-items: center;
                 margin: 0;
                 font-size: 1rem;
+                background-image: url(./asset/renders/glowingdust.jpg);
+                background-position: center;
+                background-size: cover;
+                background-attachment: fixed;
+                backdrop-filter: blur(100%);
                 
             }
             p{
                 font-size: 1rem;
             }
+
             nav{
-                background-color: black;
-                color: white;
                 width: 100%;
             }
             #mobileNavigation{
                 display: none;
                 transition:0.2s all;
+                backdrop-filter: blur(21px) grayscale(100%);
+            }
+            #caseStatus{
+                transition:0.2s all;
+                backdrop-filter: blur(21px) grayscale(100%);
             }
             #mobileControl{
                 display: none;
@@ -374,13 +383,13 @@
     <body>
         <main>
 
-            <div id="caseStatus" style="z-index:2; display: flex; flex-direction: column; background-color: black; opacity: 100%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center; transition: 0.3s all;overflow-y: scroll; top: 200%;">
+            <div id="caseStatus" style="z-index:2; display: flex; flex-direction: column; opacity: 0%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center;overflow-y: scroll; top:0; padding-top: 10%;">
     
                     <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
                     <br><br>
-                    <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: black;" id="caseIDinput">
+                    <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent;" id="caseIDinput">
                     <br>
-                    <button onclick="getCaseStatus()">Search</button>
+                    <button style="max-width: 75%;" onclick="getCaseStatus()">Search</button>
                     <br>
                     <p style="margin: 2px;" id="error" style="display: none;"></p>
 
@@ -400,26 +409,26 @@
                     <p style="margin: 2px; text-align: justify;" id="note" style="display: none;"></p>
             </div>
 
-            <div style="display: none; opacity: 0%; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; background-color: black; z-index: 2;" id="mobileNavigation">
-                <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 27px;" onclick="menu('close')">+</p>
-                <p style="font-size: 1.125rem;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
-                <p style="font-size: 1.125rem;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                <p style="font-size: 1.125rem;" onclick="accessProtocol('store')">Store</p>
-                <p style="font-size: 1.125rem;" onclick="accessProtocol('about')">About</p>
+            <div style="display: none; opacity: 0%; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; z-index: 2;" id="mobileNavigation">
+                <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 2rem;" onclick="menu('close')">+</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('store')">Store</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
             </div>
 
             <nav style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <section style="display:flex; justify-content: center; align-items: center;">
-                    <img style="width: 50%; filter: invert(100%); aspect-ratio: 16/9; object-fit: cover;" onclick="accessProtocol('index')" src="./asset/icon/logo.png" alt="">
+                    <img style="width: 50%; filter: invert(100%); aspect-ratio: 16/9; object-fit: cover; cursor: pointer;" onclick="accessProtocol('index')" src="./asset/icon/logo.png" alt="">
                 </section>
                 <section style="text-align: center;" id="mobileControl">
-                    <p style="margin: 0; font-size: 27px;" onclick="menu('open')">&Xi;</p>
+                    <p style="margin: 0; font-size: 2rem;" onclick="menu('open')">&Xi;</p>
                 </section>
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; text-align: center; width: 100%;" id="webNavigation">
-                    <p onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
-                    <p onclick="accessProtocol('guardian')">Guardian Angel</p>
-                    <p onclick="accessProtocol('store')">Store</p>
-                    <p onclick="accessProtocol('about')">About</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('store')">Store</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
 
@@ -451,7 +460,7 @@
 
             <section class="content" id="index">
                 <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <h1 class="major" style=" animation: lineup 4s normal; text-align: center; font-family: Jost;"><span style="color: greenyellow;">Stay</span>Curious</h1>
+                    <h1 class="major" style=" animation: lineup 4s normal; text-align: center; font-family: Jost;">Stay Curious</h1>
                     <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                     <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid greenyellow; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
                 </section>
@@ -726,8 +735,7 @@
             </section>
 
             <section class="content" id="store">
-                    <h1 style="text-align: center;">Made for you.</h1>
-                    <br><br>
+                    <h1 style="text-align: center; margin-top: 128px; margin-bottom: 128px; font-size: 3rem;">Made for you.</h1>
 
                     <h2 style="text-align: center;">Fine Print Posters</h2>
                     <p style="text-align: center; font-style: italic;">These beautifully designed art prints by ANXSION are printed on a museum-quality matte paper for excellent print longevity.</p>
@@ -824,6 +832,7 @@
                         <img style="width: 100%;" src="./asset/renders/alikeearth.jpg" alt="">
                         <img style="width: 100%;" src="./asset/renders/darknebula.jpg" alt="">
                         <img style="width: 100%;" src="./asset/renders/secretgarden.jpg" alt="">
+                        <img style="width: 100%;" src="./asset/renders/glowingdust.jpg" alt="">
                     </section>
 
                     <br><br>
@@ -1046,7 +1055,7 @@
                 </section>
                 <br>
                 <p>Copyright &#169; 2023</p>
-                <p>ANXSION</p>
+                <img style="width: 128px; aspect-ratio: 16/9; object-fit: cover; filter: invert(100%);" src="./asset/icon/logo.png" alt="">
             </footer>
         </main>
 
@@ -1118,6 +1127,8 @@
                 document.getElementById('thankyou').style.opacity="0%";
                 document.getElementById('mobileNavigation').style.display="none";
                 document.getElementById('mobileNavigation').style.opacity="0%";
+                document.getElementById('caseStatus').style.display="none";
+                document.getElementById('caseStatus').style.opacity="0%";
 
                 if (linkname=="index"){
                     document.getElementById('banner').style.display="flex";
@@ -1207,9 +1218,7 @@
 
             function menu(menustatus){
                 if (menustatus=='open'){
-                    
                     document.getElementById('mobileNavigation').style.display="flex";
-
                     setTimeout(() => {
                         document.getElementById('mobileNavigation').style.opacity="100%";
                     }, 100);

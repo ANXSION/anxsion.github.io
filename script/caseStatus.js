@@ -3,10 +3,16 @@ fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).
 
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
-        document.getElementById('caseStatus').style.top="200%";
+        document.getElementById('caseStatus').style.opacity="0%";
+        setTimeout(() => {
+            document.getElementById('caseStatus').style.display="none";
+        }, 100);
     }
     if (casedisplaycondition == 'open'){
-        document.getElementById('caseStatus').style.top="0";
+        document.getElementById('caseStatus').style.display="flex";
+        setTimeout(() => {
+            document.getElementById('caseStatus').style.opacity="100%";
+        }, 100);
     }
 }
 
