@@ -119,11 +119,11 @@
             #mobileNavigation{
                 display: none;
                 transition:0.2s all;
-                backdrop-filter: blur(21px) grayscale(90%);
+                backdrop-filter: blur(21px) grayscale(90%) brightness(50%);
             }
             #caseStatus{
                 transition:0.2s all;
-                backdrop-filter: blur(21px) grayscale(90%);
+                backdrop-filter: blur(21px) grayscale(90%) brightness(50%);
             }
             #mobileControl{
                 display: none;
@@ -389,11 +389,11 @@
     <body>
         <main>
 
-            <div id="caseStatus" style="z-index:2; display: flex; flex-direction: column; opacity: 0%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center;overflow-y: scroll; top:0; padding-top: 10%;">
+            <div id="caseStatus" style="z-index:2; display: flex; flex-direction: column; opacity: 0%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center; overflow-y: scroll; top:0; padding-top: 25vh;">
     
                     <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
                     <br><br>
-                    <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent;" id="caseIDinput" autocomplete="off">
+                    <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent; text-align: center;" id="caseIDinput" autocomplete="off">
                     <br>
                     <button style="max-width: 75%;" onclick="getCaseStatus()">Search</button>
                     <br>
