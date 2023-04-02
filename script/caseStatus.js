@@ -3,28 +3,48 @@ let source =`
     "dcb3.3d7d.c0b2.4b0e" : {
         "status" : "Ongoing",
         "payment" : "N/A",
-        "note" : ""
+        "note" : "Ongoing consultation with the financial institution."
     },
     "e914.adc3.c29f.2040" : {
         "status" : "Completed",
         "payment" : "Completed",
-        "note" : ""
+        "note" : "Case complete"
     },
     "b8d4.c023.9ab0.8180" : {
         "status" : "Failed",
-        "payment" : "Due",
-        "note" : ""
+        "payment" : "Completed",
+        "note" : "Reinitiating petition to the relevant fourm."
     },
     "8f81.4c9c.ac2b.83ce" : {
         "status" : "Drafting",
         "payment" : "Due",
-        "note" : ""
+        "note" : "Drafting under progress."
     },
     "c31f.e24b.a375.1f93" : {
-        "status" : "Registration",
+        "status" : "Delayed",
         "payment" : "Due",
-        "note" : ""
-    }
+        "note" : "Waiting response."
+    },
+    "3e27.c106.4732.a7e6" : {
+        "status" : "Filed",
+        "payment" : "N/A",
+        "note" : "Waiting police response."
+    },
+    "7bc9.29d9.c225.acc8" : {
+        "status" : "Pending",
+        "payment" : "Due",
+        "note" : "Waiting response."
+    },
+    "d30f.e364.6264.eaf4" : {
+        "status" : "Filed",
+        "payment" : "Completed",
+        "note" : "Awaiting signatures."
+    },
+    "6f85.b27f.3ccc.248c" : {
+        "status" : "Ongoing",
+        "payment" : "N/A",
+        "note" : "Ongoing consultation with the financial institution."
+    },
 }
 `;
 let text = JSON.parse(source);
