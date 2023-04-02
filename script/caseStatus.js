@@ -1,5 +1,33 @@
-let text =0;
-fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
+let source =`
+{
+    "dcb3.3d7d.c0b2.4b0e" : {
+        "status" : "Ongoing",
+        "payment" : "N/A",
+        "note" : ""
+    },
+    "e914.adc3.c29f.2040" : {
+        "status" : "Completed",
+        "payment" : "Completed",
+        "note" : ""
+    },
+    "b8d4.c023.9ab0.8180" : {
+        "status" : "Failed",
+        "payment" : "Due",
+        "note" : ""
+    },
+    "8f81.4c9c.ac2b.83ce" : {
+        "status" : "Drafting",
+        "payment" : "Due",
+        "note" : ""
+    },
+    "c31f.e24b.a375.1f93" : {
+        "status" : "Registration",
+        "payment" : "Due",
+        "note" : ""
+    }
+}
+`;
+let text = JSON.parse(source);
 
 function caseDisplay(casedisplaycondition){
     if (casedisplaycondition == 'close'){
@@ -17,31 +45,23 @@ function caseDisplay(casedisplaycondition){
 }
 
 function getCaseStatus(){
-    fetch('https://anxsion.github.io/script/record.json').then((res) => res.json()).then((data) => text = data);
-
-    console.log(text);
+    let text = JSON.parse(source);
 
     document.getElementById("error").style.display="none";
     document.getElementById("note").style.display="none";
-    document.getElementById("casedata").style.display="none";
-    document.getElementById("caseref").style.display="none";
-    document.getElementById("clientname").style.display="none";
-    document.getElementById("class").style.display="none";
     document.getElementById("status").style.display="none";
     document.getElementById("payment").style.display="none";
 
     let inputData = document.getElementById("caseIDinput").value;
 
     if (text[inputData]==undefined || inputData=="" || text==undefined) {
+        document.getElementById("casedata").style.display="none";
         document.getElementById("error").innerHTML="No record found.";
         document.getElementById("error").style.display="flex";
     }
     
     else {
         document.getElementById("casedata").style.display="grid";
-        document.getElementById("caseref").innerHTML= text[inputData]["citation"];
-        document.getElementById("clientname").innerHTML= text[inputData]["client"];
-        document.getElementById("class").innerHTML= text[inputData]["class"];
 
         if(text[inputData]["status"] == 'Completed' || text[inputData]["status"] == 'Settled' || text[inputData]["status"] == 'Delivered'){
             document.getElementById("status").innerHTML="<span style=\"color:greenyellow;\">" + text[inputData]["status"] + "</span>";
@@ -59,9 +79,6 @@ function getCaseStatus(){
 
         document.getElementById("payment").innerHTML= text[inputData]["payment"];
 
-        document.getElementById("caseref").style.display="flex";
-        document.getElementById("clientname").style.display="flex";
-        document.getElementById("class").style.display="flex";
         document.getElementById("status").style.display="flex";
         document.getElementById("payment").style.display="flex";
 
