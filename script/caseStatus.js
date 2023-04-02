@@ -8,12 +8,12 @@ let source =`
     "e914.adc3.c29f.2040" : {
         "status" : "Completed",
         "payment" : "Completed",
-        "note" : "Case complete"
+        "note" : "Case completed."
     },
     "b8d4.c023.9ab0.8180" : {
         "status" : "Failed",
         "payment" : "Completed",
-        "note" : "Reinitiating petition to the relevant fourm."
+        "note" : "Reinitiating petition to the correct fourm."
     },
     "8f81.4c9c.ac2b.83ce" : {
         "status" : "Drafting",
@@ -44,7 +44,7 @@ let source =`
         "status" : "Ongoing",
         "payment" : "N/A",
         "note" : "Ongoing consultation with the financial institution."
-    },
+    }
 }
 `;
 let text = JSON.parse(source);
