@@ -44,6 +44,11 @@ let source =`
         "status" : "Ongoing",
         "payment" : "N/A",
         "note" : "Ongoing consultation with the financial institution."
+    },
+    "9561.bdff.6408.6fb1" : {
+        "status" : "Drafting",
+        "payment" : "N/A",
+        "note" : "Ongoing consultation with the financial institution."
     }
 }
 `;
