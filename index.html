@@ -48,27 +48,26 @@
     <body>
         <main>
 
-            <div id="caseStatus" style="z-index:2; display: flex; flex-direction: column; opacity: 0%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center; overflow-y: scroll; top:0; padding-top: 25vh;">
-    
-                    <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
-                    <br><br>
-                    <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent; text-align: center;" id="caseIDinput" autocomplete="off">
-                    <br>
-                    <button style="max-width: 75%;" onclick="getCaseStatus()">Search</button>
-                    <br>
-                    <p style="margin: 2px;" id="error" style="display: none;"></p>
+            <div id="caseStatus" style="z-index:3; display: flex; flex-direction: column; opacity: 0%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center; overflow-y: scroll; top:0; padding-top: 25vh;">
+                <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
+                <br><br>
+                <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent; text-align: center;" id="caseIDinput" autocomplete="off">
+                <br>
+                <button style="max-width: 75%;" onclick="getCaseStatus()">Search</button>
+                <br>
+                <p style="margin: 2px;" id="error" style="display: none;"></p>
 
-                    <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
-                        <section style="text-align: right; margin-right: 4%;">Status:</section>
-                        <section><p style="margin: 2px;" id="status" style="display: none;"></p></section>
-                        <section style="text-align: right; margin-right: 4%;">Payment:</section>
-                        <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
-                    </div>
-                    <br>
-                    <p style="text-align: center;display: none;; justify-self: center; padding-left: 1rem; padding-right: 1rem;" id="note"></p>
+                <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
+                    <section style="text-align: right; margin-right: 4%;">Status:</section>
+                    <section><p style="margin: 2px;" id="status" style="display: none;"></p></section>
+                    <section style="text-align: right; margin-right: 4%;">Payment:</section>
+                    <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
+                </div>
+                <br>
+                <p style="text-align: center;display: none;; justify-self: center; padding-left: 1rem; padding-right: 1rem;" id="note"></p>
             </div>
 
-            <div style="display: none; opacity: 0%; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; z-index: 2;" id="mobileNavigation">
+            <div style="display: none; opacity: 0%; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; z-index: 3;" id="mobileNavigation">
                 <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 2rem;" onclick="menu('close')">+</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>

@@ -88,11 +88,11 @@ nav{
 #mobileNavigation{
     display: none;
     transition:0.2s all;
-    backdrop-filter: blur(21px) grayscale(90%) brightness(50%);
+    backdrop-filter: grayscale(90%) brightness(6%);
 }
 #caseStatus{
     transition:0.2s all;
-    backdrop-filter: blur(21px) grayscale(90%) brightness(50%);
+    backdrop-filter: grayscale(90%) brightness(6%);
 }
 #mobileControl{
     display: none;
