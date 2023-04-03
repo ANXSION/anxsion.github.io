@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="author" content="AnxSion" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="The official website of the AnxSion. Legal solutions, software research and development." />
+        <meta name="description" content="The official website of the ANXSION. Legal solutions, software research and development." />
         <meta name="twitter:card" content="summary" />
         <meta name="theme-color" content="black" />
         <meta name="msapplication-navbutton-color" content="black" />
@@ -18,7 +18,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="./asset/icon/status.png" />
         <meta property="og:url" content="https://anxsion.github.io" />
-        <meta property="og:description" content="The official website of the AnxSion. Legal solutions, software research and development." />
+        <meta property="og:description" content="The official website of the ANXSION. Legal solutions, software research and development." />
         <link rel="canonical" href="https://anxsion.github.io" />
         <link rel="manifest" href="./manifest.webmanifest" />
         <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.jpg">
@@ -48,7 +48,7 @@
     <body>
         <main>
 
-            <div id="caseStatus" style="z-index:3; display: flex; flex-direction: column; opacity: 0%; position: fixed; height: 100%; width: 100%; justify-content: start; align-items: center; overflow-y: scroll; top:0; padding-top: 25vh;">
+            <div id="caseStatus">
                 <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
                 <br><br>
                 <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent; text-align: center;" id="caseIDinput" autocomplete="off">
@@ -67,7 +67,7 @@
                 <p style="text-align: center;display: none;; justify-self: center; padding-left: 1rem; padding-right: 1rem;" id="note"></p>
             </div>
 
-            <div style="display: none; opacity: 0%; flex-direction: column; justify-content: center; align-items: center; position: fixed; width: 100%; height: 100%; z-index: 3;" id="mobileNavigation">
+            <div id="mobileNavigation">
                 <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 2rem;" onclick="menu('close')">+</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
@@ -75,7 +75,7 @@
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
             </div>
 
-            <nav style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <nav>
                 <section style="display:flex; justify-content: center; align-items: center;">
                     <img style="width: 25%; aspect-ratio: 16/9; object-fit: cover; cursor: pointer; pointer-events: all;" onclick="accessProtocol('index')" src="./asset/icon/logo.png" alt="">
                 </section>
