@@ -14,8 +14,8 @@
     font-display: swap;
 }
 @font-face {
-    font-family: RobotoMono; /*a name to be used later*/
-    src: url('../asset/fonts/RobotoMono.ttf');
+    font-family: Mono; /*a name to be used later*/
+    src: url('../asset/fonts/Mono.ttf');
     font-display: swap;
 }
 @font-face {
@@ -26,6 +26,21 @@
 @font-face {
     font-family: Signature;
     src: url('../asset/fonts/Signature.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: Bio;
+    src: url('../asset/fonts/KTNirma.otf');
+    font-display: swap;
+}
+@font-face {
+    font-family: Inquest;
+    src: url('../asset/fonts/inquest.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: Pixel;
+    src: url('../asset/fonts/Pixel.ttf');
     font-display: swap;
 }
 img {
@@ -43,7 +58,7 @@ body{
     height: 100%;
     width: 100%;
     font-family: 'Jost';
-    background-color: #151514;;
+    background-color: #000000;;
     color: white;
     font-size: 16px;
     margin: 0;
@@ -191,13 +206,13 @@ h3{
     user-select: none;
 }
 
-details{
+.Servicedetails{
     width: 100%;
     color: white;
     transition: 0.3s all;
 }
 
-summary{
+.Servicesummary{
     height: 72px;
     font-size: 1.25rem;
     list-style: none;
@@ -214,7 +229,7 @@ summary{
     cursor: pointer;
 }
 
-summary:hover{
+.Servicesummary:hover{
     background-color: greenyellow;
     color: black;
 }
@@ -228,6 +243,48 @@ summary:hover{
 
 #banner{
     height: 100vh;
+}
+
+.seriesSection{
+    margin: 0;
+    margin-top: 64px;
+    margin-bottom: 192px;
+}
+.blogContainer{
+    display: grid;
+    grid-gap: 9px;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.blogElement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+.blogElement img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    filter: saturate(0%);
+}
+.blogElement p{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 0.875rem;
+    text-align: left;
+    width: 100%;
+}
+.blogElement h1{
+    font-size: 1.5rem;
+    text-align: justify;
+    width: 100%;
 }
 
 @media screen and (max-width:768px) {
@@ -265,6 +322,9 @@ summary:hover{
     grid-template-columns: 1fr;
     }
     .divisions{
+        grid-template-columns: 1fr;
+    }
+    .blogContainer{
         grid-template-columns: 1fr;
     }
 }

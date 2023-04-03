@@ -72,7 +72,7 @@
                 <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 2rem;" onclick="menu('close')">+</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('store')">Store</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('catalyst')">Catalyst</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
             </div>
 
@@ -86,7 +86,7 @@
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; text-align: center; width: 100%;" id="webNavigation">
                     <p style="cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                     <p style="cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                    <p style="cursor: pointer;" onclick="accessProtocol('store')">Store</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('catalyst')">Catalyst</p>
                     <p style="cursor: pointer;" onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
@@ -98,18 +98,6 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 15%; animation: ghostfloat 5s normal; animation-iteration-count: infinite;"><path d="M186.1 .1032c-105.1 3.126-186.1 94.75-186.1 199.9v264c0 14.25 17.3 21.38 27.3 11.25l24.95-18.5c6.625-5.001 16-4.001 21.5 2.25l43 48.31c6.25 6.251 16.37 6.251 22.62 0l40.62-45.81c6.375-7.251 17.62-7.251 24 0l40.63 45.81c6.25 6.251 16.38 6.251 22.62 0l43-48.31c5.5-6.251 14.88-7.251 21.5-2.25l24.95 18.5c10 10.13 27.3 3.002 27.3-11.25V192C384 83.98 294.9-3.147 186.1 .1032zM128 224c-17.62 0-31.1-14.38-31.1-32.01s14.38-32.01 31.1-32.01s32 14.38 32 32.01S145.6 224 128 224zM256 224c-17.62 0-32-14.38-32-32.01s14.38-32.01 32-32.01c17.62 0 32 14.38 32 32.01S273.6 224 256 224z"/></svg>
                     </section>
                 </section>          
-                
-            </section>
-
-            <section class="content" id ="thankyou" style="display: none;">
-
-                <br>
-                <h1 style="font-size: 48px; font-weight: normal; text-align: center;">Order Successful</h1>
-
-                <h2 style="text-align: center;">Thank you for your purchase!</h2>
-                <br>
-
-                <p style="text-align: center;">You will be redirected to the store page within 9 seconds.</p>
                 
             </section>
 
@@ -174,8 +162,8 @@
                 <h1 style="text-align: center;">Services</h1>
                 <br><br>
 
-                <details>
-                    <summary><h2>Research</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Research</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">We understand the importance of conducting reseach before implementing any idea. Therefore we provide efficient R&D services of various tenures, from short term research for business development and analytics to long term data processing and data set generation.</p>
@@ -193,8 +181,8 @@
 
                 <br>
 
-                <details>
-                    <summary><h2>Engineer</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Engineer</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">Crafting the physical manifestation from an idea is a daunting task, with some even considering it a task only meant for the Gods. We bring this power of the Gods to you and help engineer your ideas into a reality.</p>
@@ -212,8 +200,8 @@
 
                 <br>
 
-                <details>
-                    <summary><h2>Software</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Software</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">Software is an integral part of any modern solution. We create solutions for all technological platforms. Wether it be for scalable web technologies, or high stake embeded hardwares.</p>
@@ -232,8 +220,8 @@
 
                 <br>
 
-                <details>
-                    <summary><h2>Identity</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Identity</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">The unique identity of a brand is as important as the products and services it provides. We provide extremely efficient solutions for the all classes of businesses, from start ups to large scale corporations.</p>
@@ -286,8 +274,8 @@
 
                 <h1 style="text-align: center;">Services</h1>
 
-                <details>
-                    <summary><h2>Criminal</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Criminal</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">At our criminal litigation service, we understand that facing criminal charges can be a daunting experience, both for the accused and their loved ones. We approach each case with compassion and dedication, ensuring that our clients receive the highest level of legal support and guidance throughout the process.</p>
@@ -303,8 +291,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Civil</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Civil</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">At our civil litigation service, we understand that legal disputes can be a stressful and disruptive experience for our clients. We approach each case with empathy and dedication, ensuring that our clients receive the highest level of legal support and guidance throughout the process.</p>
@@ -320,8 +308,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Corporate</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Corporate</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">Our corporate litigation service provides legal support to businesses facing complex legal disputes. We understand that legal disputes can be a major disruption to businesses. We approach each case with a focus on minimizing the impact of the dispute on our clients' operations and reputation, while still working tirelessly to protect their interests.</p>
@@ -338,8 +326,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Industry</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Industry</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">At our industry litigation service, we understand the complexities of employment law and the impact that workplace issues can have on both employees and employers. We approach each case with a focus on understanding the industry and its specific legal landscape, in order to build the most effective legal strategy for our clients.</p>
@@ -357,8 +345,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Intellectual</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Intellectual</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">At our IP service, we understand the importance of protecting intellectual property and the role it plays in the success of our clients' businesses. Our Intellectual Property (IP) service provides legal support to individuals and businesses seeking to protect their valuable intellectual property assets.</p>
@@ -375,8 +363,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Tax</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Tax</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">Our tax service provides legal assistance to individuals and businesses in all areas of tax law. Our experienced tax lawyers are dedicated to helping clients navigate the complex and ever-changing tax landscape, while minimizing their tax liability and maximizing their financial benefits</p>
@@ -393,8 +381,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Service</h2><h2>+</h2></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Service</h2><h2>+</h2></summary>
 
                     <br>
                     <p style="text-align: justify;">In addition to our specialized legal services, we offer a variety of miscellaneous legal services to meet the diverse needs of our clients. Our experienced lawyers are equipped to handle a wide range of legal issues, providing effective representation and guidance in a timely and cost-effective manner.</p>
@@ -412,10 +400,134 @@
                 
             </section>
 
-            <section class="content" id="store">
-                    <h1 style="text-align: center; margin-top: 128px; margin-bottom: 128px; font-size: 3rem;">Building a better world.</h1>
+            <section class="content" id="catalyst">
+                    <h1 style="text-align: center; font-size: 3rem;">Catalyst</h1>
+                    <p style="text-align: center; margin-bottom: 192px;">Building a better world.</p>
 
-                    <h2 style="text-align: center;">Stay tuned</h2>
+                    <section class="seriesSection">
+                        <h2 style="font-family: Signature; font-weight: normal; font-size: 2.5rem; text-align: center;">Noir Jury</h2>
+                        <details>
+                            <summary style="text-align: center; list-style: none; cursor: pointer;">About</summary>
+                            <p style="text-align: justify;">Noir Jury is a series of technical legal blogs that provide a unique perspective on the radical changes in the legal system of India. Through in-depth analysis and thought-provoking discussions, the series explores the current state of the legal system and its impact on society. It also offers insights into the future direction of legal reforms and the challenges that lie ahead.</p>
+                        </details>
+
+                        <div class="blogContainer">
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>PENAL CODE</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>IT</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>FAMILY LAW</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="seriesSection">
+                        <h2 style="font-family: Mono; font-weight: normal; font-size: 2.5rem; text-align: center;"><ruby>Required<rt>Assembly</rt></ruby></h2>
+                        <details>
+                            <summary style="text-align: center; list-style: none; cursor: pointer;">About</summary>
+                            <p style="text-align: justify;">"Assembly Required" is a blog series that explores the latest and most radical emerging technologies, industries, and businesses. From blockchain to artificial intelligence, we dive into the most cutting-edge developments and discuss their potential implications for society and the economy.</p>
+                        </details>
+
+                        <div class="blogContainer">
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>PROGRAMMING</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>AI</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>STARTUP</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>BUSINESS</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>EMERGING</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="seriesSection">
+                        <h2 style="font-family: Bio; letter-spacing: 16px; font-weight: normal; font-size: 2.5rem; text-align: center;">COSMOS</h2>
+                        <details>
+                            <summary style="text-align: center; list-style: none; cursor: pointer;">About</summary>
+                            <p style="text-align: justify;">"COSMOS" is a progressive space blog series that delves into the latest discoveries and developments in space exploration, as well as the rapidly growing space industry. From the latest advancements in rocket technology and spacecraft design, to the ongoing search for habitable exoplanets and the potential for space-based resource extraction, this blog series covers it all. With a focus on the scientific and technological aspects of space exploration, "COSMOS" provides a detailed look into the future of humanity among the stars and the opportunities and challenges that lie ahead.</p>
+                        </details>
+
+                        <div class="blogContainer">
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>DISCOVERY</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="seriesSection">
+                        <h2 style="font-weight: normal; text-align: center; font-size: 2.5rem;"><span style="font-family: Inquest;">BIO</span>GENIC</h2>
+                        <details>
+                            <summary style="text-align: center; list-style: none; cursor: pointer;">About</summary>
+                            <p style="text-align: justify;">BIOGENIC is an industry blog series that delves into the latest advances in medical science, life science, and biology. With a focus on cutting-edge research and breakthrough technologies, BIOGENIC provides in-depth analysis of the most significant developments in the field, from genome editing to regenerative medicine.</p>
+                        </details>
+
+                        <div class="blogContainer">
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>HEALTH</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>BIOTECH</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="seriesSection">
+                        <h2 style="font-family: Pixel; font-weight: normal; font-size: 2.5rem; text-align: center;">PlayPixel</h2>
+                        <details>
+                            <summary style="text-align: center; list-style: none; cursor: pointer;">About</summary>
+                            <p style="text-align: justify;">"PlayPixel" is a dynamic and informative video game blog series that offers insightful analysis and in-depth coverage of the latest technology and game development trends. From breaking news and reviews to thought-provoking commentary and engaging interviews with industry professionals, this series is an essential resource for anyone interested in the world of video games. Stay up to date on the cutting edge of game design and technology with PlayPixel.</p>
+                        </details>
+
+                        <div class="blogContainer">
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>CONSOLE</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>GAMEPLAY</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                            <a class="blogElement" href="#">
+                                <img src="./asset/icon/glitch.gif" alt="">
+                                <p>ANALYSIS</p>
+                                <h1>Series updating soon.</h1>
+                            </a>
+                        </div>
+                    </section>
             </section>
 
             <section class="content" id="about">
@@ -441,8 +553,8 @@
                 <h1 style="text-align: center;">Featured Works</h1>
                 <br>
 
-                <details>
-                    <summary><h2>Music</h2><p>2020</p></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Music</h2><p>2020</p></summary>
                     <br><br>
                     <h3 style="text-align: center;">Artist</h3>
                     <br>
@@ -459,8 +571,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Design</h2><p>2021</p></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Design</h2><p>2021</p></summary>
 
                     <br><br>
                     <h3 style="text-align: center;">Mechanical Design</h3>
@@ -497,8 +609,8 @@
                 </details>
                 <br>
 
-                <details>
-                    <summary><h2>Video</h2><p>2022</p></summary>
+                <details class="Servicedetails">
+                    <summary class="Servicesummary"><h2>Video</h2><p>2022</p></summary>
                     <br><br>
                     <h3 style="text-align: center;">Music Video</h3>
                     <br>
@@ -731,8 +843,8 @@
                 else if(id == 'guardian'){
                     accessProtocol("guardian");
                 }
-                else if(id == 'store'){
-                    accessProtocol("store");
+                else if(id == 'catalyst'){
+                    accessProtocol("catalyst");
                 }
                 else if(id == 'about'){
                     accessProtocol("about");
@@ -742,9 +854,6 @@
                 }
                 else if(id == 'privacy'){
                     accessProtocol("privacy");
-                }
-                else if(id == 'thankyou'){
-                    accessProtocol("thankyou");
                 }
                 else{
                     accessProtocol("404");
@@ -760,8 +869,8 @@
                 document.getElementById('chrysalis').style.opacity="0%";
                 document.getElementById('guardian').style.display="none";
                 document.getElementById('guardian').style.opacity="0%";
-                document.getElementById('store').style.display="none";
-                document.getElementById('store').style.opacity="0%";
+                document.getElementById('catalyst').style.display="none";
+                document.getElementById('catalyst').style.opacity="0%";
                 document.getElementById('about').style.display="none";
                 document.getElementById('about').style.opacity="0%";
                 document.getElementById('terms').style.display="none";
@@ -770,8 +879,6 @@
                 document.getElementById('privacy').style.opacity="0%";
                 document.getElementById('404').style.display="none";
                 document.getElementById('404').style.opacity="0%";
-                document.getElementById('thankyou').style.display="none";
-                document.getElementById('thankyou').style.opacity="0%";
                 document.getElementById('mobileNavigation').style.display="none";
                 document.getElementById('mobileNavigation').style.opacity="0%";
                 document.getElementById('caseStatus').style.display="none";
@@ -800,11 +907,11 @@
                     setTimeout(function() {document.getElementById('guardian').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
-                else if (linkname=="store"){
-                    history.pushState({}, "Store Store", "?id=store");
-                    document.title="Store";
-                    document.getElementById('store').style.display="block";
-                    setTimeout(function() {document.getElementById('store').style.opacity="100%";}, transitionSpeed);
+                else if (linkname=="catalyst"){
+                    history.pushState({}, "Catalyst", "?id=catalyst");
+                    document.title="Catalyst";
+                    document.getElementById('catalyst').style.display="block";
+                    setTimeout(function() {document.getElementById('catalyst').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="about"){
@@ -834,31 +941,6 @@
                     document.title="404";
                     document.getElementById('404').style.display="block";
                     setTimeout(function() {document.getElementById('404').style.opacity="100%";}, transitionSpeed);
-                    window.scrollTo(0,0);
-                }
-                else if (linkname=="thankyou"){
-                    history.pushState({}, "Thank You", "?id=thankyou");
-                    document.title="Thank You";
-                    document.getElementById('index').style.display="none";
-                    document.getElementById('index').style.opacity="0%";
-                    document.getElementById('chrysalis').style.display="none";
-                    document.getElementById('chrysalis').style.opacity="0%";
-                    document.getElementById('guardian').style.display="none";
-                    document.getElementById('guardian').style.opacity="0%";
-                    document.getElementById('store').style.display="none";
-                    document.getElementById('store').style.opacity="0%";
-                    document.getElementById('about').style.display="none";
-                    document.getElementById('about').style.opacity="0%";
-                    document.getElementById('terms').style.display="none";
-                    document.getElementById('terms').style.opacity="0%";
-                    document.getElementById('privacy').style.display="none";
-                    document.getElementById('privacy').style.opacity="0%";
-                    document.getElementById('404').style.display="none";
-                    document.getElementById('404').style.opacity="0%";
-
-                    document.getElementById('thankyou').style.display="block";
-
-                    setTimeout(function() {accessProtocol("store")}, 9000);
                     window.scrollTo(0,0);
                 }
             }
