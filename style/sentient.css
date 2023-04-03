@@ -248,7 +248,13 @@ h3{
 .seriesSection{
     margin: 0;
     margin-top: 64px;
-    margin-bottom: 192px;
+    margin-bottom: 156px;
+}
+.seriesSummary{
+    margin: 18px;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
 }
 .blogContainer{
     display: grid;
