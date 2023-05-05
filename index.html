@@ -49,30 +49,11 @@
     <body>
         <main>
 
-            <div id="caseStatus">
-                <p onclick="caseDisplay('close')" style="cursor: pointer; user-select: none; rotate: 45deg; font-size: 32px; margin: 0px;">+</p>
-                <br><br>
-                <input type="text" style="border: none; border-bottom: 2px solid greenyellow; outline: none; width: 256px; font-size: 18px; color: white; background-color: transparent; text-align: center;" id="caseIDinput" autocomplete="off">
-                <br>
-                <button style="max-width: 75%;" onclick="getCaseStatus()">Search</button>
-                <br>
-                <p style="margin: 2px;" id="error" style="display: none;"></p>
-
-                <div id="casedata" style="width:100%;display:none; grid-template-columns: 50% 50%; justify-content: center;align-items: center; color: white;">
-                    <section style="text-align: right; margin-right: 4%;">Status:</section>
-                    <section><p style="margin: 2px;" id="status" style="display: none;"></p></section>
-                    <section style="text-align: right; margin-right: 4%;">Payment:</section>
-                    <section><p style="margin: 2px;" id="payment" style="display: none;"></p></section>
-                </div>
-                <br>
-                <p style="text-align: center;display: none;; justify-self: center; padding-left: 1rem; padding-right: 1rem;" id="note"></p>
-            </div>
-
             <div id="mobileNavigation">
-                <p style="position: absolute; top: 10%; margin: 0; transform: rotate(45deg); font-size: 2rem;" onclick="menu('close')">+</p>
-                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
+                <p style="position: absolute; top: 10%; margin: 0; font-size: 1rem;" onclick="menu('close')">CLOSE</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('catalyst')">Catalyst</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis NFT</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('resonate')">Resonate</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
             </div>
 
@@ -84,9 +65,9 @@
                     <p style="margin: 0; font-size: 1rem;" onclick="menu('open')">MENU</p>
                 </section>
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; text-align: center; width: 100%;" id="webNavigation">
-                    <p style="cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis R&D</p>
                     <p style="cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                    <p style="cursor: pointer;" onclick="accessProtocol('catalyst')">Catalyst</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('chrysalis')">Chrysalis NFT</p>
+                    <p style="cursor: pointer;" onclick="accessProtocol('resonate')">Resonate</p>
                     <p style="cursor: pointer;" onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
@@ -102,152 +83,40 @@
             </section>
 
             <section class="content" id="index">
-                <section id="banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <h1 class="major" style=" animation: lineup 4s normal; text-align: center; font-family: Jost;">Reimagine <span style="color: yellowgreen;">Reality</span></h1>
-                    <p style=" animation: godown 3s infinite; font-size: 128px; margin: 0; transition: 0.3s all;"><span style="border: solid white; border-width: 0 3px 3px 0; padding: 9px; display: flex; transform: rotate(45deg); -webkit-transform: rotate(45deg);"></span></p>
+
+                <section>
+                    <p style="font-size: 32px; text-align: center;">Next Generation</p>
+                    
+                    <p style="text-align: justify;">ANXSION is a legal identity that provides trusted and faithful legal services for individuals and businesses. We believe in delivering innovative and personalized legal solutions that meet the unique needs of our clients. We are at the forefront of emerging technologies, and we strive to provide legal services that align with the latest developments in the field.</p>
+                    
+                    <p style="text-align: justify;">We support emerging technologies such as blockchain and cryptocurrency, recognizing their transformative potential in revolutionizing traditional industries. Our investment in these technologies is a testament to our commitment to progress and innovation. We believe in using our legal expertise to guide our clients through the complexities of these emerging technologies and help them navigate the legal landscape.</p>
+
+                    <p style="text-align: justify;">In a world where technology is constantly evolving, we are dedicated to providing reliable and cutting-edge legal solutions that enable our clients to succeed. Join us today and experience the peace of mind that comes with having a trusted legal partner by your side.</p>
                 </section>
                 <br><br>
-                <section class="minorDescription">
-                    <p style="font-size: 32px;">ANXSION<br>-<br>Cerca Trova</p>
-                    <p style="text-align: justify;">ANXSION is the pseudonym under which we build and launch technologies that aim to improve the lives of  people. We focus on creating radical technologies via rapid research and development. We also explore threats to societies, and builds technology that inspires scalable solutions.</p>
-                </section>
 
-                <br><br>
-
-                
-                <section style="text-align:justify;">
-                    <h1>Founding</h1>
-                    <p>ANXSION has founded 2 divisions in 2018 with a focus on two distinct areas of operation, Chrysalis R&D and Guardian Angel. Chrysalis R&D was founded with the aim of carrying out research and development in various areas such as technology, healthcare, and agriculture. The division aims to develop innovative solutions to problems in these sectors and bring about positive change in society.</p>
-
-                    <p>On the other hand, Guardian Angel was founded with the objective of providing legal aid and support to individuals and organizations in need. The division has a team of experienced legal professionals who work towards providing affordable and accessible legal services to those who require them. Guardian Angel aims to ensure that everyone has access to justice and that legal support is not a privilege reserved only for a select few.</p>
-
-                    <p>Both Chrysalis R&D and Guardian Angel have distinct goals and objectives, but they share a common thread - a commitment to making a positive impact on society. Through their work, both divisions of ANXSION strive to create a better world for all.</p>
-                </section>
-
-                <br><br>
-
-                <section style="text-align:justify;">
-                    <h1>Divisions</h1>
-
-                    <section class="divisions">
-                        <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 3%;">
-                            <img style="width: 100%;filter: invert(100%);" src="./asset/icon/chrysalis.png" alt="">
-                            <p>Chrysalis R&D<sup style="font-size: 8px;">SM</sup> is a research and development platform which aims to create software and hardware solutions for businesses and industries. The prototypes and experiments are iterated and derisked to build the foundation for a strong business.</p>
-                            <button onclick="accessProtocol('chrysalis')">Learn More</button>
-                        </section>
-                        <section style="display:flex; flex-direction: column; justify-content: flex-start; align-items: center; padding: 3%;">
-                            <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
-                            <p>Guardian Angel<sup style="font-size: 8px;">SM</sup> is a progressive law firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters.</p>
-                            <button onclick="accessProtocol('guardian')">Learn More</button>
-                        </section>
+                <section class="landingContainer">
+                    <h1>Guardian Angel</h1>
+                    <section class="landingData">
+                        <p>Guardian Angel is a progressive Law Firm that serves a broad range of clients in India. We lend our service in a variety of matters ranging from drafting and litigation (Civil and Criminal) to corporate transaction and intellectual property matters. We offer highest quality legal advice coupled with extraordinary, tailored service to deliver exceptional results to our clients.</p>
+                        <button onclick="accessProtocol('guardian')">Guardian Angel</button>
                     </section>
                 </section>
 
-            </section>
-
-            <section class="content" id="chrysalis">
-
-                <img style="width: 100%; filter: invert(100%);" src="./asset/icon/chrysalis.png" alt="">
-
-                <section style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <button style="max-width: 75%;" onclick="location.href='https://wa.me/+919832909233'">Book Appointment</button>
+                <section class="landingContainer">
+                    <h1 style="font-family: AvitaThin;"><ruby>Chrysalis<rt>NFT</rt></ruby></h1>
+                    <section class="landingData">
+                        <p>Celebrating the creativity and innovation of blockchain and cryptocurrency. Our diverse collection of hand crafted NFTs showcases the unique features of this technology, such as digital ownership, provenance, and scarcity. We believe that NFTs have the potential to revolutionize the art world and create new opportunities for artists, collectors, and investors. Join us in supporting the future of blockchain and crypto.</p>
+                        <button onclick="accessProtocol('chrysalis')">Chrysalis NFT</button>
+                    </section>
                 </section>
-                <br><br>
-            
-                <p style="text-align: justify;">Chrysalis R&D<sup style="font-size: 8px;">SM</sup> is a research and development platform which aims to create software and hardware solutions for businesses and industries. The prototypes and experiments are iterated and derisked to build the foundation for a strong business. With a deep understanding for progress, reliability and funtion, we envision a future where function & efficiency seamlessly fuse together. Crafting new technologies and methods to shape new innovative design solutions.</p>
 
-                <p style="text-align: justify;">Reliable, efficient and authentic R&D for businesses is not longer a just a luxury, rather is a mandatory wing for the future growth of the business. We at Chryalis provide you with a wide variety of services to update and upgrade your business at a fundamental level and enable you to create a lasting impact in the society.</p>
-
-                <br><br>
-                <h1 style="text-align: center;">Services</h1>
-                <br><br>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><h2>Research</h2><h2>+</h2></summary>
-
-                    <br>
-                    <p style="text-align: justify;">We understand the importance of conducting reseach before implementing any idea. Therefore we provide efficient R&D services of various tenures, from short term research for business development and analytics to long term data processing and data set generation.</p>
-
-                    <br>
-                    <h3>Services includes:</h3>
-                    <ol>
-                        <li><p>Business Incubation</p></li>
-                        <li><p>Product Development</p></li>
-                        <li><p>Data Guided Results</p></li>
-                        <li><p>Derisking Process</p></li>
-                        <li><p>Life Science</p></li>
-                    </ol>
-                </details>
-
-                <br>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><h2>Engineer</h2><h2>+</h2></summary>
-
-                    <br>
-                    <p style="text-align: justify;">Crafting the physical manifestation from an idea is a daunting task, with some even considering it a task only meant for the Gods. We bring this power of the Gods to you and help engineer your ideas into a reality.</p>
-
-                    <br>
-                    <h3>Services includes:</h3>
-                    <ol>
-                        <li><p>3D Printing</p></li>
-                        <li><p>Hardware Development</p></li>
-                        <li><p>Schematics Improvement</p></li>
-                        <li><p>Hardware Deployment</p></li>
-                        
-                    </ol>
-                </details>
-
-                <br>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><h2>Software</h2><h2>+</h2></summary>
-
-                    <br>
-                    <p style="text-align: justify;">Software is an integral part of any modern solution. We create solutions for all technological platforms. Wether it be for scalable web technologies, or high stake embeded hardwares.</p>
-
-                    <br>
-                    <h3>Services includes:</h3>
-                    <ol>
-                        <li><p>Front End Web Technologies: HTML, CSS, JavaScript</p></li>
-                        <li><p>Backend Web Technologies: PHP, MySQL</p></li>
-                        <li><p>General Software Development: C, C++, C+, Python, Java</p></li>
-                        <li><p>Embeded Hardware: C, Assembly (x86)</p></li>
-                        <li><p>Algorithmn Authorship</p></li>
-                        <li><p>Cybersecurity Testing</p></li>
-                    </ol>
-                </details>
-
-                <br>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><h2>Identity</h2><h2>+</h2></summary>
-
-                    <br>
-                    <p style="text-align: justify;">The unique identity of a brand is as important as the products and services it provides. We provide extremely efficient solutions for the all classes of businesses, from start ups to large scale corporations.</p>
-
-                    <br>
-                    <h3>Services includes:</h3>
-                    <ol>
-                        <li><p>Logo Designing</p></li>
-                        <li><p>Brand Identity Guidelines</p></li>
-                        <li><p>Branding labels and stickers</p></li>
-                    </ol>
-                </details>
-    
-                <br><br>
-
-                <h1 style="text-align: center;">Clients</h1>
-                <section class="clients">
-                    <img style="width: 100%;" src="./asset/clients/anuvavproduction.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/bukant.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/dlsacoochbehar.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/goodwill.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/irgccf.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/kalpataru.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/northernyeti.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/prameya.png" alt="">
-                    <img style="width: 100%;" src="./asset/clients/prismatic.png" alt="">
+                <section class="landingContainer">
+                    <h1 style="font-family: Bio;" >RESONATE</h1>
+                    <section class="landingData">
+                        <p>Elevate your music productions with RESONATE. Our meticulously crafted sounds and loops are designed to inspire and enhance your music productions, with a diverse selection of high-quality musical samples, drums, foley and acoustics. Perfect for producers of all genres, our sample pack is a must-have for any music production toolkit. Get started today and take your music to the next level.</p>
+                        <button onclick="accessProtocol('resonate')">Resonate</button>
+                    </section>
                 </section>
             </section>
 
@@ -258,7 +127,6 @@
                 <section style="display: flex; flex-direction: column; align-items: center;">
                     <button style="max-width: 75%;" onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
                     <button style="max-width: 75%;" onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate Us</button>
-                    <button style="max-width: 75%;" onclick="caseDisplay('open')">Case Status</button>
                 </section>
                 <br><br>
             
@@ -400,134 +268,45 @@
                 
             </section>
 
-            <section class="content" id="catalyst">
-                    <h1 style="text-align: center; font-size: 3rem;">Catalyst</h1>
-                    <p style="text-align: center; margin-bottom: 192px;">Building a better world.</p>
+            <section class="content" id="chrysalis">
+                <h1 style="font-family: AvitaThin; text-align: center;"><ruby>Chrysalis<rt>NFT</rt></ruby></h1>
+                <p style="text-align: justify;">Celebrating the creativity and innovation of blockchain and cryptocurrency. Our diverse collection of hand crafted NFTs showcases the unique features of this technology, such as digital ownership, provenance, and scarcity. We believe that NFTs have the potential to revolutionize the art world and create new opportunities for artists, collectors, and investors. Join us in supporting the future of blockchain and crypto.</p>
+                <br><br>
+                <section class="nftContainer">
 
-                    <section class="seriesSection">
-                        <h2 style="font-family: Signature; font-weight: normal; font-size: 2.5rem; text-align: center;">Noire Jury</h2>
-                        <details>
-                            <summary class="seriesSummary">About</summary>
-                            <p style="text-align: justify;">Noire Jury is a series of technical legal blogs that provide a unique perspective on the radical changes in the legal system of India. Through in-depth analysis and thought-provoking discussions, the series explores the current state of the legal system and its impact on society. It also offers insights into the future direction of legal reforms and the challenges that lie ahead.</p>
-                        </details>
-
-                        <div class="blogContainer">
-                            <a class="blogElement" href="./page/noire-jury/Foreign-Law-Firms-in-India-Navigating-the-Complexities-of-Influence-and-Regulation.html">
-                                <img src="./asset/blog/noire-jury/Foreign-Law-Firms-in-India-Navigating-the-Complexities-of-Influence-and-Regulation.png" alt="">
-                                <p>LAW FIRM</p>
-                                <h1>Foreign Law Firms in India: Navigating the Complexities of Influence and Regulation</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>IT</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>FAMILY LAW</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                        </div>
+                    <section class="nftItems">
+                        <a href="https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/6953499626052922481284800123270527385379257083339094165833944135030089449473/" target="_blank"><img src="https://i.seadn.io/gcs/files/e7818cb4424bb54b1d7dcb9387983bf8.jpg" alt=""></a>
+                        <p>Boundless Treasure</p>
+                        <p>~5.0 ETH</p>
                     </section>
 
-                    <section class="seriesSection">
-                        <h2 style="font-family: Mono; font-weight: normal; font-size: 2.5rem; text-align: center;"><ruby>Required<rt>Assembly</rt></ruby></h2>
-                        <details>
-                            <summary class="seriesSummary">About</summary>
-                            <p style="text-align: justify;">"Assembly Required" is a blog series that explores the latest and most radical emerging technologies, industries, and businesses. From blockchain to artificial intelligence, we dive into the most cutting-edge developments and discuss their potential implications for society and the economy.</p>
-                        </details>
-
-                        <div class="blogContainer">
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>PROGRAMMING</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>AI</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>STARTUP</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>BUSINESS</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>EMERGING</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                        </div>
+                    <section class="nftItems">
+                        <a href="https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/6953499626052922481284800123270527385379257083339094165833944132831066193921/" target="_blank"><img src="https://i.seadn.io/gcs/files/ced1c6c2b2e4b46eddfc1e764a1ca368.jpg" alt=""></a>
+                        <p>Glowing Dust</p>
+                        <p>~2.0 ETH</p>
                     </section>
 
-                    <section class="seriesSection">
-                        <h2 style="font-family: Bio; letter-spacing: 16px; font-weight: normal; font-size: 2.5rem; text-align: center;">COSMOS</h2>
-                        <details>
-                            <summary class="seriesSummary">About</summary>
-                            <p style="text-align: justify;">"COSMOS" is a progressive space blog series that delves into the latest discoveries and developments in space exploration, as well as the rapidly growing space industry. From the latest advancements in rocket technology and spacecraft design, to the ongoing search for habitable exoplanets and the potential for space-based resource extraction, this blog series covers it all. With a focus on the scientific and technological aspects of space exploration, "COSMOS" provides a detailed look into the future of humanity among the stars and the opportunities and challenges that lie ahead.</p>
-                        </details>
-
-                        <div class="blogContainer">
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>DISCOVERY</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                        </div>
+                    <section class="nftItems">
+                        <a href="https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/6953499626052922481284800123270527385379257083339094165833944133930577821697/" target="_blank"><img src="https://i.seadn.io/gcs/files/6241c81beaafa1dc88fedfc289ea0d40.jpg" alt=""></a>
+                        <p>Ocean Heart</p>
+                        <p>~5.0 ETH</p>
                     </section>
 
-                    <section class="seriesSection">
-                        <h2 style="font-weight: normal; text-align: center; font-size: 2.5rem;"><span style="font-family: Inquest;">BIO</span>GENIC</h2>
-                        <details>
-                            <summary class="seriesSummary">About</summary>
-                            <p style="text-align: justify;">BIOGENIC is an industry blog series that delves into the latest advances in medical science, life science, and biology. With a focus on cutting-edge research and breakthrough technologies, BIOGENIC provides in-depth analysis of the most significant developments in the field, from genome editing to regenerative medicine.</p>
-                        </details>
-
-                        <div class="blogContainer">
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>HEALTH</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>BIOTECH</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                        </div>
+                    <section class="nftItems">
+                        <a href="https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/6953499626052922481284800123270527385379257083339094165833944136129601077249/" target="_blank"><img src="https://i.seadn.io/gcs/files/a942e6a2866cebcf70dd1be09b89a17b.jpg" alt=""></a>
+                        <p>Dark Nebula</p>
+                        <p>~3.0 ETH</p>
                     </section>
+                </section>
 
-                    <section class="seriesSection">
-                        <h2 style="font-family: Pixel; font-weight: normal; font-size: 2.5rem; text-align: center;">PlayPixel</h2>
-                        <details>
-                            <summary class="seriesSummary">About</summary>
-                            <p style="text-align: justify;">"PlayPixel" is a dynamic and informative video game blog series that offers insightful analysis and in-depth coverage of the latest technology and game development trends. From breaking news and reviews to thought-provoking commentary and engaging interviews with industry professionals, this series is an essential resource for anyone interested in the world of video games. Stay up to date on the cutting edge of game design and technology with PlayPixel.</p>
-                        </details>
+            </section>
 
-                        <div class="blogContainer">
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>CONSOLE</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>GAMEPLAY</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                            <a class="blogElement" href="#">
-                                <img src="./asset/icon/glitch.gif" alt="">
-                                <p>ANALYSIS</p>
-                                <h1>Series updating soon.</h1>
-                            </a>
-                        </div>
-                    </section>
+            <section class="content" id="resonate">
+                <h1 style="font-family: Bio; text-align: center;">RESONATE</h1>
+                <p style="text-align: justify;">Elevate your music productions with RESONATE. Our meticulously crafted sounds and loops are designed to inspire and enhance your music productions, with a diverse selection of high-quality musical samples, drums, foley and acoustics. Perfect for producers of all genres, our sample pack is a must-have for any music production toolkit. Get started today and take your music to the next level.</p>
+                        
+                <h2 style="text-align: center;">Audio Packs Coming Soon</h2>
+                    
             </section>
 
             <section class="content" id="about">
@@ -844,7 +623,7 @@
                     accessProtocol("guardian");
                 }
                 else if(id == 'catalyst'){
-                    accessProtocol("catalyst");
+                    accessProtocol("resonate");
                 }
                 else if(id == 'about'){
                     accessProtocol("about");
@@ -869,8 +648,8 @@
                 document.getElementById('chrysalis').style.opacity="0%";
                 document.getElementById('guardian').style.display="none";
                 document.getElementById('guardian').style.opacity="0%";
-                document.getElementById('catalyst').style.display="none";
-                document.getElementById('catalyst').style.opacity="0%";
+                document.getElementById('resonate').style.display="none";
+                document.getElementById('resonate').style.opacity="0%";
                 document.getElementById('about').style.display="none";
                 document.getElementById('about').style.opacity="0%";
                 document.getElementById('terms').style.display="none";
@@ -881,12 +660,8 @@
                 document.getElementById('404').style.opacity="0%";
                 document.getElementById('mobileNavigation').style.display="none";
                 document.getElementById('mobileNavigation').style.opacity="0%";
-                document.getElementById('caseStatus').style.display="none";
-                document.getElementById('caseStatus').style.opacity="0%";
 
                 if (linkname=="index"){
-                    document.getElementById('banner').style.display="flex";
-                    document.getElementById('banner').style.opacity="100%";
                     history.pushState({}, "ANXSION", "?id=index");
                     document.title="ANXSION";
                     document.getElementById('index').style.display="block";
@@ -907,11 +682,11 @@
                     setTimeout(function() {document.getElementById('guardian').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
-                else if (linkname=="catalyst"){
-                    history.pushState({}, "Catalyst", "?id=catalyst");
+                else if (linkname=="resonate"){
+                    history.pushState({}, "Resonate", "?id=resonate");
                     document.title="Catalyst";
-                    document.getElementById('catalyst').style.display="block";
-                    setTimeout(function() {document.getElementById('catalyst').style.opacity="100%";}, transitionSpeed);
+                    document.getElementById('resonate').style.display="block";
+                    setTimeout(function() {document.getElementById('resonate').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="about"){

@@ -96,6 +96,7 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 92px;
 }
 
 #mobileNavigation{
@@ -110,22 +111,7 @@ nav{
     height: 100%;
     z-index: 3;
 }
-#caseStatus{
-    transition:0.2s all;
-    backdrop-filter: grayscale(90%) brightness(6%);
-    z-index:3;
-    display: flex;
-    flex-direction: column;
-    opacity: 0%;
-    position:fixed;
-    height: 100%;
-    width: 100%;
-    justify-content: start;
-    align-items: center;
-    overflow-y: scroll;
-    top:0;
-    padding-top: 25vh;
-}
+
 #mobileControl{
     display: none;
 }
@@ -168,44 +154,7 @@ footer p{
     padding: 0;
     transition: 0.3s all;
 }
-.blogContentContainer{
-    width: 90%;
-    min-height: 75vh;
-    margin: 0;
-    padding: 0;
-    transition: 0.3s all;
-    background-color: white;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    margin-top: 32px;
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-.blogContentContainerHeader{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    margin-bottom: 32px;
-}
-.blogContentContainerHeader h1{
-    font-size: 3rem;
-}
-.blogContentContainerHeader img{
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-.blogContentContainer p{
-    text-align: justify;
-    font-size: 1rem;
-}
-.blogContentContainerRead{
-    width: 70%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
+
 button{
     font-weight: normal;
     border: none;
@@ -226,13 +175,6 @@ button:hover{
     background-color: greenyellow;
 }
 
-.major{
-    font-size: 64px;
-    font-weight: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 h1{
     font-size: 2rem;
     font-weight: normal;
@@ -247,18 +189,6 @@ h3{
     font-family: Jost;
 }
 
-.minorDescription{
-    display: grid;
-    justify-content: center; 
-    align-items: center; 
-    grid-template-columns: 1fr 1fr;
-}
-.clients{
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    justify-content: center; 
-    align-items: flex-start; 
-}
 .idimage{
     width: 50%;
 }
@@ -305,63 +235,56 @@ h3{
     color: black;
 }
 
-.divisions{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-}
-
-#banner{
-    height: 100vh;
-}
-
-.seriesSection{
-    margin: 0;
-    margin-top: 64px;
-    margin-bottom: 156px;
-}
-.seriesSummary{
-    margin: 18px;
-    text-align: center;
-    list-style: none;
-    cursor: pointer;
-}
-.blogContainer{
-    display: grid;
-    grid-gap: 18px;
-    justify-content: center;
-    align-items: start;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.blogElement{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    width: 100%;
-    height: 100%;
-}
-.blogElement img{
+.landingContainer{
     width: 100%;
     height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 64px;
+    margin-bottom: 64px;
 }
-.blogElement p{
-    margin-top: 6px;
-    margin-bottom: 6px;
-    font-size: 0.875rem;
-    text-align: left;
-    width: 100%;
-    color: greenyellow;
+
+.landingData{
+    display: grid;
+    grid-template-rows: auto auto;
 }
-.blogElement h1{
-    font-size: 1.5rem;
+
+.landingContainer h1{
+    text-align: center;
+}
+.landingData p{
     text-align: justify;
+}
+
+.nftContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-gap: 6px;
+}
+.nftItems{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    align-items: center;
+}
+.nftItems a img{
     width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    object-position: center;
+}
+.nftItems p{
+    text-align: center;
+    margin: 6px;
+}
+
+.eth{
+    height: 1.25rem;
+    width: 1.25rem;
 }
 
 @media screen and (max-width:768px) {
@@ -371,11 +294,12 @@ h3{
     p{
         font-size: 0.875rem;
     }
+    .eth{
+        height: 0.875rem;
+        width: 0.875rem;
+    }
     a{
         font-size: 0.875rem;
-    }
-    #banner{
-        height: 90vh;
     }
     #mobileNavigation{
         display: none;
@@ -386,66 +310,21 @@ h3{
     #webNavigation{
         display: none;
     }
-    .major{
-        font-size: 32px;
-    }
-    .minorDescription{
-        grid-template-columns: 1fr;
-    }
-    .clients{
-        grid-template-columns: 1fr 1fr;
-    }
     .idimage{
         width: 100%;
     }
     .artGallery{
-    grid-template-columns: 1fr;
-    }
-    .divisions{
         grid-template-columns: 1fr;
     }
-    .blogContainer{
+    .landingContainer{
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
     }
-    .blogElement h1{
-        font-size: 0.875rem;
-    }
-    .blogContentContainerHeader{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .blogContentContainerHeader h1{
-        font-size: 1.5rem;
-    }
-    .blogContentContainer p{
-        font-size: 0.875rem;
-    }
-    .blogContentContainerRead{
-        width: 90%;
-        padding-left: 5%;
-        padding-right: 5%;
+    .nftContainer{
+        grid-template-columns: 1fr;
     }
 }
 
-@keyframes lineup {
-    0% {
-        opacity: 0;
-        transform: translateY(80%);
-    }
-    20% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
 
 @keyframes ghostfloat{
     0%{
@@ -456,24 +335,5 @@ h3{
     }
     100%{
         transform: translateY(0%);
-    }
-}
-@keyframes godown{
-    0%{
-        opacity: 0;
-        transform: translateY(0%);
-    }
-    25%{
-        opacity: 100%;
-    }
-    50%{
-        opacity: 100%;
-    }
-    75%{
-        opacity: 100%; 
-    }
-    100%{
-        opacity: 0;
-        transform: translateY(70%);
     }
 }
