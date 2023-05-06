@@ -1,20 +1,20 @@
 @font-face {
-    font-family: BlenderProBook; /*a name to be used later*/
-    src: url('../asset/fonts/BlenderProBook.ttf'); /*URL to font*/
+    font-family: BlenderProBook;
+    src: url('../asset/fonts/BlenderProBook.ttf');
     font-display: swap;
 }
 @font-face {
-    font-family: AvitaThin; /*a name to be used later*/
-    src: url('../asset/fonts/AvitaThin.otf'); /*URL to font*/
+    font-family: AvitaThin;
+    src: url('../asset/fonts/AvitaThin.otf');
     font-display: swap;
 }
 @font-face {
-    font-family: Barcode; /*a name to be used later*/
-    src: url('../asset/fonts/Barcode.ttf'); /*URL to font*/
+    font-family: Barcode;
+    src: url('../asset/fonts/Barcode.ttf');
     font-display: swap;
 }
 @font-face {
-    font-family: Mono; /*a name to be used later*/
+    font-family: Mono;
     src: url('../asset/fonts/Mono.ttf');
     font-display: swap;
 }
@@ -49,6 +49,8 @@
     --primary: #000000;
     --secondary: #ffffff;
     --accent:greenyellow;
+    --fontWeb: 1.25rem;
+    --fontMobile: 0.875rem;
 }
 ::selection {
     color: black;
@@ -76,17 +78,16 @@ main{
     flex-direction: column;
     align-items: center;
     margin: 0;
-    font-size: 1.25rem;
 }
 
 p{
-    font-size: 1.25rem;
+    font-size: var(--fontWeb);
 }
 
 a{
     text-decoration: none;
     color: var(--primary);
-    font-size: 1.25rem;
+    font-size: var(--fontWeb);
 }
 
 img {
@@ -119,23 +120,21 @@ h6{
 
 button{
     font-weight: normal;
-    border: none;
+    border: 2px var(--secondary) solid;
     width: 100%;
-    margin: 3px;
     height:64px;
     min-height: 64px;
-    color: var(--primary);
-    background-color: var(--secondary);
+    color: var(--secondary);
+    background-color: var(--primary);
     cursor: pointer;
-    opacity: 100%;
-    font-size: 1rem;
-    font-family: Jost;
+    font-size: var(--fontWeb);
     user-select: none;
 }
 
 button:hover{
     color: var(--primary);
     background-color: var(--accent);
+    border: 2px var(--primary) solid;
 }
 
 nav{
@@ -234,7 +233,7 @@ footer p{
 
 .Servicesummary{
     height: 72px;
-    font-size: 1.25rem;
+    font-size: var(--fontWeb);
     list-style: none;
     text-align: center;
     color: var(--secondary);
@@ -301,24 +300,16 @@ footer p{
     margin: 6px;
 }
 
-.eth{
-    height: 1.25rem;
-    width: 1.25rem;
-}
-
 @media screen and (max-width:768px) {
     main{
-        font-size: 0.875rem;
+        font-size: var(--fontMobile);
     }
     p{
-        font-size: 0.875rem;
+        font-size: var(--fontMobile);
     }
-    .eth{
-        height: 0.875rem;
-        width: 0.875rem;
-    }
+
     a{
-        font-size: 0.875rem;
+        font-size: var(--fontMobile);
     }
     #mobileNavigation{
         display: none;

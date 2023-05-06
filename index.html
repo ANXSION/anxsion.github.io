@@ -42,7 +42,7 @@
 
             <div id="mobileNavigation">
                 <p style="position: absolute; top: 10%; margin: 0; font-size: 1rem;" onclick="menu('close')">CLOSE</p>
-                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('index')">Home</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('home')">Home</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('curiosity')">Curiosity</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
@@ -56,7 +56,7 @@
                     <p style="margin: 0; font-size: 1rem;" onclick="menu('open')">MENU</p>
                 </section>
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; text-align: center; width: 100%;" id="webNavigation">
-                    <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('index')">Home</p>
+                    <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('home')">Home</p>
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('guardian')">Guardian Angel</p>
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('curiosity')">Curiosity</p>
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('about')">About</p>
@@ -73,7 +73,7 @@
                 
             </section>
 
-            <section class="content" id="index">
+            <section class="content" id="home">
 
                 <section class="banner">
                     <h1>Welcome.</h1>
@@ -597,8 +597,8 @@
                 let id = params.get("id");
                 
 
-                if(id == 'index' || id == null){
-                    accessProtocol("index");
+                if(id == 'home' || id == null){
+                    accessProtocol("home");
                 }
                 else if(id == 'curiosity'){
                     accessProtocol("curiosity");
@@ -623,8 +623,8 @@
 
             function accessProtocol(linkname){
                 transitionSpeed=300;
-                document.getElementById('index').style.display="none";
-                document.getElementById('index').style.opacity="0%";
+                document.getElementById('home').style.display="none";
+                document.getElementById('home').style.opacity="0%";
                 document.getElementById('curiosity').style.display="none";
                 document.getElementById('curiosity').style.opacity="0%";
                 document.getElementById('guardian').style.display="none";
@@ -640,11 +640,11 @@
                 document.getElementById('mobileNavigation').style.display="none";
                 document.getElementById('mobileNavigation').style.opacity="0%";
 
-                if (linkname=="index"){
-                    history.pushState({}, "ANXSION", "?id=index");
+                if (linkname=="home"){
+                    history.pushState({}, "ANXSION", "?id=home");
                     document.title="ANXSION";
-                    document.getElementById('index').style.display="block";
-                    setTimeout(function() {document.getElementById('index').style.opacity="100%";}, transitionSpeed);
+                    document.getElementById('home').style.display="block";
+                    setTimeout(function() {document.getElementById('home').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="curiosity"){
@@ -662,7 +662,7 @@
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="about"){
-                    history.pushState({}, "about", "?id=about");
+                    history.pushState({}, "About", "?id=about");
                     document.title="About";
                     document.getElementById('about').style.display="block";
                     setTimeout(function() {document.getElementById('about').style.opacity="100%";}, transitionSpeed);
