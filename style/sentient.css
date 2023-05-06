@@ -68,7 +68,6 @@ body{
     transition: 0.2s all;
 }
 
-
 main{
     width: 100%;
     min-height: 100vh;
@@ -79,6 +78,7 @@ main{
     margin: 0;
     font-size: 1.25rem;
 }
+
 p{
     font-size: 1.25rem;
 }
@@ -93,6 +93,51 @@ img {
     pointer-events: none;
 }
 
+h1{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+h2{
+    font-size: 1.875rem;
+    font-weight: normal;
+}
+h3{
+    font-size: 1.75rem;
+    font-weight: normal;
+}
+h4{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+h5{
+    font-weight: normal;
+}
+h6{
+    font-weight: normal;
+}
+
+button{
+    font-weight: normal;
+    border: none;
+    width: 100%;
+    margin: 3px;
+    height:64px;
+    min-height: 64px;
+    color: var(--primary);
+    background-color: var(--secondary);
+    cursor: pointer;
+    opacity: 100%;
+    font-size: 1rem;
+    font-family: Jost;
+    user-select: none;
+}
+
+button:hover{
+    color: var(--primary);
+    background-color: var(--accent);
+}
+
 nav{
     width: 100%;
     display: flex;
@@ -100,6 +145,24 @@ nav{
     justify-content: center;
     align-items: center;
     margin-bottom: 92px;
+}
+
+
+footer{
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 64px;
+    background-color: var(--primary);
+}
+footer p{
+    margin: 0;
 }
 
 .banner{
@@ -131,32 +194,8 @@ nav{
     display: grid;
 }
 
-.terms h1{
-    font-size: 32px;
-    font-weight: normal;
-}
-.terms h2{
-    font-weight: normal;
-}
 .terms p{
     text-align: justify;
-}
-
-footer{
-    width: 100%;
-    height: fit-content;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-top: 64px;
-    background-color: var(--primary);
-}
-footer p{
-    margin: 0;
 }
 
 .content{
@@ -167,39 +206,7 @@ footer p{
     transition: 0.3s all;
 }
 
-button{
-    font-weight: normal;
-    border: none;
-    width: 100%;
-    margin: 3px;
-    height:64px;
-    min-height: 64px;
-    color: var(--primary);
-    background-color: var(--secondary);
-    cursor: pointer;
-    opacity: 100%;
-    font-size: 1rem;
-    font-family: Jost;
-    user-select: none;
-}
-button:hover{
-    color: var(--primary);
-    background-color: var(--accent);
-}
 
-h1{
-    font-size: 2rem;
-    font-weight: normal;
-    font-family: Jost;
-}
-h2{
-    font-weight: normal;
-    font-family: Jost;
-}
-h3{
-    font-weight: normal;
-    font-family: Jost;
-}
 
 .idimage{
     width: 50%;
