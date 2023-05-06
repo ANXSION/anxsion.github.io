@@ -19,9 +19,8 @@
         <meta property="og:image" content="./asset/icon/status.png" />
         <meta property="og:url" content="https://anxsion.github.io" />
         <meta property="og:description" content="The official website of the ANXSION. Legal solutions, software research and development." />
-        <link rel="canonical" href="https://anxsion.github.io" />
         <link rel="manifest" href="./manifest.webmanifest" />
-        <link rel="icon" type="image/x-icon" href="./asset/icon/favicon.png">
+        <link rel="icon" type="image/png" href="./asset/icon/favicon.png">
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
         <link rel="stylesheet" href="./style/sentient.css">
         <script src="./script/caseStatus.js"></script>
@@ -38,8 +37,8 @@
     </head>
 
     <body>
-        <main>
 
+        <header>
             <div id="mobileNavigation">
                 <p style="position: absolute; top: 10%; margin: 0; font-size: 1rem;" onclick="menu('close')">CLOSE</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('home')">Home</p>
@@ -62,6 +61,9 @@
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
+        </header>
+
+        <main>
 
             <section class="content" id ="404" style="display: none;">
                 <section style="margin-top: 128px; margin-bottom: 128px;">
@@ -114,9 +116,9 @@
 
                 <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
 
-                <section style="display: flex; flex-direction: column; align-items: center;">
-                    <button style="max-width: 75%;" onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
-                    <button style="max-width: 75%;" onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate Us</button>
+                <section class="guardianButton">
+                    <button onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
+                    <button onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate</button>
                 </section>
                 <br><br>
             
@@ -572,16 +574,18 @@
                 </section>
             </section>
         
-            <footer>
-                <section style="width:100%;display: grid; grid-template-columns: 50% 50%; justify-content: center; align-items: center; text-align: center;">
-                    <p style="text-decoration: underline;font-size: 12px; cursor: pointer;" onclick="accessProtocol('terms')">Terms of Service</p>
-                    <p style="text-decoration: underline;font-size: 12px; cursor: pointer;" onclick="accessProtocol('privacy')">Privacy Policy</p>
-                </section>
-                <br>
-                <p id="cyear"></p>
-                <img style="width: 128px; aspect-ratio: 16/9; object-fit: cover;" src="./asset/icon/logo.png" alt="">
-            </footer>
+            
         </main>
+
+        <footer>
+            <section style="width:100%;display: grid; grid-template-columns: 50% 50%; justify-content: center; align-items: center; text-align: center;">
+                <p style="text-decoration: underline;font-size: 12px; cursor: pointer;" onclick="accessProtocol('terms')">Terms of Service</p>
+                <p style="text-decoration: underline;font-size: 12px; cursor: pointer;" onclick="accessProtocol('privacy')">Privacy Policy</p>
+            </section>
+            <br>
+            <p id="cyear"></p>
+            <img style="width: 128px; aspect-ratio: 16/9; object-fit: cover;" src="./asset/icon/logo.png" alt="">
+        </footer>
 
         <script>
 
