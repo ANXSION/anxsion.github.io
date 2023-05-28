@@ -4,6 +4,8 @@
   "name": "ANXSION",
   "id": "ANXSION",
   "short_name": "ANXSION",
+  "author": "ANXSION",
+  "version": "3.1.7",
   "scope": "/",
   "display": "standalone",
   "start_url": "/",
