@@ -175,6 +175,13 @@ footer{
     background-color: var(--primary);
 }
 
+address{
+    font-style: italic;
+    font-size: var(--fontWeb);
+    text-align: center;
+    margin: 5%;
+}
+
 footer p{
     margin: 0;
 }
@@ -346,7 +353,7 @@ footer p{
     main{
         font-size: var(--fontMobile);
     }
-    p,ol,li{
+    p,ol,li,address{
         font-size: var(--fontMobile);
     }
 
