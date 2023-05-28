@@ -6,9 +6,9 @@
   "short_name": "ANXSION",
   "scope": "/",
   "display": "standalone",
-  "start_url": "/index.html",
-  "background_color": "black",
-  "theme_color": "black",
+  "start_url": "/",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "description": "The official website of the AnxSion. Legal solutions, software research and development.",
   "orientation": "portrait-primary",
   "icons": [
@@ -24,5 +24,17 @@
     "sizes": "512x512",
     "purpose": "any maskable"
   }
+  ],
+  "prefer_related_applications": false,
+  "categories": ["legal", "software"],
+  "screenshots": [
+    {
+      "src": "./assets/screenshots/screenshot1.png",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/screenshots/screenshot2.png",
+      "type": "image/png"
+    }
   ]
 }

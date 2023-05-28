@@ -23,16 +23,15 @@
         <link rel="icon" type="image/png" href="./asset/icon/favicon.png">
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
         <link rel="stylesheet" href="./style/sentient.css">
-        <script src="./script/caseStatus.js"></script>
-        <script src="./script/footer.js"></script>
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
+        
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-53Y0LGEE69');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-53Y0LGEE69');
         </script>
     </head>
 
@@ -702,19 +701,6 @@
                 if ("serviceWorker" in navigator) {
                     navigator.serviceWorker.register("./anxsion-serviceworker.js");
                 }  
-            });
-
-            window.addEventListener('beforeinstallprompt', function(event) {
-                event.preventDefault(); // Prevents automatic prompt display
-  
-                // Check if PWA is already installed
-                if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
-                    console.log('PWA is installed');
-                    // Perform desired actions for an installed PWA
-                } else {
-                    console.log('PWA is not installed');
-                    // Perform desired actions for a non-installed PWA
-                }
             });
 
             function ini() {
