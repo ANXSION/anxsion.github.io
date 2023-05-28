@@ -28,15 +28,5 @@
   }
   ],
   "prefer_related_applications": false,
-  "categories": ["legal", "software"],
-  "screenshots": [
-    {
-      "src": "./assets/screenshots/screenshot1.png",
-      "type": "image/png"
-    },
-    {
-      "src": "./assets/screenshots/screenshot2.png",
-      "type": "image/png"
-    }
-  ]
+  "categories": ["legal", "software"]
 }
