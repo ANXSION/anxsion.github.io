@@ -80,8 +80,13 @@ main{
     margin: 0;
 }
 
-p,ol,li{
+p{
     font-size: var(--fontWeb);
+}
+
+ol,li{
+    font-size: var(--fontWeb);
+    text-align: justify;
 }
 
 a{
