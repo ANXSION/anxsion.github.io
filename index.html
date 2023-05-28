@@ -37,6 +37,7 @@
     </head>
 
     <body>
+        <noscript><p>&#9888;</p><p>Enable JavaScript to ensure optimal functionality and seamless operations</p></noscript>    
 
         <header>
             <div id="mobileNavigation">
@@ -703,6 +704,19 @@
                 }  
             });
 
+            window.addEventListener('beforeinstallprompt', function(event) {
+                event.preventDefault(); // Prevents automatic prompt display
+  
+                // Check if PWA is already installed
+                if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+                    console.log('PWA is installed');
+                    // Perform desired actions for an installed PWA
+                } else {
+                    console.log('PWA is not installed');
+                    // Perform desired actions for a non-installed PWA
+                }
+            });
+
             function ini() {
 
                 let params = new URLSearchParams(document.location.search);
@@ -834,9 +848,7 @@
             }
 
             ini();
-            
-            crfoot();
 
-        </script>        
+        </script>    
     </body>
 </html>
