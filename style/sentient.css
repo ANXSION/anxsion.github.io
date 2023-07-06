@@ -364,8 +364,8 @@ footer p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 .capitalInteract{
     width: 100%;
@@ -385,7 +385,7 @@ footer p{
     aspect-ratio: 16/9;
 }
 
-.symbol{
+.symbolShowcase{
     width: 100%;
     height: fit-content;
     display: flex;
@@ -399,7 +399,7 @@ footer p{
     main{
         font-size: var(--fontMobile);
     }
-    p,ol,li,address{
+    p, ol, li, address{
         font-size: var(--fontMobile);
     }
 
@@ -433,7 +433,7 @@ footer p{
         grid-template-columns: 1fr;
     }
     .capitalShowcase{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 

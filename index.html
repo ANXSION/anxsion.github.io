@@ -43,7 +43,7 @@
                 <p style="position: absolute; top: 10%; margin: 0; font-size: 1rem; cursor: pointer;" onclick="menu('close')">CLOSE</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('home')">Home</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('emergence')">Emergence Capital</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('emergence')">Capital Emergence</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
             </div>
 
@@ -57,7 +57,7 @@
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; text-align: center; width: 100%;" id="webNavigation">
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('home')">Home</p>
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                    <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('emergence')">Emergence Capital</p>
+                    <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('emergence')">Capital Emergence</p>
                     <p style="cursor: pointer; margin: 0;" onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
@@ -104,10 +104,10 @@
                 </section>
 
                 <section class="landingContainer">
-                    <h1 style="font-family: Bio;"><ruby>Emergence<rt>Capital</rt></ruby></h1>
+                    <h1 style="font-family: Bio;"><ruby>Emergence<rt style="color: cyan; font-family: Pixel;">Capital</rt></ruby></h1>
                     <section class="landingData">
                         <p>Emergence Capital is an experimental market research analyst group that uses cutting-edge technology to provide insights into emerging markets. The group's insights provide businesses with the information they need to make informed decisions about their products, marketing, and pricing. The group's insights are not for the faint of heart, but those who dare to look will be rewarded with a glimpse of what is to come.</p>
-                        <button onclick="accessProtocol('curiosity')">Curiosity</button>
+                        <button onclick="accessProtocol('emergence')">Capital Emergence</button>
                     </section>
                 </section>
             </section>
@@ -289,203 +289,195 @@
 
             <section class="content" id="emergence">
                 <br>
-                <h1 style="font-family: Bio; text-align: center; font-size: 4rem;"><ruby>Emergence<rt>Capital</rt></ruby></h1>
-                <p style="text-align: justify;">Emergence Capital is an experimental market research analyst group that uses cutting-edge technology to provide insights into emerging markets. The group's insights provide businesses with the information they need to make informed decisions about their products, marketing, and pricing. The group's insights are not for the faint of heart, but those who dare to look will be rewarded with a glimpse of what is to come.</p>
+                <h1 style="font-family: Bio; text-align: center; font-size: 4rem;"><ruby>Emergence<rt style="color: cyan; font-family: Pixel;">Capital</rt></ruby></h1>
+                <p style="text-align: justify;">Capital Emergence is an experimental market research analyst group that uses cutting-edge technology to provide insights into emerging markets. The group's insights provide businesses with the information they need to make informed decisions about their products, marketing, and pricing. The group's insights are not for the faint of heart, but those who dare to look will be rewarded with a glimpse of what is to come.</p>
 
-                
-<div class="capitalSingle">
-<h2 style="text-align: center;">Economy at a Glance</h2>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "description": "GDP",
-        "proName": "ECONOMICS:INGDP"
-      },
-      {
-        "description": "Real GDP",
-        "proName": "ECONOMICS:INGDPCP"
-      },
-      {
-        "description": "GDP Growth Rate",
-        "proName": "ECONOMICS:INGDPQQ"
-      },
-      {
-        "description": "Inflation Rate (Year over Year)",
-        "proName": "ECONOMICS:INIRYY"
-      },
-      {
-        "description": "Consumer Price Index",
-        "proName": "ECONOMICS:INCPI"
-      },
-      {
-        "description": "Consumer Price Increase",
-        "proName": "FRED:FPCPITOTLZGIND"
-      },
-      {
-        "description": "Interest Rate",
-        "proName": "ECONOMICS:ININTR"
-      },
-      {
-        "description": "Reverse Repo Rate",
-        "proName": "ECONOMICS:INRRR"
-      },
-      {
-        "description": "Cash Reserve Ratio",
-        "proName": "ECONOMICS:INCRR"
-      },
-      {
-        "description": "FOREX Reserves",
-        "proName": "ECONOMICS:INFER"
-      },
-      {
-        "description": "Gold Reserves",
-        "proName": "ECONOMICS:INGRES"
-      },
-      {
-        "description": "Crude Oil Production",
-        "proName": "ECONOMICS:INCOP"
-      },
-      {
-        "description": "Foreign Direct Investments",
-        "proName": "ECONOMICS:INFDI"
-      },
-      {
-        "description": "Imports",
-        "proName": "ECONOMICS:INIMP"
-      },
-      {
-        "description": "Exports",
-        "proName": "ECONOMICS:INEXP"
-      },
-      {
-        "description": "Government Budget",
-        "proName": "ECONOMICS:INGBP"
-      },
-      {
-        "description": "Bank Lending Rate",
-        "proName": "ECONOMICS:INBLR"
-      }
-    ],
-    "showSymbolLogo": true,
-    "colorTheme": "dark",
-    "isTransparent": true,
-    "displayMode": "adaptive",
-    "locale": "in"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
-</div>
+                <div class="capitalSingle">
+                    <h2 style="text-align: center;">Economy at a Glance</h2>
+                    <div class="tradingview-widget-container">
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": 
+                            [
+                                {
+                                    "description": "GDP",
+                                    "proName": "ECONOMICS:INGDP"
+                                },
+                                {
+                                    "description": "Real GDP",
+                                    "proName": "ECONOMICS:INGDPCP"
+                                },
+                                {
+                                    "description": "GDP Growth Rate",
+                                    "proName": "ECONOMICS:INGDPQQ"
+                                },
+                                {
+                                    "description": "Inflation Rate (Year over Year)",
+                                    "proName": "ECONOMICS:INIRYY"
+                                },
+                                {
+                                    "description": "Consumer Price Index",
+                                    "proName": "ECONOMICS:INCPI"
+                                },
+                                {
+                                    "description": "Consumer Price Increase",
+                                    "proName": "FRED:FPCPITOTLZGIND"
+                                },
+                                {
+                                    "description": "Interest Rate",
+                                    "proName": "ECONOMICS:ININTR"
+                                },
+                                {
+                                    "description": "Reverse Repo Rate",
+                                    "proName": "ECONOMICS:INRRR"
+                                },
+                                {
+                                    "description": "Cash Reserve Ratio",
+                                    "proName": "ECONOMICS:INCRR"
+                                },
+                                {
+                                    "description": "FOREX Reserves",
+                                    "proName": "ECONOMICS:INFER"
+                                },
+                                {
+                                    "description": "Gold Reserves",
+                                    "proName": "ECONOMICS:INGRES"
+                                },
+                                {
+                                    "description": "Crude Oil Production",
+                                    "proName": "ECONOMICS:INCOP"
+                                },
+                                {
+                                    "description": "Foreign Direct Investments",
+                                    "proName": "ECONOMICS:INFDI"
+                                },
+                                {
+                                    "description": "Imports",
+                                    "proName": "ECONOMICS:INIMP"
+                                },
+                                {
+                                    "description": "Exports",
+                                    "proName": "ECONOMICS:INEXP"
+                                },
+                                {
+                                    "description": "Government Budget",
+                                    "proName": "ECONOMICS:INGBP"
+                                },
+                                {
+                                    "description": "Bank Lending Rate",
+                                    "proName": "ECONOMICS:INBLR"
+                                }
+                            ],
+                            "showSymbolLogo": true,
+                            "colorTheme": "dark",
+                            "isTransparent": true,
+                            "displayMode": "adaptive",
+                            "locale": "in"
+                        }
+                        </script>
+                    </div>
+                </div>
 
-<div class="capitalSingle">
-    <h2 style="text-align: center;">Market Conditions</h2>
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "description": "BSE SENSEX",
-        "proName": "BSE:SENSEX"
-      },
-      {
-        "description": "MCX",
-        "proName": "BSE:MCX"
-      },
-      {
-        "description": "NASDAQ 100",
-        "proName": "NDX"
-      }
-    ],
-    "showSymbolLogo": true,
-    "colorTheme": "dark",
-    "isTransparent": true,
-    "displayMode": "adaptive",
-    "locale": "in"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
+                <div class="capitalSingle">
+                    <h2 style="text-align: center;">Market Conditions</h2>
 
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-    {
-    "symbols": [
-      {
-        "description": "SENSEX",
-        "proName": "BSE:SENSEX"
-      },
-      {
-        "description": "Automobiles",
-        "proName": "BSE:AUTO"
-      },
-      {
-        "description": "Bank",
-        "proName": "BSE:BANK"
-      },
-      {
-        "description": "Capital Goods",
-        "proName": "BSE:CG"
-      },
-      {
-        "description": "Consumer Durables",
-        "proName": "BSE:CD"
-      },
-      {
-        "description": "Financial Services",
-        "proName": "BSE:FINSER"
-      },
-      {
-        "description": "Healthcare",
-        "proName": "BSE:HC"
-      },
-      {
-        "description": "Industrials",
-        "proName": "BSE:INDSTR"
-      },
-      {
-        "description": "Metal",
-        "proName": "BSE:METAL"
-      },
-      {
-        "description": "Oil and Gas",
-        "proName": "BSE:OILGAS"
-      },
-      {
-        "description": "Power Industries",
-        "proName": "BSE:POWER"
-      },
-      {
-        "description": "IT",
-        "proName": "BSE:IT"
-      },
-      {
-        "description": "Real Estates",
-        "proName": "BSE:REALTY"
-      },
-      {
-        "description": "Telecom",
-        "proName": "BSE:TELCOM"
-      }
-    ],
-    "showSymbolLogo": true,
-    "colorTheme": "dark",
-    "isTransparent": true,
-    "displayMode": "adaptive",
-    "locale": "in"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
+                    <div class="tradingview-widget-container">
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": 
+                            [
+                                {
+                                    "description": "BSE SENSEX",
+                                    "proName": "BSE:SENSEX"
+                                },
+                                {
+                                    "description": "MCX",
+                                    "proName": "BSE:MCX"
+                                },
+                                {
+                                    "description": "NASDAQ 100",
+                                    "proName": "NDX"
+                                }
+                            ],
+                            "showSymbolLogo": true,
+                            "colorTheme": "dark",
+                            "isTransparent": true,
+                            "displayMode": "adaptive",
+                            "locale": "in"
+                        }
+                    </script>
+                    </div>
 
-  <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": [
+                                {
+                                    "description": "SENSEX",
+                                    "proName": "BSE:SENSEX"
+                                },
+                                {
+                                    "description": "Automobiles",
+                                    "proName": "BSE:AUTO"
+                                },
+                                {
+                                    "description": "Bank",
+                                    "proName": "BSE:BANK"
+                                },
+                                {
+                                    "description": "Capital Goods",
+                                    "proName": "BSE:CG"
+                                },
+                                {
+                                    "description": "Consumer Durables",
+                                    "proName": "BSE:CD"
+                                },
+                                {
+                                    "description": "Financial Services",
+                                    "proName": "BSE:FINSER"
+                                },
+                                {
+                                    "description": "Healthcare",
+                                    "proName": "BSE:HC"
+                                },
+                                {
+                                    "description": "Industrials",
+                                    "proName": "BSE:INDSTR"
+                                },
+                                {
+                                    "description": "Metal",
+                                    "proName": "BSE:METAL"
+                                },
+                                {
+                                    "description": "Oil and Gas",
+                                    "proName": "BSE:OILGAS"
+                                },
+                                {
+                                    "description": "Power Industries",
+                                    "proName": "BSE:POWER"
+                                },
+                                {
+                                    "description": "IT",
+                                    "proName": "BSE:IT"
+                                },
+                                {
+                                    "description": "Real Estates",
+                                    "proName": "BSE:REALTY"
+                                },
+                                {
+                                    "description": "Telecom",
+                                    "proName": "BSE:TELCOM"
+                                }
+                            ],
+                            "showSymbolLogo": true,
+                            "colorTheme": "dark",
+                            "isTransparent": true,
+                            "displayMode": "adaptive",
+                            "locale": "in"
+                        }
+                        </script>
+                    </div>
+
 <div class="tradingview-widget-container">
     <div class="tradingview-widget-container__widget"></div>
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -608,86 +600,40 @@
 </div>
 
 <div class="capitalSingle">
-    <h2 style="text-align: center;">Trading Stocks</h2>
-    <div class="capitalShowcase">
-        <div class="symbolShowcase">
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-              {
-              "symbol": "BSE:SENSEX",
-              "width": "100%",
-              "colorTheme": "dark",
-              "isTransparent": true,
-              "locale": "in"
-            }
-              </script>
-            </div>
-        </div>
-
-        <div class="symbolShowcase">
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-              {
-              "symbol": "BSE:SENSEX",
-              "width": "100%",
-              "colorTheme": "dark",
-              "isTransparent": true,
-              "locale": "in"
-            }
-              </script>
-            </div>
-        </div>
-
-        <div class="symbolShowcase">
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-              {
-              "symbol": "BSE:SENSEX",
-              "width": "100%",
-              "colorTheme": "dark",
-              "isTransparent": true,
-              "locale": "in"
-            }
-              </script>
-            </div>
-        </div>
-
-        <div class="symbolShowcase">
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-              {
-              "symbol": "BSE:SENSEX",
-              "width": "100%",
-              "colorTheme": "dark",
-              "isTransparent": true,
-              "locale": "in"
-            }
-              </script>
-            </div>
-        </div>
-
-        <div class="symbolShowcase">
-            <div class="tradingview-widget-container">
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>
-              {
-              "symbol": "BSE:SENSEX",
-              "width": "100%",
-              "colorTheme": "dark",
-              "isTransparent": true,
-              "locale": "in"
-            }
-              </script>
-            </div>
-        </div>
-          
+    <h2 style="text-align: center;">Tradeable Stocks</h2>
+    <!-- TradingView Widget BEGIN -->
+  <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+      "symbols": [
+        {
+          "description": "",
+          "proName": "BSE:BBOX"
+        },
+        {
+          "description": "",
+          "proName": "BSE:ZENSARTECH"
+        },
+        {
+          "description": "",
+          "proName": "BSE:DCBBANK"
+        }
+        {
+          "description": "",
+          "proName": "BSE:HINDZINC"
+        }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "locale": "in"
+    }
+      </script>
     </div>
+    <!-- TradingView Widget END -->
 </div>
-
 
 <div class="capitalSingle">
     <h2 style="text-align: center;">Stock Highlight</h2>
@@ -703,7 +649,7 @@
     "width": "100%",
     "height": "100%",
     "locale": "in",
-    "dateRange": "1M",
+    "dateRange": "1Y",
     "colorTheme": "dark",
     "trendLineColor": "rgba(255, 255, 255, 1)",
     "underLineColor": "rgba(255, 255, 255, 0)",
