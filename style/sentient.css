@@ -44,6 +44,7 @@
     font-display: swap;
 }
 
+
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
     --primary: #000000;
@@ -338,31 +339,6 @@ footer p{
     text-align: justify;
 }
 
-.nftContainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-evenly;
-    align-items: center;
-    grid-gap: 6px;
-}
-.nftItems{
-    display: grid;
-    grid-template-rows: auto auto auto;
-    justify-content: center;
-    align-items: center;
-}
-.nftItems a img{
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    object-position: center;
-}
-.nftItems p{
-    text-align: center;
-    margin: 6px;
-}
-
 @media screen and (max-width:768px) {
     main{
         font-size: var(--fontMobile);
@@ -396,9 +372,6 @@ footer p{
     .landingContainer{
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-    }
-    .nftContainer{
-        grid-template-columns: 1fr;
     }
 }
 
