@@ -52,6 +52,21 @@
     --accent:greenyellow;
     --fontWeb: 1.25rem;
     --fontMobile: 0.875rem;
+
+    --finance-low: greenyellow;
+    --finance-mid: orange;
+    --finance-high: crimson;
+
+    --finance-positive: greenyellow;
+    --finance-negative: crimson;
+
+    --invest-largecap: deepskyblue;
+    --invest-midcap: orange;
+    --invest-smallcap: crimson;
+    --invest-multicap: hotpink;
+    --invest-gold: gold;
+    --invest-balanced: greenyellow;
+    --invest-debt:fuchsia;
 }
 ::selection {
     color: var(--primary);
@@ -345,21 +360,13 @@ footer p{
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
 }
-.capitalShowcase div{
+.cardHolder{
     width: 100%;
     height: fit-content;
     aspect-ratio: 3/4;
-}
-
-.capitalContainer{
-    width: 100%;
-    height: fit-content;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 2fr;
 }
 
 .capitalSingle{
@@ -398,6 +405,102 @@ footer p{
     text-align: justify;
 }
 
+.investCard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    aspect-ratio: 16/9;
+}
+
+.investCardRow{
+    width: 90%;
+    height: fit-content;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-column-gap: 16px;
+}
+
+.cardHeading{
+    font-size: 1.5rem!important;
+}
+
+.investCardRow p{
+   margin: 0;
+   font-size: 0.875rem;
+}
+
+.set{
+    grid-template-columns: 1fr;
+}
+
+.bulk{
+    grid-template-columns: 1fr 1fr;
+}
+
+.button{
+    height: fit-content;
+    font-weight: normal;
+    border: 2px var(--secondary) solid;
+    color: var(--secondary);
+    background-color: var(--primary);
+    cursor: pointer;
+    font-size: var(--fontWeb);
+    user-select: none;
+    border-radius: 30px;
+    text-align: center;
+}
+.volatility{
+    width: fit-content;
+    width: 100%;
+    text-align: center;
+}
+
+.low{
+    color: var(--primary);
+    background-color: var(--finance-low);
+}
+.med{
+    color: var(--primary);
+    background-color: var(--finance-mid);
+}
+.high{
+    color: var(--primary);
+    background-color: var(--finance-high);
+}
+
+.positive{
+    color: var(--finance-positive);
+}
+.negative{
+    color: var(--finance-negative);
+}
+
+.largecap{
+    color: var(--invest-largecap);
+}
+.midcap{
+    color: var(--invest-midcap);
+}
+.smallcap{
+    color: var(--invest-smallcap);
+}
+.multicap{
+    color: var(--invest-multicap);
+}
+.balanced{
+    color: var(--invest-balanced);
+}
+.debt{
+    color: var(--invest-debt);
+}
+.gold{
+    color: var(--invest-gold);
+}
+
 @media screen and (max-width:768px) {
     main{
         font-size: var(--fontMobile);
@@ -431,9 +534,6 @@ footer p{
     .landingContainer{
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
-    }
-    .capitalContainer{
-        grid-template-columns: 1fr;
     }
     .capitalShowcase{
         grid-template-columns: 1fr;
