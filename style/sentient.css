@@ -63,10 +63,15 @@
     --invest-largecap: deepskyblue;
     --invest-midcap: orange;
     --invest-smallcap: crimson;
-    --invest-multicap: hotpink;
+    --invest-multicap: yellow;
     --invest-gold: gold;
     --invest-balanced: greenyellow;
     --invest-debt:fuchsia;
+
+    --invest-cards-index: linear-gradient(120deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.7) 100%);
+    --invest-cards-growth: linear-gradient(120deg, rgba(212, 252, 121, 0.1) 0%, rgba(150, 230, 161, 0.7) 100%);
+    --invest-cards-thematics: linear-gradient(120deg, rgba(168, 237, 234, 0.1) 0%, rgba(254, 214, 227, 0.7) 100%);
+    --invest-cards-aggressive: linear-gradient(120deg, rgba(252, 96, 118, 0.1) 0%, rgba(255, 51, 0, 0.7) 100%);;
 }
 ::selection {
     color: var(--primary);
@@ -360,13 +365,8 @@ footer p{
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
-}
-.cardHolder{
-    width: 100%;
-    height: fit-content;
-    aspect-ratio: 3/4;
 }
 
 .capitalSingle{
@@ -412,7 +412,24 @@ footer p{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/3;
+    border-radius: 12px;
+}
+
+.investIndex{
+    background-image: var(--invest-cards-index);
+}
+
+.investGrowth{
+    background-image: var(--invest-cards-growth);
+}
+
+.investThematics{
+    background-image: var(--invest-cards-thematics);
+}
+
+.investAggressive{
+    background-image: var(--invest-cards-aggressive);
 }
 
 .investCardRow{
@@ -425,7 +442,7 @@ footer p{
 }
 
 .cardHeading{
-    font-size: 1.5rem!important;
+    font-size: 2vw!important;
 }
 
 .investCardRow p{
@@ -446,12 +463,18 @@ footer p{
     font-weight: normal;
     border: 2px var(--secondary) solid;
     color: var(--secondary);
-    background-color: var(--primary);
+    background-color: none;
     cursor: pointer;
     font-size: var(--fontWeb);
     user-select: none;
     border-radius: 30px;
     text-align: center;
+}
+
+.button:hover{
+    border: 2px var(--accent) solid;
+    color: var(--primary);
+    background-color: var(--accent);
 }
 .volatility{
     width: fit-content;
@@ -501,7 +524,16 @@ footer p{
     color: var(--invest-gold);
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px) and (min-width: 481px){
+    .capitalShowcase{
+        grid-template-columns: 1fr 1fr;
+    }
+    .cardHeading{
+        font-size: 1.5vh!important;
+    }
+}
+
+@media screen and (max-width:480px) {
     main{
         font-size: var(--fontMobile);
     }
@@ -540,6 +572,12 @@ footer p{
     }
     .finePrint{
         width: 100%;
+    }
+    .cardHeading{
+        font-size: 1rem!important;
+    }
+    .investCard{
+        aspect-ratio: 4/3;
     }
 }
 
