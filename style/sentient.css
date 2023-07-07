@@ -347,6 +347,11 @@ footer p{
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.capitalShowcase div{
+    width: 100%;
+    height: fit-content;
+    aspect-ratio: 3/4;
+}
 
 .capitalContainer{
     width: 100%;
@@ -385,14 +390,12 @@ footer p{
     aspect-ratio: 16/9;
 }
 
-.symbolShowcase{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 4/3;
+.finePrint{
+    width: 50%;
+}
+.finePrint p{
+    font-size: 0.5rem;
+    text-align: justify;
 }
 
 @media screen and (max-width:768px) {
@@ -433,7 +436,10 @@ footer p{
         grid-template-columns: 1fr;
     }
     .capitalShowcase{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    .finePrint{
+        width: 100%;
     }
 }
 
