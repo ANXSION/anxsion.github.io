@@ -36,7 +36,66 @@
     </head>
 
     <body>
-        <noscript><p>&#9888;</p><p>Enable JavaScript to ensure optimal functionality and seamless operations</p></noscript>    
+        <noscript><p>&#9888;</p><p>Enable JavaScript to ensure optimal functionality and seamless operations</p></noscript>
+        
+        <dialog id="disclaimer">
+            <p id="disclaimerData"></p>
+            <br>
+            <form method="dialog">
+                <button>I Understand</button>
+            </form>
+        </dialog>
+
+        <dialog id="caseStatus">
+            <div id="clientQuery">
+                <label for="clientId">Client ID:</label>
+                <br>
+                <input type="text" id="clientIdInput" name="clientId" placeholder="Enter your Client ID" required>
+                <p id="clienterror" style="color: crimson;"></p>
+
+                <button onclick="caseSearch()">Search</button>
+                <button onclick="document.getElementById('caseStatus').close()">Close</button>
+            </div>
+            
+            <div id="clientContainer">
+                <div class="clientDetails">
+                    <div class="clientData">
+                        <p style="text-decoration: underline;">Client Code:</p>
+                        <p id="clientCode"></p>
+                    </div>
+    
+                    <div class="clientData">
+                        <p style="text-decoration: underline;">Contract Type:</p>
+                        <p id="clientContract"></p>
+                    </div>
+    
+                    <div class="clientData">
+                        <p style="text-decoration: underline;">Meeting Date:</p>
+                        <p id="clientMeeting"></p>
+                    </div>
+    
+                    <div class="clientData">
+                        <p style="text-decoration: underline;">Status:</p>
+                        <p id="clientStatus"></p>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="clientProcess">
+                    <div class="clientWorkUpdate">
+                        <p style="text-decoration: underline;">Work Update:</p>
+                        <p id="clientWorkUpdate"></p>
+                    </div>
+    
+                    <br>
+                    <form method="dialog">
+                        <button>Close</button>
+                    </form>
+                </div>
+            </div>
+
+        </dialog>
 
         <header>
             <div id="mobileNavigation">
@@ -81,7 +140,6 @@
                     <h1>Welcome.</h1>
                     <p style="margin: 0;">We are here to secure the future of human species.</p>
                     <p>Legally and Technologically.</p>
-
                 </section>
 
                 <section>
@@ -117,6 +175,7 @@
                 <img style="width: 100%;filter: invert(100%);" src="./asset/icon/guardian.png" alt="">
 
                 <section class="guardianButton">
+                    <button onclick="casestatus()">Case Status</button>
                     <button onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
                     <button onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate</button>
                 </section>
@@ -294,13 +353,9 @@
 
                 <div class="capitalSingle">
                     <div class="finePrint">
-                        <p style="text-align: center;">DISCLAIMER</p>
-
-                        <p>We provide market data and curated list of portfolos that we invest in ourselves. We are not an investment or financial advisor. We do not provide suggestions for stocks and portfolio that we ourselves dont deal with. The investments that we offer are those in which we ourselves invest as well. We provide data and a group to kickstart the investment journey, not promises of potential gains. Investing involves risk, and there is always a risk to lose money.</p>
+                        <button onclick="disclaimerFunc('main')">Disclaimer</button>
                     </div>
                 </div>
-
-                
 
                 <div class="capitalSingle">
                     <h2 style="text-align: center;">Economy at a Glance</h2>
@@ -654,19 +709,20 @@
                 </div>
 
                 <div class="capitalSingle">
-                    <h2 style="text-align: center;">Trending Smallcases</h2>
+                    <h2 style="text-align: center;">Portfolio Collections</h2>
+
                     <div class="capitalSingle">
                         <div class="finePrint">
-                            <p style="text-align: center;">DISCLAIMER</p>
-    
-                            <p>The logos of third parties that are displayed on our website or in our marketing materials are the property of their respective owners. We do not claim any ownership or affiliation with these third-party logos. The use of these logos is for identification purposes only and does not imply any endorsement or sponsorship by the respective owners.</p>
+                            <button onclick="disclaimerFunc('portfolio')">Disclaimer</button>
                         </div>
                     </div>
+
+                    <h2 style="text-align: center;">Smallcase</h2>
 
                     <div class="capitalShowcase">
 
                         <!--All Weathering Investing-->
-                        <div class="investCard investGrowth">
+                        <div class="investCard hybrid">
                             <div class="investCardRow set">
                                 <p class="cardHeading">All Weather Investing</p>
                             </div>
@@ -675,27 +731,24 @@
                                     <p class="volatility low">Low Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Windmill Capital</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="positive">Balanced</p>
+                                    <p>Balanced</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 4,963.00</p>
                                 </div>
                             </div>
-                            <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=SCAW_0001&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
-                            </div>
                         </div>
 
                         <!--Top 100 Stocks-->
-                        <div class="investCard investIndex">
+                        <div class="investCard equity">
                             <div class="investCardRow set">
                                 <p class="cardHeading">Top 100 Stocks</p>
                             </div>
@@ -704,27 +757,24 @@
                                     <p class="volatility med">Mid Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Windmill Capital</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="largecap">Large Cap</p>
+                                    <p>Large Cap</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 1,530.00</p>
                                 </div>
                             </div>
-                            <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=SCET_0004&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
-                            </div>
                         </div>
 
                         <!--Equity & Gold-->
-                        <div class="investCard investGrowth">
+                        <div class="investCard hybrid">
                             <div class="investCardRow set">
                                 <p class="cardHeading">Equity & Gold</p>
                             </div>
@@ -733,27 +783,24 @@
                                     <p class="volatility low">Low Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Windmill Capital</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="balanced">Balanced</p>
+                                    <p>Balanced</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 313.00</p>
                                 </div>
                             </div>
-                            <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=SCET_0005&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
-                            </div>
                         </div>
 
                         <!--CANSLIM-esque-->
-                        <div class="investCard investThematics">
+                        <div class="investCard equity">
                             <div class="investCardRow set">
                                 <p class="cardHeading">CANSLIM-esque</p>
                             </div>
@@ -762,27 +809,24 @@
                                     <p class="volatility med">Med Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Windmill Capital</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="multicap">Multi Cap</p>
+                                    <p>Multi Cap</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 49,339.00</p>
                                 </div>
                             </div>
-                            <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=SCMO_0029&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
-                            </div>
                         </div>
 
                         <!--Green Energy-->
-                        <div class="investCard investThematics">
+                        <div class="investCard thematic">
                             <div class="investCardRow set">
                                 <p class="cardHeading">Green Energy</p>
                             </div>
@@ -791,27 +835,24 @@
                                     <p class="volatility high">High Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Niveshaay</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="smallcap">Small Cap</p>
+                                    <p>Small Cap</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 81,842.00</p>
                                 </div>
                             </div>
-                            <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=NIVTR_0001&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
-                            </div>
                         </div>
 
                         <!--Listed Venture Capital-->
-                        <div class="investCard investAggressive">
+                        <div class="investCard equity">
                             <div class="investCardRow set">
                                 <p class="cardHeading">Listed Venture Capital</p>
                             </div>
@@ -820,27 +861,24 @@
                                     <p class="volatility high">High Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Lotusdew Wealth</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="smallcap">Small Cap</p>
+                                    <p>Small Cap</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 43,142.00</p>
                                 </div>
                             </div>
-                            <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=LTDMO_0001&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
-                            </div>
                         </div>
 
                         <!--Gulaq Emergency Fund-->
-                        <div class="investCard investGrowth">
+                        <div class="investCard debt">
                             <div class="investCardRow set">
                                 <p class="cardHeading">Gulaq Emergency Fund</p>
                             </div>
@@ -849,24 +887,288 @@
                                     <p class="volatility low">Low Volatility</p>
                                 </div>
                                 <div class="set">
-                                    <p>Created By</p>
+                                    <p>Managed By</p>
                                     <p>Estee</p>
                                 </div>
                             </div>
                             <div class="investCardRow bulk">
                                 <div class="set">
                                     <p>Type</p>
-                                    <p class="debt">Debt</p>
+                                    <p>Debt</p>
                                 </div>
                                 <div class="set">
                                     <p>Investment</p>
                                     <p>₹ 1,351.00</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <h2 style="text-align: center;">Mutual Funds</h2>
+
+                    <div class="capitalShowcase">
+
+                        <!--Emerging Business Fund-->
+                        <div class="investCard equity">
                             <div class="investCardRow set">
-                                <a class="button" href="https://www.smallcase.com/embed/smallcase?scid=ESTMO_0005&cardsize=big&primaryCta=invest" target="_blank">Invest</a>
+                                <p class="cardHeading">Emerging Business Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>Bandhan</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Small Cap</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 100</p>
+                                </div>
                             </div>
                         </div>
+
+                        <!--Index Nifty 50 Fund-->
+                        <div class="investCard equity">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Index Nifty 50 Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>HDFC</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Index</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 100</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Pru Dividend Yield Equity Fund-->
+                        <div class="investCard equity">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Pru Dividend Yield Equity Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>ICICI</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Dividend Yield</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 100</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Asset Midcap Fund-->
+                        <div class="investCard equity">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Asset Midcap Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>Mirae</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Mid Cap</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 1000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--India Value Fund-->
+                        <div class="investCard equity">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">India Value Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>Templeton</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Value</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 500</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Multi Asset Allocation Fund-->
+                        <div class="investCard equity">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Multi Asset Allocation Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>Edelweiss</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Multi Cap </p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 500</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Balanced Adv Fund-->
+                        <div class="investCard hybrid">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Balanced Adv Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>HDFC</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Dynamic Asset</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 100</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Liquid Fund-->
+                        <div class="investCard debt">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Liquid Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility low">Low Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>Nippon India</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Liquid</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 100</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Short Term Income Fund-->
+                        <div class="investCard debt">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Short Term Income Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility med">Med Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>UTI</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Short Duration</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 500</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Business Cycle Fund-->
+                        <div class="investCard thematic">
+                            <div class="investCardRow set">
+                                <p class="cardHeading">Business Cycle Fund</p>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div>
+                                    <p class="volatility high">High Volatility</p>
+                                </div>
+                                <div class="set">
+                                    <p>Managed By</p>
+                                    <p>TATA</p>
+                                </div>
+                            </div>
+                            <div class="investCardRow bulk">
+                                <div class="set">
+                                    <p>Type</p>
+                                    <p>Thematic</p>
+                                </div>
+                                <div class="set">
+                                    <p>SIP</p>
+                                    <p>₹ 150</p>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
@@ -1551,6 +1853,56 @@
                     window.scrollTo(0,0);
                 }
             }
+
+            function disclaimerFunc(disclaimertype){
+                if(disclaimertype=='main'){
+                    document.getElementById("disclaimerData").innerText ='We provide market data and curated list of portfolos that we invest in ourselves. We are not an investment or financial advisor. We do not provide suggestions for stocks and portfolio that we ourselves dont deal with. The investments that we offer are those in which we ourselves invest as well. We provide data and a group to kickstart the investment journey, not promises of potential gains. Investing involves risk, and there is always a risk to lose money.';
+
+                    document.getElementById("disclaimer").showModal();
+                }    
+
+                else if(disclaimertype=='portfolio'){
+                    document.getElementById("disclaimerData").innerText ='The logos of third parties that are displayed on our website or in our marketing materials are the property of their respective owners. We do not claim any ownership or affiliation with these third-party logos. The use of these logos is for identification purposes only and does not imply any endorsement or sponsorship by the respective owners.';
+
+                    document.getElementById("disclaimer").showModal();
+                }      
+            
+            }
+
+            function casestatus(){
+                document.getElementById("clientQuery").style.display='flex';
+                document.getElementById("clientContainer").style.display='none';
+                document.getElementById("clienterror").innerText='';
+                document.getElementById("clientCode").innerText='';
+                document.getElementById("clientContract").innerText='';
+                document.getElementById("clientMeeting").innerText='';
+                document.getElementById("clientStatus").innerText='';
+                document.getElementById("clientWorkUpdate").innerText='';
+
+                document.getElementById("caseStatus").showModal();
+            }
+
+            function caseSearch(){
+                var clientIdSearch= document.getElementById("clientIdInput").value;
+
+                if (clientIdSearch == ''){
+                    document.getElementById("clienterror").innerText='Client ID is necessary to access the data.';
+                }
+                else if (clientIdSearch == '12345'){
+                    document.getElementById("clientCode").innerText='Test ID';
+                    document.getElementById("clientContract").innerText='Type of Contract';
+                    document.getElementById("clientMeeting").innerText='July 8, 2023';
+                    document.getElementById("clientStatus").innerText='Pending';
+                    document.getElementById("clientWorkUpdate").innerText='No remarks';
+                    document.getElementById("clientQuery").style.display='none';
+                    document.getElementById("clientContainer").style.display='flex';
+
+                }
+                else{
+                    document.getElementById("clienterror").innerText='Please enter a valid Client ID.';
+                }
+            }
+
 
             ini();
 

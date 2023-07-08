@@ -47,8 +47,8 @@
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
-    --primary: #000000;
-    --secondary: #ffffff;
+    --primary: black;
+    --secondary: white;
     --accent:greenyellow;
     --fontWeb: 1.125rem;
     --fontMobile: 0.875rem;
@@ -68,18 +68,11 @@
     --finance-positive: greenyellow;
     --finance-negative: crimson;
 
-    --invest-largecap: deepskyblue;
-    --invest-midcap: orange;
-    --invest-smallcap: crimson;
-    --invest-multicap: greenyellow;
-    --invest-gold: gold;
-    --invest-balanced: greenyellow;
-    --invest-debt:greenyellow;
-
-    --invest-cards-index: linear-gradient(60deg, rgba(112, 252, 252, 0) 0%, rgba(112, 224, 252, 0.7) 60%, rgba(112, 231, 252, 1) 100%);
-    --invest-cards-growth: linear-gradient(60deg, rgba(174, 255, 198, 0) 0%, rgba(112, 252, 121, 0.7) 60%, rgba(112, 252, 184, 1) 100%);
-    --invest-cards-thematics: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 165, 237, 0.779) 60%, rgb(255, 159, 63) 100%);
-    --invest-cards-aggressive: linear-gradient(60deg, rgba(252, 112, 112, 0) 0%, rgba(255, 65, 65, 0.7) 60%, rgb(252, 112, 112) 100%);
+    --invest-cards-equity: linear-gradient(60deg, rgba(112, 252, 252, 0) 0%, rgba(39, 212, 255, 0.807) 60%, rgba(112, 231, 252, 1) 100%);
+    --invest-cards-debt: linear-gradient(60deg, rgba(174, 255, 198, 0) 0%, rgba(88, 255, 100, 0.7) 60%, rgba(128, 255, 193)100%);
+    --invest-cards-thematic: linear-gradient(60deg, rgba(252, 112, 112, 0) 0%, rgba(255, 65, 65, 0.7) 60%, rgb(252, 112, 112) 100%);
+    --invest-cards-hybrid: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 165, 237, 0.779) 60%, rgb(255, 159, 63) 100%);
+    --invest-cards-gold: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 176, 7, 0.785) 60%, rgb(255, 215, 36) 100%);
 }
 ::selection {
     color: var(--primary);
@@ -164,6 +157,7 @@ button{
     user-select: none;
     margin-bottom: 6px;
     border-radius: 30px;
+    outline: none;
 }
 
 button:hover{
@@ -171,6 +165,7 @@ button:hover{
     background-color: var(--accent);
     border: 2px var(--accent) solid;
 }
+
 
 nav{
     width: 100%;
@@ -204,6 +199,37 @@ footer{
     background-color: var(--primary);
 }
 
+dialog{
+    width: 50%;
+    text-align: justify;
+    padding: 27px;
+    border: none;
+    border-radius: 12px;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+dialog[open] {
+    animation: show 0.3s;
+}
+
+@keyframes show{
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;;
+    }
+}
+
+
+input{
+    border: none;
+    border-bottom: 2px solid var(--primary);
+    outline: none;
+}
+
 address{
     font-style: italic;
     font-size: var(--fontWeb);
@@ -223,7 +249,6 @@ noscript p{
     font-size: var(--fontWeb);
     margin: 0;
 }
-
 
 footer p{
     margin: 0;
@@ -277,14 +302,72 @@ footer p{
     display: grid;
 }
 
-.guardianButton{
+#clientQuery{
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#clientQuery input{
+    width: 50%;
+}
+#clientQuery button{
+    width: 50%;
+}
+
+
+
+#clientContainer{
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#clientContainer button{
+    width: 50%;
+}
+
+.clientDetails{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-gap: 1rem;
+    width: 100%;
+}
+
+.clientData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clientData p{
+    margin: 0;
+}
+
+.clientProcess{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.guardianButton{
+    display: grid;
+    grid-template-columns: 1fr;
     grid-gap: 6px;
     width: 100%;
     justify-content: center;
     align-items: center;
+}
+
+.guardianButton button{
+    width: 50%;
+    justify-self: center;
 }
 
 .terms p{
@@ -395,22 +478,8 @@ footer p{
     align-items: center;
 }
 
-.symbol{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 16/9;
-}
-
 .finePrint{
     width: 50%;
-}
-.finePrint p{
-    font-size: 0.5rem;
-    text-align: justify;
 }
 
 .investCard{
@@ -422,22 +491,23 @@ footer p{
     align-items: center;
     aspect-ratio: 16/9;
     border-radius: 12px;
+    user-select: none;
 }
 
-.investIndex{
-    background-image: var(--invest-cards-index);
+.equity{
+    background-image: var(--invest-cards-equity);
 }
-
-.investGrowth{
-    background-image: var(--invest-cards-growth);
+.debt{
+    background-image: var(--invest-cards-debt);
 }
-
-.investThematics{
-    background-image: var(--invest-cards-thematics);
+.gold{
+    background-image: var(--invest-cards-gold);
 }
-
-.investAggressive{
-    background-image: var(--invest-cards-aggressive);
+.thematic{
+    background-image: var(--invest-cards-thematic);
+}
+.hybrid{
+    background-image: var(--invest-cards-hybrid);
 }
 
 .investCardRow{
@@ -466,27 +536,6 @@ footer p{
     grid-template-columns: 1fr 1fr;
 }
 
-.button{
-    width: 50%;
-    height: fit-content;
-    font-weight: normal;
-    border: 2px var(--secondary) solid;
-    color: var(--secondary);
-    background-color: none;
-    cursor: pointer;
-    font-size: var(--fontWeb-versatile);
-    user-select: none;
-    border-radius: 30px;
-    text-align: center;
-    justify-self: center;
-    align-items: center;
-}
-
-.button:hover{
-    border: 2px var(--accent) solid;
-    color: var(--primary);
-    background-color: var(--accent);
-}
 .volatility{
     width: fit-content;
     width: 100%;
@@ -511,28 +560,6 @@ footer p{
 }
 .negative{
     color: var(--finance-negative);
-}
-
-.largecap{
-    color: var(--invest-largecap);
-}
-.midcap{
-    color: var(--invest-midcap);
-}
-.smallcap{
-    color: var(--invest-smallcap);
-}
-.multicap{
-    color: var(--invest-multicap);
-}
-.balanced{
-    color: var(--invest-balanced);
-}
-.debt{
-    color: var(--invest-debt);
-}
-.gold{
-    color: var(--invest-gold);
 }
 
 @media screen and (max-width:1024px) and (min-width: 481px){
@@ -571,8 +598,10 @@ footer p{
         display: none;
     }
     .guardianButton{
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        width: 100%;
+    }
+    .guardianButton button{
+        width: 100%;
     }
     .idimage{
         width: 100%;
@@ -601,6 +630,9 @@ footer p{
     }
     .button{
         font-size: var(--fontMobile-versatile);
+    }
+    dialog{
+        width: 75%;
     }
 }
 
