@@ -50,8 +50,16 @@
     --primary: #000000;
     --secondary: #ffffff;
     --accent:greenyellow;
-    --fontWeb: 1.25rem;
+    --fontWeb: 1.125rem;
     --fontMobile: 0.875rem;
+
+    --fontWeb-versatile: 1.04vw;
+    --fontTablet-versatile: 1.17vw;
+    --fontMobile-versatile: 2.9vw;
+
+    --CardHeadWeb: 1.30vw;
+    --CardHeadTablet: 2vw;
+    --CardHeadMobile: 4vw;
 
     --finance-low: greenyellow;
     --finance-mid: orange;
@@ -63,15 +71,15 @@
     --invest-largecap: deepskyblue;
     --invest-midcap: orange;
     --invest-smallcap: crimson;
-    --invest-multicap: yellow;
+    --invest-multicap: greenyellow;
     --invest-gold: gold;
     --invest-balanced: greenyellow;
-    --invest-debt:fuchsia;
+    --invest-debt:greenyellow;
 
-    --invest-cards-index: linear-gradient(120deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.7) 100%);
-    --invest-cards-growth: linear-gradient(120deg, rgba(212, 252, 121, 0.1) 0%, rgba(150, 230, 161, 0.7) 100%);
-    --invest-cards-thematics: linear-gradient(120deg, rgba(168, 237, 234, 0.1) 0%, rgba(254, 214, 227, 0.7) 100%);
-    --invest-cards-aggressive: linear-gradient(120deg, rgba(252, 96, 118, 0.1) 0%, rgba(255, 51, 0, 0.7) 100%);;
+    --invest-cards-index: linear-gradient(60deg, rgba(112, 252, 252, 0) 0%, rgba(112, 224, 252, 0.7) 60%, rgba(112, 231, 252, 1) 100%);
+    --invest-cards-growth: linear-gradient(60deg, rgba(174, 255, 198, 0) 0%, rgba(112, 252, 121, 0.7) 60%, rgba(112, 252, 184, 1) 100%);
+    --invest-cards-thematics: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 143, 186, 0.7) 60%, rgba(255, 255, 255, 1) 100%);
+    --invest-cards-aggressive: linear-gradient(60deg, rgba(252, 112, 112, 0) 0%, rgba(255, 65, 65, 0.7) 60%, rgba(252, 112, 112, 1) 100%);
 }
 ::selection {
     color: var(--primary);
@@ -412,7 +420,7 @@ footer p{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
     border-radius: 12px;
 }
 
@@ -442,12 +450,12 @@ footer p{
 }
 
 .cardHeading{
-    font-size: 2vw!important;
+    font-size: var(--CardHeadWeb)!important;
 }
 
 .investCardRow p{
    margin: 0;
-   font-size: 0.875rem;
+   font-size: var(--fontWeb-versatile)
 }
 
 .set{
@@ -459,16 +467,19 @@ footer p{
 }
 
 .button{
+    width: 50%;
     height: fit-content;
     font-weight: normal;
     border: 2px var(--secondary) solid;
     color: var(--secondary);
     background-color: none;
     cursor: pointer;
-    font-size: var(--fontWeb);
+    font-size: var(--fontWeb-versatile);
     user-select: none;
     border-radius: 30px;
     text-align: center;
+    justify-self: center;
+    align-items: center;
 }
 
 .button:hover{
@@ -529,7 +540,13 @@ footer p{
         grid-template-columns: 1fr 1fr;
     }
     .cardHeading{
-        font-size: 3vw!important;
+        font-size: var(--CardHeadTablet)!important;
+    }
+    .investCardRow p{
+        font-size:var(--fontTablet-versatile);
+    }
+    .button{
+        font-size: var(--fontTablet-versatile);
     }
 }
 
@@ -574,10 +591,16 @@ footer p{
         width: 100%;
     }
     .cardHeading{
-        font-size: 1rem!important;
+        font-size: var(--CardHeadMobile)!important;
     }
     .investCard{
-        aspect-ratio: 4/3;
+        aspect-ratio: 16/9;
+    }
+    .investCardRow p{
+        font-size: var(--fontMobile-versatile);
+    }
+    .button{
+        font-size: var(--fontMobile-versatile);
     }
 }
 
