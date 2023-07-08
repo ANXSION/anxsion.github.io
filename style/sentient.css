@@ -524,12 +524,12 @@ footer p{
     color: var(--invest-gold);
 }
 
-@media screen and (max-width:768px) and (min-width: 481px){
+@media screen and (max-width:1024px) and (min-width: 481px){
     .capitalShowcase{
         grid-template-columns: 1fr 1fr;
     }
     .cardHeading{
-        font-size: 1.5vh!important;
+        font-size: 3vw!important;
     }
 }
 
