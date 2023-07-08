@@ -78,8 +78,8 @@
 
     --invest-cards-index: linear-gradient(60deg, rgba(112, 252, 252, 0) 0%, rgba(112, 224, 252, 0.7) 60%, rgba(112, 231, 252, 1) 100%);
     --invest-cards-growth: linear-gradient(60deg, rgba(174, 255, 198, 0) 0%, rgba(112, 252, 121, 0.7) 60%, rgba(112, 252, 184, 1) 100%);
-    --invest-cards-thematics: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 143, 186, 0.7) 60%, rgba(255, 255, 255, 1) 100%);
-    --invest-cards-aggressive: linear-gradient(60deg, rgba(252, 112, 112, 0) 0%, rgba(255, 65, 65, 0.7) 60%, rgba(252, 112, 112, 1) 100%);
+    --invest-cards-thematics: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 165, 237, 0.779) 60%, rgb(255, 159, 63) 100%);
+    --invest-cards-aggressive: linear-gradient(60deg, rgba(252, 112, 112, 0) 0%, rgba(255, 65, 65, 0.7) 60%, rgb(252, 112, 112) 100%);
 }
 ::selection {
     color: var(--primary);
