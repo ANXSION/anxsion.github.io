@@ -52,27 +52,6 @@
     --accent:greenyellow;
     --fontWeb: 1.125rem;
     --fontMobile: 0.875rem;
-
-    --fontWeb-versatile: 1.04vw;
-    --fontTablet-versatile: 1.17vw;
-    --fontMobile-versatile: 2.9vw;
-
-    --CardHeadWeb: 1.30vw;
-    --CardHeadTablet: 2vw;
-    --CardHeadMobile: 4vw;
-
-    --finance-low: greenyellow;
-    --finance-mid: orange;
-    --finance-high: crimson;
-
-    --finance-positive: greenyellow;
-    --finance-negative: crimson;
-
-    --invest-cards-equity: linear-gradient(60deg, rgba(112, 252, 252, 0) 0%, rgba(39, 212, 255, 0.807) 60%, rgba(112, 231, 252, 1) 100%);
-    --invest-cards-debt: linear-gradient(60deg, rgba(174, 255, 198, 0) 0%, rgba(88, 255, 100, 0.7) 60%, rgba(128, 255, 193)100%);
-    --invest-cards-thematic: linear-gradient(60deg, rgba(252, 112, 112, 0) 0%, rgba(255, 65, 65, 0.7) 60%, rgb(252, 112, 112) 100%);
-    --invest-cards-hybrid: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 165, 237, 0.779) 60%, rgb(255, 159, 63) 100%);
-    --invest-cards-gold: linear-gradient(60deg, rgba(255, 255, 255, 0) 0%, rgba(255, 176, 7, 0.785) 60%, rgb(255, 215, 36) 100%);
 }
 ::selection {
     color: var(--primary);
@@ -223,6 +202,12 @@ dialog[open] {
     }
 }
 
+article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
 
 input{
     border: none;
@@ -482,85 +467,83 @@ footer p{
     width: 50%;
 }
 
-.investCard{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    aspect-ratio: 16/9;
-    border-radius: 12px;
-    user-select: none;
-}
 
-.equity{
-    background-image: var(--invest-cards-equity);
-}
-.debt{
-    background-image: var(--invest-cards-debt);
-}
-.gold{
-    background-image: var(--invest-cards-gold);
-}
-.thematic{
-    background-image: var(--invest-cards-thematic);
-}
-.hybrid{
-    background-image: var(--invest-cards-hybrid);
-}
-
-.investCardRow{
-    width: 90%;
-    height: fit-content;
+.modelPortfolio{
     display: grid;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    grid-column-gap: 16px;
-}
-
-.cardHeading{
-    font-size: var(--CardHeadWeb)!important;
-}
-
-.investCardRow p{
-   margin: 0;
-   font-size: var(--fontWeb-versatile)
-}
-
-.set{
-    grid-template-columns: 1fr;
-}
-
-.bulk{
-    grid-template-columns: 1fr 1fr;
-}
-
-.volatility{
-    width: fit-content;
     width: 100%;
+    height: fit-content;
+    padding: 0;
+    grid-row-gap: 9px;
+}
+
+
+.modelPortfolio p{
     text-align: center;
 }
 
-.low{
-    color: var(--primary);
-    background-color: var(--finance-low);
-}
-.med{
-    color: var(--primary);
-    background-color: var(--finance-mid);
-}
-.high{
-    color: var(--primary);
-    background-color: var(--finance-high);
+.debt{
+    background-color: greenyellow;
 }
 
-.positive{
-    color: var(--finance-positive);
+.equity{
+    background-color: deepskyblue;
 }
-.negative{
-    color: var(--finance-negative);
+
+.commodity{
+    background-color: gold;
 }
+
+.bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.modelPortfolioDetails{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: left;
+    align-items: flex-start;
+    width: 100%;
+    grid-gap: 9px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.modelPortfolioDetailsCategory{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.modelPortfolioItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.modelPortfolioLegend{
+    height: 12px;
+    width: 12px;
+    display: flex;
+    margin: 9px;
+    aspect-ratio: 1/1;
+}
+
 
 @media screen and (max-width:1024px) and (min-width: 481px){
     .capitalShowcase{
