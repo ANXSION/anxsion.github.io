@@ -46,6 +46,25 @@
             </form>
         </dialog>
 
+        <dialog id="contactDialog">
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <p>Phone Number:</p>
+                    <a href="tel:+919832909233">9832909233</a>
+                </div>
+                <br>
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <p>Email:</p>
+                    <a href="mailto:anuraglama5@gmail.com">anuraglama5@gmail.com</a>
+                </div>
+            </div>
+            <br>
+            <p>Your personal details, the nature of work and all other relevant data shall remain confidential.</p>
+            <form method="dialog">
+                <button>Close</button>
+            </form>
+        </dialog>
+
         <dialog id="caseStatus">
             <div id="clientQuery">
                 <label for="clientId">Client ID:</label>
@@ -176,7 +195,7 @@
 
                 <section class="guardianButton">
                     <button onclick="casestatus()">Case Status</button>
-                    <button onclick="location.href='https://wa.me/+919832909233'">Contact Us</button>
+                    <button onclick="document.getElementById('contactDialog').showModal()">Contact Us</button>
                     <button onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">Locate</button>
                 </section>
                 <br><br>
@@ -730,9 +749,6 @@
                     </div>
 
                     <div class="modelPortfolio" style=" grid-template-columns: 30% 60% 10%;">
-                        <p>30%</p>
-                        <p>60%</p>
-                        <p>10%</p>
                         <div class="bar debt"></div>
                         <div class="bar equity"></div>
                         <div class="bar commodity"></div>
@@ -818,8 +834,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <p>Reasoning</p>
                     <article>
                         
                         <ol>
@@ -829,79 +843,7 @@
                             <li>We are a relatively risk-tolerant investor, so we are comfortable allocating a significant portion of our portfolio to equities.</li>
                         </ol>
                     </article>
-
-
-                    <p>Conservative Portfolio</p>
-
-                    <div class="modelPortfolioDetails">
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: greenyellow;"></div>
-                            <div>Debt</div>
-                        </div>
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: deepskyblue;"></div>
-                            <div>Equity</div>
-                        </div>
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: gold;"></div>
-                            <div>Commodity</div>
-                        </div>
-                    </div>
-
-                    <div class="modelPortfolio" style=" grid-template-columns: 60% 30% 10%;">
-                        <div class="bar debt"></div>
-                        <div class="bar equity"></div>
-                        <div class="bar commodity"></div>
-                    </div>
-
-                    <p>Balanced Portfolio</p>
-
-                    <div class="modelPortfolioDetails">
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: greenyellow;"></div>
-                            <div>Debt</div>
-                        </div>
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: deepskyblue;"></div>
-                            <div>Equity</div>
-                        </div>
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: gold;"></div>
-                            <div>Commodity</div>
-                        </div>
-                    </div>
-
-                    <div class="modelPortfolio" style=" grid-template-columns: 45% 45% 10%;">
-                        <div class="bar debt"></div>
-                        <div class="bar equity"></div>
-                        <div class="bar commodity"></div>
-                    </div>
-
-                    <p>Aggressive Portfolio</p>
-
-                    <div class="modelPortfolioDetails">
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: greenyellow;"></div>
-                            <div>Debt</div>
-                        </div>
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: deepskyblue;"></div>
-                            <div>Equity</div>
-                        </div>
-                        <div class="modelPortfolioItem">
-                            <div class="modelPortfolioLegend" style="background-color: gold;"></div>
-                            <div>Commodity</div>
-                        </div>
-                    </div>
-
-                    <div class="modelPortfolio" style=" grid-template-columns: 20% 70% 10%;">
-                        <div class="bar debt"></div>
-                        <div class="bar equity"></div>
-                        <div class="bar commodity"></div>
-                    </div>
-
                 </div>
-
             </section>
 
             <section class="content" id="about">
