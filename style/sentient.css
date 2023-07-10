@@ -47,11 +47,13 @@
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
-    --primary: black;
-    --secondary: white;
-    --accent:greenyellow;
+    --primary: hsl(0, 0%, 0%);
+    --secondary: hsl(0, 0%, 100%);
+    --accent:hsl(84, 100%, 59%);
     --fontWeb: 1.125rem;
     --fontMobile: 0.875rem;
+
+    --element-animation: all 0.2s;
 }
 ::selection {
     color: var(--primary);
@@ -129,8 +131,8 @@ button{
     border: 2px var(--secondary) solid;
     width: 100%;
     height:48px;
-    color: var(--secondary);
-    background-color: var(--primary);
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 0%);
     cursor: pointer;
     font-size: var(--fontWeb);
     user-select: none;
@@ -140,9 +142,10 @@ button{
 }
 
 button:hover{
-    color: var(--primary);
-    background-color: var(--accent);
-    border: 2px var(--accent) solid;
+    color: hsl(0, 0%, 0%);
+    background-color: hsl(84, 100%, 59%);
+    border: 2px hsl(84, 100%, 59%) solid;
+    transition: var(--element-animation);
 }
 
 
@@ -411,6 +414,7 @@ footer p{
 .Servicesummary:hover{
     background-color: var(--accent);
     color: var(--primary);
+    transition: var(--element-animation);
 }
 
 .landingContainer{
