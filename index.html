@@ -33,6 +33,9 @@
             gtag('js', new Date());
             gtag('config', 'G-53Y0LGEE69');
         </script>
+        <script src="https://public.bnbstatic.com/static/js/ocbs/@binance/fiat-widget.js">
+            
+        </script>
     </head>
 
     <body>
@@ -405,7 +408,7 @@
                 </div>
 
                 <div class="capitalSingle">
-                    <h2 style="text-align: center;">Economy at a Glance</h2>
+                    <h2 style="text-align: center;">Economy</h2>
                     <div class="tradingview-widget-container">
                         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
                         {
@@ -419,20 +422,16 @@
                                     "proName": "ECONOMICS:INGDPCP"
                                 },
                                 {
-                                    "description": "GDP Growth Rate",
+                                    "description": "GDP Growth",
                                     "proName": "ECONOMICS:INGDPQQ"
                                 },
                                 {
-                                    "description": "Inflation Rate (Year over Year)",
+                                    "description": "Inflation Rate",
                                     "proName": "ECONOMICS:INIRYY"
                                 },
                                 {
                                     "description": "Consumer Price Index",
                                     "proName": "ECONOMICS:INCPI"
-                                },
-                                {
-                                    "description": "Consumer Price Increase",
-                                    "proName": "FRED:FPCPITOTLZGIND"
                                 },
                                 {
                                     "description": "Interest Rate",
@@ -642,48 +641,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="capitalSingle">
-                    <h2 style="text-align: center;">Cryptocurrencies</h2>
-                    <div class="tradingview-widget-container">
-                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                        {
-                            "symbols": [
-                                {
-                                    "description": "Bitcoin",
-                                    "proName": "BINANCE:BTCUSDT"
-                                },
-                                {
-                                    "description": "Ethereum",
-                                    "proName": "BINANCE:ETHUSDT"
-                                },
-                                {
-                                    "description": "Litecoin",
-                                    "proName": "BINANCE:LTCUSDT"
-                                },
-                                {
-                                    "description": "Dogecoin",
-                                    "proName": "BINANCE:DOGEUSDT"
-                                },
-                                {
-                                    "description": "Ripple",
-                                    "proName": "BINANCE:XRPUSDT"
-                                },
-                                {
-                                    "description": "Monero",
-                                    "proName": "BINANCE:XMRUSDT"
-                                }
-                            ],
-                            "showSymbolLogo": true,
-                            "colorTheme": "dark",
-                            "isTransparent": true,
-                            "displayMode": "adaptive",
-                            "locale": "in"
-                        }
-                        </script>
-                    </div>
-                </div>
-
+                
                 <div class="capitalSingle">
                     <h2 style="text-align: center;">Exchange Rates</h2>
                     <div class="tradingview-widget-container">
@@ -725,6 +683,52 @@
                         </script>
                     </div>
                 </div>
+
+                <div class="capitalSingle">
+                    <h2 style="text-align: center;">Cryptocurrencies</h2>
+                    <div class="tradingview-widget-container">
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": [
+                                {
+                                    "description": "Bitcoin",
+                                    "proName": "BINANCE:BTCUSDT"
+                                },
+                                {
+                                    "description": "Ethereum",
+                                    "proName": "BINANCE:ETHUSDT"
+                                },
+                                {
+                                    "description": "Litecoin",
+                                    "proName": "BINANCE:LTCUSDT"
+                                },
+                                {
+                                    "description": "Dogecoin",
+                                    "proName": "BINANCE:DOGEUSDT"
+                                },
+                                {
+                                    "description": "Ripple",
+                                    "proName": "BINANCE:XRPUSDT"
+                                },
+                                {
+                                    "description": "Monero",
+                                    "proName": "BINANCE:XMRUSDT"
+                                }
+                            ],
+                            "showSymbolLogo": true,
+                            "colorTheme": "dark",
+                            "isTransparent": true,
+                            "displayMode": "adaptive",
+                            "locale": "in"
+                        }
+                        </script>
+                    </div>
+                </div>
+                
+                <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <div id="widget"></div>
+                </div>
+                
             </section>
 
             <section class="content" id="about">
@@ -1271,6 +1275,23 @@
         
         <script>
 
+window.onload = function () {
+        var t = document.querySelector('#widget')
+        window.binanceFiatWidget.Widget(t, {
+            locale: 'en',
+            width: 200,
+            theme: 'dark',
+            coinInfo: {
+              fiat: 'INR',
+              crypto: 'BTC',
+              isInUS: false
+            },
+            urlParmas: {
+              us_ref: 'CPA_00QQ5QDHSB',
+              ref: 'CPA_00QQ5QDHSB'
+            }
+        })
+    }
             window.addEventListener("load", () => {
                 if ("serviceWorker" in navigator) {
                     navigator.serviceWorker.register("./anxsion-serviceworker.js");
