@@ -484,60 +484,19 @@ footer p{
     width: 50%;
 }
 
-
-.modelPortfolio{
-    display: grid;
-    justify-content: center;
-    align-items: center;
+.businessmap{
     width: 100%;
-    height: fit-content;
-    padding: 0;
-    grid-row-gap: 9px;
+    height: 40vw;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    filter: grayscale(100%);
+}
+
+.businessmap iframe{
+    border-radius: 18px;
 }
 
 
-.modelPortfolio p{
-    text-align: center;
-}
-
-.bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 16px;
-    margin: 0;
-    padding: 0;
-}
-
-.modelPortfolioDetails{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: left;
-    align-items: flex-start;
-    width: 100%;
-    grid-gap: 9px;
-    margin-top: 18px;
-    margin-bottom: 18px;
-}
-
-.modelPortfolioItem{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.modelPortfolioLegend{
-    height: 12px;
-    width: 12px;
-    display: flex;
-    margin: 9px;
-    aspect-ratio: 1/1;
-}
 
 
 @media screen and (max-width:1024px) and (min-width: 481px){
