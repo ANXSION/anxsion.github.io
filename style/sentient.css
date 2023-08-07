@@ -371,13 +371,22 @@ footer p{
     text-align: center;
 }
 
+.guardianBanner{
+    width: 75%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    justify-content: center!important;
+    align-self: center;
+}
+
 .guardianButton{
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 6px;
     width: 100%;
-    justify-content: center;
+    justify-self: center;
     align-items: center;
+    margin: auto;
 }
 
 .guardianButton button{
@@ -502,10 +511,9 @@ footer p{
 }
 
 .businessmap{
-    width: 100%;
+    width: 75%;
+    aspect-ratio: 16/9;
     height: 40vw;
-    margin-top: 48px;
-    margin-bottom: 48px;
     filter: grayscale(100%);
 }
 
@@ -542,6 +550,12 @@ footer p{
     .modelPortfolioDetails{
         grid-template-columns: 1fr 1fr;
     }
+    .guardianBanner{
+        width: 100%;
+    }
+    .businessmap{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -566,6 +580,9 @@ footer p{
     }
     #webNavigation{
         display: none;
+    }
+    .businessmap{
+        width: 100%;
     }
     .guardianButton{
         width: 100%;
@@ -607,6 +624,10 @@ footer p{
     .modelPortfolioDetails{
         grid-template-columns: 1fr;
     }
+    .guardianBanner{
+        width: 100%;
+    }
+    
 }
 
 
