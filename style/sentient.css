@@ -55,7 +55,13 @@
     --fontMobile: 0.875rem;
 
     --element-animation: all 0.3s;
+
+    --elevation1: 1;
+    --elevation2: 2;
+    --elevation3: 3;
+    --elevation4: 4;
 }
+
 ::selection {
     color: var(--primary);
     background-color: var(--secondary);
@@ -72,6 +78,7 @@ body{
     padding: 0;
     line-height: 1.5;  
     transition: 0.2s all;
+    z-index: 0;
 }
 
 main{
@@ -199,13 +206,178 @@ dialog{
     padding: 27px;
     border: none;
     border-radius: 12px;
-    z-index: 2;
+    z-index: var(--elevation2);
     justify-content: center;
     align-items: center;
 }
 
 dialog[open] {
     animation: show 0.3s;
+}
+
+.solar{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    
+}
+
+.solar > *{
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+}
+
+.mass{
+    border-radius: 50%;
+    background-color: black;
+    opacity: 10%;
+    margin: 0;
+    height: 9vw;
+    width: 9vw;
+}
+
+.sun{
+    transform: scale(1);
+}
+
+.p1{
+    animation: orbit-p1 1s linear infinite;
+}
+
+.p2{
+    animation: orbit-p2 1.849s linear infinite;
+}
+
+.p3{
+    animation: orbit-p3 5.632s linear infinite;
+}
+
+.p4{
+    animation: orbit-p4 7s linear infinite;
+}
+
+.p5{
+    animation: orbit-p5 12s linear infinite;
+}
+
+.p6{
+    animation: orbit-p6 18s linear infinite;
+}
+
+.p7{
+    animation: orbit-p7 20s linear infinite;
+}
+
+.p8{
+    animation: orbit-p8 26s linear infinite;
+}
+
+.p9{
+    animation: orbit-p9 30s linear infinite;
+}
+
+.ourgoal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    
+    
+}
+
+@keyframes orbit-p1 {
+    0%{
+        transform: rotate(0deg) translate(7vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(7vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p2 {
+    0%{
+        transform: rotate(0deg) translate(9.5vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(9.5vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p3 {
+    0%{
+        transform: rotate(0deg) translate(12vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(12vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p4 {
+    0%{
+        transform: rotate(0deg) translate(14.5vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(14.5vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p5 {
+    0%{
+        transform: rotate(0deg) translate(18.5vw) scale(0.4);
+    }
+    100%{
+        transform: rotate(360deg) translate(18.5vw) scale(0.4);
+    }
+}
+
+@keyframes orbit-p6 {
+    0%{
+        transform: rotate(0deg) translate(23.5vw) scale(0.4);
+    }
+    100%{
+        transform: rotate(360deg) translate(23.5vw) scale(0.4);
+    }
+}
+
+@keyframes orbit-p7 {
+    0%{
+        transform: rotate(0deg) translate(28vw) scale(0.3);
+    }
+    100%{
+        transform: rotate(360deg) translate(28vw) scale(0.3);
+    }
+}
+
+@keyframes orbit-p8 {
+    0%{
+        transform: rotate(0deg) translate(32vw) scale(0.3);
+    }
+    100%{
+        transform: rotate(360deg) translate(32vw) scale(0.3);
+    }
+}
+
+@keyframes orbit-p9 {
+    0%{
+        transform: rotate(0deg) translate(35vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(35vw) scale(0.2);
+    }
 }
 
 @keyframes show{
@@ -253,7 +425,7 @@ noscript{
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    z-index: 5;
+    z-index:var(--elevation2);
 }
 
 noscript p{
@@ -274,10 +446,7 @@ footer p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.banner p{
-    text-align: center;
+    position: relative;
 }
 
 .mainLogo{
@@ -304,7 +473,7 @@ footer p{
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: var(--elevation3);
 }
 
 #mobileNavigation p{
