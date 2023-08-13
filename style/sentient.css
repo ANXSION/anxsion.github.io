@@ -711,6 +711,36 @@ footer p{
     border-radius: 18px;
 }
 
+.loadedMLModel{
+    min-width: 50%;
+    width: fit-content;
+    height: auto;
+    text-align: center;
+    border: 2px solid black;
+    padding: 18px;
+    border-radius: 16px;
+    transition: all o.5s ease;
+    justify-self: center;
+    align-self: center;
+}
+
+.loadedMLModel input{
+    width: 75%;
+}
+
+.MLIcon{
+    animation: ML 3s linear infinite;
+}
+
+@keyframes ML{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 
 @media screen and (max-width:1024px) and (min-width: 481px){
     .mainLogo{

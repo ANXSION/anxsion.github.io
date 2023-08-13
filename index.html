@@ -28,6 +28,7 @@
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+        <script src="./script/chrysalis.js"></script>
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
@@ -431,10 +432,22 @@
                     </div>
                 </div>
 
-
                 <div class="dendriticContainer">
-                    <h2>Our Trained Models</h2>
-                    <p>Coming Soon</p>
+                    <div class="loadedMLModel">
+                        <p>Loaded Neural: Chrysalis</p>
+                        
+                        <br>
+                        <div><span class="MLIcon">&loz;</span>&nbsp;<span style="text-decoration: underline;">Chrysalis:</span>&nbsp;<span id="answerOutput"></span></div>
+                        
+                        <br>
+                        <br>
+    
+                        <input type="text" id="questionInput" placeholder="Chat with Chrysalis">
+                        <br>
+                        <br>
+                        <button onclick="getAnswer()">Get Answer</button>
+                        
+                    </div>
                 </div>
 
                 <div class="dendriticContainer">
@@ -1287,38 +1300,8 @@
 
             ini();
             
-            const numSamples = 100;
-const trueWeights = [2, 3];
-const trueBias = 4;
-const features = tf.randomUniform([numSamples, 2], -1, 1);
-const labels = features.mul(trueWeights).sum(1).add(trueBias);
+            startGreeting();
 
-// Build a linear regression model
-const model = tf.sequential();
-model.add(tf.layers.dense({ units: 1, inputShape: [2] }));
-
-// Compile the model
-model.compile({
-  optimizer: tf.train.sgd(0.1), // Stochastic Gradient Descent
-  loss: 'meanSquaredError',
-});
-
-// Train the model
-const epochs = 9;
-model.fit(features, labels, {
-  epochs,
-  callbacks: {
-    onEpochEnd: (epoch, logs) => {
-      console.log(`Epoch ${epoch + 1}/${epochs}, Loss: ${logs.loss}`);
-    },
-  },
-}).then(() => {
-  // Test the model
-  const testFeatures = tf.randomUniform([10, 2], -1, 1);
-  const predictions = model.predict(testFeatures);
-  console.log('Predictions:');
-  predictions.print();
-});
         </script>    
     </body>
 </html>
