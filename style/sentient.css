@@ -63,8 +63,8 @@
 }
 
 ::selection {
-    color: var(--primary);
-    background-color: var(--secondary);
+    color: white;
+    background-color: black;
 }
 
 body{
@@ -224,7 +224,7 @@ dialog[open] {
     position: absolute;
     top: 0%;
     left: 0%;
-    
+ 
 }
 
 .solar > *{
@@ -408,6 +408,7 @@ address{
     text-align: center;
     margin: 5%;
 }
+
 
 noscript{
     position: fixed;
@@ -644,17 +645,8 @@ footer p{
     text-align: justify;
 }
 
-.capitalShowcase{
-    width: 100%;
-    height: fit-content;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 2rem;
-}
 
-.capitalSingle{
+.dendriticContainer{
     width: 100%;
     height: fit-content;
     display: flex;
@@ -664,13 +656,42 @@ footer p{
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
-.capitalInteract{
+
+.dendriticShowcase{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 18px;
+}
+
+.dendriticShowcaseElement{
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-evenly;
     align-items: center;
 }
+
+.dendriticShowcaseElement p{
+    width: 80%;
+    margin: 18px;
+    text-align: justify;
+}
+
+.dendriticShowcaseBanner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    aspect-ratio: 1/1;
+}
+
 
 .finePrint{
     display: flex;
@@ -724,6 +745,9 @@ footer p{
     }
     .businessmap{
         width: 100%;
+    }
+    .dendriticShowcase{
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -796,7 +820,13 @@ footer p{
     .guardianBanner{
         width: 100%;
     }
-    
+    .mass{
+        height: 9vw;
+        width: 9vw;
+    }
+    .dendriticShowcase{
+        grid-template-columns: 1fr;
+    }
 }
 
 
