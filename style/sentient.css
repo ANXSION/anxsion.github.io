@@ -712,8 +712,7 @@ footer p{
 }
 
 .loadedMLModel{
-    min-width: 50%;
-    width: fit-content;
+    width: 75%;
     height: auto;
     text-align: center;
     border: 2px solid black;
@@ -728,18 +727,6 @@ footer p{
     width: 75%;
 }
 
-.MLIcon{
-    animation: ML 3s linear infinite;
-}
-
-@keyframes ML{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
 
 
 @media screen and (max-width:1024px) and (min-width: 481px){
