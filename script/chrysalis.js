@@ -4,7 +4,7 @@ let passages = {
     "identity": "Chrysalis is a conversational neural model and an assistant AI. Chrysalis is designed by Anurag Lama (ANXSION). Chrysalis was made to become a base template for the future pre-trained models.",
     "greeting": "Hello! How can I help you?",
     "apology": "I apologize for not being able to understand the question.",
-    "document": "ANXSION is an organisation dedicated to the creation of innovative solutions that resonate with the betterment of society. It was founded in 2018. Anurag Lama is the founder of ANXSION. ANXSION has 2 distinctive organisations: Guardian Angel, founded in 2022, a full service law firm that stands as a beacon of legal support, and Dendritic Dynamics, founded in 2023, a pioneering AI Research and Development initiative that fervently drives scientific progress and prototyping. 'Chrysalis' is the the base template of neural model created by Dendritic Dynamics. Chrysalis was made August 13, 2023."
+    "document": "ANXSION an organisation dedicated to the creation of innovative solutions that resonate with the betterment of society. It was founded in 2018. The founder of ANXSION is Anurag Lama. Anurag Lama is the founder of ANXSION. ANXSION has 2 distinctive organisations: Guardian Angel, founded in 2022, a full service law firm that stands as a beacon of legal support, and Dendritic Dynamics, founded in 2023, a pioneering AI Research and Development initiative that fervently drives scientific progress and prototyping. 'Chrysalis' is the the base template of neural model created by Dendritic Dynamics. Chrysalis was made  August 13, 2023."
   }
 
 let qnaModelPromise;
@@ -36,7 +36,11 @@ async function getAnswer() {
     const qnaModel = await qnaModelPromise;
 
     const answers = await qnaModel.findAnswers(preprocessedQuestion, passage);
-
+    
+    console.log(question);
+    console.log(preprocessedQuestion);
+    console.log(answers);
+    
     if (answers.length > 0) {
       displayAnswer(answers[0].text);
     } else {
