@@ -7,9 +7,15 @@ let passages = {
     "document": "ANXSION is an organisation dedicated to the creation of innovative solutions that resonate with the betterment of society. It was founded in 2018. Anurag Lama is the founder of ANXSION. ANXSION has 2 distinctive organisations: Guardian Angel, founded in 2022, a full service law firm that stands as a beacon of legal support, and Dendritic Dynamics, founded in 2023, a pioneering AI Research and Development initiative that fervently drives scientific progress and prototyping. 'Chrysalis' is the the base template of neural model created by Dendritic Dynamics. Chrysalis was made August 13, 2023."
   }
 
+let qnaModelPromise;
 
-async function downloadModel(){
-  await model.save('download://chrysalis');
+async function loadQnAModel() {
+  const answerOutput = document.getElementById('answerOutput');
+  qnaModelPromise = qna.load();
+  answerOutput.innerHTML = "Neural Network is loading...";
+
+  await qnaModelPromise;
+  answerOutput.innerHTML = passages.greeting;
 }
 
 async function getAnswer() {
@@ -45,7 +51,6 @@ async function getAnswer() {
     console.error('Error loading or using the Q&A model:', error);
   }
 }
-
 function displayAnswer(text) {
   const answerOutput = document.getElementById('answerOutput');
   answerOutput.innerHTML = text;
@@ -55,5 +60,3 @@ function displayAnswer(text) {
 function preprocessText(text) {
   return text.toLowerCase().split(/\s+/).filter(word => word.length > 0).join(' ');
 }
-
-

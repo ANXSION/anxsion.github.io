@@ -433,13 +433,9 @@
 
                 <div class="dendriticContainer">
                     <div class="loadedMLModel">
-                        <select name="modelSelect" id="modelSelect">
-                            <option value="epsilon">Chrysalis-Epsilon</option>
-                            <option value="stable" selected>Chrysalis-Stable</option>
-                        </select>
-                    
-                        <br><br>
-                        <div>&loz;&nbsp;<span style="text-decoration: underline;" id="modelName">Cortex ID:</span>&nbsp;<span id="answerOutput">...</span></div>
+                        <P>Model: Chrysalis</P>
+                        <br>
+                        <div>&loz;&nbsp;<span style="text-decoration: underline;" id="modelName">Chrysalis:</span>&nbsp;<span id="answerOutput">...</span></div>
                         
                         <br>
                         <br>
@@ -450,7 +446,6 @@
                         <button onclick="getAnswer()">Process</button>
                         <br><br>
                         <p>Trained on August 14. 2023</p>
-                        <button id="modelDownload" onclick="downloadModel()">Download Model</button>
                         
                     </div>
                 </div>
@@ -1189,7 +1184,6 @@
                 document.getElementById('404').style.opacity="0%";
                 document.getElementById('mobileNavigation').style.display="none";
                 document.getElementById('mobileNavigation').style.opacity="0%";
-                document.getElementById('modelDownload').style.display="none";
 
                 if (linkname=="home"){
                     history.pushState({}, "ANXSION", "?id=home");
@@ -1303,49 +1297,8 @@
                 }
             }
 
-
             ini();
-            
             window.addEventListener('load', loadQnAModel);
-            
-            const modelSelect = document.getElementById('modelSelect');
-            loadQnAModel('stable')
-
-            modelSelect.addEventListener('change', () => {
-            const selectedModel = modelSelect.value;
-            loadQnAModel(selectedModel);
-            });
-
-            let qnaModelPromise;
-
-            async function loadQnAModel(cortex) {
-                document.getElementById('modelDownload').style.display="none";
-                const answerOutput = document.getElementById('answerOutput');
-                const cortexID = document.getElementById('modelName');
-
-                switch (cortex) {
-                    case 'epsilon':
-                        qnaModelPromise = qna.load();
-                        cortexID.innerHTML = "Chrysalis(Epsilon)";
-                        document.getElementById('modelDownload').style.display="flex";
-                    break;
-                    case 'stable':
-                        qnaModelPromise = qna.load();
-                        cortexID.innerHTML = "Chrysalis(stable):";
-                    break;
-                    // Add more cases for other models as needed
-                    default:
-                        qnaModelPromise = qna.load();
-                        cortexID.innerHTML = "Chrysalis(stable):";
-                    break;
-                }
-
-                answerOutput.innerHTML = "Neural Network is loading...";
-
-                await qnaModelPromise;
-                answerOutput.innerHTML = passages.greeting;
-            }
-
         </script>    
     </body>
 </html>
