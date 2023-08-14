@@ -1,10 +1,5 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 
-import { precacheAndRoute } from 'workbox-precaching';
-import { registerRoute } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
-import { ExpirationPlugin } from 'workbox-expiration';
-
 const HTML_CACHE = "ANXSION-html";
 const JS_CACHE = "ANXSION-javascript";
 const STYLE_CACHE = "ANXSION-stylesheets";
