@@ -1,5 +1,10 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.5.4/workbox-sw.js');
 
+import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { ExpirationPlugin } from 'workbox-expiration';
+
 const HTML_CACHE = "ANXSION-html";
 const JS_CACHE = "ANXSION-javascript";
 const STYLE_CACHE = "ANXSION-stylesheets";
@@ -12,67 +17,47 @@ self.addEventListener("message", (event) => {
   }
 });
 
+const cacheExpiration = {
+  maxEntries: 50,
+  maxAgeSeconds: 30,
+};
+
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'document',
+  ({ event }) => event.request.destination === 'document',
   new workbox.strategies.NetworkFirst({
     cacheName: HTML_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 50,
-        maxSecondsmaxAgeSeconds: 30,
-      }),
-    ],
+    plugins: [new workbox.expiration.ExpirationPlugin(cacheExpiration)],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'script',
+  ({ event }) => event.request.destination === 'script',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: JS_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 10,
-        maxSecondsmaxAgeSeconds: 30,
-      }),
-    ],
+    plugins: [new workbox.expiration.ExpirationPlugin(cacheExpiration)],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'style',
+  ({ event }) => event.request.destination === 'style',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: STYLE_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 8,
-        maxSecondsmaxAgeSeconds: 30,
-      }),
-    ],
+    plugins: [new workbox.expiration.ExpirationPlugin(cacheExpiration)],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'image',
+  ({ event }) => event.request.destination === 'image',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: IMAGE_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 100,
-        maxSecondsmaxAgeSeconds: 30,
-      }),
-    ],
+    plugins: [new workbox.expiration.ExpirationPlugin(cacheExpiration)],
   })
 );
 
 workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'font',
+  ({ event }) => event.request.destination === 'font',
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: FONT_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 8,
-        maxSecondsmaxAgeSeconds: 30,
-      }),
-    ],
+    plugins: [new workbox.expiration.ExpirationPlugin(cacheExpiration)],
   })
 );

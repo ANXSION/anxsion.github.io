@@ -151,6 +151,13 @@ h6{
     font-weight: normal;
 }
 
+select{
+    border: 0;
+    border-bottom: 2px solid var(--secondary);
+    outline: 0;
+    font-family: 'Jost';
+}
+
 button{
     font-weight: normal;
     width: fit-content;
