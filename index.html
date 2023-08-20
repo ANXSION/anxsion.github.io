@@ -25,8 +25,8 @@
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
         <link rel="stylesheet" href="./style/sentient.css">
 
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
         <script src="./script/chrysalis.js"></script>
 
         <!-- Google tag (gtag.js) -->
@@ -435,7 +435,7 @@
                     <div class="loadedMLModel">
                         <P>Model: Chrysalis</P>
                         <br>
-                        <div>&loz;&nbsp;<span style="text-decoration: underline;" id="modelName">Chrysalis:</span>&nbsp;<span id="answerOutput">Loading layers...</span></div>
+                        <div>&loz;&nbsp;<span style="text-decoration: underline;" id="modelName">Chrysalis:</span>&nbsp;<span id="answerOutput">Currently offline...</span></div>
                         
                         <br>
                         <br>
@@ -1298,7 +1298,6 @@
             }
 
             ini();
-            window.addEventListener('load', loadQnAModel);
         </script>    
     </body>
 </html>
