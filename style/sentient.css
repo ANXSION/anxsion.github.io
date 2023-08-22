@@ -1,24 +1,4 @@
 @font-face {
-    font-family: BlenderProBook;
-    src: url('../asset/fonts/BlenderProBook.ttf');
-    font-display: swap;
-}
-@font-face {
-    font-family: AvitaThin;
-    src: url('../asset/fonts/AvitaThin.otf');
-    font-display: swap;
-}
-@font-face {
-    font-family: Barcode;
-    src: url('../asset/fonts/Barcode.ttf');
-    font-display: swap;
-}
-@font-face {
-    font-family: Mono;
-    src: url('../asset/fonts/Mono.ttf');
-    font-display: swap;
-}
-@font-face {
     font-family: Jost;
     src: url('../asset/fonts/Jost.ttf');
     font-display: swap;
@@ -29,20 +9,31 @@
     font-display: swap;
 }
 @font-face {
-    font-family: Bio;
-    src: url('../asset/fonts/KTNirma.otf');
+    font-family: PlexMonoLight;
+    src: url('../asset/fonts/IBMPlexMono-Light.otf');
     font-display: swap;
 }
 @font-face {
-    font-family: Inquest;
-    src: url('../asset/fonts/inquest.ttf');
+    font-family: PlexMonoLight;
+    src: url('../asset/fonts/IBMPlexMono-Regular.otf');
     font-display: swap;
 }
 @font-face {
-    font-family: Pixel;
-    src: url('../asset/fonts/Pixel.ttf');
+    font-family: PlexSansLight;
+    src: url('../asset/fonts/IBMPlexSans-Light.otf');
     font-display: swap;
 }
+@font-face {
+    font-family: PlexSansReg;
+    src: url('../asset/fonts/IBMPlexSans-Regular.otf');
+    font-display: swap;
+}
+@font-face {
+    font-family: PlexSansBold;
+    src: url('../asset/fonts/IBMPlexSans-SemiBold.otf');
+    font-display: swap;
+}
+
 
 
 :root{
@@ -67,18 +58,42 @@
     background-color: black;
 }
 
+.code{
+    font-family: PlexMonoLight;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.32px;
+}
+.label{
+    font-family: PlexSansReg;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    letter-spacing: 0.16px;
+}
+
 body{
     height: 100%;
     width: 100%;
-    font-family: 'Jost';
+    font-family: PlexSansReg;
     background-color: var(--primary);
     color: var(--secondary);
     font-size: 16px;
+    line-height: 1.5rem;
+    width: 400;
+    letter-spacing: 0px;
     margin: 0;
-    padding: 0;
-    line-height: 1.5;  
+    padding: 0;  
     transition: 0.2s all;
     z-index: 0;
+}
+
+.ui-icon{
+    height: 1rem;
+    width: 1rem;
+    justify-self: center;
+    align-self: center;
 }
 
 main{
@@ -92,11 +107,18 @@ main{
 }
 
 p{
-    font-size: var(--fontWeb);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-align: left;
 }
 
 ol,li{
-    font-size: var(--fontWeb);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0px;
     text-align: justify;
 }
 
@@ -117,6 +139,10 @@ td, th{
     border-bottom: 1px var(--secondary) solid;
 }
 
+sup{
+    font-size: 0.5rem;
+    vertical-align: 50%
+}
 
 td ul{
     list-style: none;
@@ -128,32 +154,52 @@ img {
 }
 
 h1{
-    font-size: 2rem;
-    font-weight: normal;
+    font-family: PlexSansLight;
+    font-size: 2.625rem;
+    line-height: 3.125rem;
+    font-weight: 300;
+    letter-spacing: 0px;
 }
 
 h2{
-    font-size: 1.875rem;
-    font-weight: normal;
+    font-family: PlexSansLight;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0px;
 }
 h3{
+    font-family: PlexSansReg;
     font-size: 1.75rem;
-    font-weight: normal;
+    line-height: 2.25rem;
+    font-weight: 400;
+    letter-spacing: 0px;
 }
 h4{
-    font-size: 1.5rem;
-    font-weight: normal;
+    font-family: PlexSansReg;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0px;
 }
 h5{
-    font-weight: normal;
+    font-family: PlexSansBold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0px;
 }
 h6{
-    font-weight: normal;
+    font-family: PlexSansBold;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0px;
 }
 
 select{
     border: 0;
-    border-bottom: 2px solid var(--secondary);
+    border-bottom: 1px solid var(--secondary);
     outline: 0;
     font-family: 'Jost';
 }
@@ -161,17 +207,27 @@ select{
 button{
     font-weight: normal;
     width: fit-content;
-    height:56px;
+    height: auto;
     color: var(--secondary);
     background-color: var(--primary);
     cursor: pointer;
     font-size: var(--fontWeb);
     user-select: none;
     outline: none;
-    justify-self: center;
+    justify-content: center;
     align-items: center;
     border: none;
-    border-bottom: 2px solid var(--secondary);
+    display: grid;
+    grid-template-columns:max-content max-content;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+button p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--secondary);
 }
 
 
@@ -306,95 +362,8 @@ dialog[open] {
     
 }
 
-@keyframes orbit-p1 {
-    0%{
-        transform: rotate(0deg) translate(7vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(7vw) scale(0.2);
-    }
-}
 
-@keyframes orbit-p2 {
-    0%{
-        transform: rotate(0deg) translate(9.5vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(9.5vw) scale(0.2);
-    }
-}
 
-@keyframes orbit-p3 {
-    0%{
-        transform: rotate(0deg) translate(12vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(12vw) scale(0.2);
-    }
-}
-
-@keyframes orbit-p4 {
-    0%{
-        transform: rotate(0deg) translate(14.5vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(14.5vw) scale(0.2);
-    }
-}
-
-@keyframes orbit-p5 {
-    0%{
-        transform: rotate(0deg) translate(18.5vw) scale(0.4);
-    }
-    100%{
-        transform: rotate(360deg) translate(18.5vw) scale(0.4);
-    }
-}
-
-@keyframes orbit-p6 {
-    0%{
-        transform: rotate(0deg) translate(23.5vw) scale(0.4);
-    }
-    100%{
-        transform: rotate(360deg) translate(23.5vw) scale(0.4);
-    }
-}
-
-@keyframes orbit-p7 {
-    0%{
-        transform: rotate(0deg) translate(28vw) scale(0.3);
-    }
-    100%{
-        transform: rotate(360deg) translate(28vw) scale(0.3);
-    }
-}
-
-@keyframes orbit-p8 {
-    0%{
-        transform: rotate(0deg) translate(32vw) scale(0.3);
-    }
-    100%{
-        transform: rotate(360deg) translate(32vw) scale(0.3);
-    }
-}
-
-@keyframes orbit-p9 {
-    0%{
-        transform: rotate(0deg) translate(35vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(35vw) scale(0.2);
-    }
-}
-
-@keyframes show{
-    from {
-        opacity: 0%;
-    }
-    to {
-        opacity: 100%;;
-    }
-}
 
 article{
     width: 100%;
@@ -405,7 +374,7 @@ article{
 
 input{
     border: none;
-    border-bottom: 2px solid var(--secondary);
+    border-bottom: 1px solid var(--secondary);
     outline: none;
 }
 
@@ -549,7 +518,7 @@ footer p{
 }
 
 .guardianBanner{
-    width: 75%;
+    width: 50%;
     aspect-ratio: 16/9;
     object-fit: cover;
     justify-content: center!important;
@@ -572,7 +541,7 @@ footer p{
 }
 
 .terms p{
-    text-align: justify;
+    text-align: left;
 }
 
 .content{
@@ -722,16 +691,12 @@ footer p{
     width: 75%;
     height: auto;
     text-align: center;
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 18px;
     border-radius: 16px;
     transition: all o.5s ease;
     justify-self: center;
     align-self: center;
-}
-
-.loadedMLModel input{
-    width: 75%;
 }
 
 
@@ -863,5 +828,95 @@ footer p{
     }
     100%{
         transform: translateY(0%);
+    }
+}
+
+@keyframes orbit-p1 {
+    0%{
+        transform: rotate(0deg) translate(7vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(7vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p2 {
+    0%{
+        transform: rotate(0deg) translate(9.5vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(9.5vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p3 {
+    0%{
+        transform: rotate(0deg) translate(12vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(12vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p4 {
+    0%{
+        transform: rotate(0deg) translate(14.5vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(14.5vw) scale(0.2);
+    }
+}
+
+@keyframes orbit-p5 {
+    0%{
+        transform: rotate(0deg) translate(18.5vw) scale(0.4);
+    }
+    100%{
+        transform: rotate(360deg) translate(18.5vw) scale(0.4);
+    }
+}
+
+@keyframes orbit-p6 {
+    0%{
+        transform: rotate(0deg) translate(23.5vw) scale(0.4);
+    }
+    100%{
+        transform: rotate(360deg) translate(23.5vw) scale(0.4);
+    }
+}
+
+@keyframes orbit-p7 {
+    0%{
+        transform: rotate(0deg) translate(28vw) scale(0.3);
+    }
+    100%{
+        transform: rotate(360deg) translate(28vw) scale(0.3);
+    }
+}
+
+@keyframes orbit-p8 {
+    0%{
+        transform: rotate(0deg) translate(32vw) scale(0.3);
+    }
+    100%{
+        transform: rotate(360deg) translate(32vw) scale(0.3);
+    }
+}
+
+@keyframes orbit-p9 {
+    0%{
+        transform: rotate(0deg) translate(35vw) scale(0.2);
+    }
+    100%{
+        transform: rotate(360deg) translate(35vw) scale(0.2);
+    }
+}
+
+@keyframes show{
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;;
     }
 }
