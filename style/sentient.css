@@ -139,6 +139,7 @@ section{
 
 .content{
     width: 80%;
+    max-width: 1440px;
     min-height: 75vh;
     margin: auto;
     padding: 0;
@@ -147,7 +148,7 @@ section{
 
 table, tr, td{
     width: 100%;
-    text-align: center;
+    text-align: left;
     table-layout: fixed;
 }
 
@@ -244,6 +245,7 @@ button{
     grid-template-columns:max-content max-content;
     margin-top: 16px;
     margin-bottom: 16px;
+    padding: 16px;
 }
 button p{
     margin:0;
@@ -681,6 +683,11 @@ summary:hover{
     margin: 18px;
 }
 
+.dendriticShowcaseElement button p{
+    width: 100%;
+    margin: 0;
+}
+
 .dendriticShowcaseBanner{
     width: 100%;
     height: 100%;
@@ -737,21 +744,6 @@ summary:hover{
     #webNavigation{
         display: none;
     }
-    .capitalShowcase{
-        grid-template-columns: 1fr 1fr;
-    }
-    .cardHeading{
-        font-size: var(--CardHeadTablet)!important;
-    }
-    .investCardRow p{
-        font-size:var(--fontTablet-versatile);
-    }
-    .button{
-        font-size: var(--fontTablet-versatile);
-    }
-    .modelPortfolioDetails{
-        grid-template-columns: 1fr 1fr;
-    }
     .guardianBanner{
         width: 100%;
     }
@@ -789,12 +781,6 @@ summary:hover{
     .businessmap{
         width: 100%;
     }
-    .guardianButton{
-        width: 100%;
-    }
-    .guardianButton button{
-        width: 100%;
-    }
     .idimage{
         width: 100%;
     }
@@ -820,14 +806,8 @@ summary:hover{
     .investCardRow p{
         font-size: var(--fontMobile-versatile);
     }
-    .button{
-        font-size: var(--fontMobile-versatile);
-    }
     dialog{
         width: 75%;
-    }
-    .modelPortfolioDetails{
-        grid-template-columns: 1fr;
     }
     .guardianBanner{
         width: 100%;

@@ -152,7 +152,7 @@
 
             <nav>
                 <img class="mainLogo" src="./asset/icon/512-mask.png" alt="">
-                <section style="text-align: center;" id="mobileControl">
+                <section id="mobileControl">
                     <p style="margin: 0; font-size: 1rem; cursor: pointer; user-select: none; text-align: center;" onclick="menu('open')">MENU</p>
                 </section>
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; width: 100%;" id="webNavigation">
@@ -216,8 +216,8 @@
                     <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
                         <img class="guardianBanner" style="justify-self: center; align-self: center;" src="./asset/icon/guardian.png" alt="">
                     </div>
-    
-                    <section class="guardianButton">
+
+                    <div style="display: grid; grid-template-rows: 1fr 1fr 1fr; justify-content: center; align-items: center; width: 100%;">
                         <button onclick="casestatus()">
                             <p>Case Status&nbsp;</p>
                             <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
@@ -230,7 +230,9 @@
                             <p>Locate us&nbsp;</p>
                             <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
                         </button>
-                    </section>
+                    </div>
+
+
                     <br><br>
     
                     <h1>About</h1>
@@ -416,72 +418,73 @@
                 </div>
             </section>
 
-            <section class="content" id="dendritic">
-                <br><br>
-                <h1 style="width: 100%; font-family: Jost; text-align: center; font-size: 3rem;"><ruby>DENDRITIC<br>DYNAMICS</rt></ruby></h1>
-                <br><br>
-                <h1>About</h1>
-                <p style="text-align: justify;">Dendritic Dynamics, a pioneering force in AI exploration, weaves precision into seamless solutions for modern life. Rooted in ethics, we reshape boundaries, navigating uncharted realms. Amidst unfolding dimensions, our enigmatic presence unravels possibilities, unveiling an intriguing future where the extraordinary becomes routine.</p>
+            <section id="dendritic">
+                <div class="content">
+                    <br><br>
+                    <h1 style="width: 100%; font-family: Jost; text-align: center; font-size: 3rem;"><ruby>DENDRITIC<br>DYNAMICS</rt></ruby></h1>
+                    <br><br>
+                    <h1>About</h1>
+                    <p style="text-align: justify;">Dendritic Dynamics, a pioneering force in AI exploration, weaves precision into seamless solutions for modern life. Rooted in ethics, we reshape boundaries, navigating uncharted realms. Amidst unfolding dimensions, our enigmatic presence unravels possibilities, unveiling an intriguing future where the extraordinary becomes routine.</p>
 
-                <div class="dendriticContainer">
-                    <div class="finePrint">
-                        <button onclick="document.getElementById('disclaimer').showModal()">
-                            <p>CAUTION&nbsp;</p>
-                            <img class="ui-icon" src="./asset/icon/ui-icon/arrow--up-right.svg" alt="">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="dendriticContainer">
-                    <div class="loadedMLModel">
-                        <div><span style="text-decoration: underline;" id="modelName">Chrysalis:</span>&nbsp;<span id="answerOutput">Currently offline...</span></div>
-                        
-                        <br>
-                        <div style="display: grid; grid-template-columns: 90% 10%; justify-content: center; align-items: center;">
-                            <input type="text" id="questionInput" placeholder="Chat with Chrysalis">
-                            <button onclick="getAnswer()">
-                                <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
-                            </button>
-                        </div>
-                        
-                        <br><br>
-                        <p>Trained on August 14, 2023</p>
-                        
-                    </div>
-                </div>
-                <br><br>
-
-                <h1>Training Data</h1>
-                <div class="dendriticContainer">
-                    <div class="dendriticShowcase">
-                        <div class="dendriticShowcaseElement">
-                            <h2>LINGUIST</h2>
-                            <p>Small sized machine translation training dataset in with base language as English and with target language as Nepali in a CSV format that is supervised in nature.</p>
-                            <button>
-                                <p>Coming Soon</p>
-                                <img class="ui-icon" src="./asset/icon/ui-icon/download.svg" alt="">
-                            </button>
-                        </div>
-
-                        <div class="dendriticShowcaseElement">
-                            <h2>ACOUSTIC</h2>
-                            <p>Medium sized speech recognition training dataset of spoken English words by a male in an isolated high quality audio that is supervised in nature.</p>
-                            <button>
-                                <p>Coming Soon</p>
-                                <img class="ui-icon" src="./asset/icon/ui-icon/download.svg" alt="">
-                            </button>
-                        </div>
-
-                        <div class="dendriticShowcaseElement">
-                            <h2>PERCEPTION</h2>
-                            <p>Large sized creative directive training dataset with still images of oil painting in high resolution that is supervised in nature.</p>
-                            <button>
-                                <p>Coming Soon</p>
-                                <img class="ui-icon" src="./asset/icon/ui-icon/download.svg" alt="">
+                    <div class="dendriticContainer">
+                        <div class="finePrint">
+                            <button onclick="document.getElementById('disclaimer').showModal()">
+                                <p>CAUTION&nbsp;</p>
+                                <img class="ui-icon" src="./asset/icon/ui-icon/arrow--up-right.svg" alt="">
                             </button>
                         </div>
                     </div>
-                </div>
+
+                    <div class="dendriticContainer">
+                        <div class="loadedMLModel">
+                            <div><span style="text-decoration: underline;" id="modelName">Chrysalis:</span>&nbsp;<span id="answerOutput">Currently offline...</span></div>
+                            
+                            <br>
+                            <div style="display: grid; grid-template-columns: 90% 10%; justify-content: center; align-items: center;">
+                                <input type="text" id="questionInput" placeholder="Chat with Chrysalis">
+                                <button onclick="getAnswer()">
+                                    <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
+                                </button>
+                            </div>
+                            
+                            <br><br>
+                            <p>Trained on August 14, 2023</p>
+                            
+                        </div>
+                    </div>
+                    <br><br>
+
+                    <h1>Training Data</h1>
+                    <div class="dendriticContainer">
+                        <div class="dendriticShowcase">
+                            <div class="dendriticShowcaseElement">
+                                <h2>LINGUIST</h2>
+                                <p>Small sized machine translation training dataset in with base language as English and with target language as Nepali in a CSV format that is supervised in nature.</p>
+                                <button>
+                                    <p>Coming Soon&nbsp;</p>
+                                    <img class="ui-icon" src="./asset/icon/ui-icon/download.svg" alt="">
+                                </button>
+                            </div>
+
+                            <div class="dendriticShowcaseElement">
+                                <h2>ACOUSTIC</h2>
+                                <p>Medium sized speech recognition training dataset of spoken English words by a male in an isolated high quality audio that is supervised in nature.</p>
+                                <button>
+                                    <p>Coming Soon&nbsp;</p>
+                                    <img class="ui-icon" src="./asset/icon/ui-icon/download.svg" alt="">
+                                </button>
+                            </div>
+
+                            <div class="dendriticShowcaseElement">
+                                <h2>PERCEPTION</h2>
+                                <p>Large sized creative directive training dataset with still images of oil painting in high resolution that is supervised in nature.</p>
+                                <button>
+                                    <p>Coming Soon&nbsp;</p>
+                                    <img class="ui-icon" src="./asset/icon/ui-icon/download.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 <br><br>
 
                 <h1>Training Dataset</h1>
@@ -529,111 +532,116 @@
                         </tr>
                     </table>
                 </div>
+
+                </div>
             </section>
 
-            <section class="content" id="about">
-                <br>
-
-                <section style="width:100%;display:flex; justify-content: center;">
-                    <img class="idimage" src="./asset/icon/intel.jpg" alt="">
-                </section>
-                <br>
-
-                <h1>About</h1>
-
-                <p>Anurag Lama, known widely as ANXSION, stands as a polymath of remarkable distinction, an accomplished musical artist, and a trailblazer who effortlessly unites his multifaceted talents into a harmonious symphony of creativity and expertise. Displaying an unparalleled aptitude for a diverse array of domains, ANXSION not only commands a position of eminence as a musical virtuoso but also exhibits a remarkable flair for tinkering and hardware programming, effectively bridging the realms of technology and artistry.</p>
-                    
-                <p>Among his numerous accomplishments, Anurag Lama brings to the fore an exceptional proficiency in digital signal processing and hardware programming, an area of expertise that underscores his innovative spirit and technical prowess. This profound understanding allows him to push boundaries and explore the uncharted intersections of technology and creativity, thus enriching his already impressive artistic repertoire.</p>
-
-                <p>In addition to his technological pursuits, Anurag Lama has carved a distinguished path as a legal professional. His capabilities extend across a broad spectrum of legal domains, encompassing civil, criminal, corporate, and cyber law. His legal acumen, coupled with his rich and diverse skill set, positions him as an invaluable resource for delivering comprehensive and effective legal solutions.</p>
-
-                <p>ANXSION's journey is a testament to his relentless pursuit of excellence across an array of disciplines. His ability to seamlessly traverse the intricate interplay of art, technology, and the legal sphere is a testament to his indomitable spirit and devotion to his craft. Through his multifaceted talents and profound professional expertise, Anurag Lama continues to imprint an enduring legacy on the realms of music, technology, and law.</p>
-
-                <p style="font-family: Signature; font-size: 1.5rem; text-align: center; margin-top: 128px;">Anurag Lama</p>
-
-                <br><br>
-                <h1>Featured Works</h1>
-                <br>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><p>Musical Portfolio</p><p>3</p></summary>
-                    <br><br>
-                    <h2 style="text-align: center;">Artist</h2>
+            <section id="about">
+                <div class="content">
                     <br>
-
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/22yeYGWn2iMUfuMRuAPizK?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-                    <br><br>
-                    <h3 style="text-align: center;">Albums</h3>
-                    <br>
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1hQ6AGOP975jhfWGG0iXkT?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4D7yjFpJcLGq7ntY9RLZOp?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-                </details>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><p>Designs and Concept</p><p>12</p></summary>
-
-                    <br><br>
-                    <h3 style="text-align: center;">Mechanical Design</h3>
-                    <br>
-
-                    <section class="artGallery">
-                        <img style="width: 100%;" src="./asset/renders/ironhorse.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/calamity.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/compensator.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/mpdp.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/nta.jpg" alt="">
+                    <section style="width:100%;display:flex; justify-content: center;">
+                        <img class="idimage" src="./asset/icon/intel.jpg" alt="">
                     </section>
-
-                    <br><br>
-                    <h3 style="text-align: center;">Environmental Art</h3>
-                    <br>
-                    <section class="artGallery">
-                        <img style="width: 100%;" src="./asset/renders/alikeearth.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/darknebula.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/secretgarden.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/glowingdust.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/stellarclouds.jpg" alt="">
-                    </section>
-
-                    <br><br>
-                    <h3 style="text-align: center;">Stylised Art</h3>
-                    <br>
-                    <section class="artGallery">
-                        <img style="width: 100%;" src="./asset/renders/blacknai.jpg" alt="">
-                        <img style="width: 100%;" src="./asset/renders/ocenheart.jpg" alt="">
-                    </section>
-
-                    <br><br>
-                </details>
-
-                <details class="Servicedetails">
-                    <summary class="Servicesummary"><p>Cinematography</p><p>4</p></summary>
-                    <br><br>
-                    <h2 style="text-align: center;">Music Video</h2>
                     <br>
 
-                    <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/ZpLZCy_WfM8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <h1>About</h1>
 
-                    <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/4ld6sSxjnIo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>Anurag Lama, known widely as ANXSION, stands as a polymath of remarkable distinction, an accomplished musical artist, and a trailblazer who effortlessly unites his multifaceted talents into a harmonious symphony of creativity and expertise. Displaying an unparalleled aptitude for a diverse array of domains, ANXSION not only commands a position of eminence as a musical virtuoso but also exhibits a remarkable flair for tinkering and hardware programming, effectively bridging the realms of technology and artistry.</p>
+                        
+                    <p>Among his numerous accomplishments, Anurag Lama brings to the fore an exceptional proficiency in digital signal processing and hardware programming, an area of expertise that underscores his innovative spirit and technical prowess. This profound understanding allows him to push boundaries and explore the uncharted intersections of technology and creativity, thus enriching his already impressive artistic repertoire.</p>
 
-                    <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/_vl_KukwmSw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>In addition to his technological pursuits, Anurag Lama has carved a distinguished path as a legal professional. His capabilities extend across a broad spectrum of legal domains, encompassing civil, criminal, corporate, and cyber law. His legal acumen, coupled with his rich and diverse skill set, positions him as an invaluable resource for delivering comprehensive and effective legal solutions.</p>
+
+                    <p>ANXSION's journey is a testament to his relentless pursuit of excellence across an array of disciplines. His ability to seamlessly traverse the intricate interplay of art, technology, and the legal sphere is a testament to his indomitable spirit and devotion to his craft. Through his multifaceted talents and profound professional expertise, Anurag Lama continues to imprint an enduring legacy on the realms of music, technology, and law.</p>
+
+                    <p style="font-family: Signature; font-size: 1.5rem; text-align: center; margin-top: 128px;">Anurag Lama</p>
 
                     <br><br>
-                    <h2 style="text-align: center;">Spinoff</h2>
+                    <h1>Featured Works</h1>
                     <br>
 
-                    <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/TFO9it6lNK4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </details>
+                    <details class="Servicedetails">
+                        <summary class="Servicesummary"><p>Musical Portfolio</p><p>3</p></summary>
+                        <br><br>
+                        <h2 style="text-align: center;">Artist</h2>
+                        <br>
 
-                <br><br>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/22yeYGWn2iMUfuMRuAPizK?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                        <br><br>
+                        <h3 style="text-align: center;">Albums</h3>
+                        <br>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1hQ6AGOP975jhfWGG0iXkT?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4D7yjFpJcLGq7ntY9RLZOp?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+                    </details>
+
+                    <details class="Servicedetails">
+                        <summary class="Servicesummary"><p>Designs and Concept</p><p>12</p></summary>
+
+                        <br><br>
+                        <h3 style="text-align: center;">Mechanical Design</h3>
+                        <br>
+
+                        <section class="artGallery">
+                            <img style="width: 100%;" src="./asset/renders/ironhorse.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/calamity.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/compensator.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/mpdp.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/nta.jpg" alt="">
+                        </section>
+
+                        <br><br>
+                        <h3 style="text-align: center;">Environmental Art</h3>
+                        <br>
+                        <section class="artGallery">
+                            <img style="width: 100%;" src="./asset/renders/alikeearth.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/darknebula.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/secretgarden.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/glowingdust.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/stellarclouds.jpg" alt="">
+                        </section>
+
+                        <br><br>
+                        <h3 style="text-align: center;">Stylised Art</h3>
+                        <br>
+                        <section class="artGallery">
+                            <img style="width: 100%;" src="./asset/renders/blacknai.jpg" alt="">
+                            <img style="width: 100%;" src="./asset/renders/ocenheart.jpg" alt="">
+                        </section>
+
+                        <br><br>
+                    </details>
+
+                    <details class="Servicedetails">
+                        <summary class="Servicesummary"><p>Cinematography</p><p>4</p></summary>
+                        <br><br>
+                        <h2 style="text-align: center;">Music Video</h2>
+                        <br>
+
+                        <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/ZpLZCy_WfM8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/4ld6sSxjnIo?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/_vl_KukwmSw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                        <br><br>
+                        <h2 style="text-align: center;">Spinoff</h2>
+                        <br>
+
+                        <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/TFO9it6lNK4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </details>
+
+                    <br><br>
+
+                </div>
             </section>
 
-            <section class="content" id="terms">
-                <section class="terms" style="text-align: left;">
-                    <h1>Terms of Service</h1>
+            <section id="terms">
+                <div class="content">
+                    <br>
+                    <h1 style="text-align: center;">Terms of Service</h1>
                     <h2>Overview</h2>
                     <p>This website is operated by ANXSION. Throughout the site, the terms “we”, “us” and “our” refer to ANXSION. ANXSION offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.</p>
 
@@ -641,19 +649,19 @@
 
                     <p>Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services. If these Terms of Service are considered an offer, acceptance is expressly limited to these Terms of Service.</p>
 
-                    <h1>General Conditions</h1>
+                    <h2>General Conditions</h2>
 
                     <p>We reserve the right to refuse service to any individual for any reason at any time.</p>
 
                     <p>You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the service, use of the service, or access to the service or any contact on the website through which the service is provided, without express written permission by us.</p>
 
-                    <h1>Accuracy and Completeness of Information</h1>
+                    <h2>Accuracy and Completeness of Information</h2>
 
                     <p>We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.</p>
 
                     <p>This site may contain certain historical information. Historical information, necessarily, is not current and is provided for your reference only. We reserve the right to modify the contents of this site at any time, but we have no obligation to update any information on our site. You agree that it is your responsibility to monitor changes to our site.</p>
 
-                    <h1>Modification to the Services and Prices</h1>
+                    <h2>Modification to the Services and Prices</h2>
 
                     <p>Prices for our services are subject to change without notice.</p>
 
@@ -661,7 +669,7 @@
 
                     <p>We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of the Service.</p>
 
-                    <h1>Product and Services</h1>
+                    <h2>Product and Services</h2>
 
                     <p>Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy.</p>
 
@@ -671,19 +679,19 @@
 
                     <p>We do not warrant that the quality of any products, services, information, or other material purchased or obtained by you will meet your expectations, or that any errors in the Service will be corrected.</p>
 
-                    <h1>Accuracy of Billing</h1>
+                    <h2>Accuracy of Billing</h2>
 
                     <p>We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. In the event that we make a change to or cancel an order, we may attempt to notify you by contacting the e-mail and/or billing address/phone number provided at the time the order was made. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers or distributors.</p>
 
                     <p>You agree to provide current, complete and accurate purchase and account information for all purchases made at our store. You agree to promptly update your account and other information, including your email address and credit card numbers and expiration dates, so that we can complete your transactions and contact you as needed.</p>
 
-                    <h1>Errors</h1>
+                    <h2>Errors</h2>
 
                     <p>Occasionally there may be information on our site or in the Service that contains typographical errors, inaccuracies or omissions that may relate to product descriptions, pricing, promotions, offers, product shipping charges, transit times and availability. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information or cancel orders if any information in the Service or on any related website is inaccurate at any time without prior notice (including after you have submitted your order).</p>
 
                     <p>We undertake no obligation to update, amend or clarify information in the Service or on any related website, including without limitation, pricing information, except as required by law. No specified update or refresh date applied in the Service or on any related website, should be taken to indicate that all information in the Service or on any related website has been modified or updated.</p>
 
-                    <h1>Disclaimer of Warrenty and Limited Liability</h1>
+                    <h2>Disclaimer of Warrenty and Limited Liability</h2>
 
                     <p>We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free.</p>
 
@@ -695,17 +703,19 @@
 
                     <p>Because some states or jurisdictions do not allow the exclusion or the limitation of liability for consequential or incidental damages, in such states or jurisdictions, our liability shall be limited to the maximum extent permitted by law.</p>
 
-                    <h1>Governing Law</h1>
+                    <h2>Governing Law</h2>
 
-                    <p>These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of India.</p>
-                </section>   
+                    <p>These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of India.</p> 
+                </div> 
             </section>
 
-            <section class="content" id="privacy">
-                <section class="terms" style="text-align: center;">
-                    <h1>Privacy Policy</h1>
+            <section id="privacy">
+                <div class="content">
+                    <br>
+                    <h1 style="text-align: center;">Privacy Policy</h1>
                     
-                    <p>ANXSION and ANXSION's services "Guradian Angel" and "Capital Emergence" ("we" from here onwards) does collect and processes personal data of users on our online services and website. This Privacy Policy applies to personal data we obtain from individuals (“Users”) through our websites, online services, and web-based applications (collectively, the “Services”) during the purchase/delivery of the product.</p>
+                    <h2>Preface</h2>
+                    <p>ANXSION and ANXSION's services "Guradian Angel" and "Dendritic Dynamics" ("we" from here onwards) does collect and processes personal data of users on our online services and website. This Privacy Policy applies to personal data we obtain from individuals (“Users”) through our websites, online services, and web-based applications (collectively, the “Services”) during the purchase/delivery of the product.</p>
 
                     <p>Some of our services might be subject to a separate privacy policy. If a separate privacy policy applies to a particular service, we will post it on the relevant website or otherwise make it available in connection with the service in question.</p>
 
@@ -715,11 +725,11 @@
 
                     <p>This Privacy Policy only covers data processing carried out by ANXSION. The Privacy Policy does not address nor are responsible for the privacy practices of any third parties. ANXSION disclaims all responsibility for the processing carried out by third parties, also in cases where Services include hyperlinks or other links to third parties’ websites or services.</p>
 
-                    <h1>Personal Data Processed and Sources of Data</h1>
+                    <h2>Personal Data Processed and Sources of Data</h2>
 
                     <p>We collect the following information types of the Users:</p>
 
-                    <ol style="text-align: justify;">
+                    <ol>
                         <li><u>User Data</u>: Essential personal information for identification and authentication, such as name, email address and physical addresses, so that all the legal documents can be sent to the proper clients and to prevent any form of information jeopardy.</li>
                         <li><u>Collateral Data</u>: There are certian information, circumstances and facts that usually does not directly provide any form of information about the client, however, sometimes individuals can be recognized from it, either alone or when combined or linked with User Data. In such situations, Collateral Data can also be considered to be personal data under applicable laws and we will treat the combined data as personal data.</li>
                     </ol>
@@ -745,21 +755,21 @@
                     <p>ANXSION does not store personal data longer than is legally permitted and necessary for the purposes of providing the Services or the relevant parts thereof. The storage period depends on the nature of the information and the purposes of processing and typically ranges from a few seconds (session cache) to 5 years (certified copy of the documents). The maximum period may, therefore, vary per use.</p>
 
                     <p>We take all reasonable and appropriate security measures to protect the personal data we store and process from unauthorised access or unauthorised alteration, disclosure or destruction.</p>
-                </section>
+                </div>
             </section>
 
-            <section class="content" id="pricing">
-                <section class="terms" style="text-align: center;">
+            <section id="pricing">
+                <div class="content">
+                    <br>
                     <h1>Pricing System</h1>
                     <p>The prices provided hereunder are based on the standard requirements. The actual fees charged may be lower or higher, based on the factors such as government fees, complexities and other exceptional circumstance.</p>
 
-                    <p>We accept cryptocurrency as a form of payment. We accept Bitcoin, Litecoin, Ethereum and Tether.</p>
+                    <p>We accept cryptocurrency as a form of payment. We accept Bitcoin (BTC), Litecoin (LTC), Ethereum (RTH) and Tether (USDT).</p>
                     
                     <br>
 
                     <table>
-                        <caption>Prices updated on July, 2023</caption>
-
+                        <caption>Prices updated on August, 2023</caption>
                         <thead>
                             <tr>
                                 <th colspan="3"><h2>Consultation</h2></th>
@@ -1049,12 +1059,13 @@
                         </tbody>
                     </table>
                     <br><br>
-                </section>    
+                </div> 
             </section>
         
         </main>
 
         <footer>
+            <br><br>
             <section style="width:100%;display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: center;">
                 <p style="text-decoration: underline;font-size: 12px; cursor: pointer; text-align: center;" onclick="accessProtocol('terms')">Terms of Service</p>
                 <p style="text-decoration: underline;font-size: 12px; cursor: pointer; text-align: center;" onclick="accessProtocol('privacy')">Privacy Policy</p>
