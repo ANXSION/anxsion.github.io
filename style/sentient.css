@@ -34,6 +34,18 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: LogoRegular;
+    src: url('../asset/fonts//LogoRegular.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: LogoLight;
+    src: url('../asset/fonts/LogoLight.ttf');
+    font-display: swap;
+}
+
 
 
 :root{
@@ -460,14 +472,10 @@ footer p{
     position: relative;
 }
 
-.mainLogo{
-    width: 12%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    object-position: center;
-    cursor: pointer;
-    pointer-events: none;
-    filter: invert(100%);
+
+.logo{
+    font-family: 'LogoRegular';
+    font-size: 6vw;
 }
 
 #mobileNavigation{
@@ -802,27 +810,18 @@ summary:hover{
     .finePrint{
         width: 100%;
     }
-    .cardHeading{
-        font-size: var(--CardHeadMobile)!important;
-    }
-    .investCard{
-        aspect-ratio: 16/9;
-    }
-    .investCardRow p{
-        font-size: var(--fontMobile-versatile);
-    }
     dialog{
         width: 75%;
     }
     .guardianBanner{
         width: 100%;
     }
-    .mass{
-        height: 9vw;
-        width: 9vw;
-    }
     .dendriticShowcase{
         grid-template-columns: 1fr;
+    }
+    .logo{
+        font-family: 'LogoRegular';
+        font-size: 9vw;
     }
 }
 
