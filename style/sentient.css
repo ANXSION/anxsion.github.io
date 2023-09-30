@@ -66,8 +66,8 @@
 }
 
 ::selection {
-    color: white;
-    background-color: black;
+    color: var(--primary);
+    background-color: var(--secondary);
 }
 
 .code{
@@ -414,9 +414,6 @@ dialog[open] {
     
     
 }
-
-
-
 
 article{
     width: 100%;
