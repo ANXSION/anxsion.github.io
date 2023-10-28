@@ -717,6 +717,25 @@ summary:hover{
     aspect-ratio: 1/1;
 }
 
+.glancedata{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.glancedataElement{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+
 
 .finePrint{
     display: flex;
@@ -770,6 +789,9 @@ summary:hover{
         width: 100%;
     }
     .dendriticShowcase{
+        grid-template-columns: 1fr 1fr;
+    }
+    .glancedata{
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -828,6 +850,9 @@ summary:hover{
     .logo{
         font-family: 'LogoRegular';
         font-size: 9vw;
+    }
+    .glancedata{
+        grid-template-columns: 1fr;
     }
 }
 
