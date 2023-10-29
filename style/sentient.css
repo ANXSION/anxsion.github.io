@@ -735,6 +735,10 @@ summary:hover{
     align-items:flex-start;
 }
 
+.gridmini{
+    grid-template-columns: 1fr 1fr;
+}
+
 
 
 .finePrint{
@@ -794,6 +798,9 @@ summary:hover{
     .glancedata{
         grid-template-columns: 1fr 1fr;
     }
+    .gridmini{
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -852,6 +859,9 @@ summary:hover{
         font-size: 9vw;
     }
     .glancedata{
+        grid-template-columns: 1fr;
+    }
+    .gridmini{
         grid-template-columns: 1fr;
     }
 }
