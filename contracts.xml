@@ -5,11 +5,11 @@
     <heading>Sell Orders</heading>
     <contractarray>
 
-        <contract condition = "urgent">
+        <contract condition = "available">
             <contractdetails>
                 <type>House for Sale</type>
                 <classification>Classification: Scheduled Tribe</classification>
-                <size>Size: 3 Katha</size>
+                <size>Size: 6 Katha</size>
                 <location>Location: Hatigisha, Nalaxbari</location>
                 <price>Price: Rs 35L</price>
                 <payout>Payout: 1%</payout>
@@ -17,7 +17,7 @@
             <contractdescription>
             For sale is a property located in Hatigisha, Naxalbari, comprising a 3 BHK house on a 6 Katha land (5 Katha for the house and 1 Katha designated for car parking). The property falls under the classification of Scheduled Caste Property. The house has a G+1 foundation, with the ground floor fully constructed. Situated 5 minutes away from the highway and in proximity to the Naxalbari Toll Booth, the location offers convenience and accessibility.
             </contractdescription>
-            <contractstatus>URGENT</contractstatus>
+            <contractstatus>Available</contractstatus>
         </contract>
 
         <contract condition = "available">
