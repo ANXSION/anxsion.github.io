@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="./style/contracts.css"?>
+
+<contractdb>
+    <heading>Sell Orders</heading>
+    <contractarray>
+
+        <contract condition = "urgent">
+            <contractdetails>
+                <type>House for Sale</type>
+                <classification>Classification: Scheduled Tribe</classification>
+                <size>Size: 3 Katha</size>
+                <location>Location: Hatigisha, Nalaxbari</location>
+                <price>Price: Rs 35L</price>
+                <payout>Payout: 1%</payout>
+            </contractdetails>
+            <contractdescription>
+            For sale is a property located in Hatigisha, Naxalbari, comprising a 3 BHK house on a 6 Katha land (5 Katha for the house and 1 Katha designated for car parking). The property falls under the classification of Scheduled Caste Property. The house has a G+1 foundation, with the ground floor fully constructed. Situated 5 minutes away from the highway and in proximity to the Naxalbari Toll Booth, the location offers convenience and accessibility.
+            </contractdescription>
+            <contractstatus>URGENT</contractstatus>
+        </contract>
+
+        <contract condition = "available">
+            <contractdetails>
+                <type>Property for Sale</type>
+                <classification>Classification: General</classification>
+                <size>Size: 4.2 Katha</size>
+                <location>Location: Hakimpara</location>
+                <price>Price: Rs 1.3C</price>
+                <payout>Payout: 0.8%</payout>
+            </contractdetails>
+            <contractdescription>
+            For sale is a vacant plot spanning 4.2 Katha in Hakimpara, Siliguri. This general property, strategically located in a commercially prominent area, is devoid of any structures and holds appeal for prospective businesses. The plot is available for immediate acquisition, offering a blank canvas for development in a well-established business environment. Prospective buyers are invited to consider this property for its vacant status and favorable location, presenting an opportunity for various business ventures in the bustling Hakimpara area.
+            </contractdescription>
+            <contractstatus>Available</contractstatus>
+        </contract>
+
+        <contract condition = "available">
+            <contractdetails>
+                <type>Flat for Sale</type>
+                <classification>Classification: General</classification>
+                <size>Size: 2BHK (1st Floor)</size>
+                <location>Location: Pradhan Nagar</location>
+                <price>Price: Rs 35L</price>
+                <payout>Payout: 0.5%</payout>
+            </contractdetails>
+            <contractdescription>
+            For sale is a 2 BHK flat located on the 1st floor in Pradhan Nagar. This general-classification property is in proximity to MargaretEnglish School. The current occupant, the client, will vacate the premises within one month.
+            </contractdescription>
+            <contractstatus>Available</contractstatus>
+        </contract>
+
+        <contract condition = "available">
+            <contractdetails>
+                <type>Tea Estate for Sale</type>
+                <classification>Classification: General</classification>
+                <size>Size: 27 Kathas</size>
+                <location>Location: Bagdogra</location>
+                <price>Price: Rs 2.0C</price>
+                <payout>Payout: 0.8%</payout>
+            </contractdetails>
+            <contractdescription>
+            Offered for sale is a 27 Katha general-classified tea estate located in proximity to Bagdogra Airport. Positioned strategically, the property features operational machinery dedicated to tea processing, with a fully functional factory specializing in the production of Green Tea and Darjeeling tea. The estate's prime location near Bagdogra Airport enhances logistical convenience, making it an ideal investment for those seeking a tea estate with existing processing capabilities.
+            </contractdescription>
+            <contractstatus>Available</contractstatus>
+        </contract>
+
+    </contractarray>
+
+    <heading>Buy Orders</heading>
+    
+    <contractarray>
+
+        <contract condition = "unavailable">
+            <contractdetails>
+                <type>Flat Purchase</type>
+                <status>Ownership Type: New/Resale</status>
+                <age>Flat Age: &lt;5 Years</age>
+                <size>Size: 3-BHK</size>
+                <furnished>Furnished: Fully Furnished</furnished>
+                <location>Location: Salugara</location>
+                <price>Price: Any</price>
+                <payout>Payout: 1%</payout>
+            </contractdetails>
+            <contractdescription>
+            Acquiring details...
+            </contractdescription>
+            <contractstatus>Acquiring</contractstatus>
+        </contract>
+
+        <contract condition = "unavailable">
+            <contractdetails>
+                <type>Flat Purchase</type>
+                <status>Ownership Type: New/Resale</status>
+                <age>Flat Age: &lt;5 Years</age>
+                <size>Size: Any</size>
+                <furnished>Furnished: Any</furnished>
+                <location>Location: Pradhan Nagar</location>
+                <price>Price: &lt;Rs 35L</price>
+                <payout>Payout: 1%</payout>
+            </contractdetails>
+            <contractdescription>
+            Acquiring details...
+            </contractdescription>
+            <contractstatus>Acquiring</contractstatus>
+        </contract>
+
+    </contractarray>
+</contractdb>
