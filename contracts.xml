@@ -49,7 +49,8 @@
             </contractdescription>
             <contractstatus>Available</contractstatus>
         </contract>
-
+        
+        <!--
         <contract condition = "available">
             <contractdetails>
                 <type>Tea Estate for Sale</type>
@@ -64,6 +65,7 @@
             </contractdescription>
             <contractstatus>Available</contractstatus>
         </contract>
+        -->
 
     </contractarray>
 
