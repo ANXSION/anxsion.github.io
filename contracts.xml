@@ -39,7 +39,7 @@
             <contractdetails>
                 <type>Flat for Sale</type>
                 <classification>Classification: General</classification>
-                <size>Size: 2BHK (1st Floor)</size>
+                <size>Size: 2BHK (1st Floor) 780 Sq. Ft.</size>
                 <location>Location: Pradhan Nagar</location>
                 <price>Price: Rs 35L</price>
                 <payout>Payout: 0.5%</payout>
@@ -49,7 +49,7 @@
             </contractdescription>
             <contractstatus>Available</contractstatus>
         </contract>
-        
+
         <!--
         <contract condition = "available">
             <contractdetails>
