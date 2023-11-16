@@ -25,12 +25,27 @@
                 <type>Property for Sale</type>
                 <classification>Classification: General</classification>
                 <size>Size: 4.2 Katha</size>
-                <location>Location: Hakimpara</location>
+                <location>Location: Haiderpara</location>
                 <price>Price: Rs 1.3C</price>
                 <payout>Payout: 0.8%</payout>
             </contractdetails>
             <contractdescription>
             For sale is a vacant plot spanning 4.2 Katha in Hakimpara, Siliguri. This general property, strategically located in a commercially prominent area, is devoid of any structures and holds appeal for prospective businesses. The plot is available for immediate acquisition, offering a blank canvas for development in a well-established business environment. Prospective buyers are invited to consider this property for its vacant status and favorable location, presenting an opportunity for various business ventures in the bustling Hakimpara area.
+            </contractdescription>
+            <contractstatus>Available</contractstatus>
+        </contract>
+
+        <contract condition = "unavailable">
+            <contractdetails>
+                <type>Property for Sale</type>
+                <classification>Classification: General</classification>
+                <size>Size: 3 Katha</size>
+                <location>Location: Haiderpara</location>
+                <price>Price: Rs 90L</price>
+                <payout>Payout: 0.8%</payout>
+            </contractdetails>
+            <contractdescription>
+            Details awaiting...
             </contractdescription>
             <contractstatus>Available</contractstatus>
         </contract>

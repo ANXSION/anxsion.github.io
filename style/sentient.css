@@ -8,35 +8,10 @@
     src: url('../asset/fonts/Signature.ttf');
     font-display: swap;
 }
-@font-face {
-    font-family: PlexMonoLight;
-    src: url('../asset/fonts/IBMPlexMono-Light.otf');
-    font-display: swap;
-}
-@font-face {
-    font-family: PlexMonoLight;
-    src: url('../asset/fonts/IBMPlexMono-Regular.otf');
-    font-display: swap;
-}
-@font-face {
-    font-family: PlexSansLight;
-    src: url('../asset/fonts/IBMPlexSans-Light.otf');
-    font-display: swap;
-}
-@font-face {
-    font-family: PlexSansReg;
-    src: url('../asset/fonts/IBMPlexSans-Regular.otf');
-    font-display: swap;
-}
-@font-face {
-    font-family: PlexSansBold;
-    src: url('../asset/fonts/IBMPlexSans-SemiBold.otf');
-    font-display: swap;
-}
 
 @font-face {
     font-family: LogoRegular;
-    src: url('../asset/fonts//LogoRegular.ttf');
+    src: url('../asset/fonts/LogoRegular.ttf');
     font-display: swap;
 }
 
@@ -63,6 +38,8 @@
     --elevation2: 2;
     --elevation3: 3;
     --elevation4: 4;
+
+    --default-font: 'Times New Roman';
 }
 
 ::selection {
@@ -71,14 +48,14 @@
 }
 
 .code{
-    font-family: PlexMonoLight;
+    font-family: var(--default-font);
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 400;
     letter-spacing: 0.32px;
 }
 .label{
-    font-family: PlexSansReg;
+    font-family: var(--default-font);
     font-size: 0.875rem;
     line-height: 1.125rem;
     font-weight: 400;
@@ -88,7 +65,7 @@
 body{
     height: 100%;
     width: 100%;
-    font-family: PlexSansReg;
+    font-family: 'Times New Roman', Times, serif;
     background-color: var(--primary);
     color: var(--secondary);
     font-size: 16px;
@@ -124,13 +101,12 @@ p{
     line-height: 1.5rem;
     font-weight: 400;
     letter-spacing: 0px;
-    text-align: left;
+    text-align: justify;
 }
 
 ol,li{
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 400;
     letter-spacing: 0px;
     text-align: justify;
 }
@@ -171,8 +147,8 @@ td, th{
 }
 
 sup{
-    font-size: 0.5rem;
-    vertical-align: 50%
+    font-size: 3px;
+    vertical-align: 8px;
 }
 
 td ul{
@@ -185,7 +161,7 @@ img {
 }
 
 h1{
-    font-family: PlexSansLight;
+    font-family: var(--default-font);
     font-size: 2.625rem;
     line-height: 3.125rem;
     font-weight: 300;
@@ -194,7 +170,7 @@ h1{
 }
 
 h2{
-    font-family: PlexSansLight;
+    font-family: var(--default-font);
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 300;
@@ -202,7 +178,7 @@ h2{
     text-align: left;
 }
 h3{
-    font-family: PlexSansReg;
+    font-family: var(--default-font);
     font-size: 1.75rem;
     line-height: 2.25rem;
     font-weight: 400;
@@ -210,7 +186,7 @@ h3{
     text-align: left;
 }
 h4{
-    font-family: PlexSansReg;
+    font-family: var(--default-font);
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-weight: 400;
@@ -218,7 +194,7 @@ h4{
     text-align: left;
 }
 h5{
-    font-family: PlexSansBold;
+    font-family: var(--default-font);
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 600;
@@ -226,7 +202,7 @@ h5{
     text-align: left;
 }
 h6{
-    font-family: PlexSansBold;
+    font-family: var(--default-font);
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 600;
