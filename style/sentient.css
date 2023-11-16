@@ -618,11 +618,9 @@ details{
     color: var(--secondary);
     transition: 0.3s all;
     border: none;
-    border-bottom: 1px solid var(--secondary);
 }
 
 summary{
-    height: 72px;
     font-size: var(--fontWeb);
     list-style: none;
     text-align: center;
@@ -636,6 +634,7 @@ summary{
     padding-left: 10%;
     padding-right: 10%;
     cursor: pointer;
+    border-bottom: 1px solid var(--secondary);
 }
 
 summary:hover{
