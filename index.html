@@ -83,9 +83,9 @@
 
         <dialog id="caseStatus">
             <div id="clientQuery">
-                <label for="clientId">Client ID:</label>
+                <label for="clientId">Case Reference:</label>
                 <br>
-                <input type="text" id="clientIdInput" name="clientId" placeholder="Enter your Client ID" required>
+                <input type="text" id="clientIdInput" name="clientId" placeholder="Enter a valid case reference" required>
                 <p id="clienterror" style="color: crimson;"></p>
 
                 <button onclick="caseSearch()">
@@ -101,37 +101,31 @@
             <div id="clientContainer">
                 <div class="clientDetails">
                     <div class="clientData">
-                        <p style="text-decoration: underline;">Client Code:</p>
-                        <p id="clientCode"></p>
+                        <p style="text-decoration: underline;">CIS No:</p>
+                        <p id="cisNo"></p>
                     </div>
-    
                     <div class="clientData">
-                        <p style="text-decoration: underline;">Contract Type:</p>
-                        <p id="clientContract"></p>
+                        <p style="text-decoration: underline;">Case No.:</p>
+                        <p id="caseNo"></p>
                     </div>
-    
                     <div class="clientData">
-                        <p style="text-decoration: underline;">Meeting Date:</p>
-                        <p id="clientMeeting"></p>
+                        <p style="text-decoration: underline;">Next Date:</p>
+                        <p id="nextDate"></p>
                     </div>
-    
                     <div class="clientData">
-                        <p style="text-decoration: underline;">Status:</p>
-                        <p id="clientStatus"></p>
+                        <p style="text-decoration: underline;">Purpose:</p>
+                        <p id="purposeDate"></p>
                     </div>
                 </div>
 
                 <br>
 
                 <div class="clientProcess">
-                    <div class="clientWorkUpdate">
-                        <p style="text-decoration: underline;">Work Update:</p>
-                        <p id="clientWorkUpdate"></p>
-                    </div>
+                    <p id="caseNote"></p>
     
                     <br>
                     <form method="dialog">
-                        <button>
+                        <button style="width: fit-content;">
                             <p>Close&nbsp;</p>
                             <img class="ui-icon" src="./asset/icon/ui-icon/arrow--down.svg" alt="">
                         </button>
@@ -146,7 +140,7 @@
                 <p style="position: absolute; top: 10%; margin: 0; font-size: 1rem; cursor: pointer;" onclick="menu('close')">CLOSE</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('home')">Home</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('ressacrae')">Archsapien</p>
+                <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('chryso')">Chryso Advosory</p>
                 <p style="font-size: 1.125rem; cursor: pointer;" onclick="accessProtocol('about')">About</p>
             </div>
 
@@ -158,7 +152,7 @@
                 <section style="grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: space-evenly; align-items: center; width: 100%;" id="webNavigation">
                     <p style="cursor: pointer; margin: 0; text-align: center;" onclick="accessProtocol('home')">Home</p>
                     <p style="cursor: pointer; margin: 0; text-align: center;" onclick="accessProtocol('guardian')">Guardian Angel</p>
-                    <p style="cursor: pointer; margin: 0; text-align: center;" onclick="accessProtocol('ressacrae')">Archsapien</p>
+                    <p style="cursor: pointer; margin: 0; text-align: center;" onclick="accessProtocol('chryso')">Chryso Advisory</p>
                     <p style="cursor: pointer; margin: 0; text-align: center;" onclick="accessProtocol('about')">About</p>
                 </section>
             </nav>
@@ -239,7 +233,7 @@
                     <h1>Practice Area</h1>
     
                     <details>
-                        <summary><h3>Cyber Law</h3><h3>+</h3></summary>
+                        <summary><p>Cyber Law</p><h3>+</h3></summary>
     
                         <br>
                         <p>In the digital age, cyber law and litigation is a rapidly growing field. As our reliance on technology increases, so too does the risk of cybercrime, data breaches, and other legal challenges. Our unit is here to help you protect your rights and interests in the digital world.</p>
@@ -255,7 +249,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Criminal Litigation</h3><h3>+</h3></summary>
+                        <summary><p>Criminal Litigation</p><h3>+</h3></summary>
     
                         <br>
                         <p style="text-align: justify;">At our criminal litigation service, we understand that facing criminal charges can be a daunting experience, both for the accused and their loved ones. We approach each case with compassion and dedication, ensuring that our clients receive the highest level of legal support and guidance throughout the process.</p>
@@ -271,7 +265,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Civil Litigation</h3><h3>+</h3></summary>
+                        <summary><p>Civil Litigation</p><h3>+</h3></summary>
     
                         <br>
                         <p>At our civil litigation service, we understand that legal disputes can be a stressful and disruptive experience for our clients. We approach each case with empathy and dedication, ensuring that our clients receive the highest level of legal support and guidance throughout the process.</p>
@@ -287,7 +281,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Corporate</h3><h3>+</h3></summary>
+                        <summary><p>Corporate</p><h3>+</h3></summary>
     
                         <br>
                         <p>Our corporate litigation service provides legal support to businesses facing complex legal disputes. We understand that legal disputes can be a major disruption to businesses. We approach each case with a focus on minimizing the impact of the dispute on our clients' operations and reputation, while still working tirelessly to protect their interests.</p>
@@ -305,7 +299,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Commercial</h3><h3>+</h3></summary>
+                        <summary><p>Commercial</p><h3>+</h3></summary>
     
                         <br>
                         <p>At our commercial litigation service, we understand the complexities of employment law and the impact that workplace issues can have on both employees and employers. We approach each case with a focus on understanding the industry and its specific legal landscape, in order to build the most effective legal strategy for our clients.</p>
@@ -322,7 +316,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Real Estate and Trust</h3><h3>+</h3></summary>
+                        <summary><p>Real Estate and Trust</p><h3>+</h3></summary>
     
                         <br>
                         <p>We understand that buying or selling a property is a major financial decision, and we want to make sure that you have the legal support you need to make the best decision for your needs. We will work with you to understand your goals and objectives, and we will provide you with clear and concise legal advice so that you can make informed decisions. We are committed to providing our clients with the highest quality legal services. We are passionate about real estate law, and we are dedicated to helping our clients achieve their real estate goals.</p>
@@ -339,7 +333,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Intellectual Property</h3><h3>+</h3></summary>
+                        <summary><p>Intellectual Property</p><h3>+</h3></summary>
     
                         <br>
                         <p>At our IP service, we understand the importance of protecting intellectual property and the role it plays in the success of our clients' businesses. Our Intellectual Property (IP) service provides legal support to individuals and businesses seeking to protect their valuable intellectual property assets.</p>
@@ -356,7 +350,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Tax and Compliance</h3><h3>+</h3></summary>
+                        <summary><p>Tax and Compliance</p><h3>+</h3></summary>
     
                         <br>
                         <p>Our tax service provides legal assistance to individuals and businesses in all areas of tax law. Our experienced tax lawyers are dedicated to helping clients navigate the complex and ever-changing tax landscape, while minimizing their tax liability and maximizing their financial benefits</p>
@@ -373,7 +367,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Alternate Dispute Resolution</h3><h3>+</h3></summary>
+                        <summary><p>Alternate Dispute Resolution</p><h3>+</h3></summary>
     
                         <br>
                         <p>ADR is a broad term that encompasses a variety of methods for resolving disputes without going to court. Some of the most common forms of ADR include mediation, arbitration, and negotiation. If you're facing a dispute, ADR can be a better way to solve your problems. ADR is faster, less expensive, and more confidential than litigation. It can also help the parties to maintain a good relationship, which is important if they need to continue to work together in the future.</p>
@@ -386,7 +380,7 @@
                     </details>
     
                     <details>
-                        <summary><h3>Other Services</h3><h3>+</h3></summary>
+                        <summary><p>Other Services</p><h3>+</h3></summary>
     
                         <br>
                         <p>In addition to our specialized legal services, we offer a variety of miscellaneous legal services to meet the diverse needs of our clients. Our experienced lawyers are equipped to handle a wide range of legal issues, providing effective representation and guidance in a timely and cost-effective manner.</p>
@@ -417,78 +411,13 @@
                 </div>
             </section>
 
-            <section id="ressacrae">
+            <section id="chryso">
                 <div class="content">
                     <br><br>
-                    <h1 style="width: 100%; font-family: Jost; text-align: center; font-size: 3rem;">Archsapien</h1>
-                    <br><br>
-
-                    <details>
-                        <summary><h2>Fundamentals of Scientific Temper</h2><h2>+</h2></summary>
-
-                        <details>
-                            <summary><h3>Curiosity</h3></summary>
-                            <p>Scientific temper is fueled by an insatiable curiosity, a trait that's essentially the love child of a cat and a detective. It's not just about asking questions; it's about asking questions with the persistence of a toddler asking, "Why?" for the umpteenth time. Imagine a world where curiosity doesn't exist—no one wonders why the sky is blue or why cats purr. Curiosity is like having a mental itch that can only be scratched by uncovering the mysteries of the universe. Without it, we'd probably still think the Earth is flat and that the moon is made of green cheese. Thank goodness for the curious minds that couldn't resist poking and prodding at the unknown, turning the pursuit of knowledge into a thrilling and often amusing adventure.</p>
-                        </details>
-                        <details>
-                            <summary><h3>Critical Thinking</h3></summary>
-                            <p>Critical thinking is the ability to look at information and say, "Hold on a minute, let's not swallow this hook, line, and sinker." It's the art of raising an eyebrow and asking, "Are you sure about that?" much like a sceptical cat eyeing a suspiciously wriggling piece of string. It's the skill of separating the wheat from the pseudoscientific chaff, and occasionally, it involves squinting at questionable theories with the same level of scepticism one reserves for low-budget sci-fi movies.</p>
-                        </details>
-    
-                        <details>
-                            <summary><h3>Empiricism</h3></summary>
-                            <p>At the heart of scientific temper lies the principle of Empiricism, a fancy term that basically means trusting your senses more than your cousin's conspiracy theories. Empiricism is the belief that knowledge is best gained through real-world observation and experimentation, not through staring into a crystal ball or relying on your neighbour's cat as a scientific advisor. It's like saying, "I'll believe it when I see it, measure it, and can repeat it without turning my basement into a mad scientist's lair." So, in the grand ballroom of science, empiricism is the dance floor where hypotheses waltz with evidence, and wild speculations are politely asked to sit out.</p>
-                        </details>
-    
-                        <details>
-                            <summary><h3>Objectivity</h3></summary>
-                            <p>Imagine if your toaster had opinions about your bread choices - that's the exact opposite of objectivity. In the scientific realm, it's about divorcing feelings from facts and adopting a poker face that even the most seasoned card players would envy. So, when faced with a perplexing cosmic riddle, the objective scientist doesn't consult a crystal ball or ask the local fortune teller; instead, they channel their inner Spock and rely on logic, evidence, and a steadfast commitment to keeping feelings out of the equation. After all, in the scientific universe, objectivity isn't just a virtue; it's the law.</p>
-                        </details>
-    
-                        <details>
-                            <summary><h3>Open Mindedness</h3></summary>
-                            <p>Open-mindedness is like having a brain with a revolving door - always ready to welcome new ideas and kick out the ones that don't bring evidence to the table. It's the "I'm open to being wrong" attitude, a quality scientists share with toddlers who insist on taste-testing everything. Imagine if Galileo had stuck to thinking the Earth was the centre of the universe just because it sounded cool.</p>
-                        </details>
-    
-                        <details>
-                            <summary><h3>Communication</h3></summary>
-                            <p>Scientists trying to understand the secrets of the universe, and without good communication, is like Batman fighting crime blindfolded. It's not pretty. Clear and effective communication among scientists is the secret handshake that keeps the scientific community running smoothly. Science is a team sport, and without scientists working together like a squad, we'd be stuck in the dark ages, probably still debating whether the Earth is flat. Wait, are we still doing it?</p>
-                        </details>
-                    </details>
-
-
-                    <br><br>
-                    <h1>Knowlege Archive</h1>
-
-                    <details>
-                        <summary><h2>Mathematics</h2><h2>+</h2></summary>
-                        <p>Updating data...</p>
-                    </details>
-                    <details>
-                        <summary><h2>Astronomy</h2><h2>+</h2></summary>
-                        <p>Updating data...</p>
-                    </details>
-                    <details>
-                        <summary><h2>Physics</h2><h2>+</h2></summary>
-                        <p>Updating data...</p>
-                    </details>
-                    <details>
-                        <summary><h2>Chemistry</h2><h2>+</h2></summary>
-                        <p>Updating data...</p>
-                    </details>
-                    <details>
-                        <summary><h2>Biology</h2><h2>+</h2></summary>
-                        <p>Updating data...</p>
-                    </details>
-                    <details>
-                        <summary><h2>Computer Science</h2><h2>+</h2></summary>
-                        <p>Updating data...</p>
-                    </details>
-            
-
+                    <h1 style="width: 100%; font-family: Jost; text-align: center; font-size: 3rem;">Chryso Advisory</h1>
                     <br><br>
                     <h1>About</h1>
-                    <p style="text-align: justify;">Archsapien, at its core, is a bastion of intellectual pursuit and knowledge preservation. Dedicated to fostering a culture of perpetual learning, Sapientia is committed to the preservation, promotion, and provision of scientific knowledge. With an unwavering dedication to the principles of scientific thinking, Sapientia endeavors to cultivate curiosity, critical inquiry, and the pursuit of wisdom. Our mission is to inspire minds, transcend boundaries, and contribute to the collective reservoir of human understanding. </p>
+                    <p>Chryso Advisory is a distinguished investment bank committed to providing unparalleled financial expertise and strategic guidance to our esteemed clientele. With a foundation built on unwavering integrity and a commitment to excellence, Chryso Advisory offers a comprehensive suite of services, including mergers and acquisitions, capital raising, and strategic financial consulting. With a dedication to fostering lasting client relationships, Chryso Advisory navigates the complexities of the global financial landscape, offering strategic insights, risk management, and investment solutions that empower our clients to achieve their financial objectives.</p>
                 </div>
             </section>
 
@@ -517,16 +446,16 @@
                     <br>
 
                     <details>
-                        <summary><h3>Musical Portfolio</h3><h3>19</h3></summary>
+                        <summary><p>Musical Portfolio</p><h3>19</h3></summary>
                         <br><br>
 
-                        <h2 style="text-align: center;">Artist</h2>
+                        <p style="text-align: center;">Artist</p>
                         <br>
 
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/22yeYGWn2iMUfuMRuAPizK?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
                         <br><br>
-                        <h3 style="text-align: center;">Albums</h3>
+                        <p style="text-align: center;">Albums</p>
                         <br>
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1hQ6AGOP975jhfWGG0iXkT?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
@@ -535,10 +464,10 @@
                     </details>
 
                     <details>
-                        <summary><h3>Designs and Concept</h3><h3>12</h3></summary>
+                        <summary><p>Designs and Concept</p><h3>12</h3></summary>
 
                         <br><br>
-                        <h3 style="text-align: center;">Mechanical Design</h3>
+                        <p style="text-align: center;">Mechanical Design</p>
                         <br>
 
                         <section class="artGallery">
@@ -550,7 +479,7 @@
                         </section>
 
                         <br><br>
-                        <h3 style="text-align: center;">Environmental Art</h3>
+                        <p style="text-align: center;">Environmental Art</p>
                         <br>
                         <section class="artGallery">
                             <img style="width: 100%;" src="./asset/renders/alikeearth.jpg" alt="">
@@ -561,7 +490,7 @@
                         </section>
 
                         <br><br>
-                        <h3 style="text-align: center;">Stylised Art</h3>
+                        <p style="text-align: center;">Stylised Art</p>
                         <br>
                         <section class="artGallery">
                             <img style="width: 100%;" src="./asset/renders/blacknai.jpg" alt="">
@@ -572,9 +501,9 @@
                     </details>
 
                     <details>
-                        <summary><h3>Cinematography</h3><h3>4</h3></summary>
+                        <summary><p>Cinematography</p><h3>4</h3></summary>
                         <br><br>
-                        <h2 style="text-align: center;">Music Video</h2>
+                        <p style="text-align: center;">Music Video</p>
                         <br>
 
                         <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/ZpLZCy_WfM8?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -584,7 +513,7 @@
                         <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/_vl_KukwmSw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                         <br><br>
-                        <h2 style="text-align: center;">Spinoff</h2>
+                        <p style="text-align: center;">Spinoff</p>
                         <br>
 
                         <iframe width="100%" style="aspect-ratio: 16/9;" src="https://www.youtube.com/embed/TFO9it6lNK4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -680,7 +609,7 @@
                     <h1 style="text-align: center;">Privacy Policy</h1>
 
                     <h2>Preface</h2>
-                    <p>ANXSION and ANXSION's services "Guradian Angel" and "Archsapien" ("we" from here onwards) does collect and processes personal data of users on our online services and website. This Privacy Policy applies to personal data we obtain from individuals (“Users”) through our websites, online services, and web-based applications (collectively, the “Services”) during the purchase/delivery of the product.</p>
+                    <p>ANXSION and ANXSION's services "Guradian Angel" and "Chryso Advisory" ("we" from here onwards) does collect and processes personal data of users on our online services and website. This Privacy Policy applies to personal data we obtain from individuals (“Users”) through our websites, online services, and web-based applications (collectively, the “Services”) during the purchase/delivery of the product.</p>
 
                     <p>Some of our services might be subject to a separate privacy policy. If a separate privacy policy applies to a particular service, we will post it on the relevant website or otherwise make it available in connection with the service in question.</p>
 
@@ -1058,13 +987,13 @@
 
                 let params = new URLSearchParams(document.location.search);
                 let id = params.get("id");
-                
+
 
                 if(id == 'home' || id == null){
                     accessProtocol("home");
                 }
-                else if(id == 'ressacrae'){
-                    accessProtocol("ressacrae");
+                else if(id == 'chryso'){
+                    accessProtocol("chryso");
                 }
                 else if(id == 'guardian'){
                     accessProtocol("guardian");
@@ -1088,8 +1017,8 @@
                 transitionSpeed=300;
                 document.getElementById('home').style.display="none";
                 document.getElementById('home').style.opacity="0%";
-                document.getElementById('ressacrae').style.display="none";
-                document.getElementById('ressacrae').style.opacity="0%";
+                document.getElementById('chryso').style.display="none";
+                document.getElementById('chryso').style.opacity="0%";
                 document.getElementById('guardian').style.display="none";
                 document.getElementById('guardian').style.opacity="0%";
                 document.getElementById('about').style.display="none";
@@ -1110,11 +1039,11 @@
                     setTimeout(function() {document.getElementById('home').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
-                else if (linkname=="ressacrae"){
-                    history.pushState({}, "Res Sacrae", "?id=ressacrae");
-                    document.title="Res Sacrae";
-                    document.getElementById('ressacrae').style.display="block";
-                    setTimeout(function() {document.getElementById('ressacrae').style.opacity="100%";}, transitionSpeed);
+                else if (linkname=="chryso"){
+                    history.pushState({}, "Chryso Advisory", "?id=chryso");
+                    document.title="Chryso Advisory";
+                    document.getElementById('chryso').style.display="block";
+                    setTimeout(function() {document.getElementById('chryso').style.opacity="100%";}, transitionSpeed);
                     window.scrollTo(0,0);
                 }
                 else if (linkname=="guardian"){
@@ -1176,11 +1105,11 @@
                 document.getElementById("clientQuery").style.display='flex';
                 document.getElementById("clientContainer").style.display='none';
                 document.getElementById("clienterror").innerText='';
-                document.getElementById("clientCode").innerText='';
-                document.getElementById("clientContract").innerText='';
-                document.getElementById("clientMeeting").innerText='';
-                document.getElementById("clientStatus").innerText='';
-                document.getElementById("clientWorkUpdate").innerText='';
+                document.getElementById("cisNo").innerText='';
+                document.getElementById("caseNo").innerText='';
+                document.getElementById("nextDate").innerText='';
+                document.getElementById("purposeDate").innerText='';
+                document.getElementById("caseNote").innerText='';
 
                 document.getElementById("caseStatus").showModal();
             }
@@ -1189,20 +1118,21 @@
                 var clientIdSearch= document.getElementById("clientIdInput").value;
 
                 if (clientIdSearch == ''){
-                    document.getElementById("clienterror").innerText='Client ID is necessary to access the data.';
+                    document.getElementById("clienterror").innerText='No data found';
                 }
                 else if (clientIdSearch == '12345'){
-                    document.getElementById("clientCode").innerText='Test ID';
-                    document.getElementById("clientContract").innerText='Type of Contract';
-                    document.getElementById("clientMeeting").innerText='July 8, 2023';
-                    document.getElementById("clientStatus").innerText='Pending';
-                    document.getElementById("clientWorkUpdate").innerText='No remarks';
+                    document.getElementById("clienterror").innerText='';
+                    document.getElementById("cisNo").innerText='999 of 999';
+                    document.getElementById("caseNo").innerText='A.K. 999 of 999';
+                    document.getElementById("nextDate").innerText='99 of AAA, 9999';
+                    document.getElementById("purposeDate").innerText='AAA';
+                    document.getElementById("caseNote").innerText='No Remark';
                     document.getElementById("clientQuery").style.display='none';
                     document.getElementById("clientContainer").style.display='flex';
 
                 }
                 else{
-                    document.getElementById("clienterror").innerText='Please enter a valid Client ID.';
+                    document.getElementById("clienterror").innerText='No data found';
                 }
             }
 
