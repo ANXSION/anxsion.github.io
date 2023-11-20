@@ -37,15 +37,15 @@
 
             <div>
                 <p>Trade Open Price</p>
-                <input type="number" id="tradeopenprice">
+                <input type="number" id="tradeopenprice" value="1">
             </div>
             <div>
                 <p>Quantity</p>
-                <input type="number" id="quantity">
+                <input type="number" id="quantity" value="1">
             </div>
             <div>
                 <p>Average True Range</p>
-                <input type="number" id="atr">
+                <input type="number" id="atr" value="0">
             </div>
 
             <br>
@@ -66,7 +66,7 @@
 
                 <div>
                     <p>Stop-loss Factor</p>
-                    <input type="number" name="" id="slvalue">
+                    <input type="number" name="" id="slvalue" value="0">
                 </div>
             </fieldset>
 
@@ -76,17 +76,17 @@
                 <p>Book Profit Type</p>
                 <form class="dataCollection">
                     <div>
-                        <input type="radio" name="blType" id="blfixed" checked>
-                        <label for="blType">Fixed</label>
+                        <input type="radio" name="tpType" id="tpfixed" checked>
+                        <label for="tpType">Fixed</label>
                     </div>
                     <div>
-                        <input type="radio" name="blType" id="blfixed">
-                        <label for="blType">Percentage</label>
+                        <input type="radio" name="tpType" id="tpperc">
+                        <label for="tpType">Percentage</label>
                     </div>
                 </form>
                 <div>
                     <p>Take Profit Factor</p>
-                    <input type="number" name="" id="bpvalue">
+                    <input type="number" name="" id="bpvalue" value="0">
                 </div>
             </fieldset>
 
@@ -102,6 +102,9 @@
                 <p id="tvoutput"></p>
                 <p id="slvoutput"></p>
                 <p id="tpvoutput"></p>
+                <p id="pjtvoutput"></p>
+                <p id="pjtpvoutput"></p>
+                <p id="pjtlvoutput"></p>
             </div>
 
         </section>
@@ -111,30 +114,87 @@
 
 <script>
     document.getElementById('calculatedOutput').style.display="none";
+    document.getElementById('atr').disabled = false;
+    document.getElementById('stoploss').disabled = true;
+    document.getElementById('takeprofit').disabled = true;
+
+    document.getElementById('atrcalc').addEventListener("click", ()=>{
+        document.getElementById('atr').disabled = false;
+        document.getElementById('stoploss').disabled = true;
+        document.getElementById('takeprofit').disabled = true;
+    });
+
+    document.getElementById('manualcalc').addEventListener("click", ()=>{
+        document.getElementById('atr').disabled = true;
+        document.getElementById('stoploss').disabled = false;
+        document.getElementById('takeprofit').disabled = false;
+    });
 
     document.getElementById('calculate').addEventListener("click", calculatedata);
 
     function calculatedata(){
+        var TradeOpenPrice = document.getElementById('tradeopenprice').value;
+        var quantity = document.getElementById('quantity').value;
+        var stoploss = 0;
+        var takeprofit = 0;
+        var stoplossfinalvalue = 0;
+        var takeprofitfinalvalue = 0;
+        var temp = 0;
 
-        if (document.getElementById('longtrade').checked == true){
-
-        }
-        else if (document.getElementById('shorttrade').checked == true){
-            
-        }
+        totalvalue = TradeOpenPrice * quantity;
 
         if (document.getElementById('atrcalc').checked == true){
             document.getElementById('atr').disabled = false;
             document.getElementById('stoploss').disabled = true;
             document.getElementById('takeprofit').disabled = true;
-            
+
+            var atr = document.getElementById('atr').value;
+            stoploss =  Number(3 * atr);
+            takeprofit = Number(9 * atr);
+            console.log(takeprofit)
+            console.log(typeof takeprofit)
+
         }
-        if (document.getElementById('manualcalc').checked == true){
+        else if (document.getElementById('manualcalc').checked == true){
             document.getElementById('atr').disabled = true;
             document.getElementById('stoploss').disabled = false;
             document.getElementById('takeprofit').disabled = false;
-        }
-    }
 
+            if(document.getElementById('slfixed').checked == true){
+                temp = document.getElementById('slvalue').value;
+                stoploss =  Number(temp);
+            }
+            else if(document.getElementById('slperc').checked == true){
+                temp = document.getElementById('slvalue').value;
+                stoploss =  TradeOpenPrice * (Number(temp)/100);
+            }
+            if(document.getElementById('tpfixed').checked == true){
+                temp = document.getElementById('bpvalue').value;
+                takeprofit =  Number(temp);
+            }
+            else if(document.getElementById('tpperc').checked == true){
+                temp = document.getElementById('bpvalue').value;
+                takeprofit =  TradeOpenPrice * (Number(temp)/100);
+            }
+        }
+
+        if (document.getElementById('longtrade').checked == true){
+            stoplossfinalvalue = Number(TradeOpenPrice) - Number(stoploss);
+            takeprofitfinalvalue = Number(TradeOpenPrice) + Number(takeprofit);
+        }
+        else if (document.getElementById('shorttrade').checked == true){
+            stoplossfinalvalue = Number(TradeOpenPrice) + Number(stoploss);
+            takeprofitfinalvalue = Number(TradeOpenPrice) - Number(takeprofit);
+        }
+
+        document.getElementById('calculatedOutput').style.display="flex";
+        document.getElementById('otpoutput').innerText ="Trade Open Price: " + TradeOpenPrice;
+        document.getElementById('tvoutput').innerText ="Total Investment Value: " + (Number(TradeOpenPrice) * Number(quantity));
+        document.getElementById('slvoutput').innerText = "Stoploss: " + stoplossfinalvalue;
+        document.getElementById('tpvoutput').innerText = "Target Profit: " + takeprofitfinalvalue;
+        document.getElementById('pjtvoutput').innerText = "Projected Value: " + Number(takeprofitfinalvalue) * Number(quantity);
+        document.getElementById('pjtpvoutput').innerText = "Total Profit: " + ((Number(takeprofitfinalvalue) - Number(TradeOpenPrice)) * Number(quantity));
+        document.getElementById('pjtlvoutput').innerText = "Total Loss: " + ((Number(TradeOpenPrice) - Number(stoplossfinalvalue)) * Number(quantity));
+    }
 </script>
 </html>
