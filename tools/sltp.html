@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SL/TP Calculator</title>
+    <link rel="stylesheet" href="../style/metricdata.css">
+</head>
+<body>
+    <br><br>
+    <section>
+        <section style="display: flex; flex-direction: column;">
+
+            <p>Trade Type</p>
+            <form class="dataCollection">
+                <div>
+                    <input type="radio" name="tradeType" id="longtrade" checked>
+                    <label for="tradeType">Long</label>
+                </div>
+                <div>
+                    <input type="radio" name="tradeType" id="shorttrade">
+                    <label for="tradeType">Short</label>
+                </div>
+            </form>
+
+            <p>Calculation Setting</p>
+            <form class="dataCollection" id="calctype">
+                <div>
+                    <input type="radio" name="calcType" id="atrcalc" checked>
+                    <label for="calcType">ATR based</label>
+                </div>
+                <div>
+                    <input type="radio" name="calcType" id="manualcalc">
+                    <label for="calcType">Manual</label>
+                </div>
+            </form>
+
+            <div>
+                <p>Trade Open Price</p>
+                <input type="number" id="tradeopenprice">
+            </div>
+            <div>
+                <p>Quantity</p>
+                <input type="number" id="quantity">
+            </div>
+            <div>
+                <p>Average True Range</p>
+                <input type="number" id="atr">
+            </div>
+
+            <br>
+            <fieldset id="stoploss">
+                <legend>Stop Loss Setting</legend>
+                <p>Stop-loss Type</p>
+
+                <form class="dataCollection">
+                    <div>
+                        <input type="radio" name="slType" id="slfixed" checked>
+                        <label for="slType">Fixed</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="slType" id="slperc">
+                        <label for="slType">Percentage</label>
+                    </div>
+                </form>
+
+                <div>
+                    <p>Stop-loss Factor</p>
+                    <input type="number" name="" id="slvalue">
+                </div>
+            </fieldset>
+
+            <br>
+            <fieldset id="takeprofit">
+                <legend>Take Profit Setting</legend>
+                <p>Book Profit Type</p>
+                <form class="dataCollection">
+                    <div>
+                        <input type="radio" name="blType" id="blfixed" checked>
+                        <label for="blType">Fixed</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="blType" id="blfixed">
+                        <label for="blType">Percentage</label>
+                    </div>
+                </form>
+                <div>
+                    <p>Take Profit Factor</p>
+                    <input type="number" name="" id="bpvalue">
+                </div>
+            </fieldset>
+
+            
+
+            <br><br>
+            <input type="button" value="Calculate" id="calculate">
+
+            <br><br>
+
+            <div id="calculatedOutput">
+                <p id="otpoutput"></p>
+                <p id="tvoutput"></p>
+                <p id="slvoutput"></p>
+                <p id="tpvoutput"></p>
+            </div>
+
+        </section>
+    </section>
+    
+</body>
+
+<script>
+    document.getElementById('calculatedOutput').style.display="none";
+
+    document.getElementById('calculate').addEventListener("click", calculatedata);
+
+    function calculatedata(){
+
+        if (document.getElementById('longtrade').checked == true){
+
+        }
+        else if (document.getElementById('shorttrade').checked == true){
+            
+        }
+
+        if (document.getElementById('atrcalc').checked == true){
+            document.getElementById('atr').disabled = false;
+            document.getElementById('stoploss').disabled = true;
+            document.getElementById('takeprofit').disabled = true;
+            
+        }
+        if (document.getElementById('manualcalc').checked == true){
+            document.getElementById('atr').disabled = true;
+            document.getElementById('stoploss').disabled = false;
+            document.getElementById('takeprofit').disabled = false;
+        }
+    }
+
+</script>
+</html>
