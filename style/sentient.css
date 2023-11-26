@@ -39,7 +39,7 @@
     --elevation3: 3;
     --elevation4: 4;
 
-    --default-font: 'Arial';
+    --default-font: 'Times New Roman';
 }
 
 ::selection {
@@ -328,8 +328,8 @@ dialog{
     border: none;
     padding: 27px;
     z-index: var(--elevation2);
-    justify-content: center;
-    align-items: center;
+    justify-self: center;
+    align-self: center;
     background-color: var(--primary);
     color: var(--secondary);
     backdrop-filter: blur(40px);

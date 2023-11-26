@@ -47,17 +47,6 @@
             <p style="font-size: 10vw">&#9888;</p>
             <p>Enable JavaScript to ensure optimal functionality and seamless operations</p>
         </noscript>
-        
-        <dialog id="disclaimer">
-            <p>Res Sacrae Asset Management provides financial data and investment ideas for informational purposes only. We are not sponsored by any entity for the display of our data, and we do not guarantee the accuracy or completeness of our data.<br><br>Any investment recommendations made by Res Sacrae Asset Management are based on our own investment research and analysis. We have invested in some of the securities that we recommend, but this does not guarantee that our recommendations will be successful.<br><br>All investments are subject to market risk, and there is no guarantee of any form of return. Investors should carefully consider their own investment objectives and risk tolerance before making any investment decisions.<br><br>By using the Res Sacrae Asset Management website and services, you agree to these disclaimers.</p>
-            <br>
-            <form method="dialog">
-                <button>
-                    <p>I understand&nbsp;</p>
-                    <img class="ui-icon" src="./asset/icon/ui-icon/arrow--down.svg" alt="">
-                </button>
-            </form>
-        </dialog>
 
         <dialog id="contactDialog">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
@@ -101,11 +90,11 @@
             <div id="clientContainer">
                 <div class="clientDetails">
                     <div class="clientData">
-                        <p style="text-decoration: underline;">CIS No:</p>
+                        <p style="text-decoration: underline;">Filing No:</p>
                         <p id="cisNo"></p>
                     </div>
                     <div class="clientData">
-                        <p style="text-decoration: underline;">Case No.:</p>
+                        <p style="text-decoration: underline;">Case No:</p>
                         <p id="caseNo"></p>
                     </div>
                     <div class="clientData">
@@ -132,16 +121,15 @@
                     </form>
                 </div>
             </div>
-
         </dialog>
 
         <header>
             <p class="logo">ANXSION</p>
             <br>
             <nav>
-                <p style="cursor: pointer; text-align: center; font-size: 12px;" onclick="accessProtocol('home')">HOME</p>
-                <p style="cursor: pointer; text-align: center; font-size: 12px;" onclick="accessProtocol('chamber')">LEGAL CHAMBER</p>
-                <p style="cursor: pointer; text-align: center; font-size: 12px;" onclick="accessProtocol('about')">ABOUT</p>
+                <p style="cursor: pointer; text-align: center; font-size: 14px;" onclick="accessProtocol('home')">HOME</p>
+                <p style="cursor: pointer; text-align: center; font-size: 14px;" onclick="accessProtocol('chamber')">LEGAL CHAMBER</p>
+                <p style="cursor: pointer; text-align: center; font-size: 14px;" onclick="accessProtocol('about')">ABOUT</p>
             </nav>
         </header>
 
@@ -173,6 +161,7 @@
                     <br><br>
                     <h1 style="width: 100%; font-family: Jost; text-align: center; font-size: 3rem;">Anurag Lama & Associates</h1>
                     <br><br>
+                    
 
                     <div style="display: grid; grid-template-rows: 1fr 1fr 1fr; justify-content: center; align-items: center; width: 100%;">
                         <button style="width: 100%;" onclick="casestatus()">
@@ -191,11 +180,14 @@
 
 
                     <br><br>
-    
                     <address>Siliguri, Darjeeling</address>
+                    <div style="width: 100%;">
+                        <p style="text-align: center; text-decoration: underline;">Important</p>
+                        <p style="text-align: center;">Kindly read our Terms of Service before proceeding.</p>
+                    </div>
                     <br><br>
     
-                    <h1>Practice Area</h1>
+                    <h1>Expertise</h1>
     
                     <details>
                         <summary><p>Cyber Law</p></summary>
@@ -370,7 +362,7 @@
                     <p>We are aware of the importance of client convinience and satisfaction, and such factor is paramount for our quality service.</p>
     
                     <div style="width: 100%; display: flex; justify-content: center; align-items: center; aspect-ratio: 16/9;">
-                        <div class="businessmap">
+                        <div class="businessmap" style="aspect-ratio: 16/9;">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57020.42668249548!2d88.3465273631082!3d26.71958085191165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441a79b08e8e3%3A0x672c9503df6ad0a6!2sGuardian%20Angel%20Legal%20Service!5e0!3m2!1sen!2sin!4v1690273202799!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -484,6 +476,10 @@
             <section id="terms">
                 <div class="content">
                     <br>
+                    <h1 style="text-align: center;">Disclaimer</h1>
+                    <p>The Bar Council of India strictly prohibits advocates from engaging in any form or manner of advertisement or solicitation. By accessing this website, you hereby acknowledge and affirm that your visit is a voluntary initiative to obtain information pertaining to Anurag Lama & Associates, and no solicitation, advertisement, or inducement has been extended by Anurag Lama & Associates or its members. The content presented on this website is exclusively for informational purposes and should not be construed as a solicitation or advertisement. None of the material or information provided on this website should be interpreted as legal advice. Anurag Lama & Associates disclaims any responsibility for the consequences of actions taken based on reliance on the material or information presented on this website. The contents of this website are protected as the intellectual property of Anurag Lama & Associates.</p>
+                    <br>
+
                     <h1 style="text-align: center;">Terms of Service</h1>
                     <h2>Overview</h2>
                     <p>This website is operated by ANXSION. Throughout the site, the terms “we”, “us” and “our” refer to ANXSION. ANXSION offers this website, including all information, tools, and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies, and notices stated here.</p>
@@ -922,13 +918,14 @@
         <footer>
             <br><br>
             <section class="footerLink">
-                <p style="font-size: 12px; cursor: pointer; text-align: center;" onclick="accessProtocol('terms')">Terms of Service</p>
-                <p style="font-size: 12px; cursor: pointer; text-align: center;" onclick="accessProtocol('privacy')">Privacy Policy</p>
-                <p style="font-size: 12px; cursor: pointer; text-align: center;" onclick="accessProtocol('pricing')">Pricing System</p>
+                <p style="font-size: 14px; cursor: pointer; text-align: center;" onclick="accessProtocol('terms')">Terms of Service</p>
+                <p style="font-size: 14px; cursor: pointer; text-align: center;" onclick="accessProtocol('privacy')">Privacy Policy</p>
+                <p style="font-size: 14px; cursor: pointer; text-align: center;" onclick="accessProtocol('pricing')">Pricing System</p>
             </section>
 
             <br><br>
             <p>Copyright &#169; ANXSION</p>
+            <br>
             <p class="logo">ANXSION</p>
         </footer>
         
