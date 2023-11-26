@@ -39,7 +39,7 @@
     --elevation3: 3;
     --elevation4: 4;
 
-    --default-font: Helvetica;
+    --default-font: 'Arial';
 }
 
 ::selection {
@@ -129,7 +129,7 @@ section{
 }
 
 .content{
-    width: 80%;
+    width: 90%;
     max-width: 1440px;
     min-height: 75vh;
     margin: auto;
@@ -258,11 +258,27 @@ button:hover{
 
 nav{
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
+nav p{
+    margin: 3px;
+    width: fit-content;
+    text-align: right;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    border-bottom: 2px var(--primary) solid;
+}
+
+nav p:hover{
+    border-bottom: 2px var(--secondary) solid;
+    transition: var(--element-animation);
+}
+
 
 header{
     width: 100%;
@@ -287,6 +303,24 @@ footer{
     padding-bottom: 2%;
     background-color: var(--primary);
 }
+.footerLink{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footerLink p{
+    width: fit-content;
+    border-bottom: 2px var(--primary) solid;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.footerLink p:hover{
+    border-bottom: 2px var(--secondary) solid;
+    transition: var(--element-animation);
+}
 
 dialog{
     width: 50%;
@@ -306,74 +340,6 @@ dialog::backdrop {
 
 dialog[open] {
     animation: show 0.3s;
-}
-
-.solar{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0%;
-    left: 0%;
- 
-}
-
-.solar > *{
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-    align-self: center;
-}
-
-.mass{
-    border-radius: 50%;
-    background-color: black;
-    opacity: 10%;
-    margin: 0;
-    height: 9vw;
-    width: 9vw;
-}
-
-.sun{
-    transform: scale(1);
-}
-
-.p1{
-    animation: orbit-p1 1s linear infinite;
-}
-
-.p2{
-    animation: orbit-p2 1.849s linear infinite;
-}
-
-.p3{
-    animation: orbit-p3 5.632s linear infinite;
-}
-
-.p4{
-    animation: orbit-p4 7s linear infinite;
-}
-
-.p5{
-    animation: orbit-p5 12s linear infinite;
-}
-
-.p6{
-    animation: orbit-p6 18s linear infinite;
-}
-
-.p7{
-    animation: orbit-p7 20s linear infinite;
-}
-
-.p8{
-    animation: orbit-p8 26s linear infinite;
-}
-
-.p9{
-    animation: orbit-p9 30s linear infinite;
 }
 
 .ourgoal{
@@ -452,42 +418,17 @@ footer p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
 }
 
 
 .logo{
     font-family: 'LogoLight';
-    font-size: 6vw;
-}
-
-#mobileNavigation{
-    background-color: var(--primary);
-    display: none;
-    transition:0.2s all;
-    backdrop-filter: grayscale(90%) brightness(6%);
-    opacity: 0%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: var(--elevation3);
-}
-
-#mobileNavigation p{
+    font-size: 3rem;
+    line-height: 3.125rem;
     color: var(--secondary);
+    margin: 9px;
 }
 
-#mobileControl{
-    display: none;
-}
-#webNavigation{
-    display: grid;
-}
 
 #clientQuery{
     flex-direction: column;
@@ -603,7 +544,7 @@ footer p{
 details{
     width: 100%;
     color: var(--secondary);
-    transition: 0.3s all;
+    transition: 0.5s all;
     border: none;
 }
 
@@ -622,6 +563,7 @@ summary{
     padding-right: 10%;
     cursor: pointer;
     border-bottom: 1px solid var(--secondary);
+    transition: 0.3s all;
 }
 
 summary:hover{
@@ -629,6 +571,7 @@ summary:hover{
     color: var(--primary);
     transition: var(--element-animation);
 }
+
 
 .landingContainer{
     width: 100%;
@@ -760,18 +703,7 @@ summary:hover{
 
 
 @media screen and (max-width:1024px) and (min-width: 481px){
-    .mainLogo{
-        width: 18%;
-    }
-    #mobileNavigation{
-        display: none;
-    }
-    #mobileControl{
-        display: block;
-    }
-    #webNavigation{
-        display: none;
-    }
+
     .guardianBanner{
         width: 100%;
     }
@@ -800,18 +732,7 @@ summary:hover{
     a{
         font-size: var(--fontMobile);
     }
-    .mainLogo{
-        width: 25%;
-    }
-    #mobileNavigation{
-        display: none;
-    }
-    #mobileControl{
-        display: block;
-    }
-    #webNavigation{
-        display: none;
-    }
+
     .businessmap{
         width: 100%;
     }
@@ -840,10 +761,7 @@ summary:hover{
     .dendriticShowcase{
         grid-template-columns: 1fr;
     }
-    .logo{
-        font-family: 'LogoRegular';
-        font-size: 9vw;
-    }
+    
     .glancedata{
         grid-template-columns: 1fr;
     }
@@ -852,99 +770,6 @@ summary:hover{
     }
 }
 
-
-@keyframes ghostfloat{
-    0%{
-        transform: translateY(0%);
-    }
-    50%{
-        transform: translateY(20px);
-    }
-    100%{
-        transform: translateY(0%);
-    }
-}
-
-@keyframes orbit-p1 {
-    0%{
-        transform: rotate(0deg) translate(7vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(7vw) scale(0.2);
-    }
-}
-
-@keyframes orbit-p2 {
-    0%{
-        transform: rotate(0deg) translate(9.5vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(9.5vw) scale(0.2);
-    }
-}
-
-@keyframes orbit-p3 {
-    0%{
-        transform: rotate(0deg) translate(12vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(12vw) scale(0.2);
-    }
-}
-
-@keyframes orbit-p4 {
-    0%{
-        transform: rotate(0deg) translate(14.5vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(14.5vw) scale(0.2);
-    }
-}
-
-@keyframes orbit-p5 {
-    0%{
-        transform: rotate(0deg) translate(18.5vw) scale(0.4);
-    }
-    100%{
-        transform: rotate(360deg) translate(18.5vw) scale(0.4);
-    }
-}
-
-@keyframes orbit-p6 {
-    0%{
-        transform: rotate(0deg) translate(23.5vw) scale(0.4);
-    }
-    100%{
-        transform: rotate(360deg) translate(23.5vw) scale(0.4);
-    }
-}
-
-@keyframes orbit-p7 {
-    0%{
-        transform: rotate(0deg) translate(28vw) scale(0.3);
-    }
-    100%{
-        transform: rotate(360deg) translate(28vw) scale(0.3);
-    }
-}
-
-@keyframes orbit-p8 {
-    0%{
-        transform: rotate(0deg) translate(32vw) scale(0.3);
-    }
-    100%{
-        transform: rotate(360deg) translate(32vw) scale(0.3);
-    }
-}
-
-@keyframes orbit-p9 {
-    0%{
-        transform: rotate(0deg) translate(35vw) scale(0.2);
-    }
-    100%{
-        transform: rotate(360deg) translate(35vw) scale(0.2);
-    }
-}
 
 @keyframes show{
     from {
