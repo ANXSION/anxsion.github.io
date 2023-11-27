@@ -43,7 +43,7 @@
 
 ::selection {
     color: var(--primary);
-    background-color: var(--accent);
+    background-color: var(--secondary);
 }
 
 .label{
