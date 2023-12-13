@@ -10,14 +10,8 @@
 }
 
 @font-face {
-    font-family: LogoRegular;
-    src: url('../asset/fonts/LogoRegular.ttf');
-    font-display: swap;
-}
-
-@font-face {
     font-family: LogoLight;
-    src: url('../asset/fonts/LogoLight.ttf');
+    src: url('../asset/fonts/satan.ttf');
     font-display: swap;
 }
 
@@ -427,7 +421,7 @@ footer p{
     font-size: 3rem;
     line-height: 3.125rem;
     color: var(--secondary);
-    margin: 9px;
+    margin: 27px;
 }
 
 
