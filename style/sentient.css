@@ -25,8 +25,8 @@
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
-    --primary: hsl(0, 0%, 100%);
-    --secondary: hsl(0, 0%, 0%);
+    --primary: hsl(0, 0%, 0%);
+    --secondary: hsl(0, 0%, 100%);
     --accent: hsl(84, 100%, 59%);
     --fontWeb: 1.125rem;
     --fontMobile: 0.875rem;
@@ -75,6 +75,7 @@ body{
     width: 1rem;
     justify-self: center;
     align-self: center;
+    filter: invert(100%);
 }
 
 main{
