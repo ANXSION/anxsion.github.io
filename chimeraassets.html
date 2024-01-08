@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyx Capital</title>
+</head>
+
+<style>
+    body{
+        min-width: 100%;
+        min-height: 100vh;
+        background-color: black;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: start;
+        font-family: 'Roboto';
+        color: white;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    nav{
+        display: flex;
+        position: fixed;
+        width: 240px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    .webNav{
+        display: grid;
+        grid-template-rows: 1fr 3fr;
+    }
+    .mobNav{
+        display: none;
+    }
+    nav div{
+        margin: 18px;
+    }
+    .mainContent{
+        width: 100%;
+        height: 100%;
+        margin-left: 240px;
+    }
+    .mainContent div{
+        margin: 54px;
+    }
+    p{
+        font-size: 1rem;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-weight: normal;
+    }
+    
+    @media (max-width: 424px){
+        p{
+            font-size: 0.75rem;
+        }
+        nav{
+            position: fixed;
+            width: 100%;
+            height: 72px;
+            top: 0;
+            left: 0;
+            background-color: black;
+            margin: 0;
+        }
+        .mainContent{
+            width: 100%;
+            height: 100%;
+            margin-top: 72px;
+            margin-left: auto;
+        }
+        .mainContent div{
+            margin: 27px;
+        }
+        .webNav{
+            display: none;
+        }
+        .mobNav{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0;
+            padding-left: 27px;
+        }
+        .mobNav p{
+            margin: 0;
+        }
+        
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="webNav">
+            <div style="display: flex; align-items: center;">
+                <p style="font-size: 1.7rem;">Nyx<br>Capital</p>
+            </div>
+            <div style="display: flex;  flex-direction: column;">
+                <p style="margin: 0; margin-top: 9px; margin-bottom: 9px;">Portfolio Management</p>
+                <p style="margin: 0; margin-top: 9px; margin-bottom: 9px;">Credit Assistance</p>
+                <p style="margin: 0; margin-top: 9px; margin-bottom: 9px;">Trust and Real Estate</p>
+                <p style="margin: 0; margin-top: 9px; margin-bottom: 9px;">Tax Planning</p>
+                <p style="margin: 0; margin-top: 9px; margin-bottom: 9px;">Tools</p>
+            </div>
+        </div>
+        <div class="mobNav">
+            <p style="font-size: 1.5rem; text-align: center;">Nyx Capital</p>
+        </div>
+    </nav>
+    
+    <div class="mainContent">
+        <div>
+            <div style="min-height: 100vh; margin: 0; display: flex; justify-content: center; align-items: center;">
+                <h1 style="text-align: center;">Unwavering Resolve.<br>Unparalleled Results.</h1>
+            </div>
+
+            <h1>Navigating Markets with Wisdom and Discretion.</h1>
+        
+            <p>At Nyx Capital, we believe discretion is the better part of valor. While the financial world roars with pronouncements and predictions, we quietly seek opportunities beneath the surface. Our expertise thrives in the nuanced whispers of the market. We are seasoned professionals drawn to the subtle signals, the undercurrents that shape tomorrow's financial landscape. We don't chase fleeting trends; we cultivate strategic investments, rooted in a deep understanding of fundamentals and meticulous due diligence.</p>
+
+            <p>At Nyx Capital, discretion is not secrecy, it's a sign of respect. We respect our clients' privacy, their goals, and their right to invest with confidence. We are the silent guardians of their financial future, working with unwavering dedication to make their wealth fly.</p>
+
+            <br><br><br><br>
+
+            <h1>Portfolio Management</h1>
+            <h2>Precision Navigating Financial Markets.</h2>
+
+            <p>In the turbulent seas of financial turmoil, strategic direction is paramount. At Ebony Frost Capital, we offer bespoke portfolio management that transcends mere investment – it’s a deliberate orchestration of your wealth, designed to achieve your most discerning goals with unwavering focus and discretion.</p>
+
+            <p>We craft portfolios as unique as you are. Through exhaustive analysis of your financial landscape, risk tolerance, and aspirations, we meticulously tailor asset allocations, leveraging a spectrum of instruments:</p>
+
+            <ol>
+                <li>Equities: Unveiling promising opportunities within established and frontier markets.</li>
+                <li>Fixed Income: Securing consistent returns with meticulous credit analysis.</li>
+                <li>Alternative Investments: Diversification beyond traditional asset classes, exploring private equity, real estate, and innovative strategies.</li>
+            </ol>
+
+            <br><br><br><br>
+
+            <h1>Credit Assistance</h1>
+            <br><br><br><br>
+
+            <h1>Trust and Real Estate</h1>
+            <br><br><br><br>
+
+            <h1>Tax Planning</h1>
+            <br><br><br><br>
+
+            <h1>Tools</h1>
+            <br><br><br><br>
+
+            <p style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 9px;">&copy; Nyx Capital</p>
+        </div>
+    </div>
+</body>
+</html>
