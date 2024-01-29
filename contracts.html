@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Contracts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body{
+            width: 100%;
+            min-height: 100vh;
+            min-width: 425px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            color: rgb(0, 15, 0);
+            background-color: white;
+            font-family: 'Roboto';
+            justify-content: center;
+            align-items: center;
+        }
+        canvas{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+        }
+        .chartSection{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 27px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .chartContainer{
+            position: relative; 
+            height: 25vw; 
+            width: 25vw; 
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            justify-self: center;
+            align-items: center;
+        }
+        .headlines{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            border-bottom: 1px black solid;
+            gap: 9px;
+        }
+        .keyStats{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-content: center;
+            align-items: start;
+            column-gap: 9px; 
+            row-gap: 27px;
+        }
+        .keyStatsData{
+            display: flex;
+            flex-direction: column;
+            justify-content: start; align-items: start;
+        }
+        .keyStatsData p{
+            margin: 3px;
+        }
+        
+        details{
+            padding: 9px;
+            list-style: none;
+            border-bottom: 1px black solid;
+        }
+        summary{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            cursor: pointer;
+        }
+
+        h1, h2{
+            width: 100%;
+            text-align: center;
+        }
+
+        @media screen and (max-width:768px) {
+            .chartContainer{
+                height: 40vw; 
+                width: 40vw;
+            }
+        }
+        @media screen and (max-width:425px) {
+            .chartContainer{
+                height: 48vw; 
+                width: 100%;
+                aspect-ratio: 1/1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div style="width: 95%;">
+        <h1>Summary</h1>
+        <div class="chartSection">
+            <div class="chartContainer">
+                <canvas id="assetValuation"></canvas>
+            </div>
+            <div class="chartContainer">
+                <canvas id="assetContract"></canvas>
+            </div>
+            <script>
+                new Chart(document.getElementById('assetValuation'),{
+                    type: 'bar',
+                    data: {
+                        labels: ['Plots','Structures'],
+                        datasets: [
+                            {
+                                data: [2,3],
+                                borderWidth: 0,
+                                backgroundColor: ['rgba(0,0,0,1)', 'rgba(200,200,200,1)']
+                            }]
+                    },
+                    options:{
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Assets',
+                                color: 'black'
+                            },
+                            legend:{
+                                display: false
+                            }
+                        }
+                    }
+                });
+        
+                new Chart(document.getElementById('assetContract'),{
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Realised','Unrealised'],
+                        datasets: [{
+                            data: [1000000, 7500000,],
+                            borderWidth: 0,
+                            backgroundColor: ['rgba(0,0,0,1)','rgba(200,200,200,1)']
+                        }]
+                    },
+                    options:{
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Liquidity',
+                                color: 'black'
+                            }
+                        }
+                    }
+                });
+        
+              </script>
+        </div>
+        
+        <h1>Sell Orders</h1>
+        <div class="headlines">
+            <p style="border-right: 1px black solid; font-weight: bold;">Location</p>
+            <p style="border-right: 1px black solid; font-weight: bold;">Price</p>
+            <p style="border-right: 1px black solid; font-weight: bold;">Plot Size</p>
+            <p style="font-weight: bold;">Classification</p>
+        </div>
+
+        <details>
+            <summary>
+                <p>Hatigisha</p>
+                <p>35L</p>
+                <p>7 Katha</p>
+                <p>Plot with Structure</p>
+            </summary>
+
+            <h2>Key Stats</h2>
+
+            <div class="keyStats">
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Road:</p>
+                    <p>8 ft (Kuccha)</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Ownership:</p>
+                    <p>General</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Purpose:</p>
+                    <p>Residential</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Mortgage:</p>
+                    <p>25L</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Foundation:</p>
+                    <p>G+1</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Carpet Area:</p>
+                    <p>-</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Layout:</p>
+                    <p>3BHK</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Floors:</p>
+                    <p>1</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Parking:</p>
+                    <p>750 sq. ft.</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Built:</p>
+                    <p>2018</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Status:</p>
+                    <p>Not Complete</p>
+                </div>
+            </div>
+
+            <br><br>
+            <div class="chartSection">
+                <div class="chartContainer">
+                    <canvas id="Ownership1"></canvas>
+                    <script>
+                        new Chart(document.getElementById('Ownership1'),{
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Owner','Promoter','Other'],
+                                datasets: [{
+                                    data: [50,0,50],
+                                    borderWidth: 0,
+                                    backgroundColor: ['rgba(0,0,0,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
+                                }]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Ownership Structure',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="chartContainer">
+                    <canvas id="Pricestructure1"></canvas>
+                    <script>
+                       new Chart(document.getElementById('Pricestructure1'),{
+                            type: 'bar',
+                            data: {
+                                labels: ['Total', 'Setoff', 'Ask'],
+                                datasets: [
+                                    {
+                                        label:'Land Cost',
+                                        data: [2500000,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(0,0,0,1)'
+                                    },
+                                    {
+                                        label:'Structure',
+                                        data: [1000000,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(100,100,100,1)'
+                                    },
+                                    {
+                                        label:'Debt',
+                                        data: [2500000,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(200,200,200,1)'
+                                    },
+                                    {
+                                        label:'Setoff',
+                                        data: [0,[6000000,4500000],0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(100,0,0,1)'
+                                    },
+                                    {
+                                        label:'Ask Price',
+                                        data: [0,0,4500000],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(0,0,0,1)'
+                                    }
+                                ]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Price Structure',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                },
+                                scales:{
+                                    y:{
+                                        stacked: true
+                                    },
+                                    x:{
+                                        stacked: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="chartContainer">
+                    <canvas id="connectivity1"></canvas>
+                    <script>
+                       new Chart(document.getElementById('connectivity1'),{
+                            data: {
+                                labels: ['Highway','Railway','Airport'],
+                                datasets: [
+                                    {
+                                        type: 'line',
+                                        label: 'Distance',
+                                        data: [2,12,8],
+                                        borderWidth: 1,
+                                        borderColor: 'rgba(200,200,200,1)',
+                                        backgroundColor: 'rgba(200,200,200,1)'
+                                    },
+                                    {
+                                        type: 'bar',
+                                        label: 'Travel Time',
+                                        data: [5,30,15],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(0,0,0,1)'
+                                    }
+                                ]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Connectivity',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="chartContainer">
+                    <canvas id="income1"></canvas>
+                    <script>
+                       new Chart(document.getElementById('income1'),{
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Residential','Commercial','Others', 'None'],
+                                datasets: [
+                                    {
+                                        label: 'Income',
+                                        data: [0,0,0,100],
+                                        borderWidth: 0,
+                                        backgroundColor: ['rgba(0,0,0,1)','rgba(50,50,50,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
+                                    }
+                                ]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Income',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <p>Shivmandir</p>
+                <p>-</p>
+                <p>2 Katha</p>
+                <p>Plot with Structure</p>
+            </summary>
+
+            <h2>Key Stats</h2>
+
+            <div class="keyStats">
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Road:</p>
+                    <p>8 ft (Kuccha)</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Ownership:</p>
+                    <p>General</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Purpose:</p>
+                    <p>Residential</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Mortgage:</p>
+                    <p>-</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Foundation:</p>
+                    <p>G+2</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Carpet Area:</p>
+                    <p>-</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Layout:</p>
+                    <p>-</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Floors:</p>
+                    <p>2</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Parking:</p>
+                    <p>-</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Built:</p>
+                    <p>-</p>
+                </div>
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">Status:</p>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+            <br><br>
+            <div class="chartSection">
+
+                <div class="chartContainer">
+                    <canvas id="Ownership2"></canvas>
+                    <script>
+                        new Chart(document.getElementById('Ownership2'),{
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Owner','Promoter','Other'],
+                                datasets: [{
+                                    data: [100,0,0],
+                                    borderWidth: 0,
+                                    backgroundColor: ['rgba(0,0,0,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
+                                }]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Ownership Structure',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="chartContainer">
+                    <canvas id="Pricestructure2"></canvas>
+                    <script>
+                       new Chart(document.getElementById('Pricestructure2'),{
+                            type: 'bar',
+                            data: {
+                                labels: ['Total', 'Setoff', 'Ask'],
+                                datasets: [
+                                    {
+                                        label:'Land Cost',
+                                        data: [3500000,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(0,0,0,1)'
+                                    },
+                                    {
+                                        label:'Structure',
+                                        data: [2000000,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(100,100,100,1)'
+                                    },
+                                    {
+                                        label:'Debt',
+                                        data: [0,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(200,200,200,1)'
+                                    },
+                                    {
+                                        label:'Setoff',
+                                        data: [0,0,0],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(100,0,0,1)'
+                                    },
+                                    {
+                                        label:'Ask Price',
+                                        data: [0,0,5500000],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(0,0,0,1)'
+                                    }
+                                ]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Price Structure',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                },
+                                scales:{
+                                    y:{
+                                        stacked: true
+                                    },
+                                    x:{
+                                        stacked: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="chartContainer">
+                    <canvas id="connectivity2"></canvas>
+                    <script>
+                       new Chart(document.getElementById('connectivity2'),{
+                            data: {
+                                labels: ['Highway','Railway','Airport'],
+                                datasets: [
+                                    {
+                                        type: 'line',
+                                        label: 'Distance',
+                                        data: [1,8,8],
+                                        borderWidth: 1,
+                                        borderColor: 'rgba(200,200,200,1)',
+                                        backgroundColor: 'rgba(200,200,200,1)'
+                                    },
+                                    {
+                                        type: 'bar',
+                                        label: 'Travel Time',
+                                        data: [5,20,15],
+                                        borderWidth: 0,
+                                        backgroundColor: 'rgba(0,0,0,1)'
+                                    }
+                                ]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Connectivity',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="chartContainer">
+                    <canvas id="income2"></canvas>
+                    <script>
+                       new Chart(document.getElementById('income2'),{
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Residential','Commercial','Others', 'None'],
+                                datasets: [
+                                    {
+                                        label: 'Income',
+                                        data: [0,0,0,100],
+                                        borderWidth: 0,
+                                        backgroundColor: ['rgba(0,0,0,1)','rgba(50,50,50,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
+                                    }
+                                ]
+                            },
+                            options:{
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Income',
+                                        color: 'black'
+                                    },
+                                    legend:{
+                                        display:false,
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+            </div>
+        </details>
+        
+    </div>
+    
+    
+</body>
+</html>
