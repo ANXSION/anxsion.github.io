@@ -18,6 +18,7 @@
             font-family: 'Roboto';
             justify-content: center;
             align-items: center;
+            font-size: 12px;
         }
         canvas{
             display: flex;
@@ -59,6 +60,17 @@
             column-gap: 9px; 
             row-gap: 27px;
         }
+        .keyStatsAlt{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: start;
+            column-gap: 9px; 
+            row-gap: 27px;
+        }
+        .buyOrderStats{
+            display: grid; grid-template-columns: 1fr 1fr; column-gap: 3px; row-gap: 27px;
+        }
         .keyStatsData{
             display: flex;
             flex-direction: column;
@@ -71,17 +83,19 @@
         details{
             padding: 9px;
             list-style: none;
-            border-bottom: 1px black solid;
         }
         summary{
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 2fr;
             cursor: pointer;
+            border-bottom: 1px black solid;
         }
 
         h1, h2{
             width: 100%;
             text-align: center;
+            margin-top: 27px;
+            margin-bottom: 27px;
         }
 
         @media screen and (max-width:768px) {
@@ -102,7 +116,8 @@
 </head>
 <body>
     <div style="width: 95%;">
-        <h1>Summary</h1>
+        <h1>Open Contracts</h1>
+
         <div class="chartSection">
             <div class="chartContainer">
                 <canvas id="assetValuation"></canvas>
@@ -110,17 +125,88 @@
             <div class="chartContainer">
                 <canvas id="assetContract"></canvas>
             </div>
-            <script>
-                new Chart(document.getElementById('assetValuation'),{
-                    type: 'bar',
+        </div>
+        
+        <br><br>
+
+        <div id="sellOrder">
+        </div>
+
+        <br><br>
+
+        <div id="buyOrder">
+        </div>
+
+    </div>
+    <footer>
+        <br><br>
+        <p>&copy; OPEN CONTRACTS</p>
+        <br><br>
+    </footer>
+    <script>
+        let assetChartData=[
+            [2500000,1000000,2500000,4500000,[3,1,2,5,3,5]],
+            [8000000,0,0,8000000,[5,5,5,3,5,5]],
+            [4500000,0,0,4500000,[5,3,3,1,5,5]],
+            [5000000,0,0,5000000,[5,4,3,4,4,4]],
+            [5000000,0,0,5000000,[5,4,3,4,4,4]],
+            [4500000,0,0,4300000,[5,5,5,4,5,3]],
+        ];
+
+        let assets=[
+            ['8ft','General','Residential',assetChartData[0][2],'G+1','-','3BHK','1',"Available",'2018','Furnished','Hatigisha',assetChartData[0][3],'7 Katha','Plot with Structure'],
+            ['8ft','General','Residential',assetChartData[1][2],'G+2','-','3BHK','3',"Available",'-','Furnished','Shivmandir',assetChartData[1][3],'2 Katha','Plot with Structure'],
+            ['-','General','Residential',assetChartData[2][2],'G+2','-','3BHK','2',"Available",'-','Furnished','Stationmore, Bagdogra',assetChartData[2][3],'4 Katha','Plot with Structure'],
+            ['-','General','Residential',assetChartData[3][2],'-','1500 sq.ft','3BHK','1',"Available",'-','Furnished','Salugara',assetChartData[3][3],'1500 sq. ft.','Apartment'],
+            ['-','General','Residential',assetChartData[4][2],'-','1500 sq.ft','3BHK','2',"Available",'-','Furnished','Salugara',assetChartData[4][3],'1500 sq. ft.','Apartment'],
+            ['-','General','Residential',assetChartData[5][2],'-','900 sq.ft','2BHK','1',"Available",'-','Furnished','Pradhan Nagar',assetChartData[5][3],'900 sq. ft.','Apartment'],
+        ];
+
+        let buyerChartData=[
+            [3,1,2,5,3,5]
+        ];
+
+        let buyers=[
+            ['General','Residential','Any','3BHK','1',"Available",'New','Furnished','Shivmandir','&lt;1Cr','Any','Plot with Structure']
+        ];
+
+        const metrics = ['Road:','Ownership:','Purpose:','Mortgage:','Foundation:','Carpet Area:','Layout:','Floors:','Parking:', 'Built:', 'Status:'];
+        const buyerMetrics = ['Ownership:','Purpose:','Carpet Area:','Layout:','Floor:','Parking:', 'Condition:', 'Status:'];
+        const factorLabel = ['Transportation', 'Healthcare', 'Education', 'Greenspaces', 'Commerce', 'Future'];
+
+        let assetsTypeCount = [3,4,0];
+        let assetsSold = [2,1,0];
+
+        let totalAssetValue = 4500000;
+        let totalAssetRealised = 0;
+
+
+        let assetCount = assets.length;
+        let buyerCount = buyers.length;
+
+        let metricsCount = metrics.length;
+        let buyerMetricsCount = buyerMetrics.length;
+
+        new Chart(document.getElementById('assetValuation'),{
                     data: {
-                        labels: ['Plots','Structures'],
+                        labels: ['Plots','Structures','Rental'],
                         datasets: [
+                        {
+                                label: 'Available',
+                                type: 'line',
+                                data: assetsSold,
+                                borderWidth: 1,
+                                borderColor: 'rgba(200,200,200,1)',
+                                backgroundColor: 'rgba(200,200,200,1)',
+                            },
                             {
-                                data: [2,3],
+                                label: 'Assets',
+                                type: 'bar',
+                                data: assetsTypeCount,
                                 borderWidth: 0,
-                                backgroundColor: ['rgba(0,0,0,1)', 'rgba(200,200,200,1)']
-                            }]
+                                backgroundColor: 'rgba(0,0,0,1)'
+                            }
+                        ]
                     },
                     options:{
                         responsive: true,
@@ -141,9 +227,9 @@
                 new Chart(document.getElementById('assetContract'),{
                     type: 'doughnut',
                     data: {
-                        labels: ['Realised','Unrealised'],
+                        labels: ['Realised','Available'],
                         datasets: [{
-                            data: [1000000, 7500000,],
+                            data: [totalAssetRealised, totalAssetValue],
                             borderWidth: 0,
                             backgroundColor: ['rgba(0,0,0,1)','rgba(200,200,200,1)']
                         }]
@@ -160,490 +246,253 @@
                         }
                     }
                 });
+
         
-              </script>
+        document.getElementById('sellOrder').insertAdjacentHTML('beforeend',`
+        <div id='sellOrderContracts'>
+            <h1>Sell Orders</h1>
+            <div class="headlines">
+                <p style="border-right: 1px black solid; font-weight: bold;">Location</p>
+                <p style="border-right: 1px black solid; font-weight: bold;">Price</p>
+                <p style="border-right: 1px black solid; font-weight: bold;">Size</p>
+                <p style="font-weight: bold;">Order Type</p>
+            </div>
         </div>
-        
-        <h1>Sell Orders</h1>
-        <div class="headlines">
-            <p style="border-right: 1px black solid; font-weight: bold;">Location</p>
-            <p style="border-right: 1px black solid; font-weight: bold;">Price</p>
-            <p style="border-right: 1px black solid; font-weight: bold;">Plot Size</p>
-            <p style="font-weight: bold;">Classification</p>
+        `);
+
+        for (i=0; i<assetCount;i++){
+
+            let identifier = 'asset'+i;
+
+            document.getElementById('sellOrderContracts').insertAdjacentHTML('beforeend',`
+            <details id='`+identifier+`'>
+                <summary>
+                    <p>`+assets[i][11]+`</p>
+                    <p>`+assets[i][12]+`</p>
+                    <p>`+assets[i][13]+`</p>
+                    <p>`+assets[i][14]+`</p>
+                </summary>
+                <h1>Key Stats</h1>
+                <div class="keyStats" id='`+identifier+`Details'>
+                </div>
+            </details>
+            `);
+
+            for(j=0;j<metricsCount;j++){
+
+                document.getElementById(identifier+'Details').insertAdjacentHTML('beforeend',`
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">`+metrics[j]+`</p>
+                    <p>`+assets[i][j]+`</p>
+                </div>
+                `);
+            }
+
+            document.getElementById(identifier).insertAdjacentHTML('beforeend','<br><br>');
+
+            document.getElementById(identifier).insertAdjacentHTML('beforeend',`
+                <div class="chartSection" id='`+identifier+`Chart'>
+                </div>
+            `);
+
+            
+            document.getElementById(identifier+'Chart').insertAdjacentHTML('beforeend',`
+                <div class="chartContainer">
+                    <canvas id='`+identifier+`Chart`+0+`'></canvas>
+                </div>
+            `);
+            document.getElementById(identifier+'Chart').insertAdjacentHTML('beforeend',`
+                <div class="chartContainer">
+                    <canvas id='`+identifier+`Chart`+1+`'></canvas>
+                </div>
+            `);
+
+            new Chart(document.getElementById(identifier+'Chart'+0),{
+                type: 'bar',
+                data: {
+                    labels: ['Total', 'Setoff', 'Ask'],
+                    datasets: [
+                        {
+                            label:'Land Cost',
+                            data: [assetChartData[i][0]],
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(0,0,0,1)'
+                        },
+                        {
+                            label:'Structure',
+                            data: [assetChartData[i][1],0,0],
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(100,100,100,1)'
+                        },
+                        {
+                            label:'Debt',
+                            data: [assetChartData[i][2],0,0],
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(200,200,200,1)'
+                        },
+                        {
+                            label:'Setoff',
+                            data: [0,[(assetChartData[i][0]+assetChartData[i][1]+assetChartData[i][2]),assetChartData[i][3]],0],
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(100,0,0,1)'
+                        },
+                        {
+                            label:'Ask Price',
+                            data: [0,0,assetChartData[i][3]],
+                            borderWidth: 0,
+                            backgroundColor: 'rgba(0,0,0,1)'
+                        }
+                    ]
+                },
+                options:{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Price Structure',
+                            color: 'black'
+                        },
+                        legend:{
+                            display:false,
+                        }
+                    },
+                    scales:{
+                        y:{
+                            stacked: true
+                        },
+                        x:{
+                            stacked: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById(identifier+`Chart`+1),{
+                type: 'radar',
+                data: {
+                    labels: factorLabel,
+                    datasets: [
+                        {
+                            label:'Ratio',
+                            data: assetChartData[i][4],
+                            borderWidth: 1,
+                            borderColor: 'rgba(0,0,0,1)',
+                            backgroundColor: 'rgba(0,0,0,0.5)',
+                            pointStyle: false
+                        }
+                    ]
+                },
+                options:{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Factors',
+                            color: 'black'
+                        },
+                        legend:{
+                            display:false,
+                        }
+                    },
+                    scales: {
+                        r:  {
+                            ticks: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+
+        document.getElementById('buyOrder').insertAdjacentHTML('beforeend',`
+        <div id='buyOrderContracts'>
+            <h1>Buy Orders</h1>
+            <div class="headlines">
+                <p style="border-right: 1px black solid; font-weight: bold;">Location</p>
+                <p style="border-right: 1px black solid; font-weight: bold;">Price</p>
+                <p style="border-right: 1px black solid; font-weight: bold;">Size</p>
+                <p style="font-weight: bold;">Order Type</p>
+            </div>
         </div>
+        `);
 
-        <details>
-            <summary>
-                <p>Hatigisha</p>
-                <p>35L</p>
-                <p>7 Katha</p>
-                <p>Plot with Structure</p>
-            </summary>
+        for (i=0; i<buyerCount;i++){
+            let identifier = 'buyer'+i;
 
-            <h2>Key Stats</h2>
+            document.getElementById('buyOrderContracts').insertAdjacentHTML('beforeend',`
+            <details id='`+identifier+`'>
+                <summary>
+                    <p>`+buyers[i][8]+`</p>
+                    <p>`+buyers[i][9]+`</p>
+                    <p>`+buyers[i][10]+`</p>
+                    <p>`+buyers[i][11]+`</p>
+                </summary>
+                <h1>Key Stats</h1>
+                <div class="keyStatsAlt" id='`+identifier+`Struct'>
+                    <div class="buyOrderStats" id='`+identifier+`Details'>
+                    </div>
+                </div>
+            </details>
+            `);
 
-            <div class="keyStats">
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Road:</p>
-                    <p>8 ft (Kuccha)</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Ownership:</p>
-                    <p>General</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Purpose:</p>
-                    <p>Residential</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Mortgage:</p>
-                    <p>25L</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Foundation:</p>
-                    <p>G+1</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Carpet Area:</p>
-                    <p>-</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Layout:</p>
-                    <p>3BHK</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Floors:</p>
-                    <p>1</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Parking:</p>
-                    <p>750 sq. ft.</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Built:</p>
-                    <p>2018</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Status:</p>
-                    <p>Not Complete</p>
-                </div>
-            </div>
+            for(j=0;j<buyerMetricsCount;j++){
 
-            <br><br>
-            <div class="chartSection">
+                document.getElementById(identifier+'Details').insertAdjacentHTML('beforeend',`
+                <div class="keyStatsData">
+                    <p style="font-weight: bold;">`+buyerMetrics[j]+`</p>
+                    <p>`+buyers[i][j]+`</p>
+                </div>
+                `);
+            }
+            
+            document.getElementById(identifier+'Struct').insertAdjacentHTML('beforeend',`
                 <div class="chartContainer">
-                    <canvas id="Ownership1"></canvas>
-                    <script>
-                        new Chart(document.getElementById('Ownership1'),{
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Owner','Promoter','Other'],
-                                datasets: [{
-                                    data: [50,0,50],
-                                    borderWidth: 0,
-                                    backgroundColor: ['rgba(0,0,0,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
-                                }]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Ownership Structure',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                }
+                    <canvas id='`+identifier+`Chart`+0+`'></canvas>
+                </div>
+            `);
+
+            new Chart(document.getElementById(identifier+'Chart'+0),{
+                type: 'radar',
+                data: {
+                    labels: factorLabel,
+                    datasets: [
+                        {
+                            label:'Ratio',
+                            data: buyerChartData[i],
+                            borderWidth: 1,
+                            borderColor: 'rgba(0,0,0,1)',
+                            backgroundColor: 'rgba(0,0,0,0.5)',
+                            pointStyle: false
+                        }
+                    ]
+                },
+                options:{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Factors',
+                            color: 'black'
+                        },
+                        legend:{
+                            display:false,
+                        }
+                    },
+                    scales: {
+                        r:  {
+                            ticks: {
+                                display: false
                             }
-                        });
-                    </script>
-                </div>
-
-                <div class="chartContainer">
-                    <canvas id="Pricestructure1"></canvas>
-                    <script>
-                       new Chart(document.getElementById('Pricestructure1'),{
-                            type: 'bar',
-                            data: {
-                                labels: ['Total', 'Setoff', 'Ask'],
-                                datasets: [
-                                    {
-                                        label:'Land Cost',
-                                        data: [2500000,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(0,0,0,1)'
-                                    },
-                                    {
-                                        label:'Structure',
-                                        data: [1000000,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(100,100,100,1)'
-                                    },
-                                    {
-                                        label:'Debt',
-                                        data: [2500000,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(200,200,200,1)'
-                                    },
-                                    {
-                                        label:'Setoff',
-                                        data: [0,[6000000,4500000],0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(100,0,0,1)'
-                                    },
-                                    {
-                                        label:'Ask Price',
-                                        data: [0,0,4500000],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(0,0,0,1)'
-                                    }
-                                ]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Price Structure',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                },
-                                scales:{
-                                    y:{
-                                        stacked: true
-                                    },
-                                    x:{
-                                        stacked: true
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-
-                <div class="chartContainer">
-                    <canvas id="connectivity1"></canvas>
-                    <script>
-                       new Chart(document.getElementById('connectivity1'),{
-                            data: {
-                                labels: ['Highway','Railway','Airport'],
-                                datasets: [
-                                    {
-                                        type: 'line',
-                                        label: 'Distance',
-                                        data: [2,12,8],
-                                        borderWidth: 1,
-                                        borderColor: 'rgba(200,200,200,1)',
-                                        backgroundColor: 'rgba(200,200,200,1)'
-                                    },
-                                    {
-                                        type: 'bar',
-                                        label: 'Travel Time',
-                                        data: [5,30,15],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(0,0,0,1)'
-                                    }
-                                ]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Connectivity',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-
-                <div class="chartContainer">
-                    <canvas id="income1"></canvas>
-                    <script>
-                       new Chart(document.getElementById('income1'),{
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Residential','Commercial','Others', 'None'],
-                                datasets: [
-                                    {
-                                        label: 'Income',
-                                        data: [0,0,0,100],
-                                        borderWidth: 0,
-                                        backgroundColor: ['rgba(0,0,0,1)','rgba(50,50,50,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
-                                    }
-                                ]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Income',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-            </div>
-        </details>
-
-        <details>
-            <summary>
-                <p>Shivmandir</p>
-                <p>-</p>
-                <p>2 Katha</p>
-                <p>Plot with Structure</p>
-            </summary>
-
-            <h2>Key Stats</h2>
-
-            <div class="keyStats">
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Road:</p>
-                    <p>8 ft (Kuccha)</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Ownership:</p>
-                    <p>General</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Purpose:</p>
-                    <p>Residential</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Mortgage:</p>
-                    <p>-</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Foundation:</p>
-                    <p>G+2</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Carpet Area:</p>
-                    <p>-</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Layout:</p>
-                    <p>-</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Floors:</p>
-                    <p>2</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Parking:</p>
-                    <p>-</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Built:</p>
-                    <p>-</p>
-                </div>
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">Status:</p>
-                    <p>Completed</p>
-                </div>
-            </div>
-
-            <br><br>
-            <div class="chartSection">
-
-                <div class="chartContainer">
-                    <canvas id="Ownership2"></canvas>
-                    <script>
-                        new Chart(document.getElementById('Ownership2'),{
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Owner','Promoter','Other'],
-                                datasets: [{
-                                    data: [100,0,0],
-                                    borderWidth: 0,
-                                    backgroundColor: ['rgba(0,0,0,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
-                                }]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Ownership Structure',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-
-                <div class="chartContainer">
-                    <canvas id="Pricestructure2"></canvas>
-                    <script>
-                       new Chart(document.getElementById('Pricestructure2'),{
-                            type: 'bar',
-                            data: {
-                                labels: ['Total', 'Setoff', 'Ask'],
-                                datasets: [
-                                    {
-                                        label:'Land Cost',
-                                        data: [3500000,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(0,0,0,1)'
-                                    },
-                                    {
-                                        label:'Structure',
-                                        data: [2000000,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(100,100,100,1)'
-                                    },
-                                    {
-                                        label:'Debt',
-                                        data: [0,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(200,200,200,1)'
-                                    },
-                                    {
-                                        label:'Setoff',
-                                        data: [0,0,0],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(100,0,0,1)'
-                                    },
-                                    {
-                                        label:'Ask Price',
-                                        data: [0,0,5500000],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(0,0,0,1)'
-                                    }
-                                ]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Price Structure',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                },
-                                scales:{
-                                    y:{
-                                        stacked: true
-                                    },
-                                    x:{
-                                        stacked: true
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-
-                <div class="chartContainer">
-                    <canvas id="connectivity2"></canvas>
-                    <script>
-                       new Chart(document.getElementById('connectivity2'),{
-                            data: {
-                                labels: ['Highway','Railway','Airport'],
-                                datasets: [
-                                    {
-                                        type: 'line',
-                                        label: 'Distance',
-                                        data: [1,8,8],
-                                        borderWidth: 1,
-                                        borderColor: 'rgba(200,200,200,1)',
-                                        backgroundColor: 'rgba(200,200,200,1)'
-                                    },
-                                    {
-                                        type: 'bar',
-                                        label: 'Travel Time',
-                                        data: [5,20,15],
-                                        borderWidth: 0,
-                                        backgroundColor: 'rgba(0,0,0,1)'
-                                    }
-                                ]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Connectivity',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-
-                <div class="chartContainer">
-                    <canvas id="income2"></canvas>
-                    <script>
-                       new Chart(document.getElementById('income2'),{
-                            type: 'doughnut',
-                            data: {
-                                labels: ['Residential','Commercial','Others', 'None'],
-                                datasets: [
-                                    {
-                                        label: 'Income',
-                                        data: [0,0,0,100],
-                                        borderWidth: 0,
-                                        backgroundColor: ['rgba(0,0,0,1)','rgba(50,50,50,1)','rgba(100,100,100,1)','rgba(200,200,200,1)']
-                                    }
-                                ]
-                            },
-                            options:{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    title: {
-                                        display: true,
-                                        text: 'Income',
-                                        color: 'black'
-                                    },
-                                    legend:{
-                                        display:false,
-                                    }
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-
-            </div>
-        </details>
-        
-    </div>
-    
-    
+                        }
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
