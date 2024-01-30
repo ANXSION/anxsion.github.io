@@ -89,6 +89,23 @@
             grid-template-columns: 2fr 1fr 1fr 2fr;
             cursor: pointer;
             border-bottom: 1px black solid;
+            position: relative;
+        }
+        .soldBanner{
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            font-size: 18px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            z-index: 2;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            background: repeating-linear-gradient( 45deg, rgba(255, 0, 0, 1), rgba(255, 0, 0, 1) 5px, rgba(255, 0, 0, 0.7) 5px, rgba(255, 0, 0, 0.7) 25px );
         }
 
         h1, h2{
@@ -120,10 +137,10 @@
 
         <div class="chartSection">
             <div class="chartContainer">
-                <canvas id="assetValuation"></canvas>
+                <canvas id="assetContracts"></canvas>
             </div>
             <div class="chartContainer">
-                <canvas id="assetContract"></canvas>
+                <canvas id="assetValuation"></canvas>
             </div>
         </div>
         
@@ -154,32 +171,30 @@
         ];
 
         let assets=[
-            ['8ft','General','Residential',assetChartData[0][2],'G+1','-','3BHK','1',"Available",'2018','Furnished','Hatigisha',assetChartData[0][3],'7 Katha','Plot with Structure'],
-            ['8ft','General','Residential',assetChartData[1][2],'G+2','-','3BHK','3',"Available",'-','Furnished','Shivmandir',assetChartData[1][3],'2 Katha','Plot with Structure'],
-            ['-','General','Residential',assetChartData[2][2],'G+2','-','3BHK','2',"Available",'-','Furnished','Stationmore, Bagdogra',assetChartData[2][3],'4 Katha','Plot with Structure'],
-            ['-','General','Residential',assetChartData[3][2],'-','1500 sq.ft','3BHK','1',"Available",'-','Furnished','Salugara',assetChartData[3][3],'1500 sq. ft.','Apartment'],
-            ['-','General','Residential',assetChartData[4][2],'-','1500 sq.ft','3BHK','2',"Available",'-','Furnished','Salugara',assetChartData[4][3],'1500 sq. ft.','Apartment'],
-            ['-','General','Residential',assetChartData[5][2],'-','900 sq.ft','2BHK','1',"Available",'-','Furnished','Pradhan Nagar',assetChartData[5][3],'900 sq. ft.','Apartment'],
+            ['8ft','General','Residential',assetChartData[0][2],'G+1','-','3BHK','1',"Available",'2018','Furnished','Hatigisha',assetChartData[0][3],'7 Katha','Plot with Structure', 'Available'],
+            ['8ft','General','Residential',assetChartData[1][2],'G+2','-','3BHK','3',"Available",'-','Furnished','Shivmandir',assetChartData[1][3],'2 Katha','Plot with Structure', 'Available'],
+            ['-','General','Residential',assetChartData[2][2],'G+2','-','3BHK','2',"Available",'-','Furnished','Stationmore, Bagdogra',assetChartData[2][3],'4 Katha','Plot with Structure', 'Available'],
+            ['-','General','Residential',assetChartData[3][2],'-','1500 sq.ft','3BHK','1',"Available",'-','Furnished','Salugara',assetChartData[3][3],'1500 sq. ft.','Apartment', 'Available'],
+            ['-','General','Residential',assetChartData[4][2],'-','1500 sq.ft','3BHK','2',"Available",'-','Furnished','Salugara',assetChartData[4][3],'1500 sq. ft.','Apartment', 'Available'],
+            ['-','General','Residential',assetChartData[5][2],'-','900 sq.ft','2BHK','1',"Available",'-','Furnished','Pradhan Nagar',assetChartData[5][3],'900 sq. ft.','Apartment', 'Available'],
         ];
+        
 
         let buyerChartData=[
-            [3,1,2,5,3,5]
+            [5,3,3,5,3,5],
+            [1,1,1,5,5,5],
+            [5,4,4,2,5,3]
         ];
 
         let buyers=[
-            ['General','Residential','Any','3BHK','1',"Available",'New','Furnished','Shivmandir','&lt;1Cr','Any','Plot with Structure']
+            ['General','Residential','Any','3BHK','1',"Available",'New','Furnished','Shivmandir','&lt;1Cr','Any','Plot with Structure'],
+            ['General','-','-','-','1',"-",'-','-','Bagdogra','&gt;5Cr','10 Biga','Plot'],
+            ['General','-','-','-','1',"-",'-','-','Near Highway (Mat-Bag)','&lt; 80L','Any','Plot'],
         ];
 
         const metrics = ['Road:','Ownership:','Purpose:','Mortgage:','Foundation:','Carpet Area:','Layout:','Floors:','Parking:', 'Built:', 'Status:'];
         const buyerMetrics = ['Ownership:','Purpose:','Carpet Area:','Layout:','Floor:','Parking:', 'Condition:', 'Status:'];
         const factorLabel = ['Transportation', 'Healthcare', 'Education', 'Greenspaces', 'Commerce', 'Future'];
-
-        let assetsTypeCount = [3,4,0];
-        let assetsSold = [2,1,0];
-
-        let totalAssetValue = 4500000;
-        let totalAssetRealised = 0;
-
 
         let assetCount = assets.length;
         let buyerCount = buyers.length;
@@ -187,26 +202,30 @@
         let metricsCount = metrics.length;
         let buyerMetricsCount = buyerMetrics.length;
 
-        new Chart(document.getElementById('assetValuation'),{
+        let assetsSold = 0;
+        let totalAssetValue = 0;
+        let totalAssetRealised = 0;
+
+
+        for(i=0;i<assetCount;i++){
+            totalAssetValue = totalAssetValue + assetChartData[i][3];
+
+            if (assets[i][15]=='Sold'){
+                assetsSold = assetsSold + 1;
+                totalAssetRealised = totalAssetRealised + assetChartData[i][3]
+            }
+            
+        }
+
+        new Chart(document.getElementById('assetContracts'),{
+                    type: 'doughnut',
                     data: {
-                        labels: ['Plots','Structures','Rental'],
-                        datasets: [
-                        {
-                                label: 'Available',
-                                type: 'line',
-                                data: assetsSold,
-                                borderWidth: 1,
-                                borderColor: 'rgba(200,200,200,1)',
-                                backgroundColor: 'rgba(200,200,200,1)',
-                            },
-                            {
-                                label: 'Assets',
-                                type: 'bar',
-                                data: assetsTypeCount,
-                                borderWidth: 0,
-                                backgroundColor: 'rgba(0,0,0,1)'
-                            }
-                        ]
+                        labels: ['Available','Sold'],
+                        datasets: [{
+                            data: [assetCount, assetsSold],
+                            borderWidth: 0,
+                            backgroundColor: ['rgba(0,0,0,1)','rgba(200,200,200,1)']
+                        }]
                     },
                     options:{
                         responsive: true,
@@ -214,22 +233,19 @@
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Assets',
+                                text: 'Contracts',
                                 color: 'black'
-                            },
-                            legend:{
-                                display: false
                             }
                         }
                     }
                 });
         
-                new Chart(document.getElementById('assetContract'),{
+                new Chart(document.getElementById('assetValuation'),{
                     type: 'doughnut',
                     data: {
-                        labels: ['Realised','Available'],
+                        labels: ['Available','Realised'],
                         datasets: [{
-                            data: [totalAssetRealised, totalAssetValue],
+                            data: [totalAssetValue, totalAssetRealised],
                             borderWidth: 0,
                             backgroundColor: ['rgba(0,0,0,1)','rgba(200,200,200,1)']
                         }]
@@ -266,7 +282,7 @@
 
             document.getElementById('sellOrderContracts').insertAdjacentHTML('beforeend',`
             <details id='`+identifier+`'>
-                <summary>
+                <summary id='soldStatus`+i+`'>
                     <p>`+assets[i][11]+`</p>
                     <p>`+assets[i][12]+`</p>
                     <p>`+assets[i][13]+`</p>
@@ -277,6 +293,12 @@
                 </div>
             </details>
             `);
+
+            if (assets[i][15]=='Sold'){
+                document.getElementById('soldStatus'+i).insertAdjacentHTML('beforeend',`
+                <p class='soldBanner'>SOLD</p>
+            `);
+            }
 
             for(j=0;j<metricsCount;j++){
 
