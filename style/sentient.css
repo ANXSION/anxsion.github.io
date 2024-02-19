@@ -19,8 +19,8 @@
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
-    --primary: hsl(0, 0%, 0%);
-    --secondary: hsl(0, 0%, 100%);
+    --primary: hsl(0, 0%, 100%);
+    --secondary: hsl(0, 0%, 0%);
     --accent: hsl(84, 100%, 59%);
     --fontWeb: 1.125rem;
     --fontMobile: 0.875rem;
@@ -32,7 +32,7 @@
     --elevation3: 3;
     --elevation4: 4;
 
-    --default-font: 'Roboto Mono';
+    --default-font: 'Times New Roman';
 }
 
 ::selection {
@@ -69,7 +69,6 @@ body{
     width: 1rem;
     justify-self: center;
     align-self: center;
-    filter: invert(100%);
 }
 
 main{
@@ -246,36 +245,9 @@ button:hover{
     transition: 0.1s all linear;
 }
 
-.selectionArt:hover{
-    filter: invert(100%);
-}
 
 
 nav{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
-nav p{
-    margin: 3px;
-    width: fit-content;
-    text-align: right;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    border-bottom: 1px var(--primary) solid;
-}
-
-nav p:hover{
-    border-bottom: 1px var(--secondary) solid;
-    transition: var(--element-animation);
-}
-
-
-header{
     width: 100%;
     height: fit-content;
     margin: 0;
@@ -284,6 +256,32 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+nav p{
+    margin: 3px;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    border-bottom: 1px var(--primary) solid;
+}
+
+header{
+    width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center;text-align: center; gap: 3px;
+}
+
+header p{
+    width: fit-content;
+    border-bottom: 1px var(--primary) solid;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+header p:hover{
+    border-bottom: 1px var(--secondary) solid;
+    transition: var(--element-animation);
 }
 
 footer{
@@ -297,24 +295,6 @@ footer{
     padding-top: 2%;
     padding-bottom: 2%;
     background-color: var(--primary);
-}
-.footerLink{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
-.footerLink p{
-    width: fit-content;
-    border-bottom: 1px var(--primary) solid;
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
-.footerLink p:hover{
-    border-bottom: 1px var(--secondary) solid;
-    transition: var(--element-animation);
 }
 
 dialog{
@@ -417,11 +397,13 @@ footer p{
 
 
 .logo{
-    font-family: 'LogoLight';
-    font-size: 3rem;
-    line-height: 3.125rem;
+    font-family: 'Times New Roman';
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 3px;
     color: var(--secondary);
     margin: 27px;
+    text-align: center;
 }
 
 

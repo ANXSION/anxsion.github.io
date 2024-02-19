@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyx Capital</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    body{
+        min-width: 100%;
+        min-height: 100vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        font-family: 'Roboto';
+        color: white;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+    }
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    div{
+        width: 100%;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-weight: normal;
+    }
+    details{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    summary{
+        list-style: none;
+        cursor: pointer;
+    }
+    button{
+
+        width:fit-content;
+    }
+    input[type='number']{
+        width: 100%;
+        border: none;
+        color: white;
+        background: transparent;
+        outline: none;
+        border-bottom: 1px white solid;
+    }
+    .divider{
+        margin-bottom: 81px;
+    }
+    .charts{
+        width: 100%; height: 372px; position: relative; display: flex; justify-content: center; align-items: center;
+    }
+    #mainContent{
+        display: flex;
+        flex-direction: column;
+    }
+    #printContent{
+        display: none;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    @media (max-width: 424px){
+        p{
+            font-size: 0.75rem;
+        }        
+    }
+    @media print{
+        @page{
+            size: a4;
+        }
+        body{
+            background-color: white;
+            color: black;
+        }
+        #mainContent{
+            display: none;
+        }
+        #printContent{
+            display: flex;
+        }
+    }    
+</style>
+
+<body>
+    <div id="printContent">
+
+        <h1>Do your own research.</h1>
+
+    </div>
+
+    <div id="mainContent" style="width: 90%;">
+        <nav>
+            <p style="font-size: 2rem; padding: 9px;">//Chrysos Capital</p>
+        </nav>
+
+        <h1>Our Portfolio</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center;">
+            <div class="charts">
+                <canvas id="ourInvestments"></canvas>
+                <p style="position: absolute; width: 100%; z-index: 2; justify-self: center; align-self: center; margin: 0; text-align: center;" id="invetmentValue"></p>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: start; align-items: start; height: 100%;">
+                <h2>Legends</h2>
+                <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px;">
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div style="background-color: dodgerblue; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Equities (<span id="equities"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: deepskyblue; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Large Cap (<span id="largecap"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: steelblue; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Mid Cap (<span id="midcap"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: blue; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Small Cap (<span id="smallcap"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: navy; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Private Equity (<span id="priveq"></span>)</div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div style="background-color: lawngreen; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Bonds (<span id="debt"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: springgreen; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Cash & equivalents (<span id="cash"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: seagreen; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Corporate Bonds (<span id="corpdebt"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: darkgreen; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Government Securities (<span id="gsec"></span>)</div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                        <div style="background-color: yellow; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Commodities (<span id="commodities"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: gold; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Gold (<span id="gold"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: orangered; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Crypto (<span id="cryptoinv"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: crimson; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Real Estate - Direct (<span id="direstate"></span>)</div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-left: 45px;">
+                        <div style="background-color: darkred; height: 14px; width: 14px; aspect-ratio: 1/1; margin-right: 9px;"></div>
+                        <div>Real Estate - REIT & InvIT (<span id="invtrust"></span>)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <h1>Tools</h1>
+
+        <details>
+            <summary><h2>SIP Calculator</h2></summary>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: start; width: 100%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Monthly installment amount</p>
+                        <input type="number" id="sipCalcInstallmentValue" value="5000" min="500" max="100000" onchange="sipCalc()">
+                    </div>
+                    <br>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Expected rate of returns (p.a.)</p>
+                        <input type="number" id="sipCalcRateValue" value="12" min="1" max="30" step="0.1" onchange="sipCalc()">
+                    </div>
+                    <br>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Time period</p>
+                        <input type="number" id="sipCalcTimeValue" value="5" min="1" max="50" onchange="sipCalc()">
+                    </div>
+                    <br><br>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Invested amount:</p>
+                        <p><span id="sipCalcInvestedAmount" style="text-align:right;"></span></p>
+                        <p>Estimated returns:</p>
+                        <p><span id="sipCalcInvestedReturns" style="text-align:right;"></span></p>
+                        <p>Total value:</p>
+                        <p><span id="sipCalcInvestedTotal" style="text-align:right;"></span></p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function sipCalc(){
+                    var sipCalcAmount = parseInt(document.getElementById('sipCalcInstallmentValue').value);
+                    var sipCalcRate = parseInt(document.getElementById('sipCalcRateValue').value);
+                    var sipCalcTime = parseInt(document.getElementById('sipCalcTimeValue').value);
+
+                    var sipCalcR = sipCalcRate / 1200;
+                    var sipCalcT = sipCalcTime * 12;
+                    var sipCalcReturn = 0;
+
+                    for (i=1;i<=sipCalcT;i++){
+                        sipCalcReturn =  Math.round((sipCalcReturn + sipCalcAmount) * (1+ sipCalcR));
+                    }
+
+                    var sipCalcInvestedAmount = sipCalcAmount * sipCalcT;
+                    var sipCalcInvestedReturns = sipCalcReturn - (sipCalcAmount * sipCalcT);
+                    var sipCalcInvestedTotal = sipCalcReturn;
+
+                    document.getElementById('sipCalcInvestedAmount').innerText = "Rs. " + sipCalcInvestedAmount;
+                    document.getElementById('sipCalcInvestedReturns').innerText = "Rs. " + sipCalcInvestedReturns;
+                    document.getElementById('sipCalcInvestedTotal').innerText = "Rs. " + sipCalcInvestedTotal;
+                }
+
+                sipCalc();
+            </script>
+        </details>
+
+        <details>
+            <summary><h2>Lumpsum Calculator</h2></summary>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: start; width: 100%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>One time invested amount</p>
+                        <input type="number" id="lumpCalcInstallmentValue" value="5000" min="500" max="100000" onchange="lumpCalc()">
+                    </div>
+                    <br>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Expected rate of returns (p.a.)</p>
+                        <input type="number" id="lumpCalcRateValue" value="12" min="1" max="30" step="0.1" onchange="lumpCalc()">
+                    </div>
+                    <br>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Time period</p>
+                        <input type="number" id="lumpCalcTimeValue" value="5" min="1" max="50" onchange="lumpCalc()">
+                    </div>
+                    <br><br>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: center;">
+                        <p>Invested amount:</p>
+                        <p><span id="lumpCalcInvestedAmount" style="text-align:right;"></span></p>
+                        <p>Estimated returns:</p>
+                        <p><span id="lumpCalcInvestedReturns" style="text-align:right;"></span></p>
+                        <p>Total value:</p>
+                        <p><span id="lumpCalcInvestedTotal" style="text-align:right;"></span></p>
+                    </div>
+                </div>
+            </div>
+            <script>
+
+                function lumpCalc(){
+                    var lumpCalcAmount = document.getElementById('lumpCalcInstallmentValue').value;
+                    var lumpCalcRate = document.getElementById('lumpCalcRateValue').value;
+                    var lumpCalcTime = document.getElementById('lumpCalcTimeValue').value;
+
+                    var lumpCalcR = (lumpCalcRate / 100);
+                    var lumpCalcT = lumpCalcTime;
+                    
+                    var lumpCalcReturns = Math.round(lumpCalcAmount * Math.pow(1+ lumpCalcR, lumpCalcT));
+
+                    var lumpCalcInvestedAmount = lumpCalcAmount;
+                    var lumpCalcInvestedReturns = lumpCalcReturns - lumpCalcAmount;
+                    var lumpCalcInvestedTotal = lumpCalcReturns;
+                    
+
+                    document.getElementById('lumpCalcInvestedAmount').innerText = "Rs. " + lumpCalcInvestedAmount;
+                    document.getElementById('lumpCalcInvestedReturns').innerText = "Rs. " + lumpCalcInvestedReturns;
+                    document.getElementById('lumpCalcInvestedTotal').innerText = "Rs. " + lumpCalcInvestedTotal;
+
+                }
+
+                lumpCalc();
+
+            </script>
+        </details>
+
+        <div class="divider"></div>
+        <h1>Finanical Education</h1>
+        
+        <div class="divider"></div>
+        <h1>About</h1>
+        <p>Chrysos Capital is a private market research / analysis group hell bend on making financial knowledge accessible for everyone.</p>
+
+        <footer>
+            <p style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 9px;">&copy; Chrysos Capital</p>
+        </footer>
+    </div>
+    
+</body>
+
+
+<script>
+
+    var largecap = 423;
+    var midcap = 599 - (0.04/100) * 599;
+    var smallcap = 631 - (0.07/100) * 631;
+    var priveq = 0;
+    var cash = (0.68/100) * midcap + (0.86/100) * smallcap;
+    var corpdebt = 0;
+    var gsec = 0;
+    var gold = 54;
+    var cryptoinv = 90;
+    var direstate = 0;
+    var invtrust = 300;
+
+    var equities = largecap+midcap+smallcap+priveq;
+    var debt = cash+corpdebt+gsec;
+    var commodities = gold + cryptoinv + direstate + invtrust;
+
+    var totalValue = equities + debt + commodities;
+
+    var invetmentValue = "INR " + (totalValue/1000).toFixed(2) + " K";
+    
+    
+    var lineChart = 'line';
+    var pieChart = 'pie';
+
+    var basicOptions = {
+        tooltips: false,
+        hover: null,
+        responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+        }
+    }
+  
+    var ourInvestments = {
+        labels: ['Equities', 'Bonds', 'Commodities', 'Large Cap', 'Mid Cap', 'Small Cap', 'Private Equity', 'Cash & equivalents', 'Corporate Bonds', 'G-Sec', 'Gold', 'Crypto', 'Direct', 'REIT & InvIT'],
+        datasets: [
+            {  
+                data: [equities,debt,commodities],
+                borderWidth: 1,
+                borderColor: 'black',
+                backgroundColor:['dodgerblue','lawngreen','yellow']
+            },
+            {
+                data: [largecap, midcap, smallcap, priveq, cash, corpdebt, gsec, gold, cryptoinv, direstate, invtrust],
+                borderWidth: 1,
+                borderColor: 'black',
+                backgroundColor:['deepskyblue','steelblue','blue', 'navy', 'springgreen', 'seagreen', 'darkgreen', 'gold', 'orangered', 'crimson', 'darkred']
+            }
+        ]
+    };
+
+    document.getElementById('invetmentValue').innerText= invetmentValue;
+    document.getElementById('equities').innerText= " "+ ((equities/totalValue) * 100).toFixed(2) + " % ";
+    document.getElementById('largecap').innerText= " "+ ((largecap/equities) * 100).toFixed(2) + " % ";
+    document.getElementById('midcap').innerText= " "+ ((midcap/equities) * 100).toFixed(2) + " % ";
+    document.getElementById('smallcap').innerText= " "+ ((smallcap/equities) * 100).toFixed(2) + " % ";
+    document.getElementById('priveq').innerText= " "+ ((priveq/equities) * 100).toFixed(2) + " % ";
+    document.getElementById('debt').innerText= " "+ ((debt/totalValue) * 100).toFixed(2) + " % ";
+    document.getElementById('cash').innerText= " "+ ((cash/debt) * 100).toFixed(2) + " % ";
+    document.getElementById('corpdebt').innerText= " "+ ((corpdebt/debt) * 100).toFixed(2) + " % ";
+    document.getElementById('gsec').innerText= " "+ ((gsec/debt) * 100).toFixed(2) + " % ";
+    document.getElementById('commodities').innerText= " "+ ((commodities/totalValue) * 100).toFixed(2) + " % ";
+    document.getElementById('gold').innerText= " "+ ((gold/commodities) * 100).toFixed(2) + " % ";
+    document.getElementById('cryptoinv').innerText= " "+ ((cryptoinv/commodities) * 100).toFixed(2) + " % ";
+    document.getElementById('direstate').innerText= " "+ ((direstate/commodities) * 100).toFixed(2) + " % ";
+    document.getElementById('invtrust').innerText= " "+ ((invtrust/commodities) * 100).toFixed(2) + " % ";
+
+    new Chart(document.getElementById('ourInvestments'),{
+      type: 'doughnut',
+      data: ourInvestments,
+      options: basicOptions
+    }
+    );
+  </script>
+</html>
