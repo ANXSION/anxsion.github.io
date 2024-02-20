@@ -22,8 +22,8 @@
     --primary: hsl(0, 0%, 100%);
     --secondary: hsl(0, 0%, 0%);
     --accent: hsl(0, 0%, 30%);
-    --fontWeb: 1.5rem;
-    --fontMobile: 1.125rem;
+    --fontWeb: 1.25rem;
+    --fontMobile: 1rem;
 
     --element-animation: all 0.3s;
 
@@ -575,7 +575,7 @@ details{
         grid-template-columns: 1fr;
     }
     h1{
-        font-size: 50px;
+        font-size: 40px;
     }
     h2{
         font-size: 30px;
