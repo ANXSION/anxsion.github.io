@@ -91,7 +91,7 @@ p{
 
 ol,li{
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    line-height: 1.5;
     letter-spacing: 0px;
     text-align: justify;
 }
