@@ -22,7 +22,7 @@
     --primary: hsl(0, 0%, 100%);
     --secondary: hsl(0, 0%, 0%);
     --accent: hsl(84, 100%, 59%);
-    --fontWeb: 1.125rem;
+    --fontWeb: 1.5rem;
     --fontMobile: 0.875rem;
 
     --element-animation: all 0.3s;
@@ -42,7 +42,7 @@
 
 .label{
     font-family: var(--default-font);
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.125rem;
     font-weight: 400;
     letter-spacing: 0.16px;
@@ -55,7 +55,7 @@ body{
     background-color: var(--primary);
     color: var(--secondary);
     font-size: 16px;
-    line-height: 1.5rem;
+    line-height: 1.5;
     width: 400;
     letter-spacing: 0px;
     margin: 0;
@@ -82,15 +82,15 @@ main{
 }
 
 p{
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
     font-weight: 400;
     letter-spacing: 0px;
     text-align: justify;
 }
 
 ol,li{
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.5rem;
     letter-spacing: 0px;
     text-align: justify;
@@ -213,6 +213,7 @@ select{
 }
 
 button{
+    font-family: 'Times New Roman';
     font-weight: normal;
     width: fit-content;
     height: auto;
