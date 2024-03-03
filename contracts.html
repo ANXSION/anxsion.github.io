@@ -6,6 +6,10 @@
     <title>Open Contracts</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root{
+            --bg: white;
+            --text: black;
+        }
         body{
             width: 100%;
             min-height: 100vh;
@@ -13,513 +17,203 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            color: rgb(0, 15, 0);
-            background-color: white;
-            font-family: 'Roboto';
-            justify-content: center;
-            align-items: center;
+            color:var(--text);
+            background-color: var(--bg);
+            font-family: 'Roboto Mono';
+            justify-content: start;
+            align-items: start;
             font-size: 12px;
         }
-        canvas{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            height: fit-content;
+        h1,h2{
+            font-weight: normal;
         }
-        .chartSection{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 27px;
-            justify-content: center;
-            align-items: center;
+        table{
             width: 100%;
+            table-layout: auto;
+            border-spacing: 9px;
+            border-collapse: collapse;
+            border-top: 1px var(--text) solid;
+            border-bottom: 1px var(--text) solid;
         }
-        .chartContainer{
-            position: relative; 
-            height: 25vw; 
-            width: 25vw; 
-            display: flex;
-            flex-direction: column; 
-            justify-content: center;
-            justify-self: center;
-            align-items: center;
+        caption{
+            margin: 45px;
         }
-        .headlines{
-            width: 100%;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 2fr;
-            border-bottom: 1px black solid;
-            gap: 9px;
+        thead{
+            border-bottom: 1px var(--text) solid;
         }
-        .keyStats{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            justify-content: center;
-            align-items: start;
-            column-gap: 9px; 
-            row-gap: 27px;
-        }
-        .keyStatsAlt{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            justify-content: center;
-            align-items: start;
-            column-gap: 9px; 
-            row-gap: 27px;
-        }
-        .buyOrderStats{
-            display: grid; grid-template-columns: 1fr 1fr; column-gap: 3px; row-gap: 27px;
-        }
-        .keyStatsData{
-            display: flex;
-            flex-direction: column;
-            justify-content: start; align-items: start;
-        }
-        .keyStatsData p{
-            margin: 3px;
-        }
-        
-        details{
+        td{
             padding: 9px;
-            list-style: none;
+            border-collapse: collapse;
+            white-space: nowrap;
         }
-        summary{
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 2fr;
-            cursor: pointer;
-            border-bottom: 1px black solid;
-            position: relative;
-        }
-        
-        .soldBanner{
-            position: absolute;
-            display: flex;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            right: 0;
-            font-size: 18px;
-            color: white;
-            font-weight: bold;
-            z-index: 2;
-            margin: 0;
-            justify-content: center;
-            align-items: center;
-            background: repeating-linear-gradient( 45deg, rgba(0, 100, 100, 1), rgba(0, 100, 100, 1) 5px, rgba(0, 100, 100, 0.7) 5px, rgba(0, 100, 100, 0.7) 25px );
-        }
-
-        h1, h2{
+        footer{
             width: 100%;
             text-align: center;
             margin-top: 27px;
             margin-bottom: 27px;
         }
-
         @media screen and (max-width:768px) {
-            .chartContainer{
-                height: 40vw; 
-                width: 40vw;
-            }
+
         }
         @media screen and (max-width:425px) {
-            .chartContainer{
-                height: 48vw; 
-                width: 100%;
-                aspect-ratio: 1/1;
-            }
+
         }
+        
+        
 
     </style>
 </head>
 <body>
-    <div style="width: 95%;">
-        <h1>Current Metrics</h1>
+    <h1 style="text-align: center; width: 100%;">PROPERTY<sup>/CONTRACTS</sup></h1>
 
-        <div class="chartSection">
-            <div class="chartContainer">
-                <canvas id="assetContracts"></canvas>
-            </div>
-            <div class="chartContainer">
-                <canvas id="assetValuation"></canvas>
-            </div>
-        </div>
-        
-        <br><br>
+    <table>
+        <caption>SELL ORDERS<sup> / VACANT PLOT</sup></caption>
+        <thead>
+            <td>LOCATION</td>
+            <td>PRICE</td>
+            <td>SIZE</td>
+            <td>TITLE</td>
+            <td>USE</td>
+            <td>ROAD</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Haidarpara</td>
+                <td>1.6Cr</td>
+                <td>4.5 Katha</td>
+                <td>General</td>
+                <td>Commercial</td>
+                <td>East<sup> / 16ft</sup></td>
+            </tr>
+            <tr>
+                <td>Shivmandir</td>
+                <td>45L</td>
+                <td>10 Kattha</td>
+                <td>General</td>
+                <td>Agricultural</td>
+                <td>North<sup> / 8ft</sup></td>
+            </tr>
+            <tr>
+                <td>Shivmandir</td>
+                <td>45L</td>
+                <td>10 Kattha</td>
+                <td>General</td>
+                <td>Agricultural</td>
+                <td>North<sup> / 8ft</sup></td>
+            </tr>
+        </tbody>
+    </table>
 
-        <div id="sellOrder">
-        </div>
+    <table>
+        <caption>SELL ORDERS<sup> / STRUCTURE</sup></caption>
+        <thead>
+            <td>LOCATION</td>
+            <td>PRICE</td>
+            <td>SIZE</td>
+            <td>TITLE</td>
+            <td>USE</td>
+            <td>ROAD</td>
+            <td>LAYOUT</td>
+            <td>FLOORS</td>
+            <td>BUILT</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hatigisha</td>
+                <td>45L</td>
+                <td>7 Katha</td>
+                <td>General</td>
+                <td>Residential</td>
+                <td>-<sup> / 8ft</sup></td>
+                <td>3BHK</td>
+                <td>G+1</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Shivmandir</td>
+                <td>80L</td>
+                <td>2 Katha</td>
+                <td>General</td>
+                <td>Residential</td>
+                <td>-<sup> / 8ft</sup></td>
+                <td>3BHK</td>
+                <td>G+2</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Bagdogra</td>
+                <td>45L</td>
+                <td>4 Katha</td>
+                <td>General</td>
+                <td>Residential</td>
+                <td>NA<sup> / -</sup></td>
+                <td>2BHK</td>
+                <td>G+1</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>Shivmandir</td>
+                <td>60L</td>
+                <td>2 Katha</td>
+                <td>General</td>
+                <td>Residential</td>
+                <td>NA<sup> / -</sup></td>
+                <td>3BHK</td>
+                <td>G+2</td>
+                <td>1966</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <table>
+        <caption>SELL ORDERS<sup> / APARTMENT</sup></caption>
+        <thead>
+            <td>LOCATION</td>
+            <td>PRICE</td>
+            <td>SIZE</td>
+            <td>TITLE</td>
+            <td>LAYOUT</td>
+            <td>FLOOR</td>
+            <td>BUILT</td>
+            <td>PARKING</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pradhan Nagar</td>
+                <td>43L</td>
+                <td>900 sq. ft.</td>
+                <td>General</td>
+                <td>2BHK</td>
+                <td>1</td>
+                <td>-</td>
+                <td>Yes<sup> / 70 sq. ft.</sup></td>
+            </tr>
+            <tr>
+                <td>Salugara</td>
+                <td>50L</td>
+                <td>1200 sq. ft.</td>
+                <td>General</td>
+                <td>3BHK</td>
+                <td>1</td>
+                <td>-</td>
+                <td>Yes<sup> / -</sup></td>
+            </tr>
+            <tr>
+                <td>Salugara</td>
+                <td>50L</td>
+                <td>1200 sq. ft.</td>
+                <td>General</td>
+                <td>3BHK</td>
+                <td>2</td>
+                <td>-</td>
+                <td>Yes<sup> / -</sup></td>
+            </tr>
+        </tbody>
+    </table>
 
-        <br><br>
-
-        <div id="buyOrder">
-        </div>
-
-    </div>
     <footer>
-        <br><br>
-        <p>&copy; Open Contracts</p>
-        <br><br>
+        <p>&copy; PROPERTY<sup>/CONTRACTS</sup></p>
     </footer>
-    <script>
-        let assetChartData=[
-            [2500000,1000000,2500000,4500000,[2,1,1,3,2,2]],
-            [8000000,0,0,8000000,[3,3,3,1,3,3]],
-            [4500000,0,0,4500000,[3,2,2,1,3,3]],
-            [5000000,0,0,5000000,[3,2,1,2,2,2]],
-            [5000000,0,0,5000000,[3,2,1,3,2,2]],
-            [4500000,0,0,4300000,[3,3,3,2,3,1]],
-            [6000000,0,0,6000000,[3,3,3,2,3,3]],
-        ];
-
-        let assets=[
-            ['8ft','General','Residential',assetChartData[0][2],'G+1','-','3BHK','1',"Available",'2018','Furnished','Hatigisha',assetChartData[0][3],'7 Katha','Plot with Structure', 'Available'],
-            ['8ft','General','Residential',assetChartData[1][2],'G+2','-','3BHK','3',"Available",'-','Furnished','Shivmandir',assetChartData[1][3],'2 Katha','Plot with Structure', 'Available'],
-            ['-','General','Residential',assetChartData[2][2],'G+2','-','3BHK','2',"Available",'-','Furnished','Stationmore, Bagdogra',assetChartData[2][3],'4 Katha','Plot with Structure', 'Available'],
-            ['-','General','Residential',assetChartData[3][2],'-','1500 sq.ft','3BHK','1',"Available",'-','Furnished','Salugara',assetChartData[3][3],'1500 sq. ft.','Apartment', 'Available'],
-            ['-','General','Residential',assetChartData[4][2],'-','1500 sq.ft','3BHK','2',"Available",'-','Furnished','Salugara',assetChartData[4][3],'1500 sq. ft.','Apartment', 'Available'],
-            ['-','General','Residential',assetChartData[5][2],'-','900 sq.ft','2BHK','1',"Available",'-','Furnished','Pradhan Nagar',assetChartData[5][3],'900 sq. ft.','Apartment', 'Available'],
-            ['14ft','General','Residential',assetChartData[6][2],'G+2','-','3BHK','3',"Available",'1996','Furnished','Shivmandir',assetChartData[6][3],'2 Katha','Plot with Structure', 'Available'],
-        ];
-        
-
-        let buyerChartData=[
-            [3,2,2,1,2,3],
-            [1,1,1,3,3,3],
-            [3,2,2,1,3,2],
-            [1,1,1,3,3,3],
-        ];
-
-        let buyers=[
-            ['General','Residential','Any','3BHK','1',"Available",'New','Furnished','Shivmandir','&lt;1Cr','Any','Plot with Structure'],
-            ['General','Commercial','-','-','-',"-",'-','-','Bagdogra','&gt;5Cr','~10 Biga','Plot'],
-            ['General','Residential','-','-','-',"-",'-','-','Near Highway (Mat-Bag)','Any','Any','Plot'],
-            ['Any','Commercial/Joint Venture','-','-','-',"-",'-','-','Salbari','Any','Any','Plot'],
-        ];
-
-        const metrics = ['Road:','Ownership:','Purpose:','Mortgage:','Foundation:','Carpet Area:','Layout:','Floors:','Parking:', 'Built:', 'Status:'];
-        const buyerMetrics = ['Ownership:','Purpose:','Carpet Area:','Layout:','Floor:','Parking:', 'Condition:', 'Status:'];
-        const factorLabel = ['Transportation', 'Healthcare', 'Education', 'Greenspaces', 'Commerce', 'Future'];
-
-        let assetCount = assets.length;
-        let buyerCount = buyers.length;
-
-        let metricsCount = metrics.length;
-        let buyerMetricsCount = buyerMetrics.length;
-
-        let assetsSold = 0;
-        let totalAssetValue = 0;
-        let totalAssetRealised = 0;
-
-
-        for(i=0;i<assetCount;i++){
-            totalAssetValue = totalAssetValue + assetChartData[i][3];
-
-            if (assets[i][15]=='Sold'){
-                assetsSold = assetsSold + 1;
-                totalAssetRealised = totalAssetRealised + assetChartData[i][3]
-            }
-            
-        }
-
-        new Chart(document.getElementById('assetContracts'),{
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Available','Sold'],
-                        datasets: [{
-                            data: [assetCount, assetsSold],
-                            borderWidth: 0,
-                            backgroundColor: ['lightseagreen','aquamarine']
-                        }]
-                    },
-                    options:{
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Contracts',
-                                color: 'black'
-                            }
-                        }
-                    }
-                });
-        
-                new Chart(document.getElementById('assetValuation'),{
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Available','Realised'],
-                        datasets: [{
-                            data: [totalAssetValue, totalAssetRealised],
-                            borderWidth: 0,
-                            backgroundColor: ['lightseagreen','aquamarine']
-                        }]
-                    },
-                    options:{
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Liquidity',
-                                color: 'black'
-                            }
-                        }
-                    }
-                });
-
-        
-        document.getElementById('sellOrder').insertAdjacentHTML('beforeend',`
-        <div id='sellOrderContracts'>
-            <h1>Sell Orders</h1>
-            <div class="headlines">
-                <p style="border-right: 1px black solid; font-weight: bold;">Location</p>
-                <p style="border-right: 1px black solid; font-weight: bold;">Price</p>
-                <p style="border-right: 1px black solid; font-weight: bold;">Size</p>
-                <p style="font-weight: bold;">Order Type</p>
-            </div>
-        </div>
-        `);
-
-        for (i=0; i<assetCount;i++){
-
-            let identifier = 'asset'+i;
-
-            document.getElementById('sellOrderContracts').insertAdjacentHTML('beforeend',`
-            <details id='`+identifier+`'>
-                <summary id='soldStatus`+i+`'>
-                    <p>`+assets[i][11]+`</p>
-                    <p>`+assets[i][12]+`</p>
-                    <p>`+assets[i][13]+`</p>
-                    <p>`+assets[i][14]+`</p>
-                </summary>
-                <h1>Key Stats</h1>
-                <div class="keyStats" id='`+identifier+`Details'>
-                </div>
-            </details>
-            `);
-
-            if (assets[i][15]=='Sold'){
-                document.getElementById('soldStatus'+i).insertAdjacentHTML('beforeend',`
-                <p class='soldBanner'>SOLD</p>
-            `);
-            }
-
-            for(j=0;j<metricsCount;j++){
-
-                document.getElementById(identifier+'Details').insertAdjacentHTML('beforeend',`
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">`+metrics[j]+`</p>
-                    <p>`+assets[i][j]+`</p>
-                </div>
-                `);
-            }
-
-            document.getElementById(identifier).insertAdjacentHTML('beforeend','<br><br>');
-
-            document.getElementById(identifier).insertAdjacentHTML('beforeend',`
-                <div class="chartSection" id='`+identifier+`Chart'>
-                </div>
-            `);
-
-            
-            document.getElementById(identifier+'Chart').insertAdjacentHTML('beforeend',`
-                <div class="chartContainer">
-                    <canvas id='`+identifier+`Chart`+0+`'></canvas>
-                </div>
-            `);
-            document.getElementById(identifier+'Chart').insertAdjacentHTML('beforeend',`
-                <div class="chartContainer">
-                    <canvas id='`+identifier+`Chart`+1+`'></canvas>
-                </div>
-            `);
-
-            new Chart(document.getElementById(identifier+'Chart'+0),{
-                type: 'bar',
-                data: {
-                    labels: ['Total', 'Setoff', 'Ask'],
-                    datasets: [
-                        {
-                            label:'Land Cost',
-                            data: [assetChartData[i][0]],
-                            borderWidth: 0,
-                            backgroundColor: 'springgreen'
-                        },
-                        {
-                            label:'Structure',
-                            data: [assetChartData[i][1],0,0],
-                            borderWidth: 0,
-                            backgroundColor: 'palegreen'
-                        },
-                        {
-                            label:'Debt',
-                            data: [assetChartData[i][2],0,0],
-                            borderWidth: 0,
-                            backgroundColor: 'seagreen'
-                        },
-                        {
-                            label:'Setoff',
-                            data: [0,[(assetChartData[i][0]+assetChartData[i][1]+assetChartData[i][2]),assetChartData[i][3]],0],
-                            borderWidth: 0,
-                            backgroundColor: 'teal'
-                        },
-                        {
-                            label:'Ask Price',
-                            data: [0,0,assetChartData[i][3]],
-                            borderWidth: 0,
-                            backgroundColor: 'aquamarine'
-                        }
-                    ]
-                },
-                options:{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Price Structure',
-                            color: 'black'
-                        },
-                        legend:{
-                            display:false,
-                        }
-                    },
-                    scales:{
-                        y:{
-                            stacked: true
-                        },
-                        x:{
-                            stacked: true
-                        }
-                    }
-                }
-            });
-
-            new Chart(document.getElementById(identifier+`Chart`+1),{
-                type: 'radar',
-                data: {
-                    labels: factorLabel,
-                    datasets: [
-                        {
-                            label:'Ratio',
-                            data: assetChartData[i][4],
-                            borderWidth: 1,
-                            borderColor: 'rgba(32, 178, 170,1)',
-                            backgroundColor: 'rgba(32, 178, 170,0.5)',
-                            pointStyle: false
-                        }
-                    ]
-                },
-                options:{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Factors',
-                            color: 'black'
-                        },
-                        legend:{
-                            display:false,
-                        }
-                    },
-                    scales: {
-                        r:  {
-                            ticks: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-
-        document.getElementById('buyOrder').insertAdjacentHTML('beforeend',`
-        <div id='buyOrderContracts'>
-            <h1>Buy Orders</h1>
-            <div class="headlines">
-                <p style="border-right: 1px black solid; font-weight: bold;">Location</p>
-                <p style="border-right: 1px black solid; font-weight: bold;">Price</p>
-                <p style="border-right: 1px black solid; font-weight: bold;">Size</p>
-                <p style="font-weight: bold;">Order Type</p>
-            </div>
-        </div>
-        `);
-
-        for (i=0; i<buyerCount;i++){
-            let identifier = 'buyer'+i;
-
-            document.getElementById('buyOrderContracts').insertAdjacentHTML('beforeend',`
-            <details id='`+identifier+`'>
-                <summary>
-                    <p>`+buyers[i][8]+`</p>
-                    <p>`+buyers[i][9]+`</p>
-                    <p>`+buyers[i][10]+`</p>
-                    <p>`+buyers[i][11]+`</p>
-                </summary>
-                <h1>Key Stats</h1>
-                <div class="keyStatsAlt" id='`+identifier+`Struct'>
-                    <div class="buyOrderStats" id='`+identifier+`Details'>
-                    </div>
-                </div>
-            </details>
-            `);
-
-            for(j=0;j<buyerMetricsCount;j++){
-
-                document.getElementById(identifier+'Details').insertAdjacentHTML('beforeend',`
-                <div class="keyStatsData">
-                    <p style="font-weight: bold;">`+buyerMetrics[j]+`</p>
-                    <p>`+buyers[i][j]+`</p>
-                </div>
-                `);
-            }
-            
-            document.getElementById(identifier+'Struct').insertAdjacentHTML('beforeend',`
-                <div class="chartContainer">
-                    <canvas id='`+identifier+`Chart`+0+`'></canvas>
-                </div>
-            `);
-
-            new Chart(document.getElementById(identifier+'Chart'+0),{
-                type: 'radar',
-                data: {
-                    labels: factorLabel,
-                    datasets: [
-                        {
-                            label:'Ratio',
-                            data: buyerChartData[i],
-                            borderWidth: 1,
-                            borderColor: 'rgba(32, 178, 170,1)',
-                            backgroundColor: 'rgba(32, 178, 170,0.5)',
-                            pointStyle: false
-                        }
-                    ]
-                },
-                options:{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: {
-                            display: true,
-                            text: 'Factors',
-                            color: 'black'
-                        },
-                        legend:{
-                            display:false,
-                        }
-                    },
-                    scales: {
-                        r:  {
-                            ticks: {
-                                display: false
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    </script>
+    
 </body>
 </html>
