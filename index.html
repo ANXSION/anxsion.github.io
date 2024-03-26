@@ -2,12 +2,12 @@
 <html lang="en">
 
     <head>
-        <title>Anurag Lama & Associates</title>
+        <title>Anurag Lama</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="author" content="AnxSion" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="The official website of the Anurag Lama & Associates. Securing the future of Human species." />
+        <meta name="description" content="The official website of the Anurag Lama." />
         <meta name="twitter:card" content="summary" />
         <meta name="theme-color" content="black" />
         <meta name="msapplication-navbutton-color" content="black" />
@@ -19,7 +19,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:image" content="./asset/icon/favicon.png" />
         <meta property="og:url" content="https://anxsion.github.io" />
-        <meta property="og:description" content="We are here to secure the future of human species." />
+        <meta property="og:description" content="The official website of the Anurag Lama." />
         <link rel="manifest" href="./manifest.webmanifest" />
         <link rel="icon" type="image/png" href="./asset/icon/favicon.png">
         <link rel="apple-touch-icon" href="./asset/icon/192.png">
@@ -39,525 +39,36 @@
     </head>
 
     <body>
-        <noscript>
-            <p style="font-size: 10vw">&#9888;</p>
-            <p>Enable JavaScript to ensure optimal functionality and seamless operations</p>
-        </noscript>
-
-        <dialog id="contactDialog">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <p>Phone Number:</p>
-                    <a href="tel:+919832909233">9832909233</a>
-                </div>
-                <br>
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <p>Email:</p>
-                    <a href="mailto:anuraglama5@gmail.com">anuraglama5@gmail.com</a>
-                </div>
+        <nav style="display: grid; grid-template-columns: 1fr 1fr; padding: 9px; justify-content: center; align-items: center; grid-column-gap: 9px;">
+            <p style="display: flex; justify-content: center; align-items: center; font-size: 27px; font-family: Signature;">Anurag<br>Lama</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <a href="./index.html">Home</a>
+                <a href="./media.html">Media</a>
+                <a href="./store.html">Store</a>
+                <a href="./about.html">About</a>
             </div>
-            <br>
-            <form method="dialog" style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                <button>
-                    <p>Close&nbsp;</p>
-                    <img class="ui-icon" src="./asset/icon/ui-icon/arrow--down.svg" alt="">
-                </button>
-            </form>
-        </dialog>
-
-        <dialog id="caseStatus">
-            <div id="clientQuery">
-                <label for="clientId">Case Reference:</label>
-                <br>
-                <input type="text" id="clientIdInput" name="clientId" placeholder="Enter a valid case reference" required>
-                <p id="clienterror" style="color: crimson;"></p>
-
-                <button onclick="caseSearch()">
-                    <p>Search&nbsp;</p>
-                    <img class="ui-icon" src="./asset/icon/ui-icon/arrow--up-right.svg" alt="">
-                </button>
-                <br>
-                <button onclick="document.getElementById('caseStatus').close()">
-                    <p>Close&nbsp;</p>
-                    <img class="ui-icon" src="./asset/icon/ui-icon/arrow--down.svg" alt="">
-                </button>
-            </div>
-            
-            <div id="clientContainer">
-                <div class="clientDetails">
-                    <div class="clientData">
-                        <p style="text-decoration: underline;">Filing No:</p>
-                        <p id="cisNo"></p>
-                    </div>
-                    <div class="clientData">
-                        <p style="text-decoration: underline;">Case No:</p>
-                        <p id="caseNo"></p>
-                    </div>
-                    <div class="clientData">
-                        <p style="text-decoration: underline;">Next Date:</p>
-                        <p id="nextDate"></p>
-                    </div>
-                    <div class="clientData">
-                        <p style="text-decoration: underline;">Purpose:</p>
-                        <p id="purposeDate"></p>
-                    </div>
-                </div>
-
-                <br>
-
-                <div class="clientProcess">
-                    <p id="caseNote"></p>
-    
-                    <br>
-                    <form method="dialog">
-                        <button style="width: fit-content;">
-                            <p>Close&nbsp;</p>
-                            <img class="ui-icon" src="./asset/icon/ui-icon/arrow--down.svg" alt="">
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </dialog>
-
-        <nav>
-            <p class="logo">Anurag Lama<br>& Associates</p>
-            <br>
-            <header>
-                <p style="font-size: 1.125rem; cursor: pointer; text-align: center;" onclick="accessProtocol('terms')">Terms of Service</p>
-                <p style="font-size: 1.125rem; cursor: pointer; text-align: center;" onclick="accessProtocol('privacy')">Privacy Policy</p>
-            </header>
         </nav>
 
-        <main>
-
-            <section id="home">
-
-                <div class="content">
-                    <h1 style="width: 100%; font-family: Times New Roman; text-align: center; font-weight: normal; letter-spacing: 6px; line-height: 1.5;">Anurag Lama<br>& Associates</h1>
-
-                    <div style="display: grid; grid-template-rows: 1fr 1fr 1fr; justify-content: center; align-items: center; width: 100%; gap: 9px;">
-                        <button style="width: 100%;" onclick="casestatus()">
-                            <p>Case Status&nbsp;</p>
-                            <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
-                        </button>
-
-                        <button style="width: 100%;" onclick="document.getElementById('contactDialog').showModal()">
-                            <p>Contact us&nbsp;</p>
-                            <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
-                        </button>
-
-                        <button style="width: 100%;" onclick="location.href='https://goo.gl/maps/XdLNsu6p7TLhwtNd9'">
-                            <p>Locate us&nbsp;</p>
-                            <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="">
-                        </button>
-                    </div>
-
-                    <h1>Expertise</h1>
-
-                    <div>
-                        <h2>Criminal Litigation</h2>
-                        <hr>
-                        <p>Our comprehensive criminal litigation services provide meticulous defense strategies and unwavering representation throughout the legal process. We offer in-depth legal consultation and expert opinion, meticulously researched casework, and assertive trial advocacy in all legal proceedings. Our expertise extends to handling complex criminal appeals, navigating crisis situations with strategic composure, and specializing in the intricacies of narcotics and juvenile justice cases. With a relentless pursuit of justice and unwavering dedication to our clients, we stand as a formidable force in the face of criminal accusations.</p>
-                    </div>
-
-                    <div>
-                        <h2>Civil Litigation</h2>
-                        <hr>
-                        <p>We approach civil litigation with strategic precision, ensuring meticulous case preparation and unwavering representation in pursuit of your objectives. Our services encompass comprehensive civil consultation, adept navigation of trials and filings, and skillful handling of recovery, matrimonial, and child custody suits. We leverage our expertise to secure interim relief and injunctions when necessary, and tenaciously enforce judgments to secure your rightful outcomes. Additionally, we provide insightful compliance and regulatory advice, safeguarding your interests within the intricate legal landscape. </p>
-                    </div>
-
-                    <div>
-                        <h2>Higher Judicial Litigation</h2>
-                        <hr>
-                        <p>Our higher judicial litigation practice navigates the complexities of superior courts with strategic acumen and unwavering resolve. We provide meticulous case drafting and filing for matters before High Courts, ensuring adherence to stringent procedural requirements. Our expertise encompasses diverse areas, including filing and enforcing writ petitions, spearheading Public Interest Litigations (PILs), and handling intricate criminal and civil appeals. We possess a profound understanding of constitutional law matters, adeptly navigating their nuances to achieve your desired outcomes. Furthermore, we offer comprehensive legal updates and compliance management, alongside insightful advice on navigating complex regulatory landscapes, ensuring your interests are safeguarded at the highest judicial level.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2>Cyber and Data Law</h2>
-                        <hr>
-                        <p>In the ever-evolving digital landscape, our cyber and data law services offer comprehensive protection and strategic guidance. We equip clients with proactive cybercrime preparedness measures, including cybersecurity counseling and incident response plans. Our meticulous review of technology and data contracts ensures your interests are safeguarded. We advocate and represent clients navigating complex regulatory environments, and provide expert guidance in data breach response and management. Additionally, we conduct thorough privacy compliance assessments to mitigate risk and ensure alignment with evolving regulations. With a keen understanding of the intricate legal nuances of the digital world, we empower clients to navigate the cyber frontier with confidence.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2>Corporate and Commercial</h2>
-                        <hr>
-                        <p>We navigate the complexities of corporate and commercial law with strategic acumen, ensuring the seamless execution of your business objectives. Our comprehensive services encompass intricate mergers and acquisitions, meticulously structured financing solutions, and adept handling of consumer disputes. We advise on private equity investments, ensuring alignment with your financial goals, and provide invaluable guidance on corporate governance matters to safeguard your organization's long-term stability. Additionally, our expertise extends to structuring complex financial transactions and navigating the intricacies of capital markets, empowering you to make informed decisions and achieve optimal outcomes.</p>
-                    </div>
-
-                    <div>
-                        <h2>Competition and Antitrust</h2>
-                        <hr>
-                        <p>Our competition and antitrust law practice offers comprehensive guidance and unwavering advocacy to navigate the complexities of market regulations. We excel in crafting robust antitrust compliance programs, ensuring proactive mitigation of legal risks. Our team provides meticulous pre-merger notification filings and adept representation throughout antitrust investigations. We possess extensive experience in defending against cartel accusations, leveraging our sharp legal acumen to protect your interests. When necessary, we engage in assertive competition litigation, safeguarding your competitive edge. Additionally, we offer insightful market dominance analysis, empowering informed decision-making within the evolving regulatory landscape.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2>Insolvency and Bankruptcy</h2>
-                        <hr>
-                        <p>In navigating the complexities of financial distress, our insolvency and bankruptcy practice offers strategic solutions and unwavering guidance. We provide comprehensive consultation and advisory services, meticulously outlining your options and potential outcomes. Our expertise encompasses efficient bankruptcy filing procedures, crafting effective debt restructuring plans, and safeguarding your assets through meticulous preservation strategies. When necessary, we employ our negotiation and mediation skills to achieve optimal resolutions, ensuring a comprehensive approach to navigating financial challenges.</p>
-                    </div>
-
-                    <div>
-                        <h2>Real Estate and Trust</h2>
-                        <hr>
-                        <p>We navigate the complexities of real estate and trust matters with calculated precision, ensuring the secure and efficient realization of your objectives. Our services encompass sophisticated property transaction execution, strategic real estate development guidance, and meticulous real estate planning tailored to your unique needs. We provide comprehensive legal counsel on landlord-tenant law, ensuring compliance and safeguarding your interests. Additionally, our expertise extends to the administration of probate estates and the meticulous facilitation of family wealth transfers, guaranteeing the seamless continuity of your legacy.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2>Intellectual Property</h2>
-                        <hr>
-                        <p>Our intellectual property practice safeguards your innovative creations with meticulous precision. We offer comprehensive patent services, ensuring the robust protection of your inventions. We navigate the intricacies of trademark registration and enforcement, shielding your brand identity. Our copyright expertise secures your creative works, while our adept strategies ensure effective trade secret protection. When infringement occurs, we leverage our courtroom prowess in IP litigation, fiercely defending your rights and pursuing any potential claims with unwavering resolve. We stand as your resolute partner in safeguarding the value and integrity of your intellectual property.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2>Tax and Regulatory</h2>
-                        <hr>
-                        <p>Our tax and regulatory practice offers comprehensive services to navigate the complexities of the legal and financial landscape. We provide strategic tax planning to optimize your financial position, ensuring meticulous compliance with all applicable regulations. Our adept team tackles tax disputes with resolute advocacy, and we are well-equipped to handle complex tax litigation matters. We also deliver insightful tax education and training programs, empowering you with the knowledge to make informed decisions. Additionally, we offer specialized tax advisory services tailored to the unique needs of non-profit organizations.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2>Dispute Resolution</h2>
-                        <hr>
-                        <p>We navigate the complexities of dispute resolution with unwavering focus on efficient and cost-effective solutions. Our services encompass facilitated mediation, binding arbitration, and adept negotiation strategies tailored to achieve your desired outcomes. We provide comprehensive ADR counseling to equip you with the knowledge and guidance necessary for informed decision-making. Our expertise extends to crafting meticulous settlement agreements that uphold your interests, and we employ skillful conciliation techniques to foster amicable resolutions whenever possible. Through meticulous strategy and unwavering commitment, we strive to achieve favorable settlements, minimizing disruption and safeguarding your best interests.
-                        </p>
-                    </div>
-
-                    <h1>About</h1>
-                
-                    <p>Anurag Lama & Associates is a progressive full-service law firm, dedicated to serving a diverse clientele across India. We are a results-oriented law firm driven by a singular objective: achieving optimal outcomes for our clients. We leverage our collective expertise and unwavering dedication to navigate the complexities of the legal landscape, employing meticulous strategies and fostering decisive action. Our unwavering commitment to excellence extends beyond mere representation; we serve as trusted advisors, meticulously analyzing every facet of your case to develop a comprehensive and effective course of action. When faced with legal challenges, we stand as a formidable force, relentlessly pursuing your objectives with unwavering resolve.</p>
-    
-                    <div style="width: 100%; display: flex; justify-content: center; align-items: center; aspect-ratio: 16/9;">
-                        <div class="businessmap" style="aspect-ratio: 16/9;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57020.42668249548!2d88.3465273631082!3d26.71958085191165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e441a79b08e8e3%3A0x672c9503df6ad0a6!2sGuardian%20Angel%20Legal%20Service!5e0!3m2!1sen!2sin!4v1690273202799!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <section id="terms">
-                <div class="content">
-                    <br>
-                    <button style="width: 100%; border: none; text-align: left;" onclick="accessProtocol('home')">
-                        <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="" style="transform: rotate(180deg);">
-                        <p>&nbsp;BACK</p>
-                    </button>
-                    <br>
-                    <h1 style="text-align: center;">Terms of Service</h1>
-                    <p style="text-align: center;">Effective: November 27, 2023</p>
-                    
-                    <br>
-                    <h1 style="text-align: center;">Disclaimer</h1>
-                    <p>The Bar Council of India strictly prohibits advocates from engaging in any form or manner of advertisement or solicitation. By accessing this website, you hereby acknowledge and affirm that your visit is a voluntary initiative to obtain information pertaining to Anurag Lama & Associates, and no solicitation, advertisement, or inducement has been extended by Anurag Lama & Associates or its members. The content presented on this website is exclusively for informational purposes and should not be construed as a solicitation or advertisement. None of the material or information provided on this website should be interpreted as legal advice. Anurag Lama & Associates disclaims any responsibility for the consequences of actions taken based on reliance on the material or information presented on this website. The contents of this website are protected as the intellectual property of Anurag Lama & Associates.</p>
-                    <br>
-
-                    <h2>Overview</h2>
-                    <p>These Terms of Service govern your utilization of our legal services for both individuals and legal entities, encompassing any related software applications and websites collectively referred to as "Services." This agreement establishes the terms between you and Anurag Lama & Associates, featuring crucial provisions for dispute resolution via arbitration. Your acceptance of these Terms is implied through the utilization of our Services.</p>
-
-                    <p>Our Privacy Policy outlines the procedures for collecting and utilizing personal information. While it is not integral to these Terms, it is a significant document that warrants your attention and thorough reading.</p>
-
-                    <p>Please read these Terms of Service carefully before accessing or using our website. By accessing or using any part of the site, you agree to be bound by these Terms of Service. If you do not agree to all the terms and conditions of this agreement, then you may not access the website or use any services.</p>
-
-                    <p>When combined with the Privacy Policy, the Terms form a legally binding agreement between the user and Anurag Lama & Associates, which is enforceable according to Indian laws. By agreeing to the Terms, the user affirms and guarantees that they are at least 18 years old and possess the necessary rights, authority, and legal capacity to enter into this contractual arrangement.</p>
-
-                    <br>
-                    <h2>General Conditions</h2>
-
-                    <p>We reserve the right to refuse service to any individual for any reason at any time. Furthermore, We reserve the right to add, modify, change, or alter any of these Terms without prior notice.</p>
-
-                    <p>We retain the authority to modify the information, materials, and content available on the website without prior notice.</p>
-
-                    <p>The Website offers third-party hyperlinks and information to attribute the original sources of utilized information. It is important to note that these links should not be construed as endorsements, referrals, or affiliations. Additionally, we assume no responsibility and do not provide representations or warranties regarding the content of linked Websites.</p>
-
-                    <p>We disclaim responsibility for any loss or damage arising from errors or omissions in the information presented on the Website, regardless of whether they stem from negligence, accidents, or any other factor. Additionally, we bear no liability for the interpretation and/or utilization of the information found on this Website, and we do not provide any explicit or implicit warranties.</p>
-
-                    <p>The alteration, editing, or utilization of the material on the Website in any way is strictly prohibited.</p>
-
-                    <p>Using the Website does not establish a client-attorney relationship. Likewise, neither the transmission, receipt, nor utilization of the Website, along with the information and materials it contains, nor sending an email to our offices, leads to the formation of a client-attorney relationship.</p>
-
-                    <p>Visitors to the Website are advised to familiarize themselves with the laws of their respective countries regarding any matters discussed on the Website. If a user chooses to access the Website, it is considered a voluntary action, and they are responsible for adhering to applicable local, national, or international laws.</p>
-
-                    <br>
-                    <h2>Accuracy and Completeness of Information</h2>
-
-                    <p>We are not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk.</p>
-
-                    <p>This site may contain certain historical information. Historical information, necessarily, is not current and is provided for your reference only. We reserve the right to modify the contents of this site at any time, but we have no obligation to update any information on our site. You agree that it is your responsibility to monitor changes to our site.</p>
-
-                    <br>
-                    <h2>Accuracy of Billing</h2>
-
-                    <p>We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household or per order. These restrictions may include orders placed by or under the same customer account, the same credit card, and/or orders that use the same billing and/or shipping address. In the event that we make a change to or cancel an order, we may attempt to notify you by contacting the e-mail and/or billing address/phone number provided at the time the order was made. We reserve the right to limit or prohibit orders that, in our sole judgment, appear to be placed by dealers, resellers or distributors.</p>
-
-                    <p>You agree to provide current, complete and accurate purchase and account information for all purchases made at our store. You agree to promptly update your account and other information, including your email address and credit card numbers and expiration dates, so that we can complete your transactions and contact you as needed.</p>
-
-                    <br>
-                    <h2>Errors</h2>
-
-                    <p>Occasionally there may be information on our site or in the Service that contains typographical errors, inaccuracies or omissions. We reserve the right to correct any errors, inaccuracies or omissions, and to change or update information if any information in the Service or on any related website is inaccurate at any time without prior notice.</p>
-
-                    <p>We undertake no obligation to update, amend or clarify information in the Service or on any related website, including without limitation, pricing information, except as required by law. No specified update or refresh date applied in the Service or on any related website, should be taken to indicate that all information in the Service or on any related website has been modified or updated.</p>
-
-                    <br>
-                    <h2>Disclaimer of Warrenty and Limited Liability</h2>
-
-                    <p>We do not guarantee, represent or warrant that your use of our service will be uninterrupted, timely, secure or error-free.</p>
-
-                    <p>We do not warrant that the results that may be obtained from the use of the service will be accurate or reliable.</p>
-
-                    <p>You agree that from time to time we may remove the service for indefinite periods of time or cancel the service at any time, without notice to you.</p>
-
-                    <p>You expressly agree that your use of, or inability to use, the service is at your sole risk. The service and all products and services delivered to you through the service are (except as expressly stated by us) provided 'as is' and 'as available' for your use, without any representation, warranties or conditions of any kind, either express or implied, including all implied warranties or conditions of merchantability, merchantable quality, fitness for a particular purpose, durability, title, and non-infringement.</p>
-
-                    <br>
-                    <h2>Investigation</h2>
-
-                    <p>We retain the authority to initiate an inquiry in response to complaints or observed deviations from the Terms. We have the discretion to take any appropriate and necessary measures, which may involve reporting any suspected unlawful activities to law enforcement officials, regulators, or third parties.</p>
-
-                    <p>Furthermore, we may disclose any pertinent information to such individuals or entities concerning user profiles and traffic information as deemed necessary or appropriate.</p>
-
-                    <br>
-                    <h2>Governing Law</h2>
-
-                    <p>These Terms of Service and any separate agreements whereby we provide you Services shall be governed by and construed in accordance with the laws of India. For the purpose of these Terms, the Subdivisional Court of Siliguri shall have the exclusive jurisdiction.</p> 
-                </div> 
-            </section>
-
-            <section id="privacy">
-                <div class="content">
-                    <br>
-                    <button style="width: 100%; border: none; text-align: left;" onclick="accessProtocol('home')">
-                        <img class="ui-icon" src="./asset/icon/ui-icon/arrow--right.svg" alt="" style="transform: rotate(180deg);">
-                        <p>&nbsp;BACK</p>
-                    </button>
-                    <br>
-                    <h1 style="text-align: center;">Privacy Policy</h1>
-                    <p style="text-align: center;">Effective: November 27, 2023</p>
-
-                    <br>
-                    <h2>Preface</h2>
-                    <p>Anurag Lama & Associates, does collect and processes personal data of users on our online services and website. This Privacy Policy applies to personal data we obtain from individuals (“Users”) through our websites, online services, and web-based applications (collectively, the “Services”) during the delivery of our services.</p>
-
-                    <p>Some of our services might be subject to a separate privacy policy. If a separate privacy policy applies to a particular service, we will post it on the relevant website or otherwise make it available in connection with the service in question.</p>
-
-                    <p>Our Privacy Policy exlaborates upon what and how we process the data and how users may use their rights.</p>
-
-                    <p>This Privacy Policy may be updated if required in order to reflect the changes in data processing practices or otherwise.</p>
-
-                    <p>This Privacy Policy only covers data processing carried out by Anurag Lama & Associates. The Privacy Policy does not address nor are responsible for the privacy practices of any third parties. ANXSION disclaims all responsibility for the processing carried out by third parties, also in cases where Services include hyperlinks or other links to third party websites or services.</p>
-
-                    <br>
-                    <h2>Personal Data Processing and Sources of Data</h2>
-
-                    <p>We collect the following information types of the Users:</p>
-
-                    <ol>
-                        <li><u>User Data</u>: Essential personal information for identification and authentication, such as name, email address and physical addresses, so that all the legal documents can be sent to the proper clients and to prevent any form of information jeopardy.</li>
-                        <li><u>Collateral Data</u>: There are certian information, circumstances and facts that usually does not directly provide any form of information about the client, however, sometimes individuals can be recognized from it, either alone or when combined or linked with User Data. In such situations, Collateral Data can also be considered to be personal data under applicable laws and we will treat the combined data as personal data.</li>
-                    </ol>
-
-                    <p>All the information related to the client shall be treated with utmost care and all details shall be considered classified to all entities except to the professional who shall be handeling the case and the government officials (only when legally required to do so).</p>
-
-                    <p>During the use of the services, we may collect and process for example the following User Data from users:</p>
-                    <ol>
-                        <li>First and last name.</li>
-                        <li>E-mail address.</li>
-                        <li>Phone number.</li>
-                        <li>Name and information regarding the organization the User represents.</li>
-                        <li>Any other personal data Users may provide themselves.</li>
-                    </ol>
-
-                    <br>
-
-                    <h2>How We Use The Information</h2>
-                    <p>We may use Personal Information for the following purposes:</p>
-                    <ol>
-                        <li>To provide, administer, maintain and/or analyze the Services.</li>
-                        <li>To improve our Services and conduct research.</li>
-                        <li>To communicate with you in a timely manner, including sending you your case details and status.</li>
-                        <li>To prevent fraud, criminal activity, or misuses of our Services.</li>
-                        <li>To comply with legal obligations and legal process and to protect our rights, privacy, safety, or property, and/or that of our affiliates, you, or other third parties.</li>
-                    </ol>
-
-                    <br>
-                    <h2>Your Rights</h2>
-                    <p>You have certain the statutory rights pertaining to your personal information:</p>
-                    <ol>
-                        <li>Access your Personal Information and information relating to how it is processed.</li>
-                        <li>Delete your Personal Information from our records. However, request for deletion of your records during mid-service would imply </li>
-                    </ol>
-
-                    <br>
-                    <h2>Cookies</h2>
-
-                    <p>We use various technologies to collect and store Technical Data and other information when users visit our Services, including cookies. Cookies allow us to calculate the aggregate number of people visiting our Services and monitor the use of the Services. This helps us to improve our services and better serve our users. We may use tracking and analytics cookies to see how well our Services are being received by our users, and use unique cookie identifiers for tracking purposes.</p>
-
-                    <p>Users may choose to set their web browser to refuse cookies, or to alert when cookies are being sent. This can usually be done through Internet browser's settings. Information about how to manage cookies can be found online.</p>
-
-                    <p>Please note that some parts of our services may not function properly if use of cookies is refused.</p>
-
-                    <br>
-                    <h2>Data Storage</h2>
-
-                    <p>We do not store personal data longer than is legally permitted and necessary for the purposes of providing the Services or the relevant parts thereof. The storage period depends on the nature of the information and the purposes of processing and typically ranges from a few seconds (session cache) to a few years (certified copy of the documents). The maximum period may, therefore, vary per use.</p>
-
-                    <p>We take all reasonable and appropriate security measures to protect the personal data we store and process from unauthorised access or unauthorised alteration, disclosure or destruction.</p>
-                </div>
-            </section>
-
+        <main style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 50vh;">
+            <div class="homeRender">
+                <img src="./asset/render/cove.png" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/peaks.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/secret-garden.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/boundless-treasure.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/black-nai.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/glowing-dust.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/dark-nebula.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/alike-earth.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/distant-hope.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/agt-g1.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/iron-grip.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/mpdp.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+                <img src="./asset/render/iron-horse.jpg" alt="" style="width: 100%; height: 100%; aspect-ratio: 2.4/1; object-fit: cover;">
+            </div>
         </main>
-
         <footer>
-            <p>Copyright &#169; ANXSION</p>
-            <br>
-            <p class="logo">Anurag Lama<br>& Associates</p>
+            <p style="display: flex; justify-content: center; align-items: center;">&copy; ANURAG LAMA</p>
+            <p style="text-align: center;">All Rights Reserved</p>
         </footer>
-        
-        <script>
-
-            window.addEventListener("load", () => {
-                if ("serviceWorker" in navigator) {
-                    navigator.serviceWorker.register("./anxsion-serviceworker.js");
-                }  
-            });
-
-            function ini() {
-
-                let params = new URLSearchParams(document.location.search);
-                let id = params.get("id");
-
-
-                if(id == 'home' || id == null){
-                    accessProtocol("home");
-                }
-                else if(id == 'terms'){
-                    accessProtocol("terms");
-                }
-                else if(id == 'privacy'){
-                    accessProtocol("privacy");
-                }
-
-            }
-
-            function accessProtocol(linkname){
-                transitionSpeed=300;
-                document.getElementById('home').style.display="none";
-                document.getElementById('home').style.opacity="0%";
-                document.getElementById('terms').style.display="none";
-                document.getElementById('terms').style.opacity="0%";
-                document.getElementById('privacy').style.display="none";
-                document.getElementById('privacy').style.opacity="0%";
-
-                if (linkname=="home"){
-                    history.pushState({}, "Anurag Lama & Associates", "?id=home");
-                    document.title="Anurag Lama & Associates";
-                    document.getElementById('home').style.display="block";
-                    setTimeout(function() {document.getElementById('home').style.opacity="100%";}, transitionSpeed);
-                    window.scrollTo(0,0);
-                }
-                else if (linkname=="terms"){
-                    history.pushState({}, "Terms of Service", "?id=terms");
-                    document.title="Terms of Service";
-                    document.getElementById('terms').style.display="block";
-                    setTimeout(function() {document.getElementById('terms').style.opacity="100%";}, transitionSpeed);
-                    window.scrollTo(0,0);
-                }
-                else if (linkname=="privacy"){
-                    history.pushState({}, "Privacy Policy", "?id=privacy");
-                    document.title="Privacy Policy";
-                    document.getElementById('privacy').style.display="block";
-                    setTimeout(function() {document.getElementById('privacy').style.opacity="100%";}, transitionSpeed);
-                    window.scrollTo(0,0);
-                }
-            }
-
-            function casestatus(){
-                document.getElementById("clientQuery").style.display='flex';
-                document.getElementById("clientContainer").style.display='none';
-                document.getElementById("clienterror").innerText='';
-                document.getElementById("cisNo").innerText='';
-                document.getElementById("caseNo").innerText='';
-                document.getElementById("nextDate").innerText='';
-                document.getElementById("purposeDate").innerText='';
-                document.getElementById("caseNote").innerText='';
-
-                document.getElementById("caseStatus").showModal();
-            }
-
-            function caseSearch(){
-                var clientIdSearch= document.getElementById("clientIdInput").value;
-
-                if (clientIdSearch == ''){
-
-                    document.getElementById("clienterror").innerText='No active data found.';
-
-                }
-                else if (clientIdSearch == '12345'){
-                    document.getElementById("clienterror").innerText='';
-                    document.getElementById("cisNo").innerText='999 of 999';
-                    document.getElementById("caseNo").innerText='A.K. 999 of 999';
-                    document.getElementById("nextDate").innerText='99 of AAA, 9999';
-                    document.getElementById("purposeDate").innerText='AAA';
-                    document.getElementById("caseNote").innerText='No Remark';
-                    document.getElementById("clientQuery").style.display='none';
-                    document.getElementById("clientContainer").style.display='flex';
-
-                }
-                else if (clientIdSearch == 'Prashant Khati'){
-                    document.getElementById("clienterror").innerText='';
-                    document.getElementById("cisNo").innerText='N/A';
-                    document.getElementById("caseNo").innerText='N/A';
-                    document.getElementById("nextDate").innerText='N/A';
-                    document.getElementById("purposeDate").innerText='N/A';
-                    document.getElementById("caseNote").innerText='Awaiting Lok Adalat Application.';
-                    document.getElementById("clientQuery").style.display='none';
-                    document.getElementById("clientContainer").style.display='flex';
-
-                }
-                else if (clientIdSearch == 'Gokul Subba'){
-                    document.getElementById("clienterror").innerText='';
-                    document.getElementById("cisNo").innerText='N/A';
-                    document.getElementById("caseNo").innerText='N/A';
-                    document.getElementById("nextDate").innerText='December 25, 2023';
-                    document.getElementById("purposeDate").innerText='Submission of Permission';
-                    document.getElementById("caseNote").innerText='Awaiting delivery of the Affidavit.';
-                    document.getElementById("clientQuery").style.display='none';
-                    document.getElementById("clientContainer").style.display='flex';
-
-                }
-                else if (clientIdSearch == 'Eza Prakashan'){
-                    document.getElementById("clienterror").innerText='';
-                    document.getElementById("cisNo").innerText='N/A';
-                    document.getElementById("caseNo").innerText='N/A';
-                    document.getElementById("nextDate").innerText='02/02/2024';
-                    document.getElementById("purposeDate").innerText='Refund';
-                    document.getElementById("caseNote").innerText='Refund Requested.';
-                    document.getElementById("clientQuery").style.display='none';
-                    document.getElementById("clientContainer").style.display='flex';
-
-                }
-                else if (clientIdSearch == 'AGOSS'){
-                    document.getElementById("clienterror").innerText='';
-                    document.getElementById("cisNo").innerText='N/A';
-                    document.getElementById("caseNo").innerText='N/A';
-                    document.getElementById("nextDate").innerText='N/A';
-                    document.getElementById("purposeDate").innerText='N/A';
-                    document.getElementById("caseNote").innerText='RTI have been delivered to the stated addresses.';
-                    document.getElementById("clientQuery").style.display='none';
-                    document.getElementById("clientContainer").style.display='flex';
-
-                }
-                else{
-                    document.getElementById("clienterror").innerText='No active data found.';
-                }
-            }
-
-            ini();
-        </script>    
     </body>
 </html>
