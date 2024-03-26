@@ -92,6 +92,9 @@ a{
 }
 
 @media only screen and (max-width: 500px) {
+    .homeRender{
+        grid-template-columns: 1fr;
+    }
     .mediaAlbums{
         grid-template-columns: 1fr;
     }
