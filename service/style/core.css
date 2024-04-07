@@ -4,6 +4,7 @@ body{
     font-size: 16px;
     font-family: 'Roboto Mono';
     margin: 0;
+    min-width: 320px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -51,14 +52,15 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-gap: 9px;
 }
-h1{
-    margin: 27px;
-    font-size: 1.5rem;
-    font-weight: normal;
+p{
+    font-size: 0.875rem;
+    margin: 3px;
 }
-h2{
-    margin: 18px;
-    font-size: 1.2rem;
+h1{
+    margin: 0;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 img{
@@ -124,3 +126,31 @@ footer{
     grid-template-columns: 1fr 1fr;
     width: 100%;
 }
+
+@media (max-width: 900px) {
+    body{
+        font-size: 12px;
+    }
+    p{
+        font-size: 0.75rem;
+    }
+    h1{
+        font-size: 1rem;
+        margin: 0;
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    .visualGrid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .dataGrid{
+        grid-template-columns: 1fr 1fr;
+    }
+    summary{
+        display: 1fr 3fr;
+    }
+  }
