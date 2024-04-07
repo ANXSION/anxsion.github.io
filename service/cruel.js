@@ -1,9 +1,9 @@
 let propertyData = [
     ["01/2023",'Hatigisha #01', 'Plot with structure', '1_2023_cover.jpg','No data', ['7 Katha','Bastu','General', 'Freehold','12 ft','Residential','3BHK','G+1', '-', 'Available', 'Under progress', 'none'], ['0m','0m','0m','0m','0m','0m','0m'],['4500000','Mortgaged']],
-    ["02/2023",'Pradhan Nagar #01', 'Apartment', '2_2023_cover.jpg','No data', ['Residential','2BHK','1st', '1200 Sq. ft.','12 ft','Available','2012','None'], ['0m','0m','0m','0m','0m','0m','0m'],['4500000','Mortgaged']],
-    ["03/2023",'Pradhan Nagar #02', 'Apartment', '3_2023_cover.jpg','No data', ['Residential','3BHK','3rd', '1200 Sq. ft.','12 ft','Available','2013','None'], ['0m','0m','0m','0m','0m','0m','0m'],['3600000','Mortgaged']],
+    ["02/2023",'Pradhan Nagar #01', 'Apartment', '2_2023_cover.jpg','No data', ['Residential','2BHK','1st', '1200 Sq. ft.','12 ft','Available','2012','None'], ['0m','0m','0m','0m','0m','0m','0m'],['4500000','Clear']],
+    ["03/2023",'Pradhan Nagar #02', 'Apartment', '3_2023_cover.jpg','No data', ['Residential','3BHK','3rd', '1200 Sq. ft.','12 ft','Available','2013','None'], ['0m','0m','0m','0m','0m','0m','0m'],['3600000','Clear']],
     ["01/2024",'Gossaipur #01', 'Plot', '1_2024_cover.jpg','No data', ['2.5 Bigha','Rupni','General', 'Freehold','14 ft','Gram Panchayat'], ['0m','0m','0m','0m','0m','0m','0m'],['17500000','Clear']],
-    ["02/2024",'Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg','No data', ['Residential','3BHK','2nd', '-','12 ft','unavailable','2016','None'], ['0m','0m','0m','0m','0m','0m','0m'],['3800000','Mortgaged']]
+    ["02/2024",'Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg','No data', ['Residential','3BHK','2nd', '-','12 ft','unavailable','2016','None'], ['0m','0m','0m','0m','0m','0m','0m'],['3800000','Clear']]
 ];
 
 let brandName = "_EBONYFROST";
