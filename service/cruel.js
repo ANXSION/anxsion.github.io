@@ -1,6 +1,3 @@
-/*
-
-*/
 let propertyData = [
     ["01/2023",'Hatigisha #01', 'Plot with structure', '1_2023_cover.jpg','No data', ['7 Katha','Bastu','General', 'Freehold','12 ft','Residential','3BHK','G+1', '-', 'Available', 'Under progress', 'none'], ['0m','0m','0m','0m','0m','0m','0m'],['4500000','Mortgaged']],
     ["02/2023",'Pradhan Nagar #01', 'Apartment', '2_2023_cover.jpg','No data', ['Residential','2BHK','1st', '1200 Sq. ft.','12 ft','Available','2012','None'], ['0m','0m','0m','0m','0m','0m','0m'],['4500000','Clear']],
@@ -9,7 +6,7 @@ let propertyData = [
     ["02/2024",'Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg','No data', ['Residential','3BHK','2nd', '-','12 ft','unavailable','2016','None'], ['0m','0m','0m','0m','0m','0m','0m'],['3800000','Clear']]
 ];
 
-let brandName = "_EBONYFROST";
+let brandName = "_Tyrant's Hold";
 let copyYear = "2024";
 
 let injectedData, injectImage;
@@ -93,6 +90,8 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
                 <p>`+financial_Parameters[0]+`: `+propertyData[cycle][7][0]+`</p>
                 <p>`+financial_Parameters[1]+`: `+propertyData[cycle][7][1]+`</p>
             </div>
+
+
         </details>
         `;   
     }
