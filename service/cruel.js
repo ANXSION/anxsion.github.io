@@ -3,7 +3,8 @@ let propertyData = [
     ['02/2023','Pradhan Nagar #01', 'Apartment', '2_2023_cover.jpg','No data', [1200, 'Residential', '2BHK', '1st', '12 ft', 'Available', 2012, 'None'], ['0m','0m','0m','0m','0m','0m','0m'],[4200000,'None']],
     ['03/2023','Pradhan Nagar #02', 'Apartment', '3_2023_cover.jpg','No data', [1200, 'Residential', '3BHK', '3rd', '12 ft', 'Available', 2013, 'None'], ['0m','0m','0m','0m','0m','0m','0m'],[4800000,'None']],
     ['01/2024','Gossaipur #01', 'Plot', '1_2024_cover.jpg','No data', [36000,'Rupni','General', 'Freehold','14 ft','Gram Panchayat'], ['0m','0m','0m','0m','0m','0m','0m'],[15000000,'None']],
-    ['02/2024','Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg',['2_2024_1.jpg', '2_2024_2.jpg', '2_2024_3.jpg','2_2024_4.jpg'], [1200, 'Residential','3BHK','2nd','12 ft','unavailable',2016,'None'], ['0m','0m','0m','0m','0m','0m','0m'],[3200000,'Financed']]
+    ['02/2024','Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg',['2_2024_1.jpg', '2_2024_2.jpg', '2_2024_3.jpg','2_2024_4.jpg'], [1200, 'Residential','3BHK','2nd','12 ft','unavailable',2016,'None'], ['0m','0m','0m','0m','0m','0m','0m'],[3200000,'Financed']],
+    ['03/2024','Hatigisha #02', 'Plot', '3_2024_cover.jpg','No data', [2160,'Bastu','General', 'Freehold','10 ft','Gram Panchayat'], ['0m','0m','0m','0m','0m','0m','0m'],[1200000,'None']],
 ];
 
 const dateEvents = new Date();
@@ -22,11 +23,11 @@ let copyYear = dateEvents.getFullYear();
 
 let injectedData, injectImage, injectUpperdata, injectLowerdata, injectSpecifications, injectContracts, ageData, contractData;
 let sizeFactor = 720;
-let marginTarget = 0.10;
+let marginTarget = 0.20;
 
 let nearby_Parameters = ['School', 'Hospital', 'Commerce', 'Highway', 'Railway', 'Airport', 'Seaport'];
 let financial_Parameters = ['Price', 'Per unit', 'Encumbrance'];
-let contract_Parameters = ['Time Limit', 'Prepayment', 'Remaining Amount', 'Offered Price'];
+let contract_Parameters = ['Expiry', 'Prepayment', 'Payable', 'Ask Price'];
 
 let sizeMetric = ['Sq. ft.', 'Katha', 'Decimal', 'Biga', 'Acre'];
 
@@ -45,7 +46,7 @@ for(let i = 0; i < logoCount.length; i++) {
     logoCount[i].innerText= brandName;
 }
 
-document.getElementById("copyYear").inerText= copyYear;
+document.getElementById("copyYear").innerText= copyYear;
 
 for (let cycle = 0; cycle < propertyData.length; cycle++){
 
