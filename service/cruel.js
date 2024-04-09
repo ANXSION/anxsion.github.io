@@ -1,9 +1,9 @@
 let propertyData = [
-    ['01/2023','Hatigisha #01', 'Plot with structure', '1_2023_cover.jpg', 'No data', [5040, 'Bastu', 'General', 'Freehold','12 ft','Residential','3BHK','G+1', '-', 'Available', 'Under construction', 'none'], ['0m','0m','0m','0m','0m','0m','0m'],[4500000,'Financed']],
-    ['02/2023','Pradhan Nagar #01', 'Apartment', '2_2023_cover.jpg','No data', [1200, 'Residential', '2BHK', '1st', '12 ft', 'Available', 2012, 'None'], ['0m','0m','0m','0m','0m','0m','0m'],[4500000,'None']],
-    ['03/2023','Pradhan Nagar #02', 'Apartment', '3_2023_cover.jpg','No data', [1200, 'Residential', '3BHK', '3rd', '12 ft', 'Available', 2013, 'None'], ['0m','0m','0m','0m','0m','0m','0m'],[3600000,'None']],
-    ['01/2024','Gossaipur #01', 'Plot', '1_2024_cover.jpg','No data', [36000,'Rupni','General', 'Freehold','14 ft','Gram Panchayat'], ['0m','0m','0m','0m','0m','0m','0m'],[17500000,'None']],
-    ['02/2024','Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg',['2_2024_1.jpg', '2_2024_2.jpg', '2_2024_3.jpg','2_2024_4.jpg'], [1200, 'Residential','3BHK','2nd','12 ft','unavailable',2016,'None'], ['0m','0m','0m','0m','0m','0m','0m'],[3800000,'Financed']]
+    ['01/2023','Hatigisha #01', 'Plot with structure', '1_2023_cover.jpg', 'No data', [5040, 'Bastu', 'General', 'Freehold','12 ft','Residential','3BHK','G+1', '-', 'Available', 'Under construction', 'none'], ['0m','0m','0m','0m','0m','0m','0m'],[3800000,'Financed']],
+    ['02/2023','Pradhan Nagar #01', 'Apartment', '2_2023_cover.jpg','No data', [1200, 'Residential', '2BHK', '1st', '12 ft', 'Available', 2012, 'None'], ['0m','0m','0m','0m','0m','0m','0m'],[4200000,'None']],
+    ['03/2023','Pradhan Nagar #02', 'Apartment', '3_2023_cover.jpg','No data', [1200, 'Residential', '3BHK', '3rd', '12 ft', 'Available', 2013, 'None'], ['0m','0m','0m','0m','0m','0m','0m'],[4800000,'None']],
+    ['01/2024','Gossaipur #01', 'Plot', '1_2024_cover.jpg','No data', [36000,'Rupni','General', 'Freehold','14 ft','Gram Panchayat'], ['0m','0m','0m','0m','0m','0m','0m'],[15000000,'None']],
+    ['02/2024','Pradhan Nagar #03', 'Apartment', '2_2024_cover.jpg',['2_2024_1.jpg', '2_2024_2.jpg', '2_2024_3.jpg','2_2024_4.jpg'], [1200, 'Residential','3BHK','2nd','12 ft','unavailable',2016,'None'], ['0m','0m','0m','0m','0m','0m','0m'],[3200000,'Financed']]
 ];
 
 const dateEvents = new Date();
@@ -22,10 +22,11 @@ let copyYear = dateEvents.getFullYear();
 
 let injectedData, injectImage, injectUpperdata, injectLowerdata, injectSpecifications, injectContracts, ageData, contractData;
 let sizeFactor = 720;
+let marginTarget = 0.10;
 
 let nearby_Parameters = ['School', 'Hospital', 'Commerce', 'Highway', 'Railway', 'Airport', 'Seaport'];
 let financial_Parameters = ['Base Price', 'Per unit', 'Encumbrance'];
-let contract_Parameters = ['Purchase Date', 'Booking Amount', 'Sale Price', 'Ask Price'];
+let contract_Parameters = ['Purchase Date', 'Prepayment', 'Sale Price', 'Ask Price'];
 
 let sizeMetric = ['Sq. ft.', 'Katha', 'Decimal', 'Biga', 'Acre'];
 
@@ -59,15 +60,15 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
             Math.round(0.03 * propertyData[cycle][7][0])
         ], 
         [
-            Math.round(propertyData[cycle][7][0] - (0.02 * propertyData[cycle][7][0])),
+            Math.round(propertyData[cycle][7][0] - (0.05 * propertyData[cycle][7][0])),
+            Math.round(propertyData[cycle][7][0] - (0.03 * propertyData[cycle][7][0])),
             Math.round(propertyData[cycle][7][0] - (0.01 * propertyData[cycle][7][0])),
-            propertyData[cycle][7][0]
         ],
-        propertyData[cycle][7][0]
+        (propertyData[cycle][7][0] + Math.round(propertyData[cycle][7][0] * marginTarget))
     ];
 
     injectContracts=`
-    <h1>Prepayment Options</h1>
+    <h1>Prebook Options</h1>
     <table>
         <tr>
             <th>`+contract_Parameters[0]+`</th>
@@ -124,7 +125,7 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
     <br><br>
     <h1>Financials</h1>
     <div class="dataGrid">
-        <p>`+financial_Parameters[0]+`: `+propertyData[cycle][7][0]+`</p>
+        <p>`+financial_Parameters[0]+`: `+ (propertyData[cycle][7][0] + Math.round(propertyData[cycle][7][0] * marginTarget)) +`</p>
         <p>`+financial_Parameters[1]+`: `+ Math.round(propertyData[cycle][7][0] / propertyData[cycle][5][0])+` / `+ sizeMetric[0] +`</p>
         <p>`+financial_Parameters[2]+`: `+propertyData[cycle][7][1]+`</p>
     </div>
