@@ -25,8 +25,8 @@ let sizeFactor = 720;
 let marginTarget = 0.10;
 
 let nearby_Parameters = ['School', 'Hospital', 'Commerce', 'Highway', 'Railway', 'Airport', 'Seaport'];
-let financial_Parameters = ['Base Price', 'Per unit', 'Encumbrance'];
-let contract_Parameters = ['Purchase Date', 'Prepayment', 'Sale Price', 'Ask Price'];
+let financial_Parameters = ['Price', 'Per unit', 'Encumbrance'];
+let contract_Parameters = ['Time Limit', 'Prepayment', 'Ask Price', 'Base Price'];
 
 let sizeMetric = ['Sq. ft.', 'Katha', 'Decimal', 'Biga', 'Acre'];
 
@@ -237,6 +237,8 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
             `+injectLowerdata+`
             <br><br>
             `+injectContracts+`
+            <br><br>
+            <a href="tel:9832909233" class="contact" ><p>Contact Now</p></a>
             <br><br>
         </details>
         `;
