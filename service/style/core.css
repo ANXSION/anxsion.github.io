@@ -53,6 +53,14 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-gap: 9px;
 }
+a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    font-size: 0.875rem;
+}
 p{
     font-size: 0.875rem;
     margin: 3px;
@@ -91,6 +99,7 @@ footer{
     margin-bottom: 9px;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

@@ -213,7 +213,7 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
         injectSpecifications = `
         <h1>Unit Specifications</h1>
         <div class="dataGrid">
-            <p>`+apartment_Parameters[0]+`: `+propertyData[cycle][5][0]+`</p>
+            <p>`+apartment_Parameters[0]+`: `+propertyData[cycle][5][0]+` Sq. ft</p>
             <p>`+apartment_Parameters[1]+`: `+propertyData[cycle][5][1]+`</p>
             <p>`+apartment_Parameters[2]+`: `+propertyData[cycle][5][2]+`</p>
             <p>`+apartment_Parameters[3]+`: `+propertyData[cycle][5][3]+`</p>
