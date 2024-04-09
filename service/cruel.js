@@ -45,12 +45,10 @@ for(let i = 0; i < logoCount.length; i++) {
     logoCount[i].innerText= brandName;
 }
 
-document.getElementById("copyYear").innerText= copyYear;
-
-
+document.getElementById("copyYear").inerText= copyYear;
 
 for (let cycle = 0; cycle < propertyData.length; cycle++){
-    
+
     let basePrice = propertyData[cycle][7][0];
     let marginedPrice = basePrice + Math.round(basePrice * marginTarget);
     contractData = [
@@ -174,7 +172,7 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
         injectSpecifications = `
         <h1>Land Specifications</h1>
         <div class="dataGrid">
-            <p>`+plotwithstructure_Parameters[0]+`: `+ Math.round(propertyData[cycle][5][0])+ ` Sq. ft. (` +(propertyData[cycle][5][0] / sizeFactor)+` `+ sizeMetric[1] +`)`+`</p>
+            <p>`+plotwithstructure_Parameters[0]+`: `+ Math.round(propertyData[cycle][5][0])+ ` Sq. ft. (` +(propertyData[cycle][5][0] / sizeFactor)+` `+ sizeMetric[1] +`)</p>
             <p>`+plotwithstructure_Parameters[1]+`: `+propertyData[cycle][5][1]+`</p>
             <p>`+plotwithstructure_Parameters[2]+`: `+propertyData[cycle][5][2]+`</p>
             <p>`+plotwithstructure_Parameters[3]+`: `+propertyData[cycle][5][3]+`</p>
@@ -201,7 +199,7 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
         injectSpecifications = `
         <h1>Land Specifications</h1>
         <div class="dataGrid">
-            <p>`+plot_Parameters[0]+`: `+ Math.round(propertyData[cycle][5][0])+ ` Sq. ft. (` +(propertyData[cycle][5][0] / sizeFactor)+` `+ sizeMetric[1] +`)`+`</p>
+            <p>`+plot_Parameters[0]+`: `+ Math.round(propertyData[cycle][5][0])+ ` Sq. ft. (` +(propertyData[cycle][5][0] / sizeFactor)+` `+ sizeMetric[1] +`)</p>
             <p>`+plot_Parameters[1]+`: `+propertyData[cycle][5][1]+`</p>
             <p>`+plot_Parameters[2]+`: `+propertyData[cycle][5][2]+`</p>
             <p>`+plot_Parameters[3]+`: `+propertyData[cycle][5][3]+`</p>
@@ -247,7 +245,9 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
             <br><br>
             `+injectContracts+`
             <br><br>
-            <a href="tel:9832909233" class="contact" ><p>Contact Now</p></a>
+            
+            <h1>Contact</h1>
+            <p>Phone: 9832909233</p>
             <br><br>
         </details>
         `;
