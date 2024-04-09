@@ -26,7 +26,7 @@ let marginTarget = 0.10;
 
 let nearby_Parameters = ['School', 'Hospital', 'Commerce', 'Highway', 'Railway', 'Airport', 'Seaport'];
 let financial_Parameters = ['Price', 'Per unit', 'Encumbrance'];
-let contract_Parameters = ['Time Limit', 'Prepayment', 'Ask Price', 'Base Price'];
+let contract_Parameters = ['Time Limit', 'Prepayment', 'Remaining Amount', 'Offered Price'];
 
 let sizeMetric = ['Sq. ft.', 'Katha', 'Decimal', 'Biga', 'Acre'];
 
@@ -47,7 +47,12 @@ for(let i = 0; i < logoCount.length; i++) {
 
 document.getElementById("copyYear").innerText= copyYear;
 
+
+
 for (let cycle = 0; cycle < propertyData.length; cycle++){
+    
+    let basePrice = propertyData[cycle][7][0];
+    let marginedPrice = basePrice + Math.round(basePrice * marginTarget);
     contractData = [
         [
             contractDateShort.toLocaleDateString('en-IN', options),
@@ -55,16 +60,20 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
             contractDateLong.toLocaleDateString('en-IN', options)
         ], 
         [
-            Math.round(0.09 * propertyData[cycle][7][0]),
-            Math.round(0.06 * propertyData[cycle][7][0]),
-            Math.round(0.03 * propertyData[cycle][7][0])
+            Math.round(0.09 * marginedPrice),
+            Math.round(0.06 * marginedPrice),
+            Math.round(0.03 * marginedPrice)
         ], 
         [
-            Math.round(propertyData[cycle][7][0] - (0.05 * propertyData[cycle][7][0])),
-            Math.round(propertyData[cycle][7][0] - (0.03 * propertyData[cycle][7][0])),
-            Math.round(propertyData[cycle][7][0] - (0.01 * propertyData[cycle][7][0])),
+            (marginedPrice - Math.round(0.05 * marginedPrice)) - Math.round(0.09 * marginedPrice),
+            (marginedPrice - Math.round(0.03 * marginedPrice)) - Math.round(0.06 * marginedPrice),
+            (marginedPrice - Math.round(0.01 * marginedPrice)) - Math.round(0.03 * marginedPrice)
         ],
-        (propertyData[cycle][7][0] + Math.round(propertyData[cycle][7][0] * marginTarget))
+        [
+            (marginedPrice - Math.round(0.05 * marginedPrice)),
+            (marginedPrice - Math.round(0.03 * marginedPrice)),
+            (marginedPrice - Math.round(0.01 * marginedPrice))
+        ]
     ];
 
     injectContracts=`
@@ -80,19 +89,19 @@ for (let cycle = 0; cycle < propertyData.length; cycle++){
             <td>`+contractData[0][0]+`</td>
             <td>`+contractData[1][0]+`</td>
             <td>`+contractData[2][0]+`</td>
-            <td>`+contractData[3]+`</td>
+            <td>`+contractData[3][0]+`</td>
         </tr>
         <tr>
             <td>`+contractData[0][1]+`</td>
             <td>`+contractData[1][1]+`</td>
             <td>`+contractData[2][1]+`</td>
-            <td>`+contractData[3]+`</td>
+            <td>`+contractData[3][1]+`</td>
         </tr>
         <tr>
             <td>`+contractData[0][2]+`</td>
             <td>`+contractData[1][2]+`</td>
             <td>`+contractData[2][2]+`</td>
-            <td>`+contractData[3]+`</td>
+            <td>`+contractData[3][2]+`</td>
         </tr>
     </table>`;
 
