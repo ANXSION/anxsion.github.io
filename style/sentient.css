@@ -79,8 +79,15 @@ a{
     display: grid; justify-content: center; align-items: center; grid-template-columns: 1fr 1fr 1fr; width: 100%; grid-gap: 9px;
 }
 
+.projectGrid{
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; justify-content: center; align-items: center; width: 100%;
+}
+
 @media only screen and (max-width: 1024px) {
     .homeRender{
+        grid-template-columns: 1fr 1fr;
+    }
+    .projectGrid{
         grid-template-columns: 1fr 1fr;
     }
     .mediaSingles{
@@ -102,6 +109,9 @@ a{
         grid-template-columns: 1fr;
     }
     .mediaMusicvids,.mediaFilms{
+        grid-template-columns: 1fr;
+    }
+    .projectGrid{
         grid-template-columns: 1fr;
     }
   }
