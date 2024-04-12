@@ -9,9 +9,54 @@
             font-size: 16px;
             background-color: white;
             color: black;
+            margin: 0;
         }
         nav{
-            width: 100%; display: flex; justify-content: center; align-items: center; padding-top: 9px; padding-bottom: 9px;
+            width: 100%; display: flex; justify-content: center; align-items: center; padding-top: 18px; padding-bottom: 27px;
+        }
+        details{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            background-color: white;
+            color: black;
+            border-bottom: 2px black solid;
+        }
+        summary{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            margin: 0;
+            font-size: 1.5rem;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+        .actContainer{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: start;
+            align-items: center;
+        }
+        a{
+            text-align: left;
+            color: black;
+            margin: 18px;
+            margin-left: 18px;
+            margin-right: 18px;
+        }
+
+        @media screen and (max-width: 425px) {
+            .actContainer{
+                display: flex;
+                flex-direction: column;
+            }
+            
         }
     </style>
 </head>
@@ -19,14 +64,95 @@
     <p style="font-size: 1.5rem; letter-spacing: 9px; margin: 0;"><span style="border-bottom: 2px black solid; padding-bottom: 6px;">Arch</span><span style="border-top: 2px black solid; border-right: 2px black solid; border-bottom: 2px black solid; padding: 6px;">AEGIS<span></p> 
 </nav>
 <body id="injectCode">
-    <div id="displayGrid">
-
-    </div>
-    <div id="displayLaw">
-
-    </div>
+    
 </body>
 <script>
+    let actCategories = [
+        ['Constitutional Law','constlaw'],
+        ['Criminal Law', 'crimlaw'],
+        ['Civil Law', 'civlaw'],
+        ['Adminstrative Law', 'adminlaw'],
+        ['Tax Law', 'taxlaw'],
+        ['Corporate Law', 'corplaw'],
+        ['Labour Law', 'labrlaw', '1'],
+        ['Intellectual Property Law', 'iplaw'],
+        ['Environmental Law', 'envlaw'],
+        ['Cyber Law', 'cybrlaw'],
+        ['Family Law', 'famlaw'],
+        ['Property Law', 'proplaw'],
+        ['Health Law', 'hlthlaw'],
+        ['Education Law', 'edulaw'],
+        ['Transportation Law', 'tranlaw'],
+        ['Media Law', 'medialaw']
+    ];
+
+    let actNames = [
+        [
+            ['The Constitution of India', '#'],
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+        [
+            ['The Constitution of India', '#']
+        ],
+
+    ];
+
+    for(let i = 0; i < actCategories.length; i ++){
+        document.getElementById('injectCode').insertAdjacentHTML("beforeend",`
+            <details>
+                <summary>`+actCategories[i][0]+`</summary>
+                <div class='actContainer' id=`+actCategories[i][1]+`></div>
+            </details>
+        `);
+        for (let j = 0; j <actNames[i].length;j++){
+            console.log(actCategories[i][1]);
+            document.getElementById(actCategories[i][1]).insertAdjacentHTML("beforeend",`
+                <a href="`+actNames[i][j][1]+`">`+actNames[i][j][0]+`</a>
+            `);
+        }
+    }
     
     
 </script>
