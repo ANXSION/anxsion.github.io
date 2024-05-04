@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Res Sacrae Capital</title>
+    <title>Res Sacrae Equity</title>
     <style>
         @font-face {
             font-family: 'Capital';
-            src: url('../../asset/fonts/CinzelDecorative.ttf');
+            src: url('../../asset/fonts/Jost.ttf');
             font-display: swap;
         }
         body{
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
             font-size: 18px;
             font-family: 'Roboto';
         }
         nav{
             margin-bottom: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        h1, h2{
+        h1, h2, h3{
             width: 100%;
             text-align: center;
             margin-top: 27px;
@@ -27,12 +30,12 @@
             font-weight: normal;
         }
         p{
-            font-size: 16px;
+            font-size: 14px;
             padding: 0;
             margin: 0;
             margin-top: 6px;
             margin-bottom: 6px;
-            color: white;
+            color: black;
         }
         p[change ='rise']{
             color:rgb(0, 255, 0);
@@ -41,122 +44,421 @@
             color:orangered;
         }
         p[change ='none']{
-            color:white;
+            color:black;
         }
-        #glanceDataContainer{
+
+        .capitallogo{
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            border-top: 18px solid rgba(0, 0, 0,0);
+            border-left: 18px solid rgba(0, 0, 0,0);
+            border-right: 18px solid lightgreen;
+            border-bottom: 18px solid lightgreen;;
+            box-sizing: content-box;
+        }
+
+        .portfolio{
+            display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: start; grid-gap: 9px;
+        }
+        .portfolioContainer{
             width: 100%;
+            padding-left: 10%;
+            padding-right: 10%;
+            box-sizing: border-box;
+        }
+        .portfolioBar{
+            width: 100%;
+            height: 9px;
             display: grid;
-            grid-template-columns: 1fr;
-            justify-content: center;
-            align-items: center;
-            grid-gap: 9px;
-            text-align: center;
         }
-        .glanceData{
+        .portfolioBarUnits{
+            box-sizing: border-box;
             width: 100%;
-            display: grid;
-            grid-gap: 9px;
-            grid-template-columns: 1fr 1fr 1fr;
-            justify-content: start;
-            align-items: start;
-            text-align: left;
-        }
-        .glanceDataActual{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: left;
-        }
-        .ticker{
-            width: 100%;
-            display: flex;
-            overflow: hidden;
-            user-select: none;
-        }
-        .ticker p{
+            height: 100%;
             margin: 0;
+            padding: 0;
+        }
+        .PortfolioLegends{
             width: 100%;
             display: flex;
-            margin-block: 0;
-            transform: translate3d(100%, 0, 0);
-            justify-content: center;
+            flex-direction: column;
+            justify-content: start;
             align-items: center;
-            animation: ticking ;
         }
-        @keyframes ticking{
-            0%{
-                transform: translate3d(100%,0,0);
-            }
-            100%{
-                transform: translate3d(-100%,0,0);
-            }
+        .PortfolioLegendsUnits{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 9px;
+            justify-content: start;
+            align-items: center;
+        }
+        .PortfolioLegendsUnitsIcon{
+            width: 12px;
+            height: 12px;
+            aspect-ratio: 1/1;
         }
     </style>
 </head>
 <body>
     <nav>
-        <p style="font-size: 1.5rem;  margin: 0; font-family: 'Capital'; text-align: center;">Res Sacrae<br>Capital</p>
+        <div class="capitallogo" style="margin-right: 18px;"></div>
+        <p style="font-size: 1.5rem;  margin: 0; font-family: 'Capital'; text-align: left;">Res Sacrae Equity</p>
     </nav>
 
-    <div class="ticker">
-        <p>This site is under development.</p>
-    </div>
+    <br><br>
 
-    <h1>Economy</h1>
+    <div>
+        <h1>Portfolio Ratios</h1>
 
-    
-
-    <div id="glanceDataContainer">
-
-    </div>
-    
-
-    <script>
-        //metric-current-old
-        let glanceDataset=[
-            ['Gross National Product', 170.344, 156.813, 'T'],
-            ['GN Capital Formation', 14.72, 14.349, 'T'],
-            ['Real GDP', 43.72, 41.856, ''],
-            ['Gross Domestic Product', 3.417, 3.15, '%'],
-            ['GDP Growth', 8.4, 8.1, '%'],
-
-            ['Population', 1.374, 1.361, 'B'],
-            ['GN Capital Formation', 14.72, 14.349, 'T'],
-            ['Real GDP', 43.72, 41.856, ''],
-            ['Gross Domestic Product', 3.417, 3.15, '%'],
-            ['GDP Growth', 8.4, 8.1, '%'],
-        ];
-
-        let changeData, changeValue, symbol = '';
-
-        for (i=0; i< glanceDataset.length; i++){
-            symbol='+';
-            changeData = 'rise';
-            changeValue = parseFloat(glanceDataset[i][1] - glanceDataset[i][2]).toFixed(2);
-            if (changeValue > 0){
-                changeData = 'rise';
-                symbol = '+';
-            }
-            else if (changeValue < 0){
-                changeValue = Math.abs(changeValue);
-                changeData = 'fall';
-                symbol = '-';
-            }
-            else{
-                changeData = 'none';
-                symbol = '+';
-            }
-            document.getElementById('glanceDataContainer').insertAdjacentHTML("beforeend",
-                `
-                <div class="glanceData">
-                    <p class="glanceDataActual">`+ glanceDataset[i][0] +`</p>
-                    <p class="glanceDataActual">`+ glanceDataset[i][1]  +" "+ glanceDataset[i][3] +`</p>
-                    <p class="glanceDataActual" change ="`+changeData+`" >`+ symbol + changeValue +" "+ glanceDataset[i][3] +`</p>
+        <h2>Conservative</h2>
+        <div class="portfolio">
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Income Preservation</p>
+                <div class="portfolioBar" style="grid-template-columns: 40% 30% 20% 10%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
                 </div>
-                `
-            );
-        }
-    </script>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Fixed Deposits</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Government Bonds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Blue-chip Stocks</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Gold ETF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Stable Dividend</p>
+                <div class="portfolioBar" style="grid-template-columns: 50% 25% 15% 10%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Large Cap Stocks</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Corporate Bonds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>REIT</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Balanced Mutual Funds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Fixed Income</p>
+                <div class="portfolioBar" style="grid-template-columns: 60% 20% 15% 5%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Short-term Debt Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Corporate Fixed Deposits</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Government Savings Schemes</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Ultra Short-term Debt Funds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Balanced</h2>
+        <div class="portfolio">
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Balanced Growth</p>
+                <div class="portfolioBar" style="grid-template-columns: 40% 25% 20% 15%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Large Cap Equity</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Diversified Equity Mutual Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Debt Mutual Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Gold ETF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Diversified Income</p>
+                <div class="portfolioBar" style="grid-template-columns: 35% 30% 20% 15%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Equity-oriented Hybrid Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Index Funds </p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Corporate Bonds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Infrastructure Bonds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Growth & Income</p>
+                <div class="portfolioBar" style="grid-template-columns: 50% 25% 15% 10%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Equity-linked Savings Schemes</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Balanced Advantage Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Monthly Income Plans</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Sectoral Funds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Aggressive</h2>
+        <div class="portfolio">
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Hight Growth</p>
+                <div class="portfolioBar" style="grid-template-columns: 50% 30% 15% 5%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Mid-cap Equity</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Small-cap Equity Mutual</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Sectoral Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>International Equity Funds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Dynamic Growth</p>
+                <div class="portfolioBar" style="grid-template-columns: 40% 30% 20% 10%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Growth-Oriented Equity</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Multi-cap Equity Mutual Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Aggressive Hybrid Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Equity ETFs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Emerging Sectors</p>
+                <div class="portfolioBar" style="grid-template-columns: 50% 25% 15% 10%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Technology Sector Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Emerging Market Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Growth-oriented Sector Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Venture Capital Funds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Very Aggressive</h2>
+        <div class="portfolio">
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Concentrated Growth</p>
+                <div class="portfolioBar" style="grid-template-columns: 60% 20% 15% 5%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Small-cap Equity</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Sectoral Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>International Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Venture Capital Funds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Alpha Seeking</p>
+                <div class="portfolioBar" style="grid-template-columns: 50% 25% 20% 5%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Sectoral Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Thematic Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Emerging Market Equity Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Leveraged Equity Instruments</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolioContainer">
+                <p style="font-weight: bold;">Speculations</p>
+                <div class="portfolioBar" style="grid-template-columns: 50% 25% 15% 10%;">
+                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                    <div style="background-color: hsl(120, 73%, 55%);"></div>
+                    <div style="background-color: hsl(120, 73%, 35%);"></div>
+                    <div style="background-color: hsl(120, 73%, 15%);"></div>
+                </div>
+                <div class="PortfolioLegends">
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
+                        <p>Mid-cap Equity Mutual Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
+                        <p>Alternate Investment Funds</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
+                        <p>Commodity Futures</p>
+                    </div>
+                    <div class="PortfolioLegendsUnits">
+                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
+                        <p>Cryptocurrency Investments</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1>Indices</h1>
+        <div>
+            <h2>EQUITY</h2>
+
+        </div>
+    </div>
 </body>
 </html>
