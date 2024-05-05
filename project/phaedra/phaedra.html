@@ -122,19 +122,40 @@
 
     <div>
         <br><br>
-        <h1>Personal Hedge Fund</h1>
+        <h1>Phaedra Hedge Fund</h1>
 
         <div style="margin: 5%;">
+            
             <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
                 <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
                     <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0);"></div>
                 </div>
-                <p style="font-size: 3rem; text-align: center; width: fit-content; color: lightgreen;">9.3%</p>            
+                <p style="font-size: 3rem; text-align: center; width: fit-content; color: lightgreen;">23.2% <span style="font-size: 0.75rem;">CAGR</span></p>            
+            </div>
+
+            <br><br>
+            <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; text-align: center; gap: 9px;">
+                <div>
+                    <p>Management Fee</p>
+                    <h2 style="font-size: 3rem;">6%<br><span style="font-size: 0.5rem;">Incl. expense fee</span></h2>
+                </div>
+                <div>
+                    <p>Exit Load</p>
+                    <h2 style="font-size: 3rem;">3%<br><span style="font-size: 0.5rem;">If redeemed within 3M</span></h2>
+                </div>
+                <div>
+                    <p>Min. One Time</p>
+                    <h2 style="font-size: 3rem;">5K<br><span style="font-size: 0.5rem;">1K for SIP</span></h2>
+                </div>
+                <div>
+                    <p>Performance Fee</p>
+                    <h2 style="font-size: 3rem;">0%<br><span style="font-size: 0.5rem;">No performance fee</span></h2>
+                </div>
             </div>
 
             <br><br>
             <div class="portfolioContainer">
-                <div class="portfolioBar" style="grid-template-columns: 70% 20% 10%">
+                <div class="portfolioBar" style="grid-template-columns:90% 5% 5%">
                     <div style="background-color: hsl(120, 73%, 55%);"></div>
                     <div style="background-color: hsl(120, 73%, 35%);"></div>
                     <div style="background-color: hsl(120, 73%, 15%);"></div>
@@ -157,22 +178,13 @@
             </div>
 
             <br><br>
-            <h2>Strategies</h2>
-            <div style="display: grid; justify-content: center; align-items: center; grid-template-columns: 1fr 1fr; gap: 9px; text-align: center;">
-                <p>Fundamental Long/Short</p>
-                <p>Event Driven</p>
-                <p>Leveraged Equity</p>
-                <p>Dynamic Asset Allocation</p>
-            </div>
-
-            <br><br>
             <h2>Sectors</h2>
             <div style="display: grid; justify-content: center; align-items: center; grid-template-columns: 1fr 1fr 1fr; gap: 9px; text-align: center;">
                 <p>Consumer</p>
                 <p>Energy</p>
                 <p>Financials</p>
                 <p>Healthcare</p>
-                <p>Infrastructure</p>
+                <p>Capital Goods</p>
                 <p>Technology</p>
             </div>
         </div>
@@ -531,4 +543,10 @@
     </footer>
     
 </body>
+<script>
+    let aum = 9994.62;
+    let investors = 1;
+    document.getElementById('aum').innerText=aum;
+    document.getElementById('nav').innerText=aum/investors;
+</script>
 </html>
