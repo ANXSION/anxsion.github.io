@@ -125,11 +125,17 @@
         <h1>Personal Hedge Fund</h1>
 
         <div style="margin: 5%;">
-            
+            <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
+                <p style="font-size: 3rem; text-align: center; width: fit-content; color: lightgreen; margin-right: 3px;">8.9%</p>
+                <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg);">
+                    <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0);"></div>
+                </div>
+                
+            </div>
+
             <br><br>
             <div class="portfolioContainer">
-                <div class="portfolioBar" style="grid-template-columns: 50% 20% 10% 20%">
-                    <div class="portfolioBarUnits" style="background-color: hsl(120, 73%, 75%);"></div>
+                <div class="portfolioBar" style="grid-template-columns: 70% 20% 10%">
                     <div style="background-color: hsl(120, 73%, 55%);"></div>
                     <div style="background-color: hsl(120, 73%, 35%);"></div>
                     <div style="background-color: hsl(120, 73%, 15%);"></div>
@@ -137,24 +143,21 @@
                 
                 <div class="PortfolioLegends">
                     <div class="PortfolioLegendsUnits">
-                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 75%);"></div>
-                        <p>Domestic Equities</p>
-                    </div>
-                    <div class="PortfolioLegendsUnits">
                         <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
-                        <p>International Equities</p>
+                        <p>Equity and Equity Related Instruments</p>
                     </div>
                     <div class="PortfolioLegendsUnits">
                         <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
-                        <p>Fixed Income Instruments</p>
+                        <p>High Liquidity Debt Instrument</p>
                     </div>
                     <div class="PortfolioLegendsUnits">
                         <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
-                        <p>Alternative Investments</p>
+                        <p>Cash</p>
                     </div>
                 </div>
             </div>
 
+            <br><br>
             <h2>Strategies</h2>
             <div style="display: grid; justify-content: center; align-items: center; grid-template-columns: 1fr 1fr; gap: 9px; text-align: center;">
                 <p>Fundamental Long/Short</p>
@@ -163,6 +166,7 @@
                 <p>Dynamic Asset Allocation</p>
             </div>
 
+            <br><br>
             <h2>Sectors</h2>
             <div style="display: grid; justify-content: center; align-items: center; grid-template-columns: 1fr 1fr 1fr; gap: 9px; text-align: center;">
                 <p>Consumer</p>
