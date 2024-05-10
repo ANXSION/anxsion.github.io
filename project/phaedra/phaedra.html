@@ -143,7 +143,7 @@
                     <h1>No Balance<br><span style="font-size: 0.75rem;">You must be newly registered. Your balance will be updated soon.</span></h1>
                     <br><br>
                 </div>
-                <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; font-size: 1rem; cursor: pointer;" onclick="signOutOfMetaMask()">Sign out</button>
+                <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; font-size: 1rem; cursor: pointer; width: 50%;" onclick="signOutOfMetaMask()">Sign out</button>
             </div>           
         </div>
     </div>
@@ -635,6 +635,7 @@
         ['0x431c2e7f4E96288CD4C0207d67a4FAaBa14F9Aa1', 1.0]
     ]
 
+
     window.userWalletAddress = null;
 
     const loginPanel = document.getElementById('loginPanel');
@@ -650,23 +651,26 @@
 
     registered.style.display = 'none';
     unregistered.style.display = 'none';
-    
-    console.log(provider.isMetaMask);
 
-    function toggleButton() {
-      if (!window.ethereum) {
-        console.log('MetaMask is not installed');
-        return false
-      }
-    }
+    
 
     async function loginWithMetaMask() {
-
         const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
         .catch((e) => {
-            console.error(e.message)
-            return
-        })
+        console.error(e.message)
+        return
+        });
+
+        const accountslist =  await ethereum.request({ method: 'eth_accounts' })
+        .catch((e) => {
+        console.error(e.message)
+        return
+        });
+
+        console.log(ethereum.isConnected());
+
+        console.log(accountslist);
+
         window.userWalletAddress = accounts[0];
         userWallet.innerText = window.userWalletAddress;
 
@@ -691,12 +695,9 @@
                 unregistered.style.display = 'flex';
             }
         }
-        
     }
 
-    function signOutOfMetaMask() {
-        window.userWalletAddress = null;
-        userWallet.innerText = '';
+    async function signOutOfMetaMask() {        
         loginPanel.style.display = 'flex';
         AccountData.style.display = 'none';
         registered.style.display = 'none';
