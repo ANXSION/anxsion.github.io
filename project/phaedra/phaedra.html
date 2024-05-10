@@ -623,30 +623,7 @@
     </footer>
     
 </body>
-<script>
-    window.userWalletAddress = null;
-    async function loginWithMetaMask() {
-        window.userWalletAddress = null;
-        
-        if (window.ethereum) {
-          const web3 = new Web3(window.ethereum);
-          // Request the user to connect accounts (Metamask will prompt)
-          await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-          // Get the connected accounts
-          const accounts = await web3.eth.getAccounts();
-
-          // Display the connected account
-          console.log(accounts[0]);
-        } else {
-          // Alert the user to download Metamask
-          alert('Please download Metamask');
-        }
-    }
-
-</script>
-
-<!--
     <script>
     const MMSDK = new MetaMaskSDK.MetaMaskSDK();
     ethereum = MMSDK.getProvider();
@@ -727,7 +704,6 @@
     }
   </script>
 
--->
     
 
 </html>
