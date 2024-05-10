@@ -23,7 +23,7 @@
             justify-content: center;
             align-items: center;
             padding-top: 27px;
-            margin-bottom: 27px;
+            padding-bottom: 27px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -120,12 +120,39 @@
         <p style="font-size: 18px;  margin: 0; font-family: 'Capital'; text-align: left;">Phaedra<br>Equity</p>
     </nav>
 
+
+
+    <div style="width: 100%;">
+        <div style="width: 100%; justify-content: center; align-items: center; margin-top: 48px; margin-bottom: 48px;">
+            <div id="loginPanel">
+                <div style=" width: 100%; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;">
+                    <p style="user-select: none;">Connect with</p>
+                    <img id='loginButton' onclick="loginWithMetaMask()" src="../../asset/icon/Metamask_button_white.svg" style="width: 12rem; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                </div>
+            </div>
+
+            <div id="AccountData" style="width: 100%; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;">
+                <br><br>
+                <h2 id='userWallet' style=" width: 70%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-decoration:underline; text-decoration-color: lightgreen; text-align: center;"></h2>
+                <div id="registered" style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <br><br>
+                    <p>INR<span id="fundBalance" style="font-size: 3rem; margin-left: 9px;"></span></p>
+                    <br><br>
+                </div>
+                <div id="unregistered">
+                    <br><br>
+                    <h1>No Balance<br><span style="font-size: 0.75rem;">You must be newly registered. Your balance will be updated soon.</span></h1>
+                    <br><br>
+                </div>
+                <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; font-size: 1rem; cursor: pointer;" onclick="signOutOfMetaMask()">Sign out</button>
+            </div>           
+        </div>
+    </div>
+
     <div>
         <br><br>
-        <h1>Private Equity</h1>
-
-        <div style="margin: 5%;">
-            
+        <h1>Cryptographic Equity</h1>
+        <div style="margin: 5%;"> 
             <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
                 <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
                     <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0);"></div>
@@ -598,9 +625,78 @@
     
 </body>
 <script>
-    let aum = 9994.62;
-    let investors = 1;
-    document.getElementById('aum').innerText=aum;
-    document.getElementById('nav').innerText=aum/investors;
-</script>
+    let AUM = 2999;
+    let pastAUM = 3200;
+
+    let clients = [
+        ['0x431c2e7f4E96288CD4C0207d67a4FAaBa14F9Aa1', 1.0]
+    ]
+
+    window.userWalletAddress = null;
+
+    const loginPanel = document.getElementById('loginPanel');
+    const AccountData = document.getElementById('AccountData');
+    const loginButton = document.getElementById('loginButton');
+    const unregistered = document.getElementById('unregistered');
+    const registered = document.getElementById('registered');
+    const userWallet = document.getElementById('userWallet');
+    const fundBalance = document.getElementById('fundBalance');
+
+    loginPanel.style.display = 'flex';
+    AccountData.style.display = 'none';
+
+    registered.style.display = 'none';
+    unregistered.style.display = 'none';
+
+    function toggleButton() {
+      if (!window.ethereum) {
+        console.log('MetaMask is not installed');
+        return false
+      }
+    }
+
+    async function loginWithMetaMask() {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        .catch((e) => {
+            console.error(e.message)
+            return
+        })
+        window.userWalletAddress = accounts[0];
+        userWallet.innerText = window.userWalletAddress;
+
+        if (!accounts) { return }
+        for (i=0; i<=clients.length; i++){
+            if (clients[i][0] == window.userWalletAddress){
+                fundBalance.innerText = parseFloat(AUM * clients[i][1]).toFixed(2);
+                if(AUM >= pastAUM){
+                    fundBalance.style.color = 'lightgreen';
+                }
+                else{
+                    fundBalance.style.color = 'orangered';
+                }
+                loginPanel.style.display = 'none';
+                AccountData.style.display = 'flex';
+                registered.style.display = 'flex';
+                break;
+            }
+            else{
+                loginPanel.style.display = 'none';
+                AccountData.style.display = 'flex';
+                unregistered.style.display = 'flex';
+            }
+        }
+        
+    }
+
+    function signOutOfMetaMask() {
+        window.userWalletAddress = null;
+        userWallet.innerText = '';
+        loginPanel.style.display = 'flex';
+        AccountData.style.display = 'none';
+        registered.style.display = 'none';
+        unregistered.style.display = 'none';
+    }
+
+
+  </script>
 </html>
