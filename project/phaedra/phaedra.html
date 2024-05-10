@@ -113,15 +113,14 @@
             aspect-ratio: 1/1;
         }
     </style>
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js'></script>
 </head>
 <body>
     <nav>
         <div class="capitallogo" style="margin-right: 9px;"></div>
         <p style="font-size: 18px;  margin: 0; font-family: 'Capital'; text-align: left;">Phaedra<br>Equity</p>
     </nav>
-
-
-
     <div style="width: 100%;">
         <div style="width: 100%; justify-content: center; align-items: center; margin-top: 48px; margin-bottom: 48px;">
             <div id="loginPanel">
@@ -625,6 +624,33 @@
     
 </body>
 <script>
+    window.userWalletAddress = null;
+    async function loginWithMetaMask() {
+        window.userWalletAddress = null;
+        
+        if (window.ethereum) {
+          const web3 = new Web3(window.ethereum);
+          // Request the user to connect accounts (Metamask will prompt)
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+
+          // Get the connected accounts
+          const accounts = await web3.eth.getAccounts();
+
+          // Display the connected account
+          console.log(accounts[0]);
+        } else {
+          // Alert the user to download Metamask
+          alert('Please download Metamask');
+        }
+    }
+
+</script>
+
+<!--
+    <script>
+    const MMSDK = new MetaMaskSDK.MetaMaskSDK();
+    ethereum = MMSDK.getProvider();
+
     let AUM = 2999;
     let pastAUM = 3200;
 
@@ -647,6 +673,8 @@
 
     registered.style.display = 'none';
     unregistered.style.display = 'none';
+    
+    console.log(provider.isMetaMask);
 
     function toggleButton() {
       if (!window.ethereum) {
@@ -656,7 +684,8 @@
     }
 
     async function loginWithMetaMask() {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
         .catch((e) => {
             console.error(e.message)
             return
@@ -696,7 +725,9 @@
         registered.style.display = 'none';
         unregistered.style.display = 'none';
     }
-
-
   </script>
+
+-->
+    
+
 </html>
