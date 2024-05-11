@@ -707,6 +707,7 @@
                 else{
                     fundBalance.style.color = 'orangered';
                 }
+                userWallet.innerText = localStorage.getItem("connectionID");
                 loginPanel.style.display = 'none';
                 AccountData.style.display = 'flex';
                 registered.style.display = 'flex';
@@ -735,12 +736,12 @@
         });
 
         window.userWalletAddress = accounts[0].toLowerCase();
-        userWallet.innerText = window.userWalletAddress;
         localStorage.setItem("connectionID", window.userWalletAddress);
 
         if (!accounts) { return }
         for (i=0; i<=clients.length; i++){
             if (clients[i][0] == window.userWalletAddress){
+                
                 fundBalance.innerText = parseFloat(AUM * clients[i][1]).toFixed(2);
                 if(AUM >= pastAUM){
                     fundBalance.style.color = 'lightgreen';
@@ -748,6 +749,7 @@
                 else{
                     fundBalance.style.color = 'orangered';
                 }
+                userWallet.innerText = window.userWalletAddress;
                 loginPanel.style.display = 'none';
                 AccountData.style.display = 'flex';
                 registered.style.display = 'flex';
