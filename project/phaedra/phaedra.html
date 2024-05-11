@@ -59,6 +59,18 @@
             text-align: center;
             font-size: 18px;
         }
+        input{
+            background-color: transparent;
+            border: none;
+            outline: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 3px solid lightgreen;
+            color: lightgreen;
+            margin: 12px;
+        }
 
         .capitallogo{
             width: 18px;
@@ -121,8 +133,9 @@
         <div class="capitallogo" style="margin-right: 9px;"></div>
         <p style="font-size: 18px;  margin: 0; font-family: 'Capital'; text-align: left;">Phaedra<br>Equity</p>
     </nav>
-    <div style="width: 100%;">
-        <div style="width: 100%; justify-content: center; align-items: center; margin-top: 48px; margin-bottom: 48px;">
+
+    <div style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
+        <div style="width: 100%; justify-content: center; align-items: center;">
             <div id="loginPanel">
                 <div style=" width: 100%; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;">
                     <p style="user-select: none;">Connect with</p>
@@ -148,9 +161,8 @@
         </div>
     </div>
 
-    <div>
-        <br><br>
-        <h1>Cryptographic Equity</h1>
+    <div style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
+        <h1>Equity Fund</h1>
         <div style="margin: 5%;"> 
             <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
                 <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
@@ -163,7 +175,7 @@
             <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; text-align: center; gap: 9px;">
                 <div>
                     <p>Management Fee</p>
-                    <h2 style="font-size: 3rem;">3%<br><span style="font-size: 0.5rem;">Annually</span></h2>
+                    <h2 style="font-size: 3rem;">9.3%<br><span style="font-size: 0.5rem;">Annually</span></h2>
                 </div>
                 <div>
                     <p>Exit Load</p>
@@ -197,9 +209,7 @@
         </div>
     </div>
 
-    <div>
-        <br><br>
-        <br><br>
+    <div  style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
         <h1>Equinox Exchange</h1>
 
         <h2>Crypto-Fiat Conversion</h2>
@@ -211,11 +221,28 @@
                 <h2 style="font-size: 3rem;">1%</h2>
             </div>
             <div>
-                <p>Business Hour</p>
-                <h2 style="font-size: 3rem;">24H</h2>
+                <p>Conversion Time</p>
+                <h2 style="font-size: 3rem;">30min</h2>
             </div>
         </div>
 
+        <h1 id="exchangeNotice"><span style="color: lightgreen;">Connect</span> a wallet to exchange.</h1>
+
+        <div id="exchange" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 45px; margin-bottom: 45px;">
+            
+            <label for="valueSent">Value:</label>
+            <input type="number" name="valueSent" id="valueSent">
+            <br>
+
+            <label for="accountNumber">UPI Account:</label>
+            <input type="text" name="accountNumber" id="accountNumber">
+            <br><br>
+
+            <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transact</button>
+
+        </div>
+
+        <br><br>
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
@@ -270,9 +297,7 @@
         <!-- TradingView Widget END -->
     </div>
     
-    <div>
-        <br><br>
-        <br><br>
+    <div  style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
         <h1>Portfolio Ratios</h1>
 
         <h2>Conservative</h2>
@@ -627,7 +652,7 @@
     <script>
     const sdk = new MetaMaskSDK.MetaMaskSDK({
         dappMetadata: {
-            name: "Pure JS example",
+            name: "Phaedra Equity",
             url: window.location.host,
         },
         logging: {
@@ -635,6 +660,7 @@
         }
     });
 
+    let provider = sdk.getProvider();
 
     let AUM = 2999;
     let pastAUM = 3200;
@@ -653,6 +679,8 @@
     const registered = document.getElementById('registered');
     const userWallet = document.getElementById('userWallet');
     const fundBalance = document.getElementById('fundBalance');
+    const exchange = document.getElementById('exchange');
+    const exchangeNotice = document.getElementById('exchangeNotice');
 
     loginPanel.style.display = 'flex';
     AccountData.style.display = 'none';
@@ -660,11 +688,12 @@
     registered.style.display = 'none';
     unregistered.style.display = 'none';
 
-    
+    exchange.style.display = 'none';
+    exchangeNotice.style.display = 'block';
+
 
     async function loginWithMetaMask() {
-        let provider = sdk.getProvider();
-
+        provider = sdk.getProvider();
         const accounts = await provider.request({ method: 'eth_requestAccounts' })
         .catch((e) => {
         console.error(e.message)
@@ -693,12 +722,17 @@
                 loginPanel.style.display = 'none';
                 AccountData.style.display = 'flex';
                 registered.style.display = 'flex';
+                exchange.style.display = 'flex';
+                exchangeNotice.style.display = 'none';
                 break;
             }
             else{
                 loginPanel.style.display = 'none';
                 AccountData.style.display = 'flex';
                 unregistered.style.display = 'flex';
+                exchange.style.display = 'flex';
+                exchangeNotice.style.display = 'none';
+                break
             }
         }
     }
@@ -708,6 +742,38 @@
         AccountData.style.display = 'none';
         registered.style.display = 'none';
         unregistered.style.display = 'none';
+    }
+
+    async function calculate(){
+
+    }
+
+    async function sendTransactionData(){
+        provider = sdk.getProvider();
+
+        let gasfee = parseInt(90000);
+        let plainValue = parseFloat(document.getElementById('valueSent').value) * 1000000000000000000;
+        let plainAddress = document.getElementById('accountNumber').value;
+
+        let hashedAddress = '0x';
+        let hashedValue = '0x'+plainValue.toString(16);
+
+        for(i=0;i<plainAddress.length; i++){
+            hashedAddress=hashedAddress.concat(parseInt(plainAddress.charCodeAt(i)).toString(16)); 
+        }
+
+        await provider.request({
+            "method": "eth_sendTransaction",
+            "params": [
+                {
+                "to": "0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1",
+                "from": window.userWalletAddress,
+                "value": hashedValue,
+                "data": hashedAddress,
+                "gas":"0x"+gasfee.toString(16)
+                }
+            ]
+        });
     }
   </script>
 
