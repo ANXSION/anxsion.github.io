@@ -82,6 +82,10 @@
             border-bottom: 18px solid lightgreen;
             box-sizing: content-box;
         }
+        mark{
+            background-color: transparent;
+            color: lightgreen;
+        }
 
         .portfolio{
             display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: start; grid-gap: 9px;
@@ -156,13 +160,13 @@
                     <h1>No Balance<br><span style="font-size: 0.75rem;">You must be newly registered. Your balance will be updated soon.</span></h1>
                     <br><br>
                 </div>
-                <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="signOutOfMetaMask()">Sign out</button>
+                <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="signOutOfMetaMask()">Disconnect</button>
             </div>           
         </div>
     </div>
 
     <div style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
-        <h1>Equity Fund</h1>
+        <h1><mark>Growth</mark> Fund</h1>
         <div style="margin: 5%;"> 
             <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
                 <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
@@ -210,23 +214,20 @@
     </div>
 
     <div  style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
-        <h1>Equinox Exchange</h1>
-
-        <h2>Crypto-Fiat Conversion</h2>
-
+        <h1><mark>Equinox</mark> Exchange</h1>
 
         <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; text-align: center; gap: 9px;">
             <div>
                 <p>Conversion Fee</p>
-                <h2 style="font-size: 3rem;">1%</h2>
+                <p style="color: lightgreen;">1%</p>
             </div>
             <div>
                 <p>Conversion Time</p>
-                <h2 style="font-size: 3rem;">30min</h2>
+                <p style="color: lightgreen;">30min</p>
             </div>
         </div>
 
-        <h1 id="exchangeNotice"><span style="color: lightgreen;">Connect</span> a wallet to exchange.</h1>
+        <h2 id="exchangeNotice"><span style="color: lightgreen;">Connect</span> a wallet to exchange.</h2>
 
         <div id="exchange" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 45px; margin-bottom: 45px;">
             
@@ -650,6 +651,13 @@
 </body>
 
     <script>
+    let AUM = 34500;
+    let pastAUM = 4200;
+
+    let clients = [
+        ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
+    ]
+
     const sdk = new MetaMaskSDK.MetaMaskSDK({
         dappMetadata: {
             name: "Phaedra Equity",
@@ -661,13 +669,6 @@
     });
 
     let provider = sdk.getProvider();
-
-    let AUM = 2999;
-    let pastAUM = 3200;
-
-    let clients = [
-        ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
-    ]
 
 
     window.userWalletAddress = null;
@@ -693,6 +694,7 @@
 
 
     async function loginWithMetaMask() {
+        
         provider = sdk.getProvider();
         const accounts = await provider.request({ method: 'eth_requestAccounts' })
         .catch((e) => {
@@ -742,16 +744,16 @@
         AccountData.style.display = 'none';
         registered.style.display = 'none';
         unregistered.style.display = 'none';
+        exchange.style.display = 'none';
+        exchangeNotice.style.display = 'block';
     }
-
-    async function calculate(){
-
-    }
-
+    
     async function sendTransactionData(){
-        provider = sdk.getProvider();
 
-        let gasfee = parseInt(90000);
+        provider = sdk.getProvider();
+        let gasquant = parseInt(21000).toString(16);
+        let gasfee = parseInt(9000000000).toString(16);
+        let priorityfee = parseInt(3000000000).toString(16);
         let plainValue = parseFloat(document.getElementById('valueSent').value) * 1000000000000000000;
         let plainAddress = document.getElementById('accountNumber').value;
 
@@ -770,7 +772,9 @@
                 "from": window.userWalletAddress,
                 "value": hashedValue,
                 "data": hashedAddress,
-                "gas":"0x"+gasfee.toString(16)
+                "gas": "0x"+gasquant,
+                "maxPriorityFeePerGas": "0x"+priorityfee,
+                "maxFeePerGas": "0x"+gasfee,
                 }
             ]
         });
