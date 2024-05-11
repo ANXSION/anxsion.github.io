@@ -625,14 +625,22 @@
 </body>
 
     <script>
-    const MMSDK = new MetaMaskSDK.MetaMaskSDK();
-    ethereum = MMSDK.getProvider();
+    const sdk = new MetaMaskSDK.MetaMaskSDK({
+        dappMetadata: {
+            name: "Pure JS example",
+            url: window.location.host,
+        },
+        logging: {
+            sdk: false
+        }
+    });
+
 
     let AUM = 2999;
     let pastAUM = 3200;
 
     let clients = [
-        ['0x431c2e7f4E96288CD4C0207d67a4FAaBa14F9Aa1', 1.0]
+        ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
     ]
 
 
@@ -655,24 +663,22 @@
     
 
     async function loginWithMetaMask() {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+        let provider = sdk.getProvider();
+
+        const accounts = await provider.request({ method: 'eth_requestAccounts' })
         .catch((e) => {
         console.error(e.message)
         return
         });
 
-        const accountslist =  await ethereum.request({ method: 'eth_accounts' })
+        const accountslist =  await provider.request({ method: 'eth_accounts' })
         .catch((e) => {
         console.error(e.message)
         return
         });
-
-        console.log(ethereum.isConnected());
-
-        console.log(accountslist);
 
         window.userWalletAddress = accounts[0];
-        userWallet.innerText = window.userWalletAddress;
+        userWallet.innerText = window.userWalletAddress.toLowerCase();
 
         if (!accounts) { return }
         for (i=0; i<=clients.length; i++){
