@@ -692,9 +692,40 @@
     exchange.style.display = 'none';
     exchangeNotice.style.display = 'block';
 
+    console.log(localStorage.getItem("connectionID"));
+
+    if(localStorage.getItem("connectionID")!=null){
+        console.log('enter');
+        for (i=0; i<=clients.length; i++){
+            if (clients[i][0] == localStorage.getItem("connectionID")){
+                console.log('found');
+                fundBalance.innerText = parseFloat(AUM * clients[i][1]).toFixed(2);
+                if(AUM >= pastAUM){
+                    fundBalance.style.color = 'lightgreen';
+                }
+                else{
+                    fundBalance.style.color = 'orangered';
+                }
+                loginPanel.style.display = 'none';
+                AccountData.style.display = 'flex';
+                registered.style.display = 'flex';
+                exchange.style.display = 'flex';
+                exchangeNotice.style.display = 'none';
+                break;
+            }
+            else{
+                loginPanel.style.display = 'none';
+                AccountData.style.display = 'flex';
+                unregistered.style.display = 'flex';
+                exchange.style.display = 'flex';
+                exchangeNotice.style.display = 'none';
+                break
+            }
+        }
+    }
+
 
     async function loginWithMetaMask() {
-        
         provider = sdk.getProvider();
         const accounts = await provider.request({ method: 'eth_requestAccounts' })
         .catch((e) => {
@@ -702,14 +733,9 @@
         return
         });
 
-        const accountslist =  await provider.request({ method: 'eth_accounts' })
-        .catch((e) => {
-        console.error(e.message)
-        return
-        });
-
-        window.userWalletAddress = accounts[0];
-        userWallet.innerText = window.userWalletAddress.toLowerCase();
+        window.userWalletAddress = accounts[0].toLowerCase();
+        userWallet.innerText = window.userWalletAddress;
+        localStorage.setItem("connectionID", window.userWalletAddress);
 
         if (!accounts) { return }
         for (i=0; i<=clients.length; i++){
@@ -739,7 +765,8 @@
         }
     }
 
-    async function signOutOfMetaMask() {        
+    async function signOutOfMetaMask() {    
+        localStorage.removeItem("connectionID");
         loginPanel.style.display = 'flex';
         AccountData.style.display = 'none';
         registered.style.display = 'none';
