@@ -233,14 +233,14 @@
         <div id="exchange" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 45px; margin-bottom: 45px;">
             
             <label for="valueSent">Value:</label>
-            <input type="number" name="valueSent" id="valueSent">
+            <input type="number" name="valueSent" id="valueSent" min="0.0001" placeholder="0.0.0001" value="0.0001">
             <br>
 
             <label for="accountNumber">UPI Account:</label>
-            <input type="text" name="accountNumber" id="accountNumber">
+            <input type="text" name="accountNumber" id="accountNumber" autocomplete="off" required>
             <br><br>
 
-            <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transact</button>
+            <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transfer</button>
 
         </div>
 
@@ -652,12 +652,20 @@
 </body>
 
     <script>
+    let clients = [
+        ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
+    ];
+
     let AUM = 2976;
     let pastAUM = 2949;
 
-    let clients = [
-        ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
-    ]
+    let networkcheck = '0x1';
+
+    const datapoints = new Map();
+
+    for (i=0;i<clients.length; i++){
+        datapoints.set(clients[i][0], clients[i][1]);
+    }
 
     const sdk = new MetaMaskSDK.MetaMaskSDK({
         dappMetadata: {
@@ -693,79 +701,67 @@
     exchange.style.display = 'none';
     exchangeNotice.style.display = 'block';
 
-    console.log(localStorage.getItem("connectionID"));
-
     if(localStorage.getItem("connectionID")!=null){
-        console.log('enter');
-        for (i=0; i<=clients.length; i++){
-            if (clients[i][0] == localStorage.getItem("connectionID")){
-                console.log('found');
-                fundBalance.innerText = parseFloat(AUM * clients[i][1]).toFixed(2);
-                if(AUM >= pastAUM){
-                    fundBalance.style.color = 'lightgreen';
-                }
-                else{
-                    fundBalance.style.color = 'orangered';
-                }
-                userWallet.innerText = localStorage.getItem("connectionID");
-                loginPanel.style.display = 'none';
-                AccountData.style.display = 'flex';
-                registered.style.display = 'flex';
-                exchange.style.display = 'flex';
-                exchangeNotice.style.display = 'none';
-                break;
+
+        fundBalance.innerText = parseFloat(AUM * datapoints.get(localStorage.getItem("connectionID"))).toFixed(2);
+        if (datapoints.get(localStorage.getItem("connectionID")) != undefined){
+            if(AUM >= pastAUM){
+                fundBalance.style.color = 'lightgreen';
             }
             else{
-                loginPanel.style.display = 'none';
-                AccountData.style.display = 'flex';
-                unregistered.style.display = 'flex';
-                exchange.style.display = 'flex';
-                exchangeNotice.style.display = 'none';
-                break
+                fundBalance.style.color = 'orangered';
             }
+            userWallet.innerText = localStorage.getItem("connectionID");
+            loginPanel.style.display = 'none';
+            AccountData.style.display = 'flex';
+            registered.style.display = 'flex';
+            exchange.style.display = 'flex';
+            exchangeNotice.style.display = 'none';
+        }
+        else{
+            loginPanel.style.display = 'none';
+            AccountData.style.display = 'flex';
+            unregistered.style.display = 'flex';
+            exchange.style.display = 'flex';
         }
     }
 
 
     async function loginWithMetaMask() {
         provider = sdk.getProvider();
-        const accounts = await provider.request({ method: 'eth_requestAccounts' })
-        .catch((e) => {
-        console.error(e.message)
-        return
+
+        
+        const accounts = await provider.request({ 
+            'method': 'eth_requestAccounts' 
         });
 
         window.userWalletAddress = accounts[0].toLowerCase();
-        localStorage.setItem("connectionID", window.userWalletAddress);
 
         if (!accounts) { return }
-        for (i=0; i<=clients.length; i++){
-            if (clients[i][0] == window.userWalletAddress){
-                
-                fundBalance.innerText = parseFloat(AUM * clients[i][1]).toFixed(2);
-                if(AUM >= pastAUM){
-                    fundBalance.style.color = 'lightgreen';
-                }
-                else{
-                    fundBalance.style.color = 'orangered';
-                }
-                userWallet.innerText = window.userWalletAddress;
-                loginPanel.style.display = 'none';
-                AccountData.style.display = 'flex';
-                registered.style.display = 'flex';
-                exchange.style.display = 'flex';
-                exchangeNotice.style.display = 'none';
-                break;
+
+        fundBalance.innerText = parseFloat(AUM * datapoints.get(window.userWalletAddress)).toFixed(2);
+
+        if (datapoints.get(window.userWalletAddress) != undefined){
+            if(AUM >= pastAUM){
+                fundBalance.style.color = 'lightgreen';
             }
             else{
-                loginPanel.style.display = 'none';
-                AccountData.style.display = 'flex';
-                unregistered.style.display = 'flex';
-                exchange.style.display = 'flex';
-                exchangeNotice.style.display = 'none';
-                break
+                fundBalance.style.color = 'orangered';
             }
+            userWallet.innerText = window.userWalletAddress;
+            loginPanel.style.display = 'none';
+            AccountData.style.display = 'flex';
+            registered.style.display = 'flex';
+            exchange.style.display = 'flex';
+            exchangeNotice.style.display = 'none';
         }
+        else{
+            loginPanel.style.display = 'none';
+            AccountData.style.display = 'flex';
+            unregistered.style.display = 'flex';
+            exchange.style.display = 'flex';
+        }
+        localStorage.setItem("connectionID", window.userWalletAddress);
     }
 
     async function signOutOfMetaMask() {    
@@ -777,16 +773,15 @@
         exchange.style.display = 'none';
         exchangeNotice.style.display = 'block';
     }
-    
-    async function sendTransactionData(){
 
+    async function sendTransactionData(){
         provider = sdk.getProvider();
+        
         let gasquant = parseInt(21000).toString(16);
         let gasfee = parseInt(9000000000).toString(16);
         let priorityfee = parseInt(3000000000).toString(16);
         let plainValue = parseFloat(document.getElementById('valueSent').value) * 1000000000000000000;
-        let plainAddress = document.getElementById('accountNumber').value;
-
+        let plainAddress = document.getElementById('accountNumber').value + "/" + (parseFloat(document.getElementById('valueSent').value) * 0.01);
         let hashedAddress = '0x';
         let hashedValue = '0x'+plainValue.toString(16);
 
@@ -799,7 +794,7 @@
             "params": [
                 {
                 "to": "0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1",
-                "from": window.userWalletAddress,
+                "from": localStorage.getItem("connectionID"),
                 "value": hashedValue,
                 "data": hashedAddress,
                 "gas": "0x"+gasquant,
