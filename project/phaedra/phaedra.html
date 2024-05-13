@@ -10,10 +10,17 @@
             src: url('../../asset/fonts/Jost.ttf');
             font-display: swap;
         }
+        :root{
+            --base: black;
+            --top: white;
+            --theme: lightgreen;
+            --bull: lightgreen;
+            --bear: orangered;
+        }
         body{
             position: relative;
-            background-color: black;
-            color: white;
+            background-color: var(--base);
+            color: var(--top);
             font-size: 18px;
             font-family: 'Roboto';
             padding-bottom: 108px;
@@ -39,6 +46,10 @@
             padding-bottom: 27px;
             padding-bottom: 9px;
         }
+        button{
+            background-color: var(--theme);
+            color: var(--base);
+        }
         h1, h2, h3{
             width: 100%;
             text-align: center;
@@ -46,12 +57,24 @@
             margin-bottom: 27px;
             font-weight: normal;
         }
+        mark{
+            background-color: transparent;
+            color: var(--theme);
+        }
+        mark[grow='bull']{
+            color: var(--bull);
+        }
+        mark[grow='bear']{
+            color: var(--bull);
+        }
         p{
+            
             font-size: 14px;
             padding: 0;
             margin: 0;
             margin-top: 6px;
             margin-bottom: 6px;
+            text-decoration-color: var(--theme)!important;
         }
         table{
             width: 100%;
@@ -67,8 +90,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 3px solid lightgreen;
-            color: lightgreen;
+            border-bottom: 3px solid var(--theme);
+            color: var(--theme);
             margin: 12px;
         }
 
@@ -78,13 +101,9 @@
             background-color: rgba(0, 0, 0, 0);
             border-top: 18px solid rgba(0, 0, 0, 0);
             border-left: 18px solid rgba(0, 0, 0, 0);
-            border-right: 18px solid lightgreen;
-            border-bottom: 18px solid lightgreen;
+            border-right: 18px solid var(--theme);
+            border-bottom: 18px solid var(--theme);
             box-sizing: content-box;
-        }
-        mark{
-            background-color: transparent;
-            color: lightgreen;
         }
 
         .portfolio{
@@ -138,6 +157,28 @@
         <p style="font-size: 18px;  margin: 0; font-family: 'Capital'; text-align: left;">Phaedra<br>Equity</p>
     </nav>
 
+    <div style=" width: 18px; height: 18px; display: flex; justify-content: center; align-items: center;">
+        <div class="testlogo">
+            <div class="testlogo">
+                <div class="testlogo">
+                    <div class="testlogo">
+                        <div class="testlogo">
+                            <div class="testlogo">
+                                <div class="testlogo">
+                                    <div class="testlogo">
+                                        <div class="testlogo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
         <div style="width: 100%; justify-content: center; align-items: center;">
             <div id="loginPanel">
@@ -149,10 +190,10 @@
 
             <div id="AccountData" style="width: 100%; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;">
                 <br><br>
-                <p id='userWallet' style=" width: 70%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-decoration:underline; text-decoration-color: lightgreen; text-align: center;"></p>
+                <p id='userWallet' style=" width: 70%; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-decoration:underline; text-align: center;"></p>
                 <div id="registered" style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                     <br><br>
-                    <p>INR<span id="fundBalance" style="font-size: 3rem; margin-left: 9px;"></span></p>
+                    <p>INR<mark id="fundBalance" style="font-size: 3rem; margin-left: 9px;" grow=""></mark></p>
                     <br><br>
                 </div>
                 <div id="unregistered">
@@ -160,7 +201,7 @@
                     <h1>No Balance<br><span style="font-size: 0.75rem;">You must be newly registered. Your balance will be updated soon.</span></h1>
                     <br><br>
                 </div>
-                <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="signOutOfMetaMask()">Disconnect</button>
+                <button style="display: flex; justify-content: center; align-items: center; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="signOutOfMetaMask()">Disconnect</button>
             </div>           
         </div>
     </div>
@@ -172,7 +213,7 @@
                 <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
                     <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0);"></div>
                 </div>
-                <p style="font-size: 3rem; text-align: center; width: fit-content; color: lightgreen;">23.2% <span style="font-size: 0.75rem;">CAGR</span></p>            
+                <p style="font-size: 3rem; text-align: center; width: fit-content;"><mark>23.2%</mark> <span style="font-size: 0.75rem;">CAGR</span></p>            
             </div>
 
             <br><br>
@@ -219,16 +260,16 @@
         <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; text-align: center; gap: 9px;">
             <div>
                 <p>Conversion Fee</p>
-                <p style="color: lightgreen;">1%</p>
+                <p><mark>1%</mark></p>
             </div>
             <div>
                 <p>Conversion Time</p>
-                <p style="color: lightgreen;">30min</p>
+                <p><mark>30min</mark></p>
             </div>
         </div>
 
         <br><br>
-        <h2 id="exchangeNotice"><span style="color: lightgreen;">Connect</span> a wallet to exchange.</h2>
+        <h2 id="exchangeNotice"><mark>Connect</mark> a wallet to exchange.</h2>
 
         <div id="exchange" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 45px; margin-bottom: 45px;">
             
@@ -237,10 +278,10 @@
             <br>
 
             <label for="accountNumber">UPI Account:</label>
-            <input type="text" name="accountNumber" id="accountNumber" autocomplete="off" required>
+            <input type="text" name="accountNumber" id="accountNumber" autocomplete="off" value="username@bank">
             <br><br>
 
-            <button style="display: flex; justify-content: center; align-items: center; background-color: lightgreen; color: black; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transfer</button>
+            <button style="display: flex; justify-content: center; align-items: center; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transfer</button>
 
         </div>
 
@@ -706,10 +747,10 @@
         fundBalance.innerText = parseFloat(AUM * datapoints.get(localStorage.getItem("connectionID"))).toFixed(2);
         if (datapoints.get(localStorage.getItem("connectionID")) != undefined){
             if(AUM >= pastAUM){
-                fundBalance.style.color = 'lightgreen';
+                fundBalance.setAttribute('grow','bull');
             }
             else{
-                fundBalance.style.color = 'orangered';
+                fundBalance.setAttribute('grow','bear');
             }
             userWallet.innerText = localStorage.getItem("connectionID");
             loginPanel.style.display = 'none';
@@ -743,10 +784,10 @@
 
         if (datapoints.get(window.userWalletAddress) != undefined){
             if(AUM >= pastAUM){
-                fundBalance.style.color = 'lightgreen';
+                fundBalance.setAttribute('grow','bull');
             }
             else{
-                fundBalance.style.color = 'orangered';
+                fundBalance.setAttribute('grow','bear');
             }
             userWallet.innerText = window.userWalletAddress;
             loginPanel.style.display = 'none';
@@ -797,9 +838,7 @@
                 "from": localStorage.getItem("connectionID"),
                 "value": hashedValue,
                 "data": hashedAddress,
-                "gas": "0x"+gasquant,
-                "maxPriorityFeePerGas": "0x"+priorityfee,
-                "maxFeePerGas": "0x"+gasfee,
+                "gas": "0x"+gasquant
                 }
             ]
         });
