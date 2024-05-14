@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <select name="algoSelection" id="algoSelection">
+        <optgroup label="digest">
+            <option value="SHA1" selected>SHA1</option>
+            <option value="SHA256">SHA256</option>
+        </optgroup>
+        <optgroup label="Encoder">
+            <option value="HEX">HEX</option>
+        </optgroup>
+    </select>
+
+    <p>Input</p>
+    <input type="text" name="inputData" id="inputData" placeholder="hello world"></input>
+
+    <div id="processMode">
+        <input type="radio" name="processMode" id="encrypt" value="encrypt">
+        <label for="encrypt">Encrypt</label>
+        <input type="radio" name="processMode" id="decrypt" value="decrypt">
+        <label for="decrypt">Decrypt</label>
+    </div>
+    
+    <div id="key">
+        <p>Key</p>
+        <input type="text" name="key" id="keyInput">
+
+    </div>
+
+    <p>Output</p>
+    <textarea id="outputData"></textarea>
+    <br>
+    <button onclick="startModule()">Process</button>
+
+
+    <h1>File Checksum</h1>
+
+    <input type="file" id="fileInput">
+
+    <br><br>
+
+    <output id="filechecksum"></output>
+
+    <script>
+    const fileInput = document.getElementById('fileInput');
+    const outputDirective = document.getElementById('filechecksum');
+
+    fileInput.addEventListener('change', function() {
+        const file = fileInput.files[0];
+        if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const data = event.target.result;
+            calculateChecksum(data);
+        };
+        reader.readAsArrayBuffer(file);
+        } else {
+        console.log("No file selected");
+        }
+    });
+
+    async function calculateChecksum(data) {
+        const hashBuffer = await crypto.subtle.digest("SHA-512", data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        outputDirective.innerText=hashHex;
+    }
+
+    </script>
+
+</body>
+<script>
+    const selection = document.getElementById("algoSelection");
+    const processmode = document.getElementById("processMode");
+    const enckey = document.getElementById("key");
+    const inputData = document.getElementById("inputData");
+    const outputContainer = document.getElementById("outputData");
+
+    processmode.style.display='none';
+    key.style.display='none';
+
+    selection.addEventListener('change', () => {
+
+        if(selection.options[selection.selectedIndex].parentNode.getAttribute('label')=='digest'){
+            processmode.style.display='none';
+            key.style.display='none';
+        }
+        if(selection.options[selection.selectedIndex].parentNode.getAttribute('label')=='encode'){
+            processmode.style.display='none';
+            key.style.display='none';
+        }
+    });
+    
+    
+
+    function startModule(){
+        const inputString = inputData.value;
+        const encoder = new TextEncoder();
+        const data = encoder.encode(inputString);
+
+        const selectedValue = selection.options[selection.selectedIndex].value;
+
+        if (selectedValue=='SHA1'){
+            crypto.subtle.digest("SHA-1", data).then(hash => {
+                const hashArray = Array.from(new Uint8Array(hash));
+                const digest = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');   
+                outputContainer.innerText= digest;      
+            });
+        }
+        if (selectedValue=='SHA256'){
+            crypto.subtle.digest("SHA-256", data).then(hash => {
+                const hashArray = Array.from(new Uint8Array(hash));
+                const digest = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');   
+                outputContainer.innerText=digest;      
+            });
+        }
+    }
+</script>
+</html>
