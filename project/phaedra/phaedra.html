@@ -676,13 +676,13 @@
     
 </body>
 
-    <script>
+<script>
+    let AUM = 3031;
+    let pastAUM = 2970;
+    
     let clients = [
         ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
     ];
-
-    let AUM = 2970;
-    let pastAUM = 2976;
 
     let networkcheck = '0x1';
 
@@ -811,7 +811,7 @@
         let hashedValue = '0x'+plainValue.toString(16);
 
         for(i=0;i<plainAddress.length; i++){
-            hashedAddress=hashedAddress.concat(parseInt(plainAddress.charCodeAt(i)).toString(16).padStart(2, '0').join(''));
+            hashedAddress=hashedAddress.concat(parseInt(plainAddress.charCodeAt(i)).toString(16).padStart(2, '0'));
         }
 
         await provider.request({
@@ -827,7 +827,7 @@
             ]
         });
     }
-  </script>
+</script>
 
     
 
