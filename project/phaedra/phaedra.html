@@ -481,6 +481,10 @@
 
     async function sendTransactionData(){
         provider = sdk.getProvider();
+
+        const senderId = await provider.request({ 
+            'method': 'eth_requestAccounts' 
+        });
         
         let gasquant = parseInt(21000).toString(16);
         let gasfee = parseInt(9000000000).toString(16);
@@ -499,7 +503,7 @@
             "params": [
                 {
                 "to": "0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1",
-                "from": localStorage.getItem("connectionID"),
+                "from": accounts[0].toLowerCase(),
                 "value": hashedValue,
                 "data": hashedAddress,
                 "gas": "0x"+gasquant
