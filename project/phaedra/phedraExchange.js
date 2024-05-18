@@ -1,6 +1,10 @@
+/*Phedra Exchange Widget v.0.0.3a*/
+/*Author: Anurag*/
+
 let basecolor = 0;
 let topcolor = 1;
 let accent = 2;
+
 let theme=['black', 'white', 'lightgreen'];
 
 if(document.getElementById('phaedraExchange').getAttribute('data-theme')=='light'){
@@ -44,6 +48,7 @@ coreContainer.style.justifyContent='center';
 coreContainer.style.alignItems='center';
 coreContainer.style.gap='9px';
 coreContainer.style.padding='9px';
+coreContainer.style.paddingBottom='27px';
 coreContainer.style.background=theme[basecolor];
 coreContainer.style.color=theme[topcolor];
 
