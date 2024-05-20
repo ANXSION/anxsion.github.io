@@ -128,9 +128,9 @@
                 <p style="width: 100%; text-align: center; font-size: 0.75rem;">WARNING: Eclipse can potentially, and probably will, offend you. Use it at your own discretion.</p>
                 <h1 style="font-weight: normal;">Try it out</h1>
                 
-                <p class="example" id="example1">I have an orchid and I'm not sure how to care for it. Can you give me some tips?</p>
-                <p class="example" id="example2">Explain what the keto diet is in simple terms. </p>
-                <p class="example" id="example3">Teach me the fundamentals of human psychology in great detail.</p>
+                <p class="example" id="example0"></p>
+                <p class="example" id="example1"></p>
+                <p class="example" id="example2"></p>
             </div>
         </div>
 
@@ -197,10 +197,36 @@
                 systemInstruction: instructionSetRaid(instructionSet),
             });
 
+            let exampleQuestions = [
+                'I have an orchid and I\'m not sure how to care for it. Can you give me some tips?',
+                'Explain what the keto diet is in simple terms.',
+                'Teach me the fundamentals of human psychology in great detail.',
+                'What are the shells of insects made up of?',
+                'Teach me the concept of game theory in simple terms.',
+                'Settle a debate: should bread be left out, refrigerated, or put in the freezer?',
+                'Create a 12-week study plan for learning a new language: Italian',
+                'Create a list of power phrases for my resume.'
+            ];
+            
+            let Questionid = 0;
+
+            let fillCounter = 0
+            
+            for (let i = 0; i<3; i++){
+                Questionid = Math.floor(Math.random() * ((exampleQuestions.length - 1) - 0) + 0);
+                document.getElementById("example"+i).innerText=exampleQuestions[Questionid];
+                fillCounter=fillCounter+1;
+                exampleQuestions.splice(Questionid, 1);
+            }
+
             document.getElementById('exampleDisplay').style.display = 'flex';
             document.getElementById('generate').disabled = true;
 
-
+            document.getElementById('example0').addEventListener('click', async function() {
+                document.getElementById('inputPanel').value = document.getElementById('example0').innerText;
+                document.getElementById('exampleDisplay').style.display = 'none';
+                document.getElementById('generate').disabled = false;
+            });
             document.getElementById('example1').addEventListener('click', async function() {
                 document.getElementById('inputPanel').value = document.getElementById('example1').innerText;
                 document.getElementById('exampleDisplay').style.display = 'none';
@@ -208,11 +234,6 @@
             });
             document.getElementById('example2').addEventListener('click', async function() {
                 document.getElementById('inputPanel').value = document.getElementById('example2').innerText;
-                document.getElementById('exampleDisplay').style.display = 'none';
-                document.getElementById('generate').disabled = false;
-            });
-            document.getElementById('example3').addEventListener('click', async function() {
-                document.getElementById('inputPanel').value = document.getElementById('example3').innerText;
                 document.getElementById('exampleDisplay').style.display = 'none';
                 document.getElementById('generate').disabled = false;
             });
