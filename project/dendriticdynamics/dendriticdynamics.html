@@ -119,7 +119,7 @@
         <p style="font-size: 1; padding: 9px;  margin: 0; font-family: 'Roboto Mono'; text-align: center;letter-spacing: 3px;">DENDRITIC<br>DYNAMICS</p>
     </nav>
     <div style="width: 100%; height: 18px; display: flex; justify-content: center; align-items: center;">
-        <p style="font-size: 12px; font-family: 'Roboto Mono';">Eclipse v.0.1.23b</p>
+        <p style="font-size: 12px; font-family: 'Roboto Mono';">Eclipse v.0.2.27b</p>
     </div>
 
     <main style="position: relative; width: 100%; height: 100%;">
@@ -228,6 +228,7 @@
                 
                 const prompt = document.getElementById('inputPanel').value;
                 document.getElementById('inputPanel').value = "";
+                document.getElementById('generate').disabled = true;
 
                 document.getElementById('outputPanel').insertAdjacentHTML("beforeend", `
                 <div class="userInputWrapper">
