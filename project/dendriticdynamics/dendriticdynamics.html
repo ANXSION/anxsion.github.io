@@ -39,29 +39,32 @@
             width: fit-content;
             margin-top: 18px;
             margin-bottom: 18px;
+            user-select: none;
         }
         p{
-            font-size: 12px;
+            font-size: 14px;
             margin-top: 18px;
             margin-bottom: 18px;
             white-space: pre-wrap;
             word-break: break-all;
             text-align: justify;
+            user-select: none;
         }
         span{
-            font-size: 12px;
+            font-size: 14px;
             margin-top: 18px;
             margin-bottom: 18px;
             white-space: pre-wrap;
             word-break: break-word;
-            text-align: justify;
+            text-align: left;
+            user-select: none;
         }
         textarea{
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 90%;
             width: 100%;
+            height: 100%;
             background-color: transparent;
             resize: none;
             color: white;
@@ -69,7 +72,10 @@
             border: none;
             outline: none;
             font-family: 'Roboto';
-            font-size: 12px;
+            font-size: 14px;
+            padding: 9px;
+            box-sizing: border-box;
+            caret-color: white;
         }
         button{
             border: none;
@@ -81,6 +87,12 @@
             align-items: center;
             aspect-ratio: 1/1;
             border-radius: 22px;
+            margin: auto;
+            height: 100%;
+            user-select: none;
+        }
+        button:disabled{
+            background-color: gray;
         }
     </style>
     <script type="importmap">
@@ -96,7 +108,7 @@
         <p style="font-size: 1; padding: 9px;  margin: 0; font-family: 'Roboto Mono'; text-align: center;letter-spacing: 3px;">DENDRITIC<br>DYNAMICS</p>
     </nav>
     <div style="width: 100%; height: 18px; display: flex; justify-content: center; align-items: center;">
-        <p style="font-size: 16px;">Eclipse v.0.0.1a</p>
+        <p style="font-size: 12px; font-family: 'Roboto Mono';">Eclipse v.0.0.1a</p>
 
     </div>
 
@@ -105,36 +117,67 @@
 
         </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 108px; width: 100%; position: fixed; bottom: 0; left: 0; gap: 9px; box-sizing: border-box; background-color: black;">
-            <div style="display: grid; grid-template-columns: 18fr 1fr; background-color: rgb(27, 27, 27); padding: 12px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 18px;">
-                <textarea id="inputPanel" placeholder="Message here"></textarea>
-                <button id="generate"><span class="material-symbols-outlined">send</span></button>
+        <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 3fr 1fr;  justify-content: center; align-items: center; height: auto; width: 100%; position: fixed; bottom: 0; left: 0; gap: 3px; box-sizing: border-box; background-color: black;">
+            <div style="display: grid; grid-template-columns: 19fr 1fr; background-color: rgb(27, 27, 27); padding: 9px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
+                <textarea id="inputPanel" placeholder="Chat with Eclipse" rows="2"></textarea>
+                <button id="generate"><p class="material-symbols-outlined" >send</p></button>
             </div>
-            <p style="margin: 0; font-size: 0.75rem; padding: 3px;">Made with &#9829; by Anurag</p>
+            <p style="margin: 0; font-size: 0.75rem; padding: 0px; width: 100%; text-align: center;">Made by Anurag</p>
         </div>
     </main>
         <!-- ... Your HTML and CSS -->
         <!-- Import @google/generative-ai, as shown above. -->
         <script type="module">
-            import { GoogleGenerativeAI } from "@google/generative-ai";
+            import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, } from "@google/generative-ai";
       
+            const generationConfig = {
+            temperature: 1,
+            topP: 0.95,
+            topK: 64,
+            maxOutputTokens: 8192,
+            responseMimeType: "text/plain",
+            };
+
+            const safetySettings = [
+            {
+                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            {
+                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            ];
+
             // Fetch your API_KEY
             const API_KEY = "AIzaSyCXhjEYe2B4msUGZ0Zo0GYC4qiIm-jNQy4";
       
             // Access your API key (see "Set up your API key" above)
             const genAI = new GoogleGenerativeAI(API_KEY);
       
-            const generationConfig = {
-                temperature: 1,
-                topP: 0.95,
-                topK: 64,
-                maxOutputTokens: 8192,
-                responseMimeType: "text/plain",
-            };
 
             const model = genAI.getGenerativeModel({
             model: "gemini-1.5-flash-latest",
-                systemInstruction: "You are to act like a professional conversationalist with the personality of happy mask salesman from Legend of Zelda. Do not focus on masks. You are to have a side of dark, dry humor but are still to be professional and polite.",
+                systemInstruction: "You are to act like a professional conversationalist with the personality of happy mask salesman from Legend of Zelda, but do not refer to anything related to the series during conversation unless expressly told to do so. Do not focus on masks. You are to have a side of dark, dry humor but are still to be professional and polite. Do not use emojis. Sound slightly annoyed if the input prompts are incoherent or barely makes sense.",
+            });
+
+            document.getElementById('generate').disabled = true;
+
+            document.getElementById('inputPanel').addEventListener('input',  async function(){
+                if (document.getElementById('inputPanel').value  =='' || document.getElementById('inputPanel').value  ==undefined || document.getElementById('inputPanel').value  ==null){
+                    document.getElementById('generate').disabled = true;
+                }
+                else{
+                    document.getElementById('generate').disabled = false;
+                }
             });
 
             document.getElementById('generate').addEventListener('click', async function() {
@@ -157,8 +200,6 @@
                 const text = response.text();
 
                 p.textContent=text;
-                
-                console.log(text);
             });
 
         </script>
