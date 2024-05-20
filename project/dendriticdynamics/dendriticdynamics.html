@@ -41,6 +41,9 @@
             margin-bottom: 18px;
             user-select: none;
         }
+        .example{
+            width: 100%; text-align: left; padding: 18px; border: 1px white solid; border-radius: 22px; box-sizing: border-box; cursor: pointer; margin: 9px;
+        }
         p{
             font-size: 14px;
             margin-top: 18px;
@@ -109,12 +112,16 @@
     </nav>
     <div style="width: 100%; height: 18px; display: flex; justify-content: center; align-items: center;">
         <p style="font-size: 12px; font-family: 'Roboto Mono';">Eclipse v.0.0.1a</p>
-
     </div>
 
     <main style="position: relative; width: 100%; height: 100%;">
         <div style="display: flex; flex-direction: column; min-height: 50vh; padding-bottom: 108px; box-sizing: border-box; padding-left: 10%; padding-right: 10%;" id="outputPanel">
-
+            <div id="exampleDisplay" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px;">
+                <h1 style="font-weight: normal;">Try it out</h1>
+                <p class="example" id="example1">I have an orchid and I'm not sure how to care for it. Can you give me some tips?</p>
+                <p class="example" id="example2">Explain what the keto diet is in simple terms. </p>
+                <p class="example" id="example3">Teach me the basics of human psychology.</p>
+            </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 3fr 1fr;  justify-content: center; align-items: center; height: auto; width: 100%; position: fixed; bottom: 0; left: 0; gap: 3px; box-sizing: border-box; background-color: black;">
@@ -177,7 +184,25 @@
                 systemInstruction: instructionSetRaid(instructionSet),
             });
 
+            document.getElementById('exampleDisplay').style.display = 'flex';
             document.getElementById('generate').disabled = true;
+
+
+            document.getElementById('example1').addEventListener('click', async function() {
+                document.getElementById('inputPanel').value = document.getElementById('example1').innerText;
+                document.getElementById('exampleDisplay').style.display = 'none';
+                document.getElementById('generate').disabled = false;
+            });
+            document.getElementById('example2').addEventListener('click', async function() {
+                document.getElementById('inputPanel').value = document.getElementById('example2').innerText;
+                document.getElementById('exampleDisplay').style.display = 'none';
+                document.getElementById('generate').disabled = false;
+            });
+            document.getElementById('example3').addEventListener('click', async function() {
+                document.getElementById('inputPanel').value = document.getElementById('example3').innerText;
+                document.getElementById('exampleDisplay').style.display = 'none';
+                document.getElementById('generate').disabled = false;
+            });
 
             document.getElementById('inputPanel').addEventListener('input',  async function(){
                 if (document.getElementById('inputPanel').value  =='' || document.getElementById('inputPanel').value  ==undefined || document.getElementById('inputPanel').value  ==null){
