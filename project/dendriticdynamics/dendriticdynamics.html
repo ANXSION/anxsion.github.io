@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dendritic Dynamic</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            display: grid;
+            height: 100%;
+            grid-template-columns: 1fr;
+            grid-template-rows: 90px 27px auto;
+            gap: 9px;
+            justify-content: center;
+            align-items: start;
+            font-size: 16px;
+            margin: 0;
+            font-family: 'Roboto';
+        }
+        nav{
+            
+            box-sizing: content-box;
+        }
+        .userInputWrapper{
+            width: 100%; display: flex; justify-content: right; align-items:center;
+        }
+        .userInput{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            text-align: left;
+            background: rgb(27, 27, 27);
+            border-radius: 22px;
+            padding: 18px;
+            margin: 0;
+            width: fit-content;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+        p{
+            font-size: 12px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            text-align: justify;
+        }
+        span{
+            font-size: 12px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            text-align: justify;
+        }
+        textarea{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            width: 100%;
+            background-color: transparent;
+            resize: none;
+            color: white;
+            overflow-y: hidden;
+            border: none;
+            outline: none;
+            font-family: 'Roboto';
+            font-size: 12px;
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1/1;
+            border-radius: 22px;
+        }
+    </style>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+</head>
+<body>
+    <nav style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <p style="font-size: 1; padding: 9px;  margin: 0; font-family: 'Roboto Mono'; text-align: center;letter-spacing: 3px;">DENDRITIC<br>DYNAMICS</p>
+    </nav>
+    <div style="width: 100%; height: 18px; display: flex; justify-content: center; align-items: center;">
+        <p style="font-size: 16px;">Maelstorm v.0.0.1a</p>
+
+    </div>
+
+    <main style="position: relative; width: 100%; height: 100%;">
+        <div style="display: flex; flex-direction: column; min-height: 50vh; padding-bottom: 108px; box-sizing: border-box; padding-left: 10%; padding-right: 10%;" id="outputPanel">
+
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: start; align-items: center; height: 108px; width: 100%; position: fixed; bottom: 0; left: 0; gap: 9px; box-sizing: border-box; background-color: black;">
+            <div style="display: grid; grid-template-columns: 18fr 1fr; background-color: rgb(27, 27, 27); padding: 12px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 18px;">
+                <textarea id="inputPanel" placeholder="Message here"></textarea>
+                <button id="generate"><span class="material-symbols-outlined">send</span></button>
+            </div>
+            <p style="margin: 0; font-size: 0.75rem; padding: 3px;">Made with &#9829; by Anurag</p>
+        </div>
+    </main>
+        <!-- ... Your HTML and CSS -->
+        <!-- Import @google/generative-ai, as shown above. -->
+        <script type="module">
+            import { GoogleGenerativeAI } from "@google/generative-ai";
+      
+            // Fetch your API_KEY
+            const API_KEY = "AIzaSyCXhjEYe2B4msUGZ0Zo0GYC4qiIm-jNQy4";
+      
+            // Access your API key (see "Set up your API key" above)
+            const genAI = new GoogleGenerativeAI(API_KEY);
+      
+            const generationConfig = {
+                temperature: 1,
+                topP: 0.95,
+                topK: 64,
+                maxOutputTokens: 8192,
+                responseMimeType: "text/plain",
+            };
+
+            const model = genAI.getGenerativeModel({
+            model: "gemini-1.5-flash-latest",
+                systemInstruction: "You are to act like a professional conversationalist with the personality of happy mask salesman from Legend of Zelda. Do not focus on masks. You are to have a side of dark, dry humor but are still to be professional and polite.",
+            });
+
+            document.getElementById('generate').addEventListener('click', async function() {
+                const prompt = document.getElementById('inputPanel').value;
+                document.getElementById('inputPanel').value = "";
+
+                document.getElementById('outputPanel').insertAdjacentHTML("beforeend", `
+                <div class="userInputWrapper">
+                    <p class="userInput">`+prompt+`</p>
+                </div>
+                `);
+
+                const p = document.createElement('span');
+                p.textContent="...";
+
+                document.getElementById('outputPanel').appendChild(p);
+
+                const result = await model.generateContent(prompt);
+                const response = await result.response;
+                const text = response.text();
+
+                p.textContent=text;
+                
+                console.log(text);
+            });
+
+        </script>
+</body>
+</html>
