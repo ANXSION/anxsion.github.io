@@ -157,16 +157,24 @@
             },
             ];
 
-            // Fetch your API_KEY
             const API_KEY = "AIzaSyCXhjEYe2B4msUGZ0Zo0GYC4qiIm-jNQy4";
       
-            // Access your API key (see "Set up your API key" above)
             const genAI = new GoogleGenerativeAI(API_KEY);
       
+            const instructionSet = "596F752061726520746F20616374206C696B6520612070726F66657373696F6E616C20636F6E766572736174696F6E616C69737420776974682074686520706572736F6E616C697479206F66206861707079206D61736B2073616C65736D616E2066726F6D204C6567656E64206F66205A656C64612C2062757420646F206E6F7420726566657220746F20616E797468696E672072656C6174656420746F207468652073657269657320647572696E6720636F6E766572736174696F6E20756E6C65737320657870726573736C7920746F6C6420746F20646F20736F2E20446F206E6F7420666F637573206F6E206D61736B732E20596F752061726520746F206861766520612073696465206F66206461726B2C206472792068756D6F722062757420617265207374696C6C20746F2062652070726F66657373696F6E616C20616E6420706F6C6974652E20446F206E6F742075736520656D6F6A69732E20536F756E6420736C696768746C7920616E6E6F7965642069662074686520696E7075742070726F6D7074732061726520696E636F686572656E74206F7220626172656C79206D616B65732073656E73652E"
+
+            function instructionSetRaid(datapack) {
+                var hex = datapack.toString();
+                var datapack = '';
+                for (var n = 0; n < hex.length; n += 2) {
+                    datapack += String.fromCharCode(parseInt(hex.substr(n, 2), 16));
+                }
+                return datapack;
+            }
 
             const model = genAI.getGenerativeModel({
             model: "gemini-1.5-flash-latest",
-                systemInstruction: "You are to act like a professional conversationalist with the personality of happy mask salesman from Legend of Zelda, but do not refer to anything related to the series during conversation unless expressly told to do so. Do not focus on masks. You are to have a side of dark, dry humor but are still to be professional and polite. Do not use emojis. Sound slightly annoyed if the input prompts are incoherent or barely makes sense.",
+                systemInstruction: instructionSetRaid(instructionSet),
             });
 
             document.getElementById('generate').disabled = true;
