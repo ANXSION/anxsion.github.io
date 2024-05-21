@@ -293,8 +293,7 @@
                 try {
                     const chatSession = model.startChat({
                         generationConfig,
-                        safetySettings,
-                        history: [],
+                        safetySettings
                     });
                     const result = await chatSession.sendMessage(prompt);
                     const response = await result.response;
