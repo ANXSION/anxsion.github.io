@@ -51,24 +51,26 @@
             cursor: pointer; margin: 9px;
         }
         p{
-            font-size: 14px;
+            font-size: 16px;
             margin-top: 18px;
             margin-bottom: 18px;
             white-space: pre-wrap;
             word-break: break-word;
             text-align: justify;
             user-select: none;
-            line-height: 1.5;
+            line-height: 2;
         }
         span{
-            font-size: 14px;
+            font-size: 16px;
             margin-top: 18px;
             margin-bottom: 18px;
+            padding-top: 18px;
+            padding-bottom: 18px;
             white-space: pre-wrap;
             word-break: break-word;
             text-align: left;
             user-select: none;
-            line-height: 1.5;
+            line-height: 2;
         }
         textarea{
             display: flex;
@@ -83,7 +85,7 @@
             border: none;
             outline: none;
             font-family: 'Roboto';
-            font-size: 14px;
+            font-size: 16px;
             padding: 9px;
             box-sizing: border-box;
             caret-color: white;
@@ -292,6 +294,7 @@
 
                 try {
                     const chatSession = model.startChat({
+                        history: [],
                         generationConfig,
                         safetySettings
                     });
@@ -312,7 +315,7 @@
                     }
                 }
                 
-                document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
             });
 
         </script>
