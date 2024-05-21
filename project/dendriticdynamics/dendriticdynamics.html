@@ -99,11 +99,24 @@
             aspect-ratio: 1/1;
             border-radius: 22px;
             margin: auto;
-            height: 100%;
             user-select: none;
         }
         button:disabled{
             background-color: gray;
+        }
+        Input[type=file]{
+            border: none;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1/1;
+            border-radius: 22px;
+            margin: auto;
+            user-select: none;
+            opacity: 0%;
         }
     </style>
     <script type="importmap">
@@ -135,27 +148,44 @@
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 2fr 1fr;  justify-content: center; align-items: center; height: 120px; width: 100%; position: fixed; bottom: 0; left: 0; gap: 3px; box-sizing: border-box; background-color: black;">
-            <div style="display: grid; grid-template-columns: 19fr 1fr; background-color: rgb(27, 27, 27); padding: 9px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
+            <div style="display: grid; grid-template-columns: 19fr 1fr 1fr; background-color: rgb(27, 27, 27); padding: 9px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
                 <textarea id="inputPanel" placeholder="Chat with Eclipse" rows="2"></textarea>
+
+                <div>
+                    <input type="file" id="fileInput" style="display: none;" accept=".PNG, .JPEG, .WEBP, .HEIC, .HEIF">
+                    <button id="fileupload" onclick="document.getElementById('fileInput').click()">
+                        <p class="material-symbols-outlined">attach_file</p>
+                    </button>
+                    <button type="button" id="removeattachment">
+                        <p class="material-symbols-outlined" >block</p>
+                    </button>
+                </div>
+                
                 <button id="generate"><p class="material-symbols-outlined" >send</p></button>
+                
             </div>
             <p style="margin: 0; font-size: 0.75rem; padding: 0px; width: 100%; text-align: center;">Made by Anurag</p>
+            
         </div>
     </main>
-        <!-- ... Your HTML and CSS -->
-        <!-- Import @google/generative-ai, as shown above. -->
+
         <script>
             document.getElementById('version').innerText="Eclipse v.0.3.35";
+            document.getElementById('exampleDisplay').style.display = 'flex';
+            document.getElementById('generate').disabled = true;
+            
+            document.getElementById('fileupload').style.display = 'flex';
+            document.getElementById('removeattachment').style.display = 'none';
         </script>
         <script type="module">
-            import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold, } from "@google/generative-ai";
+            import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold} from "@google/generative-ai";
       
             const generationConfig = {
-            temperature: 1,
-            topP: 0.95,
-            topK: 64,
-            maxOutputTokens: 8192,
-            responseMimeType: "text/plain",
+                temperature: 1,
+                topP: 0.95,
+                topK: 64,
+                maxOutputTokens: 8192,
+                responseMimeType: "text/plain",
             };
 
             const safetySettings = [
@@ -209,7 +239,6 @@
             ];
             
             let Questionid = 0;
-
             let fillCounter = 0
             
             for (let i = 0; i<3; i++){
@@ -218,9 +247,6 @@
                 fillCounter=fillCounter+1;
                 exampleQuestions.splice(Questionid, 1);
             }
-
-            document.getElementById('exampleDisplay').style.display = 'flex';
-            document.getElementById('generate').disabled = true;
 
             document.getElementById('example0').addEventListener('click', async function() {
                 document.getElementById('inputPanel').value = document.getElementById('example0').innerText;
@@ -238,6 +264,19 @@
                 document.getElementById('generate').disabled = false;
             });
 
+            document.getElementById('fileInput').addEventListener('input',  async function(){
+                document.getElementById('removeattachment').style.display = 'flex';
+                document.getElementById('fileupload').style.display = 'none';
+            });
+            
+            document.getElementById('removeattachment').addEventListener('click',  async function(){
+                if(document.getElementById('fileInput').value !=''){
+                    document.getElementById('fileInput').value='';
+                    document.getElementById('removeattachment').style.display = 'none';
+                    document.getElementById('fileupload').style.display = 'flex';
+                }
+            });
+
             document.getElementById('inputPanel').addEventListener('input',  async function(){
                 if (document.getElementById('inputPanel').value  =='' || document.getElementById('inputPanel').value  ==undefined || document.getElementById('inputPanel').value  ==null){
                     document.getElementById('generate').disabled = true;
@@ -248,13 +287,25 @@
                 document.getElementById('exampleDisplay').style.display = 'none';
             });
 
+            async function fileToGenerativePart(file) {
+            const base64EncodedDataPromise = new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result.split(',')[1]);
+                reader.readAsDataURL(file);
+            });
+            return {
+                inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
+            };
+            }
+
             document.getElementById('generate').addEventListener('click', async function() {
 
                 document.getElementById('exampleDisplay').style.display = 'none';
-                
                 const prompt = document.getElementById('inputPanel').value;
                 document.getElementById('inputPanel').value = "";
                 document.getElementById('generate').disabled = true;
+                document.getElementById('removeattachment').style.display = 'none';
+                document.getElementById('fileupload').style.display = 'flex';
 
                 document.getElementById('outputPanel').insertAdjacentHTML("beforeend", `
                 <div class="userInputWrapper">
@@ -275,7 +326,20 @@
                     history: [],
                 });
 
-                const result = await chatSession.sendMessage(prompt);
+                let result = '';
+
+                const fileInputEl = document.getElementById("fileInput");
+
+                if (fileInputEl.value != '' || fileInputEl.value != undefined || fileInputEl.value != null){
+                    let imageParts = await fileToGenerativePart(fileInputEl.files[0]);
+                    p.textContent="Uploading file...";
+                    result = await chatSession.sendMessage([prompt,imageParts]);
+                }
+                else{
+                    result = await chatSession.sendMessage(prompt);
+                }
+
+                p.textContent="...";
                 const response = await result.response;
                 const text = response.text();
                 p.textContent=text;
