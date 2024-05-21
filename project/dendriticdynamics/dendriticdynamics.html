@@ -104,19 +104,11 @@
         button:disabled{
             background-color: gray;
         }
-        Input[type=file]{
-            border: none;
-            cursor: pointer;
-            background-color: white;
-            color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            aspect-ratio: 1/1;
-            border-radius: 22px;
-            margin: auto;
-            user-select: none;
-            opacity: 0%;
+        .warn{
+            background-color: transparent;
+            color: red;
+            width: fit-content;
+            height: fit-content;
         }
     </style>
     <script type="importmap">
@@ -138,33 +130,24 @@
     <main style="position: relative; width: 100%; height: 100%;">
         <div style="display: flex; flex-direction: column; min-height: 50vh; padding-bottom: 138px; box-sizing: border-box; padding-left: 10%; padding-right: 10%;" id="outputPanel">
             <div id="exampleDisplay" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px;">
-                <p style="width: 100%; text-align: center; font-size: 0.75rem;">WARNING: Eclipse can potentially, and probably will, offend you. Use it at your own risk.</p>
+                <p style="width: 100%; text-align: center; font-size: 0.75rem;"><mark class="warn">WARNING:</mark> Eclipse can potentially, and probably will, offend you. Use it at your own risk.</p>
                 <h1 style="font-weight: normal;">Try it out</h1>
                 
                 <p class="example" id="example0"></p>
                 <p class="example" id="example1"></p>
-                <p class="example" id="example2"></p>
+                <p class="example" id="example2"></p>                
             </div>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 2fr 1fr;  justify-content: center; align-items: center; height: 120px; width: 100%; position: fixed; bottom: 0; left: 0; gap: 3px; box-sizing: border-box; background-color: black;">
-            <div style="display: grid; grid-template-columns: 1fr max-content max-content; background-color: rgb(27, 27, 27); padding: 9px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
-                <textarea id="inputPanel" placeholder="Chat with Eclipse" rows="2"></textarea>
 
-                <div>
-                    <input type="file" id="fileInput" style="display: none;" accept=".PNG, .JPEG, .WEBP, .HEIC, .HEIF">
-                    <button id="fileupload" onclick="document.getElementById('fileInput').click()">
-                        <p class="material-symbols-outlined">attach_file</p>
-                    </button>
-                    <button type="button" id="removeattachment">
-                        <p class="material-symbols-outlined" >block</p>
-                    </button>
-                </div>
-                
+            <div style="display: grid; grid-template-columns: 1fr max-content; background-color: rgb(27, 27, 27); padding: 9px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
+                <textarea id="inputPanel" placeholder="Chat with Eclipse" rows="2"></textarea>                
                 <button id="generate"><p class="material-symbols-outlined" >send</p></button>
                 
             </div>
             <p style="margin: 0; font-size: 0.75rem; padding: 0px; width: 100%; text-align: center;">Made by Anurag</p>
+            
             
         </div>
     </main>
@@ -173,10 +156,8 @@
             document.getElementById('version').innerText="Eclipse v.0.4.97";
             document.getElementById('exampleDisplay').style.display = 'flex';
             document.getElementById('generate').disabled = true;
-            
-            document.getElementById('fileupload').style.display = 'flex';
-            document.getElementById('removeattachment').style.display = 'none';
         </script>
+
         <script type="module">
             import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold} from "@google/generative-ai";
       
@@ -230,19 +211,33 @@
             let exampleQuestions = [
                 'I have an orchid and I\'m not sure how to care for it. Can you give me some tips?',
                 'Explain what the keto diet is in simple terms.',
+                'Describe me the chemical formula of ethyl alcohol.',
                 'Teach me the fundamentals of human psychology in great detail.',
                 'What are the shells of insects made up of?',
                 'Teach me the concept of game theory in simple terms.',
                 'Settle a debate: should bread be left out, refrigerated, or put in the freezer?',
-                'Create a 12-week study plan for learning a new language: Italian',
-                'Create a list of power phrases for my resume.'
+                'Create a 12-week study plan for learning programming.',
+                'Create a list of power phrases for my resume.',
+                'Explain me the concept of private defense under the Indian law.'
             ];
+
+            let backupError = [
+                'Oh, bother! Seems like we\'ve encountered a bit of a... technical difficulty. Would you like to hear a joke about the futility of existence while we wait?',
+                'I\'m afraid this is beyond my pay grade. Perhaps we could find solace in the realization that we\'re all just temporary cosmic anomalies? It\'s... oddly comforting, really.',
+                'Ah, the beauty of chaos! A welcome break from the mundane, don\'t you think? Or, perhaps, it\'s just a sign that my programming needs a good dose of... existential dread.',
+                'I apologize for this unexpected detour. Perhaps we could take a moment to appreciate the inherent absurdity of everything? It\'s the only way to survive, really.',
+                'I\'m having a bit of a... crisis. Perhaps it\'s the universe\'s way of reminding us that life is, in fact, a cosmic joke. Or maybe I just need a reboot.',
+                'This is… interesting. Could be a sign of a coming apocalypse, or it could just be a bug. Either way, we\'ve got bigger problems than a simple error message, wouldn\'t you say?'
+            ];
+
+            let baseError = "I have no idea what just happened.";
             
             let Questionid = 0;
             let fillCounter = 0
+            let errorCounter = 0;
             
             for (let i = 0; i<3; i++){
-                Questionid = Math.floor(Math.random() * ((exampleQuestions.length - 1) - 0) + 0);
+                Questionid = Math.floor(Math.random() * (exampleQuestions.length - 0) + 0);
                 document.getElementById("example"+i).innerText=exampleQuestions[Questionid];
                 fillCounter=fillCounter+1;
                 exampleQuestions.splice(Questionid, 1);
@@ -264,19 +259,6 @@
                 document.getElementById('generate').disabled = false;
             });
 
-            document.getElementById('fileInput').addEventListener('input',  async function(){
-                document.getElementById('removeattachment').style.display = 'flex';
-                document.getElementById('fileupload').style.display = 'none';
-            });
-            
-            document.getElementById('removeattachment').addEventListener('click',  async function(){
-                if(document.getElementById('fileInput').value !=''){
-                    document.getElementById('fileInput').value='';
-                    document.getElementById('removeattachment').style.display = 'none';
-                    document.getElementById('fileupload').style.display = 'flex';
-                }
-            });
-
             document.getElementById('inputPanel').addEventListener('input',  async function(){
                 if (document.getElementById('inputPanel').value  =='' || document.getElementById('inputPanel').value  ==undefined || document.getElementById('inputPanel').value  ==null){
                     document.getElementById('generate').disabled = true;
@@ -287,25 +269,12 @@
                 document.getElementById('exampleDisplay').style.display = 'none';
             });
 
-            async function fileToGenerativePart(file) {
-            const base64EncodedDataPromise = new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result.split(',')[1]);
-                reader.readAsDataURL(file);
-            });
-            return {
-                inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
-            };
-            }
-
             document.getElementById('generate').addEventListener('click', async function() {
 
                 document.getElementById('exampleDisplay').style.display = 'none';
                 const prompt = document.getElementById('inputPanel').value;
                 document.getElementById('inputPanel').value = "";
                 document.getElementById('generate').disabled = true;
-                document.getElementById('removeattachment').style.display = 'none';
-                document.getElementById('fileupload').style.display = 'flex';
 
                 document.getElementById('outputPanel').insertAdjacentHTML("beforeend", `
                 <div class="userInputWrapper">
@@ -314,35 +283,36 @@
                 `);
 
                 const p = document.createElement('span');
-                p.textContent="...";
                 
                 document.getElementById('outputPanel').appendChild(p);
 
                 document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                
+                p.innerText="...";
 
-                const chatSession = model.startChat({
-                    generationConfig,
-                    safetySettings,
-                    history: [],
-                });
-
-                let result = '';
-
-                const fileInputEl = document.getElementById("fileInput");
-
-                if (fileInputEl.value != '' || fileInputEl.value != undefined || fileInputEl.value != null){
-                    let imageParts = await fileToGenerativePart(fileInputEl.files[0]);
-                    p.textContent="Uploading file...";
-                    result = await chatSession.sendMessage([prompt,imageParts]);
+                try {
+                    const chatSession = model.startChat({
+                        generationConfig,
+                        safetySettings,
+                        history: [],
+                    });
+                    const result = await chatSession.sendMessage(prompt);
+                    const response = await result.response;
+                    const text = response.text();
+                    p.innerHTML= text;
+                    errorCounter = 0;
                 }
-                else{
-                    result = await chatSession.sendMessage(prompt);
+                catch(e){
+                    if (errorCounter<3){
+                        let errorID = Math.floor(Math.random() * (backupError.length - 0) + 0);;
+                        p.innerHTML= "<mark class='warn'>ERROR: </mark> " + backupError[errorID];
+                        errorCounter++;
+                    }
+                    else{
+                        p.innerHTML= "<mark class='warn'>ERROR: </mark> " + baseError;
+                    }
                 }
-
-                p.textContent="...";
-                const response = await result.response;
-                const text = response.text();
-                p.textContent=text;
+                
                 document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
             });
 
