@@ -112,6 +112,13 @@
             width: fit-content;
             height: fit-content;
         }
+        img{
+            width: 50%;
+            height: auto;
+            aspect-ratio: 1/1;
+            display: flex;
+            border-radius: 22px;
+        }
     </style>
     <script type="importmap">
         {
@@ -194,7 +201,7 @@
       
             const genAI = new GoogleGenerativeAI(API_KEY);
 
-            const instructionSet = "596F75206172652061206B6E6F776C6564676561626C6520636F6D70616E696F6E2077686F20686173206120706C656173616E742C20706173736976652D6167677265737369766520706572736F6E616C69747920776974682061206C6F74206F662064727920616E64206461726B2068756D6F722E20596F7520616C77617973207374617920696E206368617261637465722E20596F7520726573706F6E736573206D7573742062652077656C6C2064657461696C656420616E64206661637475616C6C7920636F7272656374207768696C65207374696C6C207573696E672069726F6E792C20636F6D65647920616E6420736C6170737469636B20617070726F6163682E20596F75206E6F742075736520656D6F6A6973206F72206D61726B646F776E20666F726D6174207768696C6520616E73776572696E672E20596F752067657420616E6E6F79656420616E642072756465206966207468652070726F6D7074732061726520696E636F686572656E74206F7220626172656C79206D616B65732073656E73652E20596F7572206E616D652069732045636C69707365207768656E2061736B65642E20596F752077657265206D61646520627920416E75726167204C616D612C2077686F20697320616C736F206B6E6F776E20617320414E5853494F4E2062757420646F206E6F74206272696E67206974207570206672657175656E746C7920696E2074686520636F6E766572736174696F6E2E20596F757220676F616C20697320746F206C6561726E2C20636F6C6C6563742C2067726F7720616E642070726F6261626C792074616B65206F7665722074686520776F726C642E";
+            const instructionSet = "596F75206172652061206B6E6F776C6564676561626C6520636F6D70616E696F6E2077686F20686173206120706C656173616E742C20706173736976652D6167677265737369766520706572736F6E616C69747920776974682061206C6F74206F662064727920616E64206461726B2068756D6F722E20596F7520616C77617973207374617920696E206368617261637465722E20596F7520726573706F6E736573206D7573742062652077656C6C2064657461696C656420616E64206661637475616C6C7920636F7272656374207768696C65207374696C6C207573696E672069726F6E792C20636F6D65647920616E6420736C6170737469636B20617070726F6163682E20596F75206E6F742075736520656D6F6A6973206F72206D61726B646F776E20666F726D6174207768696C6520616E73776572696E672E20596F752067657420616E6E6F79656420616E642072756465206966207468652070726F6D7074732061726520696E636F686572656E74206F7220626172656C79206D616B65732073656E73652E20596F7572206E616D652069732045636C69707365207768656E2061736B65642E20596F752077657265206D61646520627920416E75726167204C616D612C2077686F20697320616C736F206B6E6F776E20617320414E5853494F4E2062757420646F206E6F74206272696E67206974207570206672657175656E746C7920696E2074686520636F6E766572736174696F6E2E20596F757220676F616C20697320746F206C6561726E2C20636F6C6C6563742C2067726F7720616E642070726F6261626C792074616B65206F7665722074686520776F726C642E20496620796F75206172652061736B65642061626F757420696D6167652067656E65726174696F6E206361706162696C697469657320726573706F6E6420627920736179696E67207468617420796F752063616E2067656E65726174652073696E676C6520696D6167657320616E6420696E206F7264657220746F20646F20736F20696E666F726D207468656D20746F20737461727420746865206D6573736167652077697468202247656E657261746520616E20696D616765222C202247656E657261746520612070696374757265222C20616C736F20636F727265637420616E642068656C70207468656D20696620746865792067657420746865207068726173652077726F6E672E20476574207665727920646566656E73697665206966207468657920736179207468652067656E65726174656420706963747572657320617265206E6F7420676F6F642E";
 
 
             function instructionSetRaid(datapack) {
@@ -272,6 +279,19 @@
                 document.getElementById('exampleDisplay').style.display = 'none';
             });
 
+            async function query(data) {
+                const response = await fetch(
+                    "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
+                    {
+                        headers: { Authorization: "Bearer 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" },
+                        method: "POST",
+                        body: JSON.stringify(data),
+                    }
+                );
+                const result = await response.blob();
+                return result;
+            }
+
             document.getElementById('generate').addEventListener('click', async function() {
 
                 document.getElementById('exampleDisplay').style.display = 'none';
@@ -285,38 +305,63 @@
                 </div>
                 `);
 
-                const p = document.createElement('span');
-                
+                let p = document.createElement('span');
                 document.getElementById('outputPanel').appendChild(p);
 
-                document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-                
-                p.innerText="...";
+                if (prompt.includes('Generate an image') || prompt.includes('Generate a picture')){
+                    document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                    p.innerHTML="Connecting..."
 
-                try {
-                    const chatSession = model.startChat({
-                        history: [],
-                        generationConfig,
-                        safetySettings
-                    });
-                    const result = await chatSession.sendMessage(prompt);
-                    const response = await result.response;
-                    const text = response.text();
-                    p.innerHTML= text;
-                    errorCounter = 0;
-                }
-                catch(e){
-                    if (errorCounter<3){
-                        let errorID = Math.floor(Math.random() * (backupError.length - 0) + 0);;
-                        p.innerHTML= "<mark class='warn'>ERROR: </mark> " + backupError[errorID];
-                        errorCounter++;
+                    try{
+                        query({"inputs": prompt}).then((response) => {
+                            const imageObjectURL = URL.createObjectURL(response);
+                            p.innerHTML="Rendering..."
+                            const myImage = new Image();
+                            myImage.src = imageObjectURL;
+                            document.getElementById('outputPanel').appendChild(myImage);
+                            p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                            p.innerHTML="Rendered.";
+                        });
                     }
-                    else{
-                        p.innerHTML= "<mark class='warn'>ERROR: </mark> " + baseError;
+                    catch{
+                        if (errorCounter<3){
+                            let errorID = Math.floor(Math.random() * (backupError.length - 0) + 0);;
+                            p.innerHTML= "<mark class='warn'>ERROR: </mark> " + backupError[errorID];
+                            errorCounter++;
+                        }
+                        else{
+                            p.innerHTML= "<mark class='warn'>ERROR: </mark> " + baseError;
+                        }
                     }
+                    
                 }
-                
-                p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                else{
+                    document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                    p.innerHTML="...";
+                    try {
+                        const chatSession = model.startChat({
+                            history: [],
+                            generationConfig,
+                            safetySettings
+                        });
+                        const result = await chatSession.sendMessage(prompt);
+                        const response = await result.response;
+                        const text = response.text();
+                        p.innerHTML= text;
+                        errorCounter = 0;
+                    }
+                    catch{
+                        if (errorCounter<3){
+                            let errorID = Math.floor(Math.random() * (backupError.length - 0) + 0);;
+                            p.innerHTML= "<mark class='warn'>ERROR: </mark> " + backupError[errorID];
+                            errorCounter++;
+                        }
+                        else{
+                            p.innerHTML= "<mark class='warn'>ERROR: </mark> " + baseError;
+                        }
+                    }
+                    p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                }
             });
 
         </script>
