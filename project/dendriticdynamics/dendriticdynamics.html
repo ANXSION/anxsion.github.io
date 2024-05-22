@@ -310,7 +310,7 @@
 
                 if (prompt.includes('Generate an image') || prompt.includes('Generate a picture')){
                     document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-                    p.innerHTML="Connecting..."
+                    p.innerHTML="Rendering..."
 
                     try{
                         query({"inputs": prompt}).then((response) => {
