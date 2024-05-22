@@ -144,7 +144,7 @@
                 
                 <p class="example" id="example0"></p>
                 <p class="example" id="example1"></p>
-                <p class="example" id="example2"></p>                
+                <p class="example" id="example2"></p>   
             </div>
         </div>
 
@@ -282,18 +282,6 @@
                 document.getElementById('exampleDisplay').style.display = 'none';
             });
 
-            async function query(data) {
-                const response = await fetch(
-                    "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
-                    {
-                        headers: { Authorization: "Bearer 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" },
-                        method: "POST",
-                        body: JSON.stringify(data),
-                    }
-                );
-                const result = await response.blob();
-                return result;
-            }
 
             document.getElementById('generate').addEventListener('click', async function() {
 
@@ -310,19 +298,37 @@
 
                 let p = document.createElement('span');
                 document.getElementById('outputPanel').appendChild(p);
+                
 
-                if (prompt.includes('Generate an image') || prompt.includes('Generate a picture')){
+                if (prompt.includes('Generate an image') || prompt.includes('Generate a picture') || prompt.includes('generate an image') || prompt.includes('generate a picture')){
                     document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-                    p.innerHTML="Rendering..."
+                    p.innerHTML="...";
 
                     try{
+                        async function query(data) {
+                            p.innerHTML="Connecting...";
+                            const response = await fetch(
+                                "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
+                                {
+                                    headers: { Authorization: "Bearer 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" },
+                                    method: "POST",
+                                    body: JSON.stringify(data),
+                                }
+                            );
+                            p.innerHTML="Rendering...";
+                            const result = await response.blob();
+                            return result;
+                        }
+
                         query({"inputs": prompt}).then((response) => {
                             const imageObjectURL = URL.createObjectURL(response);
                             const myImage = new Image();
                             myImage.src = imageObjectURL;
+
                             document.getElementById('outputPanel').appendChild(myImage);
-                            p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+
                             p.innerHTML="Rendered.";
+                            p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
                         });
                     }
                     catch{
@@ -337,6 +343,7 @@
                     }
                     
                 }
+
                 else{
                     document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                     p.innerHTML="...";
@@ -365,6 +372,7 @@
                     p.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
                 }
             });
+
 
         </script>
 </body>
