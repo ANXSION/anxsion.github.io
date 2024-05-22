@@ -315,7 +315,6 @@
                     try{
                         query({"inputs": prompt}).then((response) => {
                             const imageObjectURL = URL.createObjectURL(response);
-                            p.innerHTML="Rendering..."
                             const myImage = new Image();
                             myImage.src = imageObjectURL;
                             document.getElementById('outputPanel').appendChild(myImage);
