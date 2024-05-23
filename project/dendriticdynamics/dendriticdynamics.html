@@ -373,9 +373,11 @@
                 let contextSlice = prompt.split(/\s+/).slice(0,contextEndPointer).join(' ');
 
                 if ( await contextQuery({"inputs": {"source_sentence": contextSlice,"sentences": imageGenerationContext}}) >= 0.6){
+                    document.getElementById('outputPanel').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                    p.innerHTML="...";
                     try{
                         async function query(data) {
-                            p.innerHTML="Connecting...";
+                            p.innerHTML="Rendering...";
                             const response = await fetch(
                                 "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
                                 {
@@ -384,7 +386,6 @@
                                     body: JSON.stringify(data),
                                 }
                             );
-                            p.innerHTML="Rendering...";
                             const result = await response.blob();
                             return result;
                         }
