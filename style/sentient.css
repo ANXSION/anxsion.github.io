@@ -15,7 +15,17 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: MainFont;
+    src: url('../asset/fonts/SFPro.otf');
+    font-display: swap;
+}
 
+@font-face {
+    font-family: MainMono;
+    src: url('../asset/fonts/SFMono.otf');
+    font-display: swap;
+}
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
@@ -32,7 +42,7 @@
     --elevation3: 3;
     --elevation4: 4;
 
-    --default-font: 'Roboto';
+    --default-font: 'MainFont';
 }
 
 ::selection {
@@ -40,7 +50,19 @@
     background-color: var(--secondary);
 }
 
-h1,h2,h3{
+h1{
+    font-size: 28px;
+    line-height: 34px;
+    font-weight: normal;
+}
+h2{
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: normal;
+}
+h3{
+    font-size: 20px;
+    line-height: 25px;
     font-weight: normal;
 }
 
@@ -50,8 +72,8 @@ body{
     font-family: var(--default-font);
     background-color: var(--primary);
     color: var(--secondary);
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 22px;
     width: 400;
     letter-spacing: 0px;
     margin: 0;
