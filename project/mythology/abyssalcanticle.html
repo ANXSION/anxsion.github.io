@@ -14,7 +14,6 @@
     }
     body{
         background-color: black;
-        background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(./arts/aeolia.jpg);
         color: white;
         font-family: Ancient;
         font-size: 17px;
@@ -55,8 +54,18 @@
         background-size: cover; 
         background-repeat: no-repeat;
         border-radius:22px;
+        position: relative;
+        cursor: pointer;
+    }
+    .storyBackground{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        border-radius: 22px;
     }
     .storyName{
+        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -64,6 +73,28 @@
         height: 100%;
         margin: 0;
     }
+    .storyLocked{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit:scale-down;
+        border-radius: 22px;
+        filter: drop-shadow(0 0 2px white);
+    }
+
+    .storyData{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{
+        background-color: black;
+        color: white;
+        border: none;
+    }
+    
     @media screen and (max-width: 420px) {
         .storyContainer{
             grid-template-columns: 1fr;
@@ -73,43 +104,58 @@
 </head>
 <body>
     <main>
-        <h1 class="header">Abyssal Canticle</h1>
+        <h1 class="header" id="storyHeader">Abyssal Canticle</h1>
 
-        <div class="storyContainer">
-            <div class="storyBox" style="background: url(./arts/PortCityOfLyriax.jpg);  background-position: 0 50%; background-size: cover; ">
+        <div class="storyContainer" id="storyContainer">
+
+            <div class="storyBox" style="background: url(./arts/PortCityOfLyriax.jpg);  background-position: 0 50%; background-size: cover; " onclick="StoryLine()">
                 <p class="storyName">Port City of Lyriax</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/TheAridSeaOfAlKara.jpg);  background-position: 0 50%; background-size: cover; ">
-                <p class="storyName">The Arid Sea of Al'Kara</p>
+                <p class="storyName">The Arid Sea of Al' Kara</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/TheTamsinDunes.jpg);  background-position: 0 50%; background-size: cover; ">
                 <p class="storyName">The Tamsin Dunes</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/DoriansHowlingShores.jpg);  background-position: 0 10%; background-size: cover; ">
                 <p class="storyName">Dorian's Howling Shores</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/FenOfYsara.jpg);  background-position: 0 50%; background-size: cover; ">
                 <p class="storyName">Fen of Ysara</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/SeraphinesLookout.jpg);  background-position: 0 50%; background-size: cover; ">
                 <p class="storyName">Seraphine's Lookout</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/HollowOfEldrin.jpg);  background-position: 0 50%; background-size: cover; ">
                 <p class="storyName">Hollow of Eldrin</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/AsurasForge.jpg);  background-position: 0 20%; background-size: cover; ">
                 <p class="storyName">Asura's Forge</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/WhereTimeStoodStill.jpg);  background-position: 0 50%; background-size: cover; ">
                 <p class="storyName">Where Time Stood Still</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/GlacicalCradleOfElara.jpg);  background-position: 0 20%; background-size: cover; ">
                 <p class="storyName">Glacial Cradle of Elara</p>
             </div>
+
             <div class="storyBox" style="background: url(./arts/AnyasBastionOnMistveilLake.jpg);  background-position: 0 30%; background-size: cover; ">
                 <p class="storyName">Anya's Bastion on Mistveil Lake</p>
             </div>
             
+        </div>
+        <div class="storyData" id="storyLineData">
+            <p>Comming Soon.</p>
+            <button onclick="init()">Back</button>
         </div>
     </main>
     
@@ -117,4 +163,18 @@
 
     </footer>
 </body>
+<script>
+    function init(){
+        document.getElementById('storyHeader').innerText= "Abyssal Canticle";
+        document.getElementById('storyContainer').style.display= "flex";
+        document.getElementById('storyLineData').style.display= "none";
+    }
+    function StoryLine(){
+        document.getElementById('storyHeader').innerText= "Story Line";
+        document.getElementById('storyContainer').style.display= "none";
+        document.getElementById('storyLineData').style.display= "flex";
+    }
+    
+    init();
+</script>
 </html>
