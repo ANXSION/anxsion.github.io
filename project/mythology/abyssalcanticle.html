@@ -45,6 +45,7 @@
         padding-right: 10%;
         gap: 9px;
     }
+
     .storyBox{
         width: 100%;
         aspect-ratio: 18/9;
@@ -54,32 +55,15 @@
         background-size: cover; 
         background-repeat: no-repeat;
         border-radius:22px;
-        position: relative;
         cursor: pointer;
     }
-    .storyBackground{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        object-fit: cover;
-        border-radius: 22px;
-    }
     .storyName{
-        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 100%;
         margin: 0;
-    }
-    .storyLocked{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        object-fit:scale-down;
-        border-radius: 22px;
-        filter: drop-shadow(0 0 2px white);
     }
 
     .storyData{
@@ -153,6 +137,7 @@
             </div>
             
         </div>
+
         <div class="storyData" id="storyLineData">
             <p>Comming Soon.</p>
             <button onclick="init()">Back</button>
@@ -167,7 +152,7 @@
 <script>
     function init(){
         document.getElementById('storyHeader').innerText= "Abyssal Canticle";
-        document.getElementById('storyContainer').style.display= "flex";
+        document.getElementById('storyContainer').style.display= "grid";
         document.getElementById('storyLineData').style.display= "none";
     }
     function StoryLine(){
