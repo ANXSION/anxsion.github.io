@@ -74,9 +74,14 @@
     }
 
     button{
-        background-color: black;
+        background-color: hsl(0, 0%, 5%);
+        padding: 9px;
+        padding-left: 18px;
+        padding-right: 18px;
         color: white;
         border: none;
+        font-size: 1.2rem;
+
     }
     
     @media screen and (max-width: 420px) {
@@ -92,7 +97,7 @@
 
         <div class="storyContainer" id="storyContainer">
 
-            <div class="storyBox" style="background: url(./arts/PortCityOfLyriax.jpg);  background-position: 0 50%; background-size: cover; " onclick="StoryLine()">
+            <div class="storyBox" style="background: url(./arts/PortCityOfLyriax.jpg);  background-position: 0 50%; background-size: cover; " id="portCity">
                 <p class="storyName">Port City of Lyriax</p>
             </div>
 
@@ -139,7 +144,10 @@
         </div>
 
         <div class="storyData" id="storyLineData">
-            <p>Comming Soon.</p>
+            <div style="font-size: 12px; font-weight: normal; margin: 3%; text-align: justify;" id="storyInject">
+
+            </div>
+            <br><br>
             <button onclick="init()">Back</button>
         </div>
     </main>
@@ -149,17 +157,23 @@
         <p style="text-align: center;">All Rights Reserved</p>
     </footer>
 </body>
-<script>
+<script type="module">
+
+    import {storyTitle, storyArc} from './lore/lore1.js'
+
     function init(){
         document.getElementById('storyHeader').innerText= "Abyssal Canticle";
         document.getElementById('storyContainer').style.display= "grid";
         document.getElementById('storyLineData').style.display= "none";
     }
-    function StoryLine(){
-        document.getElementById('storyHeader').innerText= "Story Line";
+
+    document.getElementById('portCity').onclick= function(){
         document.getElementById('storyContainer').style.display= "none";
         document.getElementById('storyLineData').style.display= "flex";
+        document.getElementById('storyHeader').innerText= storyTitle;
+        document.getElementById('storyInject').innerText= storyArc;
     }
+
     
     init();
 </script>
