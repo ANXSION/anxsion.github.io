@@ -5,7 +5,7 @@
   "id": "ANXSION",
   "short_name": "ANXSION",
   "author": "ANXSION",
-  "version": "3.1.7",
+  "version": "3.1.8",
   "scope": "/",
   "display": "standalone",
   "start_url": "/",
@@ -28,5 +28,15 @@
   }
   ],
   "prefer_related_applications": false,
-  "categories": ["legal", "software"]
+  "categories": ["legal", "software"],
+  "shortcuts": [
+    {
+      "name": "Phaedra Equity",
+      "url": "https://anxsion.github.io/project/phaedra/phaedra.html"
+    },
+    {
+      "name": "DENDRITIC DYNAMICS",
+      "url": "https://anxsion.github.io/project/dendriticdynamics/dendriticdynamics.html"
+    }
+  ]
 }
