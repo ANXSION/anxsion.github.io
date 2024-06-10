@@ -11,17 +11,17 @@
   "start_url": "/",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "description": "The official website of the AnxSion. Legal solutions, software research and development.",
+  "description": "The official website of the Anurag Lama.",
   "orientation": "portrait-primary",
   "icons": [
   {
-    "src": "./asset/icon/192.png",
+    "src": "./asset/icon/icon_general.png",
     "type": "image/png",
     "sizes": "192x192",
     "purpose": "any maskable"
   },
   {
-    "src": "./asset/icon/512.png",
+    "src": "./asset/icon/icon_general_512.png",
     "type": "image/png",
     "sizes": "512x512",
     "purpose": "any maskable"
