@@ -126,4 +126,9 @@
             <p style="text-align: center;">All Rights Reserved</p>
         </footer>
     </body>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register("./serviceworker.js");
+        }
+    </script>
 </html>

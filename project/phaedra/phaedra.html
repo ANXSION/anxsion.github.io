@@ -27,6 +27,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="ANXSION" />
     <meta name="application-name" content="ANXSION" />
+
     <style>
         @font-face {
             font-family: 'Capital';
@@ -207,7 +208,6 @@
         }
     </style>
     <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
-    <script src='https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js'></script>
 </head>
 <body>
     <nav>
@@ -392,25 +392,21 @@
         ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
     ];
 
-    let networkcheck = '0x1';
     const datapoints = new Map();
 
-    for (i=0;i<clients.length; i++){
+    for (let i=0;i<clients.length; i++){
         datapoints.set(clients[i][0], clients[i][1]);
     }
 
     const sdk = new MetaMaskSDK.MetaMaskSDK({
         dappMetadata: {
             name: "Phaedra Equity",
-            url: window.location.host,
+            url: window.location.href,
         },
         logging: {
             sdk: false
         }
     });
-
-    
-
 
     window.userWalletAddress = null;
 
@@ -462,7 +458,6 @@
     async function loginWithMetaMask() {
         provider = sdk.getProvider();
 
-        
         const accounts = await provider.request({ 
             'method': 'eth_requestAccounts' 
         });
@@ -538,6 +533,7 @@
             ]
         });
     }
+    
 </script>
 
     

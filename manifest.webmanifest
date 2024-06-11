@@ -32,11 +32,29 @@
   "shortcuts": [
     {
       "name": "Phaedra Equity",
-      "url": "https://anxsion.github.io/project/phaedra/phaedra.html"
+      "url": "https://anxsion.github.io/project/phaedra/phaedra.html",
+      "icons":[{ "src": "./asset/icon/dendriticdynamics.png", "sizes": "96x96" }]
     },
     {
       "name": "DENDRITIC DYNAMICS",
-      "url": "https://anxsion.github.io/project/dendriticdynamics/dendriticdynamics.html"
+      "url": "https://anxsion.github.io/project/dendriticdynamics/dendriticdynamics.html",
+      "icons":[{ "src": "./asset/icon/phaedraequity.png", "sizes": "96x96" }]
     }
+  ],
+  "screenshots" : [
+  {
+    "src": "./asset/icon/screenshot-1.png",
+    "sizes": "2504x1752",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": "On Tablet"
+  },
+  {
+    "src": "./asset/icon/screenshot-2.png",
+    "sizes": "1410x2862",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": "On Phone"
+  }
   ]
 }

@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blacksit 1</title>
-    <script type="module" src="./blaclsite1.js"></script>
+    <script src="./blaclsite1.js"></script>
 </head>
 <body id="mainBase">
     
 </body>
+<script>
+    let shortData = 1;
+    let encoded = EncodeB64(shortData);
+    let decode = DecodeB64(encoded);
+
+    console.log(encoded);
+    console.log(decode);
+</script>
 </html>
