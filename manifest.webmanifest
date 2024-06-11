@@ -18,13 +18,13 @@
     "src": "./asset/icon/icon_general.png",
     "type": "image/png",
     "sizes": "192x192",
-    "purpose": "any maskable"
+    "purpose": "any"
   },
   {
     "src": "./asset/icon/icon_general_512.png",
     "type": "image/png",
     "sizes": "512x512",
-    "purpose": "any maskable"
+    "purpose": "any"
   }
   ],
   "prefer_related_applications": false,
@@ -32,13 +32,13 @@
   "shortcuts": [
     {
       "name": "Phaedra Equity",
-      "url": "https://anxsion.github.io/project/phaedra/phaedra.html",
-      "icons":[{ "src": "./asset/icon/dendriticdynamics.png", "sizes": "96x96" }]
+      "url": "./project/phaedra/phaedra.html",
+      "icons":[{ "src": "./asset/icon/shortcut-ai.png", "sizes": "96x96" }]
     },
     {
       "name": "DENDRITIC DYNAMICS",
-      "url": "https://anxsion.github.io/project/dendriticdynamics/dendriticdynamics.html",
-      "icons":[{ "src": "./asset/icon/phaedraequity.png", "sizes": "96x96" }]
+      "url": "./project/dendriticdynamics/dendriticdynamics.html",
+      "icons":[{ "src": "./asset/icon/shortcut-invest.png", "sizes": "96x96" }]
     }
   ],
   "screenshots" : [
@@ -53,7 +53,7 @@
     "src": "./asset/icon/screenshot-2.png",
     "sizes": "1410x2862",
     "type": "image/png",
-    "form_factor": "wide",
+    "form_factor": "narrow",
     "label": "On Phone"
   }
   ]
