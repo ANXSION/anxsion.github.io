@@ -71,8 +71,10 @@
         </footer>
     </body>
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register("./serviceworker.js");
-        }
+        window.addEventListener("load", () => {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("anxsion-serviceworker.js");
+            }  
+        });
     </script>
 </html>
