@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blacksit 1</title>
-    <script src="./blaclsite1.js"></script>
+    <title>Blacksite 1</title>
+    <script type="module" src="./engine/blacksite1.js"></script>
 </head>
-<body id="mainBase">
-    
-</body>
-<script>
-    let shortData = 1;
-    let encoded = EncodeB64(shortData);
-    let decode = DecodeB64(encoded);
+<body id="base">
+    <dialog id="interactive">
+        
+    </dialog>
+    <main id="main">
 
-    console.log(encoded);
-    console.log(decode);
-</script>
+    </main>
+</body>
 </html>

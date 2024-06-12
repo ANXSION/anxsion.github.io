@@ -1,36 +1,36 @@
 @font-face {
     font-family: Jost;
     src: url('../asset/fonts/Jost.ttf');
-    font-display: swap;
+    font-display: block;
 }
 @font-face {
     font-family: Signature;
     src: url('../asset/fonts/CinzelDecorative.ttf');
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
     font-family: LogoLight;
     src: url('../asset/fonts/LogoLight.ttf');
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
     font-family: MainFont;
     src: url('../asset/fonts/SFPro.otf');
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
     font-family: MainMono;
     src: url('../asset/fonts/SFMono.otf');
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face {
     font-family: Ancient;
     src: url('../asset/fonts/SFNY.otf');
-    font-display: swap;
+    font-display: block;
 }
 
 :root{
