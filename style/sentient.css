@@ -86,6 +86,7 @@ body{
     padding: 0;  
     transition: 0.2s all;
     z-index: 0;
+    accent-color: hsl(120, 73%, 75%);
 }
 
 a{
