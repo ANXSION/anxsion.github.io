@@ -431,6 +431,31 @@
     exchange.style.display = 'none';
     exchangeNotice.style.display = 'block';
 
+    if(localStorage.getItem("connectionID")!=null){
+        if(datapoints.get(localStorage.getItem("connectionID")) != undefined){
+            fundBalance.innerText = parseFloat(AUM * datapoints.get(localStorage.getItem("connectionID"))).toFixed(2);
+            if(AUM >= pastAUM){
+                fundBalance.setAttribute('grow','bull');
+            }
+            else{
+                fundBalance.setAttribute('grow','bear');
+            }
+            userWallet.innerText = localStorage.getItem("connectionID");
+            loginPanel.style.display = 'none';
+            AccountData.style.display = 'flex';
+            registered.style.display = 'flex';
+            exchange.style.display = 'flex';
+            exchangeNotice.style.display = 'none';
+        }
+        else{
+            loginPanel.style.display = 'none';
+            AccountData.style.display = 'flex';
+            unregistered.style.display = 'flex';
+            exchange.style.display = 'flex';
+        }
+    }
+
+
     async function loginWithMetaMask() {
         provider = sdk.getProvider();
 
