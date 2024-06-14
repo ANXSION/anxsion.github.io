@@ -207,7 +207,7 @@
             aspect-ratio: 1/1;
         }
     </style>
-    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.9.0/web3.min.js" integrity="sha512-PCDFDXSz/M/cw+yKQRPEzn+/I/zD/598djw6r5lLUpi3yLTcw+Hi8a2zFHy694O2Oc6coSRswWVQOyp99b6REQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <nav>
@@ -396,7 +396,7 @@
     for (let i=0;i<clients.length; i++){
         datapoints.set(clients[i][0], clients[i][1]);
     }
-
+    
 
     let userWalletAddress = null;
 
@@ -446,16 +446,10 @@
 
 
     async function loginWithMetaMask() {
-        const MMSDK = new MetaMaskSDK.MetaMaskSDK({
-            dappMetadata: {
-                name: "Phaedra Equity",
-                url: window.location.href
-            }
-        });
+        web3 = new Web3(window.ethereum);
+        await window.ethereum.enable();
 
-        const provider = MMSDK.getProvider()
-
-        const accounts = await provider.request({ 'method': 'eth_requestAccounts'});
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts'});
 
         userWalletAddress = accounts[0].toLowerCase();
 
@@ -498,10 +492,10 @@
 
 
     async function sendTransactionData(){
+        web3 = new Web3(window.ethereum);
+        await window.ethereum.enable();
 
-        const senderId = await window.ethereum.request({ 
-            'method': 'eth_requestAccounts' 
-        });
+        const senderId = await window.ethereum.request({ method: 'eth_requestAccounts'});
         
         let gasquant = parseInt(21000).toString(16);
         let gasfee = parseInt(9000000000).toString(16);
@@ -530,7 +524,4 @@
     }
     
 </script>
-
-    
-
 </html>
