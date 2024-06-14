@@ -389,7 +389,7 @@
     let pastAUM = 3135;
     
     let clients = [
-        ['0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1', 1.0]
+        ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', 1.0]
     ];
 
     const datapoints = new Map();
@@ -459,20 +459,25 @@
 
     async function loginWithMetaMask() {
         provider = sdk.getProvider();
-
-         await provider.request({ method: 'wallet_getPermissions'});
+        alert(provider.isConnected());
 
         const accounts = await provider.request({ method: 'eth_requestAccounts'});
+        
+        const from = accounts[0];
+        const msg = `0x446F20796F752077616E7420746F207369676E20696E3F`;
+        
+        const sign = await provider.request({method: "personal_sign", params: [msg, from]});
+        console.log(sign);
 
         userWalletAddress = accounts[0].toLowerCase();
 
-        console.log(datapoints.get(userWalletAddress));
+        console.log(datapoints.get(sign));
 
         if (!accounts) { return }
 
-        if (datapoints.get(userWalletAddress) != undefined){
+        if (datapoints.get(sign) != undefined){
 
-            fundBalance.innerText = parseFloat(AUM * datapoints.get(userWalletAddress)).toFixed(2);
+            fundBalance.innerText = parseFloat(AUM * datapoints.get(sign)).toFixed(2);
             if(AUM >= pastAUM){
                 fundBalance.setAttribute('grow','bull');
             }
@@ -492,7 +497,7 @@
             unregistered.style.display = 'flex';
             exchange.style.display = 'flex';
         }
-        localStorage.setItem("connectionID", userWalletAddress);
+        localStorage.setItem("connectionID", sign);
     }
 
     async function signOutOfMetaMask() {    
@@ -507,10 +512,9 @@
 
 
     async function sendTransactionData(){
-        web3 = new Web3(window.ethereum);
-        await window.ethereum.enable();
+        provider = sdk.getProvider();
 
-        const senderId = await window.ethereum.request({ method: 'eth_requestAccounts'});
+        const senderId = await provider.request({ method: 'eth_requestAccounts'});
         
         let gasquant = parseInt(21000).toString(16);
         let gasfee = parseInt(9000000000).toString(16);
@@ -525,14 +529,14 @@
         }
 
         await provider.request({
-            "method": "eth_sendTransaction",
-            "params": [
+            method: "eth_sendTransaction",
+            params: [
                 {
-                "to": "0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1",
-                "from": senderId[0].toLowerCase(),
-                "value": hashedValue,
-                "data": hashedAddress,
-                "gas": "0x"+gasquant
+                to: "0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1",
+                from: senderId[0].toLowerCase(),
+                value: hashedValue,
+                data: hashedAddress,
+                gas: "0x"+gasquant
                 }
             ]
         });
