@@ -397,7 +397,20 @@
     for (let i=0;i<clients.length; i++){
         datapoints.set(clients[i][0], clients[i][1]);
     }
-    
+
+    const sdk = new MetaMaskSDK.MetaMaskSDK({
+        dappMetadata: {
+        name: "Phaedra Equity",
+        url: window.location.host,
+        },
+        logging: {
+        sdk: false,
+        }
+    });
+
+    let provider;
+
+        
 
     let userWalletAddress = null;
 
@@ -447,18 +460,8 @@
 
 
     async function loginWithMetaMask() {
+        provider = sdk.getProvider();
 
-        const sdk = new MetaMaskSDK.MetaMaskSDK({
-            dappMetadata: {
-            name: "Phaedra Equity",
-            url: window.location.host,
-            },
-            logging: {
-            sdk: false,
-            }
-        });
-        
-        let provider = sdk.getProvider();
         const accounts = await provider.request({ method: 'eth_requestAccounts'});
 
         /*
