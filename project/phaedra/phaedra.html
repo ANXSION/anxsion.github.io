@@ -207,7 +207,7 @@
             aspect-ratio: 1/1;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.9.0/web3.min.js" integrity="sha512-PCDFDXSz/M/cw+yKQRPEzn+/I/zD/598djw6r5lLUpi3yLTcw+Hi8a2zFHy694O2Oc6coSRswWVQOyp99b6REQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src='https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js'></script>
 </head>
 <body>
     <nav>
@@ -383,6 +383,7 @@
     
 </body>
 
+<script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
 <script>
     let AUM = 67821;
     let pastAUM = 3135;
@@ -446,10 +447,26 @@
 
 
     async function loginWithMetaMask() {
-        web3 = new Web3(window.ethereum);
+
+        const sdk = new MetaMaskSDK.MetaMaskSDK({
+            dappMetadata: {
+            name: "Phaedra Equity",
+            url: window.location.host,
+            },
+            logging: {
+            sdk: false,
+            }
+        });
+        
+        let provider = sdk.getProvider();
+        const accounts = await provider.request({ method: 'eth_requestAccounts'});
+
+        /*
+        web3 = await new Web3(window.ethereum);
         await window.ethereum.enable();
 
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts'});
+        */
 
         userWalletAddress = accounts[0].toLowerCase();
 
