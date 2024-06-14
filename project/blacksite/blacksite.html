@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Site | Anurag Lama</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'blacksitefont';
+        src: url(../../asset/fonts/SFMono.otf);
+        font-display: block;
+    }
+    body{
+        background-color: black;
+        color: white;
+        accent-color: hsl(120, 73%, 75%);
+    }
+</style>
+<body>
+    
+</body>
+<script>
+    async function launch(){
+        console.log(await navigator.bluetooth.getAvailability());
+        console.log(await navigator.bluetooth.getDevices());
+        console.log(await navigator.connection);
+        console.log(await navigator.deviceMemory);
+        console.log(await navigator.geolocation);
+        console.log(await navigator.gpu);
+        console.log(await navigator.hardwareConcurrency);
+        console.log(await navigator.keyboard);
+    }
+
+    launch();
+</script>
+
+</html>

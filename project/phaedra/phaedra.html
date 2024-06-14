@@ -219,8 +219,7 @@
         <div style="width: 100%; justify-content: center; align-items: center;">
             <div id="loginPanel">
                 <div style=" width: 100%; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;">
-                    <h2 style="user-select: none;">Connect with</h2>
-                    <img id='loginButton' onclick="loginWithMetaMask()" src="../../asset/icon/Metamask_button_white.svg" style="width: 12rem; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                    <button id='loginButton' onclick="loginWithMetaMask()">Connect Web3 Wallet</button>
                 </div>
             </div>
 
@@ -234,7 +233,7 @@
                 </div>
                 <div id="unregistered">
                     <br><br>
-                    <h2>No Balance<br><span style="font-size: 0.9rem;">You must be newly registered. Your balance will be updated soon.</span></h2>
+                    <h2>No Balance<br><span style="font-size: 0.9rem;">You have not yet invested any amount.</span></h2>
                     <br><br>
                 </div>
                 <button onclick="signOutOfMetaMask()">Disconnect</button>
@@ -398,15 +397,6 @@
         datapoints.set(clients[i][0], clients[i][1]);
     }
 
-    const sdk = new MetaMaskSDK.MetaMaskSDK({
-        dappMetadata: {
-            name: "Phaedra Equity",
-            url: window.location.href,
-        },
-        logging: {
-            sdk: false
-        }
-    });
 
     let userWalletAddress = null;
 
@@ -429,7 +419,6 @@
     exchange.style.display = 'none';
     exchangeNotice.style.display = 'block';
 
-    console.log(localStorage.getItem("connectionID"));
 
     if(localStorage.getItem("connectionID")!=null){
         if(datapoints.get(localStorage.getItem("connectionID")) != undefined){
@@ -457,9 +446,7 @@
 
 
     async function loginWithMetaMask() {
-        provider = sdk.getProvider();
-
-        const accounts = await provider.request({ 
+        const accounts = await window.ethereum.request({ 
             'method': 'eth_requestAccounts' 
         });
 
@@ -502,11 +489,10 @@
         exchangeNotice.style.display = 'block';
     }
 
-    
-    async function sendTransactionData(){
-        provider = sdk.getProvider();
 
-        const senderId = await provider.request({ 
+    async function sendTransactionData(){
+
+        const senderId = await window.ethereum.request({ 
             'method': 'eth_requestAccounts' 
         });
         

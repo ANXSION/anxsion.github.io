@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button onclick="cortex()">Connect</button>
+    
+    
+</body>
+<script>
+    function buildSupportedPaymentMethodData() {
+  // Example supported payment methods:
+  return [{ supportedMethods: "https://example.com/pay" }];
+}
+
+function buildShoppingCartDetails() {
+  // Hardcoded for demo purposes:
+  return {
+    id: "order-123",
+    displayItems: [
+      {
+        label: "Example item",
+        amount: { currency: "USD", value: "1.00" },
+      },
+    ],
+    total: {
+      label: "Total",
+      amount: { currency: "USD", value: "1.00" },
+    },
+  };
+}
+
+
+    const request = new PaymentRequest(
+        buildSupportedPaymentMethodData(),
+        buildShoppingCartDetails(),
+);
+    
+</script>
+
+</html>
