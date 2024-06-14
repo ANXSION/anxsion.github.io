@@ -455,9 +455,7 @@
 
         const provider = MMSDK.getProvider()
 
-        const accounts = await provider.request({ 
-            method: 'eth_requestAccounts' 
-        });
+        const accounts = await provider.request({ 'method': 'eth_requestAccounts'});
 
         userWalletAddress = accounts[0].toLowerCase();
 
