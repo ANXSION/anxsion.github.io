@@ -21,6 +21,11 @@
     
 </body>
 <script>
+    
+    function callback(records) {
+        
+    }
+    const observer = new PressureObserver(callback);
     async function launch(){
         console.log(await navigator.bluetooth.getAvailability());
         console.log(await navigator.bluetooth.getDevices());
@@ -30,6 +35,20 @@
         console.log(await navigator.gpu);
         console.log(await navigator.hardwareConcurrency);
         console.log(await navigator.keyboard);
+        console.log(await navigator.maxTouchPoints);
+        console.log(await navigator.mediaCapabilities);
+        console.log(await navigator.mediaDevices);
+        console.log(await navigator.onLine);
+        console.log(await navigator.storage);
+        console.log(await navigator.usb);
+        console.log(await USBDevice);
+        console.log(await navigator.xr);
+        console.log(await navigator.getBattery());
+        await new PressureObserver((records)=>{console.log("Current pressure is: "+records[records.length -1].state);}).observe("cpu");
+
+        console.log(window)
+        
+        
     }
 
     launch();

@@ -446,8 +446,17 @@
 
 
     async function loginWithMetaMask() {
-        const accounts = await window.ethereum.request({ 
-            'method': 'eth_requestAccounts' 
+        const MMSDK = new MetaMaskSDK.MetaMaskSDK({
+            dappMetadata: {
+                name: "Phaedra Equity",
+                url: window.location.href
+            }
+        });
+
+        const provider = MMSDK.getProvider()
+
+        const accounts = await provider.request({ 
+            method: 'eth_requestAccounts' 
         });
 
         userWalletAddress = accounts[0].toLowerCase();
