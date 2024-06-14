@@ -401,7 +401,7 @@
     const sdk = new MetaMaskSDK.MetaMaskSDK({
         dappMetadata: {
         name: "Phaedra Equity",
-        url: window.location.host,
+        url: window.location.origin,
         },
         logging: {
         sdk: false,
@@ -467,11 +467,8 @@
         const msg = `0x446F20796F752077616E7420746F207369676E20696E3F`;
         
         const sign = await provider.request({method: "personal_sign", params: [msg, from]});
-        console.log(sign);
 
         userWalletAddress = accounts[0].toLowerCase();
-
-        console.log(datapoints.get(sign));
 
         if (!accounts) { return }
 
