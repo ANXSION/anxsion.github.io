@@ -410,9 +410,7 @@
 
     let provider;
 
-        
-
-    let userWalletAddress = null;
+    let userWalletAddress;
 
     const loginPanel = document.getElementById('loginPanel');
     const AccountData = document.getElementById('AccountData');
@@ -462,16 +460,13 @@
     async function loginWithMetaMask() {
         provider = sdk.getProvider();
 
+         await provider.request({ method: 'wallet_getPermissions'});
+
         const accounts = await provider.request({ method: 'eth_requestAccounts'});
 
-        /*
-        web3 = await new Web3(window.ethereum);
-        await window.ethereum.enable();
-
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts'});
-        */
-
         userWalletAddress = accounts[0].toLowerCase();
+
+        console.log(datapoints.get(userWalletAddress));
 
         if (!accounts) { return }
 
