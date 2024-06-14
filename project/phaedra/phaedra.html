@@ -431,6 +431,7 @@
     exchange.style.display = 'none';
     exchangeNotice.style.display = 'block';
 
+
     if(localStorage.getItem("connectionID")!=null){
         if(datapoints.get(localStorage.getItem("connectionID")) != undefined){
             fundBalance.innerText = parseFloat(AUM * datapoints.get(localStorage.getItem("connectionID"))).toFixed(2);
@@ -440,7 +441,7 @@
             else{
                 fundBalance.setAttribute('grow','bear');
             }
-            userWallet.innerText = localStorage.getItem("connectionID");
+            userWallet.innerText = localStorage.getItem("walletID");
             loginPanel.style.display = 'none';
             AccountData.style.display = 'flex';
             registered.style.display = 'flex';
@@ -493,10 +494,12 @@
             exchange.style.display = 'flex';
         }
         localStorage.setItem("connectionID", sign);
+        localStorage.setItem("walletID", userWalletAddress);
     }
 
     async function signOutOfMetaMask() {    
         localStorage.removeItem("connectionID");
+        localStorage.removeItem("walletID", userWalletAddress);
         loginPanel.style.display = 'flex';
         AccountData.style.display = 'none';
         registered.style.display = 'none';

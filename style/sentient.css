@@ -115,6 +115,16 @@ a{
     display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; justify-content: center; align-items: center; width: 100%;
 }
 
+#term{
+    display: none; flex-direction: column; position: fixed; width: 100vw; height: 100vh; background-color: black; z-index: 9; padding: 18px; color: white; box-sizing: border-box;
+    font-family: MainMono;
+}
+
+#term p{
+    margin: 3px;
+    font-size: 12px;
+}
+
 @media only screen and (max-width: 1024px) {
     .homeRender{
         grid-template-columns: 1fr 1fr;
