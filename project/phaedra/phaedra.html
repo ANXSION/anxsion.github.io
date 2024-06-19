@@ -46,7 +46,7 @@
             --bull: lightgreen;
             --bear: orangered;
             
-            font-size: 18px;
+            font-size: 16px;
             box-sizing: border-box;
         }
         body{
@@ -150,8 +150,17 @@
             align-items: center;
             border-bottom: 3px solid var(--theme);
             color: var(--theme);
-            margin: 12px;
             caret-color: var(--theme);
+            width: 100%;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
         }
 
         .capitallogo{
@@ -164,7 +173,6 @@
             border-bottom: 18px solid var(--theme);
             box-sizing: content-box;
         }
-
         .portfolio{
             display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: start; grid-gap: 9px;
         }
@@ -205,6 +213,25 @@
             width: 12px;
             height: 12px;
             aspect-ratio: 1/1;
+        }
+        .calculator{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+
+
+        @media screen and (max-width: 768px) {
+            .calculator{
+                width: 100%;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
         }
     </style>
     <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
@@ -374,6 +401,211 @@
             </script>
         </div>
         <!-- TradingView Widget END -->
+    </div>
+
+    <br><br>
+    <div style="width: 100%; padding-bottom: 81px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h1>Tools</h1>
+
+        <h2><mark>SIP</mark> Calculator</h2>
+        <div class="calculator">
+            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Monthly investment (Rs.):</div>
+                <input type="number" id="calc1_principle" value="500" min="100" onchange="calculate_cal1()">
+                <div>Estimated return rate (p.a.):</div>
+                <input type="number" id="calc1_rate" value="12" min="1" onchange="calculate_cal1()">
+                <div>Time period (year):</div>
+                <input type="number" id="calc1_time" value="1" min="1" onchange="calculate_cal1()">
+            </div>
+            
+            <br><br>
+
+            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Total invested:</div>
+                <div id="calc1_invested"></div>
+                <div>Estimated returns:</div>
+                <div id="calc1_returns"></div>
+                <div>Total:</div>
+                <div id="calc1_total"></div>
+            </div>
+
+            <script>
+                function calculate_cal1(){
+                    let p = parseFloat(document.getElementById('calc1_principle').value);
+                    let r = parseFloat(document.getElementById('calc1_rate').value);
+                    let t = parseFloat(document.getElementById('calc1_time').value);
+
+                    let recurringPrinciple = p;
+                    let rateM = (r/12).toFixed(2);
+                    let total = p;
+                    let interest = 0;
+                    let returns = 0;
+                    
+                    for (let i = 0; i< (t * 12); i++){
+                        interest = (p * rateM * 1) / 100;
+                        returns = returns + interest;
+                        total = p + interest;
+                        p = total + recurringPrinciple;
+                    }
+
+                    document.getElementById('calc1_invested').innerText = "Rs. "+ Math.round(recurringPrinciple * (t * 12));
+                    document.getElementById('calc1_returns').innerText = "Rs. "+ Math.round(returns);
+                    document.getElementById('calc1_total').innerText = "Rs. "+ Math.round(total);
+                }
+                calculate_cal1();
+            </script>
+        </div>
+        <br><br><br><br>
+
+        <h2><mark>Lumpsum</mark> Calculator</h2>
+        <div class="calculator">
+            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Total investment (Rs.):</div>
+                <input type="number" id="calc2_principle" value="500" min="100" onchange="calculate_cal2()">
+                <div>Estimated return rate (p.a.):</div>
+                <input type="number" id="calc2_rate" value="12" min="1" onchange="calculate_cal2()">
+                <div>Time period (year):</div>
+                <input type="number" id="calc2_time" value="1" min="1" onchange="calculate_cal2()">
+            </div>
+
+            <br><br>
+            
+            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Total invested:</div>
+                <div id="calc2_invested"></div>
+                <div>Estimated returns:</div>
+                <div id="calc2_returns"></div>
+                <div>Total:</div>
+                <div id="calc2_total"></div>
+            </div>
+
+            <script>
+                function calculate_cal2(){
+                    let p = parseFloat(document.getElementById('calc2_principle').value);
+                    let r = parseFloat(document.getElementById('calc2_rate').value);
+                    let t = parseFloat(document.getElementById('calc2_time').value);
+
+                    let rateM = (r/12).toFixed(2);
+                    let total = p;
+                    let interest = 0;
+                    let returns = 0;
+                    
+                    for (let i = 0; i< (t * 12); i++){
+                        interest = (total * rateM * 1) / 100;
+                        returns = returns + interest;
+                        total = total + interest;
+                    }
+
+                    document.getElementById('calc2_invested').innerText = "Rs. "+ p;
+                    document.getElementById('calc2_returns').innerText = "Rs. "+ Math.round(returns);
+                    document.getElementById('calc2_total').innerText = "Rs. "+ Math.round(total);
+                }
+                calculate_cal2();
+            </script>
+        </div>
+        <br><br><br><br>
+
+        
+        <h2><mark>Withdrawl</mark> Calculator</h2>
+        <div class="calculator">
+            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Total investment (Rs.):</div>
+                <input type="number" id="calc3_principle" value="100000" min="100" onchange="calculate_cal3()">
+                <div>Monthly withdrawl:</div>
+                <input type="number" id="calc3_withdraw" value="5000" min="1000" onchange="calculate_cal3()">
+                <div>Estimated return rate (p.a.):</div>
+                <input type="number" id="calc3_rate" value="12" min="1" onchange="calculate_cal3()">
+                <div>Time period (year):</div>
+                <input type="number" id="calc3_time" value="1" min="1" onchange="calculate_cal3()">
+            </div>
+
+            <br><br>
+            
+            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Total invested:</div>
+                <div id="calc3_invested"></div>
+                <div>Total withdrawl:</div>
+                <div id="calc3_totalwithdrawl"></div>
+                <div>Remaining:</div>
+                <div id="calc3_remaining"></div>
+            </div>
+
+            <script>
+                function calculate_cal3(){
+                    let p = parseFloat(document.getElementById('calc3_principle').value);
+                    let w = parseFloat(document.getElementById('calc3_withdraw').value);
+                    let r = parseFloat(document.getElementById('calc3_rate').value);
+                    let t = parseFloat(document.getElementById('calc3_time').value);
+
+                    let rateM = (r/12).toFixed(2);
+                    let total = p;
+                    let totalwithdraw = 0;
+                    let interest = 0;
+                    
+                    for (let i = 0; i< (t * 12); i++){
+                        interest = (total * rateM * 1) / 100;
+                        total = (total + interest) - w;
+                        totalwithdraw = totalwithdraw + w;
+                    }
+
+                    document.getElementById('calc3_invested').innerText = "Rs. "+ p;
+                    document.getElementById('calc3_totalwithdrawl').innerText = "Rs. "+ Math.round(totalwithdraw);
+                    document.getElementById('calc3_remaining').innerText = "Rs. "+ Math.round(total);
+                }
+                calculate_cal3();
+            </script>
+        </div>
+        <br><br><br><br>
+
+        <!--
+        <h2><mark>EMI</mark> Calculator</h2>
+        <div class="calculator">
+            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Loan amount (Rs.):</div>
+                <input type="number" id="calc4_principle" value="100000" min="5000" onchange="calculate_cal4()">
+                <div>Rate of interest (p.a.):</div>
+                <input type="number" id="calc4_rate" value="12" min="1" onchange="calculate_cal4()">
+                <div>Loan tenure (year):</div>
+                <input type="number" id="calc4_time" value="5" min="1" onchange="calculate_cal4()">
+            </div>
+
+            <br><br>
+            
+            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
+                <div>Principle:</div>
+                <div id="calc4_totalprinciple"></div>
+                <div>Total amount:</div>
+                <div id="calc4_totalamount"></div>
+                <div>Total interest:</div>
+                <div id="calc4_interest"></div>
+                <div>EMI:</div>
+                <div id="calc4_emi"></div>
+            </div>
+
+            <script>
+                function calculate_cal4(){
+                    let p = parseFloat(document.getElementById('calc4_principle').value);
+                    let r = parseFloat(document.getElementById('calc4_rate').value);
+                    let t = parseFloat(document.getElementById('calc4_time').value);
+
+                    let rateM = Math.round(r/12);
+                    let tM = t * 12;
+                    let totalloan = p;
+                    let interest = 0;
+                    let totalinterest = 0;
+                    let emi = 0;
+
+                    let temp = (1+rateM);
+
+                    emi = p * ((rateM/100 * Math.pow(temp,tM)) / (Math.pow(temp, tM) - 1));
+
+                    document.getElementById('calc4_emi').innerText = "Rs. "+ Math.round(emi);
+                }
+                calculate_cal4();
+            </script>
+        </div>
+        <br><br><br><br>
+        -->
     </div>
 
     <footer>
