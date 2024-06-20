@@ -1,3 +1,4 @@
+document.getElementById('navMobileDisplay').style.top = '-100%';
 function menuOpen(){
     document.getElementById('menuOpen').style.display = 'none';
     document.getElementById('menuClose').style.display = 'flex';
