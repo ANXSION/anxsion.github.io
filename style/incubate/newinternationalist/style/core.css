@@ -12,6 +12,13 @@
     --baseColor: rgb(255, 255, 255);
     --textColor: rgb(33 37 41);
 }
+a{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 body{
     font-family: Baskerville;
@@ -141,6 +148,9 @@ nav{
 }
 .subscribe{
     background-color: rgb(199, 46, 33); color: white; font-size: 24px; line-height: 32px; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; border: none; font-family: LeagueGothic; width: fit-content; cursor: pointer;
+}
+.subscribe:hover{
+    background-color: rgb(255, 76, 60)
 }
 .COOP{
     width:10%; display: flex; justify-content: center; align-items: center;
