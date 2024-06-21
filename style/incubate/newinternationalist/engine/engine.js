@@ -39,5 +39,34 @@ function countryClose(){
     document.getElementById('countryDataOverlay').style.display = 'none';
 }
 
+function rangerData(){
+  let quickData = parseFloat(document.getElementById('imageSlider').value);
+  let k = quickData;
+  let blurData = 8;
+  let grey = 100;
+
+  if(quickData == 0.5){
+    document.getElementById('rightCompare').style.filter = 'grayscale(100%) blur(8px)';
+    document.getElementById('leftCompare').style.filter = 'grayscale(100%) blur(8px)';
+    
+  }
+
+  else if(quickData > 0.5){
+    k = (1-quickData) * 2;
+    document.getElementById('rightCompare').style.filter = 'grayscale('+ grey * k +'%) blur('+ blurData * k +'px)';
+    document.getElementById('leftCompare').style.filter = 'grayscale(100%) blur(8px)';
+    document.getElementById('rightData').style.opacity = grey * (1-k) + "%";
+    document.getElementById('leftData').style.opacity = "0%";
+  }
+
+  else if(quickData < 0.5){
+    k = quickData * 2;
+    document.getElementById('leftCompare').style.filter = 'grayscale(100%) blur('+ blurData * k +'px)';
+    document.getElementById('rightCompare').style.filter = 'grayscale(100%) blur(8px)';
+    document.getElementById('leftData').style.opacity = grey * (1-k) + "%";
+    document.getElementById('rightData').style.opacity = "0%";
+  }
+}
+
 
 
