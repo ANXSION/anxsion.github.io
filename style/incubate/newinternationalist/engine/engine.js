@@ -38,3 +38,6 @@ function countryClose(){
     document.getElementById('countryDataContainer').style.left = '-100%';
     document.getElementById('countryDataOverlay').style.display = 'none';
 }
+
+
+
