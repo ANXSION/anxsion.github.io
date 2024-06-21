@@ -8,6 +8,11 @@
     src: url(../assets/font/LeagueGothic.ttf);
     font-display: block;
 }
+@font-face {
+    font-family: Sans;
+    src: url(../assets/font/aileron.otf);
+    font-display: block;
+}
 :root{
     --baseColor: rgb(255, 255, 255);
     --textColor: rgb(33 37 41);
@@ -209,7 +214,7 @@ h2{
 figcaption{
     font-size: 12px;
     line-height: 16px;
-    font-family: 'Roboto';
+    font-family: Sans;
     padding-top: 8px;
     color: rgb(107, 114, 128);
 
