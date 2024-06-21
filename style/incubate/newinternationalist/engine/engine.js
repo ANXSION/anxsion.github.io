@@ -16,7 +16,7 @@ function menuClose(){
 var prevScrollpos = window.scrollY ;
 window.onscroll = function() {
   var currentScrollPos = window.scrollY ;
-  if (menuStatus != 1){
+  if (menuStatus != 1 && currentScrollPos>40){
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("nav").style.top = "0";
       } else {
@@ -24,4 +24,17 @@ window.onscroll = function() {
       }
   }
   prevScrollpos = currentScrollPos;
+}
+
+function countryData(country){
+    document.getElementById('countryDataContainer').style.left = '0%';
+    document.getElementById('countryDataOverlay').style.display = 'flex';
+    document.getElementById('countryDataContainer').style.borderTopColor = document.getElementById(country).getAttribute('data-fill');
+    document.getElementById('countryName').innerText = document.getElementById(country).getAttribute('title');
+    document.getElementById('countryCategory').innerText = document.getElementById(country).getAttribute('data-header');
+}
+
+function countryClose(){
+    document.getElementById('countryDataContainer').style.left = '-100%';
+    document.getElementById('countryDataOverlay').style.display = 'none';
 }

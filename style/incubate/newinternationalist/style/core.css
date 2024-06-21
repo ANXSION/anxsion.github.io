@@ -15,9 +15,6 @@
 a{
     text-decoration: none;
     color: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 body{
@@ -225,6 +222,7 @@ img, video{
 footer{
     padding-top: 12px; padding-bottom: 12px; padding-left: 16px; padding-right: 16px; display: flex; flex-direction: column; background-color: rgb(110, 202, 208); justify-content: center; align-items: center;
 }
+  
 @media screen and (min-width: 1024px) {
     #navWeb{
         width: 768px;
