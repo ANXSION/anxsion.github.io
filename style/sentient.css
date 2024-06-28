@@ -33,6 +33,12 @@
     font-display: block;
 }
 
+@font-face {
+    font-family: Industry;
+    src: url('../asset//fonts/LamaFont.ttf');
+    font-display: block;
+}
+
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
     --primary: hsl(0, 0%, 0%);
