@@ -640,19 +640,6 @@
         datapoints.set(clients[i][0], clients[i][1]);
     }
 
-    const sdk = new MetaMaskSDK.MetaMaskSDK({
-        dappMetadata: {
-        name: "Phaedra Equity",
-        url: window.location.origin,
-        },
-        logging: {
-        sdk: false,
-        }
-    });
-
-    let provider;
-
-    let userWalletAddress;
 
     const loginPanel = document.getElementById('loginPanel');
     const AccountData = document.getElementById('AccountData');
@@ -672,6 +659,20 @@
 
     exchange.style.display = 'none';
     exchangeNotice.style.display = 'block';
+
+    const sdk = new MetaMaskSDK.MetaMaskSDK({
+        dappMetadata: {
+        name: "Phaedra Equity",
+        url: window.location.origin,
+        },
+        logging: {
+        sdk: false,
+        }
+    });
+
+    let provider;
+
+    let userWalletAddress;
 
 
     if(localStorage.getItem("connectionID")!=null){
