@@ -245,12 +245,12 @@
 </head>
 <body>
     <nav>
-        <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;">
-            <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid lightgreen; border-bottom: 8px solid lightgreen; box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
-                <div style="width: 12px; height: 12px; background-color: lightgreen; box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
-                </div>
+        <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid lightgreen; border-bottom: 8px solid lightgreen; box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
+            <div style="width: 12px; height: 12px; background-color: lightgreen; box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
             </div>
-            <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>Equity</p>
+        </div>
+        <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>Equity</p>
+            
     </nav>
 
     <div style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
@@ -347,11 +347,11 @@
         <div id="exchange" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 45px; margin-bottom: 45px;">
             
             <label for="valueSent">Value:</label>
-            <input type="number" name="valueSent" id="valueSent" value="0.0001">
+            <input style="width: 9rem;" type="number" name="valueSent" id="valueSent" value="0.0001">
             <br>
 
             <label for="accountNumber">UPI Account:</label>
-            <input type="text" name="accountNumber" id="accountNumber" autocomplete="off" value="username@bank">
+            <input style="width: 9rem;" type="text" name="accountNumber" id="accountNumber" autocomplete="off" value="username@bank">
             <br><br>
 
             <button style="display: flex; justify-content: center; align-items: center; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transfer</button>
@@ -421,11 +421,11 @@
         <div class="calculator">
             <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
                 <div>Monthly investment (Rs.):</div>
-                <input type="number" id="calc1_principle" value="500" min="100" onchange="calculate_cal1()">
+                <input type="number" id="calc1_principle" value="500" min="100" oninput="calculate_cal1()">
                 <div>Estimated return rate (p.a.):</div>
-                <input type="number" id="calc1_rate" value="12" min="1" onchange="calculate_cal1()">
+                <input type="number" id="calc1_rate" value="12" min="1" oninput="calculate_cal1()">
                 <div>Time period (year):</div>
-                <input type="number" id="calc1_time" value="1" min="1" onchange="calculate_cal1()">
+                <input type="number" id="calc1_time" value="1" min="1" oninput="calculate_cal1()">
             </div>
             
             <br><br>
@@ -471,11 +471,11 @@
         <div class="calculator">
             <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
                 <div>Total investment (Rs.):</div>
-                <input type="number" id="calc2_principle" value="500" min="100" onchange="calculate_cal2()">
+                <input type="number" id="calc2_principle" value="500" min="100" oninput="calculate_cal2()">
                 <div>Estimated return rate (p.a.):</div>
-                <input type="number" id="calc2_rate" value="12" min="1" onchange="calculate_cal2()">
+                <input type="number" id="calc2_rate" value="12" min="1" oninput="calculate_cal2()">
                 <div>Time period (year):</div>
-                <input type="number" id="calc2_time" value="1" min="1" onchange="calculate_cal2()">
+                <input type="number" id="calc2_time" value="1" min="1" oninput="calculate_cal2()">
             </div>
 
             <br><br>
@@ -520,13 +520,13 @@
         <div class="calculator">
             <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
                 <div>Total investment (Rs.):</div>
-                <input type="number" id="calc3_principle" value="100000" min="100" onchange="calculate_cal3()">
+                <input type="number" id="calc3_principle" value="100000" min="100" oninput="calculate_cal3()">
                 <div>Monthly withdrawl:</div>
-                <input type="number" id="calc3_withdraw" value="5000" min="1000" onchange="calculate_cal3()">
+                <input type="number" id="calc3_withdraw" value="5000" min="1000" oninput="calculate_cal3()">
                 <div>Estimated return rate (p.a.):</div>
-                <input type="number" id="calc3_rate" value="12" min="1" onchange="calculate_cal3()">
+                <input type="number" id="calc3_rate" value="12" min="1" oninput="calculate_cal3()">
                 <div>Time period (year):</div>
-                <input type="number" id="calc3_time" value="1" min="1" onchange="calculate_cal3()">
+                <input type="number" id="calc3_time" value="1" min="1" oninput="calculate_cal3()">
             </div>
 
             <br><br>
@@ -619,9 +619,11 @@
     </div>
 
     <footer>
-        <div class="capitallogo" style="margin-right: 9px;"></div>
-        <p style="font-size: 18px;  margin: 0; font-family: 'Capital'; text-align: left; margin-right: 18px;">Phaedra<br>Equity</p>
-        <p>&copy; 2024</p>
+        <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid lightgreen; border-bottom: 8px solid lightgreen; box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
+            <div style="width: 12px; height: 12px; background-color: lightgreen; box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
+            </div>
+        </div>
+        <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>Equity</p>
     </footer>
     
 </body>
