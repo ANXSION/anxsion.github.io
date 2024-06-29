@@ -46,13 +46,13 @@
         }
         
         :root{
-            --base: black;
-            --top: white;
-            --theme: lightgreen;
-            --bull: lightgreen;
+            --base: white;
+            --top: black;
+            --theme: hsl(120, 73%, 75%);
+            --bull: hsl(120, 73%, 75%);
             --bear: orangered;
             
-            font-size: 16px;
+            --base-font: 16px;
             box-sizing: border-box;
         }
         body{
@@ -68,6 +68,7 @@
             text-rendering:optimizeLegibility;
             padding-left: 1.24rem;
             padding-right: 1.24rem;
+            font-size: var(--base-font);
         }
         nav{
             display: flex;
@@ -169,16 +170,6 @@
             -moz-appearance: textfield;
         }
 
-        .capitallogo{
-            width: 18px;
-            height: 18px;
-            background-color: rgba(0, 0, 0, 0);
-            border-top: 18px solid rgba(0, 0, 0, 0);
-            border-left: 18px solid rgba(0, 0, 0, 0);
-            border-right: 18px solid var(--theme);
-            border-bottom: 18px solid var(--theme);
-            box-sizing: content-box;
-        }
         .portfolio{
             display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: start; grid-gap: 9px;
         }
@@ -245,8 +236,8 @@
 </head>
 <body>
     <nav>
-        <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid lightgreen; border-bottom: 8px solid lightgreen; box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
-            <div style="width: 12px; height: 12px; background-color: lightgreen; box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
+        <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid var(--theme); border-bottom: 8px solid var(--theme); box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
+            <div style="width: 12px; height: 12px; background-color: var(--theme); box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
             </div>
         </div>
         <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>Equity</p>
@@ -283,8 +274,8 @@
         <h1><mark>Persistent</mark> Growth</h1>
         <div style="margin: 5%;"> 
             <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
-                <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0); padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
-                    <div style="width:9px; height: 9px; border-top: 3px solid lightgreen; border-left: 3px solid lightgreen; border-bottom: 3px solid rgba(0,0,0,0); border-right: 3px solid rgba(0,0,0,0);"></div>
+                <div style="width:9px; height: 9px; border-top: 3px solid var(--theme); border-left: 3px solid var(--theme); border-bottom: 3px solid transparent; border-right: 3px solid transparent; padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
+                    <div style="width:9px; height: 9px; border-top: 3px solid var(--theme); border-left: 3px solid var(--theme); border-bottom: 3px solid transparent; border-right: 3px solid transparent;"></div>
                 </div>
                 <h1 style="font-size: 3rem; text-align: center; width: fit-content;"><mark>25%</mark> <span style="font-size: 0.75rem;">Anually</span></h1>            
             </div>
@@ -405,7 +396,7 @@
                     "showSymbolLogo": true,
                     "isTransparent": true,
                     "displayMode": "regular",
-                    "colorTheme": "dark",
+                    "colorTheme": "light",
                     "locale": "en"
                 }
             </script>
@@ -619,8 +610,8 @@
     </div>
 
     <footer>
-        <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid lightgreen; border-bottom: 8px solid lightgreen; box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
-            <div style="width: 12px; height: 12px; background-color: lightgreen; box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
+        <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid var(--theme); border-bottom: 8px solid var(--theme); box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
+            <div style="width: 12px; height: 12px; background-color: var(--theme); box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
             </div>
         </div>
         <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>Equity</p>
@@ -629,8 +620,8 @@
 </body>
 
 <script>
-    let AUM = 6568;
-    let pastAUM = 5999;
+    let AUM = 43786;
+    let pastAUM = 42786;
     
     let clients = [
         ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', 1.0]

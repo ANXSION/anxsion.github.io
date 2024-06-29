@@ -41,9 +41,9 @@
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
-    --primary: hsl(0, 0%, 0%);
-    --secondary: hsl(0, 0%, 1000%);
-    --accent: hsl(0, 0%, 30%);
+    --primary: white;
+    --secondary: black;
+    --accent: hsl(120, 73%, 75%);
     --fontWeb: 1.25rem;
     --fontMobile: 1rem;
 
@@ -78,10 +78,6 @@ h3{
     font-weight: normal;
 }
 
-sup{
-    
-}
-
 body{
     height: 100%;
     width: 100%;
@@ -96,12 +92,13 @@ body{
     padding: 0;  
     transition: 0.2s all;
     z-index: 0;
-    accent-color: hsl(120, 73%, 75%);
+    accent-color: var(--accent);
 }
 
 a{
     font-size: 1rem;
     color: var(--secondary);
+    background-color: transparent;
     text-decoration: none;
 }
 

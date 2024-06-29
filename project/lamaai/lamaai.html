@@ -45,9 +45,22 @@
             src: url('../../asset/fonts/LamaFont.ttf');
             font-display: block;
         }
+        :root{
+            -webkit-tap-highlight-color:rgba(255,255,255,0);
+            --primary: white;
+            --secondary: black;
+            --overlay: hsl(0, 0%, 90%);
+            --accent: hsl(120, 73%, 75%);
+            --fontWeb: 1.25rem;
+            --fontMobile: 1rem;
+
+            --element-animation: all 0.3s;
+
+            --base-font: 14px;
+        }
         body{
-            background-color: black;
-            color: white;
+            background-color: var(--primary);
+            color: var(--secondary);
             display: grid;
             height: 100%;
             grid-template-columns: 1fr;
@@ -55,10 +68,10 @@
             gap: 9px;
             justify-content: center;
             align-items: start;
-            font-size: 17px;
             list-style: 22px;
             margin: 0;
             font-family: MainFont;
+            font-size: var(--base-font);
         }
         nav{
             
@@ -72,7 +85,7 @@
             justify-content: right;
             align-items: center;
             text-align: left;
-            background: rgb(27, 27, 27);
+            background: var(--overlay);
             border-radius: 22px;
             padding: 18px;
             margin: 0;
@@ -80,22 +93,21 @@
             margin-top: 18px;
             margin-bottom: 18px;
             user-select: none;
-            font-size: 17px;
             list-style: 22px;
         }
         .example{
             width: fit-content;
             text-align: left;
             padding: 18px;
-            background-color: rgb(27, 27, 27);
+            background-color: var(--overlay);
             border-radius: 22px;
             box-sizing: border-box;
             cursor: pointer; margin: 9px;
-            font-size: 17px;
             list-style: 22px;
+            font-size: 1rem;
         }
         p{
-            font-size: 17px;
+            font-size: 1rem;
             list-style: 22px;
             margin-top: 18px;
             margin-bottom: 18px;
@@ -124,22 +136,22 @@
             height: 100%;
             background-color: transparent;
             resize: none;
-            color: white;
+            color: var(--secondary);
             overflow-y: hidden;
             border: none;
             outline: none;
             font-family: MainFont;
-            font-size: 17px;
+            font-size: 1rem;
             list-style: 22px;
             padding: 9px;
             box-sizing: border-box;
-            caret-color: white;
+            caret-color: var(--secondary);
         }
         button{
             border: none;
             cursor: pointer;
-            background-color: white;
-            color: black;
+            background-color: var(--secondary);
+            color: var(--primary);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -149,7 +161,7 @@
             user-select: none;
         }
         button:disabled{
-            background-color: gray;
+            background-color: rgb(33, 33, 33);
         }
         .warn{
             background-color: transparent;
@@ -175,9 +187,9 @@
 </head>
 <body>
     <nav style="display: flex; justify-content: center; align-items: center; height: 100%;">
-        <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;">
-            <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid lightgreen; border-bottom: 8px solid lightgreen; box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
-                <div style="width: 12px; height: 12px; background-color: lightgreen; box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
+        <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0); display: flex; justify-content: center; align-items: center;">
+            <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid var(--accent); border-bottom: 8px solid var(--accent); box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
+                <div style="width: 12px; height: 12px; background-color: var(--accent); box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
                 </div>
             </div>
             <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>AI Systems</p>
@@ -198,16 +210,13 @@
             </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 2fr 1fr;  justify-content: center; align-items: center; height: 120px; width: 100%; position: fixed; bottom: 0; left: 0; gap: 3px; box-sizing: border-box; background-color: black;">
+        <div style="display: flex;  justify-content: center; align-items: center; height: 120px; width: 100%; position: fixed; bottom: 0; left: 0; box-sizing: border-box; background-color: var(--primary);">
 
-            <div style="display: grid; grid-template-columns: 1fr max-content; background-color: rgb(27, 27, 27); padding: 9px; box-sizing: border-box; width: 90%; border-radius: 22px; gap: 9px; height: 100%; justify-content: center; align-items: center; width: auto; margin-right: 10%; margin-left: 10%;">
+            <div style="display: grid; grid-template-columns: 1fr max-content; background-color: var(--overlay); padding: 9px; box-sizing: border-box; border-radius: 22px; gap: 9px; height: 70%; justify-content: center; align-items: center; width: 100%; margin-left: 10%; margin-right: 10%;">
                 <textarea id="inputPanel" placeholder="Chat with Eclipse" rows="2"></textarea>                
                 <button id="generate"><p class="material-symbols-outlined" >send</p></button>
                 
             </div>
-            <p style="margin: 0; font-size: 0.75rem; padding: 0px; width: 100%; text-align: center;">Made by Anurag</p>
-            
-            
         </div>
     </main>
 
