@@ -160,8 +160,25 @@
             margin: auto;
             user-select: none;
         }
+        button{
+            border: none;
+            cursor: pointer;
+            background-color: var(--secondary);
+            color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1/1;
+            border-radius: 22px;
+            margin: auto;
+            user-select: none;
+        }
         button:disabled{
-            background-color: rgb(33, 33, 33);
+            background-color: var(--secondary);
+        }
+        button:hover{
+            background-color: var(--accent);
+            color: var(--secondary);
         }
         .warn{
             background-color: transparent;
