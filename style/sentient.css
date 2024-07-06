@@ -41,8 +41,8 @@
 
 :root{
     -webkit-tap-highlight-color:rgba(255,255,255,0);
-    --primary: white;
-    --secondary: black;
+    --primary: black;
+    --secondary: white;
     --accent: hsl(120, 73%, 75%);
     --fontWeb: 1.25rem;
     --fontMobile: 1rem;

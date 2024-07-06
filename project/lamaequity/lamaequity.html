@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="msapplication-navbutton-color" content="white" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
-    <meta name="theme-color" content="white" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="black" />
     <title>Lama Equity</title>
 
     <meta property="og:title" content="Lama Equity | Anurag Lama" />
@@ -46,8 +46,8 @@
         }
         
         :root{
-            --base: white;
-            --top: black;
+            --base: black;
+            --top: white;
             --theme: hsl(120, 73%, 75%);
             --bull: hsl(120, 73%, 75%);
             --bear: orangered;
@@ -93,7 +93,7 @@
             box-sizing: border-box;
         }
         button{
-            background-color: var(--top);
+            background-color: var(--theme);
             color: var(--base);
             display: flex;
             justify-content: center;
@@ -108,8 +108,8 @@
             border-radius: 3rem;
         }
         button:hover{
-            background-color: var(--theme);
-            color: var(--top);
+            background-color: var(--top);
+            color: var(--base);
         }
         h1{
             font-size: 3rem;
@@ -129,7 +129,7 @@
         }
         mark{
             background-color: transparent;
-            color: var(--top);
+            color: var(--theme);
         }
         mark[grow='bull']{
             color: var(--bull)!important;
@@ -400,7 +400,7 @@
                     "showSymbolLogo": true,
                     "isTransparent": true,
                     "displayMode": "regular",
-                    "colorTheme": "light",
+                    "colorTheme": "dark",
                     "locale": "en"
                 }
             </script>
