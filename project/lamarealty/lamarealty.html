@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="theme-color" content="black" />
+    <title>Lama Realty</title>
+
+    <meta property="og:title" content="Lama Realty | Anurag Lama" />
+    <meta property="og:description" content="The official website of the Anurag Lama." />
+    <meta property="og:image" content="../../asset/arts/About.avif" />
+    <meta property="og:image:alt" content="ANXSION" />
+
+    <meta name="twitter:title" content="Lama Realty | Anurag Lama" />
+    <meta name="twitter:description" content="The official website of the Anurag Lama." />
+    <meta name="twitter:url" content="https://anxsion.github.io/project/dendriticdynamics/dendriticdynamics.html" />
+    <meta name="twitter:image:src" content="../../asset/arts/About.avif" />
+    <meta name="twitter:image:alt" content="ANXSION" />
+    <meta name="twitter:creator" content="@ANXSION" />
+    
+    <link rel="icon" type="image/png" href="../../asset/icon/icon_apple.png">
+    <link rel="apple-touch-startup-image" href="../../asset/icon/icon_apple.png" media="orientation: portrait" />
+    <link rel="apple-touch-startup-image" href="../../asset/icon/icon_apple.png" media="orientation: landscape" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ANXSION" />
+    <meta name="application-name" content="ANXSION" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        @font-face {
+            font-family: MainFont;
+            src: url('../../asset/fonts/SFPro.otf');
+            font-display: block;
+        }
+        @font-face {
+            font-family: Industry;
+            src: url('../../asset/fonts/LamaFont.ttf');
+            font-display: block;
+        }
+        :root{
+            -webkit-tap-highlight-color:rgba(255,255,255,0);
+            --primary: black;
+            --secondary: white;
+            --overlay: hsl(0, 0%, 10%);
+            --accent: hsl(120, 73%, 75%);
+            --fontWeb: 1.25rem;
+            --fontMobile: 1rem;
+
+            --element-animation: all 0.3s;
+
+            --base-font: 14px;
+        }
+        body{
+            background-color: var(--primary);
+            color: var(--secondary);
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: 22px;
+            margin: 0;
+            font-family: MainFont;
+            font-size: var(--base-font);
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: content-box;
+            padding-bottom: 32px;
+        }
+        p{
+            font-size: 1rem;
+            list-style: 22px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            text-align: justify;
+            user-select: none;
+        }
+        span{
+            font-size: 17px;
+            list-style: 22px;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            text-align: left;
+            user-select: none;
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            background-color: var(--accent);
+            color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 22px;
+            margin: auto;
+            user-select: none;
+            height: fit-content;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            padding-right: 16px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        button:hover{
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        .estateContainer{
+            display: flex; flex-direction: column; justify-content: center; align-items: start; border: 2px solid var(--accent); position: relative; aspect-ratio: 16/9; text-decoration: none; color: var(--secondary);
+        }
+        .estateContainerImage{
+            z-index: 1; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; object-fit: cover; filter:grayscale(100%)
+        }
+        .estateContainerNoImage{
+            z-index: 1; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; filter:grayscale(100%); margin: 0;
+        }
+        .estateContainerGradient{
+            background-image: linear-gradient(to right, hsla(120, 73%, 75%, 50%),rgba(0,0,0,0)); z-index: 2; width: 100%; height: 100%; position: absolute; top: 0; right: 0;
+            left: 0;
+        }
+        .estateContainerType{
+            position: absolute; top: 0; left: 0; padding: 8px; background-color: var(--accent); margin: 0; color: var(--primary); height: 24px; display: flex; justify-content: center; align-items: center; font-size: 2rem; z-index: 3;
+        }
+        .estateContainerSize{
+            position: absolute; top: 40px; left: 0; padding: 8px; background-color: var(--secondary); margin: 0; color: var(--primary); height: 16px; display: flex; justify-content: center; align-items: center; font-size: 0.75rem;  z-index: 3;
+        }
+        .estateContainerPrice{
+            position: absolute; bottom: 0px; right: 0; padding: 8px; background-color: var(--accent); margin: 0; color: var(--primary); height: 16px; display: flex; justify-content: center; align-items: center; font-size: 0.75rem;  z-index: 3;
+        }
+        .estateContainerLocation{
+            position: absolute; bottom: 0px; left: 0; padding: 8px; background-color: var(--accent); margin: 0; color: var(--primary); height: 16px; display: flex; justify-content: center; align-items: center; font-size: 0.75rem;  z-index: 3;
+        }
+        main{
+            height: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-left: 16px; margin-right: 16px; padding: auto; max-width: 768px;
+        }
+        @media screen and (max-width: 520px) {
+            main{
+                grid-template-columns: 1fr;
+            }
+            .estateContainerType{
+                font-size: 1.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <div style="width: 100%; height: 100%; background-color: rgba(0,0,0,0); display: flex; justify-content: center; align-items: center;">
+            <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid var(--accent); border-bottom: 8px solid var(--accent); box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
+                <div style="width: 12px; height: 12px; background-color: var(--accent); box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
+                </div>
+            </div>
+            <p style="font-size: 18px;  margin: 0; font-family: 'Industry'; text-align: left;">LAMA<br>Realty</p>
+    </nav>
+
+    <main>
+        <a href="tel:9832909233" class="estateContainer">
+            <img src="../../asset/estate/siliguri2.avif" alt="" class="estateContainerImage">
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Flat</p>
+            <p class="estateContainerSize">870 Sq. ft.</p>
+            <p class="estateContainerPrice">Rs. 30 Lakhs</p>
+            <p class="estateContainerLocation">Siliguri Town, Siliguri</p> 
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <p class="estateContainerNoImage">Image Unavailable.</p>
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Flat</p>
+            <p class="estateContainerSize">900 Sq. ft.</p>
+            <p class="estateContainerPrice">Rs. 35 Lakhs</p>
+            <p class="estateContainerLocation">Pradhan Nagar, Siliguri</p>
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <img src="../../asset/estate/siliguri1.avif" alt="" class="estateContainerImage">
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Plot With Structure</p>
+            <p class="estateContainerSize">2.5 Kattha</p>
+            <p class="estateContainerPrice">Rs. 1.8 Crore</p>
+            <p class="estateContainerLocation">Deshbandhupara, Siliguri</p>
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <p class="estateContainerNoImage">Image Unavailable.</p>
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Plot With Structure</p>
+            <p class="estateContainerSize">29 Kattha</p>
+            <p class="estateContainerPrice">Rs. 2 Crore</p>
+            <p class="estateContainerLocation">Near Airport, Bagdogra</p> 
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <img src="../../asset/estate/gossaipur1.avif" alt="" class="estateContainerImage">
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Vacant Plot</p>
+            <p class="estateContainerSize">2 Biga</p>
+            <p class="estateContainerPrice">Rs. 4 Lakhs / Kattha</p>
+            <p class="estateContainerLocation">Gossaipur</p>
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <img src="../../asset/estate/naxalbari1.avif" alt="" class="estateContainerImage">
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Vacant Plot</p>
+            <p class="estateContainerSize">3 Kattha</p>
+            <p class="estateContainerPrice">Rs. 15 Lakhs</p>
+            <p class="estateContainerLocation">Hatigisha, Naxalbari</p>
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <p class="estateContainerNoImage">Image Unavailable.</p>
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Vacant Plot</p>
+            <p class="estateContainerSize">17 Biga</p>
+            <p class="estateContainerPrice">Rs. 15 Lakhs / Biga</p>
+            <p class="estateContainerLocation">Main Town, Naxalbari</p>
+        </a>
+
+        <a href="tel:9832909233" class="estateContainer">
+            <p class="estateContainerNoImage">Image Unavailable.</p>
+            <div class="estateContainerGradient"></div>
+            <p class="estateContainerType">Vacant Plot</p>
+            <p class="estateContainerSize">18 Biga</p>
+            <p class="estateContainerPrice">Rs. 40 Lakhs / Kattha</p>
+            <p class="estateContainerLocation">Uttora Township, Shiv Mandir</p>
+        </a>
+    </main>
+
+        <script>
+            
+        </script>
+</body>
+</html>
