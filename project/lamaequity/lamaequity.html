@@ -69,6 +69,8 @@
             padding-left: 1.24rem;
             padding-right: 1.24rem;
             font-size: var(--base-font);
+            margin: auto;
+            max-width: 1080px;
         }
         nav{
             display: flex;
@@ -285,332 +287,39 @@
             </div>
 
             <br><br>
-            <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: start; text-align: center; gap: 9px;">
-                <div>
-                    <p>Fee</p>
-                    <h2><mark>3%</mark></h2>
-                </div>
-                <div>
-                    <p>Exit Load</p>
-                    <h2><mark>1.5%</mark></h2>
-                </div>
-            </div>
+            <div style="display: grid; grid-template-columns: 1fr 2fr; justify-content: start; align-items: start; gap: 9px; margin-left: 2rem; margin-right: 2rem;">
+                <p><mark>AUM</mark></p>
+                <p>Rs. <span id="AUM"></span></p>
 
-            <br><br>
-            <div class="portfolioContainer">
-                <div class="portfolioBar" style="grid-template-columns:90% 5% 5%">
-                    <div style="background-color: hsl(120, 73%, 55%);"></div>
-                    <div style="background-color: hsl(120, 73%, 35%);"></div>
-                    <div style="background-color: hsl(120, 73%, 15%);"></div>
-                </div>
-                
-                <div class="PortfolioLegends">
-                    <div class="PortfolioLegendsUnits">
-                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 55%);"></div>
-                        <p>Equity and Equity Related Instruments</p>
-                    </div>
-                    <div class="PortfolioLegendsUnits">
-                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 35%);"></div>
-                        <p>High Liquidity Debt Instrument</p>
-                    </div>
-                    <div class="PortfolioLegendsUnits">
-                        <div class="PortfolioLegendsUnitsIcon" style="background-color: hsl(120, 73%, 15%);"></div>
-                        <p>Cash</p>
-                    </div>
-                </div>
+                <p><mark>NAV</mark></p>
+                <p>Rs. <span id="NAV"></span> (as on <span id="NAVDATE"></span>)</p>
+
+                <p><mark>Risk</mark></p>
+                <p>Very High (Your principle is at very high risk)</p>
+
+                <p><mark>Minimum Investment Amount</mark></p>
+                <p>Rs. 10,000</p>
+
+                <p><mark>Lock-In Period</mark></p>
+                <p>3 Months</p>
+
+                <p><mark>Expense Fee</mark></p>
+                <p>3%</p>
+
+                <p><mark>Exit Load</mark></p>
+                <p>1.5% (if redeemed on or before completion of 3 months or 90 days from the date of allotments of units)</p>
+
+                <p><mark>Objective</mark></p>
+                <p>The primary investment objective of the fund is to seek to generate capital appreciation & provide long-term growth opportunities by investing in stocks using quant models along with human review. There is no assurance that the investment objective of the fund will be realized.</p>
+
+                <p><mark>Exit Load</mark></p>
+                <p>1.5% (if redeemed on or before completion of 3 months or 90 days from the date of allotments of units)</p>
+
+                <p><mark>Asset Allocation Pattern</mark></p>
+                <p>Equity and equity related instruments: 80-100%<br>Debt and Money market instruments: 0-20%<br>Units issued by REITs & InvITs: 0-10%</p>
+
             </div>
         </div>
-    </div>
-
-    <div  style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
-        <h1><mark>Secure</mark> Exchange</h1>
-
-        <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: start; text-align: center; gap: 9px;">
-            <div>
-                <p>Fee</p>
-                <h2><mark>1%</mark></h2>
-            </div>
-            <div>
-                <p>Time</p>
-                <h2><mark>15min</mark></h2>
-            </div>
-        </div>
-
-        <br><br>
-        <h2 id="exchangeNotice"><mark>Connect</mark> a wallet to exchange.</h2>
-
-        <div id="exchange" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 45px; margin-bottom: 45px;">
-            
-            <label for="valueSent" style="margin-bottom: 1rem;">Value:</label>
-            <input style="width: 9rem;" type="number" name="valueSent" id="valueSent" value="0.0001">
-            <br>
-
-            <label for="valueSent" style="margin-bottom: 1rem;">UPI Account:</label>
-            <input style="width: 9rem;" type="text" name="accountNumber" id="accountNumber" autocomplete="off" value="username@bank">
-            <br><br>
-
-            <button style="display: flex; justify-content: center; align-items: center; border: none; padding: 9px; padding-left: 10%; padding-right: 10%; font-size: 1rem; cursor: pointer; width: fit-content;" onclick="sendTransactionData()">Transfer</button>
-
-        </div>
-
-        <br><br>
-        <!-- TradingView Widget BEGIN -->
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                {
-                    "symbols": [
-                    {
-                        "description": "BTC",
-                        "proName": "CRYPTO:BTCUSD"
-                    },
-                    {
-                        "description": "ETH",
-                        "proName": "CRYPTO:ETHUSD"
-                    },
-                    {
-                        "description": "LTC",
-                        "proName": "CRYPTO:LTCUSD"
-                    },
-                    {
-                        "description": "USDT",
-                        "proName": "CRYPTO:USDTUSD"
-                    },
-                    {
-                        "description": "BNB",
-                        "proName": "CRYPTO:BNBUSD"
-                    },
-                    {
-                        "description": "SOL",
-                        "proName": "CRYPTO:SOLUSD"
-                    },
-                    {
-                        "description": "XRP",
-                        "proName": "CRYPTO:XRPUSD"
-                    },
-                    {
-                        "description": "AVAX",
-                        "proName": "CRYPTO:AVAXUSD"
-                    },
-                    {
-                        "description": "MATIC",
-                        "proName": "CRYPTO:MATICUSD"
-                    }
-                    ],
-                    "showSymbolLogo": true,
-                    "isTransparent": true,
-                    "displayMode": "regular",
-                    "colorTheme": "dark",
-                    "locale": "en"
-                }
-            </script>
-        </div>
-        <!-- TradingView Widget END -->
-    </div>
-
-    <br><br>
-    <div style="width: 100%; padding-bottom: 81px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h1>Tools</h1>
-
-        <h2><mark>SIP</mark> Calculator</h2>
-        <div class="calculator">
-            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Monthly investment (Rs.):</div>
-                <input type="number" id="calc1_principle" value="500" min="100" oninput="calculate_cal1()">
-                <div>Estimated return rate (p.a.):</div>
-                <input type="number" id="calc1_rate" value="12" min="1" oninput="calculate_cal1()">
-                <div>Time period (year):</div>
-                <input type="number" id="calc1_time" value="1" min="1" oninput="calculate_cal1()">
-            </div>
-            
-            <br><br>
-
-            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Total invested:</div>
-                <div id="calc1_invested"></div>
-                <div>Estimated returns:</div>
-                <div id="calc1_returns"></div>
-                <div>Total:</div>
-                <div id="calc1_total"></div>
-            </div>
-
-            <script>
-                function calculate_cal1(){
-                    let p = parseFloat(document.getElementById('calc1_principle').value);
-                    let r = parseFloat(document.getElementById('calc1_rate').value);
-                    let t = parseFloat(document.getElementById('calc1_time').value);
-
-                    let recurringPrinciple = p;
-                    let rateM = (r/12).toFixed(2);
-                    let total = p;
-                    let interest = 0;
-                    let returns = 0;
-                    
-                    for (let i = 0; i< (t * 12); i++){
-                        interest = (p * rateM * 1) / 100;
-                        returns = returns + interest;
-                        total = p + interest;
-                        p = total + recurringPrinciple;
-                    }
-
-                    document.getElementById('calc1_invested').innerText = "Rs. "+ Math.round(recurringPrinciple * (t * 12));
-                    document.getElementById('calc1_returns').innerText = "Rs. "+ Math.round(returns);
-                    document.getElementById('calc1_total').innerText = "Rs. "+ Math.round(total);
-                }
-                calculate_cal1();
-            </script>
-        </div>
-        <br><br><br><br>
-
-        <h2><mark>Lumpsum</mark> Calculator</h2>
-        <div class="calculator">
-            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Total investment (Rs.):</div>
-                <input type="number" id="calc2_principle" value="500" min="100" oninput="calculate_cal2()">
-                <div>Estimated return rate (p.a.):</div>
-                <input type="number" id="calc2_rate" value="12" min="1" oninput="calculate_cal2()">
-                <div>Time period (year):</div>
-                <input type="number" id="calc2_time" value="1" min="1" oninput="calculate_cal2()">
-            </div>
-
-            <br><br>
-            
-            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Total invested:</div>
-                <div id="calc2_invested"></div>
-                <div>Estimated returns:</div>
-                <div id="calc2_returns"></div>
-                <div>Total:</div>
-                <div id="calc2_total"></div>
-            </div>
-
-            <script>
-                function calculate_cal2(){
-                    let p = parseFloat(document.getElementById('calc2_principle').value);
-                    let r = parseFloat(document.getElementById('calc2_rate').value);
-                    let t = parseFloat(document.getElementById('calc2_time').value);
-
-                    let rateM = (r/12).toFixed(2);
-                    let total = p;
-                    let interest = 0;
-                    let returns = 0;
-                    
-                    for (let i = 0; i< (t * 12); i++){
-                        interest = (total * rateM * 1) / 100;
-                        returns = returns + interest;
-                        total = total + interest;
-                    }
-
-                    document.getElementById('calc2_invested').innerText = "Rs. "+ p;
-                    document.getElementById('calc2_returns').innerText = "Rs. "+ Math.round(returns);
-                    document.getElementById('calc2_total').innerText = "Rs. "+ Math.round(total);
-                }
-                calculate_cal2();
-            </script>
-        </div>
-        <br><br><br><br>
-
-        
-        <h2><mark>Withdrawl</mark> Calculator</h2>
-        <div class="calculator">
-            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Total investment (Rs.):</div>
-                <input type="number" id="calc3_principle" value="100000" min="100" oninput="calculate_cal3()">
-                <div>Monthly withdrawl:</div>
-                <input type="number" id="calc3_withdraw" value="5000" min="1000" oninput="calculate_cal3()">
-                <div>Estimated return rate (p.a.):</div>
-                <input type="number" id="calc3_rate" value="12" min="1" oninput="calculate_cal3()">
-                <div>Time period (year):</div>
-                <input type="number" id="calc3_time" value="1" min="1" oninput="calculate_cal3()">
-            </div>
-
-            <br><br>
-            
-            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Total invested:</div>
-                <div id="calc3_invested"></div>
-                <div>Total withdrawl:</div>
-                <div id="calc3_totalwithdrawl"></div>
-                <div>Remaining:</div>
-                <div id="calc3_remaining"></div>
-            </div>
-
-            <script>
-                function calculate_cal3(){
-                    let p = parseFloat(document.getElementById('calc3_principle').value);
-                    let w = parseFloat(document.getElementById('calc3_withdraw').value);
-                    let r = parseFloat(document.getElementById('calc3_rate').value);
-                    let t = parseFloat(document.getElementById('calc3_time').value);
-
-                    let rateM = (r/12).toFixed(2);
-                    let total = p;
-                    let totalwithdraw = 0;
-                    let interest = 0;
-                    
-                    for (let i = 0; i< (t * 12); i++){
-                        interest = (total * rateM * 1) / 100;
-                        total = (total + interest) - w;
-                        totalwithdraw = totalwithdraw + w;
-                    }
-
-                    document.getElementById('calc3_invested').innerText = "Rs. "+ p;
-                    document.getElementById('calc3_totalwithdrawl').innerText = "Rs. "+ Math.round(totalwithdraw);
-                    document.getElementById('calc3_remaining').innerText = "Rs. "+ Math.round(total);
-                }
-                calculate_cal3();
-            </script>
-        </div>
-        <br><br><br><br>
-
-        <!--
-        <h2><mark>EMI</mark> Calculator</h2>
-        <div class="calculator">
-            <div style="display: grid; gap: 9px; grid-template-columns: 3fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Loan amount (Rs.):</div>
-                <input type="number" id="calc4_principle" value="100000" min="5000" onchange="calculate_cal4()">
-                <div>Rate of interest (p.a.):</div>
-                <input type="number" id="calc4_rate" value="12" min="1" onchange="calculate_cal4()">
-                <div>Loan tenure (year):</div>
-                <input type="number" id="calc4_time" value="5" min="1" onchange="calculate_cal4()">
-            </div>
-
-            <br><br>
-            
-            <div style="display: grid; gap: 9px; grid-template-columns: 1fr 1fr; justify-content: space-around; align-items: center; width: 100%;">
-                <div>Principle:</div>
-                <div id="calc4_totalprinciple"></div>
-                <div>Total amount:</div>
-                <div id="calc4_totalamount"></div>
-                <div>Total interest:</div>
-                <div id="calc4_interest"></div>
-                <div>EMI:</div>
-                <div id="calc4_emi"></div>
-            </div>
-
-            <script>
-                function calculate_cal4(){
-                    let p = parseFloat(document.getElementById('calc4_principle').value);
-                    let r = parseFloat(document.getElementById('calc4_rate').value);
-                    let t = parseFloat(document.getElementById('calc4_time').value);
-
-                    let rateM = Math.round(r/12);
-                    let tM = t * 12;
-                    let totalloan = p;
-                    let interest = 0;
-                    let totalinterest = 0;
-                    let emi = 0;
-
-                    let temp = (1+rateM);
-
-                    emi = p * ((rateM/100 * Math.pow(temp,tM)) / (Math.pow(temp, tM) - 1));
-
-                    document.getElementById('calc4_emi').innerText = "Rs. "+ Math.round(emi);
-                }
-                calculate_cal4();
-            </script>
-        </div>
-        <br><br><br><br>
-        -->
     </div>
 
     <footer>
@@ -626,10 +335,19 @@
 <script>
     let AUM = 43786;
     let pastAUM = 42786;
+    let navDataDate = '18/07/2024';
     
     let clients = [
-        ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', 1.0]
+        ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', 1.0],
     ];
+
+    const AUMID = document.getElementById('AUM');
+    const NAVID = document.getElementById('NAV');
+    const NAVDATE = document.getElementById('NAVDATE');
+
+    AUMID.innerText = AUM;
+    NAVID.innerText = AUM / clients.length;
+    NAVDATE.innerText = navDataDate;
 
     const datapoints = new Map();
 
@@ -748,37 +466,5 @@
         exchangeNotice.style.display = 'block';
     }
 
-
-    async function sendTransactionData(){
-        provider = sdk.getProvider();
-
-        const senderId = await provider.request({ method: 'eth_requestAccounts'});
-        
-        let gasquant = parseInt(21000).toString(16);
-        let gasfee = parseInt(9000000000).toString(16);
-        let priorityfee = parseInt(3000000000).toString(16);
-        let plainValue = parseFloat(document.getElementById('valueSent').value) * 1000000000000000000;
-        let plainAddress = document.getElementById('accountNumber').value + "/" + (parseFloat(document.getElementById('valueSent').value) * 0.01);
-        let hashedAddress = '0x';
-        let hashedValue = '0x'+plainValue.toString(16);
-
-        for(i=0;i<plainAddress.length; i++){
-            hashedAddress=hashedAddress.concat(parseInt(plainAddress.charCodeAt(i)).toString(16).padStart(2, '0'));
-        }
-
-        await provider.request({
-            method: "eth_sendTransaction",
-            params: [
-                {
-                to: "0x431c2e7f4e96288cd4c0207d67a4faaba14f9aa1",
-                from: senderId[0].toLowerCase(),
-                value: hashedValue,
-                data: hashedAddress,
-                gas: "0x"+gasquant
-                }
-            ]
-        });
-    }
-    
 </script>
 </html>
