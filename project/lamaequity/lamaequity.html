@@ -372,9 +372,6 @@
     registered.style.display = 'none';
     unregistered.style.display = 'none';
 
-    exchange.style.display = 'none';
-    exchangeNotice.style.display = 'block';
-
     const sdk = new MetaMaskSDK.MetaMaskSDK({
         dappMetadata: {
         name: "Lama Equity",
@@ -403,14 +400,11 @@
             loginPanel.style.display = 'none';
             AccountData.style.display = 'flex';
             registered.style.display = 'flex';
-            exchange.style.display = 'flex';
-            exchangeNotice.style.display = 'none';
         }
         else{
             loginPanel.style.display = 'none';
             AccountData.style.display = 'flex';
             unregistered.style.display = 'flex';
-            exchange.style.display = 'flex';
         }
     }
 
