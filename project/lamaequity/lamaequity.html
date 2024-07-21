@@ -91,7 +91,7 @@
             left: 0;
             width: 100%;
             padding-bottom: 27px;
-            padding-bottom: 9px;
+            padding-bottom: 27px;
             box-sizing: border-box;
         }
         button{
@@ -273,6 +273,327 @@
                 </div>
                 <button onclick="signOutOfMetaMask()">Disconnect</button>
             </div>           
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;width: 100%;">
+        <h1><mark>Economy</mark> at a Glance</h1>
+        <br>
+
+        <h2>General</h2>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "description": "GDP",
+                    "proName": "ECONOMICS:INGDP"
+                },
+                {
+                    "description": "GDP Growth Rate",
+                    "proName": "ECONOMICS:INGDPQQ"
+                },
+                {
+                    "description": "Real GDP",
+                    "proName": "ECONOMICS:INGDPCP"
+                },
+                {
+                    "description": "GNP",
+                    "proName": "ECONOMICS:INGNP"
+                },
+                {
+                    "description": "GDP Per Capita",
+                    "proName": "ECONOMICS:INGDPPC"
+                },
+                {
+                    "description": "GDP Deflator",
+                    "proName": "ECONOMICS:INGDPD"
+                },
+                {
+                    "description": "Gross Fixed Capital Formation",
+                    "proName": "ECONOMICS:INGFCF"
+                },
+                {
+                    "description": "GDP From Agriculture",
+                    "proName": "ECONOMICS:INGDPA"
+                },
+                {
+                    "description": "GDP From Mining",
+                    "proName": "ECONOMICS:INGDPMIN"
+                },
+                {
+                    "description": "GDP from Manufacturing",
+                    "proName": "ECONOMICS:INGDPMAN"
+                },
+                {
+                    "description": "GDP From Construction",
+                    "proName": "ECONOMICS:INGDPC"
+                },
+                {
+                    "description": "GDP from Public Administration",
+                    "proName": "ECONOMICS:INGDPPA"
+                },
+                {
+                    "description": "GDP from Utilities",
+                    "proName": "ECONOMICS:INGDPU"
+                }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+            </script>
+        </div>
+
+        <h2>Income</h2>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "description": "Population",
+                    "proName": "ECONOMICS:INPOP"
+                },
+                {
+                    "description": "Employment Rate",
+                    "proName": "ECONOMICS:INEMR"
+                },
+                {
+                    "description": "Unemployment Rate",
+                    "proName": "ECONOMICS:INUR"
+                },
+                {
+                    "description": "Youth Unemployment Rate",
+                    "proName": "ECONOMICS:INYUR"
+                },
+                {
+                    "description": "Living Wage (individual)",
+                    "proName": "ECONOMICS:INLWI"
+                },
+                {
+                    "description": "Living Wage (family)",
+                    "proName": "ECONOMICS:INLWF"
+                },
+                {
+                    "description": "Minimum Wage",
+                    "proName": "ECONOMICS:INMW"
+                },
+                {
+                    "description": "Wages",
+                    "proName": "ECONOMICS:INWAG"
+                },
+                {
+                    "description": "Wages (high skilled)",
+                    "proName": "ECONOMICS:INWHS"
+                },
+                {
+                    "description": "Wages (low skilled)",
+                    "proName": "ECONOMICS:INWLS"
+                },
+                {
+                    "description": "Disposable Income",
+                    "proName": "ECONOMICS:INDPI"
+                }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+            </script>
+        </div>
+
+        <h2>Prices</h2>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "description": "Inflation (Monthly)",
+                    "proName": "ECONOMICS:INIRMM"
+                },
+                {
+                    "description": "Inflation (Yearly)",
+                    "proName": "ECONOMICS:INIRYY"
+                },
+                {
+                    "description": "Food Inflation (Yearly)",
+                    "proName": "ECONOMICS:INFI"
+                },
+                {
+                    "description": "Consumer Price Index",
+                    "proName": "ECONOMICS:INCPI"
+                },
+                {
+                    "description": "Consumer Spending",
+                    "proName": "ECONOMICS:INCS"
+                },
+                {
+                    "description": "Consumer Confidence Index",
+                    "proName": "ECONOMICS:INCCI"
+                },
+                {
+                    "description": "Producer Price Index",
+                    "proName": "ECONOMICS:INPPIYY"
+                }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+            </script>
+        </div>
+
+        <h2>Money</h2>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "description": "Money Supply (M1)",
+                    "proName": "ECONOMICS:INM1"
+                },
+                {
+                    "description": "Money Supply (M2)",
+                    "proName": "ECONOMICS:INM2"
+                },
+                {
+                    "description": "Money Supply (M3)",
+                    "proName": "ECONOMICS:INM3"
+                },
+                {
+                    "description": "Gold Reserves",
+                    "proName": "ECONOMICS:INGRES"
+                },
+                {
+                    "description": "Loan Growth (Yearly)",
+                    "proName": "ECONOMICS:INLG"
+                },
+                {
+                    "description": "Bank Lending Rate",
+                    "proName": "ECONOMICS:INBLR"
+                },
+                {
+                    "description": "Interest Rate",
+                    "proName": "ECONOMICS:ININTR"
+                },
+                {
+                    "description": "Cash Reserve Ratio",
+                    "proName": "ECONOMICS:INCRR"
+                },
+                {
+                    "description": "Interbank Rate",
+                    "proName": "ECONOMICS:ININBR"
+                },
+                {
+                    "description": "Reverse Repo Rate",
+                    "proName": "ECONOMICS:INRRR"
+                }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+            </script>
+        </div>
+
+        <h2>Trade</h2>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "description": "Imports",
+                    "proName": "ECONOMICS:INIMP"
+                },
+                {
+                    "description": "Import Prices",
+                    "proName": "ECONOMICS:INIPRI"
+                },
+                {
+                    "description": "Exports",
+                    "proName": "ECONOMICS:INEXP"
+                },
+                {
+                    "description": "Export Price",
+                    "proName": "ECONOMICS:INEP"
+                },
+                {
+                    "description": "Foreign Exchange Reserves",
+                    "proName": "ECONOMICS:INFER"
+                },
+                {
+                    "description": "Foreign Direct Investments",
+                    "proName": "ECONOMICS:INFDI"
+                },
+                {
+                    "description": "Current Account",
+                    "proName": "ECONOMICS:INCA"
+                },
+                {
+                    "description": "Balance of Trade",
+                    "proName": "ECONOMICS:INBOT"
+                },
+                {
+                    "description": "Capital Flow",
+                    "proName": "ECONOMICS:INCF"
+                },
+                {
+                    "description": "External Debt",
+                    "proName": "ECONOMICS:INED"
+                }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+            </script>
+        </div>
+
+        <h2>Taxes</h2>
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+                "symbols": [
+                {
+                    "description": "Personal Income Tax Rate",
+                    "proName": "ECONOMICS:INPITR"
+                },
+                {
+                    "description": "Corporate Tax Rate",
+                    "proName": "ECONOMICS:INCTR"
+                },
+                {
+                    "description": "Social Security Rate",
+                    "proName": "ECONOMICS:INSSR"
+                },
+                {
+                    "description": "Sales Tax Rate",
+                    "proName": "ECONOMICS:INSTR"
+                }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+            </script>
         </div>
     </div>
 
