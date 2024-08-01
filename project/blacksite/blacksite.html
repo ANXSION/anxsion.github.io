@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let constructV1 =[
+        'Agile Predator',
+        100, // health
+        50, // strength
+        0.5, // agility
+
+    ];
+
+    let player1 = constructV1;
+    let player2 = constructV1;
+
+
+    while(player1[1] > 100 || player2[1] > 100){
+        if(Math.random() > (player1[3] / (player1[3] + player1[3]))){
+            console.log('Player 1\'s '+ player1[0]+' attacks');
+        }
+        else{
+            console.log('Player 2\'s '+ player1[0]+' goes first');
+        }
+    }
+
+</script>
+</html>

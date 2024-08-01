@@ -254,7 +254,7 @@
         <div style="width: 100%; justify-content: center; align-items: center;">
             <div id="loginPanel">
                 <div style=" width: 100%; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;">
-                    <button id='loginButton' onclick="loginWithMetaMask()">Connect Web3 Wallet</button>
+                    <button id='loginButton' onclick="loginWithMetaMask()">Connect Web 3.0 Wallet</button>
                 </div>
             </div>
 
@@ -654,12 +654,13 @@
 </body>
 
 <script>
-    let AUM = 43786;
-    let pastAUM = 42786;
-    let navDataDate = '18/07/2024';
+    let AUM = 43886;
+    let pastAUM = 43786;
+    let navDataDate = '1/07/2024';
+    let totalPool = 1000;
     
     let clients = [
-        ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', 1.0],
+        ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', (1000/totalPool)],
     ];
 
     const AUMID = document.getElementById('AUM');
