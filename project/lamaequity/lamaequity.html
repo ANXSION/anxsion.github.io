@@ -227,8 +227,6 @@
             margin-right: 10%;
         }
 
-
-
         @media screen and (max-width: 768px) {
             .calculator{
                 width: 100%;
@@ -273,6 +271,29 @@
                 </div>
                 <button onclick="signOutOfMetaMask()">Disconnect</button>
             </div>           
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;width: 100%;">
+        <h1><mark>Economic</mark> Calender</h1>
+        <br>
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;width: 100%; height: 100vh;">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                {
+                "width": "100%",
+                "height": "100%",
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "locale": "en",
+                "importanceFilter": "-1,0,1",
+                "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+            }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
         </div>
     </div>
 
@@ -597,52 +618,6 @@
         </div>
     </div>
 
-    <div style="width: 100%; padding-top: 81px; padding-bottom: 81px; display: flex; flex-direction: column;">
-        <h1><mark>Persistent</mark> Growth</h1>
-        <div> 
-            <div style="width: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 9px;">
-                <div style="width:9px; height: 9px; border-top: 3px solid var(--theme); border-left: 3px solid var(--theme); border-bottom: 3px solid transparent; border-right: 3px solid transparent; padding-left: 3px; padding-top: 3px; transform: rotate(45deg); margin-right: 3px;">
-                    <div style="width:9px; height: 9px; border-top: 3px solid var(--theme); border-left: 3px solid var(--theme); border-bottom: 3px solid transparent; border-right: 3px solid transparent;"></div>
-                </div>
-                <h1 style="font-size: 3rem; text-align: center; width: fit-content;"><mark>25%</mark> <span style="font-size: 0.75rem;">Anually</span></h1>            
-            </div>
-
-            <br><br>
-            <div style="display: grid; grid-template-columns: 1fr 2fr; justify-content: start; align-items: start; gap: 9px; margin-left: 2rem; margin-right: 2rem;">
-                <p><mark>AUM</mark></p>
-                <p>Rs. <span id="AUM"></span></p>
-
-                <p><mark>NAV</mark></p>
-                <p>Rs. <span id="NAV"></span> (as on <span id="NAVDATE"></span>)</p>
-
-                <p><mark>Risk</mark></p>
-                <p>Very High (Your principle is at very high risk)</p>
-
-                <p><mark>Minimum Investment Amount</mark></p>
-                <p>Rs. 10,000</p>
-
-                <p><mark>Lock-In Period</mark></p>
-                <p>3 Months</p>
-
-                <p><mark>Expense Fee</mark></p>
-                <p>3%</p>
-
-                <p><mark>Exit Load</mark></p>
-                <p>1.5% (if redeemed on or before completion of 3 months or 90 days from the date of allotments of units)</p>
-
-                <p><mark>Objective</mark></p>
-                <p>The primary investment objective of the fund is to seek to generate capital appreciation & provide long-term growth opportunities by investing in stocks using quant models along with human review. There is no assurance that the investment objective of the fund will be realized.</p>
-
-                <p><mark>Exit Load</mark></p>
-                <p>1.5% (if redeemed on or before completion of 3 months or 90 days from the date of allotments of units)</p>
-
-                <p><mark>Asset Allocation Pattern</mark></p>
-                <p>Equity and equity related instruments: 80-100%<br>Debt and Money market instruments: 0-20%<br>Units issued by REITs & InvITs: 0-10%</p>
-
-            </div>
-        </div>
-    </div>
-
     <footer>
         <div style="width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0);border-top: 8px solid rgba(0, 0, 0, 0); border-right: 8px solid rgba(0, 0, 0, 0); border-left: 8px solid var(--theme); border-bottom: 8px solid var(--theme); box-sizing: content-box; margin-right: 9px; display: flex; justify-content: center; align-items: center; aspect-ratio: 1/1;">
             <div style="width: 12px; height: 12px; background-color: var(--theme); box-sizing: content-box; display: flex; justify-content: center; align-items: center;">
@@ -657,7 +632,7 @@
     let AUM = 43886;
     let pastAUM = 43786;
     let navDataDate = '1/07/2024';
-    let totalPool = 1000;
+    let totalPool = AUM;
     
     let clients = [
         ['0x7fd04660869e3fd9a82cb460347ea7dec71a4b4738484cba6bf84839e94b9ead29dfc8ebdd2201917057ab11a78ab4f6b009219c19cb9f4d66fc142014c551c01c', (1000/totalPool)],
@@ -667,9 +642,6 @@
     const NAVID = document.getElementById('NAV');
     const NAVDATE = document.getElementById('NAVDATE');
 
-    AUMID.innerText = AUM;
-    NAVID.innerText = AUM / clients.length;
-    NAVDATE.innerText = navDataDate;
 
     const datapoints = new Map();
 
@@ -685,8 +657,6 @@
     const registered = document.getElementById('registered');
     const userWallet = document.getElementById('userWallet');
     const fundBalance = document.getElementById('fundBalance');
-    const exchange = document.getElementById('exchange');
-    const exchangeNotice = document.getElementById('exchangeNotice');
 
     loginPanel.style.display = 'flex';
     AccountData.style.display = 'none';
@@ -758,15 +728,13 @@
             loginPanel.style.display = 'none';
             AccountData.style.display = 'flex';
             registered.style.display = 'flex';
-            exchange.style.display = 'flex';
-            exchangeNotice.style.display = 'none';
         }
         else{
             loginPanel.style.display = 'none';
             AccountData.style.display = 'flex';
             unregistered.style.display = 'flex';
-            exchange.style.display = 'flex';
         }
+
         localStorage.setItem("connectionID", sign);
         localStorage.setItem("walletID", userWalletAddress);
     }
@@ -778,8 +746,6 @@
         AccountData.style.display = 'none';
         registered.style.display = 'none';
         unregistered.style.display = 'none';
-        exchange.style.display = 'none';
-        exchangeNotice.style.display = 'block';
     }
 
 </script>
