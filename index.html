@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>ANXSION</title>
+    <title>Home | Anurag Lama</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="ANXSION" />
@@ -12,39 +12,39 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="google-site-verification" content="Td3WsaV9Dyy8h_rk4BunP0HVL-UsXLA7r6nRTak1-94" />
     <meta name="robots" content="all">
-    
     <meta property="og:title" content="ANXSION" />
     <meta property="og:description" content="The official website of the Anurag Lama." />
     <meta property="og:image" content="./asset/arts/About.avif" />
     <meta property="og:image:alt" content="ANXSION" />
-
     <meta name="twitter:title" content="ANXSION" />
     <meta name="twitter:description" content="The official website of the Anurag Lama." />
     <meta name="twitter:url" content="https://www.anxsion.github.io" />
     <meta name="twitter:image:src" content="./asset/arts/About.avif" />
     <meta name="twitter:image:alt" content="ANXSION" />
     <meta name="twitter:creator" content="@ANXSION" />
-    
-    <link rel="icon" type="image/png" href="./asset/icon/icon_general.png">
-    <link rel="apple-touch-startup-image" href="./asset/icon/icon_apple.png" media="orientation: portrait" />
-    <link rel="apple-touch-startup-image" href="./asset/icon/icon_apple.png" media="orientation: landscape" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="ANXSION" />
     <meta name="application-name" content="ANXSION" />
-
+    <link rel="icon" type="image/png" href="./asset/icon/icon_general.png">
+    <link rel="apple-touch-startup-image" href="./asset/icon/icon_apple.png" media="orientation: portrait" />
+    <link rel="apple-touch-startup-image" href="./asset/icon/icon_apple.png" media="orientation: landscape" />
     <link rel="manifest" href="./manifest.webmanifest" />
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
-    
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-53Y0LGEE69');
     </script>
-
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+    <script>
+        const MMSDK = new MetaMaskSDK.MetaMaskSDK({
+          dappMetadata: {
+            name: "ANXSION CONNECT",
+            url: window.location.href,
+        }});
+    </script>
     <style>
         @font-face {
             font-family: 'decorative';
@@ -66,7 +66,6 @@
             --userInactive: hsl(0, 0%, 27%);
             --userActive: hsl(120, 73%, 75%);
         }
-
         body{
             margin: 0;
             padding: 0;
@@ -77,7 +76,6 @@
             z-index: 1;
             min-width: 320px;
         }
-
         nav{
             box-sizing: border-box;
             padding: 8px;
@@ -93,7 +91,6 @@
             backdrop-filter: blur(2px);
             z-index: 3;
         }
-
         footer{
             box-sizing: border-box;
             padding: 8px;
@@ -104,18 +101,15 @@
             align-items: center;
             margin-top: 32px;
         }
-
         footer p{
             margin: 3px;
         }
-
         main{
             margin-top: 64px;
             box-sizing: border-box;
             padding: 16px;
             min-height: 100vh;
         }
-
         h1{
             text-align: center;
             font-weight: normal;
@@ -126,7 +120,6 @@
         h3{
             font-weight: normal;
         }
-
         p{
             margin-top: 18px;
             margin-bottom: 18px;
@@ -136,7 +129,6 @@
             display: flex;
             flex-direction: column;
         }
-
         button{
             box-sizing: border-box;
             outline: none;
@@ -153,12 +145,10 @@
             background-color: var(--colorText);
             color: var(--colorBack);
         }
-
         .logoDesign{
             font-family: var(--fontStyleDecoration);
             font-size: 3rem;
         }
-
         .dropMenu{
             background-color: black;
             width: 100%;
@@ -170,7 +160,6 @@
             box-sizing: border-box;
             z-index: 4;
         }
-
         .dropMenuItems{
             display: flex;
             flex-direction: column;
@@ -181,7 +170,6 @@
             padding: 32px;
             box-sizing: border-box;
         }
-
         .menuGrid{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -189,7 +177,6 @@
             align-items: center;
             gap: 8px;
         }
-
         .menuGridItems{
             display: flex;
             justify-content: center;
@@ -198,7 +185,6 @@
             box-sizing: border-box;
             padding: 8px;
         }
-
         .storeGrid{
             width: 100%;
             height: fit-content;
@@ -213,7 +199,6 @@
             align-items: center;
             flex-direction: column;
         }
-
         .storeItem{
             width: 100%;
             height: 100%;
@@ -237,7 +222,6 @@
             font-size: 0.5rem;
             margin: 8px;
         }
-
         .mediaGridMusic{
             width: 100%;
             display: grid;
@@ -246,7 +230,6 @@
             align-items: center;
             gap: 8px;
         }
-
         .mediaGridVideo{
             width: 100%;
             display: grid;
@@ -265,7 +248,6 @@
             box-sizing: border-box;
             aspect-ratio: 16/9;
         }
-
         @media only screen and (min-width: 320px) and (max-width: 480px){
             .storeGrid{
                 grid-template-columns: 1fr 1fr;
@@ -322,16 +304,7 @@
                 grid-template-columns: 1fr 1fr 1fr;
             }
         }
-
     </style>
-    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
-    <script>
-        const MMSDK = new MetaMaskSDK.MetaMaskSDK({
-          dappMetadata: {
-            name: "ANXSION CONNECT",
-            url: window.location.href,
-          }});
-      </script>
 </head>
 
 <body>
@@ -339,7 +312,6 @@
         <div class="logoDesign">ANXSION</div>
         <div style="font-size: 1.5rem; cursor: pointer;" onclick="menu(1)">&#9776;</div>
     </nav>
-
     <div class="dropMenu" id="dropMenu">
         <nav>
             <div class="logoDesign">ANXSION</div>
@@ -352,9 +324,7 @@
             <h1 onclick="pageAccess('about')" style="cursor: pointer;">About</h1>
         </div>
     </div>
-
     <div class="homeButton" style="display: none;">&larr;  Home</div>
-
     <main>
         <div id="404" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
             <h1 style="font-size: 4rem;">404</h1>
@@ -471,7 +441,6 @@
                 }
                 </script>
             </div>
-
             <h1>Economy Data</h1>
             <h2>General</h2>
             <div class="tradingview-widget-container">
@@ -540,7 +509,6 @@
                 }
                 </script>
             </div> 
-
             <h2>Income</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -600,7 +568,6 @@
                 }
                 </script>
             </div>
-
             <h2>Prices</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -644,7 +611,6 @@
                 }
                 </script>
             </div>
-
             <h2>Money</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -700,7 +666,6 @@
                 }
                 </script>
             </div>
-
             <h2>Trade</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -756,7 +721,6 @@
                 }
                 </script>
             </div>
-
             <h2>Taxes</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -788,7 +752,6 @@
                 }
                 </script>
             </div>
-
         </div>
         <div id="about">
             <h1>Exploring Creativity Across Mediums</h1>
@@ -800,13 +763,11 @@
             </div>
         </div>
     </main>
-    
     <footer>
         <p>&copy; ANURAG LAMA</p>
         <p>All Rights Reserved</p>
     </footer>
     <script>
-
         window.addEventListener("load", () => {
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("anxsion-serviceworker.js");
@@ -821,7 +782,6 @@
         document.getElementById('media').style.display = 'none';
         document.getElementById('equity').style.display = 'none';
         document.getElementById('about').style.display = 'none';
-
         async function menu(checkValue){
             if (checkValue == 0){
                 document.getElementById('dropMenu').style.display = 'none';
@@ -830,7 +790,6 @@
                 document.getElementById('dropMenu').style.display = 'flex';
             }
         }
-
         async function pageAccess(checkValue){
             if (checkValue == 'home'){
                 document.getElementById('404').style.display = 'none';
@@ -873,24 +832,20 @@
                 menu(0);
             }
         }
-
         async function walletConnect(){
             const provider = MMSDK.getProvider();
             const msg = `0x446F20796F752077616E7420746F207369676E20696E3F`;
             let accounts, accountname, sign, balance;
             accounts = await provider.request({ method: 'eth_requestAccounts'});
             accountname = accounts[0];
-
             sign = await provider.request({method: "personal_sign", params: [msg, accountname]});
             balance = await provider.request({ method: "eth_getBalance",params: [accountname,"latest"]});
-
             document.getElementById('walletAddress').innerText = accountname;
             document.getElementById('walletBalance').innerText =Number(balance) + " ETH";
             document.getElementById('balanceData').style.display = 'flex';
             document.getElementById('connectWalletButton').style.display = 'none';
             document.getElementById('disconnectWalletButton').style.display = 'flex';
         }
-
         async function walletDisconnect(){
             document.getElementById('walletAddress').innerText = 'No wallet connected.';
             document.getElementById('balanceData').style.display = 'none';
@@ -898,5 +853,5 @@
             document.getElementById('disconnectWalletButton').style.display = 'none';
         }
     </script>
-</body>
+</body> 
 </html>
