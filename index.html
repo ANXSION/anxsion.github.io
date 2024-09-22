@@ -101,6 +101,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-top: 32px;
         }
 
         footer p{
@@ -110,8 +111,7 @@
         main{
             margin-top: 64px;
             box-sizing: border-box;
-            padding: 9px;
-            margin-bottom: 64px;
+            padding: 16px;
             min-height: 100vh;
         }
 
@@ -130,6 +130,10 @@
             margin-top: 18px;
             margin-bottom: 18px;
             font-size: 1rem;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
         }
 
         button{
@@ -154,21 +158,27 @@
             font-size: 3rem;
         }
 
-        .homeButton{
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            box-sizing: border-box; 
-            padding: 16px; 
-            font-size: 1.25rem; 
-            z-index: 2; 
-            aspect-ratio: 1.85/1;
-            background-color: hsla(0, 0%, 0%, 50%);
-            backdrop-filter: blur(4px);
-            position: fixed; 
-            left: 64px; 
-            bottom: 64px;
-            cursor: pointer;
+        .dropMenu{
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
+            z-index: 4;
+        }
+
+        .dropMenuItems{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            margin-top: 64px;
+            padding: 32px;
+            box-sizing: border-box;
         }
 
         .menuGrid{
@@ -204,10 +214,11 @@
         }
 
         .storeItem{
-            height: 100%;
             width: 100%;
+            height: 100%;
             object-fit: cover;
-            aspect-ratio: 1/1;
+            aspect-ratio: 4/3;
+            overflow: hidden;
         }
         .storeItemTag{
             margin: 0;
@@ -227,6 +238,7 @@
         }
 
         .mediaGridMusic{
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             justify-content: center;
@@ -235,9 +247,10 @@
         }
 
         .mediaGridVideo{
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
             gap: 8px;
         }
@@ -247,7 +260,8 @@
             align-items: center;
             height: 100%;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            box-sizing: border-box;
             aspect-ratio: 16/9;
         }
 
@@ -255,23 +269,45 @@
             .storeGrid{
                 grid-template-columns: 1fr 1fr;
             }
+            .mediaGridMusic{
+                grid-template-columns: 1fr;
+            }
+            .mediaGridVideo{
+                grid-template-columns: 1fr;
+            }
         }
         @media only screen and (min-width: 481px) and (max-width: 768px){
             .storeGrid{
                 grid-template-columns: 1fr 1fr;
+            }
+            .mediaGridMusic{
+                grid-template-columns: 1fr;
+            }
+            .mediaGridVideo{
+                grid-template-columns: 1fr;
             }
         }
         @media only screen and (min-width: 769px) and (max-width: 1024px){
             .storeGrid{
                 grid-template-columns: 1fr 1fr 1fr;
             }
-        }
-        @media only screen and (min-width: 1025px) and (max-width: 1200px){
-            .storeGrid{
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+            .mediaGridVideo{
+                grid-template-columns: 1fr 1fr;
             }
         }
-        @media only screen and (min-width: 1201px){
+        @media only screen and (min-width: 1025px){
+            body{
+                margin: auto;
+                max-width: 1200px;
+            }
+            nav{
+                margin: auto;
+                max-width: 1200px;
+            }
+            footer{
+                margin: auto;
+                max-width: 1200px;
+            }
             .storeGrid{
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
@@ -291,30 +327,43 @@
 <body>
     <nav>
         <div class="logoDesign">ANXSION</div>
+        <div style="font-size: 2rem; cursor: pointer;" onclick="menu(1)">&#9776;</div>
     </nav>
+
+    <div class="dropMenu" id="dropMenu">
+        <nav>
+            <div class="logoDesign">ANXSION</div>
+            <div style="font-size: 2rem; cursor: pointer;" onclick="menu(0)">&#10005;</div>
+        </nav>
+        <div class="dropMenuItems">
+            <h1 onclick="pageAccess('home')" style="cursor: pointer;">Home</h1>
+            <h1 onclick="pageAccess('media')" style="cursor: pointer;">Media</h1>
+            <h1 onclick="pageAccess('equity')" style="cursor: pointer;">Equity</h1>
+            <h1 onclick="pageAccess('about')" style="cursor: pointer;">About</h1>
+        </div>
+    </div>
 
     <div class="homeButton" style="display: none;">&larr;  Home</div>
 
     <main>
+        <div id="404" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
+            <h1 style="font-size: 4rem;">404</h1>
+            <p>The page you are looking for does not exist.</p>
+        </div>
         <div id="main">
-
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
                 <p id="walletAddress" style="text-overflow: ellipsis;">No wallet connected.</p>
                 <p id="balanceData">Balance:&nbsp;<span id="walletBalance">n/a</span></p>
-
                 <button id="connectWalletButton" onclick="walletConnect()">Connect Wallet</button>
                 <button id="disconnectWalletButton" onclick="walletDisconnect()">Disconnect Wallet</button>
             </div>
-
             <div style="margin-top: 32px;">
-                <h1>Store</h1>
-                
+                <h1>eStore</h1>
                 <h2>Artworks</h2>
-
                 <div class="storeGrid">
                     <div class="storeItemContainer">
                         <img src="./asset/arts/aeolia.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
+                        <p class="storeItemTag" onclick="buy(5000000)">Available</p>
                     </div>
                     <div class="storeItemContainer">
                         <img src="./asset/arts/AnyasBastionOnMistveilLake.avif" alt="" class="storeItem">
@@ -359,12 +408,45 @@
                 </div>
             </div>
         </div>
-
-        <div id="market" style="display: none;">
-            
-            <h1>Markets</h1>
-
-            <h2>Economic Calander</h2>
+        <div id="media">
+            <h1>Media</h1>
+            <h2 style="margin-top: 64px; margin-bottom: 64px;">EPs and Albums</h2>
+            <div class="mediaGridMusic">
+                <iframe height="450" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/midsummer-single/1526298269?itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526298269&amp;theme=dark" id="embedPlayer" style="border:0;border-radius:12px;width:100%;height:450px;max-width:660px" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+                <iframe height="450" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/november-ep/1526842204?itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526842204&amp;theme=dark" id="embedPlayer" style="border:0;border-radius:12px;width:100%;height:450px;max-width:660px" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+            </div>
+            <h2 style="margin-top: 64px; margin-bottom: 64px;">Singles</h2>
+            <div class="mediaGridMusic">
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/levitate/1526652381?i=1526652382&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526652382&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/stories/1524045474?i=1524045475&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1524045475&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/haraeko/1524040842?i=1524040843&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1524040843&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/a-step-forward-feat-anil3x/1456042947?i=1456042949&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1456042949&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/ocean-eyes/1530398946?i=1530398947&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1530398947&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/paracosm/1523999825?i=1523999916&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1523999916&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/frozen-hauntings/1405645715?i=1405645717&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1405645717&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/zen/1453597247?i=1453597249&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1453597249&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
+            </div>
+            <h2 style="margin-top: 64px; margin-bottom: 64px;">Music Videos</h2>
+            <div class="mediaGridVideo">
+                <div class="mediaGridVideoContainer">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZpLZCy_WfM8?si=8Zr5FFuAifHB5osC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="mediaGridVideoContainer">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4ld6sSxjnIo?si=rudrkQydW5w9ARZT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="mediaGridVideoContainer">
+                    <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/_vl_KukwmSw?si=bUOcV3KoD5kta8aO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <h2 style="margin-top: 64px; margin-bottom: 64px;">Short Films</h2>
+            <div class="mediaGridVideo">
+                <div class="mediaGridVideoContainer">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TFO9it6lNK4?si=mF7RK0fIpSOPQVFZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="equity">
+            <h1>Economic Calender</h1>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
@@ -380,8 +462,8 @@
                 </script>
             </div>
 
-            <h2>Economy Data</h2>
-            <h3>General</h3>
+            <h1>Economy Data</h1>
+            <h2>General</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -449,7 +531,7 @@
                 </script>
             </div> 
 
-            <h3>Income</h3>
+            <h2>Income</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -509,7 +591,7 @@
                 </script>
             </div>
 
-            <h3>Prices</h3>
+            <h2>Prices</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -553,7 +635,7 @@
                 </script>
             </div>
 
-            <h3>Money</h3>
+            <h2>Money</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -609,7 +691,7 @@
                 </script>
             </div>
 
-            <h3>Trade</h3>
+            <h2>Trade</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -665,7 +747,7 @@
                 </script>
             </div>
 
-            <h3>Taxes</h3>
+            <h2>Taxes</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -696,69 +778,16 @@
                 }
                 </script>
             </div>
+
         </div>
-
-        <div id="media" style="display: none;">
-            <h1>Media</h1>
-            <h2>Albums & EP</h2>
-            <div class="mediaGridMusic">
-                <iframe height="450" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/november-ep/1526842204?itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526842204&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 450px; max-width: 660px;"></iframe>
-
-                <iframe height="450" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/midsummer-single/1526298269?itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526298269&amp;theme=dark" id="embedPlayer" style="border:0;border-radius:12px;width:100%;height:450px;max-width:660px" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
+        <div id="about">
+            <h1>Exploring Creativity Across Mediums</h1>
+            <div style="box-sizing: border-box; padding: 16px; text-align: justify;">
+                <p>Anurag Lama, known professionally as ANXSION, brings a unique blend of legal expertise and creative vision to every project. Adept at navigating the intricacies of the legal system, he ensures clients receive the representation they deserve.</p>
+                <p>Beyond the courtroom, ANXSION's talents extend to the artistic realm. A skilled musician, he finds expression through music, while his videography and filmmaking showcase a keen eye for capturing compelling narratives.  Furthermore, his programming abilities demonstrate a well-rounded understanding of technical aspects that can be leveraged to enhance creative endeavors.</p>
+                <p>This multifaceted approach allows ANXSION to collaborate effectively across disciplines, fostering a deeper understanding of any project he undertakes.</p>
+                <p style="text-align: center; font-style: italic;">"To create is to command the forces of the universe, to mould reality from the raw essece of imagination. In the hands of the true polymath, art transcends mere beauty. It becomes a testament to the boundless potential of human ingenuity, a powerful defiance against the constraints of mediocrity."</p>
             </div>
-
-            <h2>Singles</h2>
-            <div class="mediaGridMusic">
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/levitate/1526652381?i=1526652382&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526652382&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/haraeko/1524040842?i=1524040843&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1524040843&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-                
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/stories/1524045474?i=1524045475&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1524045475&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/ocean-eyes/1530398946?i=1530398947&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1530398947&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/a-step-forward-feat-anil3x/1456042947?i=1456042949&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1456042949&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/paracosm/1523999825?i=1523999916&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1523999916&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/frozen-hauntings/1405645715?i=1405645717&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1405645717&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-
-                <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/zen/1453597247?i=1453597249&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1453597249&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
-            </div>
-
-            <h2>Music Videos</h2>
-            <div class="mediaGridVideo">
-                <div class="mediaGridVideoContainer">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZpLZCy_WfM8?si=8Zr5FFuAifHB5osC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="mediaGridVideoContainer">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4ld6sSxjnIo?si=rudrkQydW5w9ARZT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div class="mediaGridVideoContainer">
-                    <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/_vl_KukwmSw?si=bUOcV3KoD5kta8aO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <h2>Films</h2>
-            <div class="mediaGridVideo">
-                <div class="mediaGridVideoContainer">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TFO9it6lNK4?si=mF7RK0fIpSOPQVFZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-
-        <div id="about" style="display: none;">
-            <h1>About</h1>
-            <h2 style="text-align: center;">Exploring Creativity Across Mediums</h2>
-
-            <p>Anurag Lama, known professionally as ANXSION, brings a unique blend of legal expertise and creative vision to every project. Adept at navigating the intricacies of the legal system, he ensures clients receive the representation they deserve.</p>
-
-            <p>Beyond the courtroom, ANXSION's talents extend to the artistic realm. A skilled musician, he finds expression through music, while his videography and filmmaking showcase a keen eye for capturing compelling narratives. Furthermore, his programming abilities demonstrate a well-rounded understanding of technical aspects that can be leveraged to enhance creative endeavors.</p>
-
-            <p>This multifaceted approach allows ANXSION to collaborate effectively across disciplines, fostering a deeper understanding of any project he undertakes.</p>
-
-            <p style="font-style: italic;">"To create is to command the forces of the universe, to mould reality from the raw essece of imagination. In the hands of the true polymath, art transcends mere beauty. It becomes a testament to the boundless potential of human ingenuity, a powerful defiance against the constraints of mediocrity."</p>
-
         </div>
     </main>
     
@@ -767,14 +796,72 @@
         <p>All Rights Reserved</p>
     </footer>
     <script>
+
+        window.addEventListener("load", () => {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("anxsion-serviceworker.js");
+            }  
+        });
+    </script>
+    <script>
         document.getElementById('balanceData').style.display = 'none';
         document.getElementById('disconnectWalletButton').style.display = 'none';
-    
-        function hideAll(){
-            document.getElementById('main').style.display = 'none';
-            document.getElementById('market').style.display = 'none';
-            document.getElementById('media').style.display = 'none';
-            document.getElementById('about').style.display = 'none';
+        document.getElementById('dropMenu').style.display = 'none';
+        document.getElementById('404').style.display = 'none';
+        document.getElementById('media').style.display = 'none';
+        document.getElementById('equity').style.display = 'none';
+        document.getElementById('about').style.display = 'none';
+
+        async function menu(checkValue){
+            if (checkValue == 0){
+                document.getElementById('dropMenu').style.display = 'none';
+            }
+            else{
+                document.getElementById('dropMenu').style.display = 'flex';
+            }
+        }
+
+        async function pageAccess(checkValue){
+            if (checkValue == 'home'){
+                document.getElementById('404').style.display = 'none';
+                document.getElementById('main').style.display = 'flex';
+                document.getElementById('media').style.display = 'none';
+                document.getElementById('equity').style.display = 'none';
+                document.getElementById('about').style.display = 'none';
+                menu(0);
+            }
+            else if (checkValue == 'media'){
+                document.getElementById('404').style.display = 'none';
+                document.getElementById('main').style.display = 'none';
+                document.getElementById('media').style.display = 'flex';
+                document.getElementById('equity').style.display = 'none';
+                document.getElementById('about').style.display = 'none';
+                menu(0);
+            }
+            else if (checkValue == 'equity'){
+                document.getElementById('404').style.display = 'none';
+                document.getElementById('main').style.display = 'none';
+                document.getElementById('media').style.display = 'none';
+                document.getElementById('equity').style.display = 'flex';
+                document.getElementById('about').style.display = 'none';
+                menu(0);
+            }
+            else if (checkValue == 'about'){
+                document.getElementById('404').style.display = 'none';
+                document.getElementById('main').style.display = 'none';
+                document.getElementById('media').style.display = 'none';
+                document.getElementById('equity').style.display = 'none';
+                document.getElementById('about').style.display = 'flex';
+                menu(0);
+            }
+            else{
+                document.getElementById('404').style.display = 'flex';
+                document.getElementById('main').style.display = 'none';
+                document.getElementById('media').style.display = 'none';
+                document.getElementById('equity').style.display = 'none';
+                document.getElementById('about').style.display = 'none';
+                menu(0);
+            }
         }
 
         async function walletConnect(){
