@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home | Anurag Lama</title>
+    <title>ANXSION</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="ANXSION" />
@@ -75,6 +75,7 @@
             color: var(--colorText);
             font-family: var(--fontStyleStandard);
             z-index: 1;
+            min-width: 320px;
         }
 
         nav{
@@ -202,7 +203,7 @@
             width: 100%;
             height: fit-content;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 8px;
         }
         .storeItemContainer{
@@ -240,7 +241,7 @@
         .mediaGridMusic{
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             justify-content: center;
             align-items: center;
             gap: 8px;
@@ -249,7 +250,7 @@
         .mediaGridVideo{
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
             justify-content: start;
             align-items: center;
             gap: 8px;
@@ -281,18 +282,21 @@
                 grid-template-columns: 1fr 1fr;
             }
             .mediaGridMusic{
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
             .mediaGridVideo{
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
         }
         @media only screen and (min-width: 769px) and (max-width: 1024px){
             .storeGrid{
                 grid-template-columns: 1fr 1fr 1fr;
             }
-            .mediaGridVideo{
+            .mediaGridMusic{
                 grid-template-columns: 1fr 1fr;
+            }
+            .mediaGridVideo{
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
         @media only screen and (min-width: 1025px){
@@ -311,6 +315,12 @@
             .storeGrid{
                 grid-template-columns: 1fr 1fr 1fr 1fr;
             }
+            .mediaGridMusic{
+                grid-template-columns: 1fr 1fr;
+            }
+            .mediaGridVideo{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
 
     </style>
@@ -327,13 +337,13 @@
 <body>
     <nav>
         <div class="logoDesign">ANXSION</div>
-        <div style="font-size: 2rem; cursor: pointer;" onclick="menu(1)">&#9776;</div>
+        <div style="font-size: 1.5rem; cursor: pointer;" onclick="menu(1)">&#9776;</div>
     </nav>
 
     <div class="dropMenu" id="dropMenu">
         <nav>
             <div class="logoDesign">ANXSION</div>
-            <div style="font-size: 2rem; cursor: pointer;" onclick="menu(0)">&#10005;</div>
+            <div style="font-size: 1.5rem; cursor: pointer;" onclick="menu(0)">&#10005;</div>
         </nav>
         <div class="dropMenuItems">
             <h1 onclick="pageAccess('home')" style="cursor: pointer;">Home</h1>
