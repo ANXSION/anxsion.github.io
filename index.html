@@ -248,6 +248,13 @@
             box-sizing: border-box;
             aspect-ratio: 16/9;
         }
+        .twitchStreamContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
         @media only screen and (min-width: 320px) and (max-width: 480px){
             .storeGrid{
                 grid-template-columns: 1fr 1fr;
@@ -284,7 +291,7 @@
         @media only screen and (min-width: 1025px){
             body{
                 margin: auto;
-                max-width: 1200px;
+                max-width: 1025px;
             }
             nav{
                 margin: auto;
@@ -390,12 +397,26 @@
         </div>
         <div id="media">
             <h1>Media</h1>
-            <h2 style="margin-top: 64px; margin-bottom: 64px;">EPs and Albums</h2>
+            <h2 style="margin-top: 64px; margin-bottom: 32px;">Live Stream</h2>
+            <div id="twitch-embed" class="twitchStreamContainer"></div>
+            <!-- Load the Twitch embed JavaScript file -->
+            <script src="https://embed.twitch.tv/embed/v1.js"></script>
+            <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+            <script type="text/javascript">
+                new Twitch.Embed("twitch-embed", {
+                    autoplay: "false",
+                    layout: "video",
+                    width: "100%",
+                    height: "100%",
+                    channel: "ANXSION"
+                });
+            </script>
+            <h2 style="margin-top: 64px; margin-bottom: 32px;">EPs and Albums</h2>
             <div class="mediaGridMusic">
                 <iframe height="450" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/midsummer-single/1526298269?itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526298269&amp;theme=dark" id="embedPlayer" style="border:0;border-radius:12px;width:100%;height:450px;max-width:660px" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
                 <iframe height="450" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/november-ep/1526842204?itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526842204&amp;theme=dark" id="embedPlayer" style="border:0;border-radius:12px;width:100%;height:450px;max-width:660px" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write"></iframe>
             </div>
-            <h2 style="margin-top: 64px; margin-bottom: 64px;">Singles</h2>
+            <h2 style="margin-top: 64px; margin-bottom: 32px;">Singles</h2>
             <div class="mediaGridMusic">
                 <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/levitate/1526652381?i=1526652382&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1526652382&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
                 <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/stories/1524045474?i=1524045475&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1524045475&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
@@ -406,7 +427,7 @@
                 <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/frozen-hauntings/1405645715?i=1405645717&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1405645717&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
                 <iframe height="175" width="100%" title="Media player" src="https://embed.music.apple.com/us/album/zen/1453597247?i=1453597249&amp;itscg=30200&amp;itsct=music_box_player&amp;ls=1&amp;app=music&amp;mttnsubad=1453597249&amp;theme=dark" id="embedPlayer" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay *; encrypted-media *; clipboard-write" style="border: 0px; border-radius: 12px; width: 100%; height: 175px; max-width: 660px;"></iframe>
             </div>
-            <h2 style="margin-top: 64px; margin-bottom: 64px;">Music Videos</h2>
+            <h2 style="margin-top: 64px; margin-bottom: 32px;">Music Videos</h2>
             <div class="mediaGridVideo">
                 <div class="mediaGridVideoContainer">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZpLZCy_WfM8?si=8Zr5FFuAifHB5osC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -418,7 +439,7 @@
                     <iframe  width="100%" height="100%" src="https://www.youtube.com/embed/_vl_KukwmSw?si=bUOcV3KoD5kta8aO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
-            <h2 style="margin-top: 64px; margin-bottom: 64px;">Short Films</h2>
+            <h2 style="margin-top: 64px; margin-bottom: 32px;">Short Films</h2>
             <div class="mediaGridVideo">
                 <div class="mediaGridVideoContainer">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yo06x9FwaKU?si=X_MkuXhceb9fGiJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -792,6 +813,7 @@
         }
         async function pageAccess(checkValue){
             if (checkValue == 'home'){
+                window.scrollTo({top: 0, behavior: 'smooth'});
                 document.getElementById('404').style.display = 'none';
                 document.getElementById('main').style.display = 'flex';
                 document.getElementById('media').style.display = 'none';
@@ -800,6 +822,7 @@
                 menu(0);
             }
             else if (checkValue == 'media'){
+                window.scrollTo({top: 0, behavior: 'smooth'});
                 document.getElementById('404').style.display = 'none';
                 document.getElementById('main').style.display = 'none';
                 document.getElementById('media').style.display = 'flex';
@@ -808,6 +831,7 @@
                 menu(0);
             }
             else if (checkValue == 'equity'){
+                window.scrollTo({top: 0, behavior: 'smooth'});
                 document.getElementById('404').style.display = 'none';
                 document.getElementById('main').style.display = 'none';
                 document.getElementById('media').style.display = 'none';
@@ -816,6 +840,7 @@
                 menu(0);
             }
             else if (checkValue == 'about'){
+                window.scrollTo({top: 0, behavior: 'smooth'});
                 document.getElementById('404').style.display = 'none';
                 document.getElementById('main').style.display = 'none';
                 document.getElementById('media').style.display = 'none';
@@ -824,6 +849,7 @@
                 menu(0);
             }
             else{
+                window.scrollTo({top: 0, behavior: 'smooth'});
                 document.getElementById('404').style.display = 'flex';
                 document.getElementById('main').style.display = 'none';
                 document.getElementById('media').style.display = 'none';
