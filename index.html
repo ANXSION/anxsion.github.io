@@ -265,6 +265,9 @@
             .mediaGridVideo{
                 grid-template-columns: 1fr;
             }
+            .twitchStreamContainer{
+                aspect-ratio: 4/3;
+            }
         }
         @media only screen and (min-width: 481px) and (max-width: 768px){
             .storeGrid{
@@ -275,6 +278,11 @@
             }
             .mediaGridVideo{
                 grid-template-columns: 1fr 1fr;
+            }
+            .twitchStreamContainer{
+                aspect-ratio: 16/9;
+                margin: auto;
+                width: 80%;
             }
         }
         @media only screen and (min-width: 769px) and (max-width: 1024px){
@@ -309,6 +317,10 @@
             }
             .mediaGridVideo{
                 grid-template-columns: 1fr 1fr 1fr;
+            }
+            .twitchStreamContainer{
+                margin: auto;
+                width: 75%;
             }
         }
     </style>
