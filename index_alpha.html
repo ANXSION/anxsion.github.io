@@ -247,7 +247,12 @@
             width: 100%;
             height: auto;
         }
-        
+        .estoreContainer{
+            display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; gap: 9px;
+        }
+        .estoreContainerItem{
+            width: 100%; height: 100%; aspect-ratio: 1/1; object-fit: cover; display: flex; justify-content: center; align-items: center;
+        }
         @media only screen and (min-width: 320px) and (max-width: 480px){
             .mediaGridMusic{
                 grid-template-columns: 1fr;
@@ -829,9 +834,12 @@
         </div>
         
         <br>
-        <h1>e-Store</h1>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 12px;">
-            <img src="./asset/arts/aeolia.avif" alt="" style="width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: flex; justify-content: center; align-items: center;" data-name="Aeolia" data-price="0.0005" data-unit="ETH" data-address="0x000000000" data-description="Aeolia, the one who walks between whispers, carries the Eye of Verdantia, a reflection of a forest that never was and a storm that never ceased. Stars cling to her skin, fragments of a forgotten sky, and with each breath, the winds shift in ways no one remembers. Her gaze sees through veils, through moments, through what was never meant to be seen, but none can say where her sight begins or ends. Those who seek her face the pull of something older than time, a knowing that bends and sways, always close but never truly grasped. In the endless green of her eye, destinies twist, unravel, and reform, forever caught in the unseen." onclick="openStoreItem(this)">
+        <h1>Curiosity e-Store</h1>
+        <h2>Books</h2>
+
+        <h2>NFT</h2>
+        <div class="estoreContainer">
+            <img src="./asset/arts/aeolia.avif" alt="" class="estoreContainerItem" data-name="Aeolia" data-price="0.0005" data-unit="ETH" data-address="0x000000000" data-description="Aeolia, the one who walks between whispers, carries the Eye of Verdantia, a reflection of a forest that never was and a storm that never ceased. Stars cling to her skin, fragments of a forgotten sky, and with each breath, the winds shift in ways no one remembers. Her gaze sees through veils, through moments, through what was never meant to be seen, but none can say where her sight begins or ends. Those who seek her face the pull of something older than time, a knowing that bends and sways, always close but never truly grasped. In the endless green of her eye, destinies twist, unravel, and reform, forever caught in the unseen." onclick="openStoreItem(this)">
         </div>
         
     </main>
