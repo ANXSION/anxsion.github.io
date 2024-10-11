@@ -156,8 +156,8 @@
         }
         
         .datawindow{
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             position: fixed;
             bottom: -100%;
             left: 0;
@@ -181,7 +181,7 @@
         }
         .datawindowPanel{
             height: fit-content;
-            width: 100%;
+            width: 100vw;
             overflow-y: scroll; 
             background-color: black;
             margin-top: 6rem;
@@ -196,6 +196,9 @@
         .datawindowPanel p{
             text-align: justify;
             font-size: 1rem;
+        }
+        .datawindowButton{
+            width: 50%; justify-self: center; align-self: center; display: flex; padding-left: 2rem; padding-right: 2rem;
         }
         .mediaGridMusic{
             width: 100%;
@@ -330,7 +333,7 @@
 
     <div class="datawindow" id="drop-media">
         <div class="datawindowPanel">
-            <button onclick="dataClose('drop-media')">Close</button>
+            <button onclick="dataClose('drop-media')" class="datawindowButton">Close</button>
             <h1>Media</h1>
             <h2 style="margin-top: 64px; margin-bottom: 32px;">Live Stream</h2>
             <div id="twitch-embed" class="twitchStreamContainer"></div>
@@ -385,7 +388,7 @@
 
     <div class="datawindow" id="drop-market">
         <div class="datawindowPanel">
-            <button onclick="dataClose('drop-market')">Close</button>
+            <button onclick="dataClose('drop-market')" class="datawindowButton">Close</button>
             <h1>Market</h1>
 
             <h1>Economic Calender</h1>
@@ -797,7 +800,7 @@
 
     <div class="datawindow" id="drop-estate">
         <div class="datawindowPanel">
-            <button onclick="dataClose('drop-estate')">Close</button>
+            <button onclick="dataClose('drop-estate')" class="datawindowButton">Close</button>
             <h1>Auction</h1>
             <h2>No auctions available.</h2>
         </div>
@@ -805,7 +808,7 @@
 
     <div class="datawindow" id="drop-about">
         <div class="datawindowPanel">
-            <button onclick="dataClose('drop-about')">Close</button>
+            <button onclick="dataClose('drop-about')" class="datawindowButton">Close</button>
             <h1>About</h1>
 
             <p>Anurag Lama, known professionally as ANXSION, brings a unique blend of legal expertise and creative vision to every project. Adept at navigating the intricacies of the legal system, he ensures clients receive the representation they deserve.</p>
@@ -820,7 +823,7 @@
 
     <div class="datawindow" id="storeContainer">
         <div class="datawindowPanel">
-            <button onclick="closeStore()">Close</button>
+            <button onclick="closeStore()" class="datawindowButton">Close</button>
             <br><br>
             <img src="" alt="" id="StoreItemImage" style="width: 14rem; height: auto; aspect-ratio: 1/1; object-fit: scale-down; display: flex; flex-direction: column; justify-self: center; align-self: center;">
             <h1 id="storeItemName"></h1>
