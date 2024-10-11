@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home | Anurag Lama</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ANXSION" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The official website of the Anurag Lama." />
+    <meta name="theme-color" content="black" />
+    <meta name="msapplication-navbutton-color" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="google-site-verification" content="Td3WsaV9Dyy8h_rk4BunP0HVL-UsXLA7r6nRTak1-94" />
+    <meta name="robots" content="all">
+    <meta property="og:title" content="ANXSION" />
+    <meta property="og:description" content="The official website of the Anurag Lama." />
+    <meta property="og:image" content="./asset/arts/About.avif" />
+    <meta property="og:image:alt" content="ANXSION" />
+    <meta name="twitter:title" content="ANXSION" />
+    <meta name="twitter:description" content="The official website of the Anurag Lama." />
+    <meta name="twitter:url" content="https://www.anxsion.github.io" />
+    <meta name="twitter:image:src" content="./asset/arts/About.avif" />
+    <meta name="twitter:image:alt" content="ANXSION" />
+    <meta name="twitter:creator" content="@ANXSION" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ANXSION" />
+    <meta name="application-name" content="ANXSION" />
+    <link rel="icon" type="image/png" href="./asset/icon/icon_general.png">
+    <link rel="apple-touch-startup-image" href="./asset/icon/icon_apple.png" media="orientation: portrait" />
+    <link rel="apple-touch-startup-image" href="./asset/icon/icon_apple.png" media="orientation: landscape" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-53Y0LGEE69');
+    </script>
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+    <script>
+        const MMSDK = new MetaMaskSDK.MetaMaskSDK({
+          dappMetadata: {
+            name: "ANXSION CONNECT",
+            url: window.location.href,
+        }});
+    </script>
+    <style>
+        @font-face {
+            font-family: 'decorative';
+            src: url('./asset/fonts/c39.ttf');
+            font-display: block;
+        }
+        @font-face {
+            font-family: 'standard';
+            src: url('./asset/fonts/SFPro.otf');
+            font-display: block;
+        }
+        :root{
+            --colorBack: hsl(0, 0%, 0%);
+            --colorText: hsl(0,0%,100%);
+            --colorAccent: hsl(120, 73%, 75%);
+            --fontStandard: 16px;
+            --fontStyleDecoration: 'decorative';
+            --fontStyleStandard: 'standard';
+            --userInactive: hsl(0, 0%, 27%);
+            --userActive: hsl(120, 73%, 75%);
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: var(--fontStandard);
+            background-color: var(--colorBack);
+            color: var(--colorText);
+            font-family: var(--fontStyleStandard);
+            z-index: 1;
+            min-width: 320px;
+            position: relative;
+        }
+        main{
+            margin-top: 64px;
+            box-sizing: border-box;
+            padding: 16px;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        nav{
+            box-sizing: border-box;
+            padding: 8px;
+            height: 64px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsla(0, 0%, 0%, 80%);
+            backdrop-filter: blur(2px);
+            z-index: 3;
+        }
+        footer{
+            box-sizing: border-box;
+            padding: 8px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 32px;
+        }
+        footer p{
+            margin: 3px;
+        }
+        
+        h1{
+            text-align: center;
+            font-weight: normal;
+        }
+        h2{
+            font-weight: normal;
+        }
+        h3{
+            font-weight: normal;
+        }
+        p{
+            margin-top: 18px;
+            margin-bottom: 18px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        button{
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            margin: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-right: 16px;
+            padding-left: 16px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 22px;
+            cursor: pointer;
+            background-color: var(--colorText);
+            color: var(--colorBack);
+        }
+        .logoDesign{
+            font-family: var(--fontStyleDecoration);
+            font-size: 3rem;
+        }
+        
+        .datawindow{
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(2px);
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: end;
+            transition: 0.3s all;
+            z-index: 4;
+        }
+        .datawindow::-webkit-scrollbar{
+            display: none;
+        }
+        .datawindow div{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            margin-top: 30%;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        
+        @media only screen and (min-width: 320px) and (max-width: 480px){
+           
+        }
+        @media only screen and (min-width: 481px) and (max-width: 768px){
+           
+        }
+        @media only screen and (min-width: 769px) and (max-width: 1024px){
+            
+        }
+        @media only screen and (min-width: 1025px){
+          
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logoDesign">ANXSION</div>
+    </nav>
+
+    
+    <div class="datawindow" id="class-media">
+        <div>
+            <button onclick="dataClose('class-media')">Close</button>
+            <h1>Media.</h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta imperdiet arcu, convallis malesuada odio convallis in. Aliquam sit amet dolor magna. Phasellus dignissim felis a massa condimentum, eu tincidunt felis vehicula. Duis aliquam semper nisl vel accumsan. Aliquam convallis libero id elit dignissim eleifend. Praesent efficitur lectus tempus sagittis tincidunt. Suspendisse molestie libero nisl, ac tempus ligula maximus a. Vivamus pharetra semper sapien, et fringilla mauris pellentesque id. Maecenas aliquet quis nisl vitae varius. Quisque id elit vel lorem fringilla rutrum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta imperdiet arcu, convallis malesuada odio convallis in. Aliquam sit amet dolor magna. Phasellus dignissim felis a massa condimentum, eu tincidunt felis vehicula. Duis aliquam semper nisl vel accumsan. Aliquam convallis libero id elit dignissim eleifend. Praesent efficitur lectus tempus sagittis tincidunt. Suspendisse molestie libero nisl, ac tempus ligula maximus a. Vivamus pharetra semper sapien, et fringilla mauris pellentesque id. Maecenas aliquet quis nisl vitae varius. Quisque id elit vel lorem fringilla rutrum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta imperdiet arcu, convallis malesuada odio convallis in. Aliquam sit amet dolor magna. Phasellus dignissim felis a massa condimentum, eu tincidunt felis vehicula. Duis aliquam semper nisl vel accumsan. Aliquam convallis libero id elit dignissim eleifend. Praesent efficitur lectus tempus sagittis tincidunt. Suspendisse molestie libero nisl, ac tempus ligula maximus a. Vivamus pharetra semper sapien, et fringilla mauris pellentesque id. Maecenas aliquet quis nisl vitae varius. Quisque id elit vel lorem fringilla rutrum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta imperdiet arcu, convallis malesuada odio convallis in. Aliquam sit amet dolor magna. Phasellus dignissim felis a massa condimentum, eu tincidunt felis vehicula. Duis aliquam semper nisl vel accumsan. Aliquam convallis libero id elit dignissim eleifend. Praesent efficitur lectus tempus sagittis tincidunt. Suspendisse molestie libero nisl, ac tempus ligula maximus a. Vivamus pharetra semper sapien, et fringilla mauris pellentesque id. Maecenas aliquet quis nisl vitae varius. Quisque id elit vel lorem fringilla rutrum.</p>
+        </div>
+    </div>
+
+    <div class="datawindow" id="storeContainer">
+        <div>
+            <button onclick="closeStore()">Close</button>
+            <br><br>
+            <img src="" alt="" id="StoreItemImage" style="width: 75%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto;">
+            <h1 id="storeItemName"></h1>
+            <p id="storeItemAddress"></p>
+            <p id="storeItemDescription"></p>
+        </div>
+    </div>
+
+    <main>
+        
+        <h1>Welcome.</h1>
+
+        <p>In today’s world, technology, assets, and finance are critical pillars that can transform an individual's life, offering immense opportunities for growth and security. Far from being a negative force, these elements serve as powerful tools for leveraging personal and professional success. Technology, when harnessed correctly, streamlines daily activities, fosters innovation, and opens new avenues for wealth generation. Assets, whether physical or digital, represent the foundation of financial independence, creating long-term stability. Finance, the lifeblood of any enterprise, enables smart investment and wealth management. I have dedicated my career to creating tools and software that empower individuals to master these areas, enabling them to make informed decisions, optimize their resources, and ultimately achieve a better, more prosperous life.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 8px; width: 100%;">
+            <button onclick="showData('class-media')">Media</button>
+            <button onclick="showData('class-media')">Equity</button>
+            <button onclick="showData('class-media')">Estate</button>
+            <button onclick="showData('class-media')">About</button>
+        </div>
+        
+        <br>
+        <h1>e-Store</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 12px;">
+            <img src="./asset/arts/aeolia.avif" alt="" style="width: 100%; height: 100%; aspect-ratio: 16/9; object-fit: cover; display: flex; justify-content: center; align-items: center;" data-name="Aeolia" data-address="Not minted." data-descrption="Eyes like emerald shines green with envy." onclick="openStoreItem(this)">
+        </div>
+        
+    </main>
+    <footer>
+        <p>&copy; ANURAG LAMA</p>
+        <p>All Rights Reserved</p>
+    </footer>
+
+    <script>
+        window.addEventListener("load", () => {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("anxsion-serviceworker.js");
+            }  
+        });
+    </script>
+    <script>
+    async function showData(dataClass){
+        document.getElementById(dataClass).style.bottom = "0%";
+    }
+    async function dataClose(dataClass) {
+        document.getElementById(dataClass).style.bottom = "-100%";
+    }
+    async function openStoreItem(storeItem) {
+        document.getElementById("storeContainer").style.bottom = "0%";
+        console.log(storeItem.getAttribute('src'));
+        document.getElementById("StoreItemImage").setAttribute("src", storeItem.getAttribute("src"));
+        document.getElementById("storeItemName").innerText= storeItem.getAttribute("data-name");
+        document.getElementById("storeItemAddress").innerText= storeItem.getAttribute("data-address");
+        document.getElementById("storeItemDescription").innerText= storeItem.getAttribute("data-descrption");
+    }
+    async function closeStore() {
+        document.getElementById('storeContainer').style.bottom = "-100%";
+    }
+    </script>
+</body> 
+</html>
