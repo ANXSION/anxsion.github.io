@@ -75,6 +75,15 @@
             font-family: var(--fontStyleStandard);
             z-index: 1;
             min-width: 320px;
+            position: relative;
+        }
+        main{
+            margin-top: 64px;
+            box-sizing: border-box;
+            padding: 16px;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
         }
         nav{
             box-sizing: border-box;
@@ -104,12 +113,7 @@
         footer p{
             margin: 3px;
         }
-        main{
-            margin-top: 64px;
-            box-sizing: border-box;
-            padding: 16px;
-            min-height: 100vh;
-        }
+        
         h1{
             text-align: center;
             font-weight: normal;
@@ -124,6 +128,7 @@
             margin-top: 18px;
             margin-bottom: 18px;
             font-size: 1rem;
+            line-height: 1.5;
         }
         div{
             display: flex;
@@ -149,78 +154,48 @@
             font-family: var(--fontStyleDecoration);
             font-size: 3rem;
         }
-        .dropMenu{
-            background-color: black;
+        
+        .datawindow{
             width: 100%;
             height: 100%;
             position: fixed;
-            top: 0;
+            bottom: -100%;
             left: 0;
             right: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(2px);
             box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            transition: 0.3s all;
             z-index: 4;
         }
-        .dropMenuItems{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
-            margin-top: 64px;
-            padding: 32px;
-            box-sizing: border-box;
+        .datawindowPanel div::-webkit-scrollbar{
+            display: none;
         }
-        .menuGrid{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        .menuGridItems{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            aspect-ratio: 18/9;
-            box-sizing: border-box;
-            padding: 8px;
-        }
-        .storeGrid{
-            width: 100%;
+        .datawindowPanel{
             height: fit-content;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-        .storeItemContainer{
-            display: flex;
-            box-sizing: border-box;
-            justify-content: start;
-            align-items: center;
-            flex-direction: column;
-        }
-        .storeItem{
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            aspect-ratio: 1/1;
-            overflow: hidden;
+            overflow-y: scroll; 
+            background-color: black;
+            margin-top: 6rem;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 16px;
+            box-sizing: border-box;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        .storeItemTag{
-            margin: 0;
-            padding:8px;
-            font-size: 0.875rem;
-            background-color: var(--colorText);
-            color: var(--colorBack);
-            width: 100%; 
-            box-sizing: border-box; 
-            text-align: center; 
-            justify-content: center; 
-            align-items: center;
-        }
-        .storeItemData{
-            font-size: 0.5rem;
-            margin: 8px;
+        .datawindowPanel p{
+            text-align: justify;
+            font-size: 1rem;
         }
         .mediaGridMusic{
             width: 100%;
@@ -256,10 +231,30 @@
             width: 100%;
             aspect-ratio: 16/9;
         }
+
+        .marketGridContainer{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+        }
+        .marketGridContainerItems{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; 
+            width: 100%;
+            height: auto;
+        }
+        .estoreContainer{
+            display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; gap: 9px;
+        }
+        .estoreContainerItem{
+            width: 100%; height: 100%; aspect-ratio: 1/1; object-fit: scale-down; display: flex; justify-content: center; align-items: center;
+        }
         @media only screen and (min-width: 320px) and (max-width: 480px){
-            .storeGrid{
-                grid-template-columns: 1fr 1fr;
-            }
             .mediaGridMusic{
                 grid-template-columns: 1fr;
             }
@@ -271,9 +266,6 @@
             }
         }
         @media only screen and (min-width: 481px) and (max-width: 768px){
-            .storeGrid{
-                grid-template-columns: 1fr 1fr;
-            }
             .mediaGridMusic{
                 grid-template-columns: 1fr 1fr;
             }
@@ -284,12 +276,12 @@
                 aspect-ratio: 16/9;
                 margin: auto;
                 width: 80%;
+            }
+            .estoreContainer{
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
         @media only screen and (min-width: 769px) and (max-width: 1024px){
-            .storeGrid{
-                grid-template-columns: 1fr 1fr 1fr;
-            }
             .mediaGridMusic{
                 grid-template-columns: 1fr 1fr;
             }
@@ -301,12 +293,11 @@
                 margin: auto;
                 width: 80%;
             }
+            .estoreContainer{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
         @media only screen and (min-width: 1025px){
-            body{
-                margin: auto;
-                max-width: 1025px;
-            }
             nav{
                 margin: auto;
                 max-width: 1200px;
@@ -314,9 +305,6 @@
             footer{
                 margin: auto;
                 max-width: 1200px;
-            }
-            .storeGrid{
-                grid-template-columns: 1fr 1fr 1fr 1fr;
             }
             .mediaGridMusic{
                 grid-template-columns: 1fr 1fr;
@@ -328,6 +316,9 @@
                 margin: auto;
                 width: 75%;
             }
+            .estoreContainer{
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -335,85 +326,11 @@
 <body>
     <nav>
         <div class="logoDesign">ANXSION</div>
-        <div style="font-size: 1.5rem; cursor: pointer;" onclick="menu(1)">&#9776;</div>
     </nav>
-    <div class="dropMenu" id="dropMenu">
-        <nav>
-            <div class="logoDesign">ANXSION</div>
-            <div style="font-size: 1.5rem; cursor: pointer;" onclick="menu(0)">&#10005;</div>
-        </nav>
-        <div class="dropMenuItems">
-            <h1 onclick="pageAccess('home')" style="cursor: pointer;">Home</h1>
-            <h1 onclick="pageAccess('media')" style="cursor: pointer;">Media</h1>
-            <h1 onclick="pageAccess('equity')" style="cursor: pointer;">Equity</h1>
-            <h1 onclick="pageAccess('about')" style="cursor: pointer;">About</h1>
-        </div>
-    </div>
-    <div class="homeButton" style="display: none;">&larr;  Home</div>
-    <main>
-        <div id="404" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-            <h1 style="font-size: 4rem;">404</h1>
-            <p>The page you are looking for does not exist.</p>
-        </div>
-        <div id="main">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                <p id="walletAddress" style="text-overflow: ellipsis;">No wallet connected.</p>
-                <p id="balanceData">Balance:&nbsp;<span id="walletBalance">n/a</span></p>
-                <button id="connectWalletButton" onclick="walletConnect()">Connect Wallet</button>
-                <button id="disconnectWalletButton" onclick="walletDisconnect()">Disconnect Wallet</button>
-            </div>
-            <div style="margin-top: 32px;">
-                <h1>eStore</h1>
-                <h2>Artworks</h2>
-                <div class="storeGrid">
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/aeolia.avif" alt="" class="storeItem">
-                        <p class="storeItemTag" onclick="buy(5000000)">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/AnyasBastionOnMistveilLake.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/AsurasForge.jpg" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/DoriansHowlingShores.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/FenOfYsara.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/GlacicalCradleOfElara.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/HollowOfEldrin.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/PortCityOfLyriax.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/SeraphinesLookout.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/TheAridSeaOfAlKara.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                    <div class="storeItemContainer">
-                        <img src="./asset/arts/TheTamsinDunes.avif" alt="" class="storeItem">
-                        <p class="storeItemTag">Available</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="media">
+
+    <div class="datawindow" id="drop-media">
+        <div class="datawindowPanel">
+            <button onclick="dataClose('drop-media')">Close</button>
             <h1>Media</h1>
             <h2 style="margin-top: 64px; margin-bottom: 32px;">Live Stream</h2>
             <div id="twitch-embed" class="twitchStreamContainer"></div>
@@ -464,23 +381,107 @@
                 </div>
             </div>
         </div>
-        <div id="equity">
+    </div>
+
+    <div class="datawindow" id="drop-market">
+        <div class="datawindowPanel">
+            <button onclick="dataClose('drop-market')">Close</button>
+            <h1>Market</h1>
+
             <h1>Economic Calender</h1>
+            <div style="display: flex; width: 100%; min-height: 360px;">
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                    {
+                    "width": "100%",
+                    "height": "100%",
+                    "colorTheme": "dark",
+                    "isTransparent": true,
+                    "locale": "en",
+                    "importanceFilter": "-1,0,1",
+                    "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+                    }
+                    </script>
+                </div>
+            </div>
+
+            <h1>Market Activities</h1>
+
+            <h2>Global Market</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
                 {
-                "width": "100%",
-                "height": "320",
-                "colorTheme": "dark",
-                "isTransparent": true,
-                "locale": "en",
-                "importanceFilter": "-1,0,1",
-                "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+                "symbols": [
+                {
+                    "description": "S&P ASX 200",
+                    "proName": "ASX:XJO"
+                },
+                {
+                    "description": "Nekkei 225",
+                    "proName": "INDEX:NKY"
+                },
+                {
+                    "description": "TSEC Weighted Index",
+                    "proName": "INDEX:TAIEX"
+                },
+                {
+                    "description": "HSI",
+                    "proName": "INDEX:HSI"
+                },
+                {
+                    "description": "SSE Composite",
+                    "proName": "SSE:000001"
+                },
+                {
+                    "description": "SENSEX",
+                    "proName": "INDEX:SENSEX"
+                },
+                {
+                    "description": "CAC 40",
+                    "proName": "INDEX:CAC40"
+                },
+                {
+                    "description": "DAX Index",
+                    "proName": "XETR:DAX"
+                },
+                {
+                    "description": "FTSE 100",
+                    "proName": "FXOPEN:UK100"
+                },
+                {
+                    "description": "STOXX Euro 50",
+                    "proName": "FXOPEN:ESX50"
+                },
+                {
+                    "description": "S&P 500",
+                    "proName": "BLACKBULL:SPX500"
+                },
+                {
+                    "description": "Nasdaq Composite",
+                    "proName": "NASDAQ:IXIC"
+                },
+                {
+                    "description": "Dow Jones",
+                    "proName": "SPREADEX:DJI"
+                },
+                {
+                    "description": "NYSE Composite",
+                    "proName": "NYSE:NYA"
                 }
+                ],
+                "showSymbolLogo": false,
+                "isTransparent": true,
+                "displayMode": "compact",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
                 </script>
             </div>
-            <h1>Economy Data</h1>
+
+
+            <h1>Economy</h1>
             <h2>General</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
@@ -792,20 +793,78 @@
                 </script>
             </div>
         </div>
-        <div id="about">
-            <h1>Exploring Creativity Across Mediums</h1>
-            <div style="box-sizing: border-box; padding: 16px; text-align: justify;">
-                <p>Anurag Lama, known professionally as ANXSION, brings a unique blend of legal expertise and creative vision to every project. Adept at navigating the intricacies of the legal system, he ensures clients receive the representation they deserve.</p>
-                <p>Beyond the courtroom, ANXSION's talents extend to the artistic realm. A skilled musician, he finds expression through music, while his videography and filmmaking showcase a keen eye for capturing compelling narratives.  Furthermore, his programming abilities demonstrate a well-rounded understanding of technical aspects that can be leveraged to enhance creative endeavors.</p>
-                <p>This multifaceted approach allows ANXSION to collaborate effectively across disciplines, fostering a deeper understanding of any project he undertakes.</p>
-                <p style="text-align: center; font-style: italic;">"To create is to command the forces of the universe, to mould reality from the raw essece of imagination. In the hands of the true polymath, art transcends mere beauty. It becomes a testament to the boundless potential of human ingenuity, a powerful defiance against the constraints of mediocrity."</p>
-            </div>
+    </div>
+
+    <div class="datawindow" id="drop-estate">
+        <div class="datawindowPanel">
+            <button onclick="dataClose('drop-estate')">Close</button>
+            <h1>Auction</h1>
+            <h2>No auctions available.</h2>
         </div>
+    </div>
+
+    <div class="datawindow" id="drop-about">
+        <div class="datawindowPanel">
+            <button onclick="dataClose('drop-about')">Close</button>
+            <h1>About</h1>
+
+            <p>Anurag Lama, known professionally as ANXSION, brings a unique blend of legal expertise and creative vision to every project. Adept at navigating the intricacies of the legal system, he ensures clients receive the representation they deserve.</p>
+        
+            <p>Beyond the courtroom, ANXSION's talents extend to the artistic realm. A skilled musician, he finds expression through music, while his videography and filmmaking showcase a keen eye for capturing compelling narratives.  Furthermore, his programming abilities demonstrate a well-rounded understanding of technical aspects that can be leveraged to enhance creative endeavors.</p>
+        
+            <p>This multifaceted approach allows ANXSION to collaborate effectively across disciplines, fostering a deeper understanding of any project he undertakes.</p>
+        
+            <p style="text-align: center; font-style: italic;">"To create is to command the forces of the universe, to mould reality from the raw essece of imagination. In the hands of the true polymath, art transcends mere beauty. It becomes a testament to the boundless potential of human ingenuity, a powerful defiance against the constraints of mediocrity."</p>
+        </div>
+    </div>
+
+    <div class="datawindow" id="storeContainer">
+        <div class="datawindowPanel">
+            <button onclick="closeStore()">Close</button>
+            <br><br>
+            <img src="" alt="" id="StoreItemImage" style="width: 14rem; height: auto; aspect-ratio: 1/1; object-fit: scale-down; display: flex; flex-direction: column; justify-self: center; align-self: center;">
+            <h1 id="storeItemName"></h1>
+            <p id="storeItemPrice" style="text-align: center;"></p>
+            <button id="storeItemAction" onclick="" style="width: fit-content; justify-self: center; align-self: center; display: flex; padding-left: 2rem; padding-right: 2rem;"></button>
+            <p style="text-align: center;" id="storeItemDataPrimary"></p>
+            <p style="text-align: center;" id="storeItemDataSecondary"></p>
+
+            <h2>Description</h2>
+            <p id="storeItemDescription" style="text-align: justify;"></p>
+        </div>
+    </div>
+
+    <main>
+        <h1>Welcome.</h1>
+
+        <p>In today’s world, technology, assets, and finance are critical pillars that can transform an individual's life, offering immense opportunities for growth and security. Far from being a negative force, these elements serve as powerful tools for leveraging personal and professional success. Technology, when harnessed correctly, streamlines daily activities, fosters innovation, and opens new avenues for wealth generation. Assets, whether physical or digital, represent the foundation of financial independence, creating long-term stability. Finance, the lifeblood of any enterprise, enables smart investment and wealth management. I have dedicated my career to creating tools and software that empower individuals to master these areas, enabling them to make informed decisions, optimize their resources, and ultimately achieve a better, more prosperous life.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 8px; width: 100%;">
+            <button onclick="showData('drop-media')">Media</button>
+            <button onclick="showData('drop-market')">Market</button>
+            <button onclick="showData('drop-estate')">Auction</button>
+            <button onclick="showData('drop-about')">About</button>
+        </div>
+        
+        <br>
+        <h1>Curiosity e-Store</h1>
+        <h2>Books</h2>
+        <div class="estoreContainer">
+            <img src="./asset/sale/book1.jpg" alt="" class="estoreContainerItem" data-name="Untold Stories (अनटोल्ड स्टोरिज)" data-price="200 + GST" data-unit="INR" data-primary="Author: Bikash Anurodh Lama" data-secondary="ISBN-13: 978-8197695773" data-actionName="Purchase on Amazon.in" data-actionType="window.open('https://amzn.in/d/4uHA1jE')" data-description="बुकएण्ट प्रकाशनद्वारा प्रकाशित समयोचित कविता कृति ‘अनटोल्ड स्टोरिज’ -मा कवि बिकाश अनुरोध लामाले नारी उत्पीड़न र नारी जीवनका विविध घटना, पाटा, समस्या, कारण, दण्ड र समाधानको प्रावधान उल्लेख गरी पाठक र समाज अनि नारीलाई हेर्ने सम्यक र फरक दृष्टि प्रदान गरेका छन्। गाउँ, बजार र शहरको गोरेटो, कुइनेटो र चौरस्तादेखि अत्याधुनिक उपकरण र सुविधायुक्त भव्य आलिशान अस्पतालको एयरकण्डिशण्ड कोठामा पनि अबला, शिक्षित, स्वावलम्बी नारी सुरक्षित नरहेको वर्तमान सङ्कटापन्न परिवेशमा नारीको रूप, निर्णय र पहललाई सराहना गर्ने फरक दृष्टि राख्छन् जागरूक कवि लामा। वर्णनात्मक शैलीमा कथात्मक, नाटकीय र आत्मालाप कथन पद्धतिद्वारा प्रस्तुत गरिएका कविताहरूमा न्याय प्रणालीका अङ्ग्रेजी शब्द प्रयोग सामयिक र सान्दर्भिक छ। कवि लामाको जन्म कोचबिहारमा भए तापनि शिक्षादीक्षा दार्जीलिङमा भएको हो। अतिरिक्त जिल्ला एवं सत्र न्यायाधीश (एडिशनल डिस्ट्रिक्ट एण्ड सेसन्स जज) को उपल्लो ओहोदामा सेवारत लामा न्यायिक सेवामा कार्यरत भएर पनि निरन्तर साहित्यसाधनामा तल्लीन लामा विशेषतः कविता र गीत लेख्छन्। लामाद्वारा रचित गीत 'छल', 'अर्द्धा‌ङ्गिनी' र 'दाग'-माथि मिउजिक भिडियो निर्मित छन्। 'दाग' नेपाली भाषामा न्यु मिडिया क्याटगरीअन्तर्गत 'शिशुश्री पुरस्कार' (२०२२), पश्चिम बङ्गाल बाल सुरक्षा आयोग, पश्चिम बङ्गाल सरकारद्वारा पुरस्कृत लोकप्रिय रचना हो।" onclick="openStoreItem(this)">
+        </div>
+
+
+        <h2>NFT</h2>
+        <div class="estoreContainer">
+            <img src="./asset/arts/aeolia.avif" alt="" class="estoreContainerItem" data-name="Aeolia" data-price="0.0005" data-unit="ETH" data-primary="Address: 0x000000000" data-secondary="Protocol: ERC 20" data-actionName="Mint" data-actionType="console.log('Awaiting connection...')" data-description="Aeolia, the one who walks between whispers, carries the Eye of Verdantia, a reflection of a forest that never was and a storm that never ceased. Stars cling to her skin, fragments of a forgotten sky, and with each breath, the winds shift in ways no one remembers. Her gaze sees through veils, through moments, through what was never meant to be seen, but none can say where her sight begins or ends. Those who seek her face the pull of something older than time, a knowing that bends and sways, always close but never truly grasped. In the endless green of her eye, destinies twist, unravel, and reform, forever caught in the unseen." onclick="openStoreItem(this)">
+        </div>
+        
     </main>
     <footer>
         <p>&copy; ANURAG LAMA</p>
         <p>All Rights Reserved</p>
     </footer>
+
     <script>
         window.addEventListener("load", () => {
             if ("serviceWorker" in navigator) {
@@ -814,88 +873,27 @@
         });
     </script>
     <script>
-        document.getElementById('balanceData').style.display = 'none';
-        document.getElementById('disconnectWalletButton').style.display = 'none';
-        document.getElementById('dropMenu').style.display = 'none';
-        document.getElementById('404').style.display = 'none';
-        document.getElementById('media').style.display = 'none';
-        document.getElementById('equity').style.display = 'none';
-        document.getElementById('about').style.display = 'none';
-        async function menu(checkValue){
-            if (checkValue == 0){
-                document.getElementById('dropMenu').style.display = 'none';
-            }
-            else{
-                document.getElementById('dropMenu').style.display = 'flex';
-            }
-        }
-        async function pageAccess(checkValue){
-            if (checkValue == 'home'){
-                window.scrollTo({top: 0, behavior: 'smooth'});
-                document.getElementById('404').style.display = 'none';
-                document.getElementById('main').style.display = 'flex';
-                document.getElementById('media').style.display = 'none';
-                document.getElementById('equity').style.display = 'none';
-                document.getElementById('about').style.display = 'none';
-                menu(0);
-            }
-            else if (checkValue == 'media'){
-                window.scrollTo({top: 0, behavior: 'smooth'});
-                document.getElementById('404').style.display = 'none';
-                document.getElementById('main').style.display = 'none';
-                document.getElementById('media').style.display = 'flex';
-                document.getElementById('equity').style.display = 'none';
-                document.getElementById('about').style.display = 'none';
-                menu(0);
-            }
-            else if (checkValue == 'equity'){
-                window.scrollTo({top: 0, behavior: 'smooth'});
-                document.getElementById('404').style.display = 'none';
-                document.getElementById('main').style.display = 'none';
-                document.getElementById('media').style.display = 'none';
-                document.getElementById('equity').style.display = 'flex';
-                document.getElementById('about').style.display = 'none';
-                menu(0);
-            }
-            else if (checkValue == 'about'){
-                window.scrollTo({top: 0, behavior: 'smooth'});
-                document.getElementById('404').style.display = 'none';
-                document.getElementById('main').style.display = 'none';
-                document.getElementById('media').style.display = 'none';
-                document.getElementById('equity').style.display = 'none';
-                document.getElementById('about').style.display = 'flex';
-                menu(0);
-            }
-            else{
-                window.scrollTo({top: 0, behavior: 'smooth'});
-                document.getElementById('404').style.display = 'flex';
-                document.getElementById('main').style.display = 'none';
-                document.getElementById('media').style.display = 'none';
-                document.getElementById('equity').style.display = 'none';
-                document.getElementById('about').style.display = 'none';
-                menu(0);
-            }
-        }
-        async function walletConnect(){
-            const provider = MMSDK.getProvider();
-            const msg = `0x446F20796F752077616E7420746F207369676E20696E3F`;
-            let accounts, accountname, sign, balance;
-            accounts = await provider.request({ method: 'eth_requestAccounts'});
-            accountname = accounts[0];
-            sign = await provider.request({method: "personal_sign", params: [msg, accountname]});
-            balance = await provider.request({ method: "eth_getBalance",params: [accountname,"latest"]});
-            document.getElementById('walletAddress').innerText = accountname;
-            document.getElementById('walletBalance').innerText =Number(balance) + " ETH";
-            document.getElementById('balanceData').style.display = 'flex';
-            document.getElementById('connectWalletButton').style.display = 'none';
-            document.getElementById('disconnectWalletButton').style.display = 'flex';
-        }
-        async function walletDisconnect(){
-            document.getElementById('walletAddress').innerText = 'No wallet connected.';
-            document.getElementById('balanceData').style.display = 'none';
-            document.getElementById('connectWalletButton').style.display = 'flex';
-            document.getElementById('disconnectWalletButton').style.display = 'none';
-        }
+    async function showData(dataClass){
+        document.getElementById(dataClass).style.bottom = "0%";
+    }
+    async function dataClose(dataClass) {
+        document.getElementById(dataClass).style.bottom = "-100%";
+    }
+    async function openStoreItem(storeItem) {
+        document.getElementById("storeContainer").style.bottom = "0%";
+        console.log(storeItem.getAttribute('src'));
+        document.getElementById("StoreItemImage").setAttribute("src", storeItem.getAttribute("src"));
+        document.getElementById("storeItemName").innerHTML= storeItem.getAttribute("data-name");
+        document.getElementById("storeItemPrice").innerHTML= storeItem.getAttribute("data-unit")+ " &nbsp; " + storeItem.getAttribute("data-price");
+        document.getElementById("storeItemAction").innerHTML= storeItem.getAttribute("data-actionName");
+        document.getElementById("storeItemAction").setAttribute("onclick", storeItem.getAttribute("data-actionType"));
+        document.getElementById("storeItemDataPrimary").innerHTML= storeItem.getAttribute("data-primary");
+        document.getElementById("storeItemDataSecondary").innerHTML= storeItem.getAttribute("data-secondary");
+        document.getElementById("storeItemDescription").innerHTML= storeItem.getAttribute("data-description");
+    }
+    async function closeStore() {
+        document.getElementById('storeContainer').style.bottom = "-100%";
+    }
     </script>
 </body> 
 </html>

@@ -29,18 +29,6 @@
   ],
   "prefer_related_applications": false,
   "categories": ["legal", "software"],
-  "shortcuts": [
-    {
-      "name": "Phaedra Equity",
-      "url": "./project/phaedra/phaedra.html",
-      "icons":[{ "src": "./asset/icon/shortcut-ai.png", "sizes": "96x96" }]
-    },
-    {
-      "name": "DENDRITIC DYNAMICS",
-      "url": "./project/dendriticdynamics/dendriticdynamics.html",
-      "icons":[{ "src": "./asset/icon/shortcut-invest.png", "sizes": "96x96" }]
-    }
-  ],
   "screenshots" : [
   {
     "src": "./asset/icon/screenshot-1.png",
