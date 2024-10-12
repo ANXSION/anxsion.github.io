@@ -193,6 +193,7 @@
             box-sizing: border-box;
             -ms-overflow-style: none;
             scrollbar-width: none;
+            padding-bottom: 6rem;
         }
         .datawindowPanel p{
             text-align: justify;
@@ -404,7 +405,7 @@
                     "isTransparent": true,
                     "locale": "en",
                     "importanceFilter": "-1,0,1",
-                    "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+                    "countryFilter": "au,ca,cn,hk,tw,ae,fr,de,in,jp,kr,ru,sa,gb,us,eu"
                     }
                     </script>
                 </div>
@@ -477,7 +478,55 @@
                 ],
                 "showSymbolLogo": false,
                 "isTransparent": true,
-                "displayMode": "compact",
+                "displayMode": "adaptive",
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+                </script>
+            </div>
+
+            <h2>Currency</h2>
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                "symbols": [
+                {
+                    "description": "JPY/INR",
+                    "proName": "FX_IDC:JPYINR"
+                },
+                {
+                    "description": "CNY/INR",
+                    "proName": "FX_IDC:CNYINR"
+                },
+                {
+                    "description": "HKD/INR",
+                    "proName": "FX_IDC:HKDINR"
+                },
+                {
+                    "description": "TWD/INR",
+                    "proName": "FX_IDC:TWDINR"
+                },
+                {
+                    "description": "AED/INR",
+                    "proName": "FX_IDC:EURINR"
+                },
+                {
+                    "description": "EUR/INR",
+                    "proName": "FX_IDC:EURINR"
+                },
+                {
+                    "description": "GBP/INR",
+                    "proName": "FX_IDC:GBPINR"
+                },
+                {
+                    "description": "USD/INR",
+                    "proName": "FX_IDC:USDINR"
+                }
+                ],
+                "showSymbolLogo": true,
+                "isTransparent": true,
+                "displayMode": "adaptive",
                 "colorTheme": "dark",
                 "locale": "en"
             }
@@ -547,7 +596,7 @@
                     ],
                     "showSymbolLogo": false,
                     "isTransparent": true,
-                    "displayMode": "compact",
+                    "displayMode": "adaptive",
                     "colorTheme": "dark",
                     "locale": "en"
                 }
@@ -606,13 +655,13 @@
                     ],
                     "showSymbolLogo": false,
                     "isTransparent": true,
-                    "displayMode": "compact",
+                    "displayMode": "adaptive",
                     "colorTheme": "dark",
                     "locale": "en"
                 }
                 </script>
             </div>
-            <h2>Prices</h2>
+            <h2>Price</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -649,7 +698,7 @@
                     ],
                     "showSymbolLogo": false,
                     "isTransparent": true,
-                    "displayMode": "compact",
+                    "displayMode": "adaptive",
                     "colorTheme": "dark",
                     "locale": "en"
                 }
@@ -704,7 +753,7 @@
                     ],
                     "showSymbolLogo": false,
                     "isTransparent": true,
-                    "displayMode": "compact",
+                    "displayMode": "adaptive",
                     "colorTheme": "dark",
                     "locale": "en"
                 }
@@ -759,7 +808,7 @@
                     ],
                     "showSymbolLogo": false,
                     "isTransparent": true,
-                    "displayMode": "compact",
+                    "displayMode": "adaptive",
                     "colorTheme": "dark",
                     "locale": "en"
                 }
@@ -790,7 +839,7 @@
                     ],
                     "showSymbolLogo": false,
                     "isTransparent": true,
-                    "displayMode": "compact",
+                    "displayMode": "adaptive",
                     "colorTheme": "dark",
                     "locale": "en"
                 }
@@ -843,7 +892,7 @@
 
         <p>In today’s world, technology, assets, and finance are critical pillars that can transform an individual's life, offering immense opportunities for growth and security. Far from being a negative force, these elements serve as powerful tools for leveraging personal and professional success. Technology, when harnessed correctly, streamlines daily activities, fosters innovation, and opens new avenues for wealth generation. I have dedicated my career to creating tools and software that empower individuals to master these areas, enabling them to make informed decisions, optimize their resources, and ultimately achieve a better, more prosperous life.</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 8px; width: 100%;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: center; align-items: center; gap: 8px; width: 100%;">
             <button onclick="showData('drop-media')">Media</button>
             <button onclick="showData('drop-market')">Market</button>
             <button onclick="showData('drop-estate')">Auction</button>
