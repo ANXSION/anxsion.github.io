@@ -661,7 +661,7 @@
                 }
                 </script>
             </div>
-            <h2>Price</h2>
+            <h2>Consumption</h2>
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -686,6 +686,10 @@
                     {
                         "description": "Consumer Spending",
                         "proName": "ECONOMICS:INCS"
+                    },
+                    {
+                        "description": "Consumer Saving",
+                        "proName": "ECONOMICS:INPS"
                     },
                     {
                         "description": "Consumer Confidence Index",
@@ -766,6 +770,10 @@
                 {
                     "symbols": [
                     {
+                        "description": "Terms of Trade",
+                        "proName": "ECONOMICS:INTOT"
+                    },
+                    {
                         "description": "Imports",
                         "proName": "ECONOMICS:INIMP"
                     },
@@ -804,6 +812,42 @@
                     {
                         "description": "External Debt",
                         "proName": "ECONOMICS:INED"
+                    }
+                    ],
+                    "showSymbolLogo": false,
+                    "isTransparent": true,
+                    "displayMode": "adaptive",
+                    "colorTheme": "dark",
+                    "locale": "en"
+                }
+                </script>
+            </div>
+
+            <h2>Business</h2>
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                    "symbols": [
+                    {
+                        "description": "Composite Leading Indicator",
+                        "proName": "ECONOMICS:INCLI"
+                    },
+                    {
+                        "description": "Capacity Utilization",
+                        "proName": "ECONOMICS:INCU"
+                    },
+                    {
+                        "description": "Ease of Business Rank",
+                        "proName": "ECONOMICS:INEDBR"
+                    },
+                    {
+                        "description": "Business Confidence Index",
+                        "proName": "ECONOMICS:INBCOI"
+                    },
+                    {
+                        "description": "Commercial Deposit Growth",
+                        "proName": "ECONOMICS:INDG"
                     }
                     ],
                     "showSymbolLogo": false,
