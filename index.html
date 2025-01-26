@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Advocate Anurag Lama & Associates</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="Anurag Lama" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The official website of Advocate Anurag Lama & Associates. A full-service law firm." />
+    <meta name="theme-color" content="white" />
+    <meta name="msapplication-navbutton-color" content="white" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="google-site-verification" content="Td3WsaV9Dyy8h_rk4BunP0HVL-UsXLA7r6nRTak1-94" />
+    <meta name="robots" content="all">
+    <meta property="og:title" content="Advocate Anurag Lama & Associates" />
+    <meta property="og:description" content="The official website of Advocate Anurag Lama & Associates. A full-service law firm." />
+    <meta property="og:image" content="./asset/icon/lawfirm512.png" />
+    <meta property="og:image:alt" content="Advocate Anurag Lama & Associates" />
+    <meta name="twitter:title" content="Advocate Anurag Lama & Associates" />
+    <meta name="twitter:description" content="The official website of Advocate Anurag Lama & Associates. A full-service law firm." />
+    <meta name="twitter:url" content="https://www.anxsion.github.io" />
+    <meta name="twitter:image:src" content="./asset/icon/lawfirm512.png" />
+    <meta name="twitter:image:alt" content="Advocate Anurag Lama & Associates" />
+    <meta name="twitter:creator" content="@ANXSION" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Advocate Anurag Lama & Associates" />
+    <meta name="application-name" content="Advocate Anurag Lama & Associates" />
+    <meta name="google-adsense-account" content="ca-pub-4003318415794363">
+    <link rel="icon" type="image/png" href="./asset/icon/lawfirm512.png">
+    <link rel="apple-touch-startup-image" href="./asset/icon/lawfirmApple.png" media="orientation: portrait" />
+    <link rel="apple-touch-startup-image" href="./asset/icon/lawfirmApple.png" media="orientation: landscape" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53Y0LGEE69"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-53Y0LGEE69');
+    </script>
+    <style>
+        @font-face {
+            font-family: 'decorative';
+            src: url('./asset/fonts/c39.ttf');
+            font-display: block;
+        }
+        @font-face {
+            font-family: 'standard';
+            src: url('./asset/fonts/SFPro.otf');
+            font-display: block;
+        }
+        @font-face {
+            font-family: 'tickerface';
+            src: url('./asset/fonts/SFPro.otf');
+            font-display: block;
+        }
+        @font-face {
+            font-family: 'company';
+            src: url('./asset/fonts/SFMono.otf');
+            font-display: block;
+        }
+        @font-face {
+            font-family: 'legal';
+            src: url('./asset/fonts/SFNY.otf');
+            font-display: block;
+        }
+        :root{
+            --colorBack: hsl(0, 0%, 100%);
+            --colorText: hsl(0,0%,0%);
+            --colorAccent: hsl(120, 73%, 75%);
+            --fontStandard: 16px;
+            --fontStyleDecoration: 'decorative';
+            --fontStyleStandard: 'standard';
+            --userInactive: hsl(0, 0%, 27%);
+            --userActive: hsl(120, 73%, 75%);
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: var(--fontStandard);
+            background-color: var(--colorBack);
+            color: var(--colorText);
+            font-family: var(--fontStyleStandard);
+            z-index: 1;
+            min-width: 320px;
+            position: relative;
+            text-align: justify;
+            hyphens: auto;
+            outline: none;
+            outline-color: transparent;
+        }
+        body::selection{
+            color: red;
+            background: yellow;
+        }
+        main{
+            margin-top: 64px;
+            box-sizing: border-box;
+            padding: 16px;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        nav{
+            box-sizing: border-box;
+            padding: 8px;
+            height: 64px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: hsla(0, 0%, 100%, 80%);
+            backdrop-filter: blur(6px);
+            z-index: 3;
+        }
+        footer{
+            box-sizing: border-box;
+            padding: 8px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 32px;
+        }
+        dialog{
+            margin: 0;
+            min-width: 25%;
+            max-width: 1024px;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--colorBack);
+            border: 2px solid var(--colorText);
+            color: var(--colorText);
+            border-radius: 12px
+
+        }
+        dialog::backdrop{
+            backdrop-filter: blur(6px);
+        }
+        footer p{
+            margin: 3px;
+        }
+        h1{
+            font-size: 3rem;
+            text-align: left;
+        }
+        h2{
+            font-size: 2rem;
+        }
+        li{
+            margin: 18px;
+        }
+
+        a{
+            text-decoration: none;
+            color: var(--colorText);
+        }
+        p{
+            margin-top: 18px;
+            margin-bottom: 18px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+        table{
+            width: 100%;
+            table-layout:auto;
+            box-sizing: border-box;
+        }
+        tr, th, td{
+            padding: 12px;
+            box-sizing: border-box;
+        }
+        th{
+            text-align: center;
+            box-sizing: border-box;
+        }
+        td{
+            border-collapse: collapse;
+        }
+        button{
+            width: fit-content;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            margin: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-right: 32px;
+            padding-left: 32px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 22px;
+            cursor: pointer;
+            background-color: var(--colorAccent);
+            color: var(--colorText);
+            font-size: 1rem;
+        }
+        button:hover{
+            background-color: var(--colorText);
+            color: var(--colorBack);
+        }
+        details{
+            width: 100%;
+        }
+        details summary::-webkit-details-marker {
+            display:none;
+        }
+        summary{
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            text-align: left;
+            color: var(--colorText);
+            padding: 9px;
+            box-sizing: border-box;
+            border-radius: 18px;
+            user-select: none;
+        }
+        summary:hover{
+            color: var(--colorText);
+            background-color: var(--colorAccent);
+        }
+        #idvalid{
+            display: none;
+        }
+        #idinvalid{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <dialog id="progressdisplay">
+        <div style="width: 100%;" id="idvalid">
+            <p><span style="font-weight: bold;">ID:</span> <span id="clientid"></span></p>
+            <p><span style="font-weight: bold;">Client:</span> <span id="clientname"></span></p>
+            <p><span style="font-weight: bold;">Task:</span> <span id="taskname"></span></p>
+            <p><span style="font-weight: bold;">Progress:</span> <span id="progress"></span></p>
+        </div>
+        
+        <div style="width: 100%;" id="idinvalid">
+            <p><span style="font-weight: bold;">ERROR:</span> Invalid ID</p>
+        </div>
+
+        <form method="dialog" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+            <button>OK</button>
+        </form>
+    </dialog>
+
+    <nav>
+        <div style="font-style: normal; font-weight: normal; display: flex; flex-direction: row; justify-content: center; align-items: center;">Adv. Anurag Lama <br>& Associates</div>
+    </nav>
+
+    <main>
+        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
+            <h1>Advocate Anurag Lama & Associates</h1>
+            <div>A full-service law firm.</div>
+        </div>
+        
+        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
+            <h1>Calculating.<br>Unwavering.<br>Unyielding.<br></h1>
+            <div>We are a full-service law firm, dedicated to providing comprehensive legal services across diverse practice areas with a commitment to professional ethics and excellence. With a focus on diligence, integrity, and client-centricity, we assist individuals and organizations in navigating the complexities of the legal system responsibly and effectively.</div>
+            <br>
+            <div style="display: flex;flex-direction: row;  justify-content: space-evenly; align-items: center;">
+                <button onclick="window.open('tel:9832909233')">Call</button>
+                <button onclick="window.open('https://wa.me/919832909233')">Message</button>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
+            <h1>Track your pending case.</h1>
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 2rem;">
+                <label for="clientidinput">Enter the <span style="font-weight: bold;">Client ID</span> issued by our firm:</label>
+                <br>
+                <input id="clientidinput" name="clientidinput" type="text" style="display: flex; min-width: 50%; background-color:transparent; outline: none; border: none; border-bottom: 2px solid var(--colorText); color: var(--colorText); font-size: 1.5rem; text-align: center;" placeholder="AAAAAAAA" autocomplete="off">
+                <br>
+                <button onclick="trackprogress()">Track</button>
+            </div>
+            <script>
+
+                const client=[
+                    ['357e0603', 'Bijaya Rai', 'Criminal Case', 'Call for CD (13/01/2025)'],
+                    ['4cb30766', 'Subham Verma', 'Criminal Case', 'IO Report (27/02/2025)'],
+                    ['9b8d0aa9', 'Rajendra Maam', 'Land Conversion', 'Hearing (16/01/2025)'],
+                    ['0e0d0e42', 'Maria Goretti', 'Land Conversion', 'Pending BLRO Issuance'],
+                    ['b3550b5d', 'Jayan Gurung', 'DL Application', 'Pending signatures (ETC: n/a)'],
+                    ['770c0906', 'Patricia Sharma', 'Mutation', 'Hearing (15/01/2025)'],
+                    ['639e0832', 'Manju Tamang', 'Partition', 'Work in progress'],
+                    ['324b05f5', 'Rahul Thapa', 'Loan Application', 'Pending dispersement'],
+                    ['6f8208db', 'Anurag Pradhan', 'Deed of Sale - Flat', 'Pending deed collection (ETC: n/a)'],
+                    ['c02f0be6', 'Kiran Upadhayay', 'Society Registration', 'NOC Affidavit (Sent on 12/), Society Registration (ETC 12/02/2025)']
+                ];
+
+                function trackprogress(){
+                    let authtoken = -1;
+                    document.getElementById('idvalid').style.display='none';
+                    document.getElementById('idinvalid').style.display='none';
+
+                    let clentid = document.getElementById('clientidinput').value;
+
+                    for(i=0;i<client.length; i++){
+                        if (client[i][0] == clentid){
+                            authtoken = i;
+                            break;
+                        }
+                        else{
+                            authtoken = -1;
+                        }
+                    }
+                    
+                    if (authtoken>-1){
+                        document.getElementById('idvalid').style.display='block';
+                        document.getElementById('idinvalid').style.display='none';
+
+                        document.getElementById('clientid').innerText = client[authtoken][0];
+                        document.getElementById('clientname').innerText = client[authtoken][1];
+                        document.getElementById('taskname').innerText = client[authtoken][2];
+                        document.getElementById('progress').innerText = client[authtoken][3];
+                        
+                        document.getElementById('progressdisplay').showModal();
+                    }
+                    else{
+                        document.getElementById('idvalid').style.display='none';
+                        document.getElementById('idinvalid').style.display='block';
+                        document.getElementById('progressdisplay').showModal();
+                    }
+                }
+            </script>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
+            <h1>Our practice.</h1>
+            <details>
+                <summary><h2>Criminal Defense</h2></summary>
+                <ol>
+                    <li>Representation in Criminal Trials</li>
+                    <li>Bail and Bail Appeals</li>
+                    <li>Appeals in Criminal Cases</li>
+                    <li>Legal Advice on Criminal Matters</li>
+                    <li>White Collar Crime Defense</li>
+                    <li>Defending Cybercrime Cases</li>
+                    <li>Narcotics and Drugs Cases</li>
+                    <li>POCSO Cases</li>
+                </ol>
+            </details>
+            <details>
+                <summary><h2>Civil Litigation</h2></summary>
+                <ol>
+                    <li>Dispute Resolution</li>
+                    <li>Representation in Civil Court Cases</li>
+                    <li>Recovery of Debts</li>
+                    <li>Property Disputes</li>
+                    <li>Injunctions and Specific Performance</li>
+                    <li>Family Law Disputes</li>
+                </ol>                 
+            </details>
+            <details>
+                <summary><h2>Corporate Law</h2></summary>
+                <ol>
+                    <li>Incorporation and registration of companies</li>
+                    <li>Corporate governance and compliance</li>
+                    <li>Drafting and reviewing business contracts</li>
+                    <li>Shareholder disputes and mergers & acquisitions</li>
+                    <li>Advisory on intellectual property and trademarks</li>
+                </ol>
+            </details>
+            <details>
+                <summary><h2>Commercial Law</h2></summary>
+                <ol>
+                    <li>Commercial contracts and agreements</li>
+                    <li>Dispute resolution in business transactions</li>
+                    <li>Banking and finance law</li>
+                    <li>Sale and purchase agreements</li>
+                    <li>Franchise agreements and joint ventures</li>
+                </ol>
+            </details>
+            <details>
+                <summary><h2>Alternative Dispute Resolution</h2></summary>
+                <ol>
+                    <li>Mediation Services</li>
+                    <li>Arbitration Proceedings</li>
+                    <li>Conciliation Support</li>
+                    <li>Negotiation Assistance</li>
+                    <li>Dispute Resolution Strategy</li>
+                    <li>Enforcement of Arbitral Awards</li>
+                    <li>Pre-Litigation Advisory</li>
+                    <li>Drafting Arbitration Agreements</li>
+                    <li>Representation in ADR Forums</li>
+                </ol>
+            </details>
+            <details>
+                <summary><h2>Taxation Law</h2></summary>
+                <ol>
+                    <li>Income tax advisory and filing</li>
+                    <li>Corporate tax planning and compliance</li>
+                    <li>GST (Goods and Services Tax) compliance</li>
+                    <li>Tax disputes and litigation</li>
+                    <li>Tax exemptions and deductions advice</li>
+                </ol>
+            </details>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
+            <h1>Terms and Disclaimer</h1>
+            <details>
+                <summary><h2>Disclaimer</h2></summary>
+                <p>The Bar Council of India strictly prohibits advertising or solicitation by legal professionals. By accessing this website, you hereby acknowledge and confirm that your access is solely for the purpose of obtaining information about Adv. Anurag Lama & Associates, and that such access has not been solicited, induced, or encouraged through any form of advertisement, solicitation, or communication by Adv. Anurag Lama & Associates or its representatives.</p>
+                <p>The materials presented on this website are solely for informational purposes and should not be construed as solicitation, advertising, or a source of legal advice. No content on this website shall be interpreted as providing legal counsel, and Adv. Anurag Lama & Associates disclaims any liability arising from reliance on any information or material contained herein.</p>
+                <p>All content available on this website constitutes the intellectual property of Adv. Anurag Lama & Associates and is protected accordingly.</p>
+            </details>
+            <details>
+                <summary><h2>Terms of Use</h2></summary>
+                <ol>
+                    <li>This Terms of Use Agreement (hereinafter referred to as the "Agreement" or "Terms of Use") sets forth the terms and conditions governing your access to and use of the website (as defined herein). By accessing or utilizing the website, including but not limited to its content, resources, and features (collectively referred to as the "Content"), you expressly acknowledge and agree to be bound by the terms of this Agreement.</li>
+                    <li>Adv. Anurag Lama & Associates (hereinafter referred to as "the Firm") reserves the exclusive right to amend or modify this Agreement at its sole discretion by publishing the updated Terms of Use on the website. Your continued use of the website following the publication of such revisions shall constitute your unequivocal acceptance of the revised terms. Any modifications to this Agreement shall not have retrospective effect.</li>
+                    <li>The website is provided as an informational resource for the Firm's clients, associates, and other users. The materials and content available on the website are intended solely for general informational purposes and do not constitute legal advice, solicitation, or the establishment of an attorney-client relationship. Users are expressly advised not to act, or to refrain from acting, based solely on the content of the website.</li>
+                    <li>The Firm, along with its partners, associates, consultants, directors, agents, employees, and contributors, expressly disclaims, to the fullest extent permitted by applicable law, any and all liability arising from reliance on or actions taken based on the content of the website. No warranties, express or implied, are provided with respect to the accuracy, completeness, or timeliness of the information contained herein.</li>
+                    <li>Rankings, recognitions, or materials derived from legal directories or third-party sources referenced on the website may pertain to existing practice areas or their predecessors. Photographs or images featured on the website may include representations of current or former personnel, individuals unrelated to the Firm.</li>
+                    <li>By using this website, you acknowledge that your reliance on any information or content herein is entirely at your own discretion and risk. For specific legal advice or assistance, you are encouraged to consult with a qualified legal professional.</li>
+                    <li>Adv. Anurag Lama & Associates reserves the right to modify, amend, or update the Website, its Content, and/or the services described therein at its sole discretion and at any time, without providing prior notice.</li>
+                    <li>The Website and its Content constitute the sole and exclusive intellectual property of Adv. Anurag Lama & Associates and/or its authorized licensors. You hereby agree and undertake not to reproduce, duplicate, copy, sell, resell, or otherwise exploit any portion of the Website or its Content for any commercial or unauthorized purposes, except as explicitly permitted in writing by Adv. Anurag Lama & Associates. By accessing and using the Website, you expressly acknowledge and agree that all rights, titles, and interests in and to the Website and its Content shall remain the exclusive property of Adv. Anurag Lama & Associates. Any use of the Website or its Content in a manner not expressly authorized under this Agreement is strictly prohibited and constitutes a breach thereof.</li>
+                    <li>You acknowledge and agree that you shall not remove, alter, or modify any acknowledgements, credits, disclaimers, or legal notices present on the Website or within the Content. Specific terms and conditions may apply to certain services offered on the Website, which will be explicitly outlined in relation to the respective service, feature, or activity. Such terms shall be considered supplemental to this Agreement, and in the event of any conflict, the terms specific to the service or feature shall take precedence.</li>
+                    <li>The content provided on the website is intended solely for informational purposes and is made available on an “AS IS” and “AS AVAILABLE” basis. Adv. Anurag Lama & Associates encourages all users to verify the information contained herein independently. The publication of such content by Adv. Anurag Lama & Associates does not constitute any warranty or guarantee regarding the quality, availability, accuracy, completeness, or reliability of the services or the content, or any part thereof.</li>
+                </ol>
+            </details>
+            <details>
+                <summary><h2>Privacy Policy</h2></summary>
+            </details>
+        </div>
+    </main>
+    <footer>
+        <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 18px; text-align: center;">
+            Advocate Anurag Lama & Associates<br>&copy; 2025<br><br>All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("load", () => {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("anxsion-serviceworker.js");
+            }  
+        });
+    </script>
+</body> 
+</html>

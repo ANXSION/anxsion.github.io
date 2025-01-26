@@ -1,0 +1,48 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Advocate Anurag Lama & Associates",
+  "id": "ANXSION",
+  "short_name": "Adv. Anurag Lama & Assoc.",
+  "author": "Anurag Lama",
+  "version": "7.0.0",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "description": "The official website of Advocate Anurag Lama & Associates. A full-service law firm.",
+  "orientation": "portrait-primary",
+  "icons": [
+  {
+    "src": "./asset/icon/lawfirm192.png",
+    "type": "image/png",
+    "sizes": "192x192",
+    "purpose": "any"
+  },
+  {
+    "src": "./asset/icon/lawfirm512.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "any"
+  }
+  ],
+  "prefer_related_applications": false,
+  "categories": ["legal", "investment", "business"],
+  "screenshots" : [
+  {
+    "src": "./asset/icon/screenshot-1.png",
+    "sizes": "2504x1752",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": "On Tablet"
+  },
+  {
+    "src": "./asset/icon/screenshot-2.png",
+    "sizes": "1410x2862",
+    "type": "image/png",
+    "form_factor": "narrow",
+    "label": "On Phone"
+  }
+  ]
+}
