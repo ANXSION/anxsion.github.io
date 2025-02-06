@@ -65,14 +65,12 @@
             font-display: block;
         }
         :root{
-            --colorBack: hsl(0, 0%, 100%);
-            --colorText: hsl(0,0%,0%);
+            --colorBack: hsl(0, 0%, 0%);
+            --colorText: hsl(0,0%,100%);
             --colorAccent: hsl(120, 73%, 75%);
             --fontStandard: 16px;
             --fontStyleDecoration: 'decorative';
             --fontStyleStandard: 'standard';
-            --userInactive: hsl(0, 0%, 27%);
-            --userActive: hsl(120, 73%, 75%);
         }
         body{
             margin: 0;
@@ -88,10 +86,6 @@
             hyphens: auto;
             outline: none;
             outline-color: transparent;
-        }
-        body::selection{
-            color: red;
-            background: yellow;
         }
         main{
             margin-top: 64px;
@@ -112,7 +106,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: hsla(0, 0%, 100%, 80%);
+            background-color: hsla(0, 0%, 0%, 80%);
             backdrop-filter: blur(6px);
             z-index: 3;
         }
@@ -204,7 +198,7 @@
             border-radius: 22px;
             cursor: pointer;
             background-color: var(--colorAccent);
-            color: var(--colorText);
+            color: var(--colorBack);
             font-size: 1rem;
         }
         button:hover{
