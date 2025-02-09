@@ -67,7 +67,7 @@
         :root{
             --colorBack: hsl(0, 0%, 0%);
             --colorText: hsl(0,0%,100%);
-            --colorAccent: hsl(120, 73%, 75%);
+            --colorAccent: hsla(120, 73%, 75%, 100%);
             --fontStandard: 16px;
             --fontStyleDecoration: 'decorative';
             --fontStyleStandard: 'standard';
@@ -137,10 +137,14 @@
             transform: translate(-50%, -50%);
             background-color: var(--colorBack);
             color: var(--colorText);
-            border-radius: 12px
+            border-radius: 24px;
+            box-shadow: 0 0 24px 0 hsla(120, 73%, 75%, 20%);
         }
         dialog::backdrop{
             backdrop-filter: blur(6px);
+        }
+        dialog::-webkit-scrollbar{
+            display: none;
         }
         footer p{
             margin: 3px;
@@ -160,8 +164,8 @@
             color: var(--colorText);
         }
         p,a{
-            margin-top: 18px;
-            margin-bottom: 18px;
+            margin-top: 12px;
+            margin-bottom: 12px;
             font-size: 1rem;
             line-height: 1.5;
             color: var(--colorText);
@@ -187,6 +191,7 @@
         }
         td{
             border-collapse: collapse;
+            
         }
         button{
             width: fit-content;
@@ -252,8 +257,24 @@
         #idinvalid{
             display: none;
         }
-        #menuBar{
-            background-color: black;
+        #menuBarMobile{
+            background-color: var(--colorBack);
+            display: none;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            top: 0;
+            padding-top: 76px;
+            padding-bottom: 76px;
+            box-sizing: border-box;
+            transition: 0.3s all;
+            z-index: 2;
+        }
+        #menuBarMain{
+            background-color: var(--colorBack);
             display: flex;
             width: 200px;
             height: 100%;
@@ -295,12 +316,13 @@
             #pullMenu{
                 display: flex;
             }
-            #menuBar{
+            #menuBarMain{
+                display: none;
+            }
+            #menuBarMobile{
+                display: flex;
                 left: -100%;
                 width: 75%;
-            }
-            #menuBar::backdrop{
-                backdrop-filter: blur(6px);
             }
             main{
                 padding-left: 16px;
@@ -315,14 +337,33 @@
 <body>
     <dialog id="progressdisplay">
         <div style="width: 100%;" id="idvalid">
-            <p><span style="font-weight: bold;">ID:</span> <span id="clientid"></span></p>
-            <p><span style="font-weight: bold;">Client:</span> <span id="clientname"></span></p>
-            <p><span style="font-weight: bold;">Task:</span> <span id="taskname"></span></p>
-            <p><span style="font-weight: bold;">Progress:</span> <span id="progress"></span></p>
+            <table style="table-layout: auto;">
+                <tr>
+                    <td style="text-decoration: underline; font-weight: bold;">Ref:</td>
+                    <td id="clientid"></td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline; font-weight: bold;">Name:</td>
+                    <td id="clientname"></td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline; font-weight: bold;">Task:</td>
+                    <td id="taskname"></td>
+                </tr>
+                <tr>
+                    <td style="text-decoration: underline; font-weight: bold;">Status:</td>
+                    <td id="progress"></td>
+                </tr>
+            </table>
         </div>
         
         <div style="width: 100%;" id="idinvalid">
-            <p><span style="font-weight: bold;">ERROR:</span> Invalid ID</p>
+            <table>
+                <tr>
+                    <td style="text-decoration: underline; font-weight: bold;">ERROR:</td>
+                    <td>Invalid reference.</td>
+                </tr>
+            </table>
         </div>
 
         <form method="dialog" style="width: 100%; display: flex; justify-content: center; align-items: center;">
@@ -332,16 +373,24 @@
 
     <nav>
         <div style="font-style: normal; font-weight: normal; display: flex; flex-direction: row; justify-content: center; align-items: center;">Advocate Anurag Lama <br>& Associates</div>
-        <p onclick="pullMenu()" id="pullMenu">Menu</p>
+        <p onclick="pullMenu()" id="pullMenu" style="outline: none;">Menu</p>
     </nav>
 
     <main>
-        <div id="menuBar">
-            <div style="display: flex; text-align: left;">
-                <a style="cursor: pointer;" href="#Track">Track</a>
+        <div id="menuBarMobile">
+            <div style="display: flex; text-align: left; width: 100%; box-sizing: border-box; padding-left: 18px;">
+                <a style="cursor: pointer;" onclick="pullMenu()" href="#Track">Track Case</a>
+                <a style="cursor: pointer;" onclick="pullMenu()" href="#Contact">Contact</a>
+                <a style="cursor: pointer;" onclick="pullMenu()" href="#Practice">Our Practice</a>
+                <a style="cursor: pointer;" onclick="pullMenu()" href="#Terms">Legal Information</a>
+            </div>
+        </div>
+        <div id="menuBarMain">
+            <div style="display: flex; text-align: left; width: 100%; box-sizing: border-box; padding-left: 18px;">
+                <a style="cursor: pointer;" href="#Track">Track Case</a>
                 <a style="cursor: pointer;" href="#Contact">Contact</a>
-                <a style="cursor: pointer;" href="#Practice">Practice</a>
-                <a style="cursor: pointer;" href="#Terms">Terms</a>
+                <a style="cursor: pointer;" href="#Practice">Our Practice</a>
+                <a style="cursor: pointer;" href="#Terms">Legal Information</a>
             </div>
         </div>
 
@@ -359,50 +408,53 @@
             </div>
             <script>
                 const client=[
-                    ['Pradhan Nagar PS 126/23', 'Bijaya Rai', 'Criminal Case', 'Client is out on bail, IO Report (29/04/2025)'],
-                    ['4cb30766', 'Subham Verma', 'Criminal Case', 'IO Report (27/02/2025)'],
-                    ['9b8d0aa9', 'Rajendra Maam', 'Land Conversion', 'Hearing (16/01/2025)'],
-                    ['0e0d0e42', 'Maria Goretti', 'Land Conversion', 'Pending BLRO Issuance'],
-                    ['b3550b5d', 'Jayan Gurung', 'DL Application', 'Pending signatures (ETC: n/a)'],
-                    ['770c0906', 'Patricia Sharma', 'Mutation', 'Hearing (15/01/2025)'],
-                    ['639e0832', 'Manju Tamang', 'Partition', 'Work in progress'],
-                    ['324b05f5', 'Rahul Thapa', 'Loan Application', 'Pending dispersement'],
-                    ['6f8208db', 'Anurag Pradhan', 'Deed of Sale - Flat', 'Pending deed collection (ETC: n/a)'],
-                    ['c02f0be6', 'Kiran Upadhayay', 'Society Registration', 'NOC Affidavit (Sent on 12/), Society Registration (ETC 12/02/2025)']
+                    [['Pradhan Nagar PS 126/23','GR 628/23'], 'Bijaya Rai', 'Criminal Case', 'Client is out on bail, IO Report (29/04/2025)'],
+                    [['4cb30766'], 'Subham Verma', 'Criminal Case', 'IO Report (27/02/2025)']
                 ];
 
-                
-
                 function trackprogress(inputLocation){
-                    let authtoken = -1;
+                    let authtoken = 0;
+                    let clientindexdata = 0;
+                    let referencedata = '';
                     document.getElementById('idvalid').style.display='none';
                     document.getElementById('idinvalid').style.display='none';
-                    let clentid = '';
+                    let clientid = '';
 
                     if(inputLocation=='mini'){
-                        clentid= document.getElementById('miniclientidinput').value;
+                        clientid= document.getElementById('miniclientidinput').value;
                     }
                     else if(inputLocation=='main'){
-                        clentid= document.getElementById('mainclientidinput').value;
+                        clientid= document.getElementById('mainclientidinput').value;
+                    }
+                    for(i=0; i<client.length; i++){
+                        for (j=0; j<client[i][0].length; j++){
+                            if (clientid===client[i][0][j]){
+                                authtoken = 1;
+                                clientindexdata = i;
+                                break;
+                            }
+                            else{
+                                authtoken = 0;
+                                clientindexdata = i;
+                            }
+                        }
+                        break
                     }
 
-                    for(i=0; i<client.length; i++){
-                        if (client[i][0] == clentid){
-                            authtoken = i;
-                            break;
-                        }
-                        else{
-                            authtoken = -1;
-                        }
-                    }
-                    if (authtoken>-1){
+                    if (authtoken>0){
                         document.getElementById('idvalid').style.display='block';
                         document.getElementById('idinvalid').style.display='none';
 
-                        document.getElementById('clientid').innerText = client[authtoken][0];
-                        document.getElementById('clientname').innerText = client[authtoken][1];
-                        document.getElementById('taskname').innerText = client[authtoken][2];
-                        document.getElementById('progress').innerText = client[authtoken][3];
+                        for(k=0;k<client[clientindexdata][0].length;k++){
+                            referencedata = referencedata+ client[clientindexdata][0][k] + ", ";
+                        }
+                        referencedata = referencedata.slice(0, -2);
+
+                        console.log(referencedata);
+                        document.getElementById('clientid').innerText = referencedata;
+                        document.getElementById('clientname').innerText = client[i][1];
+                        document.getElementById('taskname').innerText = client[i][2];
+                        document.getElementById('progress').innerText = client[i][3];
                         
                         document.getElementById('progressdisplay').showModal();
                     }
@@ -412,8 +464,9 @@
 
                         document.getElementById('progressdisplay').showModal();
                     }
-                    document.getElementById('mainclientidinput') = '';
-                    document.getElementById('miniclientidinput') = '';
+                    referencedata='';
+                    document.getElementById('miniclientidinput').value = '';
+                    document.getElementById('mainclientidinput').value = '';
                 }
             </script>
             
@@ -436,22 +489,23 @@
                 <div style="display: block; overflow-y: hidden; overflow-x: hidden; width: 100%;">
                     <div style="display: flex; flex-direction: row; overflow-y: hidden; gap: 32px; overflow-x: scroll;" class="scroller">
                         <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area1Specifics').showModal()">
-                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1;"></div>
-                            <h2>Criminal<br>Defense</h2>
-                            <p><span style="color: var(--colorAccent);">8</span> specific area.</p>
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex;justify-content: center; align-items: center; cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Criminal<br>Defense</h2>
+                            </div>
+                            <p><span style="color: var(--colorAccent);">8</span> category specific practice.</p>
                             <dialog id="area1Specifics" style="min-width: 50%; width: max-content;">
                                 <table style="text-align: left;">
                                     <tr>
                                         <th>Specific Area</th>
-                                        <th>Severity</th>
+                                        <th>General Difficulty</th>
                                     </tr>
                                     <tr>
                                         <td>General criminal trial</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);;"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
                                         </td>
@@ -460,7 +514,7 @@
                                         <td>Bail application</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
@@ -471,9 +525,9 @@
                                         <td>Criminal appeal</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
                                         </td>
@@ -482,10 +536,10 @@
                                         <td>White-collar crime</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -493,9 +547,9 @@
                                         <td>Cyber crime case</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
                                         </td>
@@ -504,10 +558,10 @@
                                         <td>POCSO case</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -515,10 +569,10 @@
                                         <td>Narcotics and Drugs case</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -526,10 +580,10 @@
                                         <td>Other special court cases</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -542,33 +596,34 @@
                         </div>
 
                         <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area2Specifics').showModal()">
-                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1;"></div>
-                            <h2>Civil<br>Litigation</h2>
-                            <p><span style="color: var(--colorAccent);">8</span> specific area.</p>
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex;justify-content: center; align-items: center; cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Civil<br>Litigation</h2>
+                            </div>
+                            <p><span style="color: var(--colorAccent);">9</span> category specific practice.</p>
                             <dialog id="area2Specifics" style="min-width: 50%; width: max-content;">
                                 <table style="text-align: left;">
                                     <tr>
                                         <th>Specific Area</th>
-                                        <th>Severity</th>
+                                        <th>General Difficulty</th>
                                     </tr>
                                     <tr>
                                         <td>General suit</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Injunction and relief</td>
+                                        <td>Injunction and specific relief</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
                                         </td>
@@ -577,19 +632,19 @@
                                         <td>Property dispute</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Divorce</td>
+                                        <td>Divorce and maintenance</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                             </div>
@@ -599,10 +654,10 @@
                                         <td>Child Custody</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -610,7 +665,7 @@
                                         <td>Recovery of debt</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
@@ -621,10 +676,10 @@
                                         <td>Motor vehicles accident claims</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                             </div>
                                         </td>
                                     </tr>
@@ -632,7 +687,7 @@
                                         <td>Alternative dispute resolution</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
@@ -643,7 +698,7 @@
                                         <td>Interpleader suit</td>
                                         <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
                                             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
-                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
                                                 <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
@@ -657,209 +712,392 @@
                                 </form>
                             </dialog>
                         </div>
+
+                        <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area3Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex;justify-content: center; align-items: center; cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Corporate<br>Law</h2>
+                            </div>
+                            <p><span style="color: var(--colorAccent);">5</span> category specific practice.</p>
+                            <dialog id="area3Specifics" style="min-width: 50%; width: max-content;">
+                                <table style="text-align: left;">
+                                    <tr>
+                                        <th>Specific Area</th>
+                                        <th>General Difficulty</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Corporate advisory and compliance</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Incorporation and registration</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Corporate dispute resolution</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Intellectual property law</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Merger and acquisitions</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><br>
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+                            </dialog>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area4Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex;justify-content: center; align-items: center; cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Commercial<br>Transaction</h2>
+                            </div>
+                            <p><span style="color: var(--colorAccent);">5</span> category specific practice.</p>
+                            <dialog id="area4Specifics" style="min-width: 50%; width: max-content;">
+                                <table style="text-align: left;">
+                                    <tr>
+                                        <th>Specific Area</th>
+                                        <th>General Difficulty</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Commercial contracts</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Banking and finance law</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Joint ventures</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Real estate</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Competition and anti-trust</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><br>
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+                            </dialog>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area5Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Taxation<br>Law</h2>
+                            </div>
+                            <p><span style="color: var(--colorAccent);">4</span> category specific practice.</p>
+                            <dialog id="area5Specifics" style="min-width: 50%; width: max-content;">
+                                <table style="text-align: left;">
+                                    <tr>
+                                        <th>Specific Area</th>
+                                        <th>General Difficulty</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Income tax advisory and filing</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tax planning</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>GST compliance</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tax disputes and litigation</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: var(--colorAccent);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><br>
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+                            </dialog>
+                        </div>
                     </div>
                 </div>
-
-                <details>
-                    <summary><h2>Civil Litigation</h2></summary>
-                    <ol>
-                        <li>Dispute Resolution</li>
-                        <li>Representation in Civil Court Cases</li>
-                        <li>Recovery of Debts</li>
-                        <li>Property Disputes</li>
-                        <li>Injunctions and Specific Performance</li>
-                        <li>Family Law Disputes</li>
-                    </ol>                 
-                </details>
-                <details>
-                    <summary><h2>Corporate Law</h2></summary>
-                    <ol>
-                        <li>Incorporation and registration of companies</li>
-                        <li>Corporate governance and compliance</li>
-                        <li>Drafting and reviewing business contracts</li>
-                        <li>Shareholder disputes and mergers & acquisitions</li>
-                        <li>Advisory on intellectual property and trademarks</li>
-                    </ol>
-                </details>
-                <details>
-                    <summary><h2>Commercial Law</h2></summary>
-                    <ol>
-                        <li>Commercial contracts and agreements</li>
-                        <li>Dispute resolution in business transactions</li>
-                        <li>Banking and finance law</li>
-                        <li>Sale and purchase agreements</li>
-                        <li>Franchise agreements and joint ventures</li>
-                    </ol>
-                </details>
-                <details>
-                    <summary><h2>Alternative Dispute Resolution</h2></summary>
-                    <ol>
-                        <li>Mediation Services</li>
-                        <li>Arbitration Proceedings</li>
-                        <li>Conciliation Support</li>
-                        <li>Negotiation Assistance</li>
-                        <li>Dispute Resolution Strategy</li>
-                        <li>Enforcement of Arbitral Awards</li>
-                        <li>Pre-Litigation Advisory</li>
-                        <li>Drafting Arbitration Agreements</li>
-                        <li>Representation in ADR Forums</li>
-                    </ol>
-                </details>
-                <details>
-                    <summary><h2>Taxation Law</h2></summary>
-                    <ol>
-                        <li>Income tax advisory and filing</li>
-                        <li>Corporate tax planning and compliance</li>
-                        <li>GST (Goods and Services Tax) compliance</li>
-                        <li>Tax disputes and litigation</li>
-                        <li>Tax exemptions and deductions advice</li>
-                    </ol>
-                </details>
+                <br><br>
+                <div style="width: 100%; display: flex; justify-content: center; align-items: center;">This display is for informational purposes only and does not constitute legal advice.</div>
             </div>
 
             <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;" id="Terms">
-                <h1>Terms and Privacy</h1>
-                <details>
-                    <summary><h2>Terms of Use</h2></summary>
-                    <p>This Website (hereinafter referred to as the "Website") is operated by <strong>Advocate Anurag Lama & Associates</strong> (hereinafter referred to as "the Firm"). These Terms of Use (hereinafter referred to as the "Terms") govern the access to and utilization of the Website. By accessing or using the Website, the User agrees to comply with and be bound by these Terms, as well as all applicable laws and regulations.</p>
-                    <p>These Terms shall be read in conjunction with the Firm's Privacy Policy, which is incorporated herein by reference. If the User does not agree to these Terms, the User is prohibited from using the Website.</p>
-                    <ol>
-                        <li><strong>Use of the Website</strong>
-                            <p>The Website is provided solely for the purpose of offering general information regarding the legal services of the Firm. The User agrees to use the Website only for lawful purposes and in accordance with these Terms. The User further agrees not to:</p>
-                            <ul>
-                                <li>Violate any applicable local, state, or national laws or regulations;</li>
-                                <li>Engage in conduct that may damage, disable, or impair the operation of the Website;</li>
-                                <li>Attempt to gain unauthorized access to any portion of the Website, or any systems or networks connected to the Website;</li>
-                                <li>Engage in any activity that could disrupt the functionality of the Website.</li>
-                            </ul>
-                        </li>
-                    
-                        <li><strong>Legal Advice Disclaimer</strong>
-                            <p>The information provided on the Website, including but not limited to blog posts, articles, case studies, or other content, is intended for general informational purposes only and does not constitute legal advice. The transmission of information via the Website does not establish an attorney-client relationship between the User and the Firm. The User is advised to seek formal legal counsel for advice pertaining to their specific legal matters.</p>
-                            <p>In compliance with the Bar Council of India’s regulations, no solicitation or advertisement for legal services is made through the Website.</p>
-                        </li>
-                    
-                        <li><strong>Intellectual Property</strong>
-                            <p>All content on the Website, including but not limited to text, images, videos, logos, and other materials, is the property of <strong>Advocate Anurag Lama & Associates</strong> or its licensors and is protected by copyright, trademark, and other intellectual property laws. The User is prohibited from copying, modifying, distributing, transmitting, or displaying any content from the Website without the prior written consent of the Firm, except as explicitly permitted under applicable law.</p>
-                        </li>
-                    
-                        <li><strong>Privacy and Data Protection</strong>
-                            <p>By using the Website, the User consents to the collection, use, and disclosure of their personal data in accordance with the Firm’s Privacy Policy. The Firm is committed to the protection of personal data in compliance with applicable data protection laws. The Firm's Privacy Policy is incorporated by reference into these Terms.</p>
-                        </li>
-                    
-                        <li><strong>Limitation of Liability</strong>
-                            <p>To the maximum extent permitted by law, the Firm shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, or data, arising from the use or inability to use the Website, even if the Firm has been advised of the possibility of such damages. In no event shall the Firm's total liability exceed the amount paid by the User, if any, for accessing the Website.</p>
-                        </li>
-                    
-                        <li><strong>Indemnification</strong>
-                            <p>The User agrees to indemnify, defend, and hold harmless the Firm, its officers, employees, agents, and affiliates from and against any claims, damages, liabilities, and expenses, including reasonable attorney's fees, arising from or in connection with: 
-                                <ul>
-                                    <li>User's use of the Website;</li>
-                                    <li>User's violation of these Terms;</li>
-                                    <li>Any infringement of the rights of third parties.</li>
-                                </ul>
-                            </p>
-                        </li>
-                    
-                        <li><strong>Modification of Terms</strong>
-                            <p>The Firm reserves the right to amend, modify, or update these Terms at its sole discretion, without prior notice. The most recent version of these Terms shall be posted on the Website, and such changes shall take effect immediately upon posting. Continued use of the Website constitutes acceptance of the amended Terms.</p>
-                        </li>
-                    
-                        <li><strong>Termination of Access</strong>
-                            <p>The Firm reserves the right to suspend or terminate the User's access to the Website at any time, without notice, if it is determined that the User has violated these Terms or engaged in unlawful conduct. Any suspension or termination of access will be in accordance with the Firm's policies and the Bar Council of India’s regulations governing professional conduct.</p>
-                        </li>
-                    
-                        <li><strong>Third-Party Links</strong>
-                            <p>The Website may contain links to third-party websites that are not controlled or operated by the Firm. The Firm is not responsible for the content, privacy practices, or policies of such third-party websites. The User acknowledges and agrees that the Firm is not liable for any damages or loss arising from the use of third-party websites.</p>
-                        </li>
-                    
-                        <li><strong>Governing Law and Jurisdiction</strong>
-                            <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from or in connection with these Terms or the use of the Website shall be subject to the exclusive jurisdiction of the courts in Darjeeling, India. The Website and its use shall be in compliance with the Bar Council of India's guidelines and regulations.</p>
-                        </li>
-                    
-                        <li><strong>Severability</strong>
-                            <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall remain in full force and effect.</p>
-                        </li>
-                    </ol>
-                </details>
-                <details>
-                    <summary><h2>Privacy Policy</h2></summary>
-                    <p>At Advocate Anurag Lama & Associates ("we," "us," or "our"), we value the privacy and confidentiality of the information you provide to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you access or use our website, services, or interact with us in any manner, in compliance with applicable privacy laws.</p>
-    
-                    <p>By accessing our website or using our services, you consent to the terms outlined in this Privacy Policy.</p>
-    
-                    <ol>
-                        <li><strong>Information We Collect</strong>
-                            <ul>
-                                <li><strong>Personal Identification Information</strong>: Full name, email address, phone number, and other contact details.</li>
-                                <li><strong>Sensitive Personal Data or Information</strong>: Includes, but is not limited to, financial information, identification numbers (e.g., PAN, Aadhaar, or passport numbers), and other details as required for legal representation or consultations.</li>
-                                <li><strong>Transactional Data</strong>: Payment details, billing information, and other data related to legal services rendered.</li>
-                                <li><strong>Usage Data</strong>: Information about how you access and interact with our website, including IP address, device information, browser type, and browsing patterns.</li>
-                            </ul>
-                        </li>
-    
-                        <li><strong>How We Collect Information</strong>
-                            <ul>
-                                <li><strong>Direct Interactions</strong>: Information provided directly by you when you contact us, book consultations, or request legal services.</li>
-                                <li><strong>Automated Technologies</strong>: Usage of cookies, analytics, and similar tracking technologies that gather data about your interaction with our website.</li>
-                                <li><strong>Third Parties</strong>: We may receive data from third-party service providers for purposes such as payment processing, data enrichment, or legal service enhancements.</li>
-                            </ul>
-                        </li>
-    
-                        <li><strong>Purpose of Data Collection</strong>
-                            <ul>
-                                <li><strong>Provision of Legal Services</strong>: To provide legal advice, representation, and services in compliance with applicable laws and regulations.</li>
-                                <li><strong>Communication</strong>: To communicate with you regarding the status of your legal matters, billing inquiries, and other updates related to your case or services.</li>
-                                <li><strong>Website Functionality</strong>: To ensure our website operates efficiently, improving user experience, and enhancing the functionality of our services.</li>
-                                <li><strong>Legal Compliance</strong>: To comply with statutory obligations and regulatory requirements, including record-keeping and filing of reports with authorities, as required by law.</li>
-                            </ul>
-                        </li>
-    
-                        <li><strong>How We Use the Data</strong>
-                            <ul>
-                                <li><strong>To Provide Legal Services</strong>: Delivering legal advice, drafting documents, or representing you in legal proceedings.</li>
-                                <li><strong>Communication and Updates</strong>: Contacting you about your case or legal matters, including follow-ups, reminders, and clarifications.</li>
-                                <li><strong>Legal Obligations and Compliance</strong>: Complying with legal requirements, responding to legal requests, and ensuring compliance with industry standards and best practices.</li>
-                            </ul>
-                        </li>
-    
-                        <li><strong>Data Sharing and Disclosure</strong>
-                            <ul>
-                                <li><strong>Third-Party Service Providers</strong>: Trusted vendors or service providers who assist with payment processing, legal research, document management, and website operations. These third parties are bound by confidentiality obligations and are prohibited from using your data for any other purposes.</li>
-                                <li><strong>Regulatory Authorities</strong>: When required by law, regulatory bodies, or court orders, we may disclose personal data to law enforcement agencies or government authorities.</li>
-                                <li><strong>Professional Advisors</strong>: Legal, financial, or audit advisors engaged by us to ensure compliance with legal and regulatory obligations.</li>
-                            </ul>
-                        </li>
-    
-                        <li><strong>Data Security</strong>
-                            <p>We implement reasonable technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. This includes secure storage, encryption protocols, and access controls. However, please note that no method of data transmission over the Internet or electronic storage is 100% secure.</p>
-                        </li>
-    
-                        <li><strong>Data Retention</strong>
-                            <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. When personal data is no longer required, we will securely dispose of or anonymize it in accordance with applicable laws and regulations.</p>
-                        </li>
-    
-                        <li><strong>Your Rights</strong>
-                            <p>Under Indian law and applicable data protection laws, you may have the following rights in relation to your personal data:</p>
-                            <ul>
-                                <li><strong>Right to Access</strong>: You may request access to the personal data we hold about you and request copies of such data.</li>
-                                <li><strong>Right to Rectification</strong>: You may request the correction or update of inaccurate or incomplete personal data.</li>
-                                <li><strong>Right to Erasure</strong>: You may request the deletion of your personal data, subject to certain legal and contractual obligations.</li>
-                                <li><strong>Right to Object</strong>: You may object to the processing of your personal data in certain circumstances, including for direct marketing purposes.</li>
-                                <li><strong>Right to Data Portability</strong>: You may request that we transfer your personal data to another service provider, where applicable.</li>
-                            </ul>
-                            <p>To exercise these rights, please contact us.</p>
-                        </li>
-    
-                        <li><strong>Cookies and Tracking Technologies</strong>
-                            <p>We may use cookies and similar technologies to track usage patterns, analyze trends, and improve our website’s functionality. You can control the use of cookies through your browser settings. However, disabling cookies may impact the functionality of certain website features.</p>
-                        </li>
-    
-                        <li><strong>Changes to This Privacy Policy</strong>
-                            <p>We reserve the right to update or modify this Privacy Policy from time to time to reflect changes in legal requirements or business practices. Any such changes will be posted on our website, and the revised policy will be effective as of the date indicated.</p>
-                        </li>
-                    </ol>
-                </details>
+                <h1>Legal information</h1>
+
+                <div style="display: block; overflow-y: hidden; overflow-x: hidden; width: 100%;">
+                    <div style="display: flex; flex-direction: row; overflow-y: hidden; gap: 32px; overflow-x: scroll;" class="scroller">
+
+                        <div style="display: grid; grid-template-columns: 1;" onclick="document.getElementById('terms1Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex;justify-content: center; align-items: center;  cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Terms &<br>Conditions</h2>
+                            </div>
+                            <dialog id="terms1Specifics" style="min-width: 50%; width: max-content;">
+                                <h1 style="text-align: center;">Terms and Conditions</h1>
+
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+
+                                <p>This Website (hereinafter referred to as the "Website") is operated by <strong>Advocate Anurag Lama & Associates</strong> (hereinafter referred to as "the Firm"). These Terms of Use (hereinafter referred to as the "Terms") govern the access to and utilization of the Website. By accessing or using the Website, the User agrees to comply with and be bound by these Terms, as well as all applicable laws and regulations.</p>
+                                <p>These Terms shall be read in conjunction with the Firm's Privacy Policy, which is incorporated herein by reference. If the User does not agree to these Terms, the User is prohibited from using the Website.</p>
+                                <ol>
+                                    <li><strong>Use of the Website</strong>
+                                        <p>The Website is provided solely for the purpose of offering general information regarding the legal services of the Firm. The User agrees to use the Website only for lawful purposes and in accordance with these Terms. The User further agrees not to:</p>
+                                        <ul>
+                                            <li>Violate any applicable local, state, or national laws or regulations;</li>
+                                            <li>Engage in conduct that may damage, disable, or impair the operation of the Website;</li>
+                                            <li>Attempt to gain unauthorized access to any portion of the Website, or any systems or networks connected to the Website;</li>
+                                            <li>Engage in any activity that could disrupt the functionality of the Website.</li>
+                                        </ul>
+                                    </li>
+                                
+                                    <li><strong>Legal Advice Disclaimer</strong>
+                                        <p>The information provided on the Website, including but not limited to blog posts, articles, case studies, or other content, is intended for general informational purposes only and does not constitute legal advice. The transmission of information via the Website does not establish an attorney-client relationship between the User and the Firm. The User is advised to seek formal legal counsel for advice pertaining to their specific legal matters.</p>
+                                        <p>In compliance with the Bar Council of India’s regulations, no solicitation or advertisement for legal services is made through the Website.</p>
+                                    </li>
+                                
+                                    <li><strong>Intellectual Property</strong>
+                                        <p>All content on the Website, including but not limited to text, images, videos, logos, and other materials, is the property of <strong>Advocate Anurag Lama & Associates</strong> or its licensors and is protected by copyright, trademark, and other intellectual property laws. The User is prohibited from copying, modifying, distributing, transmitting, or displaying any content from the Website without the prior written consent of the Firm, except as explicitly permitted under applicable law.</p>
+                                    </li>
+                                
+                                    <li><strong>Privacy and Data Protection</strong>
+                                        <p>By using the Website, the User consents to the collection, use, and disclosure of their personal data in accordance with the Firm’s Privacy Policy. The Firm is committed to the protection of personal data in compliance with applicable data protection laws. The Firm's Privacy Policy is incorporated by reference into these Terms.</p>
+                                    </li>
+                                
+                                    <li><strong>Limitation of Liability</strong>
+                                        <p>To the maximum extent permitted by law, the Firm shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, or data, arising from the use or inability to use the Website, even if the Firm has been advised of the possibility of such damages. In no event shall the Firm's total liability exceed the amount paid by the User, if any, for accessing the Website.</p>
+                                    </li>
+                                
+                                    <li><strong>Indemnification</strong>
+                                        <p>The User agrees to indemnify, defend, and hold harmless the Firm, its officers, employees, agents, and affiliates from and against any claims, damages, liabilities, and expenses, including reasonable attorney's fees, arising from or in connection with: 
+                                            <ul>
+                                                <li>User's use of the Website;</li>
+                                                <li>User's violation of these Terms;</li>
+                                                <li>Any infringement of the rights of third parties.</li>
+                                            </ul>
+                                        </p>
+                                    </li>
+                                
+                                    <li><strong>Modification of Terms</strong>
+                                        <p>The Firm reserves the right to amend, modify, or update these Terms at its sole discretion, without prior notice. The most recent version of these Terms shall be posted on the Website, and such changes shall take effect immediately upon posting. Continued use of the Website constitutes acceptance of the amended Terms.</p>
+                                    </li>
+                                
+                                    <li><strong>Termination of Access</strong>
+                                        <p>The Firm reserves the right to suspend or terminate the User's access to the Website at any time, without notice, if it is determined that the User has violated these Terms or engaged in unlawful conduct. Any suspension or termination of access will be in accordance with the Firm's policies and the Bar Council of India’s regulations governing professional conduct.</p>
+                                    </li>
+                                
+                                    <li><strong>Third-Party Links</strong>
+                                        <p>The Website may contain links to third-party websites that are not controlled or operated by the Firm. The Firm is not responsible for the content, privacy practices, or policies of such third-party websites. The User acknowledges and agrees that the Firm is not liable for any damages or loss arising from the use of third-party websites.</p>
+                                    </li>
+                                
+                                    <li><strong>Governing Law and Jurisdiction</strong>
+                                        <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from or in connection with these Terms or the use of the Website shall be subject to the exclusive jurisdiction of the courts in Darjeeling, India. The Website and its use shall be in compliance with the Bar Council of India's guidelines and regulations.</p>
+                                    </li>
+                                
+                                    <li><strong>Severability</strong>
+                                        <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall remain in full force and effect.</p>
+                                    </li>
+                                </ol>
+                            </dialog>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1;" onclick="document.getElementById('terms2Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1; box-sizing: border-box; padding: 12px; display: flex;justify-content: center; align-items: center; cursor: pointer;">
+                                <h2 style="color: var(--colorBack);">Privacy<br>Policy</h2>
+                            </div>
+                            <dialog id="terms2Specifics" style="min-width: 50%; width: max-content;">
+                                <h1 style="text-align: center;">Privacy Policy</h1>
+
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+                                <p>At Advocate Anurag Lama & Associates ("we," "us," or "our"), we value the privacy and confidentiality of the information you provide to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you access or use our website, services, or interact with us in any manner, in compliance with applicable privacy laws.</p>
+                
+                                <p>By accessing our website or using our services, you consent to the terms outlined in this Privacy Policy.</p>
+                
+                                <ol>
+                                    <li><strong>Information We Collect</strong>
+                                        <ul>
+                                            <li><strong>Personal Identification Information</strong>: Full name, email address, phone number, and other contact details.</li>
+                                            <li><strong>Sensitive Personal Data or Information</strong>: Includes, but is not limited to, financial information, identification numbers (e.g., PAN, Aadhaar, or passport numbers), and other details as required for legal representation or consultations.</li>
+                                            <li><strong>Transactional Data</strong>: Payment details, billing information, and other data related to legal services rendered.</li>
+                                            <li><strong>Usage Data</strong>: Information about how you access and interact with our website, including IP address, device information, browser type, and browsing patterns.</li>
+                                        </ul>
+                                    </li>
+                
+                                    <li><strong>How We Collect Information</strong>
+                                        <ul>
+                                            <li><strong>Direct Interactions</strong>: Information provided directly by you when you contact us, book consultations, or request legal services.</li>
+                                            <li><strong>Automated Technologies</strong>: Usage of cookies, analytics, and similar tracking technologies that gather data about your interaction with our website.</li>
+                                            <li><strong>Third Parties</strong>: We may receive data from third-party service providers for purposes such as payment processing, data enrichment, or legal service enhancements.</li>
+                                        </ul>
+                                    </li>
+                
+                                    <li><strong>Purpose of Data Collection</strong>
+                                        <ul>
+                                            <li><strong>Provision of Legal Services</strong>: To provide legal advice, representation, and services in compliance with applicable laws and regulations.</li>
+                                            <li><strong>Communication</strong>: To communicate with you regarding the status of your legal matters, billing inquiries, and other updates related to your case or services.</li>
+                                            <li><strong>Website Functionality</strong>: To ensure our website operates efficiently, improving user experience, and enhancing the functionality of our services.</li>
+                                            <li><strong>Legal Compliance</strong>: To comply with statutory obligations and regulatory requirements, including record-keeping and filing of reports with authorities, as required by law.</li>
+                                        </ul>
+                                    </li>
+                
+                                    <li><strong>How We Use the Data</strong>
+                                        <ul>
+                                            <li><strong>To Provide Legal Services</strong>: Delivering legal advice, drafting documents, or representing you in legal proceedings.</li>
+                                            <li><strong>Communication and Updates</strong>: Contacting you about your case or legal matters, including follow-ups, reminders, and clarifications.</li>
+                                            <li><strong>Legal Obligations and Compliance</strong>: Complying with legal requirements, responding to legal requests, and ensuring compliance with industry standards and best practices.</li>
+                                        </ul>
+                                    </li>
+                
+                                    <li><strong>Data Sharing and Disclosure</strong>
+                                        <ul>
+                                            <li><strong>Third-Party Service Providers</strong>: Trusted vendors or service providers who assist with payment processing, legal research, document management, and website operations. These third parties are bound by confidentiality obligations and are prohibited from using your data for any other purposes.</li>
+                                            <li><strong>Regulatory Authorities</strong>: When required by law, regulatory bodies, or court orders, we may disclose personal data to law enforcement agencies or government authorities.</li>
+                                            <li><strong>Professional Advisors</strong>: Legal, financial, or audit advisors engaged by us to ensure compliance with legal and regulatory obligations.</li>
+                                        </ul>
+                                    </li>
+                
+                                    <li><strong>Data Security</strong>
+                                        <p>We implement reasonable technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. This includes secure storage, encryption protocols, and access controls. However, please note that no method of data transmission over the Internet or electronic storage is 100% secure.</p>
+                                    </li>
+                
+                                    <li><strong>Data Retention</strong>
+                                        <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. When personal data is no longer required, we will securely dispose of or anonymize it in accordance with applicable laws and regulations.</p>
+                                    </li>
+                
+                                    <li><strong>Your Rights</strong>
+                                        <p>Under Indian law and applicable data protection laws, you may have the following rights in relation to your personal data:</p>
+                                        <ul>
+                                            <li><strong>Right to Access</strong>: You may request access to the personal data we hold about you and request copies of such data.</li>
+                                            <li><strong>Right to Rectification</strong>: You may request the correction or update of inaccurate or incomplete personal data.</li>
+                                            <li><strong>Right to Erasure</strong>: You may request the deletion of your personal data, subject to certain legal and contractual obligations.</li>
+                                            <li><strong>Right to Object</strong>: You may object to the processing of your personal data in certain circumstances, including for direct marketing purposes.</li>
+                                            <li><strong>Right to Data Portability</strong>: You may request that we transfer your personal data to another service provider, where applicable.</li>
+                                        </ul>
+                                        <p>To exercise these rights, please contact us.</p>
+                                    </li>
+                
+                                    <li><strong>Cookies and Tracking Technologies</strong>
+                                        <p>We may use cookies and similar technologies to track usage patterns, analyze trends, and improve our website’s functionality. You can control the use of cookies through your browser settings. However, disabling cookies may impact the functionality of certain website features.</p>
+                                    </li>
+                
+                                    <li><strong>Changes to This Privacy Policy</strong>
+                                        <p>We reserve the right to update or modify this Privacy Policy from time to time to reflect changes in legal requirements or business practices. Any such changes will be posted on our website, and the revised policy will be effective as of the date indicated.</p>
+                                    </li>
+                                </ol>
+                            </dialog>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -906,7 +1144,7 @@
         observer.observe(targetElement);
     </script>
     <script>
-        const menuBar = document.getElementById('menuBar');
+        const menuBar = document.getElementById('menuBarMobile');
         let menustatus = 0;
         function pullMenu(){
             if(menustatus==0){
