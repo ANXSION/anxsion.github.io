@@ -88,17 +88,18 @@
             outline-color: transparent;
         }
         main{
-            margin-top: 64px;
+            margin-top: 76px;
             box-sizing: border-box;
             padding: 16px;
             max-width: 768px;
             margin-left: auto;
             margin-right: auto;
+            padding-left: 200px;
         }
         nav{
             box-sizing: border-box;
             padding: 8px;
-            height: 64px;
+            height: 76px;
             position: fixed;
             top: 0;
             left: 0;
@@ -109,11 +110,13 @@
             background-color: hsla(0, 0%, 0%, 80%);
             backdrop-filter: blur(6px);
             z-index: 3;
+            padding-left: 32px;
+            padding-right: 32px;
         }
         footer{
             box-sizing: border-box;
             padding: 8px;
-            height: fit-content;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -123,18 +126,18 @@
         dialog{
             margin: 0;
             min-width: 25%;
+            width: max-content;
             max-width: 1024px;
             padding: 1.5rem;
             box-sizing: border-box;
             position: fixed;
             top: 50%;
             left: 50%;
+            border: none;
             transform: translate(-50%, -50%);
             background-color: var(--colorBack);
-            border: 2px solid var(--colorText);
             color: var(--colorText);
             border-radius: 12px
-
         }
         dialog::backdrop{
             backdrop-filter: blur(6px);
@@ -152,17 +155,19 @@
         li{
             margin: 18px;
         }
-
         a{
             text-decoration: none;
             color: var(--colorText);
         }
-        p{
+        p,a{
             margin-top: 18px;
             margin-bottom: 18px;
             font-size: 1rem;
             line-height: 1.5;
+            color: var(--colorText);
+            text-decoration: none;
         }
+
         div{
             display: flex;
             flex-direction: column;
@@ -195,7 +200,7 @@
             padding-left: 32px;
             justify-content: center;
             align-items: center;
-            border-radius: 22px;
+            border-radius: 24px;
             cursor: pointer;
             background-color: var(--colorAccent);
             color: var(--colorBack);
@@ -207,6 +212,21 @@
         }
         details{
             width: 100%;
+        }
+        input{
+            display: flex;
+            min-width: 25%;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color: var(--colorText);
+            font-size: 1rem;
+            text-align: center;
+            caret-color: var(--colorText);
+        }
+        input::placeholder{
+            color: var(--colorText);
+            opacity: 50%;
         }
         details summary::-webkit-details-marker {
             display:none;
@@ -232,6 +252,63 @@
         #idinvalid{
             display: none;
         }
+        #menuBar{
+            background-color: black;
+            display: flex;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            top: 0;
+            padding-top: 76px;
+            padding-bottom: 76px;
+            box-sizing: border-box;
+            transition: 0.3s all;
+            z-index: 2;
+        }
+        #miniSearch{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 25%;
+            box-sizing: border-box;
+            padding: 9px;
+            background-color:hsl(0, 0%, 9%);
+            border-radius: 24px;
+            position: fixed;
+            bottom: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            transition: 0.3s all;
+            z-index:3;
+        }
+        #pullMenu{
+            display: none;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:759px) {
+            #pullMenu{
+                display: flex;
+            }
+            #menuBar{
+                left: -100%;
+                width: 75%;
+            }
+            #menuBar::backdrop{
+                backdrop-filter: blur(6px);
+            }
+            main{
+                padding-left: 16px;
+            }
+        }
+        .scroller::-webkit-scrollbar{
+            display: none;
+        }
     </style>
 </head>
 
@@ -255,37 +332,34 @@
 
     <nav>
         <div style="font-style: normal; font-weight: normal; display: flex; flex-direction: row; justify-content: center; align-items: center;">Advocate Anurag Lama <br>& Associates</div>
+        <p onclick="pullMenu()" id="pullMenu">Menu</p>
     </nav>
 
     <main>
-        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
-            <h1>Advocate Anurag Lama & Associates</h1>
-            <div>A full-service law firm.</div>
-        </div>
-        
-        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
-            <h1>Calculating.<br>Unwavering.<br>Unyielding.<br></h1>
-            <div>We are a full-service law firm, dedicated to providing comprehensive legal services across diverse practice areas with a commitment to professional ethics and excellence. With a focus on diligence, integrity, and client-centricity, we assist individuals and organizations in navigating the complexities of the legal system responsibly and effectively.</div>
-            <br>
-            <div style="display: flex;flex-direction: row;  justify-content: space-evenly; align-items: center;">
-                <button onclick="window.open('tel:9832909233')">Call</button>
-                <button onclick="window.open('https://wa.me/919832909233')">Message</button>
+        <div id="menuBar">
+            <div style="display: flex; text-align: left;">
+                <a style="cursor: pointer;" href="#Track">Track</a>
+                <a style="cursor: pointer;" href="#Contact">Contact</a>
+                <a style="cursor: pointer;" href="#Practice">Practice</a>
+                <a style="cursor: pointer;" href="#Terms">Terms</a>
             </div>
         </div>
 
-        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
-            <h1>Track your pending case.</h1>
-            <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 2rem;">
-                <label for="clientidinput">Enter the <span style="font-weight: bold;">Client ID</span> issued by our firm:</label>
+        <div id="miniSearch">
+            <input id="miniclientidinput" type="text" placeholder="Search" autocomplete="off">
+            <button onclick="trackprogress('mini')">Track</button>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;" id="Track">
+
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; box-sizing: border-box; padding: 32px; background-color:hsl(0, 0%, 9%); border-radius: 24px;">
+                <input id="mainclientidinput" type="text" placeholder="Track your pending case." autocomplete="off">
                 <br>
-                <input id="clientidinput" name="clientidinput" type="text" style="display: flex; min-width: 50%; background-color:transparent; outline: none; border: none; border-bottom: 2px solid var(--colorText); color: var(--colorText); font-size: 1.5rem; text-align: center;" placeholder="AAAAAAAA" autocomplete="off">
-                <br>
-                <button onclick="trackprogress()">Track</button>
+                <button onclick="trackprogress('main')">Track</button>
             </div>
             <script>
-
                 const client=[
-                    ['357e0603', 'Bijaya Rai', 'Criminal Case', 'Call for CD (13/01/2025)'],
+                    ['Pradhan Nagar PS 126/23', 'Bijaya Rai', 'Criminal Case', 'Client is out on bail, IO Report (29/04/2025)'],
                     ['4cb30766', 'Subham Verma', 'Criminal Case', 'IO Report (27/02/2025)'],
                     ['9b8d0aa9', 'Rajendra Maam', 'Land Conversion', 'Hearing (16/01/2025)'],
                     ['0e0d0e42', 'Maria Goretti', 'Land Conversion', 'Pending BLRO Issuance'],
@@ -297,14 +371,22 @@
                     ['c02f0be6', 'Kiran Upadhayay', 'Society Registration', 'NOC Affidavit (Sent on 12/), Society Registration (ETC 12/02/2025)']
                 ];
 
-                function trackprogress(){
+                
+
+                function trackprogress(inputLocation){
                     let authtoken = -1;
                     document.getElementById('idvalid').style.display='none';
                     document.getElementById('idinvalid').style.display='none';
+                    let clentid = '';
 
-                    let clentid = document.getElementById('clientidinput').value;
+                    if(inputLocation=='mini'){
+                        clentid= document.getElementById('miniclientidinput').value;
+                    }
+                    else if(inputLocation=='main'){
+                        clentid= document.getElementById('mainclientidinput').value;
+                    }
 
-                    for(i=0;i<client.length; i++){
+                    for(i=0; i<client.length; i++){
                         if (client[i][0] == clentid){
                             authtoken = i;
                             break;
@@ -313,7 +395,6 @@
                             authtoken = -1;
                         }
                     }
-                    
                     if (authtoken>-1){
                         document.getElementById('idvalid').style.display='block';
                         document.getElementById('idinvalid').style.display='none';
@@ -328,239 +409,475 @@
                     else{
                         document.getElementById('idvalid').style.display='none';
                         document.getElementById('idinvalid').style.display='block';
+
                         document.getElementById('progressdisplay').showModal();
                     }
+                    document.getElementById('mainclientidinput') = '';
+                    document.getElementById('miniclientidinput') = '';
                 }
             </script>
+            
         </div>
+        
+        <div id="showMiniSearch">
+            <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;" id="Contact">
+                <h1>Calculating.<br>Unwavering.<br>Unyielding.<br></h1>
+                <div>We are a full-service law firm, dedicated to providing comprehensive legal services across diverse practice areas with a commitment to professional ethics and excellence. With a focus on diligence, integrity, and client-centricity, we assist individuals and organizations in navigating the complexities of the legal system responsibly and effectively.</div>
+                <br>
+    
+                <div style="display: flex;flex-direction: row;  justify-content: space-evenly; align-items: center;">
+                    <button onclick="window.open('tel:9832909233')">Call</button>
+                    <button onclick="window.open('https://wa.me/919832909233')">Message</button>
+                </div>
+            </div>
+    
+            <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;" id="Practice">
+                <h1>Our practice.</h1>
+                <div style="display: block; overflow-y: hidden; overflow-x: hidden; width: 100%;">
+                    <div style="display: flex; flex-direction: row; overflow-y: hidden; gap: 32px; overflow-x: scroll;" class="scroller">
+                        <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area1Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1;"></div>
+                            <h2>Criminal<br>Defense</h2>
+                            <p><span style="color: var(--colorAccent);">8</span> specific area.</p>
+                            <dialog id="area1Specifics" style="min-width: 50%; width: max-content;">
+                                <table style="text-align: left;">
+                                    <tr>
+                                        <th>Specific Area</th>
+                                        <th>Severity</th>
+                                    </tr>
+                                    <tr>
+                                        <td>General criminal trial</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bail application</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Criminal appeal</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>White-collar crime</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cyber crime case</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>POCSO case</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Narcotics and Drugs case</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other special court cases</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><br>
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+                            </dialog>
+                        </div>
 
-        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
-            <h1>Our practice.</h1>
-            <details>
-                <summary><h2>Criminal Defense</h2></summary>
-                <ol>
-                    <li>Representation in Criminal Trials</li>
-                    <li>Bail and Bail Appeals</li>
-                    <li>Appeals in Criminal Cases</li>
-                    <li>Legal Advice on Criminal Matters</li>
-                    <li>White Collar Crime Defense</li>
-                    <li>Defending Cybercrime Cases</li>
-                    <li>Narcotics and Drugs Cases</li>
-                    <li>POCSO Cases</li>
-                </ol>
-            </details>
-            <details>
-                <summary><h2>Civil Litigation</h2></summary>
-                <ol>
-                    <li>Dispute Resolution</li>
-                    <li>Representation in Civil Court Cases</li>
-                    <li>Recovery of Debts</li>
-                    <li>Property Disputes</li>
-                    <li>Injunctions and Specific Performance</li>
-                    <li>Family Law Disputes</li>
-                </ol>                 
-            </details>
-            <details>
-                <summary><h2>Corporate Law</h2></summary>
-                <ol>
-                    <li>Incorporation and registration of companies</li>
-                    <li>Corporate governance and compliance</li>
-                    <li>Drafting and reviewing business contracts</li>
-                    <li>Shareholder disputes and mergers & acquisitions</li>
-                    <li>Advisory on intellectual property and trademarks</li>
-                </ol>
-            </details>
-            <details>
-                <summary><h2>Commercial Law</h2></summary>
-                <ol>
-                    <li>Commercial contracts and agreements</li>
-                    <li>Dispute resolution in business transactions</li>
-                    <li>Banking and finance law</li>
-                    <li>Sale and purchase agreements</li>
-                    <li>Franchise agreements and joint ventures</li>
-                </ol>
-            </details>
-            <details>
-                <summary><h2>Alternative Dispute Resolution</h2></summary>
-                <ol>
-                    <li>Mediation Services</li>
-                    <li>Arbitration Proceedings</li>
-                    <li>Conciliation Support</li>
-                    <li>Negotiation Assistance</li>
-                    <li>Dispute Resolution Strategy</li>
-                    <li>Enforcement of Arbitral Awards</li>
-                    <li>Pre-Litigation Advisory</li>
-                    <li>Drafting Arbitration Agreements</li>
-                    <li>Representation in ADR Forums</li>
-                </ol>
-            </details>
-            <details>
-                <summary><h2>Taxation Law</h2></summary>
-                <ol>
-                    <li>Income tax advisory and filing</li>
-                    <li>Corporate tax planning and compliance</li>
-                    <li>GST (Goods and Services Tax) compliance</li>
-                    <li>Tax disputes and litigation</li>
-                    <li>Tax exemptions and deductions advice</li>
-                </ol>
-            </details>
-        </div>
-        <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;">
-            <h1>Terms and Disclaimer</h1>
-            <details>
-                <summary><h2>Disclaimer</h2></summary>
-                <p>The Bar Council of India strictly prohibits advertising or solicitation by legal professionals. By accessing this website, you hereby acknowledge and confirm that your access is solely for the purpose of obtaining information about Adv. Anurag Lama & Associates, and that such access has not been solicited, induced, or encouraged through any form of advertisement, solicitation, or communication by Adv. Anurag Lama & Associates or its representatives.</p>
-                <p>The materials presented on this website are solely for informational purposes and should not be construed as solicitation, advertising, or a source of legal advice. No content on this website shall be interpreted as providing legal counsel, and Adv. Anurag Lama & Associates disclaims any liability arising from reliance on any information or material contained herein.</p>
-                <p>All content available on this website constitutes the intellectual property of Adv. Anurag Lama & Associates and is protected accordingly.</p>
-            </details>
-            <details>
-                <summary><h2>Terms of Use</h2></summary>
-                <p>This Website (hereinafter referred to as the "Website") is operated by <strong>Advocate Anurag Lama & Associates</strong> (hereinafter referred to as "the Firm"). These Terms of Use (hereinafter referred to as the "Terms") govern the access to and utilization of the Website. By accessing or using the Website, the User agrees to comply with and be bound by these Terms, as well as all applicable laws and regulations.</p>
-                <p>These Terms shall be read in conjunction with the Firm's Privacy Policy, which is incorporated herein by reference. If the User does not agree to these Terms, the User is prohibited from using the Website.</p>
-                <ol>
-                    <li><strong>Use of the Website</strong>
-                        <p>The Website is provided solely for the purpose of offering general information regarding the legal services of the Firm. The User agrees to use the Website only for lawful purposes and in accordance with these Terms. The User further agrees not to:</p>
-                        <ul>
-                            <li>Violate any applicable local, state, or national laws or regulations;</li>
-                            <li>Engage in conduct that may damage, disable, or impair the operation of the Website;</li>
-                            <li>Attempt to gain unauthorized access to any portion of the Website, or any systems or networks connected to the Website;</li>
-                            <li>Engage in any activity that could disrupt the functionality of the Website.</li>
-                        </ul>
-                    </li>
-                
-                    <li><strong>Legal Advice Disclaimer</strong>
-                        <p>The information provided on the Website, including but not limited to blog posts, articles, case studies, or other content, is intended for general informational purposes only and does not constitute legal advice. The transmission of information via the Website does not establish an attorney-client relationship between the User and the Firm. The User is advised to seek formal legal counsel for advice pertaining to their specific legal matters.</p>
-                        <p>In compliance with the Bar Council of India’s regulations, no solicitation or advertisement for legal services is made through the Website.</p>
-                    </li>
-                
-                    <li><strong>Intellectual Property</strong>
-                        <p>All content on the Website, including but not limited to text, images, videos, logos, and other materials, is the property of <strong>Advocate Anurag Lama & Associates</strong> or its licensors and is protected by copyright, trademark, and other intellectual property laws. The User is prohibited from copying, modifying, distributing, transmitting, or displaying any content from the Website without the prior written consent of the Firm, except as explicitly permitted under applicable law.</p>
-                    </li>
-                
-                    <li><strong>Privacy and Data Protection</strong>
-                        <p>By using the Website, the User consents to the collection, use, and disclosure of their personal data in accordance with the Firm’s Privacy Policy. The Firm is committed to the protection of personal data in compliance with applicable data protection laws. The Firm's Privacy Policy is incorporated by reference into these Terms.</p>
-                    </li>
-                
-                    <li><strong>Limitation of Liability</strong>
-                        <p>To the maximum extent permitted by law, the Firm shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, or data, arising from the use or inability to use the Website, even if the Firm has been advised of the possibility of such damages. In no event shall the Firm's total liability exceed the amount paid by the User, if any, for accessing the Website.</p>
-                    </li>
-                
-                    <li><strong>Indemnification</strong>
-                        <p>The User agrees to indemnify, defend, and hold harmless the Firm, its officers, employees, agents, and affiliates from and against any claims, damages, liabilities, and expenses, including reasonable attorney's fees, arising from or in connection with: 
+                        <div style="display: grid; grid-template-columns: 1; grid-template-rows: 2;" onclick="document.getElementById('area2Specifics').showModal()">
+                            <div style="width: 200px; height: max-content; background-color: var(--colorAccent); aspect-ratio: 1/1;"></div>
+                            <h2>Civil<br>Litigation</h2>
+                            <p><span style="color: var(--colorAccent);">8</span> specific area.</p>
+                            <dialog id="area2Specifics" style="min-width: 50%; width: max-content;">
+                                <table style="text-align: left;">
+                                    <tr>
+                                        <th>Specific Area</th>
+                                        <th>Severity</th>
+                                    </tr>
+                                    <tr>
+                                        <td>General suit</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Injunction and relief</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Property dispute</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Divorce</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Child Custody</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Recovery of debt</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Motor vehicles accident claims</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Alternative dispute resolution</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Interpleader suit</td>
+                                        <td style="display: flex; flex-direction: row; gap: 32px; text-align: center; justify-content: center; align-items: center;">
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; justify-content: center; align-items: center; gap: 3px;">
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                                <div style="width: 9px; height: auto; aspect-ratio: 1/1; background-color: hsl(0, 0%, 25%);"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br><br>
+                                <form method="dialog" style="display: flex; justify-content: center; align-items: center;">
+                                    <button>Close</button>
+                                </form>
+                            </dialog>
+                        </div>
+                    </div>
+                </div>
+
+                <details>
+                    <summary><h2>Civil Litigation</h2></summary>
+                    <ol>
+                        <li>Dispute Resolution</li>
+                        <li>Representation in Civil Court Cases</li>
+                        <li>Recovery of Debts</li>
+                        <li>Property Disputes</li>
+                        <li>Injunctions and Specific Performance</li>
+                        <li>Family Law Disputes</li>
+                    </ol>                 
+                </details>
+                <details>
+                    <summary><h2>Corporate Law</h2></summary>
+                    <ol>
+                        <li>Incorporation and registration of companies</li>
+                        <li>Corporate governance and compliance</li>
+                        <li>Drafting and reviewing business contracts</li>
+                        <li>Shareholder disputes and mergers & acquisitions</li>
+                        <li>Advisory on intellectual property and trademarks</li>
+                    </ol>
+                </details>
+                <details>
+                    <summary><h2>Commercial Law</h2></summary>
+                    <ol>
+                        <li>Commercial contracts and agreements</li>
+                        <li>Dispute resolution in business transactions</li>
+                        <li>Banking and finance law</li>
+                        <li>Sale and purchase agreements</li>
+                        <li>Franchise agreements and joint ventures</li>
+                    </ol>
+                </details>
+                <details>
+                    <summary><h2>Alternative Dispute Resolution</h2></summary>
+                    <ol>
+                        <li>Mediation Services</li>
+                        <li>Arbitration Proceedings</li>
+                        <li>Conciliation Support</li>
+                        <li>Negotiation Assistance</li>
+                        <li>Dispute Resolution Strategy</li>
+                        <li>Enforcement of Arbitral Awards</li>
+                        <li>Pre-Litigation Advisory</li>
+                        <li>Drafting Arbitration Agreements</li>
+                        <li>Representation in ADR Forums</li>
+                    </ol>
+                </details>
+                <details>
+                    <summary><h2>Taxation Law</h2></summary>
+                    <ol>
+                        <li>Income tax advisory and filing</li>
+                        <li>Corporate tax planning and compliance</li>
+                        <li>GST (Goods and Services Tax) compliance</li>
+                        <li>Tax disputes and litigation</li>
+                        <li>Tax exemptions and deductions advice</li>
+                    </ol>
+                </details>
+            </div>
+
+            <div style="display: flex; justify-content: center; align-items: start; min-height: 100vh;" id="Terms">
+                <h1>Terms and Privacy</h1>
+                <details>
+                    <summary><h2>Terms of Use</h2></summary>
+                    <p>This Website (hereinafter referred to as the "Website") is operated by <strong>Advocate Anurag Lama & Associates</strong> (hereinafter referred to as "the Firm"). These Terms of Use (hereinafter referred to as the "Terms") govern the access to and utilization of the Website. By accessing or using the Website, the User agrees to comply with and be bound by these Terms, as well as all applicable laws and regulations.</p>
+                    <p>These Terms shall be read in conjunction with the Firm's Privacy Policy, which is incorporated herein by reference. If the User does not agree to these Terms, the User is prohibited from using the Website.</p>
+                    <ol>
+                        <li><strong>Use of the Website</strong>
+                            <p>The Website is provided solely for the purpose of offering general information regarding the legal services of the Firm. The User agrees to use the Website only for lawful purposes and in accordance with these Terms. The User further agrees not to:</p>
                             <ul>
-                                <li>User's use of the Website;</li>
-                                <li>User's violation of these Terms;</li>
-                                <li>Any infringement of the rights of third parties.</li>
+                                <li>Violate any applicable local, state, or national laws or regulations;</li>
+                                <li>Engage in conduct that may damage, disable, or impair the operation of the Website;</li>
+                                <li>Attempt to gain unauthorized access to any portion of the Website, or any systems or networks connected to the Website;</li>
+                                <li>Engage in any activity that could disrupt the functionality of the Website.</li>
                             </ul>
-                        </p>
-                    </li>
-                
-                    <li><strong>Modification of Terms</strong>
-                        <p>The Firm reserves the right to amend, modify, or update these Terms at its sole discretion, without prior notice. The most recent version of these Terms shall be posted on the Website, and such changes shall take effect immediately upon posting. Continued use of the Website constitutes acceptance of the amended Terms.</p>
-                    </li>
-                
-                    <li><strong>Termination of Access</strong>
-                        <p>The Firm reserves the right to suspend or terminate the User's access to the Website at any time, without notice, if it is determined that the User has violated these Terms or engaged in unlawful conduct. Any suspension or termination of access will be in accordance with the Firm's policies and the Bar Council of India’s regulations governing professional conduct.</p>
-                    </li>
-                
-                    <li><strong>Third-Party Links</strong>
-                        <p>The Website may contain links to third-party websites that are not controlled or operated by the Firm. The Firm is not responsible for the content, privacy practices, or policies of such third-party websites. The User acknowledges and agrees that the Firm is not liable for any damages or loss arising from the use of third-party websites.</p>
-                    </li>
-                
-                    <li><strong>Governing Law and Jurisdiction</strong>
-                        <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from or in connection with these Terms or the use of the Website shall be subject to the exclusive jurisdiction of the courts in Darjeeling, India. The Website and its use shall be in compliance with the Bar Council of India's guidelines and regulations.</p>
-                    </li>
-                
-                    <li><strong>Severability</strong>
-                        <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall remain in full force and effect.</p>
-                    </li>
-                </ol>
-            </details>
-            <details>
-                <summary><h2>Privacy Policy</h2></summary>
-                <p>At Advocate Anurag Lama & Associates ("we," "us," or "our"), we value the privacy and confidentiality of the information you provide to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you access or use our website, services, or interact with us in any manner, in compliance with applicable privacy laws.</p>
-
-                <p>By accessing our website or using our services, you consent to the terms outlined in this Privacy Policy.</p>
-
-                <ol>
-                    <li><strong>Information We Collect</strong>
-                        <ul>
-                            <li><strong>Personal Identification Information</strong>: Full name, email address, phone number, and other contact details.</li>
-                            <li><strong>Sensitive Personal Data or Information</strong>: Includes, but is not limited to, financial information, identification numbers (e.g., PAN, Aadhaar, or passport numbers), and other details as required for legal representation or consultations.</li>
-                            <li><strong>Transactional Data</strong>: Payment details, billing information, and other data related to legal services rendered.</li>
-                            <li><strong>Usage Data</strong>: Information about how you access and interact with our website, including IP address, device information, browser type, and browsing patterns.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>How We Collect Information</strong>
-                        <ul>
-                            <li><strong>Direct Interactions</strong>: Information provided directly by you when you contact us, book consultations, or request legal services.</li>
-                            <li><strong>Automated Technologies</strong>: Usage of cookies, analytics, and similar tracking technologies that gather data about your interaction with our website.</li>
-                            <li><strong>Third Parties</strong>: We may receive data from third-party service providers for purposes such as payment processing, data enrichment, or legal service enhancements.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>Purpose of Data Collection</strong>
-                        <ul>
-                            <li><strong>Provision of Legal Services</strong>: To provide legal advice, representation, and services in compliance with applicable laws and regulations.</li>
-                            <li><strong>Communication</strong>: To communicate with you regarding the status of your legal matters, billing inquiries, and other updates related to your case or services.</li>
-                            <li><strong>Website Functionality</strong>: To ensure our website operates efficiently, improving user experience, and enhancing the functionality of our services.</li>
-                            <li><strong>Legal Compliance</strong>: To comply with statutory obligations and regulatory requirements, including record-keeping and filing of reports with authorities, as required by law.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>How We Use the Data</strong>
-                        <ul>
-                            <li><strong>To Provide Legal Services</strong>: Delivering legal advice, drafting documents, or representing you in legal proceedings.</li>
-                            <li><strong>Communication and Updates</strong>: Contacting you about your case or legal matters, including follow-ups, reminders, and clarifications.</li>
-                            <li><strong>Legal Obligations and Compliance</strong>: Complying with legal requirements, responding to legal requests, and ensuring compliance with industry standards and best practices.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>Data Sharing and Disclosure</strong>
-                        <ul>
-                            <li><strong>Third-Party Service Providers</strong>: Trusted vendors or service providers who assist with payment processing, legal research, document management, and website operations. These third parties are bound by confidentiality obligations and are prohibited from using your data for any other purposes.</li>
-                            <li><strong>Regulatory Authorities</strong>: When required by law, regulatory bodies, or court orders, we may disclose personal data to law enforcement agencies or government authorities.</li>
-                            <li><strong>Professional Advisors</strong>: Legal, financial, or audit advisors engaged by us to ensure compliance with legal and regulatory obligations.</li>
-                        </ul>
-                    </li>
-
-                    <li><strong>Data Security</strong>
-                        <p>We implement reasonable technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. This includes secure storage, encryption protocols, and access controls. However, please note that no method of data transmission over the Internet or electronic storage is 100% secure.</p>
-                    </li>
-
-                    <li><strong>Data Retention</strong>
-                        <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. When personal data is no longer required, we will securely dispose of or anonymize it in accordance with applicable laws and regulations.</p>
-                    </li>
-
-                    <li><strong>Your Rights</strong>
-                        <p>Under Indian law and applicable data protection laws, you may have the following rights in relation to your personal data:</p>
-                        <ul>
-                            <li><strong>Right to Access</strong>: You may request access to the personal data we hold about you and request copies of such data.</li>
-                            <li><strong>Right to Rectification</strong>: You may request the correction or update of inaccurate or incomplete personal data.</li>
-                            <li><strong>Right to Erasure</strong>: You may request the deletion of your personal data, subject to certain legal and contractual obligations.</li>
-                            <li><strong>Right to Object</strong>: You may object to the processing of your personal data in certain circumstances, including for direct marketing purposes.</li>
-                            <li><strong>Right to Data Portability</strong>: You may request that we transfer your personal data to another service provider, where applicable.</li>
-                        </ul>
-                        <p>To exercise these rights, please contact us.</p>
-                    </li>
-
-                    <li><strong>Cookies and Tracking Technologies</strong>
-                        <p>We may use cookies and similar technologies to track usage patterns, analyze trends, and improve our website’s functionality. You can control the use of cookies through your browser settings. However, disabling cookies may impact the functionality of certain website features.</p>
-                    </li>
-
-                    <li><strong>Changes to This Privacy Policy</strong>
-                        <p>We reserve the right to update or modify this Privacy Policy from time to time to reflect changes in legal requirements or business practices. Any such changes will be posted on our website, and the revised policy will be effective as of the date indicated.</p>
-                    </li>
-                </ol>
-            </details>
+                        </li>
+                    
+                        <li><strong>Legal Advice Disclaimer</strong>
+                            <p>The information provided on the Website, including but not limited to blog posts, articles, case studies, or other content, is intended for general informational purposes only and does not constitute legal advice. The transmission of information via the Website does not establish an attorney-client relationship between the User and the Firm. The User is advised to seek formal legal counsel for advice pertaining to their specific legal matters.</p>
+                            <p>In compliance with the Bar Council of India’s regulations, no solicitation or advertisement for legal services is made through the Website.</p>
+                        </li>
+                    
+                        <li><strong>Intellectual Property</strong>
+                            <p>All content on the Website, including but not limited to text, images, videos, logos, and other materials, is the property of <strong>Advocate Anurag Lama & Associates</strong> or its licensors and is protected by copyright, trademark, and other intellectual property laws. The User is prohibited from copying, modifying, distributing, transmitting, or displaying any content from the Website without the prior written consent of the Firm, except as explicitly permitted under applicable law.</p>
+                        </li>
+                    
+                        <li><strong>Privacy and Data Protection</strong>
+                            <p>By using the Website, the User consents to the collection, use, and disclosure of their personal data in accordance with the Firm’s Privacy Policy. The Firm is committed to the protection of personal data in compliance with applicable data protection laws. The Firm's Privacy Policy is incorporated by reference into these Terms.</p>
+                        </li>
+                    
+                        <li><strong>Limitation of Liability</strong>
+                            <p>To the maximum extent permitted by law, the Firm shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of profits, revenue, or data, arising from the use or inability to use the Website, even if the Firm has been advised of the possibility of such damages. In no event shall the Firm's total liability exceed the amount paid by the User, if any, for accessing the Website.</p>
+                        </li>
+                    
+                        <li><strong>Indemnification</strong>
+                            <p>The User agrees to indemnify, defend, and hold harmless the Firm, its officers, employees, agents, and affiliates from and against any claims, damages, liabilities, and expenses, including reasonable attorney's fees, arising from or in connection with: 
+                                <ul>
+                                    <li>User's use of the Website;</li>
+                                    <li>User's violation of these Terms;</li>
+                                    <li>Any infringement of the rights of third parties.</li>
+                                </ul>
+                            </p>
+                        </li>
+                    
+                        <li><strong>Modification of Terms</strong>
+                            <p>The Firm reserves the right to amend, modify, or update these Terms at its sole discretion, without prior notice. The most recent version of these Terms shall be posted on the Website, and such changes shall take effect immediately upon posting. Continued use of the Website constitutes acceptance of the amended Terms.</p>
+                        </li>
+                    
+                        <li><strong>Termination of Access</strong>
+                            <p>The Firm reserves the right to suspend or terminate the User's access to the Website at any time, without notice, if it is determined that the User has violated these Terms or engaged in unlawful conduct. Any suspension or termination of access will be in accordance with the Firm's policies and the Bar Council of India’s regulations governing professional conduct.</p>
+                        </li>
+                    
+                        <li><strong>Third-Party Links</strong>
+                            <p>The Website may contain links to third-party websites that are not controlled or operated by the Firm. The Firm is not responsible for the content, privacy practices, or policies of such third-party websites. The User acknowledges and agrees that the Firm is not liable for any damages or loss arising from the use of third-party websites.</p>
+                        </li>
+                    
+                        <li><strong>Governing Law and Jurisdiction</strong>
+                            <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from or in connection with these Terms or the use of the Website shall be subject to the exclusive jurisdiction of the courts in Darjeeling, India. The Website and its use shall be in compliance with the Bar Council of India's guidelines and regulations.</p>
+                        </li>
+                    
+                        <li><strong>Severability</strong>
+                            <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining provisions shall remain in full force and effect.</p>
+                        </li>
+                    </ol>
+                </details>
+                <details>
+                    <summary><h2>Privacy Policy</h2></summary>
+                    <p>At Advocate Anurag Lama & Associates ("we," "us," or "our"), we value the privacy and confidentiality of the information you provide to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you access or use our website, services, or interact with us in any manner, in compliance with applicable privacy laws.</p>
+    
+                    <p>By accessing our website or using our services, you consent to the terms outlined in this Privacy Policy.</p>
+    
+                    <ol>
+                        <li><strong>Information We Collect</strong>
+                            <ul>
+                                <li><strong>Personal Identification Information</strong>: Full name, email address, phone number, and other contact details.</li>
+                                <li><strong>Sensitive Personal Data or Information</strong>: Includes, but is not limited to, financial information, identification numbers (e.g., PAN, Aadhaar, or passport numbers), and other details as required for legal representation or consultations.</li>
+                                <li><strong>Transactional Data</strong>: Payment details, billing information, and other data related to legal services rendered.</li>
+                                <li><strong>Usage Data</strong>: Information about how you access and interact with our website, including IP address, device information, browser type, and browsing patterns.</li>
+                            </ul>
+                        </li>
+    
+                        <li><strong>How We Collect Information</strong>
+                            <ul>
+                                <li><strong>Direct Interactions</strong>: Information provided directly by you when you contact us, book consultations, or request legal services.</li>
+                                <li><strong>Automated Technologies</strong>: Usage of cookies, analytics, and similar tracking technologies that gather data about your interaction with our website.</li>
+                                <li><strong>Third Parties</strong>: We may receive data from third-party service providers for purposes such as payment processing, data enrichment, or legal service enhancements.</li>
+                            </ul>
+                        </li>
+    
+                        <li><strong>Purpose of Data Collection</strong>
+                            <ul>
+                                <li><strong>Provision of Legal Services</strong>: To provide legal advice, representation, and services in compliance with applicable laws and regulations.</li>
+                                <li><strong>Communication</strong>: To communicate with you regarding the status of your legal matters, billing inquiries, and other updates related to your case or services.</li>
+                                <li><strong>Website Functionality</strong>: To ensure our website operates efficiently, improving user experience, and enhancing the functionality of our services.</li>
+                                <li><strong>Legal Compliance</strong>: To comply with statutory obligations and regulatory requirements, including record-keeping and filing of reports with authorities, as required by law.</li>
+                            </ul>
+                        </li>
+    
+                        <li><strong>How We Use the Data</strong>
+                            <ul>
+                                <li><strong>To Provide Legal Services</strong>: Delivering legal advice, drafting documents, or representing you in legal proceedings.</li>
+                                <li><strong>Communication and Updates</strong>: Contacting you about your case or legal matters, including follow-ups, reminders, and clarifications.</li>
+                                <li><strong>Legal Obligations and Compliance</strong>: Complying with legal requirements, responding to legal requests, and ensuring compliance with industry standards and best practices.</li>
+                            </ul>
+                        </li>
+    
+                        <li><strong>Data Sharing and Disclosure</strong>
+                            <ul>
+                                <li><strong>Third-Party Service Providers</strong>: Trusted vendors or service providers who assist with payment processing, legal research, document management, and website operations. These third parties are bound by confidentiality obligations and are prohibited from using your data for any other purposes.</li>
+                                <li><strong>Regulatory Authorities</strong>: When required by law, regulatory bodies, or court orders, we may disclose personal data to law enforcement agencies or government authorities.</li>
+                                <li><strong>Professional Advisors</strong>: Legal, financial, or audit advisors engaged by us to ensure compliance with legal and regulatory obligations.</li>
+                            </ul>
+                        </li>
+    
+                        <li><strong>Data Security</strong>
+                            <p>We implement reasonable technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. This includes secure storage, encryption protocols, and access controls. However, please note that no method of data transmission over the Internet or electronic storage is 100% secure.</p>
+                        </li>
+    
+                        <li><strong>Data Retention</strong>
+                            <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, or as required by law. When personal data is no longer required, we will securely dispose of or anonymize it in accordance with applicable laws and regulations.</p>
+                        </li>
+    
+                        <li><strong>Your Rights</strong>
+                            <p>Under Indian law and applicable data protection laws, you may have the following rights in relation to your personal data:</p>
+                            <ul>
+                                <li><strong>Right to Access</strong>: You may request access to the personal data we hold about you and request copies of such data.</li>
+                                <li><strong>Right to Rectification</strong>: You may request the correction or update of inaccurate or incomplete personal data.</li>
+                                <li><strong>Right to Erasure</strong>: You may request the deletion of your personal data, subject to certain legal and contractual obligations.</li>
+                                <li><strong>Right to Object</strong>: You may object to the processing of your personal data in certain circumstances, including for direct marketing purposes.</li>
+                                <li><strong>Right to Data Portability</strong>: You may request that we transfer your personal data to another service provider, where applicable.</li>
+                            </ul>
+                            <p>To exercise these rights, please contact us.</p>
+                        </li>
+    
+                        <li><strong>Cookies and Tracking Technologies</strong>
+                            <p>We may use cookies and similar technologies to track usage patterns, analyze trends, and improve our website’s functionality. You can control the use of cookies through your browser settings. However, disabling cookies may impact the functionality of certain website features.</p>
+                        </li>
+    
+                        <li><strong>Changes to This Privacy Policy</strong>
+                            <p>We reserve the right to update or modify this Privacy Policy from time to time to reflect changes in legal requirements or business practices. Any such changes will be posted on our website, and the revised policy will be effective as of the date indicated.</p>
+                        </li>
+                    </ol>
+                </details>
+            </div>
         </div>
+
+        <footer>
+            <h1>Disclaimer</h1>
+
+            <p>The Bar Council of India strictly prohibits advertising or solicitation by legal professionals. By accessing this website, you hereby acknowledge and confirm that your access is solely for the purpose of obtaining information about Adv. Anurag Lama & Associates, and that such access has not been solicited, induced, or encouraged through any form of advertisement, solicitation, or communication by Adv. Anurag Lama & Associates or its representatives.</p>
+
+            <p>The materials presented on this website are solely for informational purposes and should not be construed as solicitation, advertising, or a source of legal advice. No content on this website shall be interpreted as providing legal counsel, and Adv. Anurag Lama & Associates disclaims any liability arising from reliance on any information or material contained herein.</p>
+
+            <p>All content available on this website constitutes the intellectual property of Adv. Anurag Lama & Associates and is protected accordingly.</p>
+            <br><br><br><br>
+            <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 18px; text-align: center;">
+                Advocate Anurag Lama & Associates<br>&copy; 2025<br><br>All Rights Reserved.
+            </div>
+        </footer>
     </main>
-    <footer>
-        <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin-bottom: 18px; text-align: center;">
-            Advocate Anurag Lama & Associates<br>&copy; 2025<br><br>All Rights Reserved.
-        </div>
-    </footer>
+    
 
     <script>
         window.addEventListener("load", () => {
@@ -568,6 +885,39 @@
                 navigator.serviceWorker.register("anxsion-serviceworker.js");
             }  
         });
+    </script>
+
+    <script>
+        const miniSearch = document.getElementById('miniSearch');
+        const targetElement = document.getElementById('showMiniSearch');
+        const observerOptions = {
+            threshold: 0.2
+        };
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    miniSearch.style.bottom="0%"
+                } else {
+                    miniSearch.style.bottom="-50%"
+                }
+            });
+        };
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        observer.observe(targetElement);
+    </script>
+    <script>
+        const menuBar = document.getElementById('menuBar');
+        let menustatus = 0;
+        function pullMenu(){
+            if(menustatus==0){
+                menuBar.style.left = "0%";
+                menustatus = 1;
+            }
+            else{
+                menuBar.style.left = "-100%";
+                menustatus = 0;
+            }
+        }
     </script>
 </body> 
 </html>
