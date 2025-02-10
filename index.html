@@ -178,6 +178,7 @@
             width: 100%;
             table-layout:auto;
             box-sizing: border-box;
+            
         }
         tr, th, td{
             padding: 12px;
@@ -189,7 +190,6 @@
         }
         td{
             border-collapse: collapse;
-            
         }
         button{
             width: fit-content;
@@ -413,7 +413,7 @@
             <script>
                 const client=[
                     [['Pradhan Nagar PS 126/23','GR 628/23'], 'Bijaya Rai', 'Criminal Case', 'Client is out on bail, IO Report (29/04/2025)'],
-                    [['Pradhan Nagar PS 687/24, GR 2594/24'], 'Subham Verma', 'Criminal Case', 'IO Report (27/02/2025)']
+                    [['Pradhan Nagar PS 687/24', 'GR 2594/24'], 'Subham Verma', 'Criminal Case', 'IO Report (27/02/2025)']
                 ];
 
                 function trackprogress(inputLocation){
@@ -437,12 +437,7 @@
                                 clientindexdata = i;
                                 break;
                             }
-                            else{
-                                authtoken = 0;
-                                clientindexdata = i;
-                            }
                         }
-                        break
                     }
 
                     if (authtoken>0){
@@ -454,11 +449,11 @@
                         }
                         referencedata = referencedata.slice(0, -2);
 
-                        console.log(referencedata);
+                        console.log();
                         document.getElementById('clientid').innerText = referencedata;
-                        document.getElementById('clientname').innerText = client[i][1];
-                        document.getElementById('taskname').innerText = client[i][2];
-                        document.getElementById('progress').innerText = client[i][3];
+                        document.getElementById('clientname').innerText = client[clientindexdata][1];
+                        document.getElementById('taskname').innerText = client[clientindexdata][2];
+                        document.getElementById('progress').innerText = client[clientindexdata][3];
                         
                         document.getElementById('progressdisplay').showModal();
                     }
@@ -468,6 +463,8 @@
 
                         document.getElementById('progressdisplay').showModal();
                     }
+                    authtoken = 0;
+                    clientindexdata = 0;
                     referencedata='';
                     document.getElementById('miniclientidinput').value = '';
                     document.getElementById('mainclientidinput').value = '';
