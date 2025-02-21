@@ -1,0 +1,90 @@
+:root{
+    font-size: 14px;
+}
+html{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: inherit;
+    box-sizing: border-box
+}
+h1::selection,h2::selection,h3::selection,h4::selection,h5::selection,h6::selection,p::selection, a::selection, blockquote::selection{
+    background-color: black;
+    color: white;
+}
+body{
+    font-family: inherit;
+    box-sizing: inherit;
+    margin: 1rem;
+}
+blockquote{
+    font-size: 1.5rem;
+    text-align: center;
+}
+blockquote::before{
+    content: '" ';
+}
+blockquote::after{
+    content: ' "';
+}
+p{
+    font-size: 1rem;
+    text-align: justify;
+    line-height: 1.5;
+}
+p::before{
+    content: '';
+    padding-left: 3rem;
+}
+li{
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+h1{
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    letter-spacing: 1px;
+}
+h2{
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    letter-spacing: 1px;
+}
+h3{
+    font-size: 2.5rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+}
+h4{
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+}
+h5{
+    font-size: 1.5rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+}
+h6{
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 1px;
+}
