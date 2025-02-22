@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexQuery</title>
+    <link rel="stylesheet" href="./style/archiva.css">
+</head>
+<body>
+    <main>
+        <div id="searchContainer" data-activelayer="true">
+            <h1>LexQuery<sub style="font-size: 0.5rem; letter-spacing: 0px;">Search</sub></h1>
+            <input type="text" name="" id="actsearch" oninput="searchdata()" autocomplete="off">
+            <div id="lawContainer"></div>
+        </div>
+        
+        <div id="embedData" data-activelayer="false">
+            <button onclick="document.getElementById('searchContainer').setAttribute('data-activelayer','true');document.getElementById('embedData').setAttribute('data-activelayer','false');">Close</button>
+            <div id="lawembed"></div>
+        </div>
+    </main>
+    <footer>
+        <p id="datafooter"></p>
+    </footer>
+    <script>
+        document.getElementById('datafooter').innerHTML = 'LexQuery &copy; 2025';
+        let actdata =[
+            ['constitutionofindia', 'Constitution of India, 1950'],
+            ['hindumarriageact', 'Hindu Marriage Act, 1954'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012'],
+            ['righttoinformationact', 'Right to Information Act, 2012']
+        ];
+        function searchdata(){
+            document.getElementById('lawContainer').innerHTML='';
+            const searchTerm = document.getElementById('actsearch').value;
+            const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(escapedSearchTerm, 'i');
+            actdata.forEach(element => {
+                console.log(element[1]);
+                if(searchTerm ==''){
+                    document.getElementById('lawContainer').innerHTML='';
+                }
+                else if(regex.test(element[1])) {
+                    document.getElementById('lawContainer').insertAdjacentHTML('beforeend',`<p class="acts" onclick="embeddingLaw('`+element[0]+`')" class="lawContainer">`+element[1]+`</p>`);
+                }
+            });
+        }
+    </script>
+    <script>
+        async function embeddingLaw(lawid){
+            document.getElementById('lawembed').innerHTML='';
+            document.getElementById('searchContainer').setAttribute('data-activelayer','false');
+            document.getElementById('embedData').setAttribute('data-activelayer','true');
+            try {
+                const response = await fetch('./assets/'+lawid+'.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    document.getElementById('lawembed').insertAdjacentHTML("beforeend","<p>Error loading data.</p>");
+                }
+                const data = await response.json();
+                data.forEach(element => {
+                    document.getElementById('lawembed').insertAdjacentHTML("beforeend","<p>"+element+"</p>");
+                });
+            } catch (error) {
+                console.error('Error fetching or processing the JSON file:', error);
+                document.getElementById('lawembed').insertAdjacentHTML("beforeend","<p>No record found.</p>");
+            }
+        }
+    </script>
+</body>
+</html>

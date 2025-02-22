@@ -244,6 +244,7 @@ dialog{
     padding-left: var(--scaling-01);
     padding-right: var(--scaling-01);
     width: 100%;
+    font-size: 0.875rem;
 }
 .navigation-item-container .navigation-item:hover{
     background-color: var(--item-hover);
