@@ -1,0 +1,32 @@
+{
+    "acttitle": "",
+    "actno": "",
+    "actdate": "",
+    "actheading": [],
+    "chapters":[
+        {
+            "chapterTitle": ""
+        }
+    ],
+    "sections":[
+        {
+            "sectionTitle": ""
+        }
+    ],
+    "subsections":[
+        {
+            "subsectionTitle":""
+        }
+    ],
+    "clauses":[
+        {
+            "clauseTitle": ""
+            
+        }
+    ],
+    "subclauses":[
+        {
+            "subclauseTitle": ""
+        }
+    ]
+}

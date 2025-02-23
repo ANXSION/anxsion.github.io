@@ -25,41 +25,17 @@
     <script>
         document.getElementById('datafooter').innerHTML = 'LexQuery &copy; 2025';
         let actdata =[
-            ['constitutionofindia', 'Constitution of India, 1950'],
-            ['hindumarriageact', 'Hindu Marriage Act, 1954'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012'],
-            ['righttoinformationact', 'Right to Information Act, 2012']
+            ['constitutionofindia', 'The Constitution of India, 1950'],
+            ['hindumarriageact', ' The Hindu Marriage Act, 1954'],
+            ['righttoinformationact', 'The Right to Information Act, 2005']
         ];
+
         function searchdata(){
             document.getElementById('lawContainer').innerHTML='';
             const searchTerm = document.getElementById('actsearch').value;
             const escapedSearchTerm = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             const regex = new RegExp(escapedSearchTerm, 'i');
             actdata.forEach(element => {
-                console.log(element[1]);
                 if(searchTerm ==''){
                     document.getElementById('lawContainer').innerHTML='';
                 }
@@ -81,9 +57,46 @@
                     document.getElementById('lawembed').insertAdjacentHTML("beforeend","<p>Error loading data.</p>");
                 }
                 const data = await response.json();
-                data.forEach(element => {
-                    document.getElementById('lawembed').insertAdjacentHTML("beforeend","<p>"+element+"</p>");
+
+                document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="acttitle">${data.acttitle}</p>`);
+
+                document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="actno">${data.actno}</p>`);
+
+                document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="actdate">${data.actdate}</p>`);
+
+                data.actheading.forEach(heading => {
+                    document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="actheading">${heading}</p>`);
                 });
+                data.chapters.forEach(chapter => 
+                {
+                    document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="chapter">${chapter.chapterTitle}</p>`);
+                    chapter.sections.forEach(section => 
+                    {
+                        document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="section">${section.sectionTitle}</p>`);
+                        if (section.hasOwnProperty('subsections')){
+                            section.subsections.forEach(subsection => {
+                                document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="subsection">${subsection.subsectionTitle}</p>`);
+                                if (subsection.hasOwnProperty('clauses')){
+                                    subsection.clauses.forEach(clause => {
+                                        document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="clause">${clause.clauseTitle}</p>`);
+                                        if (clause.hasOwnProperty('subclauses')){
+                                            clause.subclauses.forEach(subclause => {
+                                                document.getElementById('lawembed').insertAdjacentHTML("beforeend",`<p class="subclause">${subclause.subclauseTitle}</p>`);
+                                            }); 
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    });
+
+                });
+
+                /*
+                data.forEach(element => {
+                    document.getElementById('lawembed').insertAdjacentHTML("beforeend",`${element}`);
+                });
+                */
             } catch (error) {
                 console.error('Error fetching or processing the JSON file:', error);
                 document.getElementById('lawembed').insertAdjacentHTML("beforeend","<p>No record found.</p>");
