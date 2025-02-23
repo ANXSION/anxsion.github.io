@@ -78,10 +78,11 @@ table{
     box-sizing: border-box;
     table-layout: auto;
 }
-td{
+td, th{
     padding: var(--scaling-01);
     box-sizing: border-box;
     text-align: left;
+    padding-bottom: 1rem;
 }
 summary::-webkit-details-marker {
     display: none;
