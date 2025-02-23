@@ -279,6 +279,7 @@ dialog{
     background-color: transparent;
     margin: 0;
     padding: 0;
+    border-radius: 0;
 }
 
 .main-container{
@@ -377,6 +378,12 @@ dialog{
     display: flex;
     flex-direction: column;
 }
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+  
 .feesPanel{
     width: fit-content;
     height: fit-content;
