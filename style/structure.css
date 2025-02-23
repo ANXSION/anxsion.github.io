@@ -385,12 +385,13 @@ select {
 }
   
 .feesPanel{
+    background-color: transparent;
+    color: var(--text-standard);
     width: fit-content;
     height: fit-content;
     outline: none;
     box-sizing: border-box;
     padding: 0.5rem;
-    color: var(--text-standard);
     border: none;
     border-bottom: var(--border-subtle);
     display: flex;
