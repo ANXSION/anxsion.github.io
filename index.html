@@ -160,7 +160,7 @@
         </div>
 
         <div class="section-container" id="feesSection">
-            <h1 style="width: 100%; justify-content: center;">Estimate fees.</h1>
+            <h1>Estimate fees.</h1>
             <p style="font-size: 0.75rem; width: 75%;">The fee calculator provided on this website is intended solely for informational/estimation purposes and does not constitute legal advice. The actual fees may be higher/low depending on various circumstances. Use of this tool does not establish an attorney-client relationship between you and our firm.</p>
             <br><br>
 
@@ -362,6 +362,12 @@
             </script>
         </div>
 
+        <div class="section-container">
+            <h1>Tech integration.</h1>
+            <p>In-house developed tools, API and SDK.</p>
+            <p style="color: lightgray; cursor: pointer;">LexQuery (Coming soon)</p>
+        </div>
+
         <div class="section-container"  id="legalInformation">
             <h1>Legal Information.</h1>
 
@@ -518,6 +524,7 @@
                 </ol>
             </div>
         </div>
+        
 
         <footer class="section-container">
             <h1>Disclaimer.</h1>
@@ -527,23 +534,11 @@
 
             <div style="text-align: center; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 1rem;">
                 <p style="margin: 0; text-align: center;">Anurag Lama & Associates<br>&copy; 2025</p>
-                <p>All Rights Reserved.</p>
+                <p style="justify-self: center; align-self: center;">All Rights Reserved.</p>
             </div>
         </footer>
     </div>
 </body>
-<script>
-    function navpanel(){
-        if (document.getElementById('navpanel').getAttribute('data-openstatus')=='close'){
-            document.getElementById('navpanel').setAttribute('data-openstatus', 'open');
-            document.getElementById('navoverlay').setAttribute('data-openstatus', 'open');
-        }
-        else{
-            document.getElementById('navpanel').setAttribute('data-openstatus', 'close');
-            document.getElementById('navoverlay').setAttribute('data-openstatus', 'close');
-        }
-    }
-</script>
 <script>
     async function fetchAndCheckJSON() {
             try {

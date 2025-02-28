@@ -106,12 +106,16 @@ h2{
     font-size: 2.5rem;
 }
 p{
+    width: fit-content;
     color: inherit;
     text-align: justify;
     margin-top: 1rem;
     margin-bottom: 1rem;
     line-height: 1.5;
     font-size: 1rem;
+    text-align: justify;
+    justify-content: start;
+    align-self: start;
 }
 li{
     margin-top: 0.5rem;
