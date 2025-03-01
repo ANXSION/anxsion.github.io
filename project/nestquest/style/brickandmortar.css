@@ -79,7 +79,6 @@ h2{
 }
 details{
     width: 100%;
-    border-bottom: 1px var(--base04) solid;
     padding: 1rem;
     box-sizing: border-box;
 }
@@ -92,6 +91,7 @@ summary{
     gap: 0.25rem;
     justify-content: start;
     align-items: baseline;
+    border-bottom: 1px var(--base04) solid;
 }
 summary::-webkit-details-marker {
     display: none;
