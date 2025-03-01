@@ -9,8 +9,7 @@
 </head>
 <body>
     <nav>
-        <p>NEST<br>+ Quest</p>
-        
+        <p style="font-weight: 600;">NEST<br>+ Quest</p>
     </nav>
     <main id="estateContainer">
     </main>
@@ -31,6 +30,7 @@
     let si = 0;
     let contact = '9832909233'
     
+    document.getElementById('estateContainer').insertAdjacentHTML('beforeend', `<br><h1>SELL ORDERS</h1>`);
 
     plotdata.forEach(item=>{
         let saleactual = Math.round(item.salePrice + (item.salePrice* 0.1));
@@ -43,10 +43,10 @@
         totalcharge = (saleactual + si) + regcharge + othercharge;
 
         inject=`
-        <summary><p data-display="cluster1">${item.assetType}</p><p data-display="cluster2">/ ${item.dataCluster.cluster1}</p><p data-display="cluster3">/ Rs. ${saleactual}</p></summary>
+        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ Rs. ${saleactual}</p></summary>
         <div class="dualContainer">
             <div>
-                <p>/${item.transactionType}</p>
+                <p>${item.transactionType}</p>
                 <h1>${item.assetID}</h1>
                 <h2>Rs. ${saleactual}</h2>
                 <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
@@ -114,5 +114,37 @@
         newDiv.insertAdjacentHTML("beforeend",inject);
         document.getElementById('estateContainer').appendChild(newDiv);
     });
+    document.getElementById('estateContainer').insertAdjacentHTML('beforeend', `<br><h1>BUY ORDERS</h1>`);
+
+    demanddata.forEach(item=>{
+        inject=`
+        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ ${item.transactionType}</p></summary>
+        <div class="dualContainer">
+            <div>
+                <p>${item.transactionType}</p>
+                <h1>${item.assetID}</h1>
+                <h2>BUDGET: Rs. ${item.maxPrice}</h2>
+                <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
+                <p>Or call on ${contact}</p>
+            </div>
+            <div>
+                <h1>Overview</h1>
+                <h2>${item.dataCluster.cluster1}</h2>
+                <p>${item.dataCluster.cluster2}</p>
+                <h2>${item.dataCluster.cluster3}</h2>
+                <p>${item.dataCluster.cluster4}</p>
+                <h2>${item.dataCluster.cluster5}</h2>
+                <p>${item.dataCluster.cluster6}</p>
+                <h2>${item.dataCluster.cluster7}</h2>
+                <p>${item.dataCluster.cluster8}</p>
+            </div>
+        </div>
+        `;
+        let newDiv = document.createElement("details");
+        newDiv.insertAdjacentHTML("beforeend",inject);
+        document.getElementById('estateContainer').appendChild(newDiv);
+    });
+
+
 </script>
 </html>

@@ -100,3 +100,23 @@ const plotdata=[
         }
     }
 ];
+
+
+let demanddata= [
+    {
+        "assetType": "Apartment",
+        "transactionType": "For Rent",
+        "assetID": "D_PLOT 001/25",
+        "maxPrice": 12000,
+        "dataCluster":{
+            "cluster1": "Gangtok",
+            "cluster2": "Location",
+            "cluster3": "Any",
+            "cluster4": "Size",
+            "cluster5": "Residential",
+            "cluster6": "Purpose",
+            "cluster7": "None",
+            "cluster8": "Other criteria"
+        }
+    }
+]
