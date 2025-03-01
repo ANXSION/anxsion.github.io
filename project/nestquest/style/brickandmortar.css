@@ -12,7 +12,7 @@
 
 html{
     font-family: Standard;
-    font-size: 16px;
+    font-size: 12px;
 }
 body{
     display: flex;
@@ -92,6 +92,9 @@ summary{
     gap: 0.25rem;
     justify-content: start;
     align-items: baseline;
+}
+summary::-webkit-details-marker {
+    display: none;
 }
 footer{
     width: 100%;

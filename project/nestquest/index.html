@@ -43,12 +43,13 @@
         totalcharge = (saleactual + si) + regcharge + othercharge;
 
         inject=`
-        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ Rs. ${saleactual}</p></summary>
+        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p></summary>
         <div class="dualContainer">
             <div>
                 <p>${item.transactionType}</p>
                 <h1>${item.assetID}</h1>
                 <h2>Rs. ${saleactual}</h2>
+                <br><br>
                 <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
                 <p>Or call on ${contact}</p>
             </div>
@@ -124,6 +125,7 @@
                 <p>${item.transactionType}</p>
                 <h1>${item.assetID}</h1>
                 <h2>BUDGET: Rs. ${item.maxPrice}</h2>
+                <br><br>
                 <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
                 <p>Or call on ${contact}</p>
             </div>

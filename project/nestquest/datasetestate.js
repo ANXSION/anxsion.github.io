@@ -106,7 +106,7 @@ let demanddata= [
     {
         "assetType": "Apartment",
         "transactionType": "For Rent",
-        "assetID": "D_PLOT 001/25",
+        "assetID": "APARTMENT 001/25",
         "maxPrice": 12000,
         "dataCluster":{
             "cluster1": "Gangtok",
