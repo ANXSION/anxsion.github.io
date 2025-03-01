@@ -216,7 +216,7 @@
                 <div id="output"></div>
                 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; padding: 3rem;">
                     <label for="parameter" id="labelforparameter">Enter billed time (in minutes):</label>
-                    <input type="number" name="parameter" id="feeparameter" class="input" style="text-align: center;" oninput="calculate()" value="0" autocomplete="off">
+                    <input type="number" name="parameter" id="feeparameter" class="input" style="text-align: center;" oninput="calculate()" value="0" min="0" autocomplete="off">
                 </div>
                 
             </div>
@@ -237,7 +237,11 @@
                     let feefactor = parseInt(document.getElementById(document.getElementById('feesdata').value).getAttribute('data-fees'));
                     
                     if(document.getElementById('feeparameter').value == ''){
-                        inputvalue = 0
+                        inputvalue = 0;
+                    }
+                    if(document.getElementById('feeparameter').value < 0){
+                        inputvalue = 0;
+                        document.getElementById('feeparameter').value = '';
                     }
                     else{
                         inputvalue = document.getElementById('feeparameter').value;
