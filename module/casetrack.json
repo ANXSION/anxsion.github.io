@@ -1,15 +1,15 @@
 [
     {
-      "ref": ["Matigara PS 628/23"],
+      "ref": ["Pradhan Nagar PS 628/23", "GR 126/23"],
       "name": "Bijaya Rai",
       "task": "Criminal Case",
-      "details": "Next Date is on 29/04/2025"
+      "details": "Next Date is on 29/04/2025 for IO Report."
     },
     {
-      "ref": ["Matigara PS 111/23", "GR 1126/23"],
-      "name": "Verma",
-      "task": "Case",
-      "details": "Next Date is on 21/05/2025"
+      "ref": ["Pradhan Nagar PS 687/24", "GR 2594/24"],
+      "name": "Subham Verma",
+      "task": "Criminal Case",
+      "details": "Next Date is on 22/05/2025 for IO Report."
     }
   ]
   

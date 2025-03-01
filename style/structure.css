@@ -72,6 +72,7 @@ details{
 }
 summary{
     list-style: none;
+    cursor: pointer;
 }
 table{
     width: fit-content;
@@ -139,27 +140,18 @@ dialog{
     padding:auto;
 }
 .button{
-    background-color: var(--item-standard);
+    display: flex;
+    background-color: var(--colorbase-1);
+    border: 1px transparent solid;
     color: var(--text-invert);
-    border: none;
     box-sizing: border-box;
     cursor: pointer;
-    display: flex;
-    font-size: var(--base-unit);
+    font-size: 1rem;
     transition: var(--motion-pace-fast) var(--motion-standard);
     margin: 0;
 }
 .button::selection{
     background: transparent;
-}
-.button[data-button-variant="icononly"]{
-    background-color: var(--item-invert);
-    color: var(--text-standard);
-    clip: var(--text-invert);
-    align-items: center;
-    aspect-ratio: 1/1;
-    height: var(--scaling-08);
-    justify-content: center;
 }
 
 .button[data-button-variant="standard"]{
@@ -167,26 +159,19 @@ dialog{
     height: var(--scaling-08);
     justify-content: start;
     padding: var(--scaling-05);
-    border: 1px transparent solid;
     aspect-ratio: 3/1;
 
 }
-.button[data-button-variant="wide"]{
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    box-sizing: border-box;
-    padding: 6px;
-    aspect-ratio: 6/1;
-}
 
 .button:hover{
-    background-color: var(--item-hover);
-    color: var(--text-invert);
+    background-color: var(--colorbase-5);
+    color: var(--text-standard);
+    border: 1px var(--colorbase-1) solid;
 }
 .button:active{
-    background-color: var(--item-active);
-    color: var(--text-invert);
+    background-color: var(--colorbase-4);
+    color: var(--text-standard);
+    border: 1px transparent solid;
 }
 .navigation-container{
     background-color: hsl(0, 0%, 100%, 80%);
@@ -284,6 +269,9 @@ dialog{
     margin: 0;
     padding: 0;
     border-radius: 0;
+}
+.input:placeholder-shown{
+    color: var(--colorbase-4);
 }
 
 .main-container{
