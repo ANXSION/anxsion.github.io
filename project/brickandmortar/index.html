@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick & Mortar</title>
+    <link rel="stylesheet" href="./style/brickandmortar.css">
+    <script src="./datasetestate.js"></script>
+</head>
+<body>
+    <nav>
+        <p>NEST<br>+ Quest</p>
+        
+    </nav>
+    <main id="estateContainer">
+    </main>
+    <footer>
+        <section style="text-align: right; width: 100%; justify-content: right;">
+            <p>Want your property listed? Mail the details at:</p>
+            <h2>nestquestrealty@icloud.com</h2>
+        </section>
+        
+        <br>
+        <h1>NEST<br>+ Quest</h1>
+    </footer>
+</body>
+<script>
+    let inject = '';
+    let loantenure = 20;
+    let loanrate = 10.70;
+    let si = 0;
+    let contact = '9832909233'
+    
+
+    plotdata.forEach(item=>{
+        let saleactual = Math.round(item.salePrice + (item.salePrice* 0.1));
+
+        si = Math.round((saleactual * (loanrate/100) * loantenure)/100);
+
+        regcharge = Math.round(saleactual * 0.07);
+        othercharge = Math.round(saleactual * 0.02);
+
+        totalcharge = (saleactual + si) + regcharge + othercharge;
+
+        inject=`
+        <summary><p data-display="cluster1">${item.assetType}</p><p data-display="cluster2">/ ${item.dataCluster.cluster1}</p><p data-display="cluster3">/ Rs. ${saleactual}</p></summary>
+        <div class="dualContainer">
+            <div>
+                <p>/${item.transactionType}</p>
+                <h1>${item.assetID}</h1>
+                <h2>Rs. ${saleactual}</h2>
+                <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
+                <p>Or call on ${contact}</p>
+            </div>
+            <div>
+                <h1>Overview</h1>
+                <h2>${item.dataCluster.cluster1}</h2>
+                <p>${item.dataCluster.cluster2}</p>
+                <h2>${item.dataCluster.cluster3}</h2>
+                <p>${item.dataCluster.cluster4}</p>
+                <h2>${item.dataCluster.cluster5}</h2>
+                <p>${item.dataCluster.cluster6}</p>
+                <h2>${item.dataCluster.cluster7}</h2>
+                <p>${item.dataCluster.cluster8}</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="dualContainer">
+            <div>
+                <h1>Payment</h1>
+                <h2>Rs. ${saleactual}</h2>
+                <p>Total amount</p>
+                <h2>Rs. ${saleactual * 0.1}</h2>
+                <p>Downpayment</p>
+                <br><br>
+                <h2>Rs. ${Math.round(((saleactual + si) - (saleactual * 0.1))/(loantenure*12))} (Monthly)</h2>
+                <p>Loan for ${loantenure} Years fixed at ${loanrate}%</p>
+                <br>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: start; gap: 1rem">
+                    <p>Principal and interest</p>
+                    <p>Rs. ${saleactual+si}</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: start; gap: 1rem">
+                    <p>Registration and tax</p>
+                    <p>Rs. ${regcharge}</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: start; gap: 1rem">
+                    <p>Other charges</p>
+                    <p>Rs. ${othercharge}</p>
+                </div>
+                <h2>Rs. ${totalcharge}</h2>
+                <p>Approximate total</p>
+            </div>
+            <div>
+                <h1>Proximity</h1>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromCommercial} km</h2>
+                <p>Commercial Area</p>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromPark} km</h2>
+                <p>Park</p>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromSchool} km</h2>
+                <p>School</p>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromHospital} km</h2>
+                <p>Hospital</p>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromHighway} km</h2>
+                <p>Highway</p>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromStation} km</h2>
+                <p>Railway Station</p>
+                <h2>~ ${item.neighbourhoodDetails.distanceFromAirport} km</h2>
+                <p>Airport</p>
+            </div>
+        </div>
+        `;
+        let newDiv = document.createElement("details");
+        newDiv.insertAdjacentHTML("beforeend",inject);
+        document.getElementById('estateContainer').appendChild(newDiv);
+    });
+</script>
+</html>
