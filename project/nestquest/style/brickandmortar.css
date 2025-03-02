@@ -23,6 +23,7 @@ body{
     width: 100%;
     margin: 0;
     padding: 1rem;
+    min-width: 320px;
 }
 nav{
     width: 100%;
@@ -55,6 +56,7 @@ button{
     aspect-ratio: 5/1;
     padding: 0.875rem;
     cursor: pointer;
+    border-radius: 22px;
 }
 table{
     table-layout: auto;
@@ -90,7 +92,7 @@ summary{
     flex-direction: row;
     gap: 0.25rem;
     justify-content: start;
-    align-items: baseline;
+    align-items: center;
     border-bottom: 1px var(--base04) solid;
 }
 summary::-webkit-details-marker {
@@ -100,7 +102,14 @@ footer{
     width: 100%;
     border-top: 1px var(--base04) solid;
 }
-
+.auction{
+    background-color: var(--base01);
+    color: var(--base05);
+    padding: 0.25rem;
+    width: fit-content;
+    font-size: 0.5rem;
+    margin-left: 1rem;
+}
 .dualContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -1,5 +1,6 @@
 const plotdata=[
     {
+        "auction": "no",
         "assetType": "Vacant Plot",
         "transactionType": "For Sale",
         "assetID": "PLOT 001/24",
@@ -25,6 +26,7 @@ const plotdata=[
         }
     },
     {
+        "auction": "no",
         "assetType": "Apartment",
         "transactionType": "For Sale",
         "assetID": "APARTMENT 001/23",
@@ -33,8 +35,8 @@ const plotdata=[
             "cluster1": "Shivmandir",
             "cluster2": "Location",
             "cluster3": "1150",
-            "cluster4": "sq. ft (No parking)",
-            "cluster5": "3BHK",
+            "cluster4": "sq. ft",
+            "cluster5": "3BHK + No parking",
             "cluster6": "1st Floor",
             "cluster7": "General",
             "cluster8": "2018 (Built)"
@@ -50,6 +52,7 @@ const plotdata=[
         }
     },
     {
+        "auction": "no",
         "assetType": "Apartment",
         "transactionType": "For Sale",
         "assetID": "APARTMENT 001/25",
@@ -58,8 +61,8 @@ const plotdata=[
             "cluster1": "Siliguri",
             "cluster2": "Location",
             "cluster3": "1000",
-            "cluster4": "sq. ft (350 sq. ft. Parking)",
-            "cluster5": "2BHK",
+            "cluster4": "sq. ft",
+            "cluster5": "2BHK + Parking",
             "cluster6": "2nd Floor",
             "cluster7": "General",
             "cluster8": "2012 (Built)"
@@ -75,6 +78,7 @@ const plotdata=[
         }
     },
     {
+        "auction": "yes",
         "assetType": "Building",
         "transactionType": "For Sale",
         "assetID": "BUILDING 01/22",
@@ -104,6 +108,7 @@ const plotdata=[
 
 let demanddata= [
     {
+        "auction": "no",
         "assetType": "Apartment",
         "transactionType": "For Rent",
         "assetID": "APARTMENT 001/25",

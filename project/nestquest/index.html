@@ -12,13 +12,13 @@
         <p style="font-weight: 600;">NEST<br>+ Quest</p>
     </nav>
     <main id="estateContainer">
+        
     </main>
     <footer>
         <section style="text-align: right; width: 100%; justify-content: right;">
             <p>Want your property listed? Mail the details at:</p>
             <h2>nestquestrealty@icloud.com</h2>
         </section>
-        
         <br>
         <h1>NEST<br>+ Quest</h1>
     </footer>
@@ -29,6 +29,7 @@
     let loanrate = 10.70;
     let si = 0;
     let contact = '9832909233'
+    let auction = '';
     
     document.getElementById('estateContainer').insertAdjacentHTML('beforeend', `<br><h1>SELL ORDERS</h1>`);
 
@@ -42,8 +43,16 @@
 
         totalcharge = (saleactual + si) + regcharge + othercharge;
 
+        if (item.auction == 'yes'){
+            auction = `<p class="auction" title="This property is held for debt restructuring, and will be auctioned.">AUCTION</p>`;
+        }
+        else{
+            auction = '';
+        }
+
         inject=`
-        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ Rs. ${saleactual}</p></summary>
+        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ ${item.dataCluster.cluster3} ${item.dataCluster.cluster4}</p>${auction}</summary>
+        <br>
         <div class="dualContainer">
             <div>
                 <p>${item.transactionType}</p>
@@ -120,6 +129,7 @@
     demanddata.forEach(item=>{
         inject=`
         <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ ${item.transactionType}</p></summary>
+        <br>
         <div class="dualContainer">
             <div>
                 <p>${item.transactionType}</p>
