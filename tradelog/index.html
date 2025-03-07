@@ -67,7 +67,6 @@
     ]
 
     let tradestatus = "";
-    let positionindicator = "";
     let wincounter = 0;
     let losscounter = 0;
     let taxcounter = 0;
@@ -85,19 +84,13 @@
             losscounter++;
             colordata = "red";
         }
-        if(item[2]=='LONG'){
-            positionindicator= "&nearr;";
-        }
-        else{
-            positionindicator= "&searr;"
-        }
 
         document.getElementById('tradelog').insertAdjacentHTML("beforeend",`
             <tr>
                 <td style="text-align:center">${item[0]}</td>
                 <td style="background-color:${colordata}; text-align:center">${tradestatus}</td>
                 <td>${item[1]}</td>
-                <td style="text-align:center">${item[2]} ${positionindicator}</td>
+                <td style="text-align:center">${item[2]}</td>
                 <td style="color:${colordata}; text-align:center">${item[3]}</td>
                 <td style="text-align:center">${Math.abs(item[3]-item[4]).toFixed(2)}</td>
                 <td style="color:${colordata}; text-align:center">${item[4]}</td>
