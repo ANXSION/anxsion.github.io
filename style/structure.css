@@ -269,6 +269,7 @@ dialog{
     margin: 0;
     padding: 0;
     border-radius: 0;
+    font-size: 0.875rem;
 }
 .input:placeholder-shown{
     color: var(--colorbase-4);
@@ -401,6 +402,38 @@ select {
     font-size: 1.5rem;
 }
 
+textarea{
+    font-family: Standard;
+    width: 100%;
+    height: 6rem;
+    outline: none;
+    border: 1px solid var(--colorbase-3);
+    color: var(--colorbase-1);
+    caret-color: var(--colorbase-1);
+    background-color: transparent;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0px;
+    resize: none;
+}
+
+select{
+    appearance: none;
+    background-color: transparent;
+    color: var(--text-standard);
+    width: 100%;
+    height: fit-content;
+    outline: none;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: none;
+    border-bottom: var(--border-subtle);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    
+}
 @media screen and (max-width: 425px) {
     h1{
         font-size: 3rem;

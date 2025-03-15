@@ -95,10 +95,87 @@
             <h1>Get in touch.</h1>
             <p style="color: var(--colorbase-3);">We are a full-service law firm, dedicated to providing comprehensive legal services across diverse practice areas with a commitment to professional ethics and excellence. With a focus on diligence, integrity, and client-centricity, we assist individuals and organizations in navigating the complexities of the legal system responsibly and effectively.</p>
             <br>
-            <div style="width: 100%; display: flex; justify-content: start; align-items: start; gap: 0.25rem;">
+            <div style="width: 100%; display: flex; justify-content: start; align-items: start; gap: 0.25rem; flex-direction: column;">
                 <button class="button" data-button-variant="standard" onclick="window.open('tel:9832909233')">Call&nbsp;&nbsp;&nbsp;&nbsp;&#8599;</button>
-                <button class="button" data-button-variant="standard" onclick="window.open('https://wa.me/919832909233')">Text&nbsp;&nbsp;&nbsp;&nbsp;&#8599;</button>
+                <div style="margin-left: auto; margin-right: auto; width: 80%; padding-top: 3rem;">
+                    <h2>Intake Form</h2>
+                    <p style="color: var(--colorbase-3); text-align: left;">We respect your privacy. (Communication time ~30min)</p>
+                    <div>
+                        <p>Full Name:</p>
+                        <input class="input" type="text" id="intakeName" required>
+                        <br>
+                        <br>
+                        <p>Contact details (phone or email):</p>
+                        <input class="input" type="text" name="" id="intakeContact" required>
+                        <br>
+                        <br>
+                        <p>Case Type</p>
+                        <select id="intakeType" required>
+                            <optgroup label="General">
+                                <option value="URGENT">Urgent Communication</option>
+                                <option value="Consultation">Consultation</option>
+                                <option value="Second Opinion">Second Opinion</option>
+                                <option value="Document Registration">Deed and Document Registration</option>
+                                <option value="Retainer">Retainer</option>
+                            </optgroup>
+                            <optgroup label="Criminal">
+                                <option value="Arrest">Arrest</option>
+                                <option value="Criminal Case">Criminal Case</option>
+                            </optgroup>
+                            <optgroup label="Civil">
+                                <option value="Land Dispute">Land Dispute</option>
+                                <option value="Agreement Dispute">Agreement Dispute</option>
+                                <option value="Divorce">Divorce</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Child Custody">Child Custody</option>
+                                <option value="Money Suits">Money Suits</option>
+                                <option value="Inheritance">Inheritance</option>
+                                <option value="Loan Dispute">Loan Dispute / Debt Restructuring</option>
+                            </optgroup>
+                            <optgroup label="Corporate">
+                                <option value="Corporate Service">Corporate Service</option>
+                                <option value="Organisation Registration">Organisation Registration</option>
+                                <option value="Legal Compliance">Legal Compliance</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                        <br>
+                        <p>Brief Case Details (Optional):</p>
+                        <textarea name="" id="intakeDetails"></textarea>
+                        <br>
+                        <br>
+                        <button class="button" data-button-variant="standard" onclick="sendDataChannel()">Send&nbsp;&nbsp;&nbsp;&nbsp;&#8599;</button>
+                    </div>
+                </div>
             </div>
+            <script>
+                function sendDataChannel(){
+                        const webhookdata = {
+                        username: "Fiona",
+                        avatar_url: "",
+                        content: 
+`
+Name: ${document.getElementById('intakeName').value}
+Contact: ${document.getElementById('intakeContact').value}
+Case Type: ${document.getElementById('intakeType').value}
+Case Details: ${JSON.stringify(document.getElementById('intakeDetails').value)}
+`
+                    }
+                    fetch('https://discord.com/api/webhooks/1350527175031525490/vpzzhVOpcslV8Ru4ERMyW6XqLXgL2FjdjjlhUSIW3Xw9-3T2XR4y2_WM3uWsnJQx03G9', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(webhookdata)
+                    }).then(response => {
+                        if (response.ok) {
+                        alert('We received your message.');
+                        } else {
+                        alert('Error sending message. Try again.');
+                        }
+                    })
+                }
+            </script>
             
         </div>
         <div class="section-container"  id="practiceArea">
@@ -128,7 +205,6 @@
                     <p style="text-align: left; margin: 0;">Divorce proceedings.</p>
                     <p style="text-align: left; margin: 0;">Child custody and support.</p>
                     <p style="text-align: left; margin: 0;">Alimony and maintenance.</p>
-                    <p style="text-align: left; margin: 0;">Divorce proceedings.</p>
                     <p style="text-align: left; margin: 0;">Inheritance and succession disputes.</p>
                 </div>
             </div>
