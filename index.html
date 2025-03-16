@@ -49,6 +49,9 @@
 </head>
 
 <body>
+    <nav class="navigation-container">
+        <p style="margin: 0; display: flex; justify-content: center; align-items: center; height: 100%;">Advocate Anurag Lama & Associates</p>
+    </nav>
 
     <dialog id="dataDialog">
         <div id="datavalid">
@@ -80,9 +83,6 @@
     </dialog>
 
     <div class="main-container" style="margin-top: 0;">
-        <div class="section-container" style="justify-content: space-around;">
-            <h1 style="width: 100%; text-align: center; justify-content: center;">Anurag Lama <br>& Associates</h1>
-        </div>
         <div class="section-container" id="trackYourCase">
             <h1>Track your case.</h1>
             <br><br>
@@ -150,15 +150,16 @@
             </div>
             <script>
                 function sendDataChannel(){
-                        const webhookdata = {
-                        username: "Fiona",
-                        avatar_url: "",
-                        content: 
+                    const webhookdata = {
+                    username: "Fiona",
+                    avatar_url: "",
+                    content: 
 `
 Name: ${document.getElementById('intakeName').value}
 Contact: ${document.getElementById('intakeContact').value}
 Case Type: ${document.getElementById('intakeType').value}
 Case Details: ${JSON.stringify(document.getElementById('intakeDetails').value)}
+------------------------------------
 `
                     }
                     fetch('https://discord.com/api/webhooks/1350527175031525490/vpzzhVOpcslV8Ru4ERMyW6XqLXgL2FjdjjlhUSIW3Xw9-3T2XR4y2_WM3uWsnJQx03G9', {
@@ -173,7 +174,10 @@ Case Details: ${JSON.stringify(document.getElementById('intakeDetails').value)}
                         } else {
                         alert('Error sending message. Try again.');
                         }
-                    })
+                    });
+                    document.getElementById('intakeName').value = "";
+                    document.getElementById('intakeContact').value = "";
+                    document.getElementById('intakeDetails').value = "";
                 }
             </script>
             

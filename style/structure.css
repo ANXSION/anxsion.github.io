@@ -174,16 +174,19 @@ dialog{
     border: 1px transparent solid;
 }
 .navigation-container{
-    background-color: hsl(0, 0%, 100%, 80%);
+    background-color: hsl(0, 0%, 0%, 90%);
+    color: white;
     box-sizing: content-box;
     display: flex;
     left: 0%;
-    height: var(--scaling-08);
+    height: 3rem;
     position: fixed;
     top: 0%;
     width: 100%;
     z-index: var(--layer-5);
     backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
 }
 .navigation-container .navigation-productname{
     align-items: center;
@@ -440,6 +443,9 @@ select{
     }
     .gridDataContainer{
         grid-template-columns: 1fr;
+    }
+    dialog{
+        width: 75%;
     }
 }
 
