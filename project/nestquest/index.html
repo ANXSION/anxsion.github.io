@@ -12,7 +12,7 @@
         <p style="font-weight: 600;">NEST<br>+ Quest</p>
     </nav>
     <main id="estateContainer">
-        
+
     </main>
     <footer>
         <section style="text-align: right; width: 100%; justify-content: right;">
@@ -21,142 +21,100 @@
         </section>
         <br>
         <h1>NEST<br>+ Quest</h1>
+        
+        
     </footer>
 </body>
 <script>
+    async function handleSubmit(event,formidentification){
+        event.preventDefault();
+        const fullName = document.getElementById(formidentification).elements['fullName'].value;
+        const contactDetails = document.getElementById(formidentification).elements['contactDetails'].value;
+        const webhookdata = {
+            username: "Broker Bot",
+            avatar_url: "",
+            content: `Name: ${fullName}\nContact: ${contactDetails}\nAsset ID: ${document.getElementById(formidentification).getAttribute('id')}\n------------------------------------`
+        }
+
+        await fetch('https://discord.com/api/webhooks/1352368227291762811/d6bpuJas-Wq471KkeyPAyAmWVkmCGdSJFqp2L_B6hb3ioxzv-sEGPPFjFaCrRRiUX2jy', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(webhookdata)
+        }).then(response => {
+            if (response.ok) {
+            alert('We received your message.');
+            } else {
+            alert('Error sending message. Try again.');
+            }
+        });
+        document.getElementById(formidentification).elements['fullName'].value = "";
+        document.getElementById(formidentification).elements['contactDetails'].value = "";
+    }
+
     let inject = '';
-    let loantenure = 20;
-    let loanrate = 10.70;
-    let si = 0;
-    let contact = '9832909233'
-    let auction = '';
     
     document.getElementById('estateContainer').insertAdjacentHTML('beforeend', `<br><h1>SELL ORDERS</h1>`);
 
     plotdata.forEach(item=>{
-        let saleactual = Math.round(item.salePrice + (item.salePrice* 0.1));
-
-        si = Math.round((saleactual * (loanrate/100) * loantenure)/100);
-
-        regcharge = Math.round(saleactual * 0.07);
-        othercharge = Math.round(saleactual * 0.02);
-
-        totalcharge = (saleactual + si) + regcharge + othercharge;
-
-        if (item.auction == 'yes'){
-            auction = `<p class="auction" title="This property is held for debt restructuring, and will be auctioned.">AUCTION</p>`;
-        }
-        else{
-            auction = '';
-        }
-
         inject=`
-        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ ${item.dataCluster.cluster3} ${item.dataCluster.cluster4}</p>${auction}</summary>
-        <br>
+        <summary>
+            <p>${item.transactionType} /</p>
+            <p>${item.assetType} /</p>
+            <p>Rs. ${(Math.round(item.salePrice + (item.salePrice* 0.1))/100000).toFixed(2)} L</p>
+        </summary>
         <div class="dualContainer">
             <div>
-                <p>${item.transactionType}</p>
-                <h1>${item.assetID}</h1>
-                <h2>Rs. ${saleactual}</h2>
+                <h1>ID: ${item.assetID}</h1>
+                <h2>Rs. ${(Math.round(item.salePrice + (item.salePrice* 0.1))/100000).toFixed(2)} L</h2>
                 <br><br>
-                <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
-                <p>Or call on ${contact}</p>
+                <h1>Schedule a Visit</h1>
+                <form onsubmit="handleSubmit(event,'${item.assetID}')" id="${item.assetID}">
+                    <p>Full Name:</p>
+                    <input type="text" name="fullName" required>
+                    <br>
+                    <p>Contact Details (Phone or Mail):</p>
+                    <input type="text" name="contactDetails" required>
+                    <br>
+                    <button type="submit" class="button">Send Details</button>
+                </form>
             </div>
             <div>
                 <h1>Overview</h1>
-                <h2>${item.dataCluster.cluster1}</h2>
-                <p>${item.dataCluster.cluster2}</p>
-                <h2>${item.dataCluster.cluster3}</h2>
-                <p>${item.dataCluster.cluster4}</p>
-                <h2>${item.dataCluster.cluster5}</h2>
-                <p>${item.dataCluster.cluster6}</p>
-                <h2>${item.dataCluster.cluster7}</h2>
-                <p>${item.dataCluster.cluster8}</p>
-            </div>
-        </div>
-        <br><br>
-        <div class="dualContainer">
-            <div>
-                <h1>Payment</h1>
-                <h2>Rs. ${saleactual}</h2>
-                <p>Total amount</p>
-                <h2>Rs. ${saleactual * 0.1}</h2>
-                <p>Downpayment</p>
-                <br><br>
-                <h2>Rs. ${Math.round(((saleactual + si) - (saleactual * 0.1))/(loantenure*12))} (Monthly)</h2>
-                <p>Loan for ${loantenure} Years fixed at ${loanrate}%</p>
-                <br>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: start; gap: 1rem">
-                    <p>Principal and interest</p>
-                    <p>Rs. ${saleactual+si}</p>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: start; gap: 1rem">
-                    <p>Registration and tax</p>
-                    <p>Rs. ${regcharge}</p>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; justify-content: start; align-items: start; gap: 1rem">
-                    <p>Other charges</p>
-                    <p>Rs. ${othercharge}</p>
-                </div>
-                <h2>Rs. ${totalcharge}</h2>
-                <p>Approximate total</p>
-            </div>
-            <div>
-                <h1>Proximity</h1>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromCommercial} km</h2>
-                <p>Commercial Area</p>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromPark} km</h2>
-                <p>Park</p>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromSchool} km</h2>
-                <p>School</p>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromHospital} km</h2>
-                <p>Hospital</p>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromHighway} km</h2>
-                <p>Highway</p>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromStation} km</h2>
-                <p>Railway Station</p>
-                <h2>~ ${item.neighbourhoodDetails.distanceFromAirport} km</h2>
-                <p>Airport</p>
+                <table>
+                    <tr>
+                        <td><p>${item.dataCluster.cluster1.clusterCategory}</p></td>
+                        <td><h2>${item.dataCluster.cluster1.clusterValue}</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>${item.dataCluster.cluster2.clusterCategory}</p></td>
+                        <td><h2>${item.dataCluster.cluster2.clusterValue}</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>${item.dataCluster.cluster3.clusterCategory}</p></td>
+                        <td><h2>${item.dataCluster.cluster3.clusterValue}</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>${item.dataCluster.cluster4.clusterCategory}</p></td>
+                        <td><h2>${item.dataCluster.cluster4.clusterValue}</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>${item.dataCluster.cluster5.clusterCategory}</p></td>
+                        <td><h2>${item.dataCluster.cluster5.clusterValue}</h2></td>
+                    </tr>
+                    <tr>
+                        <td><p>${item.dataCluster.cluster6.clusterCategory}</p></td>
+                        <td><h2>${item.dataCluster.cluster6.clusterValue}</h2></td>
+                    </tr>
+                </table>
             </div>
         </div>
         `;
-        let newDiv = document.createElement("details");
-        newDiv.insertAdjacentHTML("beforeend",inject);
-        document.getElementById('estateContainer').appendChild(newDiv);
+        let detailsTag = document.createElement('details');
+        
+        detailsTag.insertAdjacentHTML("beforeend", inject);
+        document.getElementById('estateContainer').appendChild(detailsTag);
     });
-    document.getElementById('estateContainer').insertAdjacentHTML('beforeend', `<br><h1>BUY ORDERS</h1>`);
-
-    demanddata.forEach(item=>{
-        inject=`
-        <summary><p>${item.assetType}</p><p>/ ${item.dataCluster.cluster1}</p><p>/ ${item.transactionType}</p></summary>
-        <br>
-        <div class="dualContainer">
-            <div>
-                <p>${item.transactionType}</p>
-                <h1>${item.assetID}</h1>
-                <h2>BUDGET: Rs. ${item.maxPrice}</h2>
-                <br><br>
-                <button onclick="window.location.href='tel:${contact}'" class="button">Contact</button>
-                <p>Or call on ${contact}</p>
-            </div>
-            <div>
-                <h1>Overview</h1>
-                <h2>${item.dataCluster.cluster1}</h2>
-                <p>${item.dataCluster.cluster2}</p>
-                <h2>${item.dataCluster.cluster3}</h2>
-                <p>${item.dataCluster.cluster4}</p>
-                <h2>${item.dataCluster.cluster5}</h2>
-                <p>${item.dataCluster.cluster6}</p>
-                <h2>${item.dataCluster.cluster7}</h2>
-                <p>${item.dataCluster.cluster8}</p>
-            </div>
-        </div>
-        `;
-        let newDiv = document.createElement("details");
-        newDiv.insertAdjacentHTML("beforeend",inject);
-        document.getElementById('estateContainer').appendChild(newDiv);
-    });
-
-
 </script>
 </html>

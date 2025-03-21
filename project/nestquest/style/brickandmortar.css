@@ -53,17 +53,20 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 5/1;
-    padding: 0.875rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     cursor: pointer;
-    border-radius: 22px;
+    border-radius: 18px;
 }
 table{
     table-layout: auto;
-    width: 100%;
+    width: fit-content;
 }
 td{
     color: var(--base03);
+    padding-right: 1rem;
 }
 p{
     color: var(--base03);
@@ -78,11 +81,43 @@ h1{
 }
 h2{
     font-size: 1.5rem;
+    color: var(--base01);
 }
 details{
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
+}
+input[type="text"]{
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    color: var(--base01);
+    caret-color: var(--base01);
+    border-bottom: 1px var(--base03) solid;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+form{
+    width: 100%;
+}
+img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 21/9;
+    background-color: var(--base01);
+    box-sizing: border-box;
+    padding: 1rem;
+    color: var(--base05);
+    border-radius: 9px;
+}
+img:not([src]), img[src=""]::before{
+    display: none;
 }
 summary{
     width: 100%;
@@ -90,10 +125,12 @@ summary{
     cursor: pointer;
     display: flex;
     flex-direction: row;
-    gap: 0.25rem;
+    gap: 0.5rem;
     justify-content: start;
     align-items: center;
     border-bottom: 1px var(--base04) solid;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
 }
 summary::-webkit-details-marker {
     display: none;
@@ -115,8 +152,17 @@ footer{
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: start;
+    gap: 2rem;
 }
-
+.dataCategory{
+    font-size: 0.875rem;
+    color: var(--base03);
+}
+.line{
+    padding-top: 6rem;
+    border-bottom: 1px var(--base03) solid;
+    width: 100%;
+}
 @media screen and (max-width: 768px){
     html{
         font-size: 12px;
