@@ -42,7 +42,7 @@ const plotdata=[
                 "clusterValue":"Shivmandir",
             },
             "cluster2": {
-                "clusterCategory":"Overall Size",
+                "clusterCategory":"Size",
                 "clusterValue":"1175 sq. ft.",
             },
             "cluster3": {
@@ -74,7 +74,7 @@ const plotdata=[
                 "clusterValue":"Hatigisha",
             },
             "cluster2": {
-                "clusterCategory":"Overall Size",
+                "clusterCategory":"Size",
                 "clusterValue":"7 Kattha",
             },
             "cluster3": {
