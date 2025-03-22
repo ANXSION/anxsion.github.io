@@ -96,7 +96,7 @@
                 <div style="margin-left: auto; margin-right: auto; width: 80%; padding-top: 3rem;">
                     <h2>Intake Form</h2>
                     <p style="color: var(--colorbase-3); text-align: left;">We respect your privacy. (Communication time ~30min)</p>
-                    <div>
+                    <form onsubmit="sendDataChannel(event)">
                         <p>Full Name:</p>
                         <input class="input" type="text" id="intakeName" required>
                         <br>
@@ -140,25 +140,19 @@
                         <textarea name="" id="intakeDetails"></textarea>
                         <br>
                         <br>
-                        <button class="button" data-button-variant="standard" onclick="sendDataChannel()">Send&nbsp;&nbsp;&nbsp;&nbsp;&#8599;</button>
-                    </div>
+                        <button type="submit" class="button" data-button-variant="standard">Send&nbsp;&nbsp;&nbsp;&nbsp;&#8599;</button>
+                    </form>
                 </div>
             </div>
             <script>
-                function sendDataChannel(){
+                async function sendDataChannel(event){
+                    event.preventDefault();
                     const webhookdata = {
-                    username: "Fiona",
-                    avatar_url: "",
-                    content: 
-`
-Name: ${document.getElementById('intakeName').value}
-Contact: ${document.getElementById('intakeContact').value}
-Case Type: ${document.getElementById('intakeType').value}
-Case Details: ${JSON.stringify(document.getElementById('intakeDetails').value)}
-------------------------------------
-`
+                        username: "Fiona",
+                        avatar_url: "",
+                        content: `Name: ${document.getElementById('intakeName').value}\nContact: ${document.getElementById('intakeContact').value}\nCase Type: ${document.getElementById('intakeType').value}\nCase Details: ${JSON.stringify(document.getElementById('intakeDetails').value)}\n------------------------------------`
                     }
-                    fetch('https://discord.com/api/webhooks/1350527175031525490/vpzzhVOpcslV8Ru4ERMyW6XqLXgL2FjdjjlhUSIW3Xw9-3T2XR4y2_WM3uWsnJQx03G9', {
+                    await fetch('https://discord.com/api/webhooks/1350527175031525490/vpzzhVOpcslV8Ru4ERMyW6XqLXgL2FjdjjlhUSIW3Xw9-3T2XR4y2_WM3uWsnJQx03G9', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
