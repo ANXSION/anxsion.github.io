@@ -27,13 +27,16 @@
             cursor: pointer;
         }
         .banner{
-            background-size: cover; width: 100%; object-fit: cover; aspect-ratio: 48/9;
+            background-size: cover; width: 100%; object-fit: cover; aspect-ratio: 48/9; background-position: center;
         }
         .profile{
             background-size: cover; width: 15%; aspect-ratio: 1/1; object-fit: cover; transform: translateY(-50%);
         }
         table{
             display: flex; flex-direction: column; box-sizing: border-box; width: 50%; margin: auto; margin-top: 3rem; table-layout: auto;
+        }
+        .baseImage{
+            width: 96px;
         }
         @media screen and (max-width:768px){
             .banner{
@@ -48,6 +51,9 @@
             td{
                 padding-right: 1rem;
             }
+            .baseImage{
+                width: 48px;
+            }
         }
     </style>
 </head>
@@ -59,20 +65,16 @@
     </div>
     <table>
         <tr onclick="window.open('https://zerodha.com/?c=KFR273&s=CONSOLE')">
-            <td><img src="./id/kite.png" alt="" style="aspect-ratio: 1/1; width: 96px;"></td>
+            <td><img src="./id/kite.png" class="baseImage" alt="" style="aspect-ratio: 1/1;"></td>
             <td><p>Open a new Kite trading account with Zerodha.</p></td>
         </tr>
         <tr onclick="window.open('https://console.zerodha.com/verified/66ba426c')">
-            <td><img src="./id/zerodha.png" alt="" style="aspect-ratio: 1/1; width: 96px;"></td>
+            <td><img src="./id/zerodha.png" class="baseImage" alt="" style="aspect-ratio: 1/1;"></td>
             <td><p>Check my trades and P/L. Verified by Zerodha.</p></td>
         </tr>
-        <tr onclick="window.open('https://www.tradingview.com/watchlists/103146258/')">
-            <td><img src="./id/tw.png" alt="" style="aspect-ratio: 1/1; width: 96px;"></td>
-            <td><p>Follow my gobal index watchlist.</p></td>
-        </tr>
-        <tr onclick="window.open('https://discord.gg/DyXnhKknge')">
-            <td><img src="./id/discordblack.png" alt="" style="aspect-ratio: 1/1; width: 96px;"></td>
-            <td><p>Join the community and learn together! <strong>Disclaimer:</strong> This server is for educational purpose only. We are not financial advisors and do not provide buy/sell advices.</p></td>
+        <tr onclick="window.open('https://www.tradingview.com/watchlists/103139392/')">
+            <td><img src="./id/tw.png" alt="" class="baseImage" style="aspect-ratio: 1/1;"></td>
+            <td><p>Check my daily watchlist. The watchlist is updated everyday before 9:00 am IST.</p></td>
         </tr>
     </table>
 </body>
