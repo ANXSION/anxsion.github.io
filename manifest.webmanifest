@@ -9,8 +9,8 @@
   "scope": "/",
   "display": "standalone",
   "start_url": "/",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "description": "The official website of Advocate Anurag Lama & Associates. A full-service law firm.",
   "orientation": "portrait-primary",
   "icons": [
