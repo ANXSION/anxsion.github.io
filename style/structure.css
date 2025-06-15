@@ -7,9 +7,9 @@
 
     --colorbase-fg: hsla(0, 0%, 100%);
     --colorbase-bg: hsla(0, 0%, 0%);
-    --colorbase-ag: #80ee80;
+    --colorbase-ag: #C0F888;
 
-    --border-subtle: 1px white solid;
+    --border-subtle: 1px #C0F888 solid;
 
     --scaling-01: 0.5rem;
     --scaling-02: 0.75rem;
@@ -129,9 +129,9 @@ dialog{
 }
 .button{
     display: flex;
-    background-color: var(--colorbase-bg);
-    border: 1px var(--colorbase-fg) solid;
-    color: var(--colorbase-fg);
+    background-color: var(--colorbase-ag);
+    border: 1px transparent solid;
+    color: var(--colorbase-bg);
     box-sizing: border-box;
     cursor: pointer;
     font-size: 1rem;
@@ -150,14 +150,14 @@ dialog{
     aspect-ratio: 3/1;
 }
 .button:hover{
+    background-color: var(--colorbase-bg);
+    color: var(--colorbase-fg);
+    border: 1px var(--colorbase-fg) solid;
+}
+.button:active{
     background-color: var(--colorbase-fg);
     color: var(--colorbase-bg);
     border: 1px var(--colorbase-bg) solid;
-}
-.button:active{
-    background-color: var(--colorbase-ag);
-    color: var(--colorbase-bg);
-    border: 1px transparent solid;
 }
 
 .input{
@@ -248,21 +248,6 @@ dialog{
     font-size: 1.5rem;
 }
 
-textarea{
-    font-family: Standard;
-    width: 100%;
-    height: 6rem;
-    outline: none;
-    border: 1px solid var(--colorbase-fg);
-    color: var(--colorbase-fg);
-    caret-color: var(--colorbase-fg);
-    background-color: transparent;
-    margin: 0;
-    padding: 1rem;
-    border-radius: 0px;
-    resize: none;
-}
-
 select{
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -311,12 +296,4 @@ select optgroup option {
     100%{
         margin-top: 1rem;
     }
-}
-
-@keyframes buttonclick{
-    0%   { background: var(--colorbase-bg); color: var(--colorbase-fg); }
-    25%  { background: var(--colorbase-fg); color: var(--colorbase-bg); }
-    50%  { background: var(--colorbase-bg); color: var(--colorbase-fg); }
-    75%  { background: var(--colorbase-fg); color: var(--colorbase-bg); }
-    100% { background: var(--colorbase-bg); color: var(--colorbase-fg); }
 }
