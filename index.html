@@ -240,26 +240,17 @@
                 </div>
             </div>
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.5rem; justify-content: center; align-items: center; border-top: 1px var(--colorbase-ag) solid; padding-top: 1rem; padding-bottom: 4rem;">
-                <h2 style="display: flex; justify-self: start; align-self: self-start; margin: 0;">Corporate Law</h2>
+                <h2 style="display: flex; justify-self: start; align-self: self-start; margin: 0;">Commercial Law</h2>
                 <div style="display: flex; flex-direction: column; padding-top: 1rem; row-gap: 1rem;">
                     <p style="text-align: left; margin: 0;">Company incorporation and structuring.</p>
-                    <p style="text-align: left; margin: 0;">Mergers and acquisitions (M&A)</p>
                     <p style="text-align: left; margin: 0;">Corporate governance and compliance.</p>
                     <p style="text-align: left; margin: 0;">Joint ventures and strategic alliances.</p>
-                    <p style="text-align: left; margin: 0;">Private equity and venture capital.</p>
                     <p style="text-align: left; margin: 0;">Intellectual property rights.</p>
                     <p style="text-align: left; margin: 0;">Regulatory approvals and liaison.</p>
-                </div>
-            </div>
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.5rem; justify-content: center; align-items: center; border-top: 1px var(--colorbase-ag) solid; padding-top: 1rem; padding-bottom: 4rem;">
-                <h2 style="display: flex; justify-self: start; align-self: self-start; margin: 0;">Commercial Transaction</h2>
-                <div style="display: flex; flex-direction: column; padding-top: 1rem; row-gap: 1rem;">
                     <p style="text-align: left; margin: 0;">Contract drafting and negotiation.</p>
                     <p style="text-align: left; margin: 0;">Employment and labor Law</p>
                     <p style="text-align: left; margin: 0;">Real estate transactions.</p>
-                    <p style="text-align: left; margin: 0;">Banking and finance law.</p>
                     <p style="text-align: left; margin: 0;">Commercial dispute.</p>
-                    <p style="text-align: left; margin: 0;">Competition.</p>
                     <p style="text-align: left; margin: 0;">Debt restructuring and SARFAESI</p>
                     <p style="text-align: left; margin: 0;">Taxation and tax planning.</p>
                 </div>
@@ -268,208 +259,162 @@
 
         <div class="section-container" id="feesSection">
             <h1>Estimate fees.</h1>
-            <p style="font-size: 0.75rem; width: 75%; color: var(--colorbase-fg);">The fee calculator provided on this website is intended solely for informational/estimation purposes and does not constitute legal advice. The actual fees may be higher/low depending on various circumstances. Use of this tool does not establish an attorney-client relationship between you and our firm.</p>
-            <br><br>
+            <p style="font-size: 0.75rem; width: 100%; color: var(--colorbase-fg);">The fee provided on this website is intended solely for informational/estimation purposes and does not constitute legal advice. The actual fees may be higher/lower depending on various circumstances. Use of this table does not establish an attorney-client relationship between you and our firm.</p>
+            <br><br><br><br>
 
-            <select class="feesPanel" id="feesdata" onchange="assessment()">
-                <optgroup label="Consultation and Documentation">
-                    <option id="f0101" value="f0101" data-fees="4000" data-labeldata="Enter billable time (in minutes):">Legal Consultation</option>
-                    <option id="f0102" value="f0102" data-fees="2000" data-labeldata="Enter billable time (in minutes):">Inspection of Documents</option>
-                    <option id="f0103" value="f0103" data-fees="2000" data-labeldata="Quantity:">Legal Notice/Reply</option>
-                    <option id="f0104" value="f0104" data-fees="6000" data-labeldata="Quantity:">Public/Title Notice</option>
-                    <option id="f0105" value="f0105" data-fees="1000" data-labeldata="Quantity:">Drafting of Affidavit</option>
-                    <option id="f0106" value="f0106" data-fees="2000" data-labeldata="Quantity:">Drafting of Agreements</option>
-                    <option id="f0107" value="f0107" data-fees="5000" data-labeldata="Quantity:">Drafting of Sale/Exchange/Gift/Mortgage Deed</option>
-                    <option id="f0108" value="f0108" data-fees="6000" data-labeldata="Quantity:">Drafting of Partnership Deed</option>
-                    <option id="f0109" value="f0109" data-fees="6000" data-labeldata="Quantity:">Drafting of Power of Attorney</option>
-                    <option id="f0110" value="f0110" data-fees="10000" data-labeldata="Quantity:">Drafting of Will</option>
-                </optgroup>
-                <optgroup label="Registration and Real Estate">
-                    <option id="f0201" value="f0201" data-fees="2000" data-labeldata="No. of Plot:">Title Searching (Local)</option>
-                    <option id="f0202" value="f0202" data-fees="5000" data-labeldata="No. of Plot:">Title Searching (Outsite District)</option>
-                    <option id="f0203" value="f0203" data-fees="50000" data-labeldata="Market value/ Consideration:">Registration of Any Document</option>
-                    <option id="f0204" value="f0204" data-fees="15000" data-labeldata="Quantity:">Registration of Society</option>
-                    <option id="f0205" value="f0205" data-fees="30000" data-labeldata="Quantity:">Registration of Partnership</option>
-                    <option id="f0206" value="f0206" data-fees="50000" data-labeldata="Quantity:">Registration of Companies</option>
-                </optgroup>
-                <optgroup label="Civil Litigation and Others">
-                    <option id="f0301" value="f0301" data-fees="1000" data-labeldata="Number of Documents:">Certified Copy Charges</option>
-                    <option id="f0302" value="f0302" data-fees="5000" data-labeldata="Quantity:">Drafting and Filing of Caveat</option>
-                    <option id="f0303" value="f0303" data-fees="40000" data-labeldata="Quantity:">Filing of Civil Suits</option>
-                    <option id="f0304" value="f0304" data-fees="20000" data-labeldata="Day:">Filing for Specific Relief/Declaration/Injunction</option>
-                    <option id="f0305" value="f0305" data-fees="10000" data-labeldata="Monetray Value:">Filing of Civil Suits with Monetary Subject Matter</option>
-                    <option id="f0306" value="f0306" data-fees="20000" data-labeldata="Day:">Filing of Execution Proceeding</option>
-                    <option id="f0307" value="f0307" data-fees="500" data-labeldata="Day:">Appearance in Civil Matters</option>
-                    <option id="f0308" value="f0308" data-fees="2000" data-labeldata="Day:">Appearance in Civil Courts outside the district</option>
-                    <option id="f0309" value="f0309" data-fees="1000" data-labeldata="Day:">Appearance in Tribunals/Commissions/Forums</option>
-                    <option id="f0310" value="f0310" data-fees="50000" data-labeldata="Day:">Civil Appeals/Revision</option>
+            <table style="width: 100%; table-layout: auto;">
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color: var(--colorbase-ag);">General</td>
+                    </tr>
+                    <tr>
+                        <td>Legal Consultation</td>
+                        <td>Rs. 2,000 / hour</td>
+                    </tr>
+                    <tr>
+                        <td>Inspection of Documents</td>
+                        <td>Rs. 2,000</td>
+                    </tr>
+                    <tr>
+                        <td>Legal Notice / Reply</td>
+                        <td>Rs. 2,000 / notice</td>
+                    </tr>
+                    <tr>
+                        <td>Public / Title Notice</td>
+                        <td>Rs. 6,000 / notice</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting of Affidavit</td>
+                        <td>Rs. 1,000 + Stamp fees</td>
+                    </tr>
+                    <tr>
+                        <td>Certified Copy Charges</td>
+                        <td>Rs. 2,000 + Court fees</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color: var(--colorbase-ag);">Civil and Tribunal Litigation</td>
+                    </tr>
+                    <tr>
+                        <td>Appearance of Civil Matters</td>
+                        <td>Rs. 500</td>
+                    </tr>
+                    <tr>
+                        <td>Appearance in Civil Courts outside the district</td>
+                        <td>Rs. 2,000</td>
+                    </tr>
+                    <tr>
+                        <td>Appearance in Tribunals / Commissions / Forums</td>
+                        <td>Rs. 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting and Filing of Caveat</td>
+                        <td>Rs. 5,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td>Filing of Civil Suits</td>
+                        <td>Rs. 40,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td>Filing for Specific Relief / Declaration / Injunction</td>
+                        <td>Rs. 20,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td>Filing of Civil Suits with Monetary Subject Matter</td>
+                        <td>Rs. 20,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td>Filing of Suits in Tribunals</td>
+                        <td>Rs. 20,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td>Filing of Execution Proceeding</td>
+                        <td>Rs. 20,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td>Civil Appeals / Revision</td>
+                        <td>Rs. 10,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color: var(--colorbase-ag);">Criminal Litigation</td>
+                    </tr>
+                    <tr>
+                        <td>Apperance in Summon / Warrant Case</td>
+                        <td>Rs. 500</td>
+                    </tr>
+                    <tr>
+                        <td>Apperance in Session Case</td>
+                        <td>Rs. 1,000</td>
+                    </tr>
+                     <tr>
+                        <td>Appearance under Specific Laws / Special Courts</td>
+                        <td>Rs. 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>Appearance in Criminal Courts outside the district</td>
+                        <td>Rs. 2,000</td>
+                    </tr>
+                    <tr>
+                        <td>Criminal Complaints</td>
+                        <td>Rs. 1,000</td>
+                    </tr>
+                    <tr>
+                        <td>Bail Application</td>
+                        <td>Rs. 10,000</td>
+                    </tr>
+                    <tr>
+                        <td>Anticipatory Bail</td>
+                        <td>Rs. 20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Criminal Appeals / Revision</td>
+                        <td>Rs. 10,000 + Court fee</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color: var(--colorbase-ag);">Commercial and Registration</td>
+                    </tr>
+                    <tr>
+                        <td>Real Estate Due Deligence</td>
+                        <td>Rs. 5,000</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting of Agreement</td>
+                        <td>Rs. 2,000 + Stamp fees</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting of Sale / Exchange / Gift Deed</td>
+                        <td>Rs. 5,000 + Stamp fees</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting of Partnership Deed</td>
+                        <td>Rs. 6,000 + Stamp fess</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting of Power of attorney</td>
+                        <td>Rs. 6,000 + Stamp Fees</td>
+                    </tr>
+                    <tr>
+                        <td>Drafting of Will</td>
+                        <td>Rs. 10,000</td>
+                    </tr>
+                    <tr>
+                        <td>Registration of Document</td>
+                        <td>Rs. 30,000 + Government fees</td>
+                    </tr>
+                    <tr>
+                        <td>Registration of Society</td>
+                        <td>Rs. 15,000 + Government fees</td>
+                    </tr>
+                    <tr>
+                        <td>Registration of Partnership</td>
+                        <td>Rs. 30,000 + Government fees</td>
+                    </tr>
+                    <tr>
+                        <td>Registration of Companies</td>
+                        <td>Rs. 60,000 + Government fees</td>
+                    </tr>
                     
-                </optgroup>
-                <optgroup label="Criminal Litigation">
-                    <option id="f0401" value="f0401" data-fees="1000" data-labeldata="Quantity:">Complaints</option>
-                    <option id="f0402" value="f0402" data-fees="10000" data-labeldata="Quantity:">Criminal Filings</option>
-                    <option id="f0403" value="f0403" data-fees="5000" data-labeldata="Day:">Bail Applications</option>
-                    <option id="f0404" value="f0404" data-fees="15000" data-labeldata="Day:">Anticipatory Bail</option>
-                    <option id="f0405" value="f0405" data-fees="500" data-labeldata="Day:">Appearance in Summon Cases</option>
-                    <option id="f0406" value="f0406" data-fees="500" data-labeldata="Day:">Appearance in Warrant Cases</option>
-                    <option id="f0407" value="f0407" data-fees="2000" data-labeldata="Day:">Appearance in Session Cases</option>
-                    <option id="f0408" value="f0408" data-fees="2000" data-labeldata="Day:">Appearance in Criminal Courts outside the district</option>
-                    <option id="f0409" value="f0409" data-fees="2000" data-labeldata="Day:">Appearance under Specific Laws/Special Courts</option>
-                    <option id="f0410" value="f0410" data-fees="5000" data-labeldata="Day:">Criminal Appeals/Revision</option>  
-                </optgroup>
-            </select>
-            <br><br>
-            <div id="feespanel">
-                <div id="output"></div>
-                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; box-sizing: border-box; padding: 3rem;">
-                    <label for="parameter" id="labelforparameter">Enter billed time (in minutes):</label>
-                    <input type="number" name="parameter" id="feeparameter" class="input" style="text-align: center;" oninput="calculate()" value="0" min="0" autocomplete="off">
-                </div>
-            </div>
-            <script>
-
-                document.getElementById('labelforparameter').innerText = document.getElementById(document.getElementById('feesdata').value).getAttribute('data-labeldata');
-                document.getElementById('output').innerText = `Rs. 0`;
-
-                function assessment(){
-                    document.getElementById('feeparameter').value = 0;
-                    document.getElementById('labelforparameter').innerText = document.getElementById(document.getElementById('feesdata').value).getAttribute('data-labeldata');
-                    calculate();
-                }
-
-                function calculate(){
-                    let inputvalue = 0
-                    let temp = 0;
-                    let feefactor = parseInt(document.getElementById(document.getElementById('feesdata').value).getAttribute('data-fees'));
-                    
-                    if(document.getElementById('feeparameter').value == ''){
-                        inputvalue = 0;
-                    }
-                    if(document.getElementById('feeparameter').value < 0){
-                        inputvalue = 0;
-                        document.getElementById('feeparameter').value = '';
-                    }
-                    else{
-                        inputvalue = document.getElementById('feeparameter').value;
-                    }
-
-                    if (document.getElementById('feesdata').value == 'f0101'){
-                        temp = Math.round((parseFloat(inputvalue) / 60) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0102'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0103'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0104'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0105'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Stamp Duty";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0106'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Stamp Duty";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0107'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Stamp Duty";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0108'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Stamp Duty";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0109'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Stamp Duty";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0110'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-
-
-                    else if (document.getElementById('feesdata').value == 'f0201'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Charges";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0202'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor)+ " + Charges";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0203'){
-                        temp = feefactor + Math.round((parseFloat(inputvalue)) * 0.07) + Math.round((parseFloat(inputvalue)) * 0.02) + " + Tax";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0204'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor)+ " + Govt. Fees & Charges";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0205'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor) + " + Govt. Fees & Charges";
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0206'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor)+ " + Govt. Fees & Charges";
-                    }
-
-                    else if (document.getElementById('feesdata').value == 'f0301'){
-                        temp = feefactor + (parseFloat(inputvalue) * 1000);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0302'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0303'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0304'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0305'){
-                        temp = Math.round((parseFloat(inputvalue)) + feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0306'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0307'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0308'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0309'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0310'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-
-                    else if (document.getElementById('feesdata').value == 'f0401'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0402'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0403'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0404'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0405'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0406'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0407'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0408'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0409'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-                    else if (document.getElementById('feesdata').value == 'f0410'){
-                        temp = Math.round((parseFloat(inputvalue)) * feefactor);
-                    }
-
-                    document.getElementById('output').innerText = `Rs. ${temp}`;
-                }
-
-            </script>
+                </tbody>
+            </table>
         </div>
 
         <div class="section-container"  id="legalInformation">
