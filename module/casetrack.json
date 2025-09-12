@@ -1,41 +1,111 @@
 [
   {
-    "ref": ["Pradhan Nagar PS 628/23", "GR 126/23"],
     "name": "Bijaya Rai",
     "task": "Criminal Case",
     "details": "Next Date on 06/03/2025 for Charge. Your presence is required.",
-    "history":[
-      "19/06/25 - Accused received the certified copies. Next date on 06/03/2026 for charge."
+    "record":[
+      {"currentstatus": "Pending"},
+      {"casename": "State vs Bijaya Rai"},
+      {"authorityname": "ACJM, Siliguri"},
+      {"casenumber": ["Pradhan Nagar PS 628/23", "GR 126/23"]},
+      {"causeofaction": "BNS 316/318"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "19/06/2025 - Accused received the certified copies. Next date on 06/03/2026 for charge."
+        ]
+      }
     ]
   },
   {
-    "ref": ["CR 474/25"],
     "name": "Anil Kumar Paswan",
     "task": "Criminal Case (Excise)",
-    "details": "Next Date on 01/09/25 for Bail Confirmation. Your presence is required."
+    "details": "Next Date on 01/09/2025 for Bail Confirmation. Your presence is required.",
+    "record":[
+      {"currentstatus": "Pending"},
+      {"casename": "State vs Anil Kumar Paswan"},
+      {"authorityname": "ACJM, Siliguri"},
+      {"casenumber": ["CR 474/25"]},
+      {"causeofaction": "Bengal Excise 9/11/12"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "01/09/2025 - Judge was on remand. Nex date on 15/09/2025 for Bail Confirmation."
+        ]
+      }
+    ]
   },
   {
-    "ref": ["Pradhan Nagar PS 687/24", "GR 2594/24"],
     "name": "Subham Verma",
     "task": "Criminal Case",
-    "details": "Next Date on 24/09/25 for IO Report. Your presence is required."
+    "details": "Next Date on 24/09/2025 for IO Report. Your presence is required.",
+    "record":[
+      {"currentstatus": "Pending"},
+      {"casename": "State vs Subham Verma"},
+      {"authorityname": "ACJM, Siliguri"},
+      {"casenumber": ["Pradhan Nagar PS 687/24", "GR 2594/24"]},
+      {"causeofaction": "BNS 353"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "n/a"
+        ]
+      }
+    ]
   },
   {
-    "ref": ["Mat 49(3)/25"],
     "name": "Nisha Bhandari & Rupen Giri",
-    "task": "Mutual Divorce",
-    "details": "Next Date on 06/09/25. Your presence is required."
+    "task": "Civil Case (Mutual Divorce)",
+    "details": "Next Date on 06/09/2025. Your presence is required.",
+    "record":[
+      {"currentstatus": "Disposed"},
+      {"casename": "Nisha Bhandari vs Rupen Giri"},
+      {"authorityname": "ADJ 1, Siliguri"},
+      {"casenumber": ["Mat 49(3)/25"]},
+      {"causeofaction": "Special Marriage Act 28"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "04/03/2025 - Case filed. First date given on 06/09/2025.",
+          "06/09/2025 - Decree passed. Case disposed."
+        ]
+      }
+    ]
   },
   {
-    "ref": ["Act viii 4/25"],
     "name": "Priyanka Tamang",
-    "task": "Child Custody",
-    "details": "Next Date on 20/06/25 for filing requisite. Your presence is not required."
+    "task": "Civil Case (Child Custody)",
+    "details": "Next Date on 20/06/2025 for filing requisite. Your presence is not required.",
+    "record":[
+      {"currentstatus": "Disposed"},
+      {"casename": "Priyanka Tamang vs Deepu Tamang"},
+      {"authorityname": "District Judge, Darjeeling"},
+      {"casenumber": ["Act viii 4/25"]},
+      {"causeofaction": "Hindu Minority & Guardianship Act 4/8"},
+      {"advocate": "Ajit Gurung"},
+      {
+        "history":[
+          "n/a"
+        ]
+      }
+    ]
   },
   {
-    "ref": ["SR 011/25"],
-    "name": "Aama Prakashan",
-    "task": "Society Registratin",
-    "details": "Application pending at DPO."
+    "name": "Madirahart Aama Prakashan",
+    "task": "Commercial Transaction",
+    "details": "Application pending at DPO.",
+    "record":[
+      {"currentstatus": "Pending"},
+      {"casename": "Society Registration"},
+      {"authorityname": "Registrar of Societies, Darjeeling"},
+      {"casenumber": ["n/a"]},
+      {"causeofaction": "n/a"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "n/a"
+        ]
+      }
+    ]
   }
 ]

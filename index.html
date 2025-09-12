@@ -133,10 +133,6 @@
         <div id="datavalid">
             <table>
                 <tr>
-                    <td style="font-weight: 600;">Ref:</td>
-                    <td id="trackRef"></td>
-                </tr>
-                <tr>
                     <td style="font-weight: 600;">Name:</td>
                     <td id="trackName"></td>
                 </tr>
@@ -181,32 +177,6 @@
                 <p><span style="color: var(--colorbase-ag);">P:</span> +91 9832909233</p>
                 <p><span style="color: var(--colorbase-ag);">M:</span> advocateanuraglama@icloud.com</p>
             </div>
-            <script>
-                async function sendDataChannel(event){
-                    event.preventDefault();
-                    const webhookdata = {
-                        username: "Fiona",
-                        avatar_url: "",
-                        content: `Name: ${document.getElementById('intakeName').value}\nContact: ${document.getElementById('intakeContact').value}\nCase Type: ${document.getElementById('intakeType').value}\nCase Details: ${JSON.stringify(document.getElementById('intakeDetails').value)}\n------------------------------------`
-                    }
-                    await fetch('https://discord.com/api/webhooks/1350527175031525490/vpzzhVOpcslV8Ru4ERMyW6XqLXgL2FjdjjlhUSIW3Xw9-3T2XR4y2_WM3uWsnJQx03G9', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(webhookdata)
-                    }).then(response => {
-                        if (response.ok) {
-                        alert('We received your message.');
-                        } else {
-                        alert('Error sending message. Try again.');
-                        }
-                    });
-                    document.getElementById('intakeName').value = "";
-                    document.getElementById('intakeContact').value = "";
-                    document.getElementById('intakeDetails').value = "";
-                }
-            </script>
             
         </div>
         <div class="section-container"  id="practiceArea">
@@ -599,7 +569,12 @@
 
                 // Define the key and value to search for
                 const searchRef = document.getElementById('searchcase').value;
-                const filteredEntries = data.filter(entry => entry.ref.includes(searchRef));
+                const filteredEntries = data.filter(entry => {
+                    if (!entry.record) return false;
+                    const caseNumberObj = entry.record.find(obj => obj.casenumber);
+                    if (!caseNumberObj || !Array.isArray(caseNumberObj.casenumber)) return false;
+                    return caseNumberObj.casenumber.includes(searchRef);
+                });
 
                 // Check if any entries were found
                 if (filteredEntries.length === 0) {
@@ -616,7 +591,6 @@
                     document.getElementById('datainvalid').style.display = 'none';
                     document.getElementById('dataDialog').style.visibility='visible';
 
-                    document.getElementById('trackRef').innerText = entry.ref;
                     document.getElementById('trackName').innerText = entry.name;
                     document.getElementById('trackTask').innerText = entry.task;
                     document.getElementById('trackDetails').innerText = entry.details;
