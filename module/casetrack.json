@@ -2,13 +2,13 @@
   {
     "name": "Bijaya Rai",
     "task": "Criminal Case",
-    "nextdate": "Next Date on 06/03/2025 for Charge. Your presence is required.",
+    "nextdate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Bijaya Rai"},
       {"authorityname": "ACJM, Siliguri"},
       {"casenumber": ["Pradhan Nagar PS 628/23", "GR 126/23"]},
-      {"causeofaction": "Bharatiya Nayaya Sanhita 316/318"},
+      {"causeofaction": "Bharatiya Nayaya Sanhita 316 & 318"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -26,7 +26,7 @@
       {"casename": "State vs Anil Kumar Paswan"},
       {"authorityname": "ACJM, Siliguri"},
       {"casenumber": ["CR 474/25"]},
-      {"causeofaction": "Bengal Excise 9/11/12"},
+      {"causeofaction": "Bengal Excise 9, 11 & 12"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -54,9 +54,27 @@
     ]
   },
   {
+    "name": "Raj Kumar Thapa",
+    "task": "Criminal Case",
+    "nextdate": "Next Date on 16/10/2025 for Charge. Your presence is required.",
+    "record":[
+      {"currentstatus": "Pending"},
+      {"casename": "State vs Raj Kumar Thapa"},
+      {"authorityname": "ACJM, Siliguri"},
+      {"casenumber": ["Pradhan Nagar PS 484/25"]},
+      {"causeofaction": "Bharatiya Nayaya Sanhita 82(1), 85 & 351(2)(3)"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "n/a"
+        ]
+      }
+    ]
+  },
+  {
     "name": "Nisha Bhandari & Rupen Giri",
     "task": "Civil Case (Mutual Divorce)",
-    "nextdate": "Next Date on 06/09/2025. Your presence is required.",
+    "nextdate": "Disposed. No further action required.",
     "record":[
       {"currentstatus": "Disposed"},
       {"casename": "Nisha Bhandari vs Rupen Giri"},
@@ -75,13 +93,13 @@
   {
     "name": "Priyanka Tamang",
     "task": "Civil Case (Child Custody)",
-    "nextdate": "Next Date on 20/06/2025 for filing requisite. Your presence is not required.",
+    "nextdate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
     "record":[
-      {"currentstatus": "Disposed"},
+      {"currentstatus": "Pending"},
       {"casename": "Priyanka Tamang vs Deepu Tamang"},
       {"authorityname": "District Judge, Darjeeling"},
       {"casenumber": ["Act viii 4/25"]},
-      {"causeofaction": "Hindu Minority & Guardianship Act 4/8"},
+      {"causeofaction": "Hindu Minority & Guardianship Act 4 & 8"},
       {"advocate": "Ajit Gurung"},
       {
         "history":[
