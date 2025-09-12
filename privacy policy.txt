@@ -1,0 +1,66 @@
+Privacy Policy
+At Advocate Anurag Lama & Associates ("we," "us," or "our"), we value the privacy and confidentiality of the information you provide to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you access or use our website, services, or interact with us in any manner, in compliance with applicable privacy laws.
+
+We collect, process, and store personal data strictly on the basis of free, specific, informed, and unambiguous consent provided by the individual. Consent shall be obtained through clear affirmative action, such as ticking a checkbox or submitting a written/electronic acknowledgment. Continued use of our services without such consent shall not constitute valid consent.
+
+Information We Collect
+
+Personal Identification Information: Full name, email address, phone number, and other contact details.
+Sensitive Personal Data or Information: Includes, but is not limited to, financial information, identification numbers (e.g., PAN, Aadhaar, or passport numbers), and other details as required for legal representation or consultations.
+Transactional Data: Payment details, billing information, and other data related to legal services rendered.
+Usage Data: Information about how you access and interact with our website, including IP address, device information, browser type, and browsing patterns.
+How We Collect Information
+
+Direct Interactions: Information provided directly by you when you contact us, book consultations, or request legal services.
+Automated Technologies: Usage of cookies, analytics, and similar tracking technologies that gather data about your interaction with our website.
+Third Parties: We may receive data from third-party service providers for purposes such as payment processing, data enrichment, or legal service enhancements.
+Purpose of Data Collection
+
+Provision of Legal Services: To provide legal advice, representation, and services in compliance with applicable laws and regulations.
+Communication: To communicate with you regarding the status of your legal matters, billing inquiries, and other updates related to your case or services.
+Website Functionality: To ensure our website operates efficiently, improving user experience, and enhancing the functionality of our services.
+Legal Compliance: To comply with statutory obligations and regulatory requirements, including record-keeping and filing of reports with authorities, as required by law.
+How We Use the Data
+
+To Provide Legal Services: Delivering legal advice, drafting documents, or representing you in legal proceedings.
+Communication and Updates: Contacting you about your case or legal matters, including follow-ups, reminders, and clarifications.
+Legal Obligations and Compliance: Complying with legal requirements, responding to legal requests, and ensuring compliance with industry standards and best practices.
+Data Sharing and Disclosure
+
+Third-Party Service Providers: Trusted vendors or service providers who assist with payment processing, legal research, document management, and website operations. These third parties are bound by confidentiality obligations and are prohibited from using your data for any other purposes.
+Regulatory Authorities: When required by law, regulatory bodies, or court orders, we may disclose personal data to law enforcement agencies or government authorities.
+Professional Advisors: Legal, financial, or audit advisors engaged by us to ensure compliance with legal and regulatory obligations.
+Data Security
+
+We implement reasonable technical and organizational measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. This includes secure storage, encryption protocols, and access controls. However, please note that no method of data transmission over the Internet or electronic storage is 100% secure.
+
+Data Retention
+
+Personal data shall only be used for purposes explicitly stated at the time of collection, such as delivering requested services, ensuring security, and complying with legal obligations. We shall not process personal data for unrelated or secondary purposes without obtaining fresh consent from the individual. For legal case that are disposed we shall retain information for 1 year post-disposal date.
+
+Your Rights
+
+Personal data shall be retained only for as long as necessary to fulfill the purposes for which it was collected, or as mandated by applicable law. Upon expiry of the retention period, or upon withdrawal of consent, such data shall be irreversibly deleted or anonymized, unless retention is legally required.
+
+Under Indian law and applicable data protection laws, you may have the following rights in relation to your personal data:
+
+Right to Access: You may request access to the personal data we hold about you and request copies of such data.
+Right to Rectification: You may request the correction or update of inaccurate or incomplete personal data.
+Right to Erasure: You may request the deletion of your personal data, subject to certain legal and contractual obligations.
+Right to Object: You may object to the processing of your personal data in certain circumstances, including for direct marketing purposes.
+Right to Data Portability: You may request that we transfer your personal data to another service provider, where applicable.
+Individuals shall have the right to access, correct, update, or delete their personal data at any time, subject to applicable law. We have appointed a Grievance Officer, whose details are provided below, to address complaints relating to the processing of personal data. All grievances shall be acknowledged within 24 hours and resolved within 30 days.
+
+Grievance Officer Contact: Anurag Lama (P: 9832909233; E: anuraglama5@gmail.com)
+
+Use of Artificial Intelligence (AI)
+
+We do not use client data to train any artificial intelligence systems. Information shared with AI tools is strictly limited to what is mandated by the court to be public, such as case number, case date, and party names. No personal details, identification numbers, financial information, contact information, or any other sensitive data will be provided to AI systems.
+
+Cookies and Tracking Technologies
+
+We may use cookies and similar technologies to track usage patterns, analyze trends, and improve our website’s functionality. You can control the use of cookies through your browser settings. However, disabling cookies may impact the functionality of certain website features.
+
+Changes to This Privacy Policy
+
+We reserve the right to update or modify this Privacy Policy from time to time to reflect changes in legal requirements or business practices. Any such changes will be posted on our website, and the revised policy will be effective as of the date indicated.
