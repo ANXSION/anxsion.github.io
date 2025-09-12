@@ -30,7 +30,7 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "01/09/2025 - Judge was on remand. Nex date on 15/09/2025 for Bail Confirmation."
+          "01/09/2025 - Judge was on remand duty. Nex date on 15/09/2025 for Bail Confirmation."
         ]
       }
     ]
@@ -56,7 +56,7 @@
   {
     "name": "Raj Kumar Thapa",
     "task": "Criminal Case",
-    "nextdate": "Next Date on 16/10/2025 for Charge. Your presence is required.",
+    "nextdate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Raj Kumar Thapa"},
@@ -66,7 +66,8 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "n/a"
+          "01/08/2025 - Bail granted with 1 surety of Rs. 1000 and no conditions. Next date on 28/08/2025 for appearance and report.",
+          "28/08/2025 - Bail extended. Next date on 16/10/2025 for appearance and report."
         ]
       }
     ]
@@ -74,7 +75,7 @@
   {
     "name": "Nisha Bhandari & Rupen Giri",
     "task": "Civil Case (Mutual Divorce)",
-    "nextdate": "Disposed. No further action required.",
+    "nextdate": "Disposed on 06/09/2025. No action required.",
     "record":[
       {"currentstatus": "Disposed"},
       {"casename": "Nisha Bhandari vs Rupen Giri"},
@@ -116,12 +117,12 @@
       {"currentstatus": "Pending"},
       {"casename": "Society Registration"},
       {"authorityname": "Registrar of Societies, Darjeeling"},
-      {"casenumber": ["n/a"]},
+      {"casenumber": ["Aama Prakashan, 210212507000019896"]},
       {"causeofaction": "n/a"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "n/a"
+          "12/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
         ]
       }
     ]
