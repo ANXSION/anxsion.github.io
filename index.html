@@ -137,10 +137,6 @@
                     <td id="trackName"></td>
                 </tr>
                 <tr>
-                    <td style="font-weight: 600;">Task:</td>
-                    <td id="trackTask"></td>
-                </tr>
-                <tr>
                     <td style="font-weight: 600;">Detail:</td>
                     <td id="trackDetails"></td>
                 </tr>
@@ -157,7 +153,6 @@
     <div class="main-container" style="margin-top: 0;">
         <div class="section-container" id="banner">
             <h1 style="width: 100%; text-align: center; justify-content: center;">Advocate<br>Anurag Lama</h1>
-            <p style="width: 100%; text-align: center;">& Associates</p>
             <br><br>
             <p style="width: 100%; text-align: center;">Civil, Criminal and Commercial Lawyer.</p>
         </div>
@@ -388,6 +383,11 @@
         </div>
 
         <div class="section-container"  id="legalInformation">
+            <h1>Tech Development</h1>
+            <p></p>
+        </div>
+
+        <div class="section-container"  id="legalInformation">
             <h1>Legal Information.</h1>
 
             <details>
@@ -592,8 +592,7 @@
                     document.getElementById('dataDialog').style.visibility='visible';
 
                     document.getElementById('trackName').innerText = entry.name;
-                    document.getElementById('trackTask').innerText = entry.task;
-                    document.getElementById('trackDetails').innerText = entry.details;
+                    document.getElementById('trackDetails').innerText = entry.nextdate;
                 });
                 }
             } catch (error) {

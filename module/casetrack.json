@@ -2,13 +2,13 @@
   {
     "name": "Bijaya Rai",
     "task": "Criminal Case",
-    "details": "Next Date on 06/03/2025 for Charge. Your presence is required.",
+    "nextdate": "Next Date on 06/03/2025 for Charge. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Bijaya Rai"},
       {"authorityname": "ACJM, Siliguri"},
       {"casenumber": ["Pradhan Nagar PS 628/23", "GR 126/23"]},
-      {"causeofaction": "BNS 316/318"},
+      {"causeofaction": "Bharatiya Nayaya Sanhita 316/318"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -20,7 +20,7 @@
   {
     "name": "Anil Kumar Paswan",
     "task": "Criminal Case (Excise)",
-    "details": "Next Date on 01/09/2025 for Bail Confirmation. Your presence is required.",
+    "nextdate": "Next Date on 01/09/2025 for Bail Confirmation. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Anil Kumar Paswan"},
@@ -38,13 +38,13 @@
   {
     "name": "Subham Verma",
     "task": "Criminal Case",
-    "details": "Next Date on 24/09/2025 for IO Report. Your presence is required.",
+    "nextdate": "Next Date on 24/09/2025 for IO Report. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Subham Verma"},
       {"authorityname": "ACJM, Siliguri"},
       {"casenumber": ["Pradhan Nagar PS 687/24", "GR 2594/24"]},
-      {"causeofaction": "BNS 353"},
+      {"causeofaction": "Bharatiya Nayaya Sanhita 353"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -56,7 +56,7 @@
   {
     "name": "Nisha Bhandari & Rupen Giri",
     "task": "Civil Case (Mutual Divorce)",
-    "details": "Next Date on 06/09/2025. Your presence is required.",
+    "nextdate": "Next Date on 06/09/2025. Your presence is required.",
     "record":[
       {"currentstatus": "Disposed"},
       {"casename": "Nisha Bhandari vs Rupen Giri"},
@@ -75,7 +75,7 @@
   {
     "name": "Priyanka Tamang",
     "task": "Civil Case (Child Custody)",
-    "details": "Next Date on 20/06/2025 for filing requisite. Your presence is not required.",
+    "nextdate": "Next Date on 20/06/2025 for filing requisite. Your presence is not required.",
     "record":[
       {"currentstatus": "Disposed"},
       {"casename": "Priyanka Tamang vs Deepu Tamang"},
@@ -93,7 +93,7 @@
   {
     "name": "Madirahart Aama Prakashan",
     "task": "Commercial Transaction",
-    "details": "Application pending at DPO.",
+    "nextdate": "Application pending at DPO.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "Society Registration"},
