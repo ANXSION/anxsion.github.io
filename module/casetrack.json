@@ -20,7 +20,7 @@
   {
     "name": "Anil Kumar Paswan",
     "task": "Criminal Case (Excise)",
-    "nextdate": "Next Date on 01/09/2025 for Bail Confirmation. Your presence is required.",
+    "nextdate": "Next Date is pending for Bail Confirmation. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Anil Kumar Paswan"},
@@ -38,7 +38,7 @@
   {
     "name": "Subham Verma",
     "task": "Criminal Case",
-    "nextdate": "Next Date on 24/09/2025 for IO Report. Your presence is required.",
+    "nextdate": "Next Date on 24/09/2025 for Report. Your presence is required.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "State vs Subham Verma"},
@@ -85,7 +85,7 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "04/03/2025 - Case filed. First date given on 06/09/2025.",
+          "04/03/2025 - Case filed. First hearing on 06/09/2025.",
           "06/09/2025 - Decree passed. Case disposed."
         ]
       }
@@ -110,6 +110,25 @@
     ]
   },
   {
+    "name": "Indra Pradhan",
+    "task": "Commercial Transaction",
+    "nextdate": "Disposed",
+    "record":[
+      {"currentstatus": "Disposed"},
+      {"casename": "Transfer via Deed of Gift"},
+      {"authorityname": "ADSR, Siliguri"},
+      {"casenumber": ["I 7168 of 2025"]},
+      {"causeofaction": "n/a"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "08/09/2025 - Deed registered.",
+          "12/09/2025 - Deed collected. Case disposed."
+        ]
+      }
+    ]
+  },
+  {
     "name": "Madirahart Aama Prakashan",
     "task": "Commercial Transaction",
     "nextdate": "Application pending at Registrar.",
@@ -117,12 +136,30 @@
       {"currentstatus": "Pending"},
       {"casename": "Society Registration"},
       {"authorityname": "Registrar of Societies, Darjeeling"},
-      {"casenumber": ["Aama Prakashan", "210212507000019896"]},
+      {"casenumber": ["210212507000019896"]},
       {"causeofaction": "n/a"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
           "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "NBU Chemistry Alumni Association",
+    "task": "Commercial Transaction",
+    "nextdate": "Application pending at Registrar.",
+    "record":[
+      {"currentstatus": "Pending"},
+      {"casename": "Society Registration"},
+      {"authorityname": "Registrar of Societies, Darjeeling"},
+      {"casenumber": ["210212507000019849"]},
+      {"causeofaction": "n/a"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849."
         ]
       }
     ]
