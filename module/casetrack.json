@@ -112,7 +112,7 @@
   {
     "name": "Madirahart Aama Prakashan",
     "task": "Commercial Transaction",
-    "nextdate": "Application pending at DPO.",
+    "nextdate": "Application pending at Registrar.",
     "record":[
       {"currentstatus": "Pending"},
       {"casename": "Society Registration"},
@@ -122,7 +122,7 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "12/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
         ]
       }
     ]
