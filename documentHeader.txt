@@ -1,7 +1,0 @@
-BEFORE THE LD. {authorityName}
-
-Ref: {caseNumber}
-
-{caseName first party}
-v.
-{caseName second party}
