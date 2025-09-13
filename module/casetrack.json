@@ -1,14 +1,15 @@
 [
   {
-    "name": "Bijaya Rai",
-    "task": "Criminal Case",
-    "nextdate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
+    "ClientName": "Bijaya Rai",
+    "caseType": "Criminal Case",
+    "nextDate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "State vs Bijaya Rai"},
-      {"authorityname": "ACJM, Siliguri"},
-      {"casenumber": ["Pradhan Nagar PS 628/23", "GR 126/23"]},
-      {"causeofaction": "Bharatiya Nayaya Sanhita 316 & 318"},
+      {"currentStatus": "Pending"},
+      {"caseName": "State vs Bijaya Rai"},
+      {"authorityName": "ACJM, Siliguri"},
+      {"caseNumber": ["Pradhan Nagar PS 628/23", "GR 126/23"]},
+      {"causeOfAction": "Bharatiya Nayaya Sanhita 316 & 318"},
+      {"appearingAs": "Defense"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -25,15 +26,16 @@
     ]
   },
   {
-    "name": "Anil Kumar Paswan",
-    "task": "Criminal Case (Excise)",
-    "nextdate": "Next Date is pending for Bail Confirmation. Your presence is required.",
+    "ClientName": "Anil Kumar Paswan",
+    "caseType": "Criminal Case (Excise)",
+    "nextDate": "Next Date is pending for Bail Confirmation. Your presence is required.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "State vs Anil Kumar Paswan"},
-      {"authorityname": "ACJM, Siliguri"},
-      {"casenumber": ["CR 474/25"]},
-      {"causeofaction": "Bengal Excise 9, 11 & 12"},
+      {"currentStatus": "Pending"},
+      {"caseName": "State vs Anil Kumar Paswan"},
+      {"authorityName": "ACJM, Siliguri"},
+      {"caseNumber": ["CR 474/25"]},
+      {"causeOfAction": "Bengal Excise 9, 11 & 12"},
+      {"appearingAs": "Defense"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -47,15 +49,16 @@
     ]
   },
   {
-    "name": "Subham Verma",
-    "task": "Criminal Case",
-    "nextdate": "Next Date on 24/09/2025 for Report. Your presence is required.",
+    "ClientName": "Subham Verma",
+    "caseType": "Criminal Case",
+    "nextDate": "Next Date on 24/09/2025 for Report. Your presence is required.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "State vs Subham Verma"},
-      {"authorityname": "ACJM, Siliguri"},
-      {"casenumber": ["Pradhan Nagar PS 687/24", "GR 2594/24"]},
-      {"causeofaction": "Bharatiya Nayaya Sanhita 353"},
+      {"currentStatus": "Pending"},
+      {"caseName": "State vs Subham Verma"},
+      {"authorityName": "ACJM, Siliguri"},
+      {"caseNumber": ["Pradhan Nagar PS 687/24", "GR 2594/24"]},
+      {"causeOfAction": "Bharatiya Nayaya Sanhita 353"},
+      {"appearingAs": "Defense"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -71,15 +74,16 @@
     ]
   },
   {
-    "name": "Raj Kumar Thapa",
-    "task": "Criminal Case",
-    "nextdate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
+    "ClientName": "Raj Kumar Thapa",
+    "caseType": "Criminal Case",
+    "nextDate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "State vs Raj Kumar Thapa"},
-      {"authorityname": "ACJM, Siliguri"},
-      {"casenumber": ["Pradhan Nagar PS 484/25"]},
-      {"causeofaction": "Bharatiya Nayaya Sanhita 82(1), 85 & 351(2)(3)"},
+      {"currentStatus": "Pending"},
+      {"caseName": "State vs Raj Kumar Thapa"},
+      {"authorityName": "ACJM, Siliguri"},
+      {"caseNumber": ["Pradhan Nagar PS 484/25"]},
+      {"causeOfAction": "Bharatiya Nayaya Sanhita 82(1), 85 & 351(2)(3)"},
+      {"appearingAs": "Defense"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -91,15 +95,16 @@
     ]
   },
   {
-    "name": "Nisha Bhandari & Rupen Giri",
-    "task": "Civil Case (Mutual Divorce)",
-    "nextdate": "Disposed.",
+    "ClientName": "Nisha Bhandari & Rupen Giri",
+    "caseType": "Civil Case (Mutual Divorce)",
+    "nextDate": "Disposed.",
     "record":[
-      {"currentstatus": "Disposed"},
-      {"casename": "Nisha Bhandari vs Rupen Giri"},
-      {"authorityname": "ADJ 1, Siliguri"},
-      {"casenumber": ["Mat 49(3)/25"]},
-      {"causeofaction": "Special Marriage Act 28"},
+      {"currentStatus": "Disposed"},
+      {"caseName": "Nisha Bhandari vs Rupen Giri"},
+      {"authorityName": "ADJ 1, Siliguri"},
+      {"caseNumber": ["Mat 49(3)/25"]},
+      {"causeOfAction": "Special Marriage Act 28"},
+      {"appearingAs": "Petitioner"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -110,15 +115,16 @@
     ]
   },
   {
-    "name": "Priyanka Tamang",
-    "task": "Civil Case (Child Custody)",
-    "nextdate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
+    "ClientName": "Priyanka Tamang",
+    "caseType": "Civil Case (Child Custody)",
+    "nextDate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "Priyanka Tamang vs Deepu Tamang"},
-      {"authorityname": "District Judge, Darjeeling"},
-      {"casenumber": ["Act viii 4/25"]},
-      {"causeofaction": "Hindu Minority & Guardianship Act 4 & 8"},
+      {"currentStatus": "Pending"},
+      {"caseName": "Priyanka Tamang vs Deepu Tamang"},
+      {"authorityName": "District Judge, Darjeeling"},
+      {"caseNumber": ["Act viii 4/25"]},
+      {"causeOfAction": "Hindu Minority & Guardianship Act 4 & 8"},
+      {"appearingAs": "Plaintiff"},
       {"advocate": "Ajit Gurung"},
       {
         "history":[
@@ -128,15 +134,16 @@
     ]
   },
   {
-    "name": "Indra Pradhan",
-    "task": "Commercial Transaction",
-    "nextdate": "Disposed",
+    "ClientName": "Indra Pradhan",
+    "caseType": "Commercial Transaction",
+    "nextDate": "Disposed",
     "record":[
-      {"currentstatus": "Disposed"},
-      {"casename": "Transfer via Deed of Gift"},
-      {"authorityname": "ADSR, Siliguri"},
-      {"casenumber": ["I 7168 of 2025"]},
-      {"causeofaction": "n/a"},
+      {"currentStatus": "Disposed"},
+      {"caseName": "Transfer via Deed of Gift"},
+      {"authorityName": "ADSR, Siliguri"},
+      {"caseNumber": ["I 7168 of 2025"]},
+      {"causeOfAction": "n/a"},
+      {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -147,15 +154,16 @@
     ]
   },
   {
-    "name": "Madirahart Aama Prakashan",
-    "task": "Commercial Transaction",
-    "nextdate": "Application pending at Registrar.",
+    "ClientName": "Madirahart Aama Prakashan",
+    "caseType": "Commercial Transaction",
+    "nextDate": "Application pending at Registrar.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "Society Registration"},
-      {"authorityname": "Registrar of Societies, Darjeeling"},
-      {"casenumber": ["210212507000019896"]},
-      {"causeofaction": "n/a"},
+      {"currentStatus": "Pending"},
+      {"caseName": "Society Registration"},
+      {"authorityName": "Registrar of Societies, Darjeeling"},
+      {"caseNumber": ["210212507000019896"]},
+      {"causeOfAction": "n/a"},
+      {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
@@ -165,15 +173,16 @@
     ]
   },
   {
-    "name": "NBU Chemistry Alumni Association",
-    "task": "Commercial Transaction",
-    "nextdate": "Application pending at Registrar.",
+    "ClientName": "NBU Chemistry Alumni Association",
+    "caseType": "Commercial Transaction",
+    "nextDate": "Application pending at Registrar.",
     "record":[
-      {"currentstatus": "Pending"},
-      {"casename": "Society Registration"},
-      {"authorityname": "Registrar of Societies, Darjeeling"},
-      {"casenumber": ["210212507000019849"]},
-      {"causeofaction": "n/a"},
+      {"currentStatus": "Pending"},
+      {"caseName": "Society Registration"},
+      {"authorityName": "Registrar of Societies, Darjeeling"},
+      {"caseNumber": ["210212507000019849"]},
+      {"causeOfAction": "n/a"},
+      {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[

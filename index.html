@@ -587,9 +587,9 @@
             const searchRef = document.getElementById('searchcase').value;
             const filteredEntries = data.filter(entry => {
                 if (!entry.record) return false;
-                const caseNumberObj = entry.record.find(obj => obj.casenumber);
-                if (!caseNumberObj || !Array.isArray(caseNumberObj.casenumber)) return false;
-                return caseNumberObj.casenumber.includes(searchRef);
+                const caseNumberObj = entry.record.find(obj => obj.caseNumber);
+                if (!caseNumberObj || !Array.isArray(caseNumberObj.caseNumber)) return false;
+                return caseNumberObj.caseNumber.includes(searchRef);
             });
 
             // Check if any entries were found
@@ -607,8 +607,8 @@
                 document.getElementById('datainvalid').style.display = 'none';
                 document.getElementById('dataDialog').style.visibility='visible';
 
-                document.getElementById('trackName').innerText = entry.name;
-                document.getElementById('trackDetails').innerText = entry.nextdate; 
+                document.getElementById('trackName').innerText = entry.clientName;
+                document.getElementById('trackDetails').innerText = entry.nextDate; 
             });
             }
         } catch (error) {
