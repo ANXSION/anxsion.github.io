@@ -190,5 +190,28 @@
         ]
       }
     ]
+  },
+  {
+    "ClientName": "Bikesh Kayastha",
+    "caseType": "Commercial Transaction",
+    "nextDate": "MCA site down",
+    "record":[
+      {"currentStatus": "Pending"},
+      {"caseName": "Private Limited Company Registration"},
+      {"authorityName": "Registrar of Companies, Kolkata"},
+      {"caseNumber": ["Bikesh Kayastna", "PVE Network"]},
+      {"causeOfAction": "n/a"},
+      {"appearingAs": "Applicant"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "28/07/2025 - SPICe+ A form submitted.",
+          "01/08/2025 - SPICe+ A approved. Name permitted.",
+          "20/08/2025 - SPICe+ B form submitted.",
+          "20/08/2025 - SPICe+ B form rejected due to non-compliance of foreign entities.",
+          "07/09/2025 - SPICe+ B form resubmitted"
+        ]
+      }
+    ]
   }
 ]
