@@ -1,6 +1,6 @@
 [
   {
-    "ClientName": "Bijaya Rai",
+    "clientName": "Bijaya Rai",
     "caseType": "Criminal Case",
     "nextDate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
     "record":[
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "ClientName": "Anil Kumar Paswan",
+    "clientName": "Anil Kumar Paswan",
     "caseType": "Criminal Case (Excise)",
     "nextDate": "Next Date is pending for Bail Confirmation. Your presence is required.",
     "record":[
@@ -49,7 +49,7 @@
     ]
   },
   {
-    "ClientName": "Subham Verma",
+    "clientName": "Subham Verma",
     "caseType": "Criminal Case",
     "nextDate": "Next Date on 24/09/2025 for Report. Your presence is required.",
     "record":[
@@ -74,7 +74,7 @@
     ]
   },
   {
-    "ClientName": "Raj Kumar Thapa",
+    "clientName": "Raj Kumar Thapa",
     "caseType": "Criminal Case",
     "nextDate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
     "record":[
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "ClientName": "Nisha Bhandari & Rupen Giri",
+    "clientName": "Nisha Bhandari & Rupen Giri",
     "caseType": "Civil Case (Mutual Divorce)",
     "nextDate": "Disposed.",
     "record":[
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "ClientName": "Priyanka Tamang",
+    "clientName": "Priyanka Tamang",
     "caseType": "Civil Case (Child Custody)",
     "nextDate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
     "record":[
@@ -134,7 +134,7 @@
     ]
   },
   {
-    "ClientName": "Indra Pradhan",
+    "clientName": "Indra Pradhan",
     "caseType": "Commercial Transaction",
     "nextDate": "Disposed",
     "record":[
@@ -154,7 +154,7 @@
     ]
   },
   {
-    "ClientName": "Madirahart Aama Prakashan",
+    "clientName": "Madirahart Aama Prakashan",
     "caseType": "Commercial Transaction",
     "nextDate": "Application pending at Registrar.",
     "record":[
@@ -173,7 +173,7 @@
     ]
   },
   {
-    "ClientName": "NBU Chemistry Alumni Association",
+    "clientName": "NBU Chemistry Alumni Association",
     "caseType": "Commercial Transaction",
     "nextDate": "Application pending at Registrar.",
     "record":[
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "ClientName": "Bikesh Kayastha",
+    "clientName": "Bikesh Kayastha",
     "caseType": "Commercial Transaction",
     "nextDate": "MCA site down",
     "record":[
