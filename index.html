@@ -133,8 +133,8 @@
     <dialog id="dataDialog">
         <div id="datavalid">
             <p style="font-weight: 600; text-align: center; width: 100%;">Client Name: <span id="trackName" style="font-weight: normal;"></span></p>
-            <p style="text-align: center; width: 100%;">Progress</p>
-            <div id="progressDetails"></div>
+            <p style="text-align: center; width: 100%; font-weight: 600;">Progress</p>
+            <div id="progressDetails" style="margin: 1rem; box-sizing: border-box;"></div>
             <br>
         </div>
         <div id="datainvalid">
@@ -153,7 +153,7 @@
         <div class="section-container" id="trackYourCase">
             <h1>Track your case.</h1>
             <br><br>
-            <div style="display: grid; grid-template-columns: 2fr 1fr; justify-content: center; align-items: center; box-sizing: border-box; gap: 0.25rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; justify-content: center; align-items: center; box-sizing: border-box; gap: 0rem;">
                 <input type="text" name="" id="searchcase" placeholder="Enter reference ID" class="input" autocomplete="off">
                 <button class="button" data-button-variant="standard" onclick="fetchAndCheckJSON()">Search&nbsp;&nbsp;&nbsp;&nbsp;&#8599;</button>
             </div>
@@ -384,7 +384,7 @@
                 <tr style="display: flex; justify-content: center; align-items: center;">
                     <td style="display: flex; justify-content: center; align-items: center; margin-right: 2%;">
                         <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                            <img src="./asset/icon/eclipse.png" alt="Logo of the Eclipse AI" style="aspect-ratio: 1/1; width: 128px;">
+                            <img src="./asset/icon/eclipse.png" alt="Logo of the Eclipse AI" style="aspect-ratio: 1/1; width: 128px; border-radius: 50%;">
                             <p style="width: 100%; color: var(--colorbase-ag); text-align: center;">Eclipse AI</p>
                         </div>
                     </td>
@@ -614,8 +614,11 @@
                     progressDetails.style.justifyContent = 'space-around';
                     progressDetails.style.alignItems = 'space-around';
                     progressDetails.style.position = 'relative';
+                    progressDetails.style.boxSizing = 'border-box';
+                    progressDetails.style.paddingTop = '2rem';
+                    progressDetails.style.paddingBottom = '2rem';
                     progressDetails.innerHTML = '';
-                    progressDetails.style.borderLeft = '1px var(--colorbase-ag) solid';
+                    progressDetails.style.borderLeft = '1px var(--colorbase-fg) solid';
 
                     /* Progress bar line (left-aligned)
                     const progressLine = document.createElement('div');
@@ -642,9 +645,10 @@
                         const stepLine = document.createElement('div');
                         stepLine.style.width = '27px';
                         stepLine.style.height = '1px';
+                        stepLine.style.margin = '0';
+                        stepLine.style.padding = '0';
                         stepLine.style.borderRadius = '0%';
-                        stepLine.style.background = 'var(--colorbase-ag)';
-                        stepLine.style.transform = 'none';
+                        stepLine.style.background = 'var(--colorbase-fg)';
                         step.appendChild(stepLine);
 
                         // Step text
@@ -652,7 +656,7 @@
                         text.textContent = item;
                         text.style.padding = '0.5rem';
                         text.style.flex = '1';
-                        text.style.textAlign = 'justify';
+                        text.style.textAlign = 'left';
                         // If this is the last entry, set text color to var(--colorbase-ag)
                         if (idx === historyObj.history.length - 1) {
                             text.style.color = 'var(--colorbase-ag)';

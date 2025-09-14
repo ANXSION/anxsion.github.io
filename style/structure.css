@@ -5,11 +5,11 @@
 :root{
     --base-unit: 16px;
 
-    --colorbase-fg: hsla(0, 0%, 100%);
-    --colorbase-bg: hsla(0, 0%, 0%);
-    --colorbase-ag: #C0F888;
+    --colorbase-fg: hsla(0, 0%, 0%);
+    --colorbase-bg: hsla(0, 0%, 100%);
+    --colorbase-ag: hsl(90, 89%, 42%);
 
-    --border-subtle: 1px #C0F888 solid;
+    --border-subtle: 2px hsl(90, 89%, 42%) solid;
 
     --scaling-01: 0.5rem;
     --scaling-02: 0.75rem;
