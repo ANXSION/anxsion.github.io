@@ -132,23 +132,16 @@
 <body>
     <dialog id="dataDialog">
         <div id="datavalid">
-            <table>
-                <tr>
-                    <td style="font-weight: 600;">Name:</td>
-                    <td id="trackName"></td>
-                </tr>
-                <tr>
-                    <td style="font-weight: 600;">Detail:</td>
-                    <td id="trackDetails"></td>
-                </tr>
-            </table>
+            <p style="font-weight: 600; text-align: center; width: 100%;">Client Name: <span id="trackName" style="font-weight: normal;"></span></p>
+            <p style="text-align: center; width: 100%;">Progress</p>
+            <div id="progressDetails"></div>
             <br>
         </div>
         <div id="datainvalid">
             <p>No record found</p>
         </div>
-
-        <button class="button" data-button-variant="standard" onclick="document.getElementById('dataDialog').style.visibility='hidden';">Close</button>
+        <br><br>
+        <button class="button" data-button-variant="standard" onclick="document.getElementById('dataDialog').style.visibility='hidden';" style="margin-top: 2rem;">Close</button>
     </dialog>
 
     <div class="main-container" style="margin-top: 0;">
@@ -608,7 +601,70 @@
                 document.getElementById('dataDialog').style.visibility='visible';
 
                 document.getElementById('trackName').innerText = entry.clientName;
-                document.getElementById('trackDetails').innerText = entry.nextDate; 
+
+                // After displaying the main details, also display the history in the progressDetails element
+                const progressDetails = document.getElementById('progressDetails');
+                progressDetails.innerHTML = '';
+
+                // Find the 'history' array in the entry's record array
+                const historyObj = entry.record.find(obj => obj.history);
+                if (historyObj && Array.isArray(historyObj.history)) {
+                    progressDetails.style.display = 'flex';
+                    progressDetails.style.flexDirection = 'column';
+                    progressDetails.style.justifyContent = 'space-around';
+                    progressDetails.style.alignItems = 'space-around';
+                    progressDetails.style.position = 'relative';
+                    progressDetails.innerHTML = '';
+                    progressDetails.style.borderLeft = '1px var(--colorbase-ag) solid';
+
+                    /* Progress bar line (left-aligned)
+                    const progressLine = document.createElement('div');
+                    progressLine.style.position = 'absolute';
+                    progressLine.style.left = '7px';
+                    progressLine.style.top = '0';
+                    progressLine.style.bottom = '0';
+                    progressLine.style.width = '1px';
+                    progressLine.style.background = 'var(--colorbase-ag)';
+                    progressLine.style.zIndex = '0';
+                    progressDetails.appendChild(progressLine);
+                    */
+
+                    historyObj.history.forEach((item, idx) => {
+                        const step = document.createElement('div');
+                        step.style.display = 'flex';
+                        step.style.alignItems = 'center';
+                        step.style.position = 'relative';
+                        step.style.zIndex = '1';
+                        step.style.width = '100%';
+                        step.style.marginLeft = '0';
+
+                        // Step Line (left-aligned)
+                        const stepLine = document.createElement('div');
+                        stepLine.style.width = '27px';
+                        stepLine.style.height = '1px';
+                        stepLine.style.borderRadius = '0%';
+                        stepLine.style.background = 'var(--colorbase-ag)';
+                        stepLine.style.transform = 'none';
+                        step.appendChild(stepLine);
+
+                        // Step text
+                        const text = document.createElement('div');
+                        text.textContent = item;
+                        text.style.padding = '0.5rem';
+                        text.style.flex = '1';
+                        text.style.textAlign = 'justify';
+                        // If this is the last entry, set text color to var(--colorbase-ag)
+                        if (idx === historyObj.history.length - 1) {
+                            text.style.color = 'var(--colorbase-ag)';
+                        }
+                        step.appendChild(text);
+
+                        progressDetails.appendChild(step);
+                    });
+                } else {
+                    progressDetails.innerHTML = '<span>No progress history found.</span>';
+                }
+
             });
             }
         } catch (error) {
