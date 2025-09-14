@@ -2,7 +2,6 @@
   {
     "clientName": "Bijaya Rai",
     "caseType": "Criminal Case",
-    "nextDate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Bijaya Rai"},
@@ -29,7 +28,6 @@
   {
     "clientName": "Anil Kumar Paswan",
     "caseType": "Criminal Case (Excise)",
-    "nextDate": "Next Date is pending for Bail Confirmation. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Anil Kumar Paswan"},
@@ -53,7 +51,6 @@
   {
     "clientName": "Subham Verma",
     "caseType": "Criminal Case",
-    "nextDate": "Next Date on 24/09/2025 for Report. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Subham Verma"},
@@ -79,7 +76,6 @@
   {
     "clientName": "Raj Kumar Thapa",
     "caseType": "Criminal Case",
-    "nextDate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Raj Kumar Thapa"},
@@ -101,7 +97,6 @@
   {
     "clientName": "Nisha Bhandari & Rupen Giri",
     "caseType": "Civil Case (Mutual Divorce)",
-    "nextDate": "Disposed.",
     "record":[
       {"currentStatus": "Disposed"},
       {"caseName": "Nisha Bhandari vs Rupen Giri"},
@@ -121,7 +116,6 @@
   {
     "clientName": "Priyanka Tamang",
     "caseType": "Civil Case (Child Custody)",
-    "nextDate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Priyanka Tamang vs Deepu Tamang"},
@@ -140,7 +134,6 @@
   {
     "clientName": "Indra Pradhan",
     "caseType": "Commercial Transaction",
-    "nextDate": "Disposed",
     "record":[
       {"currentStatus": "Disposed"},
       {"caseName": "Transfer via Deed of Gift"},
@@ -160,7 +153,6 @@
   {
     "clientName": "Madirahart Aama Prakashan",
     "caseType": "Commercial Transaction",
-    "nextDate": "Application pending at Registrar.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Society Registration"},
@@ -180,7 +172,6 @@
   {
     "clientName": "NBU Chemistry Alumni Association",
     "caseType": "Commercial Transaction",
-    "nextDate": "Application pending at Registrar.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Society Registration"},
@@ -200,7 +191,6 @@
   {
     "clientName": "Bikesh Kayastha",
     "caseType": "Commercial Transaction",
-    "nextDate": "MCA site down",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Private Limited Company Registration"},
