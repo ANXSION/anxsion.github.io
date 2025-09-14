@@ -17,10 +17,10 @@
           "05/01/2025 - Bail application rejected. Accused remanded to judicial custody.",
           "06/01/2025 - Bail application rejected.",
           "11/01/2025 - Bail application rejected.",
-          "14/01/2025 - Bail granted. Accused released on bail with 1 surety of Rs. 1000 and no conditions. Next date on 27/01/2025 for appearance and report.",
-          "27/01/2025 - Bail confirmed. Next date on 29/04/2025 for appearance and report.",
-          "29/04/2025 - Accused appearec. Next date on 19/06/2025 for report.",
-          "19/06/2025 - Accused received the copies. Next date on 06/03/2026 for charge.",
+          "14/01/2025 - Bail granted. Accused released on bail with 1 surety of Rs. 1000 and no conditions.",
+          "27/01/2025 - Bail confirmed.",
+          "29/04/2025 - Accused appeared.",
+          "19/06/2025 - Accused received the copies.",
           "06/03/2026 - For charge."
         ]
       }
@@ -41,11 +41,11 @@
       {
         "history":[
           "25/03/2025 - Accused was arrested.",
-          "05/04/2025 - Bail granted with 1 surety of Rs. 5000 and condition of meeting EO every 15 days. Next date on 19/06/2025 for appearance and report.",
+          "05/04/2025 - Bail granted with 1 surety of Rs. 5000 and condition of meeting EO every 15 days.",
           "20/05/2025 - Putup for vehicle release. Court held no jurisdiction.",
-          "19/06/2025 - Accused appeared. Bail extended. Next date on 01/09/2025 for appearance.",
-          "01/09/2025 - Accused appeared. Bail extended. Nex date on 15/09/2025 for appearance.",
-          "PENDING - Bail confirmation."
+          "19/06/2025 - Accused appeared.",
+          "01/09/2025 - Accused appeared.",
+          "NO DATE - PENDING"
         ]
       }
     ]
@@ -65,12 +65,12 @@
       {
         "history":[
           "20/07/2024 - Accused complied with BNS 35(3).",
-          "02/08/2024 - Accused surrendered. Bail granted with 1 surety of Rs. 1000 and no conditions. Next date on 23/08/2024 for appearance and report.",
-          "23/08/2024 - Accused appeared. Bail extended. Next date on 05/10/2024 for report.",
-          "05/10/2024 - Accused appeared. Bail confirmed. Next date on 12/12/2024 for report.",
-          "12/12/2024 - Accused appeared. Next date on 27/02/2025 for report.",
-          "27/02/2025 - Accused appeared. Next date on 22/03/2025 for report.",
-          "22/03/2025 - Accused appeared. Next date on 24/09/2025 for report.",
+          "02/08/2024 - Accused surrendered. Bail granted with 1 surety of Rs. 1000 and no conditions.",
+          "23/08/2024 - Accused appeared. Bail extended.",
+          "05/10/2024 - Accused appeared. Bail confirmed.",
+          "12/12/2024 - Accused appeared.",
+          "27/02/2025 - Accused appeared.",
+          "22/03/2025 - Accused appeared.",
           "24/09/2025 - For report."
         ]
       }
@@ -91,8 +91,9 @@
       {
         "history":[
           "31/07/2025 - Accused complied with BNS 35(3).",
-          "01/08/2025 - Bail granted with 1 surety of Rs. 1000 and no conditions. Next date on 28/08/2025 for appearance and report.",
-          "28/08/2025 - Bail extended. Next date on 16/10/2025 for appearance and report."
+          "01/08/2025 - Bail granted with 1 surety of Rs. 1000 and no conditions.",
+          "28/08/2025 - Bail extended.",
+          "16/10/2025 - For appearance and report."
         ]
       }
     ]
@@ -111,8 +112,8 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "04/03/2025 - Case filed. First hearing on 06/09/2025.",
-          "06/09/2025 - Decree passed. Case disposed."
+          "04/03/2025 - Case filed.",
+          "06/09/2025 - First hearing. Decree passed. Case disposed."
         ]
       }
     ]
@@ -170,7 +171,8 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896.",
+          "NO DATE - PENDING"
         ]
       }
     ]
@@ -189,7 +191,8 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849."
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849.",
+          "NO DATE - PENDING"
         ]
       }
     ]
@@ -213,7 +216,7 @@
           "20/08/2025 - SPICe+ B form submitted.",
           "20/08/2025 - SPICe+ B form rejected due to non-compliance of foreign entities.",
           "07/09/2025 - SPICe+ B form resubmitted",
-          "PENDING - For approval."
+          "NO DATE - PENDING"
         ]
       }
     ]
