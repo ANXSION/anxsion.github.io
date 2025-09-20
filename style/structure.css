@@ -289,14 +289,12 @@ select optgroup option {
     }
 }
 
-@keyframes floatingAnim{
-    0%{
-        margin-top: 1rem;
+@media (prefers-color-scheme: light) {
+      :root {
+        --colorbase-fg: hsla(0, 0%, 0%);
+        --colorbase-bg: hsla(0, 0%, 100%);
+        --colorbase-ag: hsl(90, 89%, 30%);
+
+        --border-subtle: 2px hsl(90, 89%, 30%) solid;
+      }
     }
-    50%{
-        margin-top: 0rem;
-    }
-    100%{
-        margin-top: 1rem;
-    }
-}
