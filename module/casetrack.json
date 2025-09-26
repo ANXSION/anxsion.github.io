@@ -2,7 +2,6 @@
   {
     "clientName": "Bijaya Rai",
     "caseType": "Criminal Case",
-    "nextDate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Bijaya Rai"},
@@ -28,7 +27,6 @@
   {
     "clientName": "Anil Kumar Paswan",
     "caseType": "Criminal Case (Excise)",
-    "nextDate": "Next Date is pending for Bail Confirmation. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Anil Kumar Paswan"},
@@ -51,7 +49,6 @@
   {
     "clientName": "Subham Verma",
     "caseType": "Criminal Case",
-    "nextDate": "Next Date on 24/09/2025 for Report. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Subham Verma"},
@@ -77,7 +74,6 @@
   {
     "clientName": "Raj Kumar Thapa",
     "caseType": "Criminal Case",
-    "nextDate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Raj Kumar Thapa"},
@@ -118,7 +114,6 @@
   {
     "clientName": "Priyanka Tamang",
     "caseType": "Civil Case (Child Custody)",
-    "nextDate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Priyanka Tamang vs Deepu Tamang"},
@@ -142,7 +137,7 @@
       {"currentStatus": "Disposed"},
       {"caseName": "Transfer via Deed of Gift"},
       {"authorityName": "ADSR, Siliguri"},
-      {"caseNumber": ["I 7168 of 2025"]},
+      {"caseNumber": ["I 7168/2025"]},
       {"causeOfAction": "n/a"},
       {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
@@ -157,18 +152,19 @@
   {
     "clientName": "Madirahart Aama Prakashan",
     "caseType": "Commercial Transaction",
-    "nextDate": "Application pending at Registrar.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Society Registration"},
       {"authorityName": "Registrar of Societies, Darjeeling"},
-      {"caseNumber": ["210212507000019896", "Kiran Upadhayay"]},
+      {"caseNumber": ["210212507000019896", "Aama Prakashan"]},
       {"causeOfAction": "n/a"},
       {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896.",
+          "25/09/2025 - Application rejected due to compliance irregularity. To resubmit.",
+          "26/09/2025 - Resubmitted compliance."
         ]
       }
     ]
@@ -176,18 +172,19 @@
   {
     "clientName": "NBU Chemistry Alumni Association",
     "caseType": "Commercial Transaction",
-    "nextDate": "Application pending at Registrar.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Society Registration"},
       {"authorityName": "Registrar of Societies, Darjeeling"},
-      {"caseNumber": ["210212507000019849", "Sujal Das"]},
+      {"caseNumber": ["210212507000019849", "NBU Chemistry Alumni Association", "192025260289626218"]},
       {"causeOfAction": "n/a"},
       {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849."
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849.",
+          "25/09/2025 - Application approved. Payments pending.",
+          "26/09/2025 - Payment made via GRN 192025260289626218. Awaiting registration."
         ]
       }
     ]
@@ -195,12 +192,11 @@
   {
     "clientName": "PVE Network",
     "caseType": "Commercial Transaction",
-    "nextDate": "MCA site down. Awaiting recovery.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Private Limited Company Registration"},
       {"authorityName": "Registrar of Companies, Kolkata"},
-      {"caseNumber": ["Bikesh Kayastha", "PVE Network"]},
+      {"caseNumber": ["AAQCP2283D", "U90009WB2025PTC283278", "CALP25189D"]},
       {"causeOfAction": "n/a"},
       {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
@@ -213,7 +209,28 @@
           "07/09/2025 - SPICe+ B form resubmitted.",
           "08/09/2025 - SPICe+ B form cancelled.",
           "22/09/2025 - Fresh SPICe+ A, SPICe+ B and AGILE PRO S form filed.",
-          "24/09/2025 - Company Registered."
+          "24/09/2025 - Company Registered. CIN U90009WB2025PTC283278, PAN AAQCP2283D, TAN CALP25189D. Awaiting Bank opening and GSTIN from ROC.",
+          "No date - INC 22"
+        ]
+      }
+    ]
+  },
+  {
+    "clientName": "PVE Network",
+    "caseType": "Commercial Transaction",
+    "record":[
+      {"currentStatus": "Pending"},
+      {"caseName": "Private Limited Company Registration"},
+      {"authorityName": "Ministry of Commerce and Industry, Govt. of India"},
+      {"caseNumber": ["Let's Get Loud", "7194713"]},
+      {"causeOfAction": "n/a"},
+      {"appearingAs": "Applicant"},
+      {"advocate": "Anurag Lama"},
+      {
+        "history":[
+          "24/08/2025 - Trademark application filed.",
+          "25/09/2025 - Formalities check passed. Journal entry awaited.",
+          "No date - Examination report, hearing (if any), registration."
         ]
       }
     ]
