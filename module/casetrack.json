@@ -2,6 +2,7 @@
   {
     "clientName": "Bijaya Rai",
     "caseType": "Criminal Case",
+    "nextDate": "Next Date on 06/03/2026 for Charge. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Bijaya Rai"},
@@ -16,11 +17,10 @@
           "05/01/2025 - Bail application rejected. Accused remanded to judicial custody.",
           "06/01/2025 - Bail application rejected.",
           "11/01/2025 - Bail application rejected.",
-          "14/01/2025 - Bail granted. Accused released on bail with 1 surety of Rs. 1000 and no conditions.",
-          "27/01/2025 - Bail confirmed.",
-          "29/04/2025 - Accused appeared.",
-          "19/06/2025 - Accused received the copies.",
-          "06/03/2026 - For charge."
+          "14/01/2025 - Bail granted. Accused released on bail with 1 surety of Rs. 1000 and no conditions. Next date on 27/01/2025 for appearance and report.",
+          "27/01/2025 - Bail confirmed. Next date on 29/04/2025 for appearance and report.",
+          "29/04/2025 - Accused appearec. Next date on 19/06/2025 for report.",
+          "19/06/2025 - Accused received the copies. Next date on 06/03/2026 for charge."
         ]
       }
     ]
@@ -28,6 +28,7 @@
   {
     "clientName": "Anil Kumar Paswan",
     "caseType": "Criminal Case (Excise)",
+    "nextDate": "Next Date is pending for Bail Confirmation. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Anil Kumar Paswan"},
@@ -39,11 +40,10 @@
       {
         "history":[
           "25/03/2025 - Accused was arrested.",
-          "05/04/2025 - Bail granted with 1 surety of Rs. 5000 and condition of meeting EO every 15 days.",
+          "05/04/2025 - Bail granted with 1 surety of Rs. 5000 and condition of meeting EO every 15 days. Next date on 19/06/2025 for appearance and report.",
           "20/05/2025 - Putup for vehicle release. Court held no jurisdiction.",
-          "19/06/2025 - Accused appeared.",
-          "01/09/2025 - Accused appeared.",
-          "05/11/2025 - For appearance."
+          "19/06/2025 - Accused appeared. Bail extended. Next date on 01/09/2025 for appearance.",
+          "01/09/2025 - Accused appeared. Bail extended. Nex date on 15/09/2025 for appearance."
         ]
       }
     ]
@@ -51,6 +51,7 @@
   {
     "clientName": "Subham Verma",
     "caseType": "Criminal Case",
+    "nextDate": "Next Date on 24/09/2025 for Report. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Subham Verma"},
@@ -62,13 +63,13 @@
       {
         "history":[
           "20/07/2024 - Accused complied with BNS 35(3).",
-          "02/08/2024 - Accused surrendered. Bail granted with 1 surety of Rs. 1000 and no conditions.",
-          "23/08/2024 - Accused appeared. Bail extended.",
-          "05/10/2024 - Accused appeared. Bail confirmed.",
-          "12/12/2024 - Accused appeared.",
-          "27/02/2025 - Accused appeared.",
-          "22/03/2025 - Accused appeared.",
-          "24/09/2025 - For report."
+          "02/08/2024 - Accused surrendered. Bail granted with 1 surety of Rs. 1000 and no conditions. Next date on 23/08/2024 for appearance and report.",
+          "23/08/2024 - Accused appeared. Bail extended. Next date on 05/10/2024 for report.",
+          "05/10/2024 - Accused appeared. Bail confirmed. Next date on 12/12/2024 for report.",
+          "12/12/2024 - Accused appeared. Next date on 27/02/2025 for report.",
+          "27/02/2025 - Accused appeared. Next date on 22/03/2025 for report.",
+          "22/03/2025 - Accused appeared. Next date on 24/09/2025 for report.",
+          "24/09/2025 - FRT has been received. Next date on 19/11/2025 for hearing."
         ]
       }
     ]
@@ -76,6 +77,7 @@
   {
     "clientName": "Raj Kumar Thapa",
     "caseType": "Criminal Case",
+    "nextDate": "Next Date on 16/10/2025 for appearance and report. Your presence is required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "State vs Raj Kumar Thapa"},
@@ -87,9 +89,8 @@
       {
         "history":[
           "31/07/2025 - Accused complied with BNS 35(3).",
-          "01/08/2025 - Bail granted with 1 surety of Rs. 1000 and no conditions.",
-          "28/08/2025 - Bail extended.",
-          "16/10/2025 - For appearance and report."
+          "01/08/2025 - Bail granted with 1 surety of Rs. 1000 and no conditions. Next date on 28/08/2025 for appearance and report.",
+          "28/08/2025 - Bail extended. Next date on 16/10/2025 for appearance and report."
         ]
       }
     ]
@@ -97,6 +98,7 @@
   {
     "clientName": "Nisha Bhandari & Rupen Giri",
     "caseType": "Civil Case (Mutual Divorce)",
+    "nextDate": "Disposed.",
     "record":[
       {"currentStatus": "Disposed"},
       {"caseName": "Nisha Bhandari vs Rupen Giri"},
@@ -107,8 +109,8 @@
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "04/03/2025 - Case filed.",
-          "06/09/2025 - First hearing. Decree passed. Case disposed."
+          "04/03/2025 - Case filed. First hearing on 06/09/2025.",
+          "06/09/2025 - Decree passed. Case disposed."
         ]
       }
     ]
@@ -116,6 +118,7 @@
   {
     "clientName": "Priyanka Tamang",
     "caseType": "Civil Case (Child Custody)",
+    "nextDate": "Next Date on 15/09/2025 for amicable settlement. Your presence is not required.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Priyanka Tamang vs Deepu Tamang"},
@@ -134,6 +137,7 @@
   {
     "clientName": "Indra Pradhan",
     "caseType": "Commercial Transaction",
+    "nextDate": "Disposed",
     "record":[
       {"currentStatus": "Disposed"},
       {"caseName": "Transfer via Deed of Gift"},
@@ -153,18 +157,18 @@
   {
     "clientName": "Madirahart Aama Prakashan",
     "caseType": "Commercial Transaction",
+    "nextDate": "Application pending at Registrar.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Society Registration"},
       {"authorityName": "Registrar of Societies, Darjeeling"},
-      {"caseNumber": ["210212507000019896"]},
+      {"caseNumber": ["210212507000019896", "Kiran Upadhayay"]},
       {"causeOfAction": "n/a"},
       {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896.",
-          "NO DATE - PENDING"
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019896."
         ]
       }
     ]
@@ -172,25 +176,26 @@
   {
     "clientName": "NBU Chemistry Alumni Association",
     "caseType": "Commercial Transaction",
+    "nextDate": "Application pending at Registrar.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Society Registration"},
       {"authorityName": "Registrar of Societies, Darjeeling"},
-      {"caseNumber": ["210212507000019849"]},
+      {"caseNumber": ["210212507000019849", "Sujal Das"]},
       {"causeOfAction": "n/a"},
       {"appearingAs": "Applicant"},
       {"advocate": "Anurag Lama"},
       {
         "history":[
-          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849.",
-          "NO DATE - PENDING"
+          "11/09/2025 - Application submitted to DPO. AIN No. 210212507000019849."
         ]
       }
     ]
   },
   {
-    "clientName": "Bikesh Kayastha",
+    "clientName": "PVE Network",
     "caseType": "Commercial Transaction",
+    "nextDate": "MCA site down. Awaiting recovery.",
     "record":[
       {"currentStatus": "Pending"},
       {"caseName": "Private Limited Company Registration"},
@@ -205,8 +210,10 @@
           "01/08/2025 - SPICe+ A approved. Name permitted.",
           "20/08/2025 - SPICe+ B form submitted.",
           "20/08/2025 - SPICe+ B form rejected due to non-compliance of foreign entities.",
-          "07/09/2025 - SPICe+ B form resubmitted",
-          "19/09/2025 - Systems restored. Fresh SPICe+ submitted."
+          "07/09/2025 - SPICe+ B form resubmitted.",
+          "08/09/2025 - SPICe+ B form cancelled.",
+          "22/09/2025 - Fresh SPICe+ A, SPICe+ B and AGILE PRO S form filed.",
+          "24/09/2025 - Company Registered."
         ]
       }
     ]
