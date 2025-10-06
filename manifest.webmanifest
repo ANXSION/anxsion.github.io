@@ -5,13 +5,13 @@
   "id": "ANXSION",
   "short_name": "Adv. Anurag Lama",
   "author": "Anurag Lama",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "scope": "/",
   "display": "standalone",
   "start_url": "/",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "description": "The official website of Advocate Anurag Lama & Associates. A full-service law firm.",
+  "description": "Best Criminal and Commercial Lawyer.",
   "orientation": "portrait-primary",
   "icons": [
   {
